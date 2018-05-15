@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  15 MAY 2018 15:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  15 MAY 2018 17:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -179,22 +179,22 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 \AtBeginShipoutBox=\box26
-Package hyperref Info: Link coloring OFF on input line 17.
+Package hyperref Info: Link coloring OFF on input line 21.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -204,77 +204,135 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count116
 )
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
+LaTeX Info: Redefining \ref on input line 21.
+LaTeX Info: Redefining \pageref on input line 21.
+LaTeX Info: Redefining \nameref on input line 21.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 21.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 21.
- [1
+ (../frontMatter/abstract/abstract.tex [1
 
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./main
-.toc
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+(../frontMatter/frontMatter.tex)pdfTeX warning (ext4): destination with the sam
+e identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.29 \tableofcontents
+                      [1] (./main.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 1.
-)
+ [2
+
+] [3])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
+ [4] (./main.lof)
+\tf@lof=\write5
+\openout5 = `main.lof'.
 
-(../frontMatter/listOfFigures/listOfFigures.tex)
-(../frontMatter/listOfTables/listOfTables.tex)
-(../frontMatter/listOfAcronyms/listOfAcronyms.tex) (../chapters/pb/pb.texpdfTeX
- warning (ext4): destination with the same identifier (name{page.1}) has been a
-lready used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.11 \chapter
-             {Patrol Base Operations} [1
+ [5
 
-] [2]
-Chapter 1.
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 35.
- [3
+
+
+
+] (./main.lot)
+\tf@lot=\write6
+\openout6 = `main.lot'.
+
+ (../frontMatter/listOfAcronyms/listOfAcronyms.tex)
+(../chapters/introduction/introduction.tex [6
 
 ]
-Overfull \vbox (98.03339pt too high) has occurred while \output is active []
+Chapter 1.
+) (../chapters/background/background.tex [7
+
+]
+Chapter 2.
+) (../chapters/sse/sse.tex [8
+
+]
+Chapter 3.
+) (../chapters/csbd_acl/csbd_acl.tex [9
+
+]
+Chapter 4.
+) (../chapters/pb/pb.tex [10
+
+] [11]
+Chapter 5.
+) (../chapters/ssms/ssms.tex [12
+
+]
+Overfull \vbox (54.53339pt too high) has occurred while \output is active []
 
 
-[4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 35.
+[13]
+Chapter 6.
+) (../chapters/pbssm/pbssm.tex [14
+
+]
+Overfull \vbox (152.15004pt too high) has occurred while \output is active []
+
+
+[15]
+Chapter 7.
+
+Overfull \hbox (2.35295pt too wide) in paragraph at lines 32--32
+[]\OT1/cmr/bx/n/14.4 ssmConductORP: Prin-ci-pals Au-tho-rized for Sub-
+ []
+
+) (../chapters/discussion/discussion.tex [16
+
+]
+Chapter 8.
+) (../chapters/future/future.tex [17
+
+]
+Chapter 9.
+) (../appendices/appendices.tex [18
+
+]
+Chapter 10.
+) (./main.bbl [19
+
+]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
+ [20
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 35.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 35.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 59.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0094BDCD53C5EA374DB4D01158B7ABE8;1551.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 35.
+(rerunfilecheck)             Checksum: 0D87F197495A07347A74AC4D7BF96047;6981.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
  ) 
 Here is how much of TeX's memory you used:
- 4548 strings out of 492995
- 69225 string characters out of 6132704
- 151437 words of memory out of 5000000
- 8065 multiletter control sequences out of 15000+600000
- 9414 words of font info for 33 fonts, out of 8000000 for 9000
+ 4785 strings out of 492995
+ 72732 string characters out of 6132704
+ 155560 words of memory out of 5000000
+ 8158 multiletter control sequences out of 15000+600000
+ 8500 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,6n,31p,167b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,4n,31p,244b,369s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on main.pdf (5 pages, 46627 bytes).
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+Output written on main.pdf (21 pages, 61414 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
- 28 named destinations out of 1000 (max. 500000)
- 185 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 630 PDF objects out of 1000 (max. 8388607)
+ 599 compressed objects within 6 object streams
+ 128 named destinations out of 1000 (max. 500000)
+ 769 words of extra memory for PDF output out of 10000 (max. 10000000)
 

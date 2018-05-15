@@ -1,0 +1,14 @@
+\BOOKMARK [0][-]{chapter.1}{Patrol Base Operations as Secure State Machines}{}% 1
+\BOOKMARK [1][-]{section.1.1}{ssmPB: An Example from the Hierarchy}{chapter.1}% 2
+\BOOKMARK [2][-]{subsection.1.1.1}{Principals}{section.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.1.2}{States}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.3}{Commands}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.4}{Next-State Function}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.5}{Next-Output Function}{section.1.1}% 7
+\BOOKMARK [2][-]{subsection.1.1.6}{Authentication}{section.1.1}% 8
+\BOOKMARK [2][-]{subsection.1.1.7}{Authorization}{section.1.1}% 9
+\BOOKMARK [2][-]{subsection.1.1.8}{Proved Theorems}{section.1.1}% 10
+\BOOKMARK [3][-]{subsubsection.1.1.8.1}{Platoon Leader Is Trusted on plCommands}{subsection.1.1.8}% 11
+\BOOKMARK [1][-]{section.1.2}{Other Variations}{chapter.1}% 12
+\BOOKMARK [2][-]{subsection.1.2.1}{ssmPlanPB: Non-sequential Transitions}{section.1.2}% 13
+\BOOKMARK [2][-]{subsection.1.2.2}{ssmConductORP: Principals authorized for Subsets of Commands}{section.1.2}% 14

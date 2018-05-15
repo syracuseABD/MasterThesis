@@ -1,23 +1,96 @@
-\contentsline {section}{Abstract}{1}{chapter*.1}
-\contentsline {section}{List of Figures}{1}{chapter*.1}
-\contentsline {section}{List of Tables}{1}{chapter*.1}
-\contentsline {section}{List of Acronyms}{1}{chapter*.1}
-\contentsline {chapter}{\numberline {1}Patrol Base Operations}{3}{chapter.1}
-\contentsline {section}{\numberline {1.1}Motivation}{4}{section.1.1}
-\contentsline {section}{\numberline {1.2}Ranger Handbook Description}{4}{section.1.2}
-\contentsline {section}{\numberline {1.3}Describing The Patrol Base Operations}{4}{section.1.3}
-\contentsline {section}{\numberline {1.4}Hierarchy of Secure State Machines}{4}{section.1.4}
-\contentsline {subsection}{\numberline {1.4.1}OMNI-Level}{4}{subsection.1.4.1}
-\contentsline {subsection}{\numberline {1.4.2}Escape}{4}{subsection.1.4.2}
-\contentsline {subsection}{\numberline {1.4.3}Top Level}{4}{subsection.1.4.3}
-\contentsline {subsection}{\numberline {1.4.4}Horizontal Slice}{4}{subsection.1.4.4}
-\contentsline {subsubsection}{\numberline {1.4.4.1}ssmPlanPB}{4}{subsubsection.1.4.4.1}
-\contentsline {subsubsection}{\numberline {1.4.4.2}ssmMoveToORP}{4}{subsubsection.1.4.4.2}
-\contentsline {subsubsection}{\numberline {1.4.4.3}ssmConductORP}{4}{subsubsection.1.4.4.3}
-\contentsline {subsubsection}{\numberline {1.4.4.4}ssmMoveToPB}{4}{subsubsection.1.4.4.4}
-\contentsline {subsubsection}{\numberline {1.4.4.5}ssmConductPB}{4}{subsubsection.1.4.4.5}
-\contentsline {subsection}{\numberline {1.4.5}Vertical Slice}{4}{subsection.1.4.5}
-\contentsline {subsubsection}{\numberline {1.4.5.1}ssmSecureHalt}{4}{subsubsection.1.4.5.1}
-\contentsline {subsubsection}{\numberline {1.4.5.2}ssmORPRecon}{4}{subsubsection.1.4.5.2}
-\contentsline {subsubsection}{\numberline {1.4.5.3}ssmMoveToORP4L}{4}{subsubsection.1.4.5.3}
-\contentsline {subsubsection}{\numberline {1.4.5.4}ssmFormRT}{4}{subsubsection.1.4.5.4}
+\contentsline {section}{Abstract}{4}{chapter*.4}
+\contentsline {chapter}{List of Figures}{5}{section*.5}
+\contentsline {chapter}{List of Tables}{5}{section*.6}
+\contentsline {section}{List of Acronyms}{5}{section*.7}
+\contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}
+\contentsline {chapter}{\numberline {2}Background}{8}{chapter.2}
+\contentsline {chapter}{\numberline {3}Systems Security Engineering}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}NIST Special Publication 800-160}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}Verification \& Documentation}{9}{section.3.2}
+\contentsline {section}{\numberline {3.3}Principle of Complete Mediation}{9}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Formal Verification Using Computer-Aided Reasoning}{9}{subsection.3.3.1}
+\contentsline {chapter}{\numberline {4}Certified Security by Design (CSBD) \& Access-Control Logic (ACL)}{10}{chapter.4}
+\contentsline {section}{\numberline {4.1}Certified Security by Design (CSBD)}{11}{section.4.1}
+\contentsline {section}{\numberline {4.2}Access-Control Logic (ACL)}{11}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Principals}{11}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Well-formed Formulas Formulas}{11}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Kripke Structure}{11}{subsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.3.1}satisies}{11}{subsubsection.4.2.3.1}
+\contentsline {subsubsection}{\numberline {4.2.3.2}soundness}{11}{subsubsection.4.2.3.2}
+\contentsline {subsection}{\numberline {4.2.4}Well formed statements}{11}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Inference Rules}{11}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}Complete mediation}{11}{subsection.4.2.6}
+\contentsline {section}{\numberline {4.3}ACL in HOL}{11}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}satList}{11}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Complete Mediation}{11}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Patrol Base Operations}{12}{chapter.5}
+\contentsline {section}{\numberline {5.1}Motivation}{13}{section.5.1}
+\contentsline {section}{\numberline {5.2}Ranger Handbook Description}{13}{section.5.2}
+\contentsline {section}{\numberline {5.3}Describing The Patrol Base Operations}{13}{section.5.3}
+\contentsline {section}{\numberline {5.4}Hierarchy of Secure State Machines}{13}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}OMNI-Level}{13}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Escape}{13}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Top Level}{13}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Horizontal Slice}{13}{subsection.5.4.4}
+\contentsline {subsubsection}{\numberline {5.4.4.1}ssmPlanPB}{13}{subsubsection.5.4.4.1}
+\contentsline {subsubsection}{\numberline {5.4.4.2}ssmMoveToORP}{13}{subsubsection.5.4.4.2}
+\contentsline {subsubsection}{\numberline {5.4.4.3}ssmConductORP}{13}{subsubsection.5.4.4.3}
+\contentsline {subsubsection}{\numberline {5.4.4.4}ssmMoveToPB}{13}{subsubsection.5.4.4.4}
+\contentsline {subsubsection}{\numberline {5.4.4.5}ssmConductPB}{13}{subsubsection.5.4.4.5}
+\contentsline {subsection}{\numberline {5.4.5}Vertical Slice}{13}{subsection.5.4.5}
+\contentsline {subsubsection}{\numberline {5.4.5.1}ssmSecureHalt}{13}{subsubsection.5.4.5.1}
+\contentsline {subsubsection}{\numberline {5.4.5.2}ssmORPRecon}{13}{subsubsection.5.4.5.2}
+\contentsline {subsubsection}{\numberline {5.4.5.3}ssmMoveToORP4L}{13}{subsubsection.5.4.5.3}
+\contentsline {subsubsection}{\numberline {5.4.5.4}ssmFormRT}{13}{subsubsection.5.4.5.4}
+\contentsline {chapter}{\numberline {6}Secure State Machine Model}{14}{chapter.6}
+\contentsline {section}{\numberline {6.1}State Machines}{15}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Next-state Function}{15}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Next-output Function}{15}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Transition Commands}{15}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.2}Secure State Machines}{15}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}State Machine Versus Secure State Machine}{15}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Transition Types}{15}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Authentication}{15}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}Authorization}{15}{subsection.6.2.4}
+\contentsline {section}{\numberline {6.3}Secure State Machines in HOL}{15}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Parameterizable Secure State Machine}{15}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Parameterization}{15}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Configurations: five parts}{15}{subsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.3.1}State Interpretation}{15}{subsubsection.6.3.3.1}
+\contentsline {subsubsection}{\numberline {6.3.3.2}Security context}{15}{subsubsection.6.3.3.2}
+\contentsline {subsubsection}{\numberline {6.3.3.3}Input stream}{15}{subsubsection.6.3.3.3}
+\contentsline {subsubsection}{\numberline {6.3.3.4}State}{15}{subsubsection.6.3.3.4}
+\contentsline {subsubsection}{\numberline {6.3.3.5}Output stream}{15}{subsubsection.6.3.3.5}
+\contentsline {subsection}{\numberline {6.3.4}Authentication}{15}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5}Configuration Interpretation}{15}{subsection.6.3.5}
+\contentsline {subsection}{\numberline {6.3.6}Transition Definitions}{15}{subsection.6.3.6}
+\contentsline {chapter}{\numberline {7}Patrol Base Operations as Secure State Machines}{16}{chapter.7}
+\contentsline {section}{\numberline {7.1}ssmPB: An Example from the Hierarchy}{16}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Principals}{16}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}States}{16}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Commands}{16}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Next-State Function}{16}{subsection.7.1.4}
+\contentsline {subsection}{\numberline {7.1.5}Next-Output Function}{16}{subsection.7.1.5}
+\contentsline {subsection}{\numberline {7.1.6}Authentication}{16}{subsection.7.1.6}
+\contentsline {subsection}{\numberline {7.1.7}Authorization}{16}{subsection.7.1.7}
+\contentsline {subsection}{\numberline {7.1.8}Proved Theorems}{16}{subsection.7.1.8}
+\contentsline {subsubsection}{\numberline {7.1.8.1}Platoon Leader Is Trusted on plCommands}{16}{subsubsection.7.1.8.1}
+\contentsline {section}{\numberline {7.2}Other Variations}{16}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}ssmPlanPB: Non-sequential Transitions}{16}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}ssmConductORP: Principals Authorized for Subsets of Commands}{16}{subsection.7.2.2}
+\contentsline {chapter}{\numberline {8}Discussion}{17}{chapter.8}
+\contentsline {section}{\numberline {8.1}Recap}{17}{section.8.1}
+\contentsline {section}{\numberline {8.2}Mission Accomplished}{17}{section.8.2}
+\contentsline {section}{\numberline {8.3}Stop-Gaps, Lessons Learned, \& Advice}{17}{section.8.3}
+\contentsline {section}{\numberline {8.4}Other Verifiable Theories}{17}{section.8.4}
+\contentsline {subsection}{\numberline {8.4.1}Platoon Theory, Soldier Theory, Squad Theory, etc.}{17}{subsection.8.4.1}
+\contentsline {subsection}{\numberline {8.4.2}Soldiers in Roles}{17}{subsection.8.4.2}
+\contentsline {chapter}{\numberline {9}Future Work \& Implications}{18}{chapter.9}
+\contentsline {section}{\numberline {9.1}The Devil Is in The Details}{18}{section.9.1}
+\contentsline {section}{\numberline {9.2}Accountability Systems}{18}{section.9.2}
+\contentsline {section}{\numberline {9.3}Applicability }{18}{section.9.3}
+\contentsline {chapter}{\numberline {10}Appendices}{19}{chapter.10}
+\contentsline {section}{\numberline {.1}Access Control Logic Theories in HOL}{19}{section.Alph0.1}
+\contentsline {section}{\numberline {.2}Secure State Machine Theories Applied to Patrol Base Operations}{19}{section.Alph0.2}
+\contentsline {section}{\numberline {.3}Pretty-Printed Theories}{19}{section.Alph0.3}
+\contentsline {section}{\numberline {.4}Map of The File Folder Structure}{19}{section.Alph0.4}

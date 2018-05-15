@@ -1,5 +1,5 @@
 %exploring
-\documentclass[12pt]{report}
+\documentclass[12pt,a4paper]{report}
 
 
 %%Links
@@ -12,24 +12,48 @@
 %\usepackage{unnumberedtotoc}
 
 \setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{3}
+\setcounter{tocdepth}{4}
+
+
+%% Style
+\renewcommand{\contentsname}{Table Of Contents}
 
 \begin{document}
 \title{Main. Master Thesis}
 \author{Lori Pickering}
-\maketitle
+
+
+\subfile{../frontMatter/abstract/abstract}
+\subfile{../frontMatter/frontMatter}
 
 \tableofcontents
 \addcontentsline{toc}{section}{Abstract}
-\addcontentsline{toc}{section}{List of Figures}
-\addcontentsline{toc}{section}{List of Tables}
+\cleardoublepage \phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\cleardoublepage \phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+\cleardoublepage \phantomsection
 \addcontentsline{toc}{section}{List of Acronyms}
 
-
-\subfile{../frontMatter/listOfFigures/listOfFigures}
-\subfile{../frontMatter/listOfTables/listOfTables}
+\listoffigures
+\listoftables
+%\subfile{../frontMatter/listOfFigures/listOfFigures}
+%\subfile{../frontMatter/listOfTables/listOfTables}
 \subfile{../frontMatter/listOfAcronyms/listOfAcronyms}
 
-\subfile{../chapters/pb/pb}
+\subfile{../chapters/introduction/introduction}
+\subfile{../chapters/background/background}
 
+\subfile{../chapters/sse/sse}
+\subfile{../chapters/csbd_acl/csbd_acl}
+\subfile{../chapters/pb/pb}
+\subfile{../chapters/ssms/ssms}
+\subfile{../chapters/pbssm/pbssm}
+\subfile{../chapters/discussion/discussion}
+\subfile{../chapters/future/future}
+\subfile{../appendices/appendices}
+
+
+\bibliographystyle{plain}
+\bibliography{mtref}
 \end{document}
