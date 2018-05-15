@@ -2,12 +2,34 @@
 \documentclass[12pt]{report}
 
 
+%%Links
+\usepackage{hyperref}
 
+
+%%Section numbering
+\usepackage{subfiles}
+\usepackage{blindtext}
+%\usepackage{unnumberedtotoc}
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
 
 \begin{document}
 \title{Main. Master Thesis}
 \author{Lori Pickering}
 \maketitle
 
+\tableofcontents
+\addcontentsline{toc}{section}{Abstract}
+\addcontentsline{toc}{section}{List of Figures}
+\addcontentsline{toc}{section}{List of Tables}
+\addcontentsline{toc}{section}{List of Acronyms}
+
+
+\subfile{../frontMatter/listOfFigures/listOfFigures}
+\subfile{../frontMatter/listOfTables/listOfTables}
+\subfile{../frontMatter/listOfAcronyms/listOfAcronyms}
+
+\subfile{../chapters/pb/pb}
 
 \end{document}
