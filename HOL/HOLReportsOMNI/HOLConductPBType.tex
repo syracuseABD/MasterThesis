@@ -1,0 +1,85 @@
+\newcommand{\HOLConductPBTypeDate}{13 May 2018}
+\newcommand{\HOLConductPBTypeTime}{18:23}
+\begin{SaveVerbatim}{HOLConductPBTypeDatatypesplCommandPB}
+\HOLFreeVar{plCommandPB} = \HOLConst{securePB} \HOLTokenBar{} \HOLConst{withdrawPB} \HOLTokenBar{} \HOLConst{completePB}
+            \HOLTokenBar{} \HOLConst{plIncompletePB}
+\end{SaveVerbatim}
+\newcommand{\HOLConductPBTypeDatatypesplCommandPB}{\UseVerbatim{HOLConductPBTypeDatatypesplCommandPB}}
+\begin{SaveVerbatim}{HOLConductPBTypeDatatypespsgCommandPB}
+\HOLFreeVar{psgCommandPB} = \HOLConst{actionsInPB} \HOLTokenBar{} \HOLConst{psgIncompletePB}
+\end{SaveVerbatim}
+\newcommand{\HOLConductPBTypeDatatypespsgCommandPB}{\UseVerbatim{HOLConductPBTypeDatatypespsgCommandPB}}
+\begin{SaveVerbatim}{HOLConductPBTypeDatatypesslCommand}
+\HOLFreeVar{slCommand} = \HOLConst{PL} \HOLTyOp{plCommandPB} \HOLTokenBar{} \HOLConst{PSG} \HOLTyOp{psgCommandPB}
+\end{SaveVerbatim}
+\newcommand{\HOLConductPBTypeDatatypesslCommand}{\UseVerbatim{HOLConductPBTypeDatatypesslCommand}}
+\begin{SaveVerbatim}{HOLConductPBTypeDatatypesslOutput}
+\HOLFreeVar{slOutput} = \HOLConst{ConductPB} \HOLTokenBar{} \HOLConst{SecurePB} \HOLTokenBar{} \HOLConst{ActionsInPB} \HOLTokenBar{} \HOLConst{WithdrawPB}
+         \HOLTokenBar{} \HOLConst{CompletePB} \HOLTokenBar{} \HOLConst{unAuthenticated} \HOLTokenBar{} \HOLConst{unAuthorized}
+\end{SaveVerbatim}
+\newcommand{\HOLConductPBTypeDatatypesslOutput}{\UseVerbatim{HOLConductPBTypeDatatypesslOutput}}
+\begin{SaveVerbatim}{HOLConductPBTypeDatatypesslState}
+\HOLFreeVar{slState} = \HOLConst{CONDUCT_PB} \HOLTokenBar{} \HOLConst{SECURE_PB} \HOLTokenBar{} \HOLConst{ACTIONS_IN_PB} \HOLTokenBar{} \HOLConst{WITHDRAW_PB}
+        \HOLTokenBar{} \HOLConst{COMPLETE_PB}
+\end{SaveVerbatim}
+\newcommand{\HOLConductPBTypeDatatypesslState}{\UseVerbatim{HOLConductPBTypeDatatypesslState}}
+\begin{SaveVerbatim}{HOLConductPBTypeDatatypesstateRole}
+\HOLFreeVar{stateRole} = \HOLConst{PlatoonLeader} \HOLTokenBar{} \HOLConst{PlatoonSergeant}
+\end{SaveVerbatim}
+\newcommand{\HOLConductPBTypeDatatypesstateRole}{\UseVerbatim{HOLConductPBTypeDatatypesstateRole}}
+\newcommand{\HOLConductPBTypeDatatypes}{
+\HOLConductPBTypeDatatypesplCommandPB\HOLConductPBTypeDatatypespsgCommandPB\HOLConductPBTypeDatatypesslCommand\HOLConductPBTypeDatatypesslOutput\HOLConductPBTypeDatatypesslState\HOLConductPBTypeDatatypesstateRole}
+\begin{SaveVerbatim}{HOLConductPBTypeTheoremsplCommandPBXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{securePB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{withdrawPB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{securePB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{completePB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{securePB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{plIncompletePB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{withdrawPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{completePB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{withdrawPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{plIncompletePB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{completePB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{plIncompletePB}
+\end{SaveVerbatim}
+\newcommand{\HOLConductPBTypeTheoremsplCommandPBXXdistinctXXclauses}{\UseVerbatim{HOLConductPBTypeTheoremsplCommandPBXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLConductPBTypeTheoremspsgCommandPBXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{actionsInPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{psgIncompletePB}
+\end{SaveVerbatim}
+\newcommand{\HOLConductPBTypeTheoremspsgCommandPBXXdistinctXXclauses}{\UseVerbatim{HOLConductPBTypeTheoremspsgCommandPBXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLConductPBTypeTheoremsslCommandXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sp{\prime}} \HOLBoundVar{a}. \HOLConst{PL} \HOLBoundVar{a} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PSG} \HOLBoundVar{a\sp{\prime}}
+\end{SaveVerbatim}
+\newcommand{\HOLConductPBTypeTheoremsslCommandXXdistinctXXclauses}{\UseVerbatim{HOLConductPBTypeTheoremsslCommandXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLConductPBTypeTheoremsslCommandXXoneXXone}
+\HOLTokenTurnstile{} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a} \HOLBoundVar{a\sp{\prime}}. (\HOLConst{PL} \HOLBoundVar{a} \HOLSymConst{=} \HOLConst{PL} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}} (\HOLBoundVar{a} \HOLSymConst{=} \HOLBoundVar{a\sp{\prime}})) \HOLSymConst{\HOLTokenConj{}}
+   \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a} \HOLBoundVar{a\sp{\prime}}. (\HOLConst{PSG} \HOLBoundVar{a} \HOLSymConst{=} \HOLConst{PSG} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}} (\HOLBoundVar{a} \HOLSymConst{=} \HOLBoundVar{a\sp{\prime}})
+\end{SaveVerbatim}
+\newcommand{\HOLConductPBTypeTheoremsslCommandXXoneXXone}{\UseVerbatim{HOLConductPBTypeTheoremsslCommandXXoneXXone}}
+\begin{SaveVerbatim}{HOLConductPBTypeTheoremsslOutputXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{ConductPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{SecurePB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ConductPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ActionsInPB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ConductPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{WithdrawPB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ConductPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ConductPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ConductPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{SecurePB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ActionsInPB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{SecurePB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{WithdrawPB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{SecurePB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{SecurePB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{SecurePB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ActionsInPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{WithdrawPB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ActionsInPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ActionsInPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ActionsInPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{WithdrawPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{WithdrawPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}} \HOLConst{WithdrawPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{CompletePB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}} \HOLConst{CompletePB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized}
+\end{SaveVerbatim}
+\newcommand{\HOLConductPBTypeTheoremsslOutputXXdistinctXXclauses}{\UseVerbatim{HOLConductPBTypeTheoremsslOutputXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLConductPBTypeTheoremsslRoleXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{PlatoonLeader} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PlatoonSergeant}
+\end{SaveVerbatim}
+\newcommand{\HOLConductPBTypeTheoremsslRoleXXdistinctXXclauses}{\UseVerbatim{HOLConductPBTypeTheoremsslRoleXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLConductPBTypeTheoremsslStateXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{CONDUCT_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{SECURE_PB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{CONDUCT_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ACTIONS_IN_PB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{CONDUCT_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{WITHDRAW_PB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{CONDUCT_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{SECURE_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ACTIONS_IN_PB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{SECURE_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{WITHDRAW_PB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{SECURE_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ACTIONS_IN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{WITHDRAW_PB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ACTIONS_IN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{WITHDRAW_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PB}
+\end{SaveVerbatim}
+\newcommand{\HOLConductPBTypeTheoremsslStateXXdistinctXXclauses}{\UseVerbatim{HOLConductPBTypeTheoremsslStateXXdistinctXXclauses}}
+\newcommand{\HOLConductPBTypeTheorems}{
+\HOLThmTag{ConductPBType}{plCommandPB_distinct_clauses}\HOLConductPBTypeTheoremsplCommandPBXXdistinctXXclauses
+\HOLThmTag{ConductPBType}{psgCommandPB_distinct_clauses}\HOLConductPBTypeTheoremspsgCommandPBXXdistinctXXclauses
+\HOLThmTag{ConductPBType}{slCommand_distinct_clauses}\HOLConductPBTypeTheoremsslCommandXXdistinctXXclauses
+\HOLThmTag{ConductPBType}{slCommand_one_one}\HOLConductPBTypeTheoremsslCommandXXoneXXone
+\HOLThmTag{ConductPBType}{slOutput_distinct_clauses}\HOLConductPBTypeTheoremsslOutputXXdistinctXXclauses
+\HOLThmTag{ConductPBType}{slRole_distinct_clauses}\HOLConductPBTypeTheoremsslRoleXXdistinctXXclauses
+\HOLThmTag{ConductPBType}{slState_distinct_clauses}\HOLConductPBTypeTheoremsslStateXXdistinctXXclauses
+}

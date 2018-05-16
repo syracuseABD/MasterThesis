@@ -1,0 +1,63 @@
+\documentclass[11pt, twoside]{article}
+\usepackage{holtex}
+
+\makeindex
+
+\begin{document}
+
+\input{HOLConductPBType}
+\input{HOLssmConductPB}
+
+\tableofcontents
+\cleardoublepage
+\HOLpagestyle
+
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+\section{ConductPBType Theory}
+\index{ConductPBType Theory@\textbf  {ConductPBType Theory}}
+\begin{flushleft}
+\textbf{Built:} \HOLConductPBTypeDate \\[2pt]
+\textbf{Parent Theories:} indexedLists, patternMatches
+\end{flushleft}
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+\subsection{Datatypes}
+\index{ConductPBType Theory@\textbf  {ConductPBType Theory}!Datatypes}
+% .....................................
+
+\HOLConductPBTypeDatatypes
+
+% No definitions
+
+\subsection{Theorems}
+\index{ConductPBType Theory@\textbf  {ConductPBType Theory}!Theorems}
+% .....................................
+
+\HOLConductPBTypeTheorems
+
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+\section{ssmConductPB Theory}
+\index{ssmConductPB Theory@\textbf  {ssmConductPB Theory}}
+\begin{flushleft}
+\textbf{Built:} \HOLssmConductPBDate \\[2pt]
+\textbf{Parent Theories:} ConductPBType, ssm11, OMNIType
+\end{flushleft}
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+% No datatypes
+
+\subsection{Definitions}
+\index{ssmConductPB Theory@\textbf  {ssmConductPB Theory}!Definitions}
+% .....................................
+
+\HOLssmConductPBDefinitions
+
+\subsection{Theorems}
+\index{ssmConductPB Theory@\textbf  {ssmConductPB Theory}!Theorems}
+% .....................................
+
+\HOLssmConductPBTheorems
+
+\HOLindex
+
+\end{document}

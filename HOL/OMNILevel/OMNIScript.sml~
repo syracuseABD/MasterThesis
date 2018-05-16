@@ -1,0 +1,57 @@
+
+
+(******************************************************************************)
+(* OMNIScript								      *)
+(* Author: Lori Pickering                                                     *)
+(* Date: 10 May 2018                                                          *)
+(* This file is intended to allow for integration among the ssms.  The idea   *)
+(* is to provide an OMNI-level integrating theory, in the sense of a super-   *)
+(* conscious that knows when each ssm is complete and provides that info to   *)
+(* higher-level state machines.	      	 	      	       	    	      *)
+(******************************************************************************)
+
+
+structure OMNIScript = struct
+
+(* ==== Interactive Mode =====
+app load ["TypeBase","listTheory", "optionTheory",
+    	  "OMNITypeTheory",
+	  "acl_infRules","aclDrulesTheory","aclrulesTheory"];
+open TypeBase listTheory optionTheory
+     OMNITypeTheory
+     acl_infRules aclDrulesTheory aclrulesTheory
+ ====  End Interactive Mode ====  *)
+
+open HolKernel Parse boolLib bossLib;
+open TypeBase listTheory optionTheory
+open OMNITypeTheory
+open acl_infRules aclDrulesTheory aclrulesTheory
+
+val _ = new_theory "OMNI";
+(******************************************************************************)
+(* Define slCommands for OMNI.						      *)
+(******************************************************************************)
+(* ==== Area 52 ===========
+
+val _= 
+Datatype `omniCommand = ssmPlanPBComplete
+	 	    | ssmMoveToORPComplete
+		    | ssmConductORPComplete
+		    | ssmMoveToPBComplete
+		    | ssmConductPBComplete`
+
+val _=
+Datatype `slCommand = OMNI omniCommand`
+
+
+val omniAuthentication_def = 
+Define
+`(omniAuthentication
+	(Name Omni controls prop (cmd:((omniCommand command) option))
+	:((omniCommand command) option, principal, 'd,'e)Form) = T)` /\
+ (omniAuthentication _ = F)`
+
+ ========= End Area 52 ==== *)
+
+val _= export_theory();
+end

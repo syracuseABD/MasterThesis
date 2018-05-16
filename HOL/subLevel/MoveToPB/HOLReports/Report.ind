@@ -1,0 +1,27 @@
+\begin{theindex}
+
+  \item \textbf  {MoveToPBType Theory}, 3
+    \subitem Datatypes, 3
+    \subitem Theorems, 3
+      \subsubitem slCommand_distinct_clauses, 3
+      \subsubitem slOutput_distinct_clauses, 3
+      \subsubitem slState_distinct_clauses, 3
+
+  \indexspace
+
+  \item \textbf  {ssmMoveToPB Theory}, 3
+    \subitem Definitions, 4
+      \subsubitem secContextMoveToPB_def, 4
+      \subsubitem ssmMoveToPBStateInterp_def, 4
+    \subitem Theorems, 4
+      \subsubitem authTestMoveToPB_cmd_reject_lemma, 4
+      \subsubitem authTestMoveToPB_def, 4
+      \subsubitem authTestMoveToPB_ind, 5
+      \subsubitem moveToPBNS_def, 5
+      \subsubitem moveToPBNS_ind, 6
+      \subsubitem moveToPBOut_def, 6
+      \subsubitem moveToPBOut_ind, 7
+      \subsubitem PlatoonLeader_exec_slCommand_justified_thm, 7
+      \subsubitem PlatoonLeader_slCommand_lemma, 8
+
+\end{theindex}

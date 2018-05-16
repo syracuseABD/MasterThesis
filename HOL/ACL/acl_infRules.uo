@@ -1,0 +1,17 @@
+$(HOLDIR)/sigobj/HolKernel
+$(HOLDIR)/sigobj/Overlay
+$(HOLDIR)/sigobj/Parse
+$(HOLDIR)/sigobj/boolLib
+$(HOLDIR)/sigobj/bossLib
+$(HOLDIR)/sigobj/pred_setLib
+$(HOLDIR)/sigobj/pred_setSyntax
+$(HOLDIR)/sigobj/pred_setTheory
+$(HOLDIR)/sigobj/relationTheory
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ACL/aclDrulesTheory
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ACL/aclTermFuns
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ACL/acl_infRules
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ACL/acl_infRules
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ACL/aclfoundationTheory
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ACL/aclrulesTheory
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ACL/aclsemanticsTheory
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ACL/acl_infRules.sml

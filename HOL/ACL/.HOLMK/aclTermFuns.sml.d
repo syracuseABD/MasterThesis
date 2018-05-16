@@ -1,0 +1,1 @@
+aclTermFuns.uo: aclTermFuns.ui /usr/local/share/HOL/sigobj/HolKernel.ui /usr/local/share/HOL/sigobj/Parse.ui aclfoundationTheory.ui aclrulesTheory.ui aclsemanticsTheory.ui /usr/local/share/HOL/sigobj/boolLib.ui /usr/local/share/HOL/sigobj/bossLib.ui 

@@ -1,0 +1,249 @@
+\newcommand{\HOLPBIntegratedDefDate}{13 May 2018}
+\newcommand{\HOLPBIntegratedDefTime}{18:22}
+\begin{SaveVerbatim}{HOLPBIntegratedDefDefinitionssecAuthorizationXXdef}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs}. \HOLConst{secAuthorization} \HOLBoundVar{xs} \HOLSymConst{=} \HOLConst{secHelper} (\HOLConst{getOmniCommand} \HOLBoundVar{xs})
+\end{SaveVerbatim}
+\newcommand{\HOLPBIntegratedDefDefinitionssecAuthorizationXXdef}{\UseVerbatim{HOLPBIntegratedDefDefinitionssecAuthorizationXXdef}}
+\begin{SaveVerbatim}{HOLPBIntegratedDefDefinitionssecHelperXXdef}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{cmd}.
+     \HOLConst{secHelper} \HOLBoundVar{cmd} \HOLSymConst{=}
+     [\HOLConst{Name} \HOLConst{Omni} \HOLConst{controls} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLBoundVar{cmd})))]
+\end{SaveVerbatim}
+\newcommand{\HOLPBIntegratedDefDefinitionssecHelperXXdef}{\UseVerbatim{HOLPBIntegratedDefDefinitionssecHelperXXdef}}
+\newcommand{\HOLPBIntegratedDefDefinitions}{
+\HOLDfnTag{PBIntegratedDef}{secAuthorization_def}\HOLPBIntegratedDefDefinitionssecAuthorizationXXdef
+\HOLDfnTag{PBIntegratedDef}{secHelper_def}\HOLPBIntegratedDefDefinitionssecHelperXXdef
+}
+\begin{SaveVerbatim}{HOLPBIntegratedDefTheoremsgetOmniCommandXXdef}
+\HOLTokenTurnstile{} (\HOLConst{getOmniCommand} [] \HOLSymConst{=} \HOLConst{invalidOmniCommand}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{cmd}.
+      \HOLConst{getOmniCommand}
+        (\HOLConst{Name} \HOLConst{Omni} \HOLConst{controls} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLBoundVar{cmd})))\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLBoundVar{cmd}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs}. \HOLConst{getOmniCommand} (\HOLConst{TT}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs}. \HOLConst{getOmniCommand} (\HOLConst{FF}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{2}}}. \HOLConst{getOmniCommand} (\HOLConst{prop} \HOLBoundVar{v\sb{\mathrm{2}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{3}}}. \HOLConst{getOmniCommand} (\HOLConst{notf} \HOLBoundVar{v\sb{\mathrm{3}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{5}}} \HOLBoundVar{v\sb{\mathrm{4}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{4}}} \HOLConst{andf} \HOLBoundVar{v\sb{\mathrm{5}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{7}}} \HOLBoundVar{v\sb{\mathrm{6}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{6}}} \HOLConst{orf} \HOLBoundVar{v\sb{\mathrm{7}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{9}}} \HOLBoundVar{v\sb{\mathrm{8}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{8}}} \HOLConst{impf} \HOLBoundVar{v\sb{\mathrm{9}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{11}}} \HOLBoundVar{v\sb{\mathrm{10}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{eqf} \HOLBoundVar{v\sb{\mathrm{11}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{13}}} \HOLBoundVar{v\sb{\mathrm{12}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{12}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{13}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{15}}} \HOLBoundVar{v\sb{\mathrm{14}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{14}}} \HOLConst{speaks_for} \HOLBoundVar{v\sb{\mathrm{15}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLConst{TT}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLConst{FF}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v134}.
+      \HOLConst{getOmniCommand} (\HOLConst{Name} \HOLBoundVar{v134} \HOLConst{controls} \HOLConst{prop} \HOLConst{NONE}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v144}.
+      \HOLConst{getOmniCommand}
+        (\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{controls} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{v144})\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v146}.
+      \HOLConst{getOmniCommand}
+        (\HOLConst{Name} \HOLConst{Omni} \HOLConst{controls} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{ESCc} \HOLBoundVar{v146}))\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v150}.
+      \HOLConst{getOmniCommand}
+        (\HOLConst{Name} \HOLConst{Omni} \HOLConst{controls} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLBoundVar{v150})))\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{68}}} \HOLBoundVar{v136} \HOLBoundVar{v135}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v135} \HOLConst{meet} \HOLBoundVar{v136} \HOLConst{controls} \HOLConst{prop} \HOLBoundVar{v\sb{\mathrm{68}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{68}}} \HOLBoundVar{v138} \HOLBoundVar{v137}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v137} \HOLConst{quoting} \HOLBoundVar{v138} \HOLConst{controls} \HOLConst{prop} \HOLBoundVar{v\sb{\mathrm{68}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{69}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLConst{notf} \HOLBoundVar{v\sb{\mathrm{69}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{71}}} \HOLBoundVar{v\sb{\mathrm{70}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} (\HOLBoundVar{v\sb{\mathrm{70}}} \HOLConst{andf} \HOLBoundVar{v\sb{\mathrm{71}}})\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{73}}} \HOLBoundVar{v\sb{\mathrm{72}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} (\HOLBoundVar{v\sb{\mathrm{72}}} \HOLConst{orf} \HOLBoundVar{v\sb{\mathrm{73}}})\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{75}}} \HOLBoundVar{v\sb{\mathrm{74}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} (\HOLBoundVar{v\sb{\mathrm{74}}} \HOLConst{impf} \HOLBoundVar{v\sb{\mathrm{75}}})\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{77}}} \HOLBoundVar{v\sb{\mathrm{76}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} (\HOLBoundVar{v\sb{\mathrm{76}}} \HOLConst{eqf} \HOLBoundVar{v\sb{\mathrm{77}}})\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{79}}} \HOLBoundVar{v\sb{\mathrm{78}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{78}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{79}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{81}}} \HOLBoundVar{v\sb{\mathrm{80}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{80}}} \HOLConst{speaks_for} \HOLBoundVar{v\sb{\mathrm{81}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{83}}} \HOLBoundVar{v\sb{\mathrm{82}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{82}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{83}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{86}}} \HOLBoundVar{v\sb{\mathrm{85}}} \HOLBoundVar{v\sb{\mathrm{84}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLConst{reps} \HOLBoundVar{v\sb{\mathrm{84}}} \HOLBoundVar{v\sb{\mathrm{85}}} \HOLBoundVar{v\sb{\mathrm{86}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{88}}} \HOLBoundVar{v\sb{\mathrm{87}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{87}}} \HOLConst{domi} \HOLBoundVar{v\sb{\mathrm{88}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{90}}} \HOLBoundVar{v\sb{\mathrm{89}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{89}}} \HOLConst{eqi} \HOLBoundVar{v\sb{\mathrm{90}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{92}}} \HOLBoundVar{v\sb{\mathrm{91}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{91}}} \HOLConst{doms} \HOLBoundVar{v\sb{\mathrm{92}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{94}}} \HOLBoundVar{v\sb{\mathrm{93}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{93}}} \HOLConst{eqs} \HOLBoundVar{v\sb{\mathrm{94}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{96}}} \HOLBoundVar{v\sb{\mathrm{95}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{95}}} \HOLConst{eqn} \HOLBoundVar{v\sb{\mathrm{96}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{98}}} \HOLBoundVar{v\sb{\mathrm{97}}} \HOLBoundVar{v\sb{\mathrm{16}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{97}}} \HOLConst{lte} \HOLBoundVar{v\sb{\mathrm{98}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{99}}} \HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v100}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{99}}} \HOLConst{lt} \HOLBoundVar{v100}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{20}}} \HOLBoundVar{v\sb{\mathrm{19}}} \HOLBoundVar{v\sb{\mathrm{18}}}.
+      \HOLConst{getOmniCommand} (\HOLConst{reps} \HOLBoundVar{v\sb{\mathrm{18}}} \HOLBoundVar{v\sb{\mathrm{19}}} \HOLBoundVar{v\sb{\mathrm{20}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=}
+      \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{22}}} \HOLBoundVar{v\sb{\mathrm{21}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{21}}} \HOLConst{domi} \HOLBoundVar{v\sb{\mathrm{22}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{24}}} \HOLBoundVar{v\sb{\mathrm{23}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{23}}} \HOLConst{eqi} \HOLBoundVar{v\sb{\mathrm{24}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{26}}} \HOLBoundVar{v\sb{\mathrm{25}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{25}}} \HOLConst{doms} \HOLBoundVar{v\sb{\mathrm{26}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{28}}} \HOLBoundVar{v\sb{\mathrm{27}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{27}}} \HOLConst{eqs} \HOLBoundVar{v\sb{\mathrm{28}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{30}}} \HOLBoundVar{v\sb{\mathrm{29}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{29}}} \HOLConst{eqn} \HOLBoundVar{v\sb{\mathrm{30}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{32}}} \HOLBoundVar{v\sb{\mathrm{31}}}.
+      \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{31}}} \HOLConst{lte} \HOLBoundVar{v\sb{\mathrm{32}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{34}}} \HOLBoundVar{v\sb{\mathrm{33}}}.
+     \HOLConst{getOmniCommand} (\HOLBoundVar{v\sb{\mathrm{33}}} \HOLConst{lt} \HOLBoundVar{v\sb{\mathrm{34}}}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getOmniCommand} \HOLBoundVar{xs}
+\end{SaveVerbatim}
+\newcommand{\HOLPBIntegratedDefTheoremsgetOmniCommandXXdef}{\UseVerbatim{HOLPBIntegratedDefTheoremsgetOmniCommandXXdef}}
+\begin{SaveVerbatim}{HOLPBIntegratedDefTheoremsgetOmniCommandXXind}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{P}.
+     \HOLBoundVar{P} [] \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{cmd} \HOLBoundVar{xs}.
+        \HOLBoundVar{P}
+          (\HOLConst{Name} \HOLConst{Omni} \HOLConst{controls} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLBoundVar{cmd})))\HOLSymConst{::}
+               \HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLConst{TT}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLConst{FF}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{2}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLConst{prop} \HOLBoundVar{v\sb{\mathrm{2}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{3}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLConst{notf} \HOLBoundVar{v\sb{\mathrm{3}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{4}}} \HOLBoundVar{v\sb{\mathrm{5}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{4}}} \HOLConst{andf} \HOLBoundVar{v\sb{\mathrm{5}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{6}}} \HOLBoundVar{v\sb{\mathrm{7}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{6}}} \HOLConst{orf} \HOLBoundVar{v\sb{\mathrm{7}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{8}}} \HOLBoundVar{v\sb{\mathrm{9}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{8}}} \HOLConst{impf} \HOLBoundVar{v\sb{\mathrm{9}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{11}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{eqf} \HOLBoundVar{v\sb{\mathrm{11}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{12}}} \HOLBoundVar{v\sb{\mathrm{13}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{12}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{13}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{14}}} \HOLBoundVar{v\sb{\mathrm{15}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{14}}} \HOLConst{speaks_for} \HOLBoundVar{v\sb{\mathrm{15}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLConst{TT}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLConst{FF}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v134} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLConst{Name} \HOLBoundVar{v134} \HOLConst{controls} \HOLConst{prop} \HOLConst{NONE}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v144} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}}
+        \HOLBoundVar{P} (\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{controls} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{v144})\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v146} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}}
+        \HOLBoundVar{P} (\HOLConst{Name} \HOLConst{Omni} \HOLConst{controls} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{ESCc} \HOLBoundVar{v146}))\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v150} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}}
+        \HOLBoundVar{P}
+          (\HOLConst{Name} \HOLConst{Omni} \HOLConst{controls} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLBoundVar{v150})))\HOLSymConst{::}
+               \HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v135} \HOLBoundVar{v136} \HOLBoundVar{v\sb{\mathrm{68}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v135} \HOLConst{meet} \HOLBoundVar{v136} \HOLConst{controls} \HOLConst{prop} \HOLBoundVar{v\sb{\mathrm{68}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v137} \HOLBoundVar{v138} \HOLBoundVar{v\sb{\mathrm{68}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v137} \HOLConst{quoting} \HOLBoundVar{v138} \HOLConst{controls} \HOLConst{prop} \HOLBoundVar{v\sb{\mathrm{68}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{69}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLConst{notf} \HOLBoundVar{v\sb{\mathrm{69}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{70}}} \HOLBoundVar{v\sb{\mathrm{71}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} (\HOLBoundVar{v\sb{\mathrm{70}}} \HOLConst{andf} \HOLBoundVar{v\sb{\mathrm{71}}})\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{72}}} \HOLBoundVar{v\sb{\mathrm{73}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} (\HOLBoundVar{v\sb{\mathrm{72}}} \HOLConst{orf} \HOLBoundVar{v\sb{\mathrm{73}}})\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{74}}} \HOLBoundVar{v\sb{\mathrm{75}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} (\HOLBoundVar{v\sb{\mathrm{74}}} \HOLConst{impf} \HOLBoundVar{v\sb{\mathrm{75}}})\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{76}}} \HOLBoundVar{v\sb{\mathrm{77}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} (\HOLBoundVar{v\sb{\mathrm{76}}} \HOLConst{eqf} \HOLBoundVar{v\sb{\mathrm{77}}})\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{78}}} \HOLBoundVar{v\sb{\mathrm{79}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{78}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{79}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{80}}} \HOLBoundVar{v\sb{\mathrm{81}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{80}}} \HOLConst{speaks_for} \HOLBoundVar{v\sb{\mathrm{81}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{82}}} \HOLBoundVar{v\sb{\mathrm{83}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{82}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{83}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{84}}} \HOLBoundVar{v\sb{\mathrm{85}}} \HOLBoundVar{v\sb{\mathrm{86}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLConst{reps} \HOLBoundVar{v\sb{\mathrm{84}}} \HOLBoundVar{v\sb{\mathrm{85}}} \HOLBoundVar{v\sb{\mathrm{86}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{87}}} \HOLBoundVar{v\sb{\mathrm{88}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{87}}} \HOLConst{domi} \HOLBoundVar{v\sb{\mathrm{88}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{89}}} \HOLBoundVar{v\sb{\mathrm{90}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{89}}} \HOLConst{eqi} \HOLBoundVar{v\sb{\mathrm{90}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{91}}} \HOLBoundVar{v\sb{\mathrm{92}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{91}}} \HOLConst{doms} \HOLBoundVar{v\sb{\mathrm{92}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{93}}} \HOLBoundVar{v\sb{\mathrm{94}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{93}}} \HOLConst{eqs} \HOLBoundVar{v\sb{\mathrm{94}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{95}}} \HOLBoundVar{v\sb{\mathrm{96}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{95}}} \HOLConst{eqn} \HOLBoundVar{v\sb{\mathrm{96}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{97}}} \HOLBoundVar{v\sb{\mathrm{98}}} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{97}}} \HOLConst{lte} \HOLBoundVar{v\sb{\mathrm{98}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{99}}} \HOLBoundVar{v100} \HOLBoundVar{xs}.
+        \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{16}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{99}}} \HOLConst{lt} \HOLBoundVar{v100}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{18}}} \HOLBoundVar{v\sb{\mathrm{19}}} \HOLBoundVar{v\sb{\mathrm{20}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLConst{reps} \HOLBoundVar{v\sb{\mathrm{18}}} \HOLBoundVar{v\sb{\mathrm{19}}} \HOLBoundVar{v\sb{\mathrm{20}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{21}}} \HOLBoundVar{v\sb{\mathrm{22}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{21}}} \HOLConst{domi} \HOLBoundVar{v\sb{\mathrm{22}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{23}}} \HOLBoundVar{v\sb{\mathrm{24}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{23}}} \HOLConst{eqi} \HOLBoundVar{v\sb{\mathrm{24}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{25}}} \HOLBoundVar{v\sb{\mathrm{26}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{25}}} \HOLConst{doms} \HOLBoundVar{v\sb{\mathrm{26}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{27}}} \HOLBoundVar{v\sb{\mathrm{28}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{27}}} \HOLConst{eqs} \HOLBoundVar{v\sb{\mathrm{28}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{29}}} \HOLBoundVar{v\sb{\mathrm{30}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{29}}} \HOLConst{eqn} \HOLBoundVar{v\sb{\mathrm{30}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{31}}} \HOLBoundVar{v\sb{\mathrm{32}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{31}}} \HOLConst{lte} \HOLBoundVar{v\sb{\mathrm{32}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{33}}} \HOLBoundVar{v\sb{\mathrm{34}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{33}}} \HOLConst{lt} \HOLBoundVar{v\sb{\mathrm{34}}}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenImp{}}
+     \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v}. \HOLBoundVar{P} \HOLBoundVar{v}
+\end{SaveVerbatim}
+\newcommand{\HOLPBIntegratedDefTheoremsgetOmniCommandXXind}{\UseVerbatim{HOLPBIntegratedDefTheoremsgetOmniCommandXXind}}
+\begin{SaveVerbatim}{HOLPBIntegratedDefTheoremssecContextXXdef}
+\HOLTokenTurnstile{} (\HOLConst{secContext} \HOLConst{PLAN_PB} (\HOLFreeVar{x}\HOLSymConst{::}\HOLFreeVar{xs}) \HOLSymConst{=}
+    [\HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmPlanPBComplete}))) \HOLConst{impf}
+     \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{controls}
+     \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{crossLD})))]) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{secContext} \HOLConst{MOVE_TO_ORP} (\HOLFreeVar{x}\HOLSymConst{::}\HOLFreeVar{xs}) \HOLSymConst{=}
+    [\HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmMoveToORPComplete}))) \HOLConst{impf}
+     \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{controls}
+     \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{conductORP})))]) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{secContext} \HOLConst{CONDUCT_ORP} (\HOLFreeVar{x}\HOLSymConst{::}\HOLFreeVar{xs}) \HOLSymConst{=}
+    [\HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmConductORPComplete}))) \HOLConst{impf}
+     \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{controls}
+     \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{moveToPB})))]) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{secContext} \HOLConst{MOVE_TO_PB} (\HOLFreeVar{x}\HOLSymConst{::}\HOLFreeVar{xs}) \HOLSymConst{=}
+    [\HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmMoveToPBComplete}))) \HOLConst{impf}
+     \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{controls}
+     \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{conductPB})))]) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{secContext} \HOLConst{CONDUCT_PB} (\HOLFreeVar{x}\HOLSymConst{::}\HOLFreeVar{xs}) \HOLSymConst{=}
+    [\HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmConductPBComplete}))) \HOLConst{impf}
+     \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{controls}
+     \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{completePB})))])
+\end{SaveVerbatim}
+\newcommand{\HOLPBIntegratedDefTheoremssecContextXXdef}{\UseVerbatim{HOLPBIntegratedDefTheoremssecContextXXdef}}
+\begin{SaveVerbatim}{HOLPBIntegratedDefTheoremssecContextXXind}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{P}.
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLConst{PLAN_PB} (\HOLBoundVar{x}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLConst{MOVE_TO_ORP} (\HOLBoundVar{x}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLConst{CONDUCT_ORP} (\HOLBoundVar{x}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLConst{MOVE_TO_PB} (\HOLBoundVar{x}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLConst{CONDUCT_PB} (\HOLBoundVar{x}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{4}}}. \HOLBoundVar{P} \HOLBoundVar{v\sb{\mathrm{4}}} []) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{5}}} \HOLBoundVar{v\sb{\mathrm{6}}}. \HOLBoundVar{P} \HOLConst{COMPLETE_PB} (\HOLBoundVar{v\sb{\mathrm{5}}}\HOLSymConst{::}\HOLBoundVar{v\sb{\mathrm{6}}})) \HOLSymConst{\HOLTokenImp{}}
+     \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v} \HOLBoundVar{v\sb{\mathrm{1}}}. \HOLBoundVar{P} \HOLBoundVar{v} \HOLBoundVar{v\sb{\mathrm{1}}}
+\end{SaveVerbatim}
+\newcommand{\HOLPBIntegratedDefTheoremssecContextXXind}{\UseVerbatim{HOLPBIntegratedDefTheoremssecContextXXind}}
+\newcommand{\HOLPBIntegratedDefTheorems}{
+\HOLThmTag{PBIntegratedDef}{getOmniCommand_def}\HOLPBIntegratedDefTheoremsgetOmniCommandXXdef
+\HOLThmTag{PBIntegratedDef}{getOmniCommand_ind}\HOLPBIntegratedDefTheoremsgetOmniCommandXXind
+\HOLThmTag{PBIntegratedDef}{secContext_def}\HOLPBIntegratedDefTheoremssecContextXXdef
+\HOLThmTag{PBIntegratedDef}{secContext_ind}\HOLPBIntegratedDefTheoremssecContextXXind
+}

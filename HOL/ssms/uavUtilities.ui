@@ -1,0 +1,7 @@
+$(HOLDIR)/sigobj/Abbrev
+$(HOLDIR)/sigobj/Overlay
+$(HOLDIR)/sigobj/Term
+$(HOLDIR)/sigobj/Thm
+$(HOLDIR)/sigobj/Type
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ssms/uavUtilities
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ssms/uavUtilities.sig

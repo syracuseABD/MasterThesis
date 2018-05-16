@@ -1,0 +1,113 @@
+\newcommand{\HOLPBTypeIntegratedDate}{16 May 2018}
+\newcommand{\HOLPBTypeIntegratedTime}{16:32}
+\begin{SaveVerbatim}{HOLPBTypeIntegratedDatatypesomniCommand}
+\HOLFreeVar{omniCommand} = \HOLConst{ssmPlanPBComplete} \HOLTokenBar{} \HOLConst{ssmMoveToORPComplete}
+            \HOLTokenBar{} \HOLConst{ssmConductORPComplete} \HOLTokenBar{} \HOLConst{ssmMoveToPBComplete}
+            \HOLTokenBar{} \HOLConst{ssmConductPBComplete} \HOLTokenBar{} \HOLConst{invalidOmniCommand}
+\end{SaveVerbatim}
+\newcommand{\HOLPBTypeIntegratedDatatypesomniCommand}{\UseVerbatim{HOLPBTypeIntegratedDatatypesomniCommand}}
+\begin{SaveVerbatim}{HOLPBTypeIntegratedDatatypesplCommand}
+\HOLFreeVar{plCommand} = \HOLConst{crossLD} \HOLTokenBar{} \HOLConst{conductORP} \HOLTokenBar{} \HOLConst{moveToPB} \HOLTokenBar{} \HOLConst{conductPB}
+          \HOLTokenBar{} \HOLConst{completePB} \HOLTokenBar{} \HOLConst{incomplete}
+\end{SaveVerbatim}
+\newcommand{\HOLPBTypeIntegratedDatatypesplCommand}{\UseVerbatim{HOLPBTypeIntegratedDatatypesplCommand}}
+\begin{SaveVerbatim}{HOLPBTypeIntegratedDatatypesslCommand}
+\HOLFreeVar{slCommand} = \HOLConst{PL} \HOLTyOp{plCommand} \HOLTokenBar{} \HOLConst{OMNI} \HOLTyOp{omniCommand}
+\end{SaveVerbatim}
+\newcommand{\HOLPBTypeIntegratedDatatypesslCommand}{\UseVerbatim{HOLPBTypeIntegratedDatatypesslCommand}}
+\begin{SaveVerbatim}{HOLPBTypeIntegratedDatatypesslOutput}
+\HOLFreeVar{slOutput} = \HOLConst{PlanPB} \HOLTokenBar{} \HOLConst{MoveToORP} \HOLTokenBar{} \HOLConst{ConductORP} \HOLTokenBar{} \HOLConst{MoveToPB}
+         \HOLTokenBar{} \HOLConst{ConductPB} \HOLTokenBar{} \HOLConst{CompletePB} \HOLTokenBar{} \HOLConst{unAuthenticated}
+         \HOLTokenBar{} \HOLConst{unAuthorized}
+\end{SaveVerbatim}
+\newcommand{\HOLPBTypeIntegratedDatatypesslOutput}{\UseVerbatim{HOLPBTypeIntegratedDatatypesslOutput}}
+\begin{SaveVerbatim}{HOLPBTypeIntegratedDatatypesslState}
+\HOLFreeVar{slState} = \HOLConst{PLAN_PB} \HOLTokenBar{} \HOLConst{MOVE_TO_ORP} \HOLTokenBar{} \HOLConst{CONDUCT_ORP} \HOLTokenBar{} \HOLConst{MOVE_TO_PB}
+        \HOLTokenBar{} \HOLConst{CONDUCT_PB} \HOLTokenBar{} \HOLConst{COMPLETE_PB}
+\end{SaveVerbatim}
+\newcommand{\HOLPBTypeIntegratedDatatypesslState}{\UseVerbatim{HOLPBTypeIntegratedDatatypesslState}}
+\begin{SaveVerbatim}{HOLPBTypeIntegratedDatatypesstateRole}
+\HOLFreeVar{stateRole} = \HOLConst{PlatoonLeader} \HOLTokenBar{} \HOLConst{Omni}
+\end{SaveVerbatim}
+\newcommand{\HOLPBTypeIntegratedDatatypesstateRole}{\UseVerbatim{HOLPBTypeIntegratedDatatypesstateRole}}
+\newcommand{\HOLPBTypeIntegratedDatatypes}{
+\HOLPBTypeIntegratedDatatypesomniCommand\HOLPBTypeIntegratedDatatypesplCommand\HOLPBTypeIntegratedDatatypesslCommand\HOLPBTypeIntegratedDatatypesslOutput\HOLPBTypeIntegratedDatatypesslState\HOLPBTypeIntegratedDatatypesstateRole}
+\begin{SaveVerbatim}{HOLPBTypeIntegratedTheoremsomniCommandXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{ssmPlanPBComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmMoveToORPComplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmPlanPBComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmConductORPComplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmPlanPBComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmMoveToPBComplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmPlanPBComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmConductPBComplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmPlanPBComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidOmniCommand} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmMoveToORPComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmConductORPComplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmMoveToORPComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmMoveToPBComplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmMoveToORPComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmConductPBComplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmMoveToORPComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidOmniCommand} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmConductORPComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmMoveToPBComplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmConductORPComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmConductPBComplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmConductORPComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidOmniCommand} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmMoveToPBComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmConductPBComplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmMoveToPBComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidOmniCommand} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmConductPBComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidOmniCommand}
+\end{SaveVerbatim}
+\newcommand{\HOLPBTypeIntegratedTheoremsomniCommandXXdistinctXXclauses}{\UseVerbatim{HOLPBTypeIntegratedTheoremsomniCommandXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLPBTypeIntegratedTheoremsplCommandXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{crossLD} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{conductORP} \HOLSymConst{\HOLTokenConj{}} \HOLConst{crossLD} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{moveToPB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{crossLD} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{conductPB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{crossLD} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{completePB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{crossLD} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{incomplete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{conductORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{moveToPB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{conductORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{conductPB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{conductORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{completePB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{conductORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{incomplete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{moveToPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{conductPB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{moveToPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{completePB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{moveToPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{incomplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{conductPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{completePB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{conductPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{incomplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{completePB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{incomplete}
+\end{SaveVerbatim}
+\newcommand{\HOLPBTypeIntegratedTheoremsplCommandXXdistinctXXclauses}{\UseVerbatim{HOLPBTypeIntegratedTheoremsplCommandXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLPBTypeIntegratedTheoremsslCommandXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sp{\prime}} \HOLBoundVar{a}. \HOLConst{PL} \HOLBoundVar{a} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{OMNI} \HOLBoundVar{a\sp{\prime}}
+\end{SaveVerbatim}
+\newcommand{\HOLPBTypeIntegratedTheoremsslCommandXXdistinctXXclauses}{\UseVerbatim{HOLPBTypeIntegratedTheoremsslCommandXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLPBTypeIntegratedTheoremsslCommandXXoneXXone}
+\HOLTokenTurnstile{} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a} \HOLBoundVar{a\sp{\prime}}. (\HOLConst{PL} \HOLBoundVar{a} \HOLSymConst{=} \HOLConst{PL} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}} (\HOLBoundVar{a} \HOLSymConst{=} \HOLBoundVar{a\sp{\prime}})) \HOLSymConst{\HOLTokenConj{}}
+   \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a} \HOLBoundVar{a\sp{\prime}}. (\HOLConst{OMNI} \HOLBoundVar{a} \HOLSymConst{=} \HOLConst{OMNI} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}} (\HOLBoundVar{a} \HOLSymConst{=} \HOLBoundVar{a\sp{\prime}})
+\end{SaveVerbatim}
+\newcommand{\HOLPBTypeIntegratedTheoremsslCommandXXoneXXone}{\UseVerbatim{HOLPBTypeIntegratedTheoremsslCommandXXoneXXone}}
+\begin{SaveVerbatim}{HOLPBTypeIntegratedTheoremsslOutputXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{MoveToORP} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ConductORP} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{MoveToPB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ConductPB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{MoveToORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ConductORP} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{MoveToORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{MoveToPB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{MoveToORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ConductPB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{MoveToORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{MoveToORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{MoveToORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ConductORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{MoveToPB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ConductORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ConductPB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ConductORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ConductORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ConductORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{MoveToPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ConductPB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{MoveToPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{MoveToPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}} \HOLConst{MoveToPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ConductPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ConductPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ConductPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{CompletePB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{CompletePB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized}
+\end{SaveVerbatim}
+\newcommand{\HOLPBTypeIntegratedTheoremsslOutputXXdistinctXXclauses}{\UseVerbatim{HOLPBTypeIntegratedTheoremsslOutputXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLPBTypeIntegratedTheoremsslStateXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{MOVE_TO_ORP} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CONDUCT_ORP} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{MOVE_TO_PB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CONDUCT_PB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{MOVE_TO_ORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CONDUCT_ORP} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{MOVE_TO_ORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{MOVE_TO_PB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{MOVE_TO_ORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CONDUCT_PB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{MOVE_TO_ORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{CONDUCT_ORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{MOVE_TO_PB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{CONDUCT_ORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CONDUCT_PB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{CONDUCT_ORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{MOVE_TO_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CONDUCT_PB} \HOLSymConst{\HOLTokenConj{}} \HOLConst{MOVE_TO_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PB} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{CONDUCT_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PB}
+\end{SaveVerbatim}
+\newcommand{\HOLPBTypeIntegratedTheoremsslStateXXdistinctXXclauses}{\UseVerbatim{HOLPBTypeIntegratedTheoremsslStateXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLPBTypeIntegratedTheoremsstateRoleXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{PlatoonLeader} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Omni}
+\end{SaveVerbatim}
+\newcommand{\HOLPBTypeIntegratedTheoremsstateRoleXXdistinctXXclauses}{\UseVerbatim{HOLPBTypeIntegratedTheoremsstateRoleXXdistinctXXclauses}}
+\newcommand{\HOLPBTypeIntegratedTheorems}{
+\HOLThmTag{PBTypeIntegrated}{omniCommand_distinct_clauses}\HOLPBTypeIntegratedTheoremsomniCommandXXdistinctXXclauses
+\HOLThmTag{PBTypeIntegrated}{plCommand_distinct_clauses}\HOLPBTypeIntegratedTheoremsplCommandXXdistinctXXclauses
+\HOLThmTag{PBTypeIntegrated}{slCommand_distinct_clauses}\HOLPBTypeIntegratedTheoremsslCommandXXdistinctXXclauses
+\HOLThmTag{PBTypeIntegrated}{slCommand_one_one}\HOLPBTypeIntegratedTheoremsslCommandXXoneXXone
+\HOLThmTag{PBTypeIntegrated}{slOutput_distinct_clauses}\HOLPBTypeIntegratedTheoremsslOutputXXdistinctXXclauses
+\HOLThmTag{PBTypeIntegrated}{slState_distinct_clauses}\HOLPBTypeIntegratedTheoremsslStateXXdistinctXXclauses
+\HOLThmTag{PBTypeIntegrated}{stateRole_distinct_clauses}\HOLPBTypeIntegratedTheoremsstateRoleXXdistinctXXclauses
+}

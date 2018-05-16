@@ -1,0 +1,63 @@
+\documentclass[11pt, twoside]{article}
+\usepackage{holtex}
+
+\makeindex
+
+\begin{document}
+
+\input{HOLMoveToPBType}
+\input{HOLssmMoveToPB}
+
+\tableofcontents
+\cleardoublepage
+\HOLpagestyle
+
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+\section{MoveToPBType Theory}
+\index{MoveToPBType Theory@\textbf  {MoveToPBType Theory}}
+\begin{flushleft}
+\textbf{Built:} \HOLMoveToPBTypeDate \\[2pt]
+\textbf{Parent Theories:} indexedLists, patternMatches
+\end{flushleft}
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+\subsection{Datatypes}
+\index{MoveToPBType Theory@\textbf  {MoveToPBType Theory}!Datatypes}
+% .....................................
+
+\HOLMoveToPBTypeDatatypes
+
+% No definitions
+
+\subsection{Theorems}
+\index{MoveToPBType Theory@\textbf  {MoveToPBType Theory}!Theorems}
+% .....................................
+
+\HOLMoveToPBTypeTheorems
+
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+\section{ssmMoveToPB Theory}
+\index{ssmMoveToPB Theory@\textbf  {ssmMoveToPB Theory}}
+\begin{flushleft}
+\textbf{Built:} \HOLssmMoveToPBDate \\[2pt]
+\textbf{Parent Theories:} MoveToPBType, ssm11, OMNIType
+\end{flushleft}
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+% No datatypes
+
+\subsection{Definitions}
+\index{ssmMoveToPB Theory@\textbf  {ssmMoveToPB Theory}!Definitions}
+% .....................................
+
+\HOLssmMoveToPBDefinitions
+
+\subsection{Theorems}
+\index{ssmMoveToPB Theory@\textbf  {ssmMoveToPB Theory}!Theorems}
+% .....................................
+
+\HOLssmMoveToPBTheorems
+
+\HOLindex
+
+\end{document}

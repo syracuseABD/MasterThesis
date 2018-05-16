@@ -1,0 +1,1 @@
+PBTypeIntegratedScript.uo: /usr/local/share/HOL/sigobj/HolKernel.ui /home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/OMNILevel/OMNITypeTheory.ui /usr/local/share/HOL/sigobj/Parse.ui /usr/local/share/HOL/sigobj/TypeBase.ui /usr/local/share/HOL/sigobj/boolLib.ui /usr/local/share/HOL/sigobj/bossLib.ui 

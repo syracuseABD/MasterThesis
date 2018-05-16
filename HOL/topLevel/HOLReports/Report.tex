@@ -1,0 +1,87 @@
+\documentclass[11pt, twoside]{article}
+\usepackage{holtex}
+
+\makeindex
+
+\begin{document}
+
+\input{HOLPBTypeIntegrated}
+\input{HOLssmPB}
+\input{HOLPBIntegratedDef}
+
+\tableofcontents
+\cleardoublepage
+\HOLpagestyle
+
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+\section{PBTypeIntegrated Theory}
+\index{PBTypeIntegrated Theory@\textbf  {PBTypeIntegrated Theory}}
+\begin{flushleft}
+\textbf{Built:} \HOLPBTypeIntegratedDate \\[2pt]
+\textbf{Parent Theories:} OMNIType
+\end{flushleft}
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+\subsection{Datatypes}
+\index{PBTypeIntegrated Theory@\textbf  {PBTypeIntegrated Theory}!Datatypes}
+% .....................................
+
+\HOLPBTypeIntegratedDatatypes
+
+% No definitions
+
+\subsection{Theorems}
+\index{PBTypeIntegrated Theory@\textbf  {PBTypeIntegrated Theory}!Theorems}
+% .....................................
+
+\HOLPBTypeIntegratedTheorems
+
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+\section{ssmPB Theory}
+\index{ssmPB Theory@\textbf  {ssmPB Theory}}
+\begin{flushleft}
+\textbf{Built:} \HOLssmPBDate \\[2pt]
+\textbf{Parent Theories:} PBType, ssm11, OMNIType
+\end{flushleft}
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+% No datatypes
+
+\subsection{Definitions}
+\index{ssmPB Theory@\textbf  {ssmPB Theory}!Definitions}
+% .....................................
+
+\HOLssmPBDefinitions
+
+\subsection{Theorems}
+\index{ssmPB Theory@\textbf  {ssmPB Theory}!Theorems}
+% .....................................
+
+\HOLssmPBTheorems
+
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+\section{PBIntegratedDef Theory}
+\index{PBIntegratedDef Theory@\textbf  {PBIntegratedDef Theory}}
+\begin{flushleft}
+\textbf{Built:} \HOLPBIntegratedDefDate \\[2pt]
+\textbf{Parent Theories:} PBTypeIntegrated, aclfoundation
+\end{flushleft}
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+% No datatypes
+
+\subsection{Definitions}
+\index{PBIntegratedDef Theory@\textbf  {PBIntegratedDef Theory}!Definitions}
+% .....................................
+
+\HOLPBIntegratedDefDefinitions
+
+\subsection{Theorems}
+\index{PBIntegratedDef Theory@\textbf  {PBIntegratedDef Theory}!Theorems}
+% .....................................
+
+\HOLPBIntegratedDefTheorems
+
+\HOLindex
+
+\end{document}

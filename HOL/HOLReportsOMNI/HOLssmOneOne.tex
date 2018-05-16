@@ -1,0 +1,389 @@
+\newcommand{\HOLssmOneOneDate}{13 May 2018}
+\newcommand{\HOLssmOneOneTime}{18:21}
+\begin{SaveVerbatim}{HOLssmOneOneDatatypesconfiguration}
+\HOLFreeVar{configuration} =
+    \HOLConst{CFG} (('command \HOLTyOp{order}, 'principal, 'd, 'e) \HOLTyOp{Form} -> \HOLTyOp{bool})
+        ('state -> ('command \HOLTyOp{order}, 'principal, 'd, 'e) \HOLTyOp{Form})
+        (('command \HOLTyOp{order}, 'principal, 'd, 'e) \HOLTyOp{Form} \HOLTyOp{list})
+        (('command \HOLTyOp{order}, 'principal, 'd, 'e) \HOLTyOp{Form} \HOLTyOp{list}) 'state
+        ('output \HOLTyOp{list})
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneDatatypesconfiguration}{\UseVerbatim{HOLssmOneOneDatatypesconfiguration}}
+\begin{SaveVerbatim}{HOLssmOneOneDatatypesorder}
+\HOLFreeVar{order} = \HOLConst{SOME} 'command \HOLTokenBar{} \HOLConst{NONE}
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneDatatypesorder}{\UseVerbatim{HOLssmOneOneDatatypesorder}}
+\begin{SaveVerbatim}{HOLssmOneOneDatatypestrType}
+\HOLFreeVar{trType} = \HOLConst{discard} 'command \HOLTokenBar{} \HOLConst{trap} 'command \HOLTokenBar{} \HOLConst{exec} 'command
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneDatatypestrType}{\UseVerbatim{HOLssmOneOneDatatypestrType}}
+\newcommand{\HOLssmOneOneDatatypes}{
+\HOLssmOneOneDatatypesconfiguration\HOLssmOneOneDatatypesorder\HOLssmOneOneDatatypestrType}
+\begin{SaveVerbatim}{HOLssmOneOneDefinitionsTRXXdef}
+\HOLTokenTurnstile{} \HOLConst{TR} \HOLSymConst{=}
+   (\HOLTokenLambda{}\HOLBoundVar{a\sb{\mathrm{0}}} \HOLBoundVar{a\sb{\mathrm{1}}} \HOLBoundVar{a\sb{\mathrm{2}}} \HOLBoundVar{a\sb{\mathrm{3}}}.
+      \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{TR\sp{\prime}}.
+        (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sb{\mathrm{0}}} \HOLBoundVar{a\sb{\mathrm{1}}} \HOLBoundVar{a\sb{\mathrm{2}}} \HOLBoundVar{a\sb{\mathrm{3}}}.
+           (\HOLSymConst{\HOLTokenExists{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{P} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s}
+               \HOLBoundVar{securityContext} \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+              (\HOLBoundVar{a\sb{\mathrm{0}}} \HOLSymConst{=} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})) \HOLSymConst{\HOLTokenConj{}} (\HOLBoundVar{a\sb{\mathrm{1}}} \HOLSymConst{=} \HOLConst{exec} \HOLBoundVar{cmd}) \HOLSymConst{\HOLTokenConj{}}
+              (\HOLBoundVar{a\sb{\mathrm{2}}} \HOLSymConst{=}
+               \HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp}
+                 \HOLBoundVar{securityContext} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s}
+                 \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenConj{}}
+              (\HOLBoundVar{a\sb{\mathrm{3}}} \HOLSymConst{=}
+               \HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp}
+                 \HOLBoundVar{securityContext} \HOLBoundVar{ins} (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{exec} \HOLBoundVar{cmd}))
+                 (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{exec} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs})) \HOLSymConst{\HOLTokenConj{}}
+              \HOLBoundVar{authenticationTest} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+              \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+                (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp}
+                   \HOLBoundVar{securityContext} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins})
+                   \HOLBoundVar{s} \HOLBoundVar{outs})) \HOLSymConst{\HOLTokenDisj{}}
+           (\HOLSymConst{\HOLTokenExists{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{P} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s}
+               \HOLBoundVar{securityContext} \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+              (\HOLBoundVar{a\sb{\mathrm{0}}} \HOLSymConst{=} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})) \HOLSymConst{\HOLTokenConj{}} (\HOLBoundVar{a\sb{\mathrm{1}}} \HOLSymConst{=} \HOLConst{trap} \HOLBoundVar{cmd}) \HOLSymConst{\HOLTokenConj{}}
+              (\HOLBoundVar{a\sb{\mathrm{2}}} \HOLSymConst{=}
+               \HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp}
+                 \HOLBoundVar{securityContext} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s}
+                 \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenConj{}}
+              (\HOLBoundVar{a\sb{\mathrm{3}}} \HOLSymConst{=}
+               \HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp}
+                 \HOLBoundVar{securityContext} \HOLBoundVar{ins} (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{cmd}))
+                 (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs})) \HOLSymConst{\HOLTokenConj{}}
+              \HOLBoundVar{authenticationTest} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+              \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+                (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp}
+                   \HOLBoundVar{securityContext} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins})
+                   \HOLBoundVar{s} \HOLBoundVar{outs})) \HOLSymConst{\HOLTokenDisj{}}
+           (\HOLSymConst{\HOLTokenExists{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s} \HOLBoundVar{securityContext}
+               \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{x} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+              (\HOLBoundVar{a\sb{\mathrm{0}}} \HOLSymConst{=} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})) \HOLSymConst{\HOLTokenConj{}} (\HOLBoundVar{a\sb{\mathrm{1}}} \HOLSymConst{=} \HOLConst{discard} \HOLBoundVar{cmd}) \HOLSymConst{\HOLTokenConj{}}
+              (\HOLBoundVar{a\sb{\mathrm{2}}} \HOLSymConst{=}
+               \HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp}
+                 \HOLBoundVar{securityContext} (\HOLBoundVar{x}\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenConj{}}
+              (\HOLBoundVar{a\sb{\mathrm{3}}} \HOLSymConst{=}
+               \HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp}
+                 \HOLBoundVar{securityContext} \HOLBoundVar{ins} (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{discard} \HOLBoundVar{cmd}))
+                 (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{discard} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs})) \HOLSymConst{\HOLTokenConj{}}
+              \HOLSymConst{\HOLTokenNeg{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{x}) \HOLSymConst{\HOLTokenImp{}}
+           \HOLBoundVar{TR\sp{\prime}} \HOLBoundVar{a\sb{\mathrm{0}}} \HOLBoundVar{a\sb{\mathrm{1}}} \HOLBoundVar{a\sb{\mathrm{2}}} \HOLBoundVar{a\sb{\mathrm{3}}}) \HOLSymConst{\HOLTokenImp{}}
+        \HOLBoundVar{TR\sp{\prime}} \HOLBoundVar{a\sb{\mathrm{0}}} \HOLBoundVar{a\sb{\mathrm{1}}} \HOLBoundVar{a\sb{\mathrm{2}}} \HOLBoundVar{a\sb{\mathrm{3}}})
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneDefinitionsTRXXdef}{\UseVerbatim{HOLssmOneOneDefinitionsTRXXdef}}
+\newcommand{\HOLssmOneOneDefinitions}{
+\HOLDfnTag{ssm11}{TR_def}\HOLssmOneOneDefinitionsTRXXdef
+}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsCFGInterpretXXdef}
+\HOLTokenTurnstile{} \HOLConst{CFGInterpret} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os})
+     (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext}
+        (\HOLFreeVar{input}\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{state} \HOLFreeVar{outputStream}) \HOLSymConst{\HOLTokenEquiv{}}
+   (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) \HOLConst{satList} \HOLFreeVar{securityContext} \HOLSymConst{\HOLTokenConj{}} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) \HOLConst{sat} \HOLFreeVar{input} \HOLSymConst{\HOLTokenConj{}}
+   (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) \HOLConst{sat} \HOLFreeVar{stateInterp} \HOLFreeVar{state}
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsCFGInterpretXXdef}{\UseVerbatim{HOLssmOneOneTheoremsCFGInterpretXXdef}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsCFGInterpretXXind}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{P}.
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+         \HOLBoundVar{input} \HOLBoundVar{ins} \HOLBoundVar{state} \HOLBoundVar{outputStream}.
+        \HOLBoundVar{P} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{input}\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{state} \HOLBoundVar{outputStream})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{15}}} \HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{11}}} \HOLBoundVar{v\sb{\mathrm{12}}} \HOLBoundVar{v\sb{\mathrm{13}}} \HOLBoundVar{v\sb{\mathrm{14}}}.
+        \HOLBoundVar{P} \HOLBoundVar{v\sb{\mathrm{15}}} (\HOLConst{CFG} \HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{11}}} \HOLBoundVar{v\sb{\mathrm{12}}} [] \HOLBoundVar{v\sb{\mathrm{13}}} \HOLBoundVar{v\sb{\mathrm{14}}})) \HOLSymConst{\HOLTokenImp{}}
+     \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v} \HOLBoundVar{v\sb{\mathrm{1}}} \HOLBoundVar{v\sb{\mathrm{2}}} \HOLBoundVar{v\sb{\mathrm{3}}}. \HOLBoundVar{P} (\HOLBoundVar{v}\HOLSymConst{,}\HOLBoundVar{v\sb{\mathrm{1}}}\HOLSymConst{,}\HOLBoundVar{v\sb{\mathrm{2}}}) \HOLBoundVar{v\sb{\mathrm{3}}}
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsCFGInterpretXXind}{\UseVerbatim{HOLssmOneOneTheoremsCFGInterpretXXind}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsconfigurationXXoneXXone}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sb{\mathrm{0}}} \HOLBoundVar{a\sb{\mathrm{1}}} \HOLBoundVar{a\sb{\mathrm{2}}} \HOLBoundVar{a\sb{\mathrm{3}}} \HOLBoundVar{a\sb{\mathrm{4}}} \HOLBoundVar{a\sb{\mathrm{5}}} \HOLBoundVar{a\sb{\mathrm{0}}\sp{\prime}} \HOLBoundVar{a\sb{\mathrm{1}}\sp{\prime}} \HOLBoundVar{a\sb{\mathrm{2}}\sp{\prime}} \HOLBoundVar{a\sb{\mathrm{3}}\sp{\prime}} \HOLBoundVar{a\sb{\mathrm{4}}\sp{\prime}} \HOLBoundVar{a\sb{\mathrm{5}}\sp{\prime}}.
+     (\HOLConst{CFG} \HOLBoundVar{a\sb{\mathrm{0}}} \HOLBoundVar{a\sb{\mathrm{1}}} \HOLBoundVar{a\sb{\mathrm{2}}} \HOLBoundVar{a\sb{\mathrm{3}}} \HOLBoundVar{a\sb{\mathrm{4}}} \HOLBoundVar{a\sb{\mathrm{5}}} \HOLSymConst{=} \HOLConst{CFG} \HOLBoundVar{a\sb{\mathrm{0}}\sp{\prime}} \HOLBoundVar{a\sb{\mathrm{1}}\sp{\prime}} \HOLBoundVar{a\sb{\mathrm{2}}\sp{\prime}} \HOLBoundVar{a\sb{\mathrm{3}}\sp{\prime}} \HOLBoundVar{a\sb{\mathrm{4}}\sp{\prime}} \HOLBoundVar{a\sb{\mathrm{5}}\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}}
+     (\HOLBoundVar{a\sb{\mathrm{0}}} \HOLSymConst{=} \HOLBoundVar{a\sb{\mathrm{0}}\sp{\prime}}) \HOLSymConst{\HOLTokenConj{}} (\HOLBoundVar{a\sb{\mathrm{1}}} \HOLSymConst{=} \HOLBoundVar{a\sb{\mathrm{1}}\sp{\prime}}) \HOLSymConst{\HOLTokenConj{}} (\HOLBoundVar{a\sb{\mathrm{2}}} \HOLSymConst{=} \HOLBoundVar{a\sb{\mathrm{2}}\sp{\prime}}) \HOLSymConst{\HOLTokenConj{}} (\HOLBoundVar{a\sb{\mathrm{3}}} \HOLSymConst{=} \HOLBoundVar{a\sb{\mathrm{3}}\sp{\prime}}) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLBoundVar{a\sb{\mathrm{4}}} \HOLSymConst{=} \HOLBoundVar{a\sb{\mathrm{4}}\sp{\prime}}) \HOLSymConst{\HOLTokenConj{}} (\HOLBoundVar{a\sb{\mathrm{5}}} \HOLSymConst{=} \HOLBoundVar{a\sb{\mathrm{5}}\sp{\prime}})
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsconfigurationXXoneXXone}{\UseVerbatim{HOLssmOneOneTheoremsconfigurationXXoneXXone}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsorderXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a}. \HOLConst{SOME} \HOLBoundVar{a} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{NONE}
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsorderXXdistinctXXclauses}{\UseVerbatim{HOLssmOneOneTheoremsorderXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsorderXXoneXXone}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a} \HOLBoundVar{a\sp{\prime}}. (\HOLConst{SOME} \HOLBoundVar{a} \HOLSymConst{=} \HOLConst{SOME} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}} (\HOLBoundVar{a} \HOLSymConst{=} \HOLBoundVar{a\sp{\prime}})
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsorderXXoneXXone}{\UseVerbatim{HOLssmOneOneTheoremsorderXXoneXXone}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsTRXXcases}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sb{\mathrm{0}}} \HOLBoundVar{a\sb{\mathrm{1}}} \HOLBoundVar{a\sb{\mathrm{2}}} \HOLBoundVar{a\sb{\mathrm{3}}}.
+     \HOLConst{TR} \HOLBoundVar{a\sb{\mathrm{0}}} \HOLBoundVar{a\sb{\mathrm{1}}} \HOLBoundVar{a\sb{\mathrm{2}}} \HOLBoundVar{a\sb{\mathrm{3}}} \HOLSymConst{\HOLTokenEquiv{}}
+     (\HOLSymConst{\HOLTokenExists{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{P} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s} \HOLBoundVar{securityContext}
+         \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+        (\HOLBoundVar{a\sb{\mathrm{0}}} \HOLSymConst{=} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})) \HOLSymConst{\HOLTokenConj{}} (\HOLBoundVar{a\sb{\mathrm{1}}} \HOLSymConst{=} \HOLConst{exec} \HOLBoundVar{cmd}) \HOLSymConst{\HOLTokenConj{}}
+        (\HOLBoundVar{a\sb{\mathrm{2}}} \HOLSymConst{=}
+         \HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+           (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenConj{}}
+        (\HOLBoundVar{a\sb{\mathrm{3}}} \HOLSymConst{=}
+         \HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext} \HOLBoundVar{ins}
+           (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{exec} \HOLBoundVar{cmd})) (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{exec} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs})) \HOLSymConst{\HOLTokenConj{}}
+        \HOLBoundVar{authenticationTest} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+        \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs})) \HOLSymConst{\HOLTokenDisj{}}
+     (\HOLSymConst{\HOLTokenExists{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{P} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s} \HOLBoundVar{securityContext}
+         \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+        (\HOLBoundVar{a\sb{\mathrm{0}}} \HOLSymConst{=} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})) \HOLSymConst{\HOLTokenConj{}} (\HOLBoundVar{a\sb{\mathrm{1}}} \HOLSymConst{=} \HOLConst{trap} \HOLBoundVar{cmd}) \HOLSymConst{\HOLTokenConj{}}
+        (\HOLBoundVar{a\sb{\mathrm{2}}} \HOLSymConst{=}
+         \HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+           (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenConj{}}
+        (\HOLBoundVar{a\sb{\mathrm{3}}} \HOLSymConst{=}
+         \HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext} \HOLBoundVar{ins}
+           (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{cmd})) (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs})) \HOLSymConst{\HOLTokenConj{}}
+        \HOLBoundVar{authenticationTest} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+        \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs})) \HOLSymConst{\HOLTokenDisj{}}
+     \HOLSymConst{\HOLTokenExists{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s} \HOLBoundVar{securityContext}
+        \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{x} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+       (\HOLBoundVar{a\sb{\mathrm{0}}} \HOLSymConst{=} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})) \HOLSymConst{\HOLTokenConj{}} (\HOLBoundVar{a\sb{\mathrm{1}}} \HOLSymConst{=} \HOLConst{discard} \HOLBoundVar{cmd}) \HOLSymConst{\HOLTokenConj{}}
+       (\HOLBoundVar{a\sb{\mathrm{2}}} \HOLSymConst{=}
+        \HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+          (\HOLBoundVar{x}\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenConj{}}
+       (\HOLBoundVar{a\sb{\mathrm{3}}} \HOLSymConst{=}
+        \HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext} \HOLBoundVar{ins}
+          (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{discard} \HOLBoundVar{cmd})) (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{discard} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs})) \HOLSymConst{\HOLTokenConj{}}
+       \HOLSymConst{\HOLTokenNeg{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{x}
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsTRXXcases}{\UseVerbatim{HOLssmOneOneTheoremsTRXXcases}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsTRXXdiscardXXcmdXXrule}
+\HOLTokenTurnstile{} \HOLConst{TR} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) (\HOLConst{discard} \HOLFreeVar{cmd})
+     (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext}
+        (\HOLFreeVar{x}\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs})
+     (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext} \HOLFreeVar{ins}
+        (\HOLFreeVar{NS} \HOLFreeVar{s} (\HOLConst{discard} \HOLFreeVar{cmd})) (\HOLFreeVar{Out} \HOLFreeVar{s} (\HOLConst{discard} \HOLFreeVar{cmd})\HOLSymConst{::}\HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+   \HOLSymConst{\HOLTokenNeg{}}\HOLFreeVar{authenticationTest} \HOLFreeVar{x}
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsTRXXdiscardXXcmdXXrule}{\UseVerbatim{HOLssmOneOneTheoremsTRXXdiscardXXcmdXXrule}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsTRXXEQXXrulesXXthm}
+\HOLTokenTurnstile{} (\HOLConst{TR} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) (\HOLConst{exec} \HOLFreeVar{cmd})
+      (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext}
+         (\HOLFreeVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLFreeVar{cmd})\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs})
+      (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext} \HOLFreeVar{ins}
+         (\HOLFreeVar{NS} \HOLFreeVar{s} (\HOLConst{exec} \HOLFreeVar{cmd})) (\HOLFreeVar{Out} \HOLFreeVar{s} (\HOLConst{exec} \HOLFreeVar{cmd})\HOLSymConst{::}\HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+    \HOLFreeVar{authenticationTest} (\HOLFreeVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLFreeVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+    \HOLConst{CFGInterpret} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os})
+      (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext}
+         (\HOLFreeVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLFreeVar{cmd})\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs})) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{TR} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) (\HOLConst{trap} \HOLFreeVar{cmd})
+      (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext}
+         (\HOLFreeVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLFreeVar{cmd})\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs})
+      (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext} \HOLFreeVar{ins}
+         (\HOLFreeVar{NS} \HOLFreeVar{s} (\HOLConst{trap} \HOLFreeVar{cmd})) (\HOLFreeVar{Out} \HOLFreeVar{s} (\HOLConst{trap} \HOLFreeVar{cmd})\HOLSymConst{::}\HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+    \HOLFreeVar{authenticationTest} (\HOLFreeVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLFreeVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+    \HOLConst{CFGInterpret} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os})
+      (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext}
+         (\HOLFreeVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLFreeVar{cmd})\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs})) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{TR} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) (\HOLConst{discard} \HOLFreeVar{cmd})
+      (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext}
+         (\HOLFreeVar{x}\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs})
+      (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext} \HOLFreeVar{ins}
+         (\HOLFreeVar{NS} \HOLFreeVar{s} (\HOLConst{discard} \HOLFreeVar{cmd})) (\HOLFreeVar{Out} \HOLFreeVar{s} (\HOLConst{discard} \HOLFreeVar{cmd})\HOLSymConst{::}\HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+    \HOLSymConst{\HOLTokenNeg{}}\HOLFreeVar{authenticationTest} \HOLFreeVar{x})
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsTRXXEQXXrulesXXthm}{\UseVerbatim{HOLssmOneOneTheoremsTRXXEQXXrulesXXthm}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsTRXXexecXXcmdXXrule}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{securityContext} \HOLBoundVar{stateInterp} \HOLBoundVar{P} \HOLBoundVar{cmd} \HOLBoundVar{ins} \HOLBoundVar{s}
+      \HOLBoundVar{outs}.
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
+        \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenImp{}}
+        (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{sat} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenImp{}}
+     \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{NS} \HOLBoundVar{Out} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
+       \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{exec} \HOLBoundVar{cmd})
+         (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+            (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs})
+         (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext} \HOLBoundVar{ins}
+            (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{exec} \HOLBoundVar{cmd})) (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{exec} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+       \HOLBoundVar{authenticationTest} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+       \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+         (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+            (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenConj{}}
+       (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{sat} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsTRXXexecXXcmdXXrule}{\UseVerbatim{HOLssmOneOneTheoremsTRXXexecXXcmdXXrule}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsTRXXind}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{TR\sp{\prime}}.
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{P} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s} \HOLBoundVar{securityContext}
+         \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+        \HOLBoundVar{authenticationTest} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+        \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenImp{}}
+        \HOLBoundVar{TR\sp{\prime}} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{exec} \HOLBoundVar{cmd})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             \HOLBoundVar{ins} (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{exec} \HOLBoundVar{cmd})) (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{exec} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs}))) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{P} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s} \HOLBoundVar{securityContext}
+         \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+        \HOLBoundVar{authenticationTest} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+        \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenImp{}}
+        \HOLBoundVar{TR\sp{\prime}} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{trap} \HOLBoundVar{cmd})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             \HOLBoundVar{ins} (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{cmd})) (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs}))) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s} \HOLBoundVar{securityContext}
+         \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{x} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+        \HOLSymConst{\HOLTokenNeg{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{x} \HOLSymConst{\HOLTokenImp{}}
+        \HOLBoundVar{TR\sp{\prime}} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{discard} \HOLBoundVar{cmd})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{x}\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             \HOLBoundVar{ins} (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{discard} \HOLBoundVar{cmd}))
+             (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{discard} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs}))) \HOLSymConst{\HOLTokenImp{}}
+     \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sb{\mathrm{0}}} \HOLBoundVar{a\sb{\mathrm{1}}} \HOLBoundVar{a\sb{\mathrm{2}}} \HOLBoundVar{a\sb{\mathrm{3}}}. \HOLConst{TR} \HOLBoundVar{a\sb{\mathrm{0}}} \HOLBoundVar{a\sb{\mathrm{1}}} \HOLBoundVar{a\sb{\mathrm{2}}} \HOLBoundVar{a\sb{\mathrm{3}}} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{TR\sp{\prime}} \HOLBoundVar{a\sb{\mathrm{0}}} \HOLBoundVar{a\sb{\mathrm{1}}} \HOLBoundVar{a\sb{\mathrm{2}}} \HOLBoundVar{a\sb{\mathrm{3}}}
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsTRXXind}{\UseVerbatim{HOLssmOneOneTheoremsTRXXind}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsTRXXrules}
+\HOLTokenTurnstile{} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{P} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s} \HOLBoundVar{securityContext}
+       \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+      \HOLBoundVar{authenticationTest} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+      \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+        (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+           (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenImp{}}
+      \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{exec} \HOLBoundVar{cmd})
+        (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+           (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs})
+        (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext} \HOLBoundVar{ins}
+           (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{exec} \HOLBoundVar{cmd})) (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{exec} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs}))) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{P} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s} \HOLBoundVar{securityContext}
+       \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+      \HOLBoundVar{authenticationTest} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+      \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+        (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+           (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenImp{}}
+      \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{trap} \HOLBoundVar{cmd})
+        (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+           (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs})
+        (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext} \HOLBoundVar{ins}
+           (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{cmd})) (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs}))) \HOLSymConst{\HOLTokenConj{}}
+   \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s} \HOLBoundVar{securityContext}
+      \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{x} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+     \HOLSymConst{\HOLTokenNeg{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{x} \HOLSymConst{\HOLTokenImp{}}
+     \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{discard} \HOLBoundVar{cmd})
+       (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+          (\HOLBoundVar{x}\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs})
+       (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext} \HOLBoundVar{ins}
+          (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{discard} \HOLBoundVar{cmd})) (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{discard} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs}))
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsTRXXrules}{\UseVerbatim{HOLssmOneOneTheoremsTRXXrules}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsTRXXstrongind}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{TR\sp{\prime}}.
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{P} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s} \HOLBoundVar{securityContext}
+         \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+        \HOLBoundVar{authenticationTest} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+        \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenImp{}}
+        \HOLBoundVar{TR\sp{\prime}} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{exec} \HOLBoundVar{cmd})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             \HOLBoundVar{ins} (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{exec} \HOLBoundVar{cmd})) (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{exec} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs}))) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{P} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s} \HOLBoundVar{securityContext}
+         \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+        \HOLBoundVar{authenticationTest} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+        \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenImp{}}
+        \HOLBoundVar{TR\sp{\prime}} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{trap} \HOLBoundVar{cmd})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             \HOLBoundVar{ins} (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{cmd})) (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs}))) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{NS} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{Out} \HOLBoundVar{s} \HOLBoundVar{securityContext}
+         \HOLBoundVar{stateInterp} \HOLBoundVar{cmd} \HOLBoundVar{x} \HOLBoundVar{ins} \HOLBoundVar{outs}.
+        \HOLSymConst{\HOLTokenNeg{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{x} \HOLSymConst{\HOLTokenImp{}}
+        \HOLBoundVar{TR\sp{\prime}} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{discard} \HOLBoundVar{cmd})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{x}\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             \HOLBoundVar{ins} (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{discard} \HOLBoundVar{cmd}))
+             (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{discard} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs}))) \HOLSymConst{\HOLTokenImp{}}
+     \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sb{\mathrm{0}}} \HOLBoundVar{a\sb{\mathrm{1}}} \HOLBoundVar{a\sb{\mathrm{2}}} \HOLBoundVar{a\sb{\mathrm{3}}}. \HOLConst{TR} \HOLBoundVar{a\sb{\mathrm{0}}} \HOLBoundVar{a\sb{\mathrm{1}}} \HOLBoundVar{a\sb{\mathrm{2}}} \HOLBoundVar{a\sb{\mathrm{3}}} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{TR\sp{\prime}} \HOLBoundVar{a\sb{\mathrm{0}}} \HOLBoundVar{a\sb{\mathrm{1}}} \HOLBoundVar{a\sb{\mathrm{2}}} \HOLBoundVar{a\sb{\mathrm{3}}}
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsTRXXstrongind}{\UseVerbatim{HOLssmOneOneTheoremsTRXXstrongind}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsTRXXtrapXXcmdXXrule}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext} \HOLBoundVar{P} \HOLBoundVar{cmd} \HOLBoundVar{ins} \HOLBoundVar{s}
+      \HOLBoundVar{outs}.
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
+        \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+          (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+             (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenImp{}}
+        (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{sat} \HOLConst{prop} \HOLConst{NONE}) \HOLSymConst{\HOLTokenImp{}}
+     \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{NS} \HOLBoundVar{Out} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
+       \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{trap} \HOLBoundVar{cmd})
+         (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+            (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs})
+         (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext} \HOLBoundVar{ins}
+            (\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{cmd})) (\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+       \HOLBoundVar{authenticationTest} (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+       \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+         (\HOLConst{CFG} \HOLBoundVar{authenticationTest} \HOLBoundVar{stateInterp} \HOLBoundVar{securityContext}
+            (\HOLBoundVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd})\HOLSymConst{::}\HOLBoundVar{ins}) \HOLBoundVar{s} \HOLBoundVar{outs}) \HOLSymConst{\HOLTokenConj{}}
+       (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{sat} \HOLConst{prop} \HOLConst{NONE}
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsTRXXtrapXXcmdXXrule}{\UseVerbatim{HOLssmOneOneTheoremsTRXXtrapXXcmdXXrule}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsTRruleZero}
+\HOLTokenTurnstile{} \HOLConst{TR} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) (\HOLConst{exec} \HOLFreeVar{cmd})
+     (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext}
+        (\HOLFreeVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLFreeVar{cmd})\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs})
+     (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext} \HOLFreeVar{ins}
+        (\HOLFreeVar{NS} \HOLFreeVar{s} (\HOLConst{exec} \HOLFreeVar{cmd})) (\HOLFreeVar{Out} \HOLFreeVar{s} (\HOLConst{exec} \HOLFreeVar{cmd})\HOLSymConst{::}\HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+   \HOLFreeVar{authenticationTest} (\HOLFreeVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLFreeVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{CFGInterpret} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os})
+     (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext}
+        (\HOLFreeVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLFreeVar{cmd})\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs})
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsTRruleZero}{\UseVerbatim{HOLssmOneOneTheoremsTRruleZero}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremsTRruleOne}
+\HOLTokenTurnstile{} \HOLConst{TR} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) (\HOLConst{trap} \HOLFreeVar{cmd})
+     (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext}
+        (\HOLFreeVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLFreeVar{cmd})\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs})
+     (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext} \HOLFreeVar{ins}
+        (\HOLFreeVar{NS} \HOLFreeVar{s} (\HOLConst{trap} \HOLFreeVar{cmd})) (\HOLFreeVar{Out} \HOLFreeVar{s} (\HOLConst{trap} \HOLFreeVar{cmd})\HOLSymConst{::}\HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+   \HOLFreeVar{authenticationTest} (\HOLFreeVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLFreeVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{CFGInterpret} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os})
+     (\HOLConst{CFG} \HOLFreeVar{authenticationTest} \HOLFreeVar{stateInterp} \HOLFreeVar{securityContext}
+        (\HOLFreeVar{P} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} \HOLFreeVar{cmd})\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs})
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremsTRruleOne}{\UseVerbatim{HOLssmOneOneTheoremsTRruleOne}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremstrTypeXXdistinctXXclauses}
+\HOLTokenTurnstile{} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sp{\prime}} \HOLBoundVar{a}. \HOLConst{discard} \HOLBoundVar{a} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{trap} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sp{\prime}} \HOLBoundVar{a}. \HOLConst{discard} \HOLBoundVar{a} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{exec} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenConj{}}
+   \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sp{\prime}} \HOLBoundVar{a}. \HOLConst{trap} \HOLBoundVar{a} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{exec} \HOLBoundVar{a\sp{\prime}}
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremstrTypeXXdistinctXXclauses}{\UseVerbatim{HOLssmOneOneTheoremstrTypeXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLssmOneOneTheoremstrTypeXXoneXXone}
+\HOLTokenTurnstile{} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a} \HOLBoundVar{a\sp{\prime}}. (\HOLConst{discard} \HOLBoundVar{a} \HOLSymConst{=} \HOLConst{discard} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}} (\HOLBoundVar{a} \HOLSymConst{=} \HOLBoundVar{a\sp{\prime}})) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a} \HOLBoundVar{a\sp{\prime}}. (\HOLConst{trap} \HOLBoundVar{a} \HOLSymConst{=} \HOLConst{trap} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}} (\HOLBoundVar{a} \HOLSymConst{=} \HOLBoundVar{a\sp{\prime}})) \HOLSymConst{\HOLTokenConj{}}
+   \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a} \HOLBoundVar{a\sp{\prime}}. (\HOLConst{exec} \HOLBoundVar{a} \HOLSymConst{=} \HOLConst{exec} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}} (\HOLBoundVar{a} \HOLSymConst{=} \HOLBoundVar{a\sp{\prime}})
+\end{SaveVerbatim}
+\newcommand{\HOLssmOneOneTheoremstrTypeXXoneXXone}{\UseVerbatim{HOLssmOneOneTheoremstrTypeXXoneXXone}}
+\newcommand{\HOLssmOneOneTheorems}{
+\HOLThmTag{ssm11}{CFGInterpret_def}\HOLssmOneOneTheoremsCFGInterpretXXdef
+\HOLThmTag{ssm11}{CFGInterpret_ind}\HOLssmOneOneTheoremsCFGInterpretXXind
+\HOLThmTag{ssm11}{configuration_one_one}\HOLssmOneOneTheoremsconfigurationXXoneXXone
+\HOLThmTag{ssm11}{order_distinct_clauses}\HOLssmOneOneTheoremsorderXXdistinctXXclauses
+\HOLThmTag{ssm11}{order_one_one}\HOLssmOneOneTheoremsorderXXoneXXone
+\HOLThmTag{ssm11}{TR_cases}\HOLssmOneOneTheoremsTRXXcases
+\HOLThmTag{ssm11}{TR_discard_cmd_rule}\HOLssmOneOneTheoremsTRXXdiscardXXcmdXXrule
+\HOLThmTag{ssm11}{TR_EQ_rules_thm}\HOLssmOneOneTheoremsTRXXEQXXrulesXXthm
+\HOLThmTag{ssm11}{TR_exec_cmd_rule}\HOLssmOneOneTheoremsTRXXexecXXcmdXXrule
+\HOLThmTag{ssm11}{TR_ind}\HOLssmOneOneTheoremsTRXXind
+\HOLThmTag{ssm11}{TR_rules}\HOLssmOneOneTheoremsTRXXrules
+\HOLThmTag{ssm11}{TR_strongind}\HOLssmOneOneTheoremsTRXXstrongind
+\HOLThmTag{ssm11}{TR_trap_cmd_rule}\HOLssmOneOneTheoremsTRXXtrapXXcmdXXrule
+\HOLThmTag{ssm11}{TRrule0}\HOLssmOneOneTheoremsTRruleZero
+\HOLThmTag{ssm11}{TRrule1}\HOLssmOneOneTheoremsTRruleOne
+\HOLThmTag{ssm11}{trType_distinct_clauses}\HOLssmOneOneTheoremstrTypeXXdistinctXXclauses
+\HOLThmTag{ssm11}{trType_one_one}\HOLssmOneOneTheoremstrTypeXXoneXXone
+}

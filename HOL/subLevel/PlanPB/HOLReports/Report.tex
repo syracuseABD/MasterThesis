@@ -1,0 +1,59 @@
+\documentclass[11pt, twoside]{article}
+\usepackage{holtex}
+
+\makeindex
+
+\begin{document}
+
+\input{HOLPlanPBType}
+\input{HOLssmPlanPB}
+
+\tableofcontents
+\cleardoublepage
+\HOLpagestyle
+
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+\section{PlanPBType Theory}
+\index{PlanPBType Theory@\textbf  {PlanPBType Theory}}
+\begin{flushleft}
+\textbf{Built:} \HOLPlanPBTypeDate \\[2pt]
+\textbf{Parent Theories:} indexedLists, patternMatches
+\end{flushleft}
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+\subsection{Datatypes}
+\index{PlanPBType Theory@\textbf  {PlanPBType Theory}!Datatypes}
+% .....................................
+
+\HOLPlanPBTypeDatatypes
+
+% No definitions
+
+\subsection{Theorems}
+\index{PlanPBType Theory@\textbf  {PlanPBType Theory}!Theorems}
+% .....................................
+
+\HOLPlanPBTypeTheorems
+
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+\section{ssmPlanPB Theory}
+\index{ssmPlanPB Theory@\textbf  {ssmPlanPB Theory}}
+\begin{flushleft}
+\textbf{Built:} \HOLssmPlanPBDate \\[2pt]
+\textbf{Parent Theories:} PlanPBDef, ssm
+\end{flushleft}
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+% No datatypes
+
+% No definitions
+
+\subsection{Theorems}
+\index{ssmPlanPB Theory@\textbf  {ssmPlanPB Theory}!Theorems}
+% .....................................
+
+\HOLssmPlanPBTheorems
+
+\HOLindex
+
+\end{document}

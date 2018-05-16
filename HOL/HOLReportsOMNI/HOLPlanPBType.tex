@@ -1,0 +1,182 @@
+\newcommand{\HOLPlanPBTypeDate}{13 May 2018}
+\newcommand{\HOLPlanPBTypeTime}{18:23}
+\begin{SaveVerbatim}{HOLPlanPBTypeDatatypesplCommand}
+\HOLFreeVar{plCommand} = \HOLConst{receiveMission} \HOLTokenBar{} \HOLConst{warno} \HOLTokenBar{} \HOLConst{tentativePlan} \HOLTokenBar{} \HOLConst{recon}
+          \HOLTokenBar{} \HOLConst{report1} \HOLTokenBar{} \HOLConst{completePlan} \HOLTokenBar{} \HOLConst{opoid} \HOLTokenBar{} \HOLConst{supervise} \HOLTokenBar{} \HOLConst{report2}
+          \HOLTokenBar{} \HOLConst{complete} \HOLTokenBar{} \HOLConst{plIncomplete} \HOLTokenBar{} \HOLConst{invalidPlCommand}
+\end{SaveVerbatim}
+\newcommand{\HOLPlanPBTypeDatatypesplCommand}{\UseVerbatim{HOLPlanPBTypeDatatypesplCommand}}
+\begin{SaveVerbatim}{HOLPlanPBTypeDatatypespsgCommand}
+\HOLFreeVar{psgCommand} = \HOLConst{initiateMovement} \HOLTokenBar{} \HOLConst{psgIncomplete}
+           \HOLTokenBar{} \HOLConst{invalidPsgCommand}
+\end{SaveVerbatim}
+\newcommand{\HOLPlanPBTypeDatatypespsgCommand}{\UseVerbatim{HOLPlanPBTypeDatatypespsgCommand}}
+\begin{SaveVerbatim}{HOLPlanPBTypeDatatypesslCommand}
+\HOLFreeVar{slCommand} = \HOLConst{PL} \HOLTyOp{plCommand} \HOLTokenBar{} \HOLConst{PSG} \HOLTyOp{psgCommand}
+\end{SaveVerbatim}
+\newcommand{\HOLPlanPBTypeDatatypesslCommand}{\UseVerbatim{HOLPlanPBTypeDatatypesslCommand}}
+\begin{SaveVerbatim}{HOLPlanPBTypeDatatypesslOutput}
+\HOLFreeVar{slOutput} = \HOLConst{PlanPB} \HOLTokenBar{} \HOLConst{ReceiveMission} \HOLTokenBar{} \HOLConst{Warno} \HOLTokenBar{} \HOLConst{TentativePlan}
+         \HOLTokenBar{} \HOLConst{InitiateMovement} \HOLTokenBar{} \HOLConst{Recon} \HOLTokenBar{} \HOLConst{Report1} \HOLTokenBar{} \HOLConst{CompletePlan}
+         \HOLTokenBar{} \HOLConst{Opoid} \HOLTokenBar{} \HOLConst{Supervise} \HOLTokenBar{} \HOLConst{Report2} \HOLTokenBar{} \HOLConst{Complete}
+         \HOLTokenBar{} \HOLConst{unAuthenticated} \HOLTokenBar{} \HOLConst{unAuthorized}
+\end{SaveVerbatim}
+\newcommand{\HOLPlanPBTypeDatatypesslOutput}{\UseVerbatim{HOLPlanPBTypeDatatypesslOutput}}
+\begin{SaveVerbatim}{HOLPlanPBTypeDatatypesslState}
+\HOLFreeVar{slState} = \HOLConst{PLAN_PB} \HOLTokenBar{} \HOLConst{RECEIVE_MISSION} \HOLTokenBar{} \HOLConst{WARNO} \HOLTokenBar{} \HOLConst{TENTATIVE_PLAN}
+        \HOLTokenBar{} \HOLConst{INITIATE_MOVEMENT} \HOLTokenBar{} \HOLConst{RECON} \HOLTokenBar{} \HOLConst{REPORT1} \HOLTokenBar{} \HOLConst{COMPLETE_PLAN}
+        \HOLTokenBar{} \HOLConst{OPOID} \HOLTokenBar{} \HOLConst{SUPERVISE} \HOLTokenBar{} \HOLConst{REPORT2} \HOLTokenBar{} \HOLConst{COMPLETE}
+\end{SaveVerbatim}
+\newcommand{\HOLPlanPBTypeDatatypesslState}{\UseVerbatim{HOLPlanPBTypeDatatypesslState}}
+\begin{SaveVerbatim}{HOLPlanPBTypeDatatypesstateRole}
+\HOLFreeVar{stateRole} = \HOLConst{PlatoonLeader} \HOLTokenBar{} \HOLConst{PlatoonSergeant}
+\end{SaveVerbatim}
+\newcommand{\HOLPlanPBTypeDatatypesstateRole}{\UseVerbatim{HOLPlanPBTypeDatatypesstateRole}}
+\newcommand{\HOLPlanPBTypeDatatypes}{
+\HOLPlanPBTypeDatatypesplCommand\HOLPlanPBTypeDatatypespsgCommand\HOLPlanPBTypeDatatypesslCommand\HOLPlanPBTypeDatatypesslOutput\HOLPlanPBTypeDatatypesslState\HOLPlanPBTypeDatatypesstateRole}
+\begin{SaveVerbatim}{HOLPlanPBTypeTheoremsplCommandXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{receiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{warno} \HOLSymConst{\HOLTokenConj{}} \HOLConst{receiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{tentativePlan} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{receiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{recon} \HOLSymConst{\HOLTokenConj{}} \HOLConst{receiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{report1} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{receiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{completePlan} \HOLSymConst{\HOLTokenConj{}} \HOLConst{receiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{opoid} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{receiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{supervise} \HOLSymConst{\HOLTokenConj{}} \HOLConst{receiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{report2} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{receiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{complete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{receiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{plIncomplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{receiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidPlCommand} \HOLSymConst{\HOLTokenConj{}} \HOLConst{warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{tentativePlan} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{recon} \HOLSymConst{\HOLTokenConj{}} \HOLConst{warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{report1} \HOLSymConst{\HOLTokenConj{}} \HOLConst{warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{completePlan} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{opoid} \HOLSymConst{\HOLTokenConj{}} \HOLConst{warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{supervise} \HOLSymConst{\HOLTokenConj{}} \HOLConst{warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{report2} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{complete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{plIncomplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidPlCommand} \HOLSymConst{\HOLTokenConj{}} \HOLConst{tentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{recon} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{tentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{report1} \HOLSymConst{\HOLTokenConj{}} \HOLConst{tentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{completePlan} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{tentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{opoid} \HOLSymConst{\HOLTokenConj{}} \HOLConst{tentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{supervise} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{tentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{report2} \HOLSymConst{\HOLTokenConj{}} \HOLConst{tentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{complete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{tentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{plIncomplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{tentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidPlCommand} \HOLSymConst{\HOLTokenConj{}} \HOLConst{recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{report1} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{completePlan} \HOLSymConst{\HOLTokenConj{}} \HOLConst{recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{opoid} \HOLSymConst{\HOLTokenConj{}} \HOLConst{recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{supervise} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{report2} \HOLSymConst{\HOLTokenConj{}} \HOLConst{recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{complete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{plIncomplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidPlCommand} \HOLSymConst{\HOLTokenConj{}} \HOLConst{report1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{completePlan} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{report1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{opoid} \HOLSymConst{\HOLTokenConj{}} \HOLConst{report1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{supervise} \HOLSymConst{\HOLTokenConj{}} \HOLConst{report1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{report2} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{report1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{complete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{report1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{plIncomplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{report1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidPlCommand} \HOLSymConst{\HOLTokenConj{}} \HOLConst{completePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{opoid} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{completePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{supervise} \HOLSymConst{\HOLTokenConj{}} \HOLConst{completePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{report2} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{completePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{complete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{completePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{plIncomplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{completePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidPlCommand} \HOLSymConst{\HOLTokenConj{}} \HOLConst{opoid} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{supervise} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{opoid} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{report2} \HOLSymConst{\HOLTokenConj{}} \HOLConst{opoid} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{complete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{opoid} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{plIncomplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{opoid} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidPlCommand} \HOLSymConst{\HOLTokenConj{}} \HOLConst{supervise} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{report2} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{supervise} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{complete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{supervise} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{plIncomplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{supervise} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidPlCommand} \HOLSymConst{\HOLTokenConj{}} \HOLConst{report2} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{complete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{report2} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{plIncomplete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{report2} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidPlCommand} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{complete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{plIncomplete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{complete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidPlCommand} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{plIncomplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidPlCommand}
+\end{SaveVerbatim}
+\newcommand{\HOLPlanPBTypeTheoremsplCommandXXdistinctXXclauses}{\UseVerbatim{HOLPlanPBTypeTheoremsplCommandXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLPlanPBTypeTheoremspsgCommandXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{initiateMovement} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{psgIncomplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{initiateMovement} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidPsgCommand} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{psgIncomplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidPsgCommand}
+\end{SaveVerbatim}
+\newcommand{\HOLPlanPBTypeTheoremspsgCommandXXdistinctXXclauses}{\UseVerbatim{HOLPlanPBTypeTheoremspsgCommandXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLPlanPBTypeTheoremsslCommandXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sp{\prime}} \HOLBoundVar{a}. \HOLConst{PL} \HOLBoundVar{a} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PSG} \HOLBoundVar{a\sp{\prime}}
+\end{SaveVerbatim}
+\newcommand{\HOLPlanPBTypeTheoremsslCommandXXdistinctXXclauses}{\UseVerbatim{HOLPlanPBTypeTheoremsslCommandXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLPlanPBTypeTheoremsslCommandXXoneXXone}
+\HOLTokenTurnstile{} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a} \HOLBoundVar{a\sp{\prime}}. (\HOLConst{PL} \HOLBoundVar{a} \HOLSymConst{=} \HOLConst{PL} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}} (\HOLBoundVar{a} \HOLSymConst{=} \HOLBoundVar{a\sp{\prime}})) \HOLSymConst{\HOLTokenConj{}}
+   \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a} \HOLBoundVar{a\sp{\prime}}. (\HOLConst{PSG} \HOLBoundVar{a} \HOLSymConst{=} \HOLConst{PSG} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}} (\HOLBoundVar{a} \HOLSymConst{=} \HOLBoundVar{a\sp{\prime}})
+\end{SaveVerbatim}
+\newcommand{\HOLPlanPBTypeTheoremsslCommandXXoneXXone}{\UseVerbatim{HOLPlanPBTypeTheoremsslCommandXXoneXXone}}
+\begin{SaveVerbatim}{HOLPlanPBTypeTheoremsslOutputXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ReceiveMission} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Warno} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{TentativePlan} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{InitiateMovement} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Recon} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report1} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePlan} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Opoid} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Supervise} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report2} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PlanPB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ReceiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Warno} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ReceiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{TentativePlan} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ReceiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{InitiateMovement} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ReceiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Recon} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ReceiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report1} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ReceiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePlan} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ReceiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Opoid} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ReceiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Supervise} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ReceiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report2} \HOLSymConst{\HOLTokenConj{}} \HOLConst{ReceiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ReceiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ReceiveMission} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{TentativePlan} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{InitiateMovement} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Recon} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report1} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePlan} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Opoid} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Supervise} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report2} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Warno} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{TentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{InitiateMovement} \HOLSymConst{\HOLTokenConj{}} \HOLConst{TentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Recon} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{TentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report1} \HOLSymConst{\HOLTokenConj{}} \HOLConst{TentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePlan} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{TentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Opoid} \HOLSymConst{\HOLTokenConj{}} \HOLConst{TentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Supervise} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{TentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report2} \HOLSymConst{\HOLTokenConj{}} \HOLConst{TentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{TentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{TentativePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{InitiateMovement} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Recon} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{InitiateMovement} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report1} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{InitiateMovement} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePlan} \HOLSymConst{\HOLTokenConj{}} \HOLConst{InitiateMovement} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Opoid} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{InitiateMovement} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Supervise} \HOLSymConst{\HOLTokenConj{}} \HOLConst{InitiateMovement} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report2} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{InitiateMovement} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{InitiateMovement} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{InitiateMovement} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report1} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePlan} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Opoid} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Supervise} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report2} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Recon} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Report1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{CompletePlan} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Report1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Opoid} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Report1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Supervise} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Report1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report2} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Report1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Report1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Report1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{CompletePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Opoid} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{CompletePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Supervise} \HOLSymConst{\HOLTokenConj{}} \HOLConst{CompletePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report2} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{CompletePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{CompletePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{CompletePlan} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Opoid} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Supervise} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Opoid} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report2} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Opoid} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Opoid} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Opoid} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Supervise} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Report2} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Supervise} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Supervise} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Supervise} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Report2} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Report2} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Report2} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Complete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized}
+\end{SaveVerbatim}
+\newcommand{\HOLPlanPBTypeTheoremsslOutputXXdistinctXXclauses}{\UseVerbatim{HOLPlanPBTypeTheoremsslOutputXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLPlanPBTypeTheoremsslRoleXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{PlatoonLeader} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PlatoonSergeant}
+\end{SaveVerbatim}
+\newcommand{\HOLPlanPBTypeTheoremsslRoleXXdistinctXXclauses}{\UseVerbatim{HOLPlanPBTypeTheoremsslRoleXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLPlanPBTypeTheoremsslStateXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{RECEIVE_MISSION} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{WARNO} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{TENTATIVE_PLAN} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{INITIATE_MOVEMENT} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{RECON} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT1} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PLAN} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{OPOID} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{SUPERVISE} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT2} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLAN_PB} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE} \HOLSymConst{\HOLTokenConj{}} \HOLConst{RECEIVE_MISSION} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{WARNO} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{RECEIVE_MISSION} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{TENTATIVE_PLAN} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{RECEIVE_MISSION} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{INITIATE_MOVEMENT} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{RECEIVE_MISSION} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{RECON} \HOLSymConst{\HOLTokenConj{}} \HOLConst{RECEIVE_MISSION} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT1} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{RECEIVE_MISSION} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PLAN} \HOLSymConst{\HOLTokenConj{}} \HOLConst{RECEIVE_MISSION} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{OPOID} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{RECEIVE_MISSION} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{SUPERVISE} \HOLSymConst{\HOLTokenConj{}} \HOLConst{RECEIVE_MISSION} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT2} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{RECEIVE_MISSION} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE} \HOLSymConst{\HOLTokenConj{}} \HOLConst{WARNO} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{TENTATIVE_PLAN} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{WARNO} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{INITIATE_MOVEMENT} \HOLSymConst{\HOLTokenConj{}} \HOLConst{WARNO} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{RECON} \HOLSymConst{\HOLTokenConj{}} \HOLConst{WARNO} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT1} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{WARNO} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PLAN} \HOLSymConst{\HOLTokenConj{}} \HOLConst{WARNO} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{OPOID} \HOLSymConst{\HOLTokenConj{}} \HOLConst{WARNO} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{SUPERVISE} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{WARNO} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT2} \HOLSymConst{\HOLTokenConj{}} \HOLConst{WARNO} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{TENTATIVE_PLAN} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{INITIATE_MOVEMENT} \HOLSymConst{\HOLTokenConj{}} \HOLConst{TENTATIVE_PLAN} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{RECON} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{TENTATIVE_PLAN} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT1} \HOLSymConst{\HOLTokenConj{}} \HOLConst{TENTATIVE_PLAN} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PLAN} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{TENTATIVE_PLAN} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{OPOID} \HOLSymConst{\HOLTokenConj{}} \HOLConst{TENTATIVE_PLAN} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{SUPERVISE} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{TENTATIVE_PLAN} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT2} \HOLSymConst{\HOLTokenConj{}} \HOLConst{TENTATIVE_PLAN} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{INITIATE_MOVEMENT} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{RECON} \HOLSymConst{\HOLTokenConj{}} \HOLConst{INITIATE_MOVEMENT} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT1} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{INITIATE_MOVEMENT} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PLAN} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{INITIATE_MOVEMENT} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{OPOID} \HOLSymConst{\HOLTokenConj{}} \HOLConst{INITIATE_MOVEMENT} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{SUPERVISE} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{INITIATE_MOVEMENT} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT2} \HOLSymConst{\HOLTokenConj{}} \HOLConst{INITIATE_MOVEMENT} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{RECON} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT1} \HOLSymConst{\HOLTokenConj{}} \HOLConst{RECON} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PLAN} \HOLSymConst{\HOLTokenConj{}} \HOLConst{RECON} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{OPOID} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{RECON} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{SUPERVISE} \HOLSymConst{\HOLTokenConj{}} \HOLConst{RECON} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT2} \HOLSymConst{\HOLTokenConj{}} \HOLConst{RECON} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{REPORT1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE_PLAN} \HOLSymConst{\HOLTokenConj{}} \HOLConst{REPORT1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{OPOID} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{REPORT1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{SUPERVISE} \HOLSymConst{\HOLTokenConj{}} \HOLConst{REPORT1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT2} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{REPORT1} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE} \HOLSymConst{\HOLTokenConj{}} \HOLConst{COMPLETE_PLAN} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{OPOID} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{COMPLETE_PLAN} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{SUPERVISE} \HOLSymConst{\HOLTokenConj{}} \HOLConst{COMPLETE_PLAN} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT2} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{COMPLETE_PLAN} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE} \HOLSymConst{\HOLTokenConj{}} \HOLConst{OPOID} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{SUPERVISE} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{OPOID} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT2} \HOLSymConst{\HOLTokenConj{}} \HOLConst{OPOID} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE} \HOLSymConst{\HOLTokenConj{}} \HOLConst{SUPERVISE} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{REPORT2} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{SUPERVISE} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE} \HOLSymConst{\HOLTokenConj{}} \HOLConst{REPORT2} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE}
+\end{SaveVerbatim}
+\newcommand{\HOLPlanPBTypeTheoremsslStateXXdistinctXXclauses}{\UseVerbatim{HOLPlanPBTypeTheoremsslStateXXdistinctXXclauses}}
+\newcommand{\HOLPlanPBTypeTheorems}{
+\HOLThmTag{PlanPBType}{plCommand_distinct_clauses}\HOLPlanPBTypeTheoremsplCommandXXdistinctXXclauses
+\HOLThmTag{PlanPBType}{psgCommand_distinct_clauses}\HOLPlanPBTypeTheoremspsgCommandXXdistinctXXclauses
+\HOLThmTag{PlanPBType}{slCommand_distinct_clauses}\HOLPlanPBTypeTheoremsslCommandXXdistinctXXclauses
+\HOLThmTag{PlanPBType}{slCommand_one_one}\HOLPlanPBTypeTheoremsslCommandXXoneXXone
+\HOLThmTag{PlanPBType}{slOutput_distinct_clauses}\HOLPlanPBTypeTheoremsslOutputXXdistinctXXclauses
+\HOLThmTag{PlanPBType}{slRole_distinct_clauses}\HOLPlanPBTypeTheoremsslRoleXXdistinctXXclauses
+\HOLThmTag{PlanPBType}{slState_distinct_clauses}\HOLPlanPBTypeTheoremsslStateXXdistinctXXclauses
+}

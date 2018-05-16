@@ -1,0 +1,1 @@
+aclrulesScript.uo: /usr/local/share/HOL/sigobj/HolKernel.ui /usr/local/share/HOL/sigobj/Parse.ui aclfoundationTheory.ui aclsemanticsTheory.ui /usr/local/share/HOL/sigobj/boolLib.ui /usr/local/share/HOL/sigobj/bossLib.ui /usr/local/share/HOL/sigobj/pred_setLib.ui /usr/local/share/HOL/sigobj/pred_setTheory.ui /usr/local/share/HOL/sigobj/relationTheory.ui 

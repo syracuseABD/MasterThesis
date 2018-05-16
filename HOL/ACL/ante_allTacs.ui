@@ -1,0 +1,6 @@
+$(HOLDIR)/sigobj/Abbrev
+$(HOLDIR)/sigobj/Overlay
+$(HOLDIR)/sigobj/Term
+$(HOLDIR)/sigobj/Thm
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ACL/ante_allTacs
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ACL/ante_allTacs.sig
