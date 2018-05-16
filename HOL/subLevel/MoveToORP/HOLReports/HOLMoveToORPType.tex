@@ -1,0 +1,58 @@
+\newcommand{\HOLMoveToORPTypeDate}{16 May 2018}
+\newcommand{\HOLMoveToORPTypeTime}{16:33}
+\begin{SaveVerbatim}{HOLMoveToORPTypeDatatypesslCommand}
+\HOLFreeVar{slCommand} = \HOLConst{pltForm} \HOLTokenBar{} \HOLConst{pltMove} \HOLTokenBar{} \HOLConst{pltSecureHalt} \HOLTokenBar{} \HOLConst{complete}
+          \HOLTokenBar{} \HOLConst{incomplete}
+\end{SaveVerbatim}
+\newcommand{\HOLMoveToORPTypeDatatypesslCommand}{\UseVerbatim{HOLMoveToORPTypeDatatypesslCommand}}
+\begin{SaveVerbatim}{HOLMoveToORPTypeDatatypesslOutput}
+\HOLFreeVar{slOutput} = \HOLConst{MoveToORP} \HOLTokenBar{} \HOLConst{PLTForm} \HOLTokenBar{} \HOLConst{PLTMove} \HOLTokenBar{} \HOLConst{PLTSecureHalt}
+         \HOLTokenBar{} \HOLConst{Complete} \HOLTokenBar{} \HOLConst{unAuthorized} \HOLTokenBar{} \HOLConst{unAuthenticated}
+\end{SaveVerbatim}
+\newcommand{\HOLMoveToORPTypeDatatypesslOutput}{\UseVerbatim{HOLMoveToORPTypeDatatypesslOutput}}
+\begin{SaveVerbatim}{HOLMoveToORPTypeDatatypesslState}
+\HOLFreeVar{slState} = \HOLConst{MOVE_TO_ORP} \HOLTokenBar{} \HOLConst{PLT_FORM} \HOLTokenBar{} \HOLConst{PLT_MOVE} \HOLTokenBar{} \HOLConst{PLT_SECURE_HALT}
+        \HOLTokenBar{} \HOLConst{COMPLETE}
+\end{SaveVerbatim}
+\newcommand{\HOLMoveToORPTypeDatatypesslState}{\UseVerbatim{HOLMoveToORPTypeDatatypesslState}}
+\begin{SaveVerbatim}{HOLMoveToORPTypeDatatypesstateRole}
+\HOLFreeVar{stateRole} = \HOLConst{PlatoonLeader}
+\end{SaveVerbatim}
+\newcommand{\HOLMoveToORPTypeDatatypesstateRole}{\UseVerbatim{HOLMoveToORPTypeDatatypesstateRole}}
+\newcommand{\HOLMoveToORPTypeDatatypes}{
+\HOLMoveToORPTypeDatatypesslCommand\HOLMoveToORPTypeDatatypesslOutput\HOLMoveToORPTypeDatatypesslState\HOLMoveToORPTypeDatatypesstateRole}
+\begin{SaveVerbatim}{HOLMoveToORPTypeTheoremsslCommandXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{pltForm} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{pltMove} \HOLSymConst{\HOLTokenConj{}} \HOLConst{pltForm} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{pltSecureHalt} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{pltForm} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{complete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{pltForm} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{incomplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{pltMove} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{pltSecureHalt} \HOLSymConst{\HOLTokenConj{}} \HOLConst{pltMove} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{complete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{pltMove} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{incomplete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{pltSecureHalt} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{complete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{pltSecureHalt} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{incomplete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{complete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{incomplete}
+\end{SaveVerbatim}
+\newcommand{\HOLMoveToORPTypeTheoremsslCommandXXdistinctXXclauses}{\UseVerbatim{HOLMoveToORPTypeTheoremsslCommandXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLMoveToORPTypeTheoremsslOutputXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{MoveToORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PLTForm} \HOLSymConst{\HOLTokenConj{}} \HOLConst{MoveToORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PLTMove} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{MoveToORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PLTSecureHalt} \HOLSymConst{\HOLTokenConj{}} \HOLConst{MoveToORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{MoveToORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}} \HOLConst{MoveToORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLTForm} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PLTMove} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLTForm} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PLTSecureHalt} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLTForm} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLTForm} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLTForm} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLTMove} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PLTSecureHalt} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLTMove} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLTMove} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLTMove} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLTSecureHalt} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLTSecureHalt} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLTSecureHalt} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}} \HOLConst{Complete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{Complete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated} \HOLSymConst{\HOLTokenConj{}} \HOLConst{unAuthorized} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{unAuthenticated}
+\end{SaveVerbatim}
+\newcommand{\HOLMoveToORPTypeTheoremsslOutputXXdistinctXXclauses}{\UseVerbatim{HOLMoveToORPTypeTheoremsslOutputXXdistinctXXclauses}}
+\begin{SaveVerbatim}{HOLMoveToORPTypeTheoremsslStateXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{MOVE_TO_ORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PLT_FORM} \HOLSymConst{\HOLTokenConj{}} \HOLConst{MOVE_TO_ORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PLT_MOVE} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{MOVE_TO_ORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PLT_SECURE_HALT} \HOLSymConst{\HOLTokenConj{}} \HOLConst{MOVE_TO_ORP} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLT_FORM} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PLT_MOVE} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLT_FORM} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PLT_SECURE_HALT} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLT_FORM} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLT_MOVE} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PLT_SECURE_HALT} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PLT_MOVE} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PLT_SECURE_HALT} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{COMPLETE}
+\end{SaveVerbatim}
+\newcommand{\HOLMoveToORPTypeTheoremsslStateXXdistinctXXclauses}{\UseVerbatim{HOLMoveToORPTypeTheoremsslStateXXdistinctXXclauses}}
+\newcommand{\HOLMoveToORPTypeTheorems}{
+\HOLThmTag{MoveToORPType}{slCommand_distinct_clauses}\HOLMoveToORPTypeTheoremsslCommandXXdistinctXXclauses
+\HOLThmTag{MoveToORPType}{slOutput_distinct_clauses}\HOLMoveToORPTypeTheoremsslOutputXXdistinctXXclauses
+\HOLThmTag{MoveToORPType}{slState_distinct_clauses}\HOLMoveToORPTypeTheoremsslStateXXdistinctXXclauses
+}

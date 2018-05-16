@@ -1,0 +1,246 @@
+\begin{theindex}
+
+  \item \textbf  {ConductORPType Theory}, 38
+    \subitem Datatypes, 38
+    \subitem Theorems, 39
+      \subsubitem plCommand_distinct_clauses, 39
+      \subsubitem psgCommand_distinct_clauses, 39
+      \subsubitem slCommand_distinct_clauses, 39
+      \subsubitem slCommand_one_one, 39
+      \subsubitem slOutput_distinct_clauses, 39
+      \subsubitem slRole_distinct_clauses, 39
+      \subsubitem slState_distinct_clauses, 39
+  \item \textbf  {ConductPBType Theory}, 45
+    \subitem Datatypes, 45
+    \subitem Theorems, 45
+      \subsubitem plCommandPB_distinct_clauses, 45
+      \subsubitem psgCommandPB_distinct_clauses, 45
+      \subsubitem slCommand_distinct_clauses, 45
+      \subsubitem slCommand_one_one, 45
+      \subsubitem slOutput_distinct_clauses, 46
+      \subsubitem slRole_distinct_clauses, 46
+      \subsubitem slState_distinct_clauses, 46
+
+  \indexspace
+
+  \item \textbf  {MoveToORPType Theory}, 51
+    \subitem Datatypes, 51
+    \subitem Theorems, 51
+      \subsubitem slCommand_distinct_clauses, 51
+      \subsubitem slOutput_distinct_clauses, 51
+      \subsubitem slState_distinct_clauses, 51
+  \item \textbf  {MoveToPBType Theory}, 56
+    \subitem Datatypes, 56
+    \subitem Theorems, 56
+      \subsubitem slCommand_distinct_clauses, 56
+      \subsubitem slOutput_distinct_clauses, 57
+      \subsubitem slState_distinct_clauses, 57
+
+  \indexspace
+
+  \item \textbf  {OMNIType Theory}, 3
+    \subitem Datatypes, 3
+    \subitem Theorems, 3
+      \subsubitem command_distinct_clauses, 3
+      \subsubitem command_one_one, 3
+      \subsubitem escCommand_distinct_clauses, 3
+      \subsubitem escOutput_distinct_clauses, 3
+      \subsubitem escState_distinct_clauses, 3
+      \subsubitem output_distinct_clauses, 4
+      \subsubitem output_one_one, 4
+      \subsubitem principal_one_one, 4
+      \subsubitem state_distinct_clauses, 4
+      \subsubitem state_one_one, 4
+
+  \indexspace
+
+  \item \textbf  {PBIntegratedDef Theory}, 28
+    \subitem Definitions, 28
+      \subsubitem secAuthorization_def, 28
+      \subsubitem secHelper_def, 28
+    \subitem Theorems, 28
+      \subsubitem getOmniCommand_def, 28
+      \subsubitem getOmniCommand_ind, 31
+      \subsubitem secContext_def, 32
+      \subsubitem secContext_ind, 33
+  \item \textbf  {PBTypeIntegrated Theory}, 26
+    \subitem Datatypes, 26
+    \subitem Theorems, 27
+      \subsubitem omniCommand_distinct_clauses, 27
+      \subsubitem plCommand_distinct_clauses, 27
+      \subsubitem slCommand_distinct_clauses, 27
+      \subsubitem slCommand_one_one, 27
+      \subsubitem slOutput_distinct_clauses, 27
+      \subsubitem slState_distinct_clauses, 28
+      \subsubitem stateRole_distinct_clauses, 28
+  \item \textbf  {PlanPBType Theory}, 67
+    \subitem Datatypes, 67
+    \subitem Theorems, 68
+      \subsubitem plCommand_distinct_clauses, 68
+      \subsubitem psgCommand_distinct_clauses, 68
+      \subsubitem slCommand_distinct_clauses, 68
+      \subsubitem slCommand_one_one, 69
+      \subsubitem slOutput_distinct_clauses, 69
+      \subsubitem slRole_distinct_clauses, 70
+      \subsubitem slState_distinct_clauses, 70
+
+  \indexspace
+
+  \item \textbf  {satList Theory}, 21
+    \subitem Definitions, 21
+      \subsubitem satList_def, 21
+    \subitem Theorems, 21
+      \subsubitem satList_conj, 21
+      \subsubitem satList_CONS, 21
+      \subsubitem satList_nil, 21
+  \item \textbf  {ssm Theory}, 11
+    \subitem Datatypes, 11
+    \subitem Definitions, 12
+      \subsubitem authenticationTest_def, 12
+      \subsubitem commandList_def, 12
+      \subsubitem inputList_def, 12
+      \subsubitem propCommandList_def, 12
+      \subsubitem TR_def, 12
+    \subitem Theorems, 13
+      \subsubitem CFGInterpret_def, 13
+      \subsubitem CFGInterpret_ind, 13
+      \subsubitem configuration_one_one, 13
+      \subsubitem extractCommand_def, 13
+      \subsubitem extractCommand_ind, 13
+      \subsubitem extractInput_def, 14
+      \subsubitem extractInput_ind, 14
+      \subsubitem extractPropCommand_def, 15
+      \subsubitem extractPropCommand_ind, 15
+      \subsubitem TR_cases, 16
+      \subsubitem TR_discard_cmd_rule, 17
+      \subsubitem TR_EQ_rules_thm, 17
+      \subsubitem TR_exec_cmd_rule, 17
+      \subsubitem TR_ind, 18
+      \subsubitem TR_rules, 18
+      \subsubitem TR_strongind, 19
+      \subsubitem TR_trap_cmd_rule, 20
+      \subsubitem TRrule0, 20
+      \subsubitem TRrule1, 20
+      \subsubitem trType_distinct_clauses, 20
+      \subsubitem trType_one_one, 21
+  \item \textbf  {ssm11 Theory}, 4
+    \subitem Datatypes, 4
+    \subitem Definitions, 4
+      \subsubitem TR_def, 4
+    \subitem Theorems, 5
+      \subsubitem CFGInterpret_def, 5
+      \subsubitem CFGInterpret_ind, 6
+      \subsubitem configuration_one_one, 6
+      \subsubitem order_distinct_clauses, 6
+      \subsubitem order_one_one, 6
+      \subsubitem TR_cases, 6
+      \subsubitem TR_discard_cmd_rule, 7
+      \subsubitem TR_EQ_rules_thm, 7
+      \subsubitem TR_exec_cmd_rule, 8
+      \subsubitem TR_ind, 8
+      \subsubitem TR_rules, 9
+      \subsubitem TR_strongind, 9
+      \subsubitem TR_trap_cmd_rule, 10
+      \subsubitem TRrule0, 10
+      \subsubitem TRrule1, 11
+      \subsubitem trType_distinct_clauses, 11
+      \subsubitem trType_one_one, 11
+  \item \textbf  {ssmConductORP Theory}, 33
+    \subitem Definitions, 33
+      \subsubitem secContextConductORP_def, 33
+      \subsubitem ssmConductORPStateInterp_def, 33
+    \subitem Theorems, 33
+      \subsubitem authTestConductORP_cmd_reject_lemma, 33
+      \subsubitem authTestConductORP_def, 34
+      \subsubitem authTestConductORP_ind, 34
+      \subsubitem conductORPNS_def, 35
+      \subsubitem conductORPNS_ind, 35
+      \subsubitem conductORPOut_def, 36
+      \subsubitem conductORPOut_ind, 36
+      \subsubitem PlatoonLeader_exec_plCommand_justified_thm, 37
+      \subsubitem PlatoonLeader_plCommand_lemma, 37
+      \subsubitem PlatoonSergeant_exec_psgCommand_justified_thm, 38
+      \subsubitem PlatoonSergeant_psgCommand_lemma, 38
+  \item \textbf  {ssmConductPB Theory}, 39
+    \subitem Definitions, 40
+      \subsubitem secContextConductPB_def, 40
+      \subsubitem ssmConductPBStateInterp_def, 40
+    \subitem Theorems, 40
+      \subsubitem authTestConductPB_cmd_reject_lemma, 40
+      \subsubitem authTestConductPB_def, 40
+      \subsubitem authTestConductPB_ind, 41
+      \subsubitem conductPBNS_def, 42
+      \subsubitem conductPBNS_ind, 42
+      \subsubitem conductPBOut_def, 43
+      \subsubitem conductPBOut_ind, 43
+      \subsubitem PlatoonLeader_exec_plCommandPB_justified_thm, 44
+      \subsubitem PlatoonLeader_plCommandPB_lemma, 44
+      \subsubitem PlatoonSergeant_exec_psgCommandPB_justified_thm, 44
+      \subsubitem PlatoonSergeant_psgCommandPB_lemma, 45
+  \item \textbf  {ssmMoveToORP Theory}, 46
+    \subitem Definitions, 46
+      \subsubitem secContextMoveToORP_def, 46
+      \subsubitem ssmMoveToORPStateInterp_def, 46
+    \subitem Theorems, 46
+      \subsubitem authTestMoveToORP_cmd_reject_lemma, 46
+      \subsubitem authTestMoveToORP_def, 47
+      \subsubitem authTestMoveToORP_ind, 47
+      \subsubitem moveToORPNS_def, 48
+      \subsubitem moveToORPNS_ind, 48
+      \subsubitem moveToORPOut_def, 49
+      \subsubitem moveToORPOut_ind, 49
+      \subsubitem PlatoonLeader_exec_slCommand_justified_thm, 50
+      \subsubitem PlatoonLeader_slCommand_lemma, 50
+  \item \textbf  {ssmMoveToPB Theory}, 52
+    \subitem Definitions, 52
+      \subsubitem secContextMoveToPB_def, 52
+      \subsubitem ssmMoveToPBStateInterp_def, 52
+    \subitem Theorems, 52
+      \subsubitem authTestMoveToPB_cmd_reject_lemma, 52
+      \subsubitem authTestMoveToPB_def, 52
+      \subsubitem authTestMoveToPB_ind, 53
+      \subsubitem moveToPBNS_def, 53
+      \subsubitem moveToPBNS_ind, 54
+      \subsubitem moveToPBOut_def, 54
+      \subsubitem moveToPBOut_ind, 55
+      \subsubitem PlatoonLeader_exec_slCommand_justified_thm, 55
+      \subsubitem PlatoonLeader_slCommand_lemma, 56
+  \item \textbf  {ssmPB Theory}, 21
+    \subitem Definitions, 21
+      \subsubitem secContext_def, 21
+      \subsubitem ssmPBStateInterp_def, 21
+    \subitem Theorems, 22
+      \subsubitem authenticationTest_cmd_reject_lemma, 22
+      \subsubitem authenticationTest_def, 22
+      \subsubitem authenticationTest_ind, 22
+      \subsubitem PBNS_def, 23
+      \subsubitem PBNS_ind, 23
+      \subsubitem PBOut_def, 24
+      \subsubitem PBOut_ind, 25
+      \subsubitem PlatoonLeader_exec_slCommand_justified_thm, 26
+      \subsubitem PlatoonLeader_slCommand_lemma, 26
+  \item \textbf  {ssmPlanPB Theory}, 57
+    \subitem Theorems, 57
+      \subsubitem inputOK_def, 57
+      \subsubitem inputOK_ind, 58
+      \subsubitem planPBNS_def, 59
+      \subsubitem planPBNS_ind, 59
+      \subsubitem planPBOut_def, 59
+      \subsubitem planPBOut_ind, 60
+      \subsubitem PlatoonLeader_notWARNO_notreport1_exec_plCommand_justified_lemma, 
+		60
+      \subsubitem PlatoonLeader_notWARNO_notreport1_exec_plCommand_justified_thm, 
+		61
+      \subsubitem PlatoonLeader_notWARNO_notreport1_exec_plCommand_lemma, 
+		61
+      \subsubitem PlatoonLeader_psgCommand_notDiscard_thm, 62
+      \subsubitem PlatoonLeader_trap_psgCommand_justified_lemma, 62
+      \subsubitem PlatoonLeader_trap_psgCommand_lemma, 63
+      \subsubitem PlatoonLeader_WARNO_exec_report1_justified_lemma, 63
+      \subsubitem PlatoonLeader_WARNO_exec_report1_justified_thm, 64
+      \subsubitem PlatoonLeader_WARNO_exec_report1_lemma, 66
+      \subsubitem PlatoonSergeant_trap_plCommand_justified_lemma, 66
+      \subsubitem PlatoonSergeant_trap_plCommand_justified_thm, 67
+      \subsubitem PlatoonSergeant_trap_plCommand_lemma, 67
+
+\end{theindex}

@@ -14,7 +14,7 @@ open TypeBase
 
 
 open HolKernel Parse boolLib bossLib;
-open TypeBase
+open TypeBase OMNITypeTheory
 
 val _= new_theory "PBTypeIntegrated";
 
@@ -38,7 +38,8 @@ Datatype `omniCommand = ssmPlanPBComplete
 	 	    | ssmMoveToORPComplete
 		    | ssmConductORPComplete
 		    | ssmMoveToPBComplete
-		    | ssmConductPBComplete`
+		    | ssmConductPBComplete
+		    | invalidOmniCommand`
 
 val omniCommand_distinct_clauses = distinct_of``:omniCommand``
 val _= save_thm("omniCommand_distinct_clauses",

@@ -1,0 +1,12 @@
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ACL/aclfoundationTheory
+$(HOLDIR)/sigobj/HolKernel
+$(HOLDIR)/sigobj/Overlay
+$(HOLDIR)/sigobj/Parse
+$(HOLDIR)/sigobj/TypeBase
+$(HOLDIR)/sigobj/boolLib
+$(HOLDIR)/sigobj/bossLib
+$(HOLDIR)/sigobj/listSyntax
+$(HOLDIR)/sigobj/optionTheory
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ssms/uavUtilities
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ssms/uavUtilities
+/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ssms/uavUtilities.sml
