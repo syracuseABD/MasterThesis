@@ -8,6 +8,9 @@
 %%Including code
 \usepackage{holtex}
 \usepackage{holtexbasic}
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage{pdfpages}
 
 
 %%Section numbering
@@ -36,6 +39,7 @@ marginparwidth=0in
 
 %%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+\lstset{language=ML}
 \title{Main. Master Thesis}
 \author{Lori Pickering}
 
@@ -110,11 +114,79 @@ marginparwidth=0in
 \end{doublespace}
 \cleardoublepage
 
+
 %%%%%%% Appendicies %%%%%%%%%%%%%%%%
 \begin{appendices}
-\chapter{Access Control Logic Theories in HOL}
-\chapter{Secure State Machine Theories Applied to Patrol Base Operations}
-\chapter{Pretty-Printed Theories}
+\chapter{Access Control Logic Theories: Pretty-Printed Theories}
+\includepdf[pages=-]{../../HOLReportsOMNI/}
+
+\chapter{Secure State Machine Theories: HOL Script Files}
+\section{ssm}
+\lstinputlisting{../../HOL/ssms/ssmScript.sml}
+
+\chapter{Secure State Machine Theories Applied to Patrol Base Operations: HOL Script Files}
+\section{OMNILevel}
+\lstinputlisting{../../HOL/OMNILevel/OMNIScript.sml}
+
+\section{TopLevel}
+\subsection{PBTypeIntegrated Theory: Type Definitions}
+\lstinputlisting{../../HOL/topLevel/PBTypeIntegratedScript.sml}
+\subsection{PBIntegratedDef Theory: Authentication \& Authorization Definitions}
+\lstinputlisting{../../HOL/topLevel/PBIntegratedDefScript.sml}
+\subsection{ssmPlanPBIntegrated Theory: Theorems}
+\lstinputlisting{../../HOL/topLevel/ssmPBIntegratedScript.sml}
+
+
+\section{Horizontal Slice}
+\subsection{ssmPlanPB}
+\subsubsection{PlanPBType Theory: Type Definitions}
+\subsubsection{PlanPBDef Theory: Authentication \& Authorization Definitions}
+\subsubsection{ssmPlanPB Theory: Theorems}
+
+\subsection{ssmMoveToORP}
+\subsubsection{MoveToORPType Theory: Type Definitions}
+\subsubsection{MoveToORPDef Theory: Authentication \& Authorization Definitions}
+\subsubsection{ssmMoveToORP Theory: Theorems}
+
+\subsection{ssmConductORP}
+\subsubsection{ConductORPType Theory: Type Definitions}
+\subsubsection{ConductORPDef Theory: Authentication \& Authorization Definitions}
+\subsubsection{ssmConductORP Theory: Theorems}
+
+\subsection{ssmMoveToPB}
+\subsubsection{MoveToPBType Theory: Type Definitions}
+\subsubsection{MoveToPBDef Theory: Authentication \& Authorization Definitions}
+\subsubsection{ssmMoveToPB Theory: Theorems}
+
+\subsection{ssmConductPB}
+\subsubsection{ConductPBType Theory: Type Definitions}
+\subsubsection{ConductPBDef Theory: Authentication \& Authorization Definitions}
+\subsubsection{ssmConductPB Theory: Theorems}
+
+
+\section{Vertical Slice}
+\subsection{ssmSecureHalt}
+\subsubsection{SecureHaltType Theory: Type Definitions}
+\subsubsection{SecureHaltDef Theory: Authentication \& Authorization Definitions}
+\subsubsection{ssmSecureHalt Theory: Theorems}
+
+\subsection{ssmORPRecon}
+\subsubsection{ORPReconType Theory: Type Definitions}
+\subsubsection{ORPReconDef Theory: Authentication \& Authorization Definitions}
+\subsubsection{ssmORPRecon Theory: Theorems}
+
+\subsection{ssmMoveToORP4L}
+\subsubsection{MoveToORP4LType Theory: Type Definitions}
+\subsubsection{MoveToORP4LDef Theory: Authentication \& Authorization Definitions}
+\subsubsection{ssmMoveToORP4L Theory: Theorems}
+
+\subsection{ssmFormRT}
+\subsubsection{FormRTType Theory: Type Definitions}
+\subsubsection{FormRTDef Theory: Authentication \& Authorization Definitions}
+\subsubsection{ssmFormRT Theory: Theorems}
+
+
+\chapter{Patrol Base Operations: Pretty-Printed Theories }
 \chapter{Map of The File Folder Structure}
 \end{appendices}\cleardoublepage
 
