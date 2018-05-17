@@ -1,6 +1,6 @@
 app load ["OMNITypeTheory", "ssm11Theory", "ssmTheory",
     	  "satListTheory","ssminfRules",
-    	  "ssmPBTheory",
+    	  "ssmPBIntegratedTheory",
 	  "PBTypeIntegratedTheory","PBIntegratedDefTheory",
           "ssmConductORPTheory", "ConductORPTypeTheory",
 	  "ssmConductPBTheory","ConductPBTypeTheory",
@@ -14,7 +14,7 @@ open EmitTeX;
 print_theories_as_tex_doc
 ["OMNIType","ssm11", "ssm",
  "satList","ssminfRules",
- "ssmPB",
+ "PBssmPBIntegrated",
  "PBTypeIntegrated","PBIntegratedDef",
  "ssmConductORP","ConductORPType",
  "ssmConductPB","ConductPBType","ssmMoveToORP","MoveToORPType",
