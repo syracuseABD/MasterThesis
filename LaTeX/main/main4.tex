@@ -28,6 +28,10 @@
 \usepackage[nottoc]{tocbibind}
 \renewcommand{\bibname}{References}
 
+%% Graphics
+\usepackage{graphicx}
+\graphicspath{{../figures/}}
+
 %%%%%%%% Style
 \renewcommand{\contentsname}{Table Of Contents}
 \pagenumbering{roman}
@@ -49,6 +53,12 @@ marginparwidth=0in
 \author{Lori Pickering}
 
 %\frontmatter
+%% Testing figure placement and inclusion in List of Figures
+\begin{figure}[t]
+\includegraphics[width=\textwidth]{../figures/overalldiagramsquashed.png}
+\caption{This is a caption for this figure.}
+\end{figure}
+
 \begin{doublespace}
 \cleardoublepage \phantomsection
 \addcontentsline{toc}{chapter}{Abstract}
