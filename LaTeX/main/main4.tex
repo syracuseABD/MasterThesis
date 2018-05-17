@@ -12,6 +12,11 @@
 \usepackage{listings}
 \usepackage{pdfpages}
 
+%% Acronyms
+\usepackage[acronym,toc]{glossaries}
+\loadglsentries{acronyms}
+\makenoidxglossaries
+\usepackage[nolist,nohyperlinks,printonlyused,nonumberlist]{acronym}
 
 %%Section numbering
 \usepackage{subfiles}
@@ -67,16 +72,15 @@ marginparwidth=0in
 
 %%%%%%%%% Figures, Tables, Acronyms %%%%%%%%%%%%%%%%%
 \cleardoublepage \phantomsection
-%\addcontentsline{toc}{chapter}{List of Figures}
 \listoffigures
 
 \cleardoublepage \phantomsection
-%\addcontentsline{toc}{chapter}{List of Tables}
 \listoftables
 
 \cleardoublepage
 \addcontentsline{toc}{chapter}{List of Acronyms}
-\subfile{../frontMatter/listOfAcronyms/listOfAcronyms}
+%\subfile{../frontMatter/listOfAcronyms/listOfAcronyms}
+\printnoidxglossary[type=\acronymtype]
 \cleardoublepage
 
 %%%%%%%%% Main Matter %%%%%%%%%%%%%%%%%%%%%%%
@@ -94,7 +98,7 @@ marginparwidth=0in
 \subfile{../chapters/sse/sse}
 \cleardoublepage
 
-%\subfile{../chapters/csbd_acl/csbd_acl}
+\subfile{../chapters/csbdacl/csbdacl}
 \cleardoublepage
 
 \subfile{../chapters/pb/pb}
