@@ -4,8 +4,31 @@
 \pagenumbering{arabic}
 
 \begin{document}
+\glsresetall
+
 \chapter{Introduction}
-Some text here.\cite{ChinOlder}
+Some text here.\cite{ChinOlder} testing citations from the references.
+
+      %%%%%%%%%%%%%%%%%%%% Section Motivation %%%%%%%%%%%%%%%%%%%%%%
+\section{Motivation}\;abel{sec:intro:motivation}
+\section{This Master Thesis}\label{sec:thismasterthesis}
+\glsresetall
+
+This master thesis describes a method for designing secure systems.  The method is called \glsfirst{csbd} \glsunset{csbd}.  \glsname{csbd} has been successfully demonstrated on non-automated systems such as ... and ....  But, until this research, it has not been demonstrated on non-automated, human-centered systems.  
+
+Systems span the range of fully automated to fully non-automated.  This master thesis focuses on one end of this range: non-automated, human-centered systems.
+
+
+
+
+The question addressed in this master thesis is whether \gls{csbd} could be successfully applied to non-automated, human-centered systems.  An example of a non-automated, human-centered system is the patrol base operations defined in the United States Army Ranger Handbook\cite{rangermanual}.   Patrol base operations exemplify a non-automated, human-centered system wherein security is critical to mission success.  In this master thesis, the results of applying CSBD to patrol base operations is discussed. 
+
+
+The patrol base operations are also an example of a predefined system.  This means that this thesis also addresses the question of whether CSBD could be successfully applied to a pre-designed, non-automated, human-centered system.  This is important because many such systems in use today are already designed and implemented.  This means that a method for verifying and documenting the security properties of current, in-use systems is needed.  
+
+
+The successful application of CSBD to patrol base operations also suggests its use in combining automation with human-centered systems.  The approach employed by this master thesis involves describing the patrol base operations as a hierarchy of secure state machines.  This hierarchy has the property that it is easy to demonstrate security properties of the system, which is the goal of CSBD.  But, it also has the property that it describes the patrol base operations as a system that is amiable to automation.  Such automations of pre-defined non-automated, human-centered systems could include, for example, accountability systems for tracking supplies and personel.  In the not-so-distant future, the miliatary, in particular, will most likely seek tracking and accountability systems for pre-existing, non-automated military operations.  These systems, like all security-sensitive military systems, should be designed according to NIST 800-160 standards.  These standards require the formal verification and documentation provided by CSBD and demonstrated in this thesis.   
+
 
 
 \end{document}
