@@ -7,7 +7,6 @@
 
 %%%%%%%%%%%%%%%%%%%%% Chapter Patrol Base Operations %%%%%%%%%%%%%%%
 \chapter{Patrol Base Operations}
-This is the future works section. But, as I am typing this, it is the current working section for \LaTeX\.  The point here is to get the margins in order.   This means that there must be text of sufficient length to visually verify that the text meets LORI's standards.  LORI is complying with SU standards for the senior thesis.  Therefore, meeting LORI's standards is synonymous with meeting SU's standards.  Resistance will only degrade you.
    %%%%%%%%%%%%%%%%%%%% Section Motivation %%%%%%%%%%%%%%%%%%%%%%
 \section{Motivation}
 The patrol base operations described in the patrol base Ranger Handbook
@@ -20,9 +19,9 @@ The patrol base operations described in the patrol base Ranger Handbook
 \glsresetall[\acronymtype]
 Modeling a system requires the knowledge of an expert on the system.  This is necessary because only someone who is familiar with the system, especially with regards to security, can detail its nuances.  For this reason, a subject matter expert from the United States Army (Jesse Nathaniel Hall) is employed to develop a model of the patrol base operations. 
 
-The model of the patrol base operations needs to be amiable to complete mediation and verification using an access-control logic (section \ref{sec:acl}).  This is necessary to prove security properties of the patrol base operations.  To do this, the patrol base operations are abstracted from the Ranger Manual and modeled in Visio\footnote{This work began as a collaboration between Jesse Nathaniel Hall and the author.  Once the hierarchy of secure state machines was decided upon, the abstraction of the Ranger Handbook was done by Jesse Nathaniel Hall with only structural consultation with the author.}  The result of doing this is a hierarchy of secure state machines (\glsentryshortpl{ssm}). (\glsentryshortpl{ssm} are described in section \ref{sec:ssm}.)  
+The model of the patrol base operations needs to be amiable to complete mediation and verification using an access-control logic (section \ref{sec:acl}).  This is necessary to prove security properties of the patrol base operations.  To do this, the patrol base operations are abstracted from the Ranger Manual and modeled in Visio\footnote{This work began as a collaboration between Jesse Nathaniel Hall and the author.  Once the hierarchy of secure state machines was decided upon, the abstraction of the Ranger Handbook was done by Jesse Nathaniel Hall with only structural consultation with the author.  Concurrently, the author focused on proving the properties of complete mediation in the ACL using HOL.  Thus, there was a great deal of separation of work.  Jesse's work is described here because it is necessary to put the entire system into context for this master thesis.  This means that Jesse's work provided the model of the system for which the principle of complete mediation was proved, verified and documented.}.  The result of doing this is a hierarchy of secure state machines (\glsentryshortpl{ssm}). (\glsentryshortpl{ssm} are described in section \ref{sec:ssm}.)  
 
-Each level-of the hierarchy of \glsentryshortpl{ssm} represents a level of abstraction of the patrol base operations. The most abstract level of the hierarchy is the top level \glsentryshort{ssm}.  A diagram of this most abstract level is shown in figure \ref{pbtoplevel}.
+Each level of the hierarchy of \glsentryshortpl{ssm} represents a level of abstraction of the patrol base operations. The most abstract level of the hierarchy is the top level \glsentryshort{ssm}.  A diagram of this most abstract level is shown in figure \ref{pbtoplevel}.
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{../figures/pbtoplevel}
