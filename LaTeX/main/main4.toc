@@ -45,58 +45,58 @@
 \contentsline {section}{\numberline {5.1}Motivation}{1}{section.5.1}
 \contentsline {section}{\numberline {5.2}Ranger Handbook Description}{1}{section.5.2}
 \contentsline {section}{\numberline {5.3}Modeling the Patrol Base Operations from the Ranger Handbook}{1}{section.5.3}
-\contentsline {section}{\numberline {5.4}Hierarchy of Secure State Machines}{4}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}Diagrammatic Description in Visio}{4}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}OMNI-Level}{6}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}Escape}{6}{subsection.5.4.3}
-\contentsline {subsection}{\numberline {5.4.4}Top Level}{6}{subsection.5.4.4}
-\contentsline {subsection}{\numberline {5.4.5}Horizontal Slice}{6}{subsection.5.4.5}
-\contentsline {subsubsection}{\numberline {5.4.5.1}ssmPlanPB}{6}{subsubsection.5.4.5.1}
-\contentsline {subsubsection}{\numberline {5.4.5.2}ssmMoveToORP}{6}{subsubsection.5.4.5.2}
-\contentsline {subsubsection}{\numberline {5.4.5.3}ssmConductORP}{6}{subsubsection.5.4.5.3}
-\contentsline {subsubsection}{\numberline {5.4.5.4}ssmMoveToPB}{6}{subsubsection.5.4.5.4}
-\contentsline {subsubsection}{\numberline {5.4.5.5}ssmConductPB}{7}{subsubsection.5.4.5.5}
-\contentsline {subsection}{\numberline {5.4.6}Vertical Slice}{7}{subsection.5.4.6}
-\contentsline {subsubsection}{\numberline {5.4.6.1}ssmSecureHalt}{7}{subsubsection.5.4.6.1}
-\contentsline {subsubsection}{\numberline {5.4.6.2}ssmORPRecon}{7}{subsubsection.5.4.6.2}
-\contentsline {subsubsection}{\numberline {5.4.6.3}ssmMoveToORP4L}{7}{subsubsection.5.4.6.3}
-\contentsline {subsubsection}{\numberline {5.4.6.4}ssmFormRT}{7}{subsubsection.5.4.6.4}
-\contentsline {chapter}{\numberline {6}Secure State Machine Model}{8}{chapter.6}
-\contentsline {section}{\numberline {6.1}State Machines}{9}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Next-state Function}{9}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Next-output Function}{9}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Transition Commands}{9}{subsection.6.1.3}
-\contentsline {section}{\numberline {6.2}Secure State Machines}{9}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}State Machine Versus Secure State Machine}{9}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Transition Types}{9}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Authentication}{9}{subsection.6.2.3}
-\contentsline {subsection}{\numberline {6.2.4}Authorization}{9}{subsection.6.2.4}
-\contentsline {section}{\numberline {6.3}Secure State Machines in HOL}{9}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Parameterizable Secure State Machine}{9}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Parameterization}{9}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Configurations: five parts}{9}{subsection.6.3.3}
-\contentsline {subsubsection}{\numberline {6.3.3.1}State Interpretation}{9}{subsubsection.6.3.3.1}
-\contentsline {subsubsection}{\numberline {6.3.3.2}Security context}{9}{subsubsection.6.3.3.2}
-\contentsline {subsubsection}{\numberline {6.3.3.3}Input stream}{9}{subsubsection.6.3.3.3}
-\contentsline {subsubsection}{\numberline {6.3.3.4}State}{9}{subsubsection.6.3.3.4}
-\contentsline {subsubsection}{\numberline {6.3.3.5}Output stream}{9}{subsubsection.6.3.3.5}
-\contentsline {subsection}{\numberline {6.3.4}Authentication}{9}{subsection.6.3.4}
-\contentsline {subsection}{\numberline {6.3.5}Configuration Interpretation}{9}{subsection.6.3.5}
-\contentsline {subsection}{\numberline {6.3.6}Transition Definitions}{9}{subsection.6.3.6}
-\contentsline {chapter}{\numberline {7}Patrol Base Operations as Secure State Machines}{10}{chapter.7}
-\contentsline {section}{\numberline {7.1}ssmPB: An Example from the Hierarchy}{11}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Principals}{11}{subsection.7.1.1}
-\contentsline {subsection}{\numberline {7.1.2}States}{11}{subsection.7.1.2}
-\contentsline {subsection}{\numberline {7.1.3}Commands}{11}{subsection.7.1.3}
-\contentsline {subsection}{\numberline {7.1.4}Next-State Function}{11}{subsection.7.1.4}
-\contentsline {subsection}{\numberline {7.1.5}Next-Output Function}{11}{subsection.7.1.5}
-\contentsline {subsection}{\numberline {7.1.6}Authentication}{11}{subsection.7.1.6}
-\contentsline {subsection}{\numberline {7.1.7}Authorization}{11}{subsection.7.1.7}
-\contentsline {subsection}{\numberline {7.1.8}Proved Theorems}{11}{subsection.7.1.8}
-\contentsline {subsubsection}{\numberline {7.1.8.1}Platoon Leader Is Trusted on plCommands}{11}{subsubsection.7.1.8.1}
-\contentsline {section}{\numberline {7.2}Other Variations}{11}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}ssmPlanPB: Non-sequential Transitions}{11}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}ssmConductORP: Principals Authorized for Subsets of Commands}{11}{subsection.7.2.2}
+\contentsline {section}{\numberline {5.4}Hierarchy of Secure State Machines}{5}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Diagrammatic Description in Visio}{5}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}OMNI-Level}{7}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Escape}{7}{subsection.5.4.3}
+\contentsline {subsection}{\numberline {5.4.4}Top Level}{7}{subsection.5.4.4}
+\contentsline {subsection}{\numberline {5.4.5}Horizontal Slice}{7}{subsection.5.4.5}
+\contentsline {subsubsection}{\numberline {5.4.5.1}ssmPlanPB}{7}{subsubsection.5.4.5.1}
+\contentsline {subsubsection}{\numberline {5.4.5.2}ssmMoveToORP}{7}{subsubsection.5.4.5.2}
+\contentsline {subsubsection}{\numberline {5.4.5.3}ssmConductORP}{7}{subsubsection.5.4.5.3}
+\contentsline {subsubsection}{\numberline {5.4.5.4}ssmMoveToPB}{7}{subsubsection.5.4.5.4}
+\contentsline {subsubsection}{\numberline {5.4.5.5}ssmConductPB}{8}{subsubsection.5.4.5.5}
+\contentsline {subsection}{\numberline {5.4.6}Vertical Slice}{8}{subsection.5.4.6}
+\contentsline {subsubsection}{\numberline {5.4.6.1}ssmSecureHalt}{8}{subsubsection.5.4.6.1}
+\contentsline {subsubsection}{\numberline {5.4.6.2}ssmORPRecon}{8}{subsubsection.5.4.6.2}
+\contentsline {subsubsection}{\numberline {5.4.6.3}ssmMoveToORP4L}{8}{subsubsection.5.4.6.3}
+\contentsline {subsubsection}{\numberline {5.4.6.4}ssmFormRT}{8}{subsubsection.5.4.6.4}
+\contentsline {chapter}{\numberline {6}Secure State Machine Model}{9}{chapter.6}
+\contentsline {section}{\numberline {6.1}State Machines}{10}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Next-state Function}{10}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Next-output Function}{10}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Transition Commands}{10}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.2}Secure State Machines}{10}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}State Machine Versus Secure State Machine}{10}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Transition Types}{10}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Authentication}{10}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}Authorization}{10}{subsection.6.2.4}
+\contentsline {section}{\numberline {6.3}Secure State Machines in HOL}{10}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Parameterizable Secure State Machine}{10}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Parameterization}{10}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Configurations: five parts}{10}{subsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.3.1}State Interpretation}{10}{subsubsection.6.3.3.1}
+\contentsline {subsubsection}{\numberline {6.3.3.2}Security context}{10}{subsubsection.6.3.3.2}
+\contentsline {subsubsection}{\numberline {6.3.3.3}Input stream}{10}{subsubsection.6.3.3.3}
+\contentsline {subsubsection}{\numberline {6.3.3.4}State}{10}{subsubsection.6.3.3.4}
+\contentsline {subsubsection}{\numberline {6.3.3.5}Output stream}{10}{subsubsection.6.3.3.5}
+\contentsline {subsection}{\numberline {6.3.4}Authentication}{10}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5}Configuration Interpretation}{10}{subsection.6.3.5}
+\contentsline {subsection}{\numberline {6.3.6}Transition Definitions}{10}{subsection.6.3.6}
+\contentsline {chapter}{\numberline {7}Patrol Base Operations as Secure State Machines}{11}{chapter.7}
+\contentsline {section}{\numberline {7.1}ssmPB: An Example from the Hierarchy}{12}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Principals}{12}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}States}{12}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.3}Commands}{12}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Next-State Function}{12}{subsection.7.1.4}
+\contentsline {subsection}{\numberline {7.1.5}Next-Output Function}{12}{subsection.7.1.5}
+\contentsline {subsection}{\numberline {7.1.6}Authentication}{12}{subsection.7.1.6}
+\contentsline {subsection}{\numberline {7.1.7}Authorization}{12}{subsection.7.1.7}
+\contentsline {subsection}{\numberline {7.1.8}Proved Theorems}{12}{subsection.7.1.8}
+\contentsline {subsubsection}{\numberline {7.1.8.1}Platoon Leader Is Trusted on plCommands}{12}{subsubsection.7.1.8.1}
+\contentsline {section}{\numberline {7.2}Other Variations}{12}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}ssmPlanPB: Non-sequential Transitions}{12}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}ssmConductORP: Principals Authorized for Subsets of Commands}{12}{subsection.7.2.2}
 \contentsline {chapter}{\numberline {8}Discussion}{1}{chapter.8}
 \contentsline {section}{\numberline {8.1}Recap}{1}{section.8.1}
 \contentsline {section}{\numberline {8.2}Mission Accomplished}{1}{section.8.2}
