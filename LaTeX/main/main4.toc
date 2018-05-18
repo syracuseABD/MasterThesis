@@ -5,6 +5,8 @@
 \contentsline {chapter}{List of Acronyms}{ix}{section*.11}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Systems Are Everywhere}{1}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}CIA: Confidentiality, Integrity, and Accountability}{1}{subsection.1.1.2}
 \contentsline {section}{\numberline {1.2}This Master Thesis}{1}{section.1.2}
 \contentsline {chapter}{\numberline {2}Background}{2}{chapter.2}
 \contentsline {chapter}{\numberline {3}Systems Security Engineering}{3}{chapter.3}
@@ -24,18 +26,22 @@
 \contentsline {subsection}{\numberline {3.5.1}Formal Verification Using Computer-Aided Reasoning}{5}{subsection.3.5.1}
 \contentsline {chapter}{\numberline {4}Certified Security by Design (CSBD) \& Access-Control Logic (ACL)}{6}{chapter.4}
 \contentsline {section}{\numberline {4.1}Certified Security by Design (CSBD)}{7}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}The Principle of Complete Mediation}{7}{subsection.4.1.1}
 \contentsline {section}{\numberline {4.2}Access-Control Logic (ACL)}{7}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Principals}{7}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Well-formed Formulas Formulas}{7}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Kripke Structure}{7}{subsection.4.2.3}
-\contentsline {subsubsection}{\numberline {4.2.3.1}satisies}{7}{subsubsection.4.2.3.1}
-\contentsline {subsubsection}{\numberline {4.2.3.2}soundness}{7}{subsubsection.4.2.3.2}
-\contentsline {subsection}{\numberline {4.2.4}Well formed statements}{7}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Inference Rules}{7}{subsection.4.2.5}
-\contentsline {subsection}{\numberline {4.2.6}Complete mediation}{7}{subsection.4.2.6}
-\contentsline {section}{\numberline {4.3}ACL in HOL}{7}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}satList}{7}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Complete Mediation}{7}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.2.1}Motivation for Using ACL}{7}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}ACL: A Command and Control (C2) Calculus}{7}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Principals}{7}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Well-formed Formulas Formulas}{7}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Kripke Structure}{7}{subsection.4.2.5}
+\contentsline {subsubsection}{\numberline {4.2.5.1}satisies}{7}{subsubsection.4.2.5.1}
+\contentsline {subsubsection}{\numberline {4.2.5.2}soundness}{7}{subsubsection.4.2.5.2}
+\contentsline {subsection}{\numberline {4.2.6}Inference Rules}{7}{subsection.4.2.6}
+\contentsline {subsection}{\numberline {4.2.7}Complete mediation}{8}{subsection.4.2.7}
+\contentsline {subsection}{\numberline {4.2.8}Well formed statements}{9}{subsection.4.2.8}
+\contentsline {subsection}{\numberline {4.2.9}Inference Rules}{9}{subsection.4.2.9}
+\contentsline {section}{\numberline {4.3}ACL in HOL}{9}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Complete Mediation}{9}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}satList}{9}{subsection.4.3.2}
 \contentsline {chapter}{\numberline {5}Patrol Base Operations}{1}{chapter.5}
 \contentsline {section}{\numberline {5.1}Motivation}{1}{section.5.1}
 \contentsline {section}{\numberline {5.2}Ranger Handbook Description}{2}{section.5.2}
