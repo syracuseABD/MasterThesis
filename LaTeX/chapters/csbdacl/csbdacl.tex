@@ -44,7 +44,7 @@ Principals can also have jurisdiction over assertions.  Both authority and juris
 In addition, principals can speak for other principals.  Principals do this using the \textit{speaks for} operator.  The ACL represents the \textit{speaks for} operator with the symbol $\Rightarrow$.  These types of statements have the form \textit{P $\Rightarrow$ Q}, where both \textit{P} and \textit{Q} are principals.  For example, \textit{PlatoonLeader $\Rightarrow$ PresidentOfUS}.  This example states that the Platoon Leader speaks for the President of the United States.  
 
 \subsection{Well-formed Formulas}\label{ssec:wff}
-\Glspl{wff} valid statements or expressions in the \glsentryshort{acl}.  All \glsentryshort{ACL} statements or requests must be a \glsentryshort{wff}.  The text book defines the set of \glsentryshortpl{wff} using the identifier \textbf{Form}:
+\Glspl{wff} are valid statements in the \glsentryshort{acl}.  All \glsentryshort{ACL} statements must be a \glsentryshort{wff}.  The text book defines the set of \glsentryshortpl{wff} using the identifier \textbf{Form}:
 
 \begin{center}
 \textbf{Form} ::= \textbf{PropVar} / $\neg$ \textbf{Form} / (\textbf{Form} $\vee$ \textbf{Form}) / \\ 
@@ -52,6 +52,7 @@ In addition, principals can speak for other principals.  Principals do this usin
 	                  (\textbf{Princ} $\Rightarrow$ \textbf{Princ}) / (\textbf{Princ} says \textbf{Princ}) / (\textbf{Princ} controls \textbf{Form})
 \end{center}
 
+This is a recursive definition.  \textbf{\textit{PropVar}} is a propositional variable.  The symbols $\neg$, $\vee$, $\wedge$, $\subset$, and $\equiv$ are the standard set and logical symbols.  They represent "not", "or", "and", "subset", and "equivalence", respectively.  This master thesis primarily reasons with statements (\glsentryshortpl{wff}) of the form \textit{\textbf{Princ} says \textbf{Princ}} and \textit{\textbf{Princ} controls \textbf{Form}}.
 
 \subsection{Kripke Structure}\label{ssec:kripke}
 A Kripke structure deals with three things: worlds, propositions, and principals.  The worlds can be thought of as possible states or configurations of some system.  Propositions are just statements that are either true or false.  And, principals are just actors.  A Kripke structure $\mathcal{M}$ = $\langle \textit{W}, \textit{I}, \textit{J} \rangle $  is defined as a three-tuple consisting of a set of worlds \textit{W}, a function \textit{I} that maps propositions to worlds, and a functions \textit{J} that maps principals to relations on worlds.  A more formal definition is definition 2.1 in the text:
