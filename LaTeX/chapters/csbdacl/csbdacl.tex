@@ -2,9 +2,6 @@
 
 \documentclass[../../main/main.tex]{subfiles}
 
-
-
-
 \begin{document}
 \title{Certified Security by Design (CSBD) \& Access\-Control Logic (ACL)}
 
@@ -19,22 +16,66 @@
 
       %%%%%%%%%%%%%%%%%%% Section ACL %%%%%%%%%%%%%%%%%%%
 \section{Access-Control Logic (ACL)} \label{sec:acl}
-\glsreset{acl}
 \subsection{Motivation for Using ACL}\label{ssec:motivattionacl}
 \subsection{ACL: A Command and Control (C2) Calculus} \label{ssec:aclc2}
+This section discusses the access-control logic in sufficient detail to understand the research reported in this master thesis.  The material is adapted from \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}.  For more indepth coverage of the \glsentryshort{acl}, read the text.  Any references to "the text" in this section refer to the aforementioned text book.
+
 \subsection{Principals}\label{ssec:principals}
-\subsection{Well-formed Formulas Formulas}\label{ssec:wff}
+Principals should be thought of as actors in the access-control logic.  Principals can make statements or requests.  They can be assigned privileges or authority over objects or actions.  The text defines allowable principals using the identifier \textbf{Princ}:
+
+\begin{center}
+\textbf{Princ ::= PName / Princ \& Princ / Princ \textbar  Princ}
+\end{center}
+
+This is a recursive definition. \textbf{\textit{PName}} refers to the name of a principal (i.e., Jane, PlatoonLeader, sensor1).  \textbf{\textit{Princ} \& \textit{Princ}} is read "Princ with Princ" or "Princ and Princ" (i.e., Principal1 with Principal2). \textbf{\textit{Princ \textbar  Princ}} is read as "Princ quoting Princ" (i.e., Principal1 quoting Principal2).
+
+
+\subsection{Statements, Requests, Authority, and Jurisdiction in The ACL}\label{ssec:statementsacl}
+The following definitions enable the \glsentryshort{acl} to reason about access to objects. 
+
+
+Statements in the \glsentryshort{acl} are propositions or propositional variables.  In most forms of logic, propositions are statements that are either true or false.  For example, "I am reading this master thesis" is a proposition because either you are or you are not reading this.  Propositional variables are just place holders for propositions.  For example, "I am reading something", where the propositional variable "something" is what you are reading.
+
+In the \glsentryshort{acl}, principals can make statements or requests.  There are three primary types of operators for doing this.  All other operators can be derived from these three.  
+
+\begin{itemize}
+\item{\textit{says}} \\
+Principals make requests using the \textit{says} operator.  Requests have the form \textit{P says $\varphi$},  where \textit{P} represents some principal and \textit{$\varphi$} represents some statement or request.  For example, \textit{PlatoonLeader says platoonHalt}.  In this example, the Platoon Leader issuing a command (or request) for the platoon to halt.  
+\item{\textit{controls}} \\
+Principals are granted jurisdiction (or authority) on requests.  Statements of jurisdiction have the form \textit{P controls $\varphi$},  where \textit{P} represents some principal and \textit{$\varphi$} represents some statement or request.  For example, \textit{PlatoonLeader controls platoonHalt}.  In this example, the Platoon Leader has the jurisdiction (or authority) to issue the command (or request) for the platoon to halt. 
+\end{itemize}
+
+In the \glsentryshort{acl}, principals make requests using the \textit{says} operator.  
+
+\subsection{Well-formed Formulas}\label{ssec:wff}
+\Glspl{wff} is the set of valid expressions in the \glsentryshort{acl}.  All \glsentryshort{ACL} statements or requests must be a \glsentryshort{wff}.  The text book defines the set of \glsentryshortpl{wff} using the identifier \textbf{Form}:
+
+\begin{center}
+\textbf{Form} ::= \textbf{PropVar} / $\neg$ \textbf{Form} / (\textbf{Form} $\vee$ \textbf{Form}) / \\ 
+	                  (\textbf{Form} $\wedge$ \textbf{Form}) / (\textbf{Form} $\supset$ \textbf{Form}) / (\textbf{Form} $\equiv$ \textbf{Form}) / \\
+	                  (\textbf{Princ} $\Rightarrow$ \textbf{Princ}) / (\textbf{Princ} says \textbf{Princ}) / (\textbf{Princ} controls \textbf{Form})
+\end{center}
+
+
 \subsection{Kripke Structure}\label{ssec:kripke}
+A Kripke structure deals with three things: worlds, propositions, and principals.  The worlds can be thought of as possible states or configurations of some system.  Propositions are just statements that are either true or false.  And, principals are just actors.  A Kripke structure $\mathcal{M}$ = $\langle \textit{W}, \textit{I}, \textit{J} \rangle $  is defined as a three-tuple consisting of a set of worlds \textit{W}, a function \textit{I} that maps propositions to worlds, and a functions \textit{J} that maps principals to relations on worlds.  A more formal definition is definition 2.1 in the text:
+
+\begin{itemize}
+\item \textit{W is a nonempty set, whose elements are called worlds.}
+\item \textit{$I: \mathbf{PropVar} \rightarrow \mathcal{P}(W)$ is an interpretation function that maps each propositional variable to a set of worlds.}
+\item \textit{$J: \mathbf{PName} \rightarrow \mathcal{P}((W \times W)$ is a function that maps each principal name to a relation on worlds.}
+\end{itemize}
+
 \subsubsection{satisies}\label{sssec:satisfies}
 \subsubsection{soundness}\label{sssec:soundness}
 
 \subsection{Inference Rules}\label{ssec:inferencerules}
-The inference rules for the \gls{acl} are shown in figure \ref{inferencerules}.  All the inference rules are sound.  Details of proofs of soundness can be found in the text book \underline{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}.
+The inference rules for the \gls{acl} are shown in figure \ref{inferencerules}.  All the inference rules are sound.  Details of proofs of soundness can be found in \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}.
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{../figures/inferencerules}
-\caption{\label{inferencerules}The \gls{acl} inference rules.}
+\caption{\label{inferencerules}The \gls{acl} inference rules. Image taken from \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}}
 \end{figure}
 
 \subsection{Complete mediation}\label{ssec:aclcompletemediation}
@@ -43,11 +84,13 @@ Fundamental to this work is the concept of complete mediation (discussed in sect
 \begin{figure}[h]
 \centering
 \includegraphics{../figures/ControlsInferenceRule}
-\caption{\label{ControlsInferenceRule}The \textit{Controls} inference rule.}
+\caption{\label{ControlsInferenceRule}The \textit{Controls} inference rule. Image taken from \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}}
 \end{figure}
 
-ACL refers to the left statement as an authorization \footnote{or a \textit{control} in the C2 calculus}.  The principal P controls (is authorized on) some action $\varphi$. ACL refers to the right statement in this inference rule as a request \footnote{or a \textit{command} in the C2 calculus}.  The principal P is requesting some action $\varphi$.The conjunction of the authorization and the request of P on $\varphi$ results in the action $\varphi$.  That is, if\textit{ P says $\varphi$} and \textit{P controls $\varphi$}  then $\varphi$  is true.  
+ACL refers to the left statement as an authorization\footnote{or a \textit{control} in the C2 calculus}.  The principal P controls (is authorized on) some action $\varphi$. ACL refers to the right statement in this inference rule as a request \footnote{or a \textit{command} in the C2 calculus}.  The principal P requests some action $\varphi$. The conjunction of the authorization and the request of P on $\varphi$ results in the action $\varphi$.  That is, if \textit{P controls $\varphi$} and\textit{ P says $\varphi$} then $\varphi$  is true.  
 
+
+The \textit{Reps} rule also demonstrates complete mediation.  It follows a similar logic.  However, the \textit{Reps} rule is not used in this master thesis.
 
 \subsection{Well formed statements}
 \subsection{Inference Rules}
@@ -59,7 +102,7 @@ The equivalence of the \gls{acl} formulas implemented in HOL are shown in figure
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{../figures/aclformulasHOL}
-\caption{\label{aclformulasHOL}The \gls{acl} formulas in HOL.}
+\caption{\label{aclformulasHOL}The \gls{acl} formulas in HOL.  Image taken from \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}}
 \end{figure}
 
 Using this syntax, an ACL request of the form \textit{P says \textphi} would have the form
@@ -70,8 +113,4 @@ Using this syntax, an ACL request of the form \textit{P says \textphi} would hav
 \subsection{satList}
 
 
-
 \end{document}
-
-test acronym \glsentrytitlecase{acl}{desc}
-more testing \glsentryname{acl}
