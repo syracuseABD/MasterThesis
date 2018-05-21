@@ -30,9 +30,9 @@
 \contentsline {subsection}{\numberline {4.2.1}Motivation for Using ACL}{7}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}ACL: A Command and Control (C2) Calculus}{7}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Principals}{7}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Statements, Requests, Authority, and Jurisdiction in The ACL}{8}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.4}Propositional Variables, Requests, Authority, and Jurisdiction}{8}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5}Well-formed Formulas}{9}{subsection.4.2.5}
-\contentsline {subsection}{\numberline {4.2.6}Kripke Structure}{9}{subsection.4.2.6}
+\contentsline {subsection}{\numberline {4.2.6}Kripke Structure}{10}{subsection.4.2.6}
 \contentsline {subsubsection}{\numberline {4.2.6.1}satisies}{10}{subsubsection.4.2.6.1}
 \contentsline {subsubsection}{\numberline {4.2.6.2}soundness}{10}{subsubsection.4.2.6.2}
 \contentsline {subsection}{\numberline {4.2.7}Inference Rules}{10}{subsection.4.2.7}
@@ -40,8 +40,8 @@
 \contentsline {subsection}{\numberline {4.2.9}Well formed statements}{12}{subsection.4.2.9}
 \contentsline {subsection}{\numberline {4.2.10}Inference Rules}{12}{subsection.4.2.10}
 \contentsline {section}{\numberline {4.3}ACL in HOL}{12}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Complete Mediation}{12}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}satList}{12}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.1}Complete Mediation}{13}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}satList}{13}{subsection.4.3.2}
 \contentsline {chapter}{\numberline {5}Patrol Base Operations}{1}{chapter.5}
 \contentsline {section}{\numberline {5.1}Motivation}{1}{section.5.1}
 \contentsline {section}{\numberline {5.2}Ranger Handbook Description}{1}{section.5.2}

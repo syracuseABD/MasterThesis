@@ -30,25 +30,21 @@ Principals should be thought of as actors in the access-control logic.  Principa
 This is a recursive definition. \textbf{\textit{PName}} refers to the name of a principal (i.e., Jane, PlatoonLeader, sensor1).  \textbf{\textit{Princ} \& \textit{Princ}} is read "Princ with Princ" or "Princ and Princ" (i.e., Principal1 with Principal2). \textbf{\textit{Princ \textbar  Princ}} is read as "Princ quoting Princ" (i.e., Principal1 quoting Principal2).
 
 
-\subsection{Statements, Requests, Authority, and Jurisdiction in The ACL}\label{ssec:statementsacl}
-The following definitions enable the \glsentryshort{acl} to reason about access to objects. 
+\subsection{Propositional Variables, Requests, Authority, and Jurisdiction}\label{ssec:statementsacl}
+To reason about access-control and trust, the \glsentryshort{acl} uses propositional variables, requests, authority, and jurisdiction to make statements.
 
+Propositions in logic are assertions that are either true or false.  For example, "I am reading this master thesis" is a proposition because either you are or you are not reading this.  Propositional variables are just place holders for propositions.  For example, "I am reading something", where the propositional variable "something" is what you are reading.
 
-Statements in the \glsentryshort{acl} are propositions or propositional variables.  In most forms of logic, propositions are statements that are either true or false.  For example, "I am reading this master thesis" is a proposition because either you are or you are not reading this.  Propositional variables are just place holders for propositions.  For example, "I am reading something", where the propositional variable "something" is what you are reading.
+Principals can make requests.  In the \glsentryshort{acl}, principals make requests using the \textit{says} operator.  Requests have the form \textit{P says $\varphi$},  where \textit{P} represents some principal and \textit{$\varphi$} represents some assertion.  For example, \textit{PlatoonLeader says platoonHalt}.  In this example, the Platoon Leader is issuing a command (or request) for the platoon to halt.  
 
-In the \glsentryshort{acl}, principals can make statements or requests.  There are three primary types of operators for doing this.  All other operators can be derived from these three.  
+Principals can have authority over assertions.  In the \glsentryshort{acl}, authority is conveyed using the \textit{controls} operator.  Statements of authority have the form \textit{P controls $\varphi$},  where \textit{P} represents some principal and \textit{$\varphi$} represents some assertion.  For example, \textit{PlatoonLeader controls platoonHalt}.  This example states that the Platoon Leader has the authority to issue the command (or request) for the platoon to halt. 
 
-\begin{itemize}
-\item{\textit{says}} \\
-Principals make requests using the \textit{says} operator.  Requests have the form \textit{P says $\varphi$},  where \textit{P} represents some principal and \textit{$\varphi$} represents some statement or request.  For example, \textit{PlatoonLeader says platoonHalt}.  In this example, the Platoon Leader issuing a command (or request) for the platoon to halt.  
-\item{\textit{controls}} \\
-Principals are granted jurisdiction (or authority) on requests.  Statements of jurisdiction have the form \textit{P controls $\varphi$},  where \textit{P} represents some principal and \textit{$\varphi$} represents some statement or request.  For example, \textit{PlatoonLeader controls platoonHalt}.  In this example, the Platoon Leader has the jurisdiction (or authority) to issue the command (or request) for the platoon to halt. 
-\end{itemize}
+Principals can also have jurisdiction over assertions.  Both authority and jurisdiction use the \textit{controls} operator.  Statements of jurisdiction have the same form as statements of authority.  Statements of authority are typically defined in an organization's policy.  Statements of jurisdiction are statements that are readily believed given the context.  For example, \textit{PresidentOfUS controls (PlatoonLeader controls platoonHalt)}.  In this example, the President of the United States, per the U.S. Constitution, has jurisdiction over the authority invested in the Platoon Leader.  In particular, the President of the United States has the jurisdiction to give the Platoon Leader the authority to command her platoon to halt.
 
-In the \glsentryshort{acl}, principals make requests using the \textit{says} operator.  
+In addition, principals can speak for other principals.  Principals do this using the \textit{speaks for} operator.  The ACL represents the \textit{speaks for} operator with the symbol $\Rightarrow$.  These types of statements have the form \textit{P $\Rightarrow$ Q}, where both \textit{P} and \textit{Q} are principals.  For example, \textit{PlatoonLeader $\Rightarrow$ PresidentOfUS}.  This example states that the Platoon Leader speaks for the President of the United States.  
 
 \subsection{Well-formed Formulas}\label{ssec:wff}
-\Glspl{wff} is the set of valid expressions in the \glsentryshort{acl}.  All \glsentryshort{ACL} statements or requests must be a \glsentryshort{wff}.  The text book defines the set of \glsentryshortpl{wff} using the identifier \textbf{Form}:
+\Glspl{wff} valid statements or expressions in the \glsentryshort{acl}.  All \glsentryshort{ACL} statements or requests must be a \glsentryshort{wff}.  The text book defines the set of \glsentryshortpl{wff} using the identifier \textbf{Form}:
 
 \begin{center}
 \textbf{Form} ::= \textbf{PropVar} / $\neg$ \textbf{Form} / (\textbf{Form} $\vee$ \textbf{Form}) / \\ 

@@ -4,7 +4,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces This is a clip from NIST 800-160.}}{4}{figure.3.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces The \gls {acl} inference rules. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{10}{figure.4.1}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The \gls {acl} inference rules. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{11}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces The \textit {Controls} inference rule. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{11}{figure.4.2}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces The \gls {acl} formulas in HOL. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{12}{figure.4.3}
 \addvspace {10\p@ }
