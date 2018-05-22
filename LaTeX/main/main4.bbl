@@ -13,8 +13,16 @@ United States Army Ranger School, ATTN: ATSH-RB, 10850 Schneider Rd, Bldg 5024,
 
 \bibitem{formalmethodslcarke}
 Edmund~M. Clarke and et~al Jeannette M.~Wing.
-\newblock Formal methods: State of the art and future directions.
-\newblock {\em ACM Computing Surveys}, 28(4), December 1996.
+\newblock Formal methods: State of the art and future directions, December
+  1996.
+
+\bibitem{varvel}
+TOKUOKA Hiroki, MIYAZAKI Yoshiaki, and HASHIMOTO Yuusuke.
+\newblock C-language verifiction tool using formal methods "varvel".
+
+\bibitem{modularC}
+Sagar Chaki, Edmund~M. Clarke, Alex Groce, Somesh Jha, and Helmut Veith.
+\newblock Modular verification of software components in c, June 2004.
 
 \bibitem{defensescienceboard}
 The~Rand Corporation.
