@@ -11,12 +11,11 @@
 
       %%%%%%%%%%%%%%%%%%% Section CSBD %%%%%%%%%%%%%%%%%%
 \section{Certified Security by Design (CSBD)} \label{sec:csbd}
-CSBD is a method for formally verifying and documenting the security properties of a systems.  It uses an access-control logic (ACL) to reason about access to security sensitive objects of a system.  It uses computer-aided reasoning such as the Higher Order Logic (HOL) Interactive theorem prover to formally verify and document these security properties.  The outcomes of CSBD applied to a system conform to the guidelines set fourth in NIST 800-160 [verify and discuss this.]
+In 1970 The Rand Corporation published a report\cite{defensescienceboard} for the Office of The Director of Defense Research And Engineering.  This report titled, Security Controls For Computer Systems, noted that "Providing satisfactory security controls in a computer system is in itself a system design problem."  NIST 800-160 also highlights the importance of incorporating security into the design phase of the system engineering process.  CSBD focuses on the design phase of systems engineering, applying formal methods to verify that a system satisfies the principle of complete mediation.  
+
+More specifically, CSBD is a method for formally verifying and documenting the security properties of a systems.  It focuses on designing systems that satisfy the principle of complete mediation.  It uses an access-control logic (ACL) to reason about access to security sensitive objects of a system.  It uses computer-aided reasoning such as the Higher Order Logic (HOL) Interactive theorem prover to formally verify and document these security properties.  The outcomes of CSBD applied to a system conform to the guidelines set fourth in NIST 800-160 [verify and discuss this.]
 
 In addition to providing formal proofs that demonstrate satisfiability of complete mediation, CDBD is reproducible.  This means that third parties can also verify the formal proofs. This touches on the heart of formal verification of satisfiability: "don't just take my word for it, prove it for yourself."
-
-In 1970 The Rand Corporation published a report\cite{defensescienceboard} for the Office of The Director of Defense Research And Engineering.  This report titled, Security Controls For Computer Systems, noted that "Providing satisfactory security controls in a computer system is in itself a system design problem."  NIST 800-160 also highlights the importance of incorporating security into the design phase of the system engineering process.  Certified Security by Design (CSBD) focuses on this aspect of systems security engineering.  It does not describe\footnote{Although, not the topic of this master thesis, there is currently ample research in the area of formal verification on computer programs.  See references []. } an implementation of a system.  Instead, CSBD applies formal methods of verification to the design phase of systems security engineering.  
-
 
 \subsection{Formal Verification \& Documentation}\label{ssec:formalverifcationdocumentation}
 

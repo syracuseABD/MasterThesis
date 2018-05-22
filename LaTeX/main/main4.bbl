@@ -11,6 +11,11 @@ United States Army Ranger School, ATTN: ATSH-RB, 10850 Schneider Rd, Bldg 5024,
   Ft Benning, GA 31905.
 \newblock {\em Ranger handbook}, April 2017.
 
+\bibitem{formalmethodslcarke}
+Edmund~M. Clarke and et~al Jeannette M.~Wing.
+\newblock Formal methods: State of the art and future directions.
+\newblock {\em ACM Computing Surveys}, 28(4), December 1996.
+
 \bibitem{defensescienceboard}
 The~Rand Corporation.
 \newblock Security controls for computer systems: Report of defence science
