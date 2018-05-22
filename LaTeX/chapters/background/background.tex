@@ -11,19 +11,28 @@
 This section aims to provide some background on subjects discussed in this master thesis.  These subjects are not directly addressed in other areas of this master thesis.  Nevertheless, knowledge of them is either necessary or useful to understanding what follows.
 
 \paragraph*{Formal Methods}
-Formal methods are aimed at improving the reliability and correctness of systems\cite{formalmethodslcarke}.  In systems engineering, formal methods are applied to all phases of systems engineering\footnote{For a quick overview of formal methods check out the wikipage \cite{wikiformalmethods}}.   
+(Primary source for this section is \cite{wikiformalmethods})
 
-Formal methods employ the rigors of mathematics and logic to verify desired aspects of a system.  Most commonly, the aspects of a system that require formal verification are correctness and security properties.  The primary tools of formal methods are theorem proving and model checking.  This master thesis focuses on the verifying security properties of a system using theorem proving.  
+Formal methods are aimed at improving the reliability and correctness of systems\cite{formalmethodslcarke}.  They are applied to all phases of systems engineering.  Formal methods employ mathematics to verify desired aspects of a system.  Mathematics adds a degree of rigor to the verification process that is amiable to automation.  
 
-After a system is modeled (specified), a theorem prover can prove essential properties of the system.  For example, does the system prevent unauthorized access to a user's personal data?  
+The primary tools of formal methods are model checking and theorem proving.  Model checking typically involves testing all possible states of a system for correctness. For large systems, model checking can be resource intensive.  Theorem proving, on the other hand, employs a formal logic to verify that a system satisfies desired properties.  Theorem proving is usually applied to a system after it is modeled (referred to as specification).   Theorem proving is typically partially or fully automated.  Although, proofs by hand can also be employed. 
 
+This master thesis applies formal verification methods to prove the security properties of a system. It uses a formal logic based on modal propositional logic.  The logic, called access-control logic (ACL), is implemented in the Higher Order Logic (HOL) Interactive theorem prover.  Theorem proving is partially automated. 
 
-Definition
-Use
-Refine: relevant to this thesis
-More detail.
 \paragraph*{Functional Programming}
+(Primary source for this section is \cite{functionalprogramming})
+
+Functional programing is a style of programming that uses functions to define program behavior.  Functional programing is inherently different than procedural or object-oriented programming. These styles of program use procedures or objects and classes to define program behavior.  c  and Pascal are examples of procedural programming languages.  c++ and Java are examples of object-oriented programming languages.  Haskell and ML (meta language) are examples of functional programming languages.  Functional programming languages are thought to be more pure.  They have fewer side effects than procedural or object-oriented programming.  They produce fewer bugs.  Functional programming languages are thus considered more reliable.    
+
+This master thesis relies on the Higher Order Logic (HOL) Interactive theorem prover.  HOL is implemented in the functional programming language polyML.
+
 \paragraph*{Higher Order Logic (HOL) Interactive Theorem Prover}
+
+
+The Higher Order Logic (HOL) Interactive theorem prover is an interactive theorem prover.  HOL is implemented in polyML.  HOL is considered to be very reliable. 
+
+
+
 \paragraph*{Other Interactive Theorem Provers}
 \paragraph*{How to Compile The Included Files}
 

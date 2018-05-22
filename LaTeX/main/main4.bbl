@@ -11,14 +11,18 @@ United States Army Ranger School, ATTN: ATSH-RB, 10850 Schneider Rd, Bldg 5024,
   Ft Benning, GA 31905.
 \newblock {\em Ranger handbook}, April 2017.
 
+\bibitem{wikiformalmethods}
+Formal methods.
+\newblock {\em Wikipedia}, February 2018.
+
 \bibitem{formalmethodslcarke}
 Edmund~M. Clarke and et~al Jeannette M.~Wing.
 \newblock Formal methods: State of the art and future directions, December
   1996.
 
-\bibitem{wikiformalmethods}
-Formal methods.
-\newblock {\em Wikipedia}, February 2018.
+\bibitem{functionalprogramming}
+Jagatheesan Kunasaikaran, Azlan Iqbal, Jalan Dua, and Chan~Sow Lin.
+\newblock A brief overview of functional programming languages, 2016.
 
 \bibitem{defensescienceboard}
 The~Rand Corporation.
