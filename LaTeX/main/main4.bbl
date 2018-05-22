@@ -16,13 +16,9 @@ Edmund~M. Clarke and et~al Jeannette M.~Wing.
 \newblock Formal methods: State of the art and future directions, December
   1996.
 
-\bibitem{varvel}
-TOKUOKA Hiroki, MIYAZAKI Yoshiaki, and HASHIMOTO Yuusuke.
-\newblock C-language verifiction tool using formal methods "varvel".
-
-\bibitem{modularC}
-Sagar Chaki, Edmund~M. Clarke, Alex Groce, Somesh Jha, and Helmut Veith.
-\newblock Modular verification of software components in c, June 2004.
+\bibitem{wikiformalmethods}
+Formal methods.
+\newblock {\em Wikipedia}, February 2018.
 
 \bibitem{defensescienceboard}
 The~Rand Corporation.
