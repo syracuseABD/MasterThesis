@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  22 MAY 2018 13:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  22 MAY 2018 14:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -811,8 +811,15 @@ Chapter 1.
 [1
 
 
-] [2])pdfTeX warning (ext4): destination with the same identifier (name{page.1}
-) has been already used, duplicate ignored
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 26.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 26.
+ [2])pdfTeX warning (ext4): destination with the same identifier (name{page.1})
+ has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.105 \cleardoublepage
@@ -828,7 +835,7 @@ l.108 \cleardoublepage
 
 ] (../chapters/sse/sse.tex
 Chapter 3.
-<../figures/seincontext.png, id=959, 667.49374pt x 422.57875pt>
+<../figures/seincontext.png, id=960, 667.49374pt x 422.57875pt>
 File: ../figures/seincontext.png Graphic file (type png)
 
 <use ../figures/seincontext.png>
@@ -844,19 +851,12 @@ Chapter 4.
 
 
 ] [7]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 43.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
 LaTeX Font Info:    Font shape `OMS/cmr/bx/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 43.
 LaTeX Font Info:    Font shape `OMS/cmr/bx/it' in size <12> not available
 (Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 46.
- [8]
-[9]
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 77.
- <../figures/kripkesemantics.png, id=1005, 388.45125pt x 252.945pt>
+ [8] [9]
+<../figures/kripkesemantics.png, id=1005, 388.45125pt x 252.945pt>
 File: ../figures/kripkesemantics.png Graphic file (type png)
 
 <use ../figures/kripkesemantics.png>
@@ -3170,7 +3170,7 @@ e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/te
 xmf-dist/fonts/type1/public/cbfonts/grmi1200.pfb>
-Output written on main4.pdf (163 pages, 3376473 bytes).
+Output written on main4.pdf (163 pages, 3377040 bytes).
 PDF statistics:
  2979 PDF objects out of 2984 (max. 8388607)
  2643 compressed objects within 27 object streams
