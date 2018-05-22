@@ -11,4 +11,11 @@ United States Army Ranger School, ATTN: ATSH-RB, 10850 Schneider Rd, Bldg 5024,
   Ft Benning, GA 31905.
 \newblock {\em Ranger handbook}, April 2017.
 
+\bibitem{defensescienceboard}
+The~Rand Corporation.
+\newblock Security controls for computer systems: Report of defence science
+  board task force on computer security.
+\newblock Technical report, Office of the Director of Defence Research And
+  Engineering, Washington D.C. 20301, February 1970.
+
 \end{thebibliography}

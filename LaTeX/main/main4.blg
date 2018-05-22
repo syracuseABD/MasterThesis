@@ -3,36 +3,36 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main4.aux
 The style file: unsrt.bst
 Database file #1: mtref.bib
-You've used 2 entries,
+You've used 3 entries,
             1791 wiz_defined-function locations,
-            458 strings with 3868 characters,
-and the built_in function-call counts, 293 in all, are:
-= -- 26
-> -- 9
+            464 strings with 4093 characters,
+and the built_in function-call counts, 420 in all, are:
+= -- 39
+> -- 13
 < -- 0
-+ -- 4
-- -- 2
-* -- 16
-:= -- 50
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 0
++ -- 6
+- -- 3
+* -- 21
+:= -- 76
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 16
-empty$ -- 33
-format.name$ -- 2
-if$ -- 67
+cite$ -- 3
+duplicate$ -- 22
+empty$ -- 45
+format.name$ -- 3
+if$ -- 94
 int.to.chr$ -- 0
-int.to.str$ -- 2
+int.to.str$ -- 3
 missing$ -- 2
-newline$ -- 12
-num.names$ -- 1
-pop$ -- 7
+newline$ -- 17
+num.names$ -- 2
+pop$ -- 8
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 5
+skip$ -- 6
 stack$ -- 0
 substring$ -- 0
 swap$ -- 2
@@ -41,6 +41,6 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 1
-width$ -- 3
-write$ -- 22
+while$ -- 2
+width$ -- 4
+write$ -- 34
