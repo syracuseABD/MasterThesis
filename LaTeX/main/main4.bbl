@@ -24,6 +24,14 @@ Edmund~M. Clarke and et~al Jeannette M.~Wing.
 Jagatheesan Kunasaikaran, Azlan Iqbal, Jalan Dua, and Chan~Sow Lin.
 \newblock A brief overview of functional programming languages, 2016.
 
+\bibitem{NIST800160}
+Ron Ross, Michael McEvilley, and Janet~Carrier Oren.
+\newblock Systems security engineering considerations for a multidisciplinary
+  approach in the engineering of trustworthy secure systems.
+\newblock Special Publication 800-160, National Institute of Standards and
+  Technology (NIST), 100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD
+  20899-8930, May 2016.
+
 \bibitem{defensescienceboard}
 The~Rand Corporation.
 \newblock Security controls for computer systems: Report of defence science
