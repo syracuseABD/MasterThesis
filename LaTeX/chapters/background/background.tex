@@ -22,22 +22,19 @@ This master thesis applies formal verification methods to prove the security pro
 \paragraph*{Functional Programming}
 (Primary source for this section is \cite{functionalprogramming})
 
-Functional programing is a style of programming that uses functions to define program behavior.  Functional programing is inherently different than procedural or object-oriented programming. These styles of program use procedures or objects and classes to define program behavior.  c  and Pascal are examples of procedural programming languages.  c++ and Java are examples of object-oriented programming languages.  Haskell and ML (meta language) are examples of functional programming languages.  Functional programming languages are thought to be more pure.  They have fewer side effects than procedural or object-oriented programming.  They produce fewer bugs.  Functional programming languages are thus considered more reliable.    
-
+Functional programing is a style of programming that uses functions to define program behavior.  Functional programing is inherently different than procedural or object-oriented programming. These styles of program use procedures or objects and classes to define program behavior.  c  and Pascal are examples of procedural programming languages.  c++ and Java are examples of object-oriented programming languages.  Haskell and ML (meta language) are examples of functional programming languages.  Functional programming languages are thought to be more pure.  They have fewer side effects than procedural or object-oriented programming.  They produce fewer bugs.  Functional programming languages are thus considered more reliable.   
 This master thesis relies on the Higher Order Logic (HOL) Interactive theorem prover.  HOL is implemented in the functional programming language polyML.
 
 \paragraph*{Higher Order Logic (HOL) Interactive Theorem Prover}
-The Higher Order Logic (HOL) Interactive theorem prover is a proof assistant.  HOL is considered to be a very reliable theorem proving system.  HOL implements a formal logic.  At its core, is a small set of axioms.  All inferences and theorems must be derived from this small set of axioms using the formal logic.
+The Higher Order Logic (HOL) Interactive theorem prover is a proof assistant.  HOL has proved to be a very reliable theorem proving system.  It is widely trusted in the interactive theorem proving community.
 
+At its core, HOL implements a small set of axioms and a formal logic.  All inferences and theorems must be derived from this small set of axioms using the formal logic.  Reasoning logically with a small set of axioms contributes to the trustworthiness of the system.  The user only has to trust the small set of axioms and the logic (in addition to HOL).  Beyond the competence of the programmer, if it can't be proved in HOL then it can be proved.  
 
-HOL is a strongly-type system.  Users can define their own axioms, types, and definitions.  With these, the user can then apply the rules of the formal logic to derive theorems.  These theorems represent formal proofs of 
+HOL is a strongly-typed system.  This means that data has a predefined type.  As in all purely functional programming languages, the type of these data can not change.  This adds to the reliability of HOL by preventing side-effect. HOL has several built-in data types.  But, the user can also define her own data type.   In addition to datatypes, the user can define her own set of axioms and definitions.  
 
-With these definitions, the user can derive lemmas and th  
+With user-defined types, axioms, and definitions, the user can describe a system in HOL and then use HOL's formal logic to prove properties of this system.  This is the basis for theorem proving in formal methods.
 
-At its core, HOL has a set of axioms which are believe to be true.  From there, inference rules are derived. 
-
-an interactive theorem prover.  HOL is implemented in polyML.  HOL is considered to be very reliable. 
-
+This master thesis describes an access-control logic (ACL) that is implemented in HOL.  Using this ACL, secure state machines (SSMs) are also described in HOL.  With the ACL implemented in HOL, this thesis proves security properties of the SMMs.  These proofs are considered formal verification of the security properties of the SSMs.  As the patrol base operations are modeled as a hierarchy of SSMs, these proofs also provide formal verification of the security properties of the patrol base operations.
 
 
 \paragraph*{Other Interactive Theorem Provers}
