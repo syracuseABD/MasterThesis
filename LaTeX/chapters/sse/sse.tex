@@ -28,14 +28,22 @@ In this way, the patrol base operations represent a system and are amiable to th
 \section{Systems Engineering}\label{sec:se}
 Systems engineering is an interdisciplinary approach aimed at solving problems involved in the design, development, realization, and life-cycle maintenance of systems.
   
+  
+ This master thesis focuses on the design phase of systems engineering.   The aim is to model the patrol base operations in a manner that is amiable to verifying specific security properties of the system.  Specifically, the patrol base operations must satisfy the property of complete mediation. 
 
-ISO/IEC/IEEE 15288 focuses on creating systems that satisfy the needs of the customer, referred to as the stakeholder in the publication.  
 
-It models the patrol base operations \cite{rangermanual} as an example of a non-automated, human-centered system.  The focus of this thesis is on demonstrating security properties of the patrol base operations.  Therefore, this thesis focuses on the design phase of systems engineering. 
+But, this thesis does not aim to build a new system.  Rather this thesis remodels an existing system.   This is necessary because the goal of this thesis is to determine whether or not it is possible to verify the specific security properties on the subclass of systems that we are exploring.  Most people would agree that testing a new method on a new system would be unwise.  This is why this thesis did not do that.    
 
+
+This approach has the side-effect of also demonstrating CSBDs utility in the life-cycle phase of systems engineering.  It follows readily from the news today that many systems were not designed with security in mind.  Eliminating already-in-use systems and legacy systems may not always be practical or desirable.  Nevertheless, security remains an important aspect of system performance.  This, in part, justifies a re-look at (or remodeling of)  of an already existing system.
+
+
+There are additional benefits to systematically modeling the patrol base operations in a way that is amiable to formal verification.  This type of thinking provides new insights and suggests areas for improvement\footnote{The subject matter expert who focused on the details of the patrol base operations also noted areas for improvement.  He was not available to provide details at the writing of this master thesis.}.  This is a known benefit.  For example, Wikipedia \cite{wikiformalmethods} notes that "Sometimes, the motivation for proving the correctness of a system is not the obvious need for reassurance of the correctness of the system, but a desire to understand the system better."  A greater understanding of a system applies to all phases of systems engineering.
 
      %%%%%%%%%%%%%%%%%% Section Systems Security Engineering %%%%%%
 \section{Systems Security Engineering}\label{sec:sse}
+
+  In general, the CSBD approach to verifying these security properties is a design phase activity.  This is because it is well established that the best way to apply security to a system is to engineer the system with security in mind at the design phase.  
 
 \subsubsection{Systems Security Engineering Framework}\label{sssec:sseframework}
 
