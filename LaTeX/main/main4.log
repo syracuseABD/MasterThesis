@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  23 MAY 2018 17:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  23 MAY 2018 17:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -850,7 +850,7 @@ Package pdftex.def Info: ../figures/seincontext.png used on input line 48.
  [7] [8 <../figures/seincontext.png>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 65.
+(hyperref)                than one, level fixed on input line 64.
 
 ) [9] [10] (../chapters/csbdacl/csbdacl.tex
 Chapter 4.
@@ -3168,7 +3168,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 218.
 Here is how much of TeX's memory you used:
  17054 strings out of 492995
  268140 string characters out of 6132704
- 472026 words of memory out of 5000000
+ 471026 words of memory out of 5000000
  19037 multiletter control sequences out of 15000+600000
  17092 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -3210,7 +3210,7 @@ e/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2017/te
 xmf-dist/fonts/type1/public/cbfonts/grmi1200.pfb>
-Output written on main4.pdf (168 pages, 3386780 bytes).
+Output written on main4.pdf (168 pages, 3386778 bytes).
 PDF statistics:
  2998 PDF objects out of 3580 (max. 8388607)
  2657 compressed objects within 27 object streams
