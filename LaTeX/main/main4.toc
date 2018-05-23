@@ -1,7 +1,7 @@
 \contentsline {chapter}{Abstract}{i}{section*.1}
-\contentsline {chapter}{List of Figures}{vii}{chapter*.8}
-\contentsline {chapter}{List of Tables}{viii}{chapter*.10}
-\contentsline {chapter}{List of Acronyms}{ix}{section*.11}
+\contentsline {chapter}{List of Figures}{ix}{chapter*.8}
+\contentsline {chapter}{List of Tables}{x}{chapter*.10}
+\contentsline {chapter}{List of Acronyms}{xi}{section*.11}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Systems Are Everywhere}{1}{subsection.1.1.1}
