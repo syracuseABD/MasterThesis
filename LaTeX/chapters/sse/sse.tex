@@ -65,7 +65,7 @@ To cover the unacceptable losses, this master thesis models an escape-level \gls
 
 To further describe the model of the patrol base operations in the context of \glsentryshort{sse}, a few more concepts are necessary.  
 
-\subsubsection{Systems Security Engineering Framework}\label{sssec:sseframework}
+\section{Systems Security Engineering Framework}\label{sssec:sseframework}
 NIST 800-160 describes the systems security engineering framework shown in figure \ref{sseframework} as "contexts within which systems security engineering activities are conducted."  CSBD focuses primarily on demonstrating trustworthiness.  Nevertheless, this master thesis also addressed other aspects of the framework.  
 
 \begin{figure}[h]
@@ -76,7 +76,7 @@ NIST 800-160 describes the systems security engineering framework shown in figur
 The problem and solution phases for the patrol base operations take a different approach in the context of this master thesis. It is not our goal to outline the potential security threats and then to find solutions for them.  This was, hopefully, already done when the patrol base operations were originally defined.  Nonetheless, it is necessary to identify the problem and solution within the patrol base operations in order to verify their security properties.  
 
 
-\paragraph*{Problem Definition}
+\subsection{Problem}
 The security objective from the perspective of this master thesis is to ensure complete mediation of all actions.  Complete mediation requires that we identify objects to be accessed, the accessors, the means of authenticating the accessors, and the a policy for authentication.  
 
 The objects to be accessed varies at each level of abstraction. At the top and most abstract level, the objects are the transitions.  That is, control over the transitions between phases (or states) of the patrol base operations are to be protected.  Objects are defined similarly for each module and at each level for the entire hierarchy of the model.  These are deducible from the descriptions of each module (or \glsentryshort{ssm}) in their appropriate section (see section \ref{ssec:omnilevel} to start).  For the sake of brevity, this section only discusses the top level to illustrate the key concepts.  
@@ -99,7 +99,7 @@ Platoon Leader says move to the next phase\\
  then Platoon Leader has the authority to move to the next phase}
 \end{center}
 
-\paragraph*{Solution}
+\subsection{Solution}
 The simplest solution to this problem is to model the patrol base operations as a hierarchy of secure state machines (\glsentryshort{ssm}).  The hierarchy simplifies the design of the solution by creating decreasing levels of abstraction with multiple modules at each level.  This allows for focus on one level and one module at time. This essentially amounts to a system of systems approach.  Furthermore, this allows for greater separation of work.  After one level of the hierarchy is complete, CSBD is applied to that level while the next level of the hierarchy is being designed.
 
 \glsentryshortpl{ssm} are readily defined with complete mediation embedded into their design.  \glsentryshortpl{ssm} are discussed in detail in Chapter \ref{chp:ssmmodel}.  In fact, a parameterizable model of an \glsentryshort{ssm}\footnote{This SSM was modeled and implemented in HOL by Professor Shiu-kai Chin and used with his permission.} was already designed and implemented in HOL prior to the start of this project.  The constraints of this project suggested Improvements\footnote{Because these improvements were significant, the original author (Professor Shiu-kai Chin) made them.} to this parameterizable \glsentryshort{ssm}\footnote{Much to the chagrin of the author, a significant portion of the SSMs had to be redone with the new parameterizable SSM.}.
@@ -117,31 +117,26 @@ The first line ensures authentication of the Platoon Leader.  The second line is
 
 Note that this is an "if and only if" conditional.  This means that if the Platoon Leader is authenticated, authorized on, and issues the command then the command is executed.  It also means the converse.  If the command is executed, then the Platoon Leader is authenticated, authorized on, and issues the command to do so.  
 
-\subsubsection{Verifying \& Documenting Trustworthiness}\label{sssec:sseframework}
+\subsection{Trustworthiness}
+There are two requirement for trustworthiness relevant to this master thesis: (1) Defining trustworthiness for the purposes of this master thesis, and (2) demonstrating that trustworthiness is achieved.  The former is easy for this model.  Trustworthiness means that the system satisfies the property of complete mediation.  
 
-\paragraph*{Trustworthiness}
+The second requirement is the demonstration of trustworthiness.  This is the subject of the following sections.
 
-\paragraph*{Verification}
+\section{Trustworthiness}\label{sssec:trustworthiness}
 
-\paragraph*{Documentation}
+\subsection{Verification \& Documentation}\label{sssec:sseframework}
+
+\subsubsection{Verification}
+\subsubsection{Formal Verification}
+
+\subsubsection{Documentation}
+
+
 A common idiom of science and engineering is "if you didn't document it then it didn't happen."  There is some leeway in engineering because the presence of a system is indicative that "you did it." However, this hides the important details regarding the security of the system.  Maybe "you did it" but "did you do it right?"  This is where documentation is important. 
 
 '''systems security engineering provides a sufficient base of evidence that supports claims that the desired level of trustworthiness has been achieved..."
 
-
-\subsection{Trustworthiness}\label{ssec:trustworthiness}
-\subsubsection{Complete Mediation}\label{sssec:completemediation}
-
-\subsection{Verification}\label{ssec:verification}
-\subsection{Documentation}\label{ssec:documentation}
 \subsection{Reproducibility}\label{ssec:reproducibility}
 
-      %%%%%%%%%%%%%%%%%%% Section Verification & Documentation %%%%%%
-\section{Verification \& Documentation}
-
-      %%%%%%%%%%%%%%%%%%% Section Complete Mediation %%%%%%%%%%%
-\section{Principle of Complete Mediation}
-
-\subsection{Formal Verification Using Computer-Aided Reasoning}
 
 \end{document}
