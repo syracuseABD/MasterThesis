@@ -10,7 +10,10 @@
 \chapter{Background}
 This section aims to provide some background on subjects discussed in this master thesis.  These subjects are not directly addressed in other areas of this master thesis.  Nevertheless, knowledge of them is either necessary or useful to understanding what follows.
 
-\paragraph*{Formal Methods}
+\section{Complete Mediation}
+Complete mediation is discussed throughout this master thesis.  It is described in this section so as to eliminate the need to repeatedly describe it in the ensuing chapters.
+
+\section{Formal Methods}
 (Primary source for this section is \cite{wikiformalmethods})
 
 Formal methods are aimed at improving the reliability and correctness of systems\cite{formalmethodslcarke}.  They are applied to all phases of systems engineering.  Formal methods employ mathematics to verify desired aspects of a system.  Mathematics adds a degree of rigor to the verification process that is amiable to automation.  
@@ -19,13 +22,13 @@ The primary tools of formal methods are model checking and theorem proving.  Mod
 
 This master thesis applies formal verification methods to prove the security properties of a system. It uses a formal logic based on modal propositional logic.  The logic, called access-control logic (ACL), is implemented in the Higher Order Logic (HOL) Interactive theorem prover.  Theorem proving is partially automated. 
 
-\paragraph*{Functional Programming}
+\section{Functional Programming}
 (Primary source for this section is \cite{functionalprogramming})
 
 Functional programing is a style of programming that uses functions to define program behavior.  Functional programing is inherently different than procedural or object-oriented programming. These styles of program use procedures or objects and classes to define program behavior.  c  and Pascal are examples of procedural programming languages.  c++ and Java are examples of object-oriented programming languages.  Haskell and ML (meta language) are examples of functional programming languages.  Functional programming languages are thought to be more pure.  They have fewer side effects than procedural or object-oriented programming.  They produce fewer bugs.  Functional programming languages are thus considered more reliable.   
 This master thesis relies on the Higher Order Logic (HOL) Interactive theorem prover.  HOL is implemented in the functional programming language polyML.
 
-\paragraph*{Higher Order Logic (HOL) Interactive Theorem Prover}
+\section{Higher Order Logic (HOL) Interactive Theorem Prover}
 The Higher Order Logic (HOL) Interactive theorem prover is a proof assistant.  HOL has proved to be a very reliable theorem proving system.  It is widely trusted in the interactive theorem proving community.
 
 At its core, HOL implements a small set of axioms and a formal logic.  All inferences and theorems must be derived from this small set of axioms using the formal logic.  Reasoning logically with a small set of axioms contributes to the trustworthiness of the system.  The user only has to trust the small set of axioms and the logic (in addition to HOL).  Beyond the competence of the programmer, if it can't be proved in HOL then it can be proved.  
@@ -37,8 +40,8 @@ With user-defined types, axioms, and definitions, the user can describe a system
 This master thesis describes an access-control logic (ACL) that is implemented in HOL.  Using this ACL, secure state machines (SSMs) are also described in HOL.  With the ACL implemented in HOL, this thesis proves security properties of the SMMs.  These proofs are considered formal verification of the security properties of the SSMs.  As the patrol base operations are modeled as a hierarchy of SSMs, these proofs also provide formal verification of the security properties of the patrol base operations.
 
 
-\paragraph*{Other Interactive Theorem Provers}
-\paragraph*{How to Compile The Included Files}
+\section{Other Interactive Theorem Provers}
+\section{How to Compile The Included Files}
 
 
 \end{document}
