@@ -43,9 +43,9 @@ There are additional benefits to systematically modeling the patrol base operati
      %%%%%%%%%%%%%%%%%% Section Systems Security Engineering %%%%%%
 \section{Systems Security Engineering}\label{sec:sse} (Primary source for this section is \cite{NIST800160})
 
-Systems security engineering (\glsentryshort{sse}) is a sub-discipline of systems engineering.  Figure \ref{fig:nist800160} shows \glsentryshort{sse} in relation to systems engineering and other sub-disciplines.  This master thesis falls into one of the Security Specialties in this diagram.
+Systems security engineering (\glsentryshort{sse}) is a sub-discipline of systems engineering.  Figure \ref{fig:nist800160} shows \glsentryshort{sse} in relation to systems engineering and other sub-disciplines of \glsentryshort{sse}.  This master thesis falls into one of the Security Specialties in this diagram.
 
-\begin{figure}[ht]
+\begin{figure}[h]
 \includegraphics[width=\linewidth]{../figures/seincontext.png}
 \caption{\label{fig:nist800160}Systems security engineering in relation to systems engineering. (Image from \glsentryshort{nist} Special Publication 800-160: Systems Security Engineering Considerations for a Multidisciplinary Approach in the Engineering of Trustworthy Secure Systems.)}
 \end{figure}
@@ -60,23 +60,41 @@ According to \glsentryshort{nist} Special Publication 800-160, "Systems security
 
 It is also a critical objective of \glsentryshort{sse} to identify and define the security goals of the stakeholder in a way that minimizes asset loss and avoids unacceptable losses.  The security properties of the patrol base operations are already built-in to the design of the operations from the Ranger Handbook.  These are undoubtedly the result of years of military expertise.  Our goal is not to define the security features of the patrol base operations, but to describe them in manner amiable to verification of complete mediation.  Identification of assets and unacceptable losses from the Ranger Handbook is sufficient to do this.
 
-To cover the unacceptable losses, this master thesis models an escape-level \glsentrylong{ssm}.  If at any phase in the patrol base operations any authenticated principal (i.e., the platoon leader) reports an abortable event, the escape-level \glsentryshort{ssm} will abort the patrol base operations. This includes casualties or unacceptable equipment failure.  By creating one escape-level \glsentryshort{ssm}, this thesis creates an modularized yet expandable treatement of unacceptable losses.
+To cover the unacceptable losses, this master thesis models an escape-level \glsentrylong{ssm} (SSM).  If at any phase in the patrol base operations any authenticated principal (i.e., the platoon leader) reports an abortable event, the escape-level \glsentryshort{ssm} will abort the patrol base operations. This includes casualties or unacceptable equipment failure.  By creating one escape-level \glsentryshort{ssm}, this thesis creates an modularized yet expandable treatement of unacceptable losses.
 
 
-'''systems security engineering provides a sufficient base of evidence that supports claims that the desired level of trustworthiness has been achieved..."
-
-
-
+To further describe the model of the patrol base operations in the context of \glsentryshort{sse}, a few more concepts are necessary.  
 
 \subsubsection{Systems Security Engineering Framework}\label{sssec:sseframework}
+NIST 800-160 describes the systems security engineering framework shown in figure \ref{sseframework} as a "contexts within which systems security engineering activities are conducted."  CSBD focuses primarily on demonstrating trustworthiness.  Nevertheless, this master thesis also addressed other aspects of the framework.  
 
+The problem and solution phases for the patrol base operations take a different approach in the context of this master thesis. It is not our goal to outline the potential security threats and then to find solutions for them.  This was, hopefully, already done when the patrol base operations were originally defined.  Nonetheless, it is necessary to identify the problem and solution within the patrol base operations in order to verify their security properties.  
 
-In modeling the patrol base operationsHow to model the patrol base operations in a way that is amiable to verification of the property of complete mediation?
-\begin{description}
-\item[Who are the stakeholders and are the stakeholders needs? ]
-\item[What needs to be protected?] 
-\item[What are unacceptable losses?]
-\end{description}
+The security objective from the perspective of this master thesis is to ensure complete mediation of all actions.  Complete mediation requires that we identify objects to be accessed, the accessors, the means of authenticating the accessors, and the a policy for authentication.  
+
+The objects to be accessed varies at each level of abstraction. At the top and most abstract level, the objects are the transitions.  That is, control over the transitions between phases (or states) of the patrol base operations are to be protected.  
+
+The accessors are the leaders designated at each level of abstraction.  The best way to negotiate access to objects is by the principle of least privilege.  This principle assigns privilege to only those who are deemed necessary and to no others.  At the top level of the patrol base operations model, the platoon leader (and only platoon leader) is designated as the accessor. This means that only the platoon leader can issue commands to move-on to the next phase (or state) in the patrol base operations. 
+
+In the real patrol base operations, soldiers recognize each other by face.  Thus, it is sufficient to just authenticate the platoon leader at each level without requiring any passwords or other means of authentication\footnote{The author and subject matter expert discussed authentication in the context of an accountability system wherein passwords or chips were required for authentication.  But, we did not implement such authentication techniques in this project.}.
+
+Policy is determined for each module and at each level of the patrol base operations model.  The model includes not only "who" is authorized to do what, but also what preconditions are necessary prior to authorization.  At the top level, there are only two requirements for the platoon to move to the next phase of the operations: (1) the previous phase was complete, and (2) the platoon leader issue the command to move to the next phase.  This creates a potential conflict between the goal of modularizing each component and creating a hierarchy wherein each level of the hierarchy expands upon the one above it.  
+
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{../figures/sseframework}
+\caption{\label{sseframework}Systems security engineering Framework. (Image from \glsentryshort{nist} Special Publication 800-160: Systems Security Engineering Considerations for a Multidisciplinary Approach in the Engineering of Trustworthy Secure Systems.)}
+\end{figure}
+
+\subsubsection{Verifying \& Documenting Trustworthiness}\label{sssec:sseframework}
+
+\paragraph*{Trustworthiness}
+
+\paragraph*{Verification}
+
+\paragraph*{Documentation}
+A common idiom of science and engineering is "if you didn't document it then it didn't happen."  There is some leeway in engineering because the presence of a system is indicative that "you did it." However, this hides the important details regarding the security of the system.  Maybe "you did it" but "did you do it right?"  This is where documentation is important. 
+
+'''systems security engineering provides a sufficient base of evidence that supports claims that the desired level of trustworthiness has been achieved..."
 
 
 \subsection{Trustworthiness}\label{ssec:trustworthiness}

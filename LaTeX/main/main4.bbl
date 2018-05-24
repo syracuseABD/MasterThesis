@@ -1,11 +1,5 @@
 \begin{thebibliography}{1}
 
-\bibitem{ChinOlder}
-Shiu-Kai Chin and Susan~Beth Older.
-\newblock {\em Access Control, Security, and Trust: A Logical Approach}.
-\newblock Chapman {\&} Hall: CRC Cryptography and Network Security Series.
-  Chapman and Hall/CRC, July 2010.
-
 \bibitem{rangermanual}
 United States Army Ranger School, ATTN: ATSH-RB, 10850 Schneider Rd, Bldg 5024,
   Ft Benning, GA 31905.
@@ -38,5 +32,11 @@ The~Rand Corporation.
   board task force on computer security.
 \newblock Technical report, Office of the Director of Defence Research And
   Engineering, Washington D.C. 20301, February 1970.
+
+\bibitem{ChinOlder}
+Shiu-Kai Chin and Susan~Beth Older.
+\newblock {\em Access Control, Security, and Trust: A Logical Approach}.
+\newblock Chapman {\&} Hall: CRC Cryptography and Network Security Series.
+  Chapman and Hall/CRC, July 2010.
 
 \end{thebibliography}
