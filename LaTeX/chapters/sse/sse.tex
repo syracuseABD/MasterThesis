@@ -91,13 +91,17 @@ At the top level, there are only two requirements for the patrol base operations
 
 To solve this problem, an OMNI level module is created.  The OMNI level module is thought of as all-knowing.  This module relays information from all modules as needed.  With this construct, the top level does not need to "know" if the lower level module is complete.  It only needs to know that the OMNI level says that it is complete.  The OMNI level is given the authority to determine when any module is complete.
 
-With this solution in mind, the top level policy essentially says:
+With this solution in mind, the top level policy looks like this.
 
+
+\fbox{
+\parbox{\linewidth}{
 \begin{center}
 \textit{if OMNI-Level says the previous phase is complete\footnote{For those who have read ahead, the reader may recognize that this does not follow logically from the inference rules.  The actual implementation of this policy requires the two inputs on the first and second line and returns that output on the final line.  Within the policy is the requirement that OMNI Level has the authority to determine that the previous phase is complete.  To state this in the text here would only clutter it and confuse the reader.}, and \\
 Platoon Leader says move to the next phase\\
  then Platoon Leader has the authority to move to the next phase}
 \end{center}
+}}
 
 \subsection{Solution}
 The simplest solution to this problem is to model the patrol base operations as a hierarchy of secure state machines (\glsentryshort{ssm}).  The hierarchy simplifies the design of the solution by creating decreasing levels of abstraction with multiple modules at each level.  This allows for focus on one level and one module at time. This essentially amounts to a system of systems approach.  Furthermore, this allows for greater separation of work.  After one level of the hierarchy is complete, CSBD is applied to that level while the next level of the hierarchy is being designed.
@@ -106,12 +110,15 @@ The simplest solution to this problem is to model the patrol base operations as 
 
 The most useful property of the \glsentryshort{ssm} is that complete mediation is made a condition for transitions among states.  That is, to transition from one state to another the accessor (requestor) must be properly authenticated and authorized. Authentication and authorization are described above in the description of the problem.   For example, at the top level, transition commands in an \glsentryshort{ssm} look like this.
 
+\fbox{
+\parbox{\linewidth}{
 \begin{center}
 \textit{if Platoon Leader's identity is authenticated, and\\
          Platoon Leader says move to the next phase, and \\
          Platoon Leader has the authority to move to the next phase\\
          then move to the next phase.}
 \end{center}
+}}
 
 The first line ensures authentication of the Platoon Leader.  The second line is a request from the Platoon Leader to access the object (i.e., move to the next phase).  The third line is the output of a policy as described in the section above and shown in the box above. 
 

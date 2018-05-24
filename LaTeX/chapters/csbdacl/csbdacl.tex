@@ -38,6 +38,7 @@ This section discusses the access-control logic in sufficient detail to understa
 \subsection{Principals}\label{ssec:principals}
 Principals should be thought of as actors in the access-control logic.  Principals can make statements or requests.  They can be assigned privileges or authority over objects or actions.  The text defines allowable principals using the identifier \textbf{Princ}:
 
+
 \begin{center}
 \textbf{Princ ::= PName / Princ \& Princ / Princ \textbar  Princ}
 \end{center}
@@ -78,12 +79,12 @@ A Kripke structure deals with three things: worlds, propositions, and principals
 \item \textit{$J: \mathbf{PName} \rightarrow \mathcal{P}((W \times W)$ is a function that maps each principal name to a relation on worlds.}
 \end{itemize}
 
+
 \begin{figure}[h]
 \centering
 \includegraphics{../figures/kripkesemantics}
 \caption{\label{kripkesemantics} Kripke semantics. Image taken from \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}}
 \end{figure}
-
 
 \subsubsection{satisies}\label{sssec:satisfies}
 \subsubsection{soundness}\label{sssec:soundness}
