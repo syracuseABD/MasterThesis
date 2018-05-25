@@ -109,8 +109,32 @@ Fundamental to this work is the concept of complete mediation (discussed in sect
 
 ACL refers to the left statement as an authorization\footnote{or a \textit{control} in the C2 calculus}.  The principal P controls (is authorized on) some action $\varphi$. ACL refers to the right statement in this inference rule as a request \footnote{or a \textit{command} in the C2 calculus}.  The principal P requests some action $\varphi$. The conjunction of the authorization and the request of P on $\varphi$ results in the action $\varphi$.  That is, if \textit{P controls $\varphi$} and\textit{ P says $\varphi$} then $\varphi$  is true.  
 
+The \textit{Controls} rule is sufficient for basic authorization involving one principal and some action.  It is the only rule applied in this master thesis.  But, there are more complicated rules that allow for additional authentication and authorization schemes.  
 
-The \textit{Reps} rule also demonstrates complete mediation.  It follows a similar logic.  However, the \textit{Reps} rule is not used in this master thesis.
+\begin{figure}[h]
+\centering
+\includegraphics[width =0.7 \textwidth]{../figures/repsrule}
+\caption{\label{repsrule}The \textit{Reps} inference rule. Image taken from \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}}
+\end{figure}
+
+
+
+The \textit{Reps} (shown in figure \ref{repsrule}) rule also demonstrates complete mediation.  It follows a similar logic.  But, this rule has two principals, in this case P and Q.  The idea is that Q controls (is authorized on) some action $\varphi$. And also, P represents Q on that action.  In the \glsentryshort{acl}, this means that \textit{P Reps Q on $\varphi$}.  Thus, \textit{P says $\varphi$} is irrelevant because P does not have authority on $\varphi$.  But, \textit{P \textbar Q says $\varphi$} (short for, \textit{P says Q says $\varphi$}) is relevant because P represents Q and Q has authority.  Spelled out, the rule follows as such: if \textit{Q controls $\varphi$ and P reps Q on $\varphi$ and P \textbar Q on $\varphi$} then $\varphi$ is true.
+
+The \textit{Reps} rule represents a principal acting in a role.  For example, soldier G.I. Jane may be acting as the Platoon Leader.  In this situation, it is the Platoon Leader (Q) who is granted authority over the action $\varphi$.  But, it is G.I.Jane (P) acting in the role of Platoon Leader who (Q) is actually issuing the command $\varphi$.  
+
+\begin{figure}[h]
+\centering
+\includegraphics[width =0.6 \textwidth]{../figures/derivedspeaksfor}
+\caption{\label{derivedspeaksfor}The \textit{Derived Speaks For} inference rule. Image taken from \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}}
+\end{figure}
+
+The \textit{Derived Speaks For} rule also allows for variation in authentication and authorization. This rule is shown in figure \ref{derivedspeaksfor}. This also uses two principals and deals mainly with the concept of jurisdiction and authentication.  In this case, the principal P is "speaking for" the principal Q.  Again, the symbol $\Rightarrow$ means "speaks for."  Thus, if \textit{P $\Rightarrow$ Q and P says $\varphi$} then we believe that \textit{Q says $\varphi$}.
+
+The most common use of the \textit{Derived Speaks For}  rule is in jurisdictional case.  For example, the United States Army has jurisdiction over who serves in the role of Platoon Leader.  The U.S. Army may, in turn, issue i.d. cards with a soldier's photo (or in the future chips) that say, for example, soldier G.I.Jane is who the she says she is.  If we believe the i.d. card is genuine and it belongs to G.I.Jane, then the  i.d. card speaks for G.I.Jane.  So, if the i.d. card says issue G.I.Jane her equipment, then it follows that G.I. Jane says to issue her the equipment.  It is somewhat more complicated, because the U.S. Army has jurisdiction over who gets what equipment.  The i.d. card is not saying that G.I.Jane has control over her equipment.  It only says that she is asking for the equipment.  
+
+The \textit{Derived Speaks For} rule is critical to authentication, whereas the \textit{Controls} and \textit{Reps} rules are critical for authentication.
+
 
       %%%%%%%%%%%%%%%%%%% Section ACL in HOL %%%%%%%%%%%%%%%
 \section{ACL in HOL} \label{sec:aclinhol}

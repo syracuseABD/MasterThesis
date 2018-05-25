@@ -14,13 +14,13 @@
 \section{The Systems Perspective}\label{sec:systems}
 A system is a set of interacting and interdependent components that act as a whole to perform some behavior or function.  Examples of systems include the human body, socio-political systems, and computer systems. 
 
-The patrol base operations satisfy this definition of a system.  As a whole, the patrol base operations perform some function(s).  This function is described in the Ranger Handbook \cite{rangermanual} and discussed in section \ref{sec:pb}.  The patrol base operations are comprised of interdependent and interacting components.  In general these components are the individual soldiers.  But, the way this master thesis defines the patrol base operations, the definition of a component varies.
+The patrol base operations satisfy this definition of a system.  As a whole, the patrol base operations perform some function(s).  This function is described in the Ranger Handbook \cite{rangermanual} and discussed in chapter \ref{chp:pb}.  The patrol base operations are comprised of interdependent and interacting components.  In general these components are the individual soldiers.  But, the way this master thesis defines the patrol base operations, the definition of a component varies.
 
 This master thesis defines the patrol base operations as a system of systems.  More specifically, this thesis models the patrol base operations as a hierarchy of \glsentrylongpl{ssm}.  Chapter \ref{chp:ssmmodel} describes \glsentryshortpl{ssm} in general.   Section \ref{sec:modelingpb} describes this model of the patrol base operations.  
 
 This model presents the patrol base operations as a hierarchy wherein each level of the hierarchy represents a decreasing level of abstraction.  At the top and most abstract level, the components are phases of the patrol base operations.  These phases commence in a sequential order to achieve the goal of the patrol base operations.  Each lower level of the hierarchy is composed of less abstract phases. At each level, the components function sequentially (typically) to achieve the ultimate goal.  
 
-This system of systems also contains non-hierarchically defined components.  For example, an escape-level component models situations wherein the patrol base operations are aborted.  The escape level component is reachable from any component at any level of the hierarchy.  Soldiers also function within this system of systems in a non-hierarchical manner.  However, CSBD was not applied to the soldier module for this master thesis.  Nevertheless, they were discussed in detail and are discussed in the Discussions chapter \ref{chp:discussion} of this thesis.
+This system of systems also contains non-hierarchically defined components.  For example, an escape-level component models situations wherein the patrol base operations are aborted.  The escape level component is reachable from any component at any level of the hierarchy.  Soldiers (as in a soldier model) also function within this system of systems in a non-hierarchical manner.  However, the soldier module is not verified using the \glsentryshort{acl} because of time constraints.   Nevertheless, a soldier module is discussed in the Discussions chapter \ref{chp:discussion} of this thesis.
 
 In this way, the patrol base operations represent a system and are amiable to the systems engineering perspective.  
 
@@ -32,7 +32,18 @@ Systems engineering is an interdisciplinary approach aimed at solving problems i
   
 This master thesis focuses on the \glsentrylong{csbd} (\glsentryshort{csbd}).  The key premise of \glsentryshort{csbd} is that security should be built into the systems from the start, i.e., the design phase.  This is the leading notion in systems engineering and its sub-discipline \glsentrylong {sse}.  It is instructive to see how CSBD and its application to the patrol base operations fits into this framework described by the ISO standards.
 
-\paragraph*{Concept} The concept phase describes stakeholders and the \glsentrylong{conops} (ConOps).  Stakeholders are those who have a stake in system.  ConOps are defined in a variety of ways.  A good explanation is "
+\paragraph*{Concept} The concept phase describes stakeholders and the \glsentrylong{conops} (ConOps).  Stakeholders are those who have a stake in the system.  ConOps are defined in a variety of ways.  Wikipedia defines ConOps as "...a document describing the characteristics of a proposed system from the viewpoint of an individual who will use that system \cite{wikiconops}.  U.S. Air Force Policy Directive 10-28 defines ConOps as "a high level concept whose purpose is to describe operational mission areas, enablers and effects necessary to achieve desired results/outcomes" \cite{af1028}.  ConOps are context specific.  
+
+The patrol base operations are already modeled and implemented. The mission areas, enablers, and effects to achieve the desired goal are already in place.  The aim for this thesis is to maintain the structure of the patrol base operations and model it in a way that is amiable to verification and documentation of complete mediation.
+
+It is also possible to look at this thesis as the modification of an already in-use systems. For example, an accountability system involving the patrol base operations may require a remodeling of the operations with few, if any, changes in the actual operations themselves.  This is discussed in more detail in the Future Works \& Implications Chapter in section \ref{sec:accountability}.
+
+\glsentryshort{csbd} in intended to by applied to this phase of the systems engineering process.  
+ 
+\paragraph*{Development}
+The development stage involves refinement of the ConOps and production of the productions.  The development of the patrol base operations took place a long time ago.  Regardless, the products for this master thesis are the verification and subsequent documentation of complete mediation.  
+
+In an accountability system, for example, the principle of complete mediation verified and documented would be embedded in the implementation of any procedures worked out at this phase of the system life-cycle.
 
  The aim is to model the patrol base operations in a manner that is amiable to verifying specific security properties of the system.  Specifically, the patrol base operations must satisfy the property of complete mediation. 
 
