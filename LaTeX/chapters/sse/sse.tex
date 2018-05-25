@@ -16,33 +16,42 @@ A system is a set of interacting and interdependent components that act as a who
 
 The patrol base operations satisfy this definition of a system.  As a whole, the patrol base operations perform some function(s).  This function is described in the Ranger Handbook \cite{rangermanual} and discussed in section \ref{sec:pb}.  The patrol base operations are comprised of interdependent and interacting components.  In general these components are the individual soldiers.  But, the way this master thesis defines the patrol base operations, the definition of a component varies.
 
-This master thesis defines the patrol base operations as a system of systems.  More specifically, this thesis models the patrol base operations as a hierarchy of \glsentrylongpl{ssm}.  Chapter \ref{chp:ssmmodel} describes \glsentryshortpl{ssm} in general.   Section \ref{sec:modelingpb} describes this model of the patrol base operations.  This model presents the patrol base operations as a hierarchy wherein each level of the hierarchy represents a decreasing level of abstraction.   
+This master thesis defines the patrol base operations as a system of systems.  More specifically, this thesis models the patrol base operations as a hierarchy of \glsentrylongpl{ssm}.  Chapter \ref{chp:ssmmodel} describes \glsentryshortpl{ssm} in general.   Section \ref{sec:modelingpb} describes this model of the patrol base operations.  
 
-At the top and most abstract level, the components are phases of the patrol base operations.  These phases commence in a sequential order to achieve the goal of the patrol base operations.  Each lower level of the hierarchy is composed of less abstract phases. At each level, the components function sequentially (typically) to achieve the ultimate goal.  
+This model presents the patrol base operations as a hierarchy wherein each level of the hierarchy represents a decreasing level of abstraction.  At the top and most abstract level, the components are phases of the patrol base operations.  These phases commence in a sequential order to achieve the goal of the patrol base operations.  Each lower level of the hierarchy is composed of less abstract phases. At each level, the components function sequentially (typically) to achieve the ultimate goal.  
 
-This system of system also contains non-hierarchically defined components.  For example, an escape-level component models situations wherein the patrol base operations are aborted.  The escape level component is reachable from any component at any level of the hierarchy.  Soldiers also function within this system of systems in a non-hierarchical manner.  However, soldiers were not modeled in detail for this master thesis.  Nevertheless, they were discussed in detail and ready to be modeled.
+This system of systems also contains non-hierarchically defined components.  For example, an escape-level component models situations wherein the patrol base operations are aborted.  The escape level component is reachable from any component at any level of the hierarchy.  Soldiers also function within this system of systems in a non-hierarchical manner.  However, CSBD was not applied to the soldier module for this master thesis.  Nevertheless, they were discussed in detail and are discussed in the Discussions chapter \ref{chp:discussion} of this thesis.
 
 In this way, the patrol base operations represent a system and are amiable to the systems engineering perspective.  
 
      %%%%%%%%%%%%%%%%%% Section Systems Engineering %%%%%%%%%%
 \section{Systems Engineering}\label{sec:se}
-Systems engineering is an interdisciplinary approach aimed at solving problems involved in the design, development, realization, and life-cycle maintenance of systems.
+The recognized authoritative standard on systems engineering is ISO/IEC/IEEE 15288 \cite{iso15288}.  This document is titled "Systems And Software Engineering--System Life Cycle Processing."  A precursor to this standard is ISO/IEC TR 24748 1 \cite{iso24748} titled "Systems And Software Engineering--Life Cycle Management--Part 1: Guide for Life Cycle Management."   These are the primary sources for this section.
+
+Systems engineering is an interdisciplinary approach aimed at solving problems involved in the various phases of the life cycle of a system.  ISO/IEC/IEEE 15288 and ISO/IEC TR 24748 1 define five major phases of the this life cycle: concept, development, production, utilization, support, and retirement.
   
-  
- This master thesis focuses on the design phase of systems engineering.   The aim is to model the patrol base operations in a manner that is amiable to verifying specific security properties of the system.  Specifically, the patrol base operations must satisfy the property of complete mediation. 
+This master thesis focuses on the \glsentrylong{csbd} (\glsentryshort{csbd}).  The key premise of \glsentryshort{csbd} is that security should be built into the systems from the start, i.e., the design phase.  This is the leading notion in systems engineering and its sub-discipline \glsentrylong {sse}.  
+
+  The aim is to model the patrol base operations in a manner that is amiable to verifying specific security properties of the system.  Specifically, the patrol base operations must satisfy the property of complete mediation. 
 
 
 But, this thesis does not aim to build a new system.  Rather this thesis remodels an existing system.   This is necessary because the goal of this thesis is to determine whether or not it is possible to verify the specific security properties on the subclass of systems that we are exploring.  Most people would agree that testing a new method on a new system would be unwise.  This is why this thesis did not do that.    
 
 
-This approach has the side-effect of also demonstrating CSBDs utility in the life-cycle phase of systems engineering.  It follows readily from the news today that many systems were not designed with security in mind.  Eliminating already-in-use systems and legacy systems may not always be practical or desirable.  Nevertheless, security remains an important aspect of system performance.  This, in part, justifies a re-look at (or remodeling of)  of an already existing system.
+This approach has the side-effect of also demonstrating CSBDs utility in the life-cycle phase of systems engineering.  It follows readily from the news today that many systems are not designed with security in mind.  Eliminating already-in-use systems and legacy systems may not always be practical or desirable.  Nevertheless, security remains an important aspect of system performance.  This, in part, justifies a re-look at (or remodeling of)  of an already existing system.
 
 
 There are additional benefits to systematically modeling the patrol base operations in a way that is amiable to formal verification.  This type of thinking provides new insights and suggests areas for improvement\footnote{The subject matter expert who focused on the details of the patrol base operations also noted areas for improvement.  He was not available to provide details at the writing of this master thesis.}.  This is a known benefit.  For example, Wikipedia \cite{wikiformalmethods} notes that "Sometimes, the motivation for proving the correctness of a system is not the obvious need for reassurance of the correctness of the system, but a desire to understand the system better."  A greater understanding of a system applies to all phases of systems engineering.
 
-     %%%%%%%%%%%%%%%%%% Section Systems Security Engineering %%%%%%
-\section{Systems Security Engineering}\label{sec:sse} (Primary source for this section is \cite{NIST800160})
+     %%%%%%%%%%%%%%%%%% NIST %%%%%%%%%%%%%%%%%%%%%
+\section{NIST Special Publication 800-160}
+One work in the field of \glsentrylong{sse} is such a critical component to the field of \glsentryshort{sse} that it warrants pointing out. The \glsentrylong{nist} (NIST) defines its mission as such: "To promote U.S. innovation and industrial competitiveness by advancing measurement science, standards, and technology in ways that enhance economic security and improve our quality of life." \cite{nistmission}.  As their name suggests, NIST develops standards for various industries of relevance to the nation.   
 
+The relevant standard for \glsentryshort{sse} is NIST Special Publication 800-160 Volumes 1 and 2. The title of volume 1 is "Systems Security Engineering
+Considerations for a Multidisciplinary Approach in the Engineering of Trustworthy Secure Systems."  The title of volume 2 is "Systems Security Engineering Cyber Resiliency Considerations for the Engineering of Trustworthy Secure Systems."   These, in particular volume 1, are the primary sources for the following two sections.  
+
+     %%%%%%%%%%%%%%%%%% Section Systems Security Engineering %%%%%%
+\section{Systems Security Engineering}\label{sec:sse} 
 Systems security engineering (\glsentryshort{sse}) is a sub-discipline of systems engineering.  Figure \ref{fig:nist800160} shows \glsentryshort{sse} in relation to systems engineering and other sub-disciplines of \glsentryshort{sse}.  This master thesis falls into one of the Security Specialties in this diagram.
 
 \begin{figure}[h]
@@ -125,11 +134,12 @@ The first line ensures authentication of the Platoon Leader.  The second line is
 Note that this is an "if and only if" conditional.  This means that if the Platoon Leader is authenticated, authorized on, and issues the command then the command is executed.  It also means the converse.  If the command is executed, then the Platoon Leader is authenticated, authorized on, and issues the command to do so.  
 
 \subsection{Trustworthiness}
-There are two requirement for trustworthiness relevant to this master thesis: (1) Defining trustworthiness for the purposes of this master thesis, and (2) demonstrating that trustworthiness is achieved.  The former is easy for this model.  Trustworthiness means that the system satisfies the property of complete mediation.  
 
-The second requirement is the demonstration of trustworthiness.  This is the subject of the following sections.
+
+There are two requirement for trustworthiness relevant to this master thesis: (1) Defining trustworthiness for the purposes of this master thesis, and (2) demonstrating that trustworthiness is achieved.  The former is easy for this model.  This master thesis focuses on the trustworthiness aspect of \glsentryshort{sse}.  Therefore, this master thesis elaborates on trustworthiness in the following sections.
 
 \section{Trustworthiness}\label{sssec:trustworthiness}
+This master thesis defines trustworthiness in the context of complete mediation\footnote{Note that there are certainly other measures of trustworthiness in any system.  Nonetheless, the focus of this thesis is to demonstrate CSBD as a viable method for one aspect of the systems security engineering process.  The author does not aim to claim that the patrol base operations are deemed trustworthy solely because they satisfy the property of complete mediation.  CSBD is one piece of the larger puzzle.}.  Therefore, a measure of trustworthiness is weather or not the patrol base operations satisfy the properties of complete mediation.  There are two aspects to this: (1) building complete mediation into the model of the patrol base operations, and (2) demonstrating that this is indeed the fact.  
 
 \subsection{Verification \& Documentation}\label{sssec:sseframework}
 
@@ -143,7 +153,13 @@ A common idiom of science and engineering is "if you didn't document it then it 
 
 '''systems security engineering provides a sufficient base of evidence that supports claims that the desired level of trustworthiness has been achieved..."
 
+
 \subsection{Reproducibility}\label{ssec:reproducibility}
+\subsection{Accountability}\label{ssec:accountability}
+Internet Hall of Fame Inductee Vint Cerf commented on the importance of accountability in \glsentryshort{sse} at a recorded conference in 2016.  The conference titled "Exploring the Dimensions of Trustworthiness: Challenges and Opportunities" was presented by NIST.  
+
+\subsection{Assurance Claims}\label{ssec:assurance}
+
 
 
 \end{document}

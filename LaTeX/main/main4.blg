@@ -3,50 +3,53 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main4.aux
 The style file: unsrt.bst
 Database file #1: mtref.bib
+Warning--entry type for "nistmission" isn't style-file defined
+--line 34 of file mtref.bib
 Warning--entry type for "functionalprogramming" isn't style-file defined
---line 27 of file mtref.bib
+--line 73 of file mtref.bib
 Warning--entry type for "formalmethodslcarke" isn't style-file defined
---line 81 of file mtref.bib
+--line 131 of file mtref.bib
 Warning--empty author in wikiformalmethods
-You've used 7 entries,
+Warning--empty author in iso15288
+You've used 9 entries,
             1791 wiz_defined-function locations,
-            490 strings with 4892 characters,
-and the built_in function-call counts, 995 in all, are:
-= -- 80
-> -- 47
-< -- 1
-+ -- 19
-- -- 12
-* -- 54
-:= -- 168
-add.period$ -- 18
-call.type$ -- 7
-change.case$ -- 6
+            496 strings with 5171 characters,
+and the built_in function-call counts, 1187 in all, are:
+= -- 96
+> -- 45
+< -- 2
++ -- 20
+- -- 11
+* -- 58
+:= -- 193
+add.period$ -- 22
+call.type$ -- 9
+change.case$ -- 8
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 47
-empty$ -- 107
-format.name$ -- 12
-if$ -- 221
+cite$ -- 11
+duplicate$ -- 59
+empty$ -- 137
+format.name$ -- 11
+if$ -- 266
 int.to.chr$ -- 0
-int.to.str$ -- 7
+int.to.str$ -- 9
 missing$ -- 3
-newline$ -- 34
-num.names$ -- 5
-pop$ -- 27
+newline$ -- 42
+num.names$ -- 6
+pop$ -- 35
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 20
+skip$ -- 29
 stack$ -- 0
 substring$ -- 0
-swap$ -- 6
-text.length$ -- 1
+swap$ -- 8
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 5
-width$ -- 8
-write$ -- 70
-(There were 3 warnings)
+warning$ -- 2
+while$ -- 6
+width$ -- 10
+write$ -- 86
+(There were 5 warnings)
