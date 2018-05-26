@@ -169,26 +169,24 @@ In essence, the \glsentryshort{acl} formally describes the informal logic shown 
 
 With these proofs, it is accepted that the model of the patrol base operations satisfies the principle of complete mediation.  These are considered demonstrated proofs, or assurance cases, 
 
-\subsection{Verification \& Documentation}\label{sssec:sseframework}
-\subsubsection{Verification}
+\section{Verification \& Documentation}\label{sssec:sseframework}
+\subsection{Verification}
 Verification amounts to proof of trustworthiness.  NIST SP 800-160 often refers to "security-focused" verification.  Verification is built-in to the \glsentryshort{csbd} method.  It focuses on the use of authentication and authorization in the design of the system.  \glsentryshort{csbd} demonstrates is usefulness not only a guide to complete mediation, but also as a tool that applies formal methods using computer-aided reasoning to verify any claims of complete mediation. This is referred to as formal verification. Thus, \glsentryshort{csbd} is a complete approach to designing trustworthy systems.
 
-\subsubsection{Documentation}
+\subsection{Documentation}
 A common concept in science and engineering is "if you didn't document it then it didn't happen."  Documentation is specifically important to claims of trustworthiness because such claims are not always readily apparent in the system. Systems may run smoothly without adequate security ... until something finally goes wrong?  Then, everyone scrambles to find the cause of the problem.
 
-Documentation is often the least exciting aspect of systems engineering. But, documentation is one of the most important activities in the systems engineering processes.  Documentation describes the system for posterity or as a memory aid stakeholders.  More importantly, documentation is an accountability tool.  Accountability is incredibly important.  Stakeholders must hold the systems engineers accountable for realizing the system to the satisfaction of the stakeholder.  If something goes wrong, documentation aids in tracing the source of the problem.  If someone is to blame, then everyone wants to document their part for their own personal protection.  
+Documentation is often the least exciting aspect of systems engineering. But, documentation is one of the most important activities in the systems engineering processes.  Most people find that documentation reveals aspects of the system that are overlooked.  It checks the accuracy of the work.  Documentation describes the system for posterity and communicates the system for the benefit of others.  
+
+\subsubsection{Accountability}\label{ssec:accountability}
+Internet Hall of Fame Inductee Vint Cerf commented on the importance of accountability in \glsentryshort{sse} at a recorded conference in 2016.  The conference titled "Exploring the Dimensions of Trustworthiness: Challenges and Opportunities" is presented by NIST.  Accountability is incredibly important.  When things go wrong, the first thing that people do is ask "what happened and who is responsible."
 
 
+Documentation is a great accountability tool.  Documentation demonstrates that the system is realized to the satisfaction of the stakeholders. If something goes wrong, documentation aids in tracing the source of the problem. It saves time and resources to identify and eliminate areas where security is adequately demonstrated.   Furthermore, everyone wants to document their work for their in protection, in case something does go wrong.  
 
-'"...a sufficient base of evidence that supports claims that the desired level of trustworthiness has been achieved..."
+Documentation is a primary component of \glsentryshort{csbd}.  The \glsentryshort{hol} formal proofs are all printable. It is standard to generate a printout of all theories and generate a pdf.  
 
-
-\subsection{Reproducibility}\label{ssec:reproducibility}
-\subsection{Accountability}\label{ssec:accountability}
-Internet Hall of Fame Inductee Vint Cerf commented on the importance of accountability in \glsentryshort{sse} at a recorded conference in 2016.  The conference titled "Exploring the Dimensions of Trustworthiness: Challenges and Opportunities" was presented by NIST.  
-
-\subsection{Assurance Claims}\label{ssec:assurance}
-
-
+\subsubsection{Reproducibility}\label{ssec:reproducibility}
+In addition to formal verification and documentation of complete mediation, all proofs are fully reproducible.  The \glsentrylong{acl} proofs can be worked-out by hand.  In addition to \glsentryshort{hol}, \glsentryshort{acl} can also be implemented in other theorem provers. 
 
 \end{document}

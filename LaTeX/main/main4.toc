@@ -22,12 +22,11 @@
 \contentsline {subsection}{\numberline {3.5.1}Problem}{14}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Solution}{15}{subsection.3.5.2}
 \contentsline {subsection}{\numberline {3.5.3}Trustworthiness}{18}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Verification \& Documentation}{19}{subsection.3.5.4}
-\contentsline {subsubsection}{\numberline {3.5.4.1}Verification}{19}{subsubsection.3.5.4.1}
-\contentsline {subsubsection}{\numberline {3.5.4.2}Documentation}{19}{subsubsection.3.5.4.2}
-\contentsline {subsection}{\numberline {3.5.5}Reproducibility}{20}{subsection.3.5.5}
-\contentsline {subsection}{\numberline {3.5.6}Accountability}{20}{subsection.3.5.6}
-\contentsline {subsection}{\numberline {3.5.7}Assurance Claims}{20}{subsection.3.5.7}
+\contentsline {section}{\numberline {3.6}Verification \& Documentation}{19}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Verification}{19}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Documentation}{19}{subsection.3.6.2}
+\contentsline {subsubsection}{\numberline {3.6.2.1}Accountability}{20}{subsubsection.3.6.2.1}
+\contentsline {subsubsection}{\numberline {3.6.2.2}Reproducibility}{20}{subsubsection.3.6.2.2}
 \contentsline {chapter}{\numberline {4}Certified Security by Design (CSBD) \& Access-Control Logic (ACL)}{21}{chapter.4}
 \contentsline {section}{\numberline {4.1}Certified Security by Design (CSBD)}{21}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Formal Verification \& Documentation}{22}{subsection.4.1.1}
