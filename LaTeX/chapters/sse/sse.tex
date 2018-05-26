@@ -30,31 +30,33 @@ The recognized authoritative standard on systems engineering is ISO/IEC/IEEE 152
 
 Systems engineering is an interdisciplinary approach aimed at solving problems involved in the various phases of the life cycle of a system.  ISO/IEC/IEEE 15288 and ISO/IEC TR 24748 1 define five major phases of the this life cycle: concept, development, production, utilization, support, and retirement.
   
-This master thesis focuses on the \glsentrylong{csbd} (\glsentryshort{csbd}).  The key premise of \glsentryshort{csbd} is that security should be built into the systems from the start, i.e., the design phase.  This is the leading notion in systems engineering and its sub-discipline \glsentrylong {sse}.  It is instructive to see how CSBD and its application to the patrol base operations fits into this framework described by the ISO standards.
+This master thesis focuses on the \glsentrylong{csbd} (\glsentryshort{csbd}).  The key premise of \glsentryshort{csbd} is that security should be built into the systems from the start, i.e., the design phase.  This is the leading notion in systems engineering and its sub-discipline \glsentrylong {sse}.  Nevertheless, it is instructive to see how CSBD, this thesis, and the patrol base operations fit into the systems engineering framework described by the ISO standards.
 
-\paragraph*{Concept} The concept phase describes stakeholders and the \glsentrylong{conops} (ConOps).  Stakeholders are those who have a stake in the system.  ConOps are defined in a variety of ways.  Wikipedia defines ConOps as "...a document describing the characteristics of a proposed system from the viewpoint of an individual who will use that system \cite{wikiconops}.  U.S. Air Force Policy Directive 10-28 defines ConOps as "a high level concept whose purpose is to describe operational mission areas, enablers and effects necessary to achieve desired results/outcomes" \cite{af1028}.  ConOps are context specific.  
+\paragraph*{Concept} 
+The concept phase describes stakeholders and the \glsentrylong{conops} (ConOps).  Stakeholders are those who have a stake in the system.  ConOps are defined in a variety of ways.  Wikipedia defines ConOps as "...a document describing the characteristics of a proposed system from the viewpoint of an individual who will use that system \cite{wikiconops}.  U.S. Air Force Policy Directive 10-28 defines ConOps as "a high level concept whose purpose is to describe operational mission areas, enablers and effects necessary to achieve desired results/outcomes" \cite{af1028}.  ConOps are context specific.  
 
 The patrol base operations are already modeled and implemented. The mission areas, enablers, and effects to achieve the desired goal are already in place.  The aim for this thesis is to maintain the structure of the patrol base operations and model it in a way that is amiable to verification and documentation of complete mediation.
 
-It is also possible to look at this thesis as the modification of an already in-use systems. For example, an accountability system involving the patrol base operations may require a remodeling of the operations with few, if any, changes in the actual operations themselves.  This is discussed in more detail in the Future Works \& Implications Chapter in section \ref{sec:accountability}.
+It is possible to look at the work in this thesis as the modification of an already in-use system. For example, an accountability system involving the patrol base operations may require a remodeling of the operations with few, if any, changes in the actual operations themselves.  This is discussed in more detail in the Future Works \& Implications Chapter in section \ref{sec:accountability}.
 
-\glsentryshort{csbd} in intended to by applied to this phase of the systems engineering process.  
+\glsentrylong{csbd} (CSBD) applies to these two areas: the concept phase and the re-conceptulaization phase.
  
 \paragraph*{Development}
-The development stage involves refinement of the ConOps and production of the productions.  The development of the patrol base operations took place a long time ago.  Regardless, the products for this master thesis are the verification and subsequent documentation of complete mediation.  
+The development stage involves refinement of the ConOps and production of products.  The development of the patrol base operations took place a long time ago.  Regardless, the products for the patrol base operations are the description of the operations themselves. The product with regards to this master thesis is demonstrated satisfaction of the principle of complete mediation.
 
-In an accountability system, for example, the principle of complete mediation verified and documented would be embedded in the implementation of any procedures worked out at this phase of the system life-cycle.
+\glsentryshort{csbd} does not add anything new to the development of the system.  However, it adds constraints to the concept phase which must be adhered to throughout the development phase.
 
- The aim is to model the patrol base operations in a manner that is amiable to verifying specific security properties of the system.  Specifically, the patrol base operations must satisfy the property of complete mediation. 
+\paragraph*{Production}
+Production is self-explanatory, however not so obvious with a system such as the patrol base operations.  There are no products save for the trained soldier.  In this aspect, the production phase would entail educating the soldiers.  Neither this master thesis nor \glsentryshort{csbd} cover\footnote{Although, CSBD is a required course at Syracuse University in the Cyber Security program.} education of soldiers. (Of course, one could imagine a lecture on the importance of authentication and authorization as a critical component of any soldier's primary training.)
 
+\paragraph*{Utilization}
+Utilization is also self-explanatory.  The patrol base operations are utilized in the field as soldiers are deployed and assigned missions that involve patrol base operations. Again, neither this master thesis nor \glsentryshort{csbd} focus on utilization.
 
-But, this thesis does not aim to build a new system.  Rather this thesis remodels an existing system.   This is necessary because the goal of this thesis is to determine whether or not it is possible to verify the specific security properties on the subclass of systems that we are exploring.  Most people would agree that testing a new method on a new system would be unwise.  This is why this thesis did not do that.    
+\paragraph*{Support}
+Support provides for maintenance of the system.  In the case of the patrol base operations, support would entail documenting feedback from soldiers and assessing the efficacy of the operations.  This could also entail updating the operations based on this feedback and based on advances in technology.  Neither this master thesis nor \glsentryshort{csbd} directly address support for the system.  However, any updates to the system would likely entail consideration of authentication and authorization. Herein, this master thesis and \glsentryshort{csbd} are relevant and useful.
 
-
-This approach has the side-effect of also demonstrating CSBDs utility in the life-cycle phase of systems engineering.  It follows readily from the news today that many systems are not designed with security in mind.  Eliminating already-in-use systems and legacy systems may not always be practical or desirable.  Nevertheless, security remains an important aspect of system performance.  This, in part, justifies a re-look at (or remodeling of)  of an already existing system.
-
-
-There are additional benefits to systematically modeling the patrol base operations in a way that is amiable to formal verification.  This type of thinking provides new insights and suggests areas for improvement\footnote{The subject matter expert who focused on the details of the patrol base operations also noted areas for improvement.  He was not available to provide details at the writing of this master thesis.}.  This is a known benefit.  For example, Wikipedia \cite{wikiformalmethods} notes that "Sometimes, the motivation for proving the correctness of a system is not the obvious need for reassurance of the correctness of the system, but a desire to understand the system better."  A greater understanding of a system applies to all phases of systems engineering.
+\paragraph*{Retirement}
+Retirement refers to the end stages of the operations.  For the patrol base operations and similar systems, retirement would most likely entail replacement with other operations.  Again, neither this master thesis nor \glsentryshort{csbd} focus on retirement.  However, both are be relevant to the conceptualization of the replacement system.
 
      %%%%%%%%%%%%%%%%%% NIST %%%%%%%%%%%%%%%%%%%%%
 \section{NIST Special Publication 800-160}
