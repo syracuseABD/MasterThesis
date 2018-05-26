@@ -104,7 +104,20 @@ The problem and solution phases for the patrol base operations take a different 
 
 
 \subsection{Problem}
-The security objective from the perspective of this master thesis is to ensure complete mediation of all actions.  Complete mediation requires that we identify objects to be accessed, the accessors, the means of authenticating the accessors, and the a policy for authentication.  
+A problem (or goal) for any Ranger operation is suggested by the following statement in the Ranger Handbook  \cite{rangermanual}: "To survive on the battlefield, stealth, dispersion, and security is enforced in all tactical movements." Thus, enforcing security is a primary problem inherent in the patrol base operations.  This is very relevant to the goal of this master thesis and more generraly \glsentryshort{csbd} approach.  
+
+\glsentryshort{csbd} focuses on a subspecialty in \glsentryshort{sse}, that of complete mediation.  In the conceptualization of any real system, \glsentryshort{csbd} would be applied in conjunction with other subspecialty areas of \glsentryshort{sse}.  But, for this thesis, the problem at hand is to model the patrol base operations in a way that is amiable to verification of complete mediation.
+
+The problem inherent to the application of complete mediation is defining the objects to be accessed.  Complete mediation refers to control over who or what has access to these objects.  Thus, the protected objects must be clearly defined.
+
+We the problem defined, this master thesis moves on to the solution phase.
+
+
+
+\subsection{Solution}
+The simplest solution to this problem is to model the patrol base operations as a hierarchy of secure state machines (\glsentryshort{ssm}).  The hierarchy simplifies the design of the solution by creating decreasing levels of abstraction with multiple modules at each level.  This allows for focus on one level and one module at time. This essentially amounts to a system of systems approach.  Furthermore, this allows for greater separation of work.  After one level of the hierarchy is complete, CSBD is applied to that level while the next level of the hierarchy is being designed.
+
+\glsentryshortpl{ssm} are readily defined with complete mediation embedded into their design.  \glsentryshortpl{ssm} are discussed in detail in Chapter \ref{chp:ssmmodel}\footnote{In fact, a parametrizable model of an \glsentryshort{ssm}\footnote{This SSM was modeled and implemented in HOL by Professor Shiu-kai Chin and used with his permission.} was already designed and implemented in \glsentryshort{hol} prior to the start of this project.  The constraints of this project suggested Improvements\footnote{Because these improvements were significant, the original author (Professor Shiu-kai Chin) made them.} to this parametrizable \glsentryshort{ssm}Much to the chagrin of the author, a significant portion of the SSMs had to be redone with the new parametrizable SSM.}.
 
 The objects to be accessed varies at each level of abstraction. At the top and most abstract level, the objects are the transitions.  That is, control over the transitions between phases (or states) of the patrol base operations are to be protected.  Objects are defined similarly for each module and at each level for the entire hierarchy of the model.  These are deducible from the descriptions of each module (or \glsentryshort{ssm}) in their appropriate section (see section \ref{ssec:omnilevel} to start).  For the sake of brevity, this section only discusses the top level to illustrate the key concepts.  
 
@@ -118,9 +131,8 @@ At the top level, there are only two requirements for the patrol base operations
 
 To solve this problem, an OMNI level module is created.  The OMNI level module is thought of as all-knowing.  This module relays information from all modules as needed.  With this construct, the top level does not need to "know" if the lower level module is complete.  It only needs to know that the OMNI level says that it is complete.  The OMNI level is given the authority to determine when any module is complete.
 
+
 With this solution in mind, the top level policy looks like this.
-
-
 \fbox{
 \parbox{\linewidth}{
 \begin{center}
@@ -130,12 +142,7 @@ Platoon Leader says move to the next phase\\
 \end{center}
 }}
 
-\subsection{Solution}
-The simplest solution to this problem is to model the patrol base operations as a hierarchy of secure state machines (\glsentryshort{ssm}).  The hierarchy simplifies the design of the solution by creating decreasing levels of abstraction with multiple modules at each level.  This allows for focus on one level and one module at time. This essentially amounts to a system of systems approach.  Furthermore, this allows for greater separation of work.  After one level of the hierarchy is complete, CSBD is applied to that level while the next level of the hierarchy is being designed.
-
-\glsentryshortpl{ssm} are readily defined with complete mediation embedded into their design.  \glsentryshortpl{ssm} are discussed in detail in Chapter \ref{chp:ssmmodel}.  In fact, a parameterizable model of an \glsentryshort{ssm}\footnote{This SSM was modeled and implemented in HOL by Professor Shiu-kai Chin and used with his permission.} was already designed and implemented in HOL prior to the start of this project.  The constraints of this project suggested Improvements\footnote{Because these improvements were significant, the original author (Professor Shiu-kai Chin) made them.} to this parameterizable \glsentryshort{ssm}\footnote{Much to the chagrin of the author, a significant portion of the SSMs had to be redone with the new parameterizable SSM.}.
-
-The most useful property of the \glsentryshort{ssm} is that complete mediation is made a condition for transitions among states.  That is, to transition from one state to another the accessor (requestor) must be properly authenticated and authorized. Authentication and authorization are described above in the description of the problem.   For example, at the top level, transition commands in an \glsentryshort{ssm} look like this.
+The most useful property of the \glsentryshort{ssm} is that complete mediation is made a condition for transitions among states.  That is, to transition from one state to another the accessor (requestor) must be properly authenticated and authorized.  For example, at the top level, transition commands in an \glsentryshort{ssm} look like this.
 
 \fbox{
 \parbox{\linewidth}{
@@ -147,29 +154,33 @@ The most useful property of the \glsentryshort{ssm} is that complete mediation i
 \end{center}
 }}
 
-The first line ensures authentication of the Platoon Leader.  The second line is a request from the Platoon Leader to access the object (i.e., move to the next phase).  The third line is the output of a policy as described in the section above and shown in the box above. 
+The first line ensures authentication of the Platoon Leader.  The second line is a request from the Platoon Leader to access the object (i.e., move to the next phase).  The third line is the output of a policy shown in the box above. The final line is the conclusion which justifies transition to the next phase.
 
-Note that this is an "if and only if" conditional.  This means that if the Platoon Leader is authenticated, authorized on, and issues the command then the command is executed.  It also means the converse.  If the command is executed, then the Platoon Leader is authenticated, authorized on, and issues the command to do so.  
+Note that this is an "if and only if" conditional.  This means that if the Platoon Leader is authenticated, authorized on, and issues the command then the command is executed.  It also means the converse.  If the command is executed, then the Platoon Leader is authenticated, authorized on, and issues the command to do so.  The former is required for transitions to occur.  The later (converse) is critical for accountability.  
 
 \subsection{Trustworthiness}
+NIST SP 800-160 states that \textit{assurance cases} are the basis for trustworthy context.  It states, "An assurance case is a well-defined and structured set of arguments and a body of evidence showing that a system satisfies specific claims with respect to a given quality attribute." The key points here are that the assurance case must be clearly defined and also clearly demonstrated. 
 
+Trustworthiness in the context of this master thesis and more generally \glsentryshort{csbd} means that all protected objects are accessed if and only if that accessor is both authenticated and authorized.  The processes of authentication and authorization are clearly defined in the Solution section above.  Therefore, what remains is to demonstrate that actually does what it claims to do.  This is where the \glsentrylong{acl} (ACL) and computer-aided reason take center stage.  
 
-There are two requirement for trustworthiness relevant to this master thesis: (1) Defining trustworthiness for the purposes of this master thesis, and (2) demonstrating that trustworthiness is achieved.  The former is easy for this model.  This master thesis focuses on the trustworthiness aspect of \glsentryshort{sse}.  Therefore, this master thesis elaborates on trustworthiness in the following sections.
+A key concern in \glsentrylong{sse} (SSE) is measuring trustworthiness.  For this thesis and \glsentryshort{csbd}, trustworthiness is measured by whether or not the system satisfies the principle of complete mediation. The evidence that it does is formally verified proofs using an access-control logic (\glsentryshort{acl}).  The \glsentryshort{acl} is described in detail in chapter \ref{chp:csbdacl}.  Application of \glsentryshort{acl} to the patrol base operations follows that chapter.    
 
-\section{Trustworthiness}\label{sssec:trustworthiness}
-This master thesis defines trustworthiness in the context of complete mediation\footnote{Note that there are certainly other measures of trustworthiness in any system.  Nonetheless, the focus of this thesis is to demonstrate CSBD as a viable method for one aspect of the systems security engineering process.  The author does not aim to claim that the patrol base operations are deemed trustworthy solely because they satisfy the property of complete mediation.  CSBD is one piece of the larger puzzle.}.  Therefore, a measure of trustworthiness is weather or not the patrol base operations satisfy the properties of complete mediation.  There are two aspects to this: (1) building complete mediation into the model of the patrol base operations, and (2) demonstrating that this is indeed the fact.  
+In essence, the \glsentryshort{acl} formally describes the informal logic shown in the two boxes in the Solution section.  This logic is implemented in the \glsentrylong{hol} (HOL) Interactive Theorem Prover.  In addition, the hierarchy of state machines are described in \glsentryshort{hol}.  With these, it is possible to prove theories in \glsentryshort{hol} that pertain to complete mediation.  These are formal proofs generated by a trusted theorem proving assistant.  
+
+With these proofs, it is accepted that the model of the patrol base operations satisfies the principle of complete mediation.  These are considered demonstrated proofs, or assurance cases, 
 
 \subsection{Verification \& Documentation}\label{sssec:sseframework}
-
 \subsubsection{Verification}
-\subsubsection{Formal Verification}
+Verification amounts to proof of trustworthiness.  NIST SP 800-160 often refers to "security-focused" verification.  Verification is built-in to the \glsentryshort{csbd} method.  It focuses on the use of authentication and authorization in the design of the system.  \glsentryshort{csbd} demonstrates is usefulness not only a guide to complete mediation, but also as a tool that applies formal methods using computer-aided reasoning to verify any claims of complete mediation. This is referred to as formal verification. Thus, \glsentryshort{csbd} is a complete approach to designing trustworthy systems.
 
 \subsubsection{Documentation}
+A common concept in science and engineering is "if you didn't document it then it didn't happen."  Documentation is specifically important to claims of trustworthiness because such claims are not always readily apparent in the system. Systems may run smoothly without adequate security ... until something finally goes wrong?  Then, everyone scrambles to find the cause of the problem.
+
+Documentation is often the least exciting aspect of systems engineering. But, documentation is one of the most important activities in the systems engineering processes.  Documentation describes the system for posterity or as a memory aid stakeholders.  More importantly, documentation is an accountability tool.  Accountability is incredibly important.  Stakeholders must hold the systems engineers accountable for realizing the system to the satisfaction of the stakeholder.  If something goes wrong, documentation aids in tracing the source of the problem.  If someone is to blame, then everyone wants to document their part for their own personal protection.  
 
 
-A common idiom of science and engineering is "if you didn't document it then it didn't happen."  There is some leeway in engineering because the presence of a system is indicative that "you did it." However, this hides the important details regarding the security of the system.  Maybe "you did it" but "did you do it right?"  This is where documentation is important. 
 
-'''systems security engineering provides a sufficient base of evidence that supports claims that the desired level of trustworthiness has been achieved..."
+'"...a sufficient base of evidence that supports claims that the desired level of trustworthiness has been achieved..."
 
 
 \subsection{Reproducibility}\label{ssec:reproducibility}
