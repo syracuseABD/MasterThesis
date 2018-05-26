@@ -1,0 +1,61 @@
+\begin{thebibliography}{10}
+
+\bibitem{rangermanual}
+United States Army Ranger School, ATTN: ATSH-RB, 10850 Schneider Rd, Bldg 5024,
+  Ft Benning, GA 31905.
+\newblock {\em Ranger handbook}, April 2017.
+
+\bibitem{ChinOlder}
+Shiu-Kai Chin and Susan~Beth Older.
+\newblock {\em Access Control, Security, and Trust: A Logical Approach}.
+\newblock Chapman {\&} Hall: CRC Cryptography and Network Security Series.
+  Chapman and Hall/CRC, July 2010.
+
+\bibitem{wikiformalmethods}
+Formal methods.
+\newblock {\em Wikipedia}, February 2018.
+
+\bibitem{formalmethodslcarke}
+Edmund~M. Clarke and et~al Jeannette M.~Wing.
+\newblock Formal methods: State of the art and future directions, December
+  1996.
+
+\bibitem{functionalprogramming}
+Jagatheesan Kunasaikaran, Azlan Iqbal, Jalan Dua, and Chan~Sow Lin.
+\newblock A brief overview of functional programming languages, 2016.
+
+\bibitem{iso15288}
+{ISO/IEC/IEEE 15288} international standard - systems and software engineering
+  -- system life cycle processes.
+\newblock Technical Report {ISO/IEC/IEEE 15288:2015(E)}, International
+  Organization for Standardization (ISO) {\&} International Electrotechnical
+  Commission (IEC) {\&} Institute of Electrical and Electronics Engineers
+  (IEEE), 3 Park Avenue, New York, NY 10016-5997, USA, May 2015.
+
+\bibitem{iso24748}
+ISO.
+\newblock Systems and software engineering--life cycle management--part 1{:}
+  guide for life cycle management.
+\newblock Technical Report ISO/IEC TR 24748-1:2010(E), International
+  Organization for Standardization (ISO), September 2010.
+
+\bibitem{wikiconops}
+Concepts of operations, May 2018.
+
+\bibitem{af1028}
+Lt~Gen Charles F.~Wald or~Lt~Col~Sanders.
+\newblock Air force policy directive 10-28: Conops development.
+\newblock Operations 10-28, Secrtary of The Air Force, January 2002.
+
+\bibitem{nistmission}
+NIST.
+\newblock Nist mission, vision, core competencies, and core values.
+
+\bibitem{defensescienceboard}
+The~Rand Corporation.
+\newblock Security controls for computer systems: Report of defence science
+  board task force on computer security.
+\newblock Technical report, Office of the Director of Defence Research And
+  Engineering, Washington D.C. 20301, February 1970.
+
+\end{thebibliography}
