@@ -11,14 +11,45 @@ Shiu-Kai Chin and Susan~Beth Older.
 \newblock Chapman {\&} Hall: CRC Cryptography and Network Security Series.
   Chapman and Hall/CRC, July 2010.
 
-\bibitem{wikiformalmethods}
-Formal methods.
-\newblock {\em Wikipedia}, February 2018.
+\bibitem{availability}
+Availability, January 2018.
+
+\bibitem{formalCarnegie}
+Michael Collins.
+\newblock Formal methods: 18-849b dependable embedded systems.
+\newblock Technical report, Carnegie Mellon University, Spring 1998.
 
 \bibitem{formalmethodslcarke}
 Edmund~M. Clarke and et~al Jeannette M.~Wing.
 \newblock Formal methods: State of the art and future directions, December
   1996.
+
+\bibitem{jvmcmv}
+A.~Prasad Sistla, V.N.Venkatakrishnan, Michelle Zhou, and Hilary Branske.
+\newblock Cmv: Automatic verification of complete mediation for java virtual
+  machines.
+\newblock In {\em ASIACCS '08 Proceedings of the 2008 ACM symposium on
+  Information, computer and communications security}, pages 100--111, March
+  2008.
+
+\bibitem{VARVEL}
+TOKUOKA Hiroki, MIYAZAKI Yoshiaki, and HASHIMOTO Yuusuke.
+\newblock C-language verifiction tool using formal methods "varvel".
+
+\bibitem{stateexplosion}
+ZHU Xin-feng, WANG Jian-dong, Li~Bin, ZHU Jun-wu, and Wu~Jun.
+\newblock Methods to tackle state explosion problem in model checking.
+\newblock In {\em 2009 Third International Symposium on Intelligent Information
+  Technology Application}, number ISBN: New-2005_POD_978-0-7695-3859-4, pages
+  329--331. IEEE, December 2009.
+
+\bibitem{wikiformalmethods}
+Formal methods.
+\newblock {\em Wikipedia}, February 2018.
+
+\bibitem{elasticsearch}
+David Turner and Yannick Welsch.
+\newblock Reliable by design: Applying formal methods to destributed systems.
 
 \bibitem{functionalprogramming}
 Jagatheesan Kunasaikaran, Azlan Iqbal, Jalan Dua, and Chan~Sow Lin.

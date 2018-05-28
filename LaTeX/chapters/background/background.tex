@@ -13,19 +13,40 @@ This section aims to provide some background on subjects discussed in this maste
 \section{Complete Mediation}
 Complete mediation is discussed throughout this master thesis.  It is described in this section so as to eliminate the need to repeatedly describe it in the ensuing chapters.
 
+\section{Confidentiality, Integrity, and Availability}
+At the core of security are the concepts of confidentiality, integrity, and availability.  Confidentiality refers to limiting access to objects (including information) by ensuring that only the right people (etc.\footnote{or any other "entity" that can request access to an object.}) have access to these things.  Confidentiality is the realm of things such as authentication and authorization.  Authentication means verifying a person's identity.  Authorization means describing a person's access rights. 
+
+Integrity, on the other hand, refers to the whole of the object (or information, etc.).  It means controlling who or what can modify the object.   Integrity is the realm of things such as authorization.  In this case, authorization means describing a person's right to modify an object.  
+
+Availability refers to accessibility.  Wikipedia describes availability as a measure of operability or degree to which the system is mission capable \cite {availability}. 
+
+Both confidentiality and integrity are guarded by the principle of complete mediation.  This master thesis focuses on this, the realm of confidentiality and integrity.
+
 \section{Formal Methods}
-(Primary source for this section is \cite{wikiformalmethods})
+(Primary source for this section is \cite{formalCarnegie})
 
-Formal methods are aimed at improving the reliability and correctness of systems\cite{formalmethodslcarke}.  They are applied to all phases of systems engineering.  Formal methods employ mathematics to verify desired aspects of a system.  Mathematics adds a degree of rigor to the verification process that is amiable to automation.  
+Formal methods are aimed at improving the reliability and correctness of systems\cite{formalmethodslcarke}.  They are particularly useful in the design phase of systems engineering.  But, they are also employed to varying degrees throughout all aspects of the systems engineering process\footnote{For example, there is notable progress being made in formally verifying c code.  See for example \cite{jvmcmv} and \cite{VARVEL}}.  
 
-The primary tools of formal methods are model checking and theorem proving.  Model checking typically involves testing all possible states of a system for correctness. For large systems, model checking can be resource intensive.  Theorem proving, on the other hand, employs a formal logic to verify that a system satisfies desired properties.  Theorem proving is usually applied to a system after it is modeled (referred to as specification).   Theorem proving is typically partially or fully automated.  Although, proofs by hand can also be employed. 
+Formal methods analysis is a three phase process: (1) formal specification of the system using a modeling language, (2) verification of the specification, and (3) implementation \cite{formalCarnegie}.  Specification consists of describing the system in a mathematical-based modeling language \cite{formalCarnegie}.  Verification entails proving properties of the system, typically using either model checking or theorem proving techniques.  Implementation depends on the type of system (i.e., software, hardware, human-centered system, etc.).
 
-This master thesis applies formal verification methods to prove the security properties of a system. It uses a formal logic based on modal propositional logic.  The logic, called access-control logic (ACL), is implemented in the Higher Order Logic (HOL) Interactive theorem prover.  Theorem proving is partially automated. 
+The two most-noted formal methods are model checking and theorem proving.  Model checking involves testing possible states of a system for correctness.  Model checking is touted more as an error checking tool.  It exhausts all possible states (or test states) in search of failures.  But, the absence of failure is not proof of correctness.  Furthermore, for large systems, model checking is resource intensive.  It is subject to the state explosion problem, wherein the number of states of the system grows exponentially with the complexity of the system \cite{stateexplosion}. 
+
+Theorem proving, on the other hand, employs a formal logic to prove properties of the system.  Formal proofs remain true for any test case \cite{formalCarnegie}.  This means that these are proofs of correctness and not just proofs of the absence of failure.  Theorem proving is usually partially or fully automated \cite{wikiformalmethods}.  It often requires specialized knowledge and a sufficient degree of competency in mathematics\footnote{and a good amount of patience, in the author's opinion.}. However, formal theorem proving techniques have been successfully taught to undergraduates\footnote{The PI Professor Shiu-Kai Chin teaches CSBD, which includes theorem proving, to both undergraduates and graduates at Syracuse University.}.  
+
+
+Model checking and theorem proving often work synergistically.  Both methods offer benefits that the other does not.  As a whole, they improve the reliability of the system's design.   As an example, ElasticSearch successfully applies both methods to its search methodology on distributed systems \cite{elasticsearch}.  
+
+Formal methods are used in some areas of systems engineering more than others.  Some engineers are reluctant to use them because of the additional work and level of expertise required.  However, when correctness is non-negotiable, such as safety and security, formal methods become essential.  Formal methods are predicted to increase in usage as tools become easier to use and engineering curricula increasingly offer formal methods as part of their core\cite{formalCarnegie}.
+
+Specification has its benefits, not only as a precursor to verification, but also as a tool for understanding.  In cases wherein properties of the system are not proved, the act of formally specifying the system adds a degree of rigor to the process. This rigor often brings new insights about the system because it causes the engineer to think more systematically about the system's design.  In addition, the conversion of a field's jargon into a precise specification language also aids in reproducibility and communicability\footnote{The later ideas are not specifically stated in the main cite, but follow logically from the author's perspective.} \cite{formalCarnegie}.  
+
+This master thesis applies formal verification methods, specifically theorem proving, to prove the security properties of a system.  Theorem proving is partially automated using the Higher Order Logic (\glsentryshort{hol}) Interactive Theorem Prover. 
 
 \section{Functional Programming}
 (Primary source for this section is \cite{functionalprogramming})
 
 Functional programing is a style of programming that uses functions to define program behavior.  Functional programing is inherently different than procedural or object-oriented programming. These styles of program use procedures or objects and classes to define program behavior.  c  and Pascal are examples of procedural programming languages.  c++ and Java are examples of object-oriented programming languages.  Haskell and ML (meta language) are examples of functional programming languages.  Functional programming languages are thought to be more pure.  They have fewer side effects than procedural or object-oriented programming.  They produce fewer bugs.  Functional programming languages are thus considered more reliable.   
+
 This master thesis relies on the Higher Order Logic (HOL) Interactive theorem prover.  HOL is implemented in the functional programming language polyML.
 
 \section{Higher Order Logic (HOL) Interactive Theorem Prover}
