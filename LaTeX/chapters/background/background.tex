@@ -11,7 +11,16 @@
 This section aims to provide some background on subjects discussed in this master thesis.  These subjects are not directly addressed in other areas of this master thesis.  Nevertheless, knowledge of them is either necessary or useful to understanding what follows.
 
 \section{Complete Mediation}
-Complete mediation is discussed throughout this master thesis.  It is described in this section so as to eliminate the need to repeatedly describe it in the ensuing chapters.
+The seminal paper quoted on the principle of complete mediation is "The Protection of Information in Computer Systems" by Saltzer and Schroeder.  
+\begin{quote}
+\textit{
+Complete mediation: Every access to every object must be checked for authority. This principle, when systematically applied, is the primary underpinning of the protection system. It forces a system-wide view of access control, which in addition to normal operation includes initialization, recovery, shutdown, and maintenance. It implies that a foolproof method of identifying the source of every request must be devised. It also requires that proposals to gain performance by remembering the result of an authority check be examined skeptically. If a change in authority occurs, such remembered results must be systematically updated.} \cite{saltzer}
+\end{quote}
+
+In summary, what this means is that any accessor attempting to access or modify a protected object must satisfy two conditions: (1) the accessor must be authenticated, and (2) the accessor must be authorized to access or modify that object.  This involves a three-step process: (1) defining the protected objects, (2) declaring who has what rights on these objects, and (3) defining how to verify the identity of the individual(s) accessing or modifying the objects.  
+
+
+Complete mediation is the underpinning of systems requiring access control.  From access to bank accounts to whose text messages get blocked, complete mediation is a critical component of security.  Complete mediation is also the subject of the access-control logic discussed in this master thesis. 
 
 \section{Confidentiality, Integrity, and Availability}
 At the core of security are the concepts of confidentiality, integrity, and availability.  Confidentiality refers to limiting access to objects (including information) by ensuring that only the right people (etc.\footnote{or any other "entity" that can request access to an object.}) have access to these things.  Confidentiality is the realm of things such as authentication and authorization.  Authentication means verifying a person's identity.  Authorization means describing a person's access rights. 
@@ -45,24 +54,30 @@ This master thesis applies formal verification methods, specifically theorem pro
 \section{Functional Programming}
 (Primary source for this section is \cite{functionalprogramming})
 
-Functional programing is a style of programming that uses functions to define program behavior.  Functional programing is inherently different than procedural or object-oriented programming. These styles of program use procedures or objects and classes to define program behavior.  c  and Pascal are examples of procedural programming languages.  c++ and Java are examples of object-oriented programming languages.  Haskell and ML (meta language) are examples of functional programming languages.  Functional programming languages are thought to be more pure.  They have fewer side effects than procedural or object-oriented programming.  They produce fewer bugs.  Functional programming languages are thus considered more reliable.   
+Functional programing is a style of programming that uses functions to define program behavior.  Functional programing is inherently different than procedural or object-oriented programming. These styles of program use procedures or objects and classes to define program behavior.  c  and Pascal are examples of procedural programming languages.  c++ and Java are examples of object-oriented programming languages.  Haskell and ML (meta language) are examples of functional programming languages.  
 
-This master thesis relies on the Higher Order Logic (HOL) Interactive theorem prover.  HOL is implemented in the functional programming language polyML.
+Functional programming languages are thought to be more pure.  They have fewer side effects than procedural or object-oriented programming.  They produce fewer bugs.  Functional programming languages are thus considered more reliable. This is why theorem provers are typically implemented in functional programming languages.  
+
+This master thesis relies on the Higher Order Logic (HOL) Interactive theorem prover.  HOL is implemented in a functional programming language.  HOL is thought to be very reliable and trustworthy.  Part of that trustworthiness is a function of the meta language in which it is described, namely polyML.
 
 \section{Higher Order Logic (HOL) Interactive Theorem Prover}
 The Higher Order Logic (HOL) Interactive theorem prover is a proof assistant.  HOL has proved to be a very reliable theorem proving system.  It is widely trusted in the interactive theorem proving community.
 
-At its core, HOL implements a small set of axioms and a formal logic.  All inferences and theorems must be derived from this small set of axioms using the formal logic.  Reasoning logically with a small set of axioms contributes to the trustworthiness of the system.  The user only has to trust the small set of axioms and the logic (in addition to HOL).  Beyond the competence of the programmer, if it can't be proved in HOL then it can be proved.  
+At its core, HOL implements a small set of axioms and a formal logic.  All inferences and theorems must be derived from this small set of axioms using the formal logic.  Reasoning logically with a small set of axioms contributes to the trustworthiness of the system.  The user only has to trust the small set of axioms and the logic (in addition to HOL's implementation).  Beyond the competence of the programmer, it is said that if it can't be proved in HOL then it can be proved.  
 
-HOL is a strongly-typed system.  This means that data has a predefined type.  As in all purely functional programming languages, the type of these data can not change.  This adds to the reliability of HOL by preventing side-effect. HOL has several built-in data types.  But, the user can also define her own data type.   In addition to datatypes, the user can define her own set of axioms and definitions.  
+HOL is a strongly-typed system.  This means that data has a predefined type.  As in all purely functional programming languages, the type of these data can not change.  This adds to the reliability of HOL by preventing side-effects. HOL has several built-in data types.  But, the user can also define her own data type.   In addition to datatypes, the user can define her own set of axioms and definitions.  
 
 With user-defined types, axioms, and definitions, the user can describe a system in HOL and then use HOL's formal logic to prove properties of this system.  This is the basis for theorem proving in formal methods.
 
-This master thesis describes an access-control logic (ACL) that is implemented in HOL.  Using this ACL, secure state machines (SSMs) are also described in HOL.  With the ACL implemented in HOL, this thesis proves security properties of the SMMs.  These proofs are considered formal verification of the security properties of the SSMs.  As the patrol base operations are modeled as a hierarchy of SSMs, these proofs also provide formal verification of the security properties of the patrol base operations.
-
+The version of HOL used for this master thesis is HOL4.  HOL4 is free software that is BSD licensed \cite{BSDlicenses}.  Download instructions can be found at the HOL website hol-theorem-prover.og \cite{HOL}.According to Wikipedia, HOL4 is descended from HOL88.  The HOL88 project is Mike Gordon's effort..  HOL4 is implemented in polyML which is an implementation of Standard ML \cite{HOLwiki}.
 
 \section{Other Interactive Theorem Provers}
+It should be noted that HOL is not unique. There are other interactive theorem provers on the market. Each has its own niche and dedicated user base.  Choice of theorem prover is typically guided by personal preference and familiarity. The later follows from the somewhat steep learning curve for theorem provers. 
+
+For example, Isabelle/HOL\footnote{The author is interested in implementing more of the ACL and secure state machines in Isabelle/HOL.} is another popular interactive theorem prover.  The access-control logic (\glsentryshort{acl})has been partially implemented in Isabelle/HOL by Scott Constable, a PhD student in the College of Engineering and Computer Science and Syracuse University.  
+
 \section{How to Compile The Included Files}
+All the files necessary to compile the theories discussed in this mater thesis are included.  A diagram of the folder structure is included in the appendix \ref{foldermap}.  To compile the theories and the LaTeX files go to the folder titled MasterThesis.  Open up a terminal.  Type \emph{make} and then hit enter.  Note that to compile the theories HOL and LaTeX must be first be installed.  
 
 
 \end{document}

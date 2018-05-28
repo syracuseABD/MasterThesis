@@ -11,6 +11,10 @@ Shiu-Kai Chin and Susan~Beth Older.
 \newblock Chapman {\&} Hall: CRC Cryptography and Network Security Series.
   Chapman and Hall/CRC, July 2010.
 
+\bibitem{saltzer}
+Jerome~H. Saltzer and Michael~D. Schroeder.
+\newblock The protection of information in computer systems, April 1975.
+
 \bibitem{availability}
 Availability, January 2018.
 
@@ -54,6 +58,15 @@ David Turner and Yannick Welsch.
 \bibitem{functionalprogramming}
 Jagatheesan Kunasaikaran, Azlan Iqbal, Jalan Dua, and Chan~Sow Lin.
 \newblock A brief overview of functional programming languages, 2016.
+
+\bibitem{BSDlicenses}
+Bsd licenses, May 2018.
+
+\bibitem{HOL}
+Hol interactive theorem prover.
+
+\bibitem{HOLwiki}
+Hol (proof assistant), April 2016.
 
 \bibitem{iso15288}
 {ISO/IEC/IEEE 15288} international standard - systems and software engineering
