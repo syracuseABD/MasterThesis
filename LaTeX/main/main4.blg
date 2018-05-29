@@ -3,69 +3,71 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main4.aux
 The style file: unsrt.bst
 Database file #1: mtref.bib
-Warning--entry type for "HOLwiki" isn't style-file defined
+Warning--entry type for "saulk" isn't style-file defined
 --line 11 of file mtref.bib
-Warning--entry type for "BSDlicenses" isn't style-file defined
+Warning--entry type for "HOLwiki" isn't style-file defined
 --line 20 of file mtref.bib
-Warning--entry type for "saltzer" isn't style-file defined
+Warning--entry type for "BSDlicenses" isn't style-file defined
 --line 29 of file mtref.bib
+Warning--entry type for "saltzer" isn't style-file defined
+--line 38 of file mtref.bib
 Warning--entry type for "availability" isn't style-file defined
---line 39 of file mtref.bib
+--line 48 of file mtref.bib
 Warning--entry type for "elasticsearch" isn't style-file defined
---line 71 of file mtref.bib
+--line 80 of file mtref.bib
 Warning--entry type for "wikiconops" isn't style-file defined
---line 79 of file mtref.bib
+--line 88 of file mtref.bib
 Warning--entry type for "nistmission" isn't style-file defined
---line 124 of file mtref.bib
+--line 133 of file mtref.bib
 Warning--entry type for "HOL" isn't style-file defined
---line 157 of file mtref.bib
+--line 166 of file mtref.bib
 Warning--entry type for "functionalprogramming" isn't style-file defined
---line 165 of file mtref.bib
+--line 174 of file mtref.bib
 Warning--entry type for "formalmethodslcarke" isn't style-file defined
---line 223 of file mtref.bib
+--line 232 of file mtref.bib
 Warning--empty note in VARVEL
 Warning--there's a number but no series in stateexplosion
 Warning--empty author in wikiformalmethods
 Warning--empty author in iso15288
-You've used 21 entries,
+You've used 22 entries,
             1791 wiz_defined-function locations,
-            548 strings with 6490 characters,
-and the built_in function-call counts, 3095 in all, are:
-= -- 247
-> -- 116
+            550 strings with 6506 characters,
+and the built_in function-call counts, 3190 in all, are:
+= -- 253
+> -- 117
 < -- 6
-+ -- 50
++ -- 51
 - -- 29
-* -- 148
-:= -- 446
-add.period$ -- 46
-call.type$ -- 21
-change.case$ -- 21
+* -- 151
+:= -- 453
+add.period$ -- 47
+call.type$ -- 22
+change.case$ -- 22
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 153
-empty$ -- 371
+cite$ -- 26
+duplicate$ -- 158
+empty$ -- 389
 format.name$ -- 29
-if$ -- 727
+if$ -- 752
 int.to.chr$ -- 0
-int.to.str$ -- 21
+int.to.str$ -- 22
 missing$ -- 5
-newline$ -- 89
+newline$ -- 92
 num.names$ -- 13
-pop$ -- 100
+pop$ -- 108
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 103
+skip$ -- 108
 stack$ -- 0
 substring$ -- 56
-swap$ -- 39
+swap$ -- 40
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 4
 while$ -- 17
-width$ -- 23
-write$ -- 183
-(There were 14 warnings)
+width$ -- 24
+write$ -- 189
+(There were 15 warnings)

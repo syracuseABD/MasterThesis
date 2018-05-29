@@ -17,22 +17,13 @@ More specifically, CSBD is a method for formally verifying and documenting the s
 
 In addition to providing formal proofs that demonstrate satisfiability of complete mediation, CDBD is reproducible.  This means that third parties can also verify the formal proofs. This touches on the heart of formal verification of satisfiability: "don't just take my word for it, prove it for yourself."
 
-\subsection{Formal Verification \& Documentation}\label{ssec:formalverifcationdocumentation}
-
-
-\subsection{Computer-aided Reasoning}\label{ssec:computeraidedreasoning}
-
-\subsubsection{Higher Order Logic (HOL) Interactive Theorem Prover}\label{ssec:pcompletemediation}
-
-
-
-\subsection{The Principle of Complete Mediation}\label{ssec:pcompletemediation}
+ACL is described below.  A description of the implementation of ACL in \glsentryshort{hol} is also described below. The implementation of \glsentryshort{acl} is also presented in the appendix in pretty-printed.  The actual HOL code is included with the other files for this master thesis.  It is included under /MasterThesis/HOL/ACL.
 
       %%%%%%%%%%%%%%%%%%% Section ACL %%%%%%%%%%%%%%%%%%%
 \section{Access-Control Logic (ACL)} \label{sec:acl}
-\subsection{ACL: A Command and Control (C2) Calculus} \label{ssec:aclc2}
 This section discusses the access-control logic in sufficient detail to understand the research reported in this master thesis.  The material is adapted from \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}.  For more indepth coverage of the \glsentryshort{acl}, read the text.  Any references to "the text" in this section refer to the aforementioned text book.
 
+\subsection{ACL: A Command and Control (C2) Calculus} \label{ssec:aclc2}
 \glsentryshort{acl} is a logic for reasoning about access to object.  In the jargon of the day it is a command and control (C2) calculus\footnote{command and control being self-evident and calculus being a method for reasoning}. 
 
 \subsection{Principals}\label{ssec:principals}
@@ -60,7 +51,7 @@ Principals can also have jurisdiction over assertions.  Both authority and juris
 In addition, principals can speak for other principals.  Principals do this using the \textit{speaks for} operator.  The ACL represents the \textit{speaks for} operator with the symbol $\Rightarrow$.  These types of statements have the form \textit{P $\Rightarrow$ Q}, where both \textit{P} and \textit{Q} are principals.  For example, \textit{PlatoonLeader $\Rightarrow$ PresidentOfUS}.  This example states that the Platoon Leader speaks for the President of the United States.  
 
 \subsection{Well-formed Formulas}\label{ssec:wff}
-\Glspl{wff} are valid statements in the \glsentryshort{acl}.  All \glsentryshort{ACL} statements must be a \glsentryshort{wff}.  The text book defines the set of \glsentryshortpl{wff} using the identifier \textbf{Form}:
+\Glspl{wff} define the syntax (or grammatical structure) of the propositional logic.  They are valid statements in the \glsentryshort{acl}.  All \glsentryshort{ACL} statements must be a \glsentryshort{wff}.  The text book defines the set of \glsentryshortpl{wff} using the identifier \textbf{Form}:
 
 \begin{center}
 \textbf{Form} ::= \textbf{PropVar} / $\neg$ \textbf{Form} / (\textbf{Form} $\vee$ \textbf{Form}) / \\ 
@@ -68,16 +59,30 @@ In addition, principals can speak for other principals.  Principals do this usin
 	                  (\textbf{Princ} $\Rightarrow$ \textbf{Princ}) / (\textbf{Princ} says \textbf{Princ}) / (\textbf{Princ} controls \textbf{Form})
 \end{center}
 
-This is a recursive definition.  \textbf{\textit{PropVar}} is a propositional variable.  The symbols $\neg$, $\vee$, $\wedge$, $\subset$, and $\equiv$ are the standard set and logical symbols.  They represent "not", "or", "and", "subset", and "equivalence", respectively.  This master thesis primarily reasons with statements (\glsentryshortpl{wff}) of the form \textit{\textbf{Princ} says \textbf{Princ}} and \textit{\textbf{Princ} controls \textbf{Form}}.
+This is a recursive definition.  \textbf{\textit{PropVar}} is a propositional variable.  The symbols $\neg$, $\vee$, $\wedge$, $\subset$, and $\equiv$ are the standard set and logical symbols.  They represent "not", "or", "and", "implication", and "equivalence", respectively.  
 
-\subsection{Kripke Structure}\label{ssec:kripke}
-A Kripke structure deals with three things: worlds, propositions, and principals.  The worlds can be thought of as possible states or configurations of some system.  Propositions are just statements that are either true or false.  And, principals are just actors.  A Kripke structure $\mathcal{M}$ = $\langle \textit{W}, \textit{I}, \textit{J} \rangle $  is defined as a three-tuple consisting of a set of worlds \textit{W}, a function \textit{I} that maps propositions to worlds, and a functions \textit{J} that maps principals to relations on worlds.  A more formal definition is definition 2.1 in the text:
+\subsection{Kripke Structures \& Semantics}\label{ssec:kripke}
+Kripke structures are named after Saul Kripke.  Kripke is an influential figure in logic and philosophy.  He is recognized, in particular, for inventing the Kripke semantics for modal logic \cite{saulk}.    
+
+Whereas \glsentryshortpl{wff} define the syntax of the propositional logic, Kripke semantics describe the semantics.  Semantics refers to the meaning of statements.  In propositional logic, \glsentryshortpl{wff} can be either true or false.  
+
+\subsubsection{Kripke Structures}
+Before defining the Kripke semantics, the concept of a Kripke structure is necessary.  A Kripke structure primarily deals with three things: worlds, propositions, and principals.  The worlds can be thought of as possible states or configurations of some system.  Propositions are just statements that are either true or false.  And, principals are just actors.  A Kripke structure $\mathcal{M}$ = $\langle \textit{W}, \textit{I}, \textit{J} \rangle $  is defined as a three-tuple consisting of the following: a set of worlds \textit{W}; a function \textit{I} called the assignment function that maps propositions to worlds, and ; a function \textit{J} that maps principals to relations on worlds, where the relation is called the accessibility relation.  Formally, these are defined as follows (definition 2.1 in the text): 
 
 \begin{itemize}
 \item \textit{W is a nonempty set, whose elements are called worlds.}
 \item \textit{$I: \mathbf{PropVar} \rightarrow \mathcal{P}(W)$ is an interpretation function that maps each propositional variable to a set of worlds.}
 \item \textit{$J: \mathbf{PName} \rightarrow \mathcal{P}((W \times W)$ is a function that maps each principal name to a relation on worlds.}
 \end{itemize}
+
+One way to think of Kripke structures is as a logic on multiple worlds or possible states.  For example, consider two planets Earth and Tatooine\footnote{Tatooine is the fictional home planet of Luke Skywalker.  Tatooine has two suns.  \cite{Tantooine}}.  Let $\varphi$ be the proposition "this is planet Tatooine" and $\theta$ be the proposition "this is a planet."  Then $I(\varphi) = \{Tatooine\}$ and $I(\theta) = \{Earth, Tatooine\} = W$, where \textit{W} is the set of all worlds (\{Earth, Tatooine\}).  Furthermore, let "Luke" and "Lea" and "Uncle Owen" be principals.  Now consider the following:  Luke can get from Earth to Earth and from Tatooine to Earth (and vis-a-vis).  He can also get from Tatooine to Tatooine.  Lead can get from Earth to Earth and from Tatooine from Earth.  But, she can not get from Tatooine to Tatooine.  Uncle Owen can only get from Tatooine to Tatooine.  He can not get to Earth.  Then, $J(Luke) = \{(Earth, Earth),(Earth, Tatooine),(Tatooine, Earth), (Tatooine, Tatooine)\}$.  $J(Lea) = \{(Earth, Earth),(Earth, Tatooine),(Tatooine, Earth)\}$. And, $J(Uncle Owen) = \{(Tatooine, Tatooine)\}$. With \textit{W}, \textit{J}, and \textit{I} defined, this forms a Kripke structure.
+
+
+
+Kripke structures are necessary to define the ACL properly.  In particular, they are necessary to define the concepts of "satisfies" and "soundness" which follow.  However, an in-depth understanding of Kripke structures is not necessary to understand the work in this master thesis.  
+
+\subsubsection{Kripke Semantics}
+The Kripke semantics define the meanings of \glsentryshortpl{wwf} for Kripke structures.  The semantics can be thought of as an evaluation function for a particular Kripke $\mathcal{M}$ = $\langle \textit{W}, \textit{I}, \textit{J} \rangle $.  Figure \ref{kripkesemantics} shows the Kripke semantics.  The subscript $\mathcal{M}$ signifies that the evaluation function is defined for a particular Kripke structure.  This means there is a separate evaluation function for each Kripke structure.
 
 
 \begin{figure}[h]
@@ -86,8 +91,24 @@ A Kripke structure deals with three things: worlds, propositions, and principals
 \caption{\label{kripkesemantics} Kripke semantics. Image taken from \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}}
 \end{figure}
 
-\subsubsection{satisies}\label{sssec:satisfies}
-\subsubsection{soundness}\label{sssec:soundness}
+For example, for the Kripke structure described above, $\varepsilon_{\mathcal{M}}\textlbrackdbl \varphi \textrbrackdbl  = \{Tantooine\}$ and $\varepsilon_{\mathcal{M}}\textlbrackdbl \theta \textrbrackdbl  = \{Earth, Tantooine\} = W$ (the set of all worlds).  As an another example, $\varepsilon_{\mathcal{M}}\textlbrackdbl \text{Luke says $\varphi$} \textrbrackdbl = \{Earth, Tatooine\}$\footnote{Think about it.  }
+
+\subsubsection{Satisfies}\label{sssec:satisfies}
+The "satisfies" condition applies to a particular Kripke structure $\mathcal{M}$ = $\langle \textit{W}, \textit{I}, \textit{J} \rangle $.  It is said the $\mathcal{M}$ satisfies some proposition $\varphi$ if the evaluation function $\varepsilon_{\mathcal{M}}\textlbrackdbl \varphi \textrbrackdbl = W$ (the set of all worlds) for  $\mathcal{M}$.  In other words, $\varphi$ is true in all worlds of $\mathcal{M}$.  Symbolically, this is denoted as $\mathcal{M} \models \varphi$.  The statement $\mathcal{M}$ does not satisfy $varphi$ is denoted as $\mathcal{M} \not\models \varphi$.
+
+In the example above, the Kripke structure $\mathcal{M} \models \theta$, where $\theta =$ the proposition "this is a planet."
+
+\subsubsection{Soundness}\label{sssec:soundness}
+Whereas "satisfies" describes a property of a Kripke structure $\mathcal{M}$, "soundness" describes a property of all Kripke structures. 
+
+Soundness refers to the logical consistency of inference rules.  Inference rules consist of a set of hypothesis \{$H_1, H_2, \dots , H_n$\} and a conclusion. 
+\begin{equation*}
+\frac{H_1, H_2, \dots , H_n}{C}
+\end{equation*}
+
+An inferences rule is said to be sound if for every Kripke structure $\mathcal{M}$ that satisfies all the hypothesis, the conclusion is true. In other words,  the inference rule is sound if and only if $\forall H_i, \mathcal{M} \models H_i \longrightarrow \mathcal{M} \models C$.
+
+Soundness is verified by formal proofs that employ axioms, tautologies, and sound inference rules that are already proved.  
 
 \subsection{Inference Rules}\label{ssec:inferencerules}
 The inference rules for the \gls{acl} are shown in figure \ref{inferencerules}.  All the inference rules are sound.  Details of proofs of soundness can be found in \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}.
@@ -116,8 +137,6 @@ The \textit{Controls} rule is sufficient for basic authorization involving one p
 \includegraphics[width =0.7 \textwidth]{../figures/repsrule}
 \caption{\label{repsrule}The \textit{Reps} inference rule. Image taken from \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}}
 \end{figure}
-
-
 
 The \textit{Reps} (shown in figure \ref{repsrule}) rule also demonstrates complete mediation.  It follows a similar logic.  But, this rule has two principals, in this case P and Q.  The idea is that Q controls (is authorized on) some action $\varphi$. And also, P represents Q on that action.  In the \glsentryshort{acl}, this means that \textit{P Reps Q on $\varphi$}.  Thus, \textit{P says $\varphi$} is irrelevant because P does not have authority on $\varphi$.  But, \textit{P \textbar Q says $\varphi$} (short for, \textit{P says Q says $\varphi$}) is relevant because P represents Q and Q has authority.  Spelled out, the rule follows as such: if \textit{Q controls $\varphi$ and P reps Q on $\varphi$ and P \textbar Q on $\varphi$} then $\varphi$ is true.
 
