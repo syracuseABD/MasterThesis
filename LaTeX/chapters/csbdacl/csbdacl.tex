@@ -21,17 +21,16 @@ ACL is described below.  A description of the implementation of ACL in \glsentry
 
       %%%%%%%%%%%%%%%%%%% Section ACL %%%%%%%%%%%%%%%%%%%
 \section{Access-Control Logic (ACL)} \label{sec:acl}
-This section discusses the access-control logic in sufficient detail to understand the research reported in this master thesis.  The material is adapted from \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}.  For more indepth coverage of the \glsentryshort{acl}, read the text.  Any references to "the text" in this section refer to the aforementioned text book.
 
 \subsection{ACL: A Command and Control (C2) Calculus} \label{ssec:aclc2}
-\glsentryshort{acl} is a logic for reasoning about access to object.  In the jargon of the day it is a command and control (C2) calculus\footnote{command and control being self-evident and calculus being a method for reasoning}. 
+\glsentryshort{acl} is a logic for reasoning about access to object.  In the jargon of the day it is a command and control (C2) calculus\footnote{command and control being self-evident and calculus being a method for reasoning}.  All the axioms and definitions described above are implemented in the \glsentryshort{acl}.  The actual code is included with the files for this thesis.  A pretty-printed print-out of the \glsentryshort{acl} is included in appendix \ref{ppacl}.
 
 \subsection{Principals}\label{ssec:principals}
 Principals should be thought of as actors in the access-control logic.  Principals can make statements or requests.  They can be assigned privileges or authority over objects or actions.  The text defines allowable principals using the identifier \textbf{Princ}:
 
 
 \begin{center}
-\textbf{Princ ::= PName / Princ \& Princ / Princ \textbar  Princ}
+\textbf{Princ ::= PName / Princ \& Princ / Princ \textbar  Princ}\label{Princ}
 \end{center}
 
 This is a recursive definition. \textbf{\textit{PName}} refers to the name of a principal (i.e., Jane, PlatoonLeader, sensor1).  \textbf{\textit{Princ} \& \textit{Princ}} is read "Princ with Princ" or "Princ and Princ" (i.e., Principal1 with Principal2). \textbf{\textit{Princ \textbar  Princ}} is read as "Princ quoting Princ" (i.e., Principal1 quoting Principal2).
@@ -56,7 +55,8 @@ In addition, principals can speak for other principals.  Principals do this usin
 \begin{center}
 \textbf{Form} ::= \textbf{PropVar} / $\neg$ \textbf{Form} / (\textbf{Form} $\vee$ \textbf{Form}) / \\ 
 	                  (\textbf{Form} $\wedge$ \textbf{Form}) / (\textbf{Form} $\supset$ \textbf{Form}) / (\textbf{Form} $\equiv$ \textbf{Form}) / \\
-	                  (\textbf{Princ} $\Rightarrow$ \textbf{Princ}) / (\textbf{Princ} says \textbf{Princ}) / (\textbf{Princ} controls \textbf{Form})
+	                  (\textbf{Princ} $\Rightarrow$ \textbf{Princ}) / (\textbf{Princ} says \textbf{Form}) / (\textbf{Princ} controls \textbf{Form}) /\\
+	                  (\textbf{Princ} reps \textbf{Princ} on \textbf{Form}\footnote{The last line is from \cite{certmanual}.})
 \end{center}
 
 This is a recursive definition.  \textbf{\textit{PropVar}} is a propositional variable.  The symbols $\neg$, $\vee$, $\wedge$, $\subset$, and $\equiv$ are the standard set and logical symbols.  They represent "not", "or", "and", "implication", and "equivalence", respectively.  
@@ -157,6 +157,59 @@ The \textit{Derived Speaks For} rule is critical to authentication, whereas the 
 
       %%%%%%%%%%%%%%%%%%% Section ACL in HOL %%%%%%%%%%%%%%%
 \section{ACL in HOL} \label{sec:aclinhol}
+The material in this section is adapted from \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder} and \textit{Certified Security by Design Using Higher Order Logic}\cite{certmanual}. In this section, the former is referred to as "the text" and the later is referred to as "the manual."
+
+
+This section describes how the access-control logic (\glsentryshort{acl}) is implemented in the Higher Order Logic (\glsentryshort{hol}) Interactive Theorem Prover.
+The goal is to describe the implementation in sufficient detail that the reader can understand the descriptions of the patrol base operations that follow in this thesis. 
+
+
+\subsection{Principals}
+Figure \ref{princHOL} shows the \glsentryshort{hol} representations for principals (\textbf{\textit{Princ}}).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{../figures/princHOL}
+\caption{\label{princHOL}The HOL implementations of principle (\textbf{\textit{Princ}}).  Image from  \textit{Certified Security by Design Using Higher Order Logic}\cite{certmanual}}.  
+\end{figure}
+
+The concept of types are important in \glsentryshort{hol}.  They are discussed in the background chapter in section \ref{adt}.  \textbf{\textit{Princ}} is an algebraic data type.  
+
+The first thing to notice about  \textbf{\textit{Princ}} is that there are three definitions just as there are in the definition of  \textbf{\textit{Princ}} in section \ref{Princ}.   The first line within the definition above corresponds to \textbf{\textit{PropVar}}, the second corresponds to \textbf{Princ \& Princ}, and the third corresponds to \textbf{Princ \textbar  Princ}.  In \glsentryshort{hol} the infix \& operator is represented with the prefix \texttt{meet} operator.  The infix \textbar operator is represented with the prefix \texttt{quoting} operator.
+
+The primary difference between datatype definitions in \glsentryshort{hol} and ML (the metalanguage in which \glsentryshort{hol} is implemented) is that \glsentryshort{hol} does not use the keyword "of" before the type definition.  Thus, the first line of this definition is \texttt{Name 'apn} and not \texttt{Name of 'apn}.  As in ML, forward tick marks (apostrophes) always precede a type variable. 
+
+
+In the definition for  \textbf{\textit{Princ}}, \texttt{Name} is called the type constructor.  The result of the constructor and a concrete type or type variable results in something of type \textbf{\textit{Princ}}.  Examples of principals defined in \glsentryshort{hol} take the following form.
+\[Name PlatoonLeader, or \]
+\[(Name PlatoonLeader) \textasciigrave meet ` (Name PlatoonSergeant), or \]
+\[(Name PlatoonLeader) `quoting` (Name PlatoonSergeant). \]
+
+Prefix operators may be used as infix operators if they are surrounded by the back tick (typically located near the esc-key). This master thesis focuses on principals defined using the \texttt{Name PlatoonLeader} construction. 
+
+\subsection{Kripke structures}
+
+
+
+Kripke structures are part of the implementation of the \glsentryshort{acl} in \glsentryshort{hol} because they are necessary to prove the "satisfies" and "soundness" properties of the \glsentryshort{acl}.  Nevertheless, the model of patrol base operations does not require any definition of a Kripke structures.   For the most part, Kripke structures in \glsentryshort{hol} are coded as (M, Oi, Os), where M represents the Kripke structure and Oi and Os represent the integrity and security levels (not used in this master thesis).  A more properly typed coding of the Kripke structure has the form \[ \texttt{M:('prop, 'world,'pName, 'Int, 'Sec)Kripke, (Oi: 'Int po), (Os:'Sec po)} \].
+
+\textbf{\textit{Princ}} is the type definition.  
+
+The definition of \textbf{Form} (described above) in the \glsentryshort{acl} is shown in figure ref{FormACL}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{../figures/FormACL}
+\caption{\label{FormACL}The definition for \textbf{Form} in HOL.   \textit{Certified Security by Design Using Higher Order Logic}\cite{certmanual}}
+\end{figure}
+
+\textbf{Form} is a datatype definition.  Recall from the Background section that \glsentryshort{hol} is a strongly-typed language.   
+
+\texttt{TT}  and \texttt{FF} are the \glsentryshort{acl} representations of true and false, respectively.  \texttt{prop 'aavar} is the equivalent of \textit{\textbf{ProVar}} in the definition for \textbf{Form}.  The first part \texttt{prop} is called the type variable.  \texttt{prop 'aavar} is a type variable.  \glsentryshort{hol} is a strongly-typed language.  The type variable tells \glsentryshort{hol} what types are associated with a datatype of
+
+
+\glsentryshort{hol} can often figure out what the type of a specific definition is.  But, one quickly learns when working with \glsentryshort{hol} is that its best to be explicit when it comes to types.  
+
 The equivalence of the \gls{acl} formulas implemented in HOL are shown in figure \ref{aclformulasHOL}.
 
 \begin{figure}[h]
@@ -165,8 +218,7 @@ The equivalence of the \gls{acl} formulas implemented in HOL are shown in figure
 \caption{\label{aclformulasHOL}The \gls{acl} formulas in HOL.  Image taken from \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}}
 \end{figure}
 
-Using this syntax, an ACL request of the form \textit{P says \textphi} would have the form
-\centerline{ \textit{Name P says prop \textphi}}
+Using this syntax, an ACL request takes the form \textit{P says \textphi} \centerline{ \textit{Name P says prop \textphi}}
 
 
 \subsection{Complete Mediation}

@@ -47,7 +47,10 @@ marginparwidth=0in
 \usepackage{textcomp}
 \usepackage{textgreek}
 \usepackage{lipsum}
-
+\usepackage{courier}
+\usepackage[T1]{fontenc}
+\usepackage{upquote}
+\usepackage{csquotes}
 
 
 %%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%
@@ -135,7 +138,7 @@ marginparwidth=0in
 
 %%%%%%% Appendicies %%%%%%%%%%%%%%%%
 \begin{appendices}
-\chapter{Access Control Logic Theories: Pretty-Printed Theories}
+\chapter{Access Control Logic Theories: Pretty-Printed Theories}\label{ppacl}
 \includepdf[pages=-]{../../HOL/ACL/HOLReports/aclReport.pdf}
 
 \chapter{Secure State Machine \& Patrol Base Operations: Pretty-Printed Theories }
