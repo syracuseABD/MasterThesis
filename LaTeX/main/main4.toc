@@ -74,33 +74,42 @@
 \contentsline {subsubsection}{\numberline {5.5.6.4}ssmFormRT}{52}{subsubsection.5.5.6.4}
 \contentsline {chapter}{\numberline {6}Secure State Machine Model}{53}{chapter.6}
 \contentsline {section}{\numberline {6.1}State Machines}{54}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Configuration}{54}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.1}Transition Commands}{54}{subsection.6.1.1}
 \contentsline {subsection}{\numberline {6.1.2}Next-state Function}{54}{subsection.6.1.2}
 \contentsline {subsection}{\numberline {6.1.3}Next-output Function}{54}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}Transition Commands}{54}{subsection.6.1.4}
+\contentsline {subsection}{\numberline {6.1.4}Configuration}{54}{subsection.6.1.4}
 \contentsline {section}{\numberline {6.2}Secure State Machines}{54}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}State Machine Versus Secure State Machine}{54}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}Monitors}{54}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Configuration}{54}{subsection.6.2.3}
-\contentsline {subsection}{\numberline {6.2.4}Transition Types}{54}{subsection.6.2.4}
-\contentsline {subsubsection}{\numberline {6.2.4.1}\textit {exec}}{54}{subsubsection.6.2.4.1}
-\contentsline {subsubsection}{\numberline {6.2.4.2}\textit {trap}}{54}{subsubsection.6.2.4.2}
-\contentsline {subsubsection}{\numberline {6.2.4.3}\textit {discard}}{54}{subsubsection.6.2.4.3}
+\contentsline {subsection}{\numberline {6.2.3}Transition Types}{54}{subsection.6.2.3}
+\contentsline {subsubsection}{\numberline {6.2.3.1}\textit {exec}}{54}{subsubsection.6.2.3.1}
+\contentsline {subsubsection}{\numberline {6.2.3.2}\textit {trap}}{54}{subsubsection.6.2.3.2}
+\contentsline {subsubsection}{\numberline {6.2.3.3}\textit {discard}}{54}{subsubsection.6.2.3.3}
+\contentsline {subsection}{\numberline {6.2.4}Transition Commands}{54}{subsection.6.2.4}
 \contentsline {subsection}{\numberline {6.2.5}Authentication}{54}{subsection.6.2.5}
 \contentsline {subsection}{\numberline {6.2.6}Authorization}{54}{subsection.6.2.6}
+\contentsline {subsection}{\numberline {6.2.7}Next-state Function}{54}{subsection.6.2.7}
+\contentsline {subsection}{\numberline {6.2.8}Next-output Function}{54}{subsection.6.2.8}
+\contentsline {subsection}{\numberline {6.2.9}Configuration}{54}{subsection.6.2.9}
 \contentsline {section}{\numberline {6.3}Secure State Machines in HOL}{54}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}Parameterizable Secure State Machine}{54}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Parameterization}{54}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Configurations: five parts}{54}{subsection.6.3.3}
-\contentsline {subsubsection}{\numberline {6.3.3.1}State Interpretation}{54}{subsubsection.6.3.3.1}
-\contentsline {subsubsection}{\numberline {6.3.3.2}Security context}{54}{subsubsection.6.3.3.2}
-\contentsline {subsubsection}{\numberline {6.3.3.3}Input stream}{54}{subsubsection.6.3.3.3}
-\contentsline {subsubsection}{\numberline {6.3.3.4}State}{54}{subsubsection.6.3.3.4}
-\contentsline {subsubsection}{\numberline {6.3.3.5}Output stream}{54}{subsubsection.6.3.3.5}
-\contentsline {subsection}{\numberline {6.3.4}Configuration Interpretation}{54}{subsection.6.3.4}
-\contentsline {subsection}{\numberline {6.3.5}Authentication}{54}{subsection.6.3.5}
-\contentsline {subsection}{\numberline {6.3.6}Authorization}{54}{subsection.6.3.6}
-\contentsline {subsection}{\numberline {6.3.7}Transition Definitions}{54}{subsection.6.3.7}
+\contentsline {subsection}{\numberline {6.3.2}Input Stream}{54}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Transition Commands}{54}{subsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.3.1}Option Type}{54}{subsubsection.6.3.3.1}
+\contentsline {subsubsection}{\numberline {6.3.3.2}TrType}{54}{subsubsection.6.3.3.2}
+\contentsline {subsubsection}{\numberline {6.3.3.3}Command Type}{54}{subsubsection.6.3.3.3}
+\contentsline {subsection}{\numberline {6.3.4}Authentication}{54}{subsection.6.3.4}
+\contentsline {subsection}{\numberline {6.3.5}Authorization}{54}{subsection.6.3.5}
+\contentsline {subsection}{\numberline {6.3.6}Next-state Function}{54}{subsection.6.3.6}
+\contentsline {subsection}{\numberline {6.3.7}Next-output Function}{54}{subsection.6.3.7}
+\contentsline {subsection}{\numberline {6.3.8}Configurations: five parts}{54}{subsection.6.3.8}
+\contentsline {subsubsection}{\numberline {6.3.8.1}State Interpretation}{54}{subsubsection.6.3.8.1}
+\contentsline {subsubsection}{\numberline {6.3.8.2}Security context}{54}{subsubsection.6.3.8.2}
+\contentsline {subsubsection}{\numberline {6.3.8.3}Input stream}{54}{subsubsection.6.3.8.3}
+\contentsline {subsubsection}{\numberline {6.3.8.4}State}{54}{subsubsection.6.3.8.4}
+\contentsline {subsubsection}{\numberline {6.3.8.5}Output stream}{54}{subsubsection.6.3.8.5}
+\contentsline {subsection}{\numberline {6.3.9}Configuration Interpretation}{54}{subsection.6.3.9}
+\contentsline {subsection}{\numberline {6.3.10}Transition Definitions}{54}{subsection.6.3.10}
 \contentsline {chapter}{\numberline {7}Patrol Base Operations as Secure State Machines}{55}{chapter.7}
 \contentsline {section}{\numberline {7.1}ssmPB: A Typical Example from the Hierarchy}{56}{section.7.1}
 \contentsline {subsection}{\numberline {7.1.1}Principals}{56}{subsection.7.1.1}
@@ -130,21 +139,16 @@
 \contentsline {subsection}{\numberline {7.3.6}Authentication}{56}{subsection.7.3.6}
 \contentsline {subsection}{\numberline {7.3.7}Authorization}{56}{subsection.7.3.7}
 \contentsline {subsection}{\numberline {7.3.8}Proved Theorems}{56}{subsection.7.3.8}
-\contentsline {chapter}{\numberline {8}Discussion}{57}{chapter.8}
-\contentsline {section}{\numberline {8.1}Recap}{57}{section.8.1}
-\contentsline {section}{\numberline {8.2}Mission Accomplished}{57}{section.8.2}
-\contentsline {section}{\numberline {8.3}Stop-Gaps, Lessons Learned, \& Advice}{57}{section.8.3}
-\contentsline {section}{\numberline {8.4}Other Verifiable Theories}{57}{section.8.4}
-\contentsline {subsection}{\numberline {8.4.1}Authentication: Roles and Cypto}{58}{subsection.8.4.1}
-\contentsline {subsection}{\numberline {8.4.2}Soldier Theory}{58}{subsection.8.4.2}
-\contentsline {subsection}{\numberline {8.4.3}Platoon Theory}{58}{subsection.8.4.3}
-\contentsline {subsection}{\numberline {8.4.4}Squad And Fire Team Theories}{58}{subsection.8.4.4}
-\contentsline {chapter}{\numberline {9}Future Work \& Implications}{59}{chapter.9}
-\contentsline {section}{\numberline {9.1}...on The Patrol Base Operations}{59}{section.9.1}
-\contentsline {section}{\numberline {9.2}...on Other Non-automated Human-Centered Systems}{59}{section.9.2}
-\contentsline {section}{\numberline {9.3}Accountability Systems}{60}{section.9.3}
-\contentsline {section}{\numberline {9.4}Further Applicability }{60}{section.9.4}
-\contentsline {section}{\numberline {9.5}The Bigger Framework of Systems Security Engineering }{61}{section.9.5}
+\contentsline {chapter}{\numberline {8}Other Theories}{57}{chapter.8}
+\contentsline {section}{\numberline {8.1}Authentication \& Roles}{57}{section.8.1}
+\contentsline {section}{\numberline {8.2}Soldier, Squad, and Platoon Theories}{58}{section.8.2}
+\contentsline {chapter}{\numberline {9}Discussion}{59}{chapter.9}
+\contentsline {section}{\numberline {9.1}Summary}{59}{section.9.1}
+\contentsline {section}{\numberline {9.2}Lessons Learned}{59}{section.9.2}
+\contentsline {section}{\numberline {9.3}Difficulties And Limitations of The Approach}{59}{section.9.3}
+\contentsline {chapter}{\numberline {10}Future Work}{60}{chapter.10}
+\contentsline {section}{\numberline {10.1}Applicability}{60}{section.10.1}
+\contentsline {subsection}{\numberline {10.1.1}Accountability Systems}{61}{subsection.10.1.1}
 \contentsline {chapter}{Appendices}{62}{section*.19}
 \contentsline {chapter}{\numberline {A}Access Control Logic Theories: Pretty-Printed Theories}{63}{Appendix.a.A}
 \contentsline {chapter}{\numberline {B}Secure State Machine \& Patrol Base Operations: Pretty-Printed Theories }{86}{Appendix.a.B}

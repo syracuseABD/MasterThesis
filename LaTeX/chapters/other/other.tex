@@ -1,0 +1,25 @@
+%other theories
+
+\documentclass[../../main/main.tex]{subfiles}
+
+
+\begin{document}
+\chapter{Other Theories}
+This section discusses other theories that are not verified in \glsentryshort{hol}.  These theories highlight the potential for a greater variety of representations of the patrol base operations.  
+
+\section{Authentication \& Roles}
+This master thesis discussed authentication as a visual confirmation among the soldiers. For example, most often, most soldiers in a platoon know who their platoon leader is and do not require a password.  But, this is not always the case.  One example where it may not be readily obvious is when the platoon leader has been incapacitated and can no longer function in that role.  The military has a clearly defined succession hierarchy and soldier are (or should be) aware of this.  But, computers aren't as smart as soldiers...unless they are designed to be so.  In this case, two concepts come to mind, that of more stringent authentication and of soldiers acting in roles is useful.
+
+More stringent authentication means using means using things such as identification cards, password, or any variety of authentication techniques.  These are all readily modeled in the \glsentryshort{acl}.  A secure state machines that accounts for more stringent authentication is already implemented in \glsentryshort{hol}.  
+
+The idea behind defining the platoon leader as the authorized principal in, for example, the top level \glsentryshort{ssm} allows for the system to work regardless of who the platoon leader is.  Nevertheless, it is the soldier acting in the role of the platoon leader who is actually authorized.  This can also be represented in the \glsentryshort{acl} and \glsentryshort{ssm} model.  A parametrizable \glsentryshort{ssm} is also already implemented in \glsentryshort{hol} to do this.
+
+
+\section{Soldier, Squad, and Platoon Theories}
+
+
+
+
+
+
+\end{document}
