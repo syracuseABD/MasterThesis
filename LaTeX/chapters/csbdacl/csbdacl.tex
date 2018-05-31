@@ -52,7 +52,7 @@ In addition, principals can speak for other principals.  Principals do this usin
 \subsection{Well-formed Formulas}\label{ssec:wff}
 \Glspl{wff} define the syntax (or grammatical structure) of the propositional logic.  They are valid statements in the \glsentryshort{acl}.  All \glsentryshort{ACL} statements must be a \glsentryshort{wff}.  The text book defines the set of \glsentryshortpl{wff} using the identifier \textbf{Form}:
 
-\begin{center}
+\begin{center}\label{wffdef}
 \textbf{Form} ::= \textbf{PropVar} / $\neg$ \textbf{Form} / (\textbf{Form} $\vee$ \textbf{Form}) / \\ 
 	                  (\textbf{Form} $\wedge$ \textbf{Form}) / (\textbf{Form} $\supset$ \textbf{Form}) / (\textbf{Form} $\equiv$ \textbf{Form}) / \\
 	                  (\textbf{Princ} $\Rightarrow$ \textbf{Princ}) / (\textbf{Princ} says \textbf{Form}) / (\textbf{Princ} controls \textbf{Form}) /\\
@@ -81,7 +81,7 @@ One way to think of Kripke structures is as a logic on multiple worlds or possib
 
 Kripke structures are necessary to define the ACL properly.  In particular, they are necessary to define the concepts of "satisfies" and "soundness" which follow.  However, an in-depth understanding of Kripke structures is not necessary to understand the work in this master thesis.  
 
-\subsubsection{Kripke Semantics}
+\subsubsection{Kripke Semantics}\label{ssec:kripkesemantics}
 The Kripke semantics define the meanings of \glsentryshortpl{wwf} for Kripke structures.  The semantics can be thought of as an evaluation function for a particular Kripke $\mathcal{M}$ = $\langle \textit{W}, \textit{I}, \textit{J} \rangle $.  Figure \ref{kripkesemantics} shows the Kripke semantics.  The subscript $\mathcal{M}$ signifies that the evaluation function is defined for a particular Kripke structure.  This means there is a separate evaluation function for each Kripke structure.
 
 
@@ -170,7 +170,7 @@ Figure \ref{princHOL} shows the \glsentryshort{hol} representations for principa
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.6\textwidth]{../figures/princHOL}
-\caption{\label{princHOL}The HOL implementations of principle (\textbf{\textit{Princ}}).  Image from  \textit{Certified Security by Design Using Higher Order Logic}\cite{certmanual}}.  
+\caption{\label{princHOL}The HOL implementation of principle (\textbf{\textit{Princ}}).  Image from  \textit{Certified Security by Design Using Higher Order Logic}\cite{certmanual}}.  
 \end{figure}
 
 The concept of types are important in \glsentryshort{hol}.  They are discussed in the background chapter in section \ref{adt}.  \textbf{\textit{Princ}} is an algebraic data type.  
@@ -182,20 +182,13 @@ The primary difference between datatype definitions in \glsentryshort{hol} and M
 
 In the definition for  \textbf{\textit{Princ}}, \texttt{Name} is called the type constructor.  The result of the constructor and a concrete type or type variable results in something of type \textbf{\textit{Princ}}.  Examples of principals defined in \glsentryshort{hol} take the following form.
 \[Name PlatoonLeader, or \]
-\[(Name PlatoonLeader) \textasciigrave meet ` (Name PlatoonSergeant), or \]
-\[(Name PlatoonLeader) `quoting` (Name PlatoonSergeant). \]
+\[(Name PlatoonLeader) \texttt{\textasciigrave} meet \texttt{\textasciigrave} (Name PlatoonSergeant), or \]
+\[(Name PlatoonLeader) \texttt{\textasciigrave} quoting \texttt{\textasciigrave} (Name PlatoonSergeant). \]
 
-Prefix operators may be used as infix operators if they are surrounded by the back tick (typically located near the esc-key). This master thesis focuses on principals defined using the \texttt{Name PlatoonLeader} construction. 
+Prefix operators may be used as infix operators if they are surrounded by a backtick \texttt{\textasciigrave} (typically located near the esc-key). This master thesis focuses on principals defined using the \texttt{Name PlatoonLeader} construction. 
 
-\subsection{Kripke structures}
-
-
-
-Kripke structures are part of the implementation of the \glsentryshort{acl} in \glsentryshort{hol} because they are necessary to prove the "satisfies" and "soundness" properties of the \glsentryshort{acl}.  Nevertheless, the model of patrol base operations does not require any definition of a Kripke structures.   For the most part, Kripke structures in \glsentryshort{hol} are coded as (M, Oi, Os), where M represents the Kripke structure and Oi and Os represent the integrity and security levels (not used in this master thesis).  A more properly typed coding of the Kripke structure has the form \[ \texttt{M:('prop, 'world,'pName, 'Int, 'Sec)Kripke, (Oi: 'Int po), (Os:'Sec po)} \].
-
-\textbf{\textit{Princ}} is the type definition.  
-
-The definition of \textbf{Form} (described above) in the \glsentryshort{acl} is shown in figure ref{FormACL}.
+\subsection{Well-Formed Formulas}
+The \glsentryshort{hol} representation of \glsentrylongpl{wff} (WFFs) are shown in figure \ref{FormACL}.
 
 \begin{figure}[h]
 \centering
@@ -203,14 +196,36 @@ The definition of \textbf{Form} (described above) in the \glsentryshort{acl} is 
 \caption{\label{FormACL}The definition for \textbf{Form} in HOL.   \textit{Certified Security by Design Using Higher Order Logic}\cite{certmanual}}
 \end{figure}
 
-\textbf{Form} is a datatype definition.  Recall from the Background section that \glsentryshort{hol} is a strongly-typed language.   
+\textbf{Form} is the datatype definition.  \texttt{TT}  and \texttt{FF} are the \glsentryshort{acl} representations of true and false, respectively.  \texttt{notf}, \texttt{andf}, \texttt{orf}, \texttt{impf}, \texttt{eqf}, \texttt{says}, \texttt{speaks_for}, \texttt{controls}, and \texttt{reps} are all the prefix version of the infix operators shown in the definition of \textbf{\textit{Form}} in section \ref{ssec:wff}.  The additional elements of the \textbf{Form} (from \texttt{domi} to the end) refer to integrity and security levels, which are not discussed in this master thesis. 
 
-\texttt{TT}  and \texttt{FF} are the \glsentryshort{acl} representations of true and false, respectively.  \texttt{prop 'aavar} is the equivalent of \textit{\textbf{ProVar}} in the definition for \textbf{Form}.  The first part \texttt{prop} is called the type variable.  \texttt{prop 'aavar} is a type variable.  \glsentryshort{hol} is a strongly-typed language.  The type variable tells \glsentryshort{hol} what types are associated with a datatype of
+The type definitions that follow the operator are relevant and show-up everywhere in the code.  It is useful to dissect one of them.  Consider the \texttt{andf} operator.  
+\[ \texttt{(andf) (('aavar, 'apn, 'il, 'sl) Form) }\]
+\[ \texttt{(('aavar, 'apn, 'il, 'sl) Form)}. \]
 
 
-\glsentryshort{hol} can often figure out what the type of a specific definition is.  But, one quickly learns when working with \glsentryshort{hol} is that its best to be explicit when it comes to types.  
+\texttt{(('aavar, 'apn, 'il, 'sl) Form)} is the type signature for another \textbf{Form}.  The component types of a \textbf{Form} are a proposition (\texttt{'aavar}), a principal (\texttt{'apn}), an integrity level (\texttt{'il}), and a security level (\texttt{'sl}).  The prefix operator \texttt{andf} then takes two \textbf{Form}s each of type \texttt{(('aavar, 'apn, 'il, 'sl) Form)}.  In this thesis, \texttt{'aavar} and \texttt{'apn} are the only types that are specified. 
 
-The equivalence of the \gls{acl} formulas implemented in HOL are shown in figure \ref{aclformulasHOL}.
+\subsection{Kripke structures}
+Kripke structures are part of the implementation of the \glsentryshort{acl} in \glsentryshort{hol} because they are necessary to prove the ``satisfies" and ``soundness" properties of the \glsentryshort{acl}.  Nevertheless, the model of patrol base operations does not require any definition of Kripke structures. Therefore, they are only briefly described here. The \glsentryshort{hol} implementation of the Kripke structure is shown in figure \ref{kripkehol}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{../figures/kripkehol}
+\caption{\label{kripkehol}The HOL implementation of a Kripke structure (\textbf{\textit{Princ}}).  Image from  \textit{Certified Security by Design Using Higher Order Logic}\cite{certmanual}}.  
+\end{figure}
+
+Kripke structures are defined previously as a three-tuple.  The Kripke structure here has four components (each surrounded by parentheses). This representation in \glsentryshort{hol} is very different from that described in section \ref{kripkesemantics}. 
+
+In figure \ref{kripkehol}, the first set of parenthesis represents the assignment function more-or-less. It takes a proposition and world as arguments.  If the proposition is true in that world, then the function returns true, otherwise it returns false.  The second pair of parenthesis is similar to the accessibility function.  It takes a principal, a world, and another world.  The function returns true if the second world is accessible from the first for this particular principal, otherwise it returns false.  The last two pairs of parentheses represent integrity and security levels.  These are not discussed in this master thesis.  
+
+The key take away for the reader is to recognize Kripke structures in the \glsentryshort{hol} code.  Kripke structures will either be fully typed or abbreviated.  These two forms are shown below, respectively.  
+\[ (M, Oi, Os) \]
+\[ \texttt{M:('prop, 'world,'pName, 'Int, 'Sec)Kripke, (Oi: 'Int po), (Os:'Sec po)} \]
+
+The actual Kripke structure is represented by M and the integrity and security levels are represented by Oi and Os.  
+
+\subsection{ACL Formulas}
+It remains now to define the access-control logic (\glsentryshort{acl}) formulas in \glsentryshort{hol} specifically.  These are shown in figure \ref{aclformulasHOL}.
 
 \begin{figure}[h]
 \centering
@@ -218,11 +233,51 @@ The equivalence of the \gls{acl} formulas implemented in HOL are shown in figure
 \caption{\label{aclformulasHOL}The \gls{acl} formulas in HOL.  Image taken from \textit{Access Control, Security, and Trust: A Logical Approach}\cite{ChinOlder}}
 \end{figure}
 
-Using this syntax, an ACL request takes the form \textit{P says \textphi} \centerline{ \textit{Name P says prop \textphi}}
+
+Triangular brackets enclose propositions.  Thus, in the \glsentryshort{hol} representation of the \glsentryshort{acl}, a proposition is codes as follows:
+\[\texttt{prop command} \]
+
+A request in \glsentryshort{hol} is coded as: 
+\[ \texttt{(Name PlatoonLeader) says (prop command)} \]
+
+Parentheses are used when necessary\footnote{The need for parentheses is well-defined.  But, the author finds the best approach to parentheses is trial and error and generosity.}.  A statement of authority is coded as:
+\[ \texttt{(Name PlatoonLeader) controls (prop command)} \]
+
+These are the primary types of \glsentryshort{acl} formulas used in this master thesis.  The others are readily derivable from figure \ref{aclformulasHOL}.
 
 
-\subsection{Complete Mediation}
-\subsection{satList}
+\subsection{Kripke Semantics: The Evaluation Function}
+The Kripke semantics described in section \ref{ssec:kripkesemantics} and shown in figure \ref{kripkesemantics} are also implemented in \glsentryshort{hol}.  This function is lengthy and the details are beyond the scope of this master thesis.  Part of the definition is shown \ref{Efn}.  The entire function can be found in appendix \ref{ppacl} in the section on aclsemantics.  The reader should note that the definition is defined for all Kripke structures as \texttt{$\forall$ Oi Os M}.
 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{../figures/Efn}
+\caption{\label{Efn}The \glsentryshort{hol} implementation of the Kripke semantics (evaluation function).  Image from  \textit{Certified Security by Design Using Higher Order Logic}\cite{certmanual}}
+\end{figure}
+
+
+\subsection{Satisfies}
+The implementation of the "satisfies" property is shown in figure \ref{satdef}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{../figures/satdef}
+\caption{\label{satdef}The \glsentryshort{hol} implementation of the "satisfies" property.  Image from  \textit{Certified Security by Design Using Higher Order Logic}\cite{certmanual}}
+\end{figure}
+
+The first part of the definition is \texttt{$\forall$ M Oi Os f.}. This is the universal quantifier applied to all Kripke structure, intgegrity levels, security levels, and functions.  The next part of the definition is \texttt{(M, Oi, Os) sat f}.  This is what is being defined.  The final part of the definition is \texttt{(Efn Oi Os M f = $\mathpzc{U}$(:'world))}.  This part states that the function \texttt{f} must evaluate to all worlds $\mathpzc{U}$.
+
+\subsection{Soundness}
+The definition for ``satisfies" in the \glsentryshort{hol} is similar to the definition for "soundness" described in section \ref{sssec:soundness}.  In that section and the section preceding it, "satisfies" applied to a particular Kripke structure.  But, definition for ``satisfies" above is valid for all Kripke structures.  To extend this to ``soundness" it is only necessary to account for multiple hypotheses.  This is of the form shown in figure \ref{soundhol}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{../figures/soundhol}
+\caption{\label{soundhol}The \glsentryshort{hol} representation of the ``soundness" property.  Image from  \textit{Certified Security by Design Using Higher Order Logic}\cite{certmanual}}
+\end{figure}
+
+A thorough description of the \glsentryshort{acl} in its entirety is beyond the scope of this master thesis.  All the theory files necessary to use this \glsentryshort{hol} implementation of the \glsentryshort{acl} are included with the files with this master thesis.  A pretty-printed EmitTeX version of the code is included in appendix \ref{ppacl}.  
 
 \end{document}
