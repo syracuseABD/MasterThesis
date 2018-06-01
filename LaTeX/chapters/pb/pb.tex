@@ -147,6 +147,7 @@ A diagram of the escape level is shown in figure \ref{escapeDiagram}.  The purpo
 \includegraphics[width=0.45\textwidth]{../figures/escapeDiagram}
 \caption{\label{escapeDiagram} Escape level diagram.}
 \end{figure}
+\clearpage
 
 This is also not really a  level, nor is it an \glsentryshort{ssm}. The square boxes in the diagram represent communication from outside the module.  They represent external signals from the OMNI level.  The only state is the ABORT_MISSION state.  But, one state is not sufficient for an \glsentryshort{ssm}\footnote{This is not necessarily a rule.  But, for the purposes of this master thesis it is a rule.}.
 
@@ -163,7 +164,7 @@ The top level for the hierarchy of \glsentryshortpl{ssm} is shown in figure \ref
 \includegraphics[width=\textwidth]{../figures/ssmPBDiagram}
 \caption{\label{ssmPBDiagram} Top level diagram.}
 \end{figure}
- 
+ \clearpage
  The details are discussed along with figure \ref{pbtoplevel}.  The only difference in this diagram is that the state names are all capitalized with underscores substituted for spaces.
 
 
@@ -173,89 +174,106 @@ The horizontal slice is an expansion of the states in the top level \glsentrysho
                   %%%%%%%%%%%%% Subsection ssmPlanPB %%%%%%%%%%%%%%%%%%%%%
 \subsubsection{ssmPlanPB}\label{sssec:ssmPlanPB}
 The top level PLAN_PB state is expanded into the ssmPlanPB \glsentryshort{ssm} and shown in figure \ref{ssmPlanPBDiagram}.
-\begin{figure}[h]
+
+\begin{figure}[h!]
 \centering
-\includegraphics[width=1.1\textwidth]{../figures/ssmPlanPBDiagram}
+\includegraphics[width=\textwidth]{../figures/ssmPlanPBDiagram}
 \caption{\label{ssmPlanPBDiagram} Horizontal slice: PlanPB diagram.}
 \end{figure}
-
+\clearpage
 
                   %%%%%%%%%%%%% Subsection ssmMoveToORP %%%%%%%%%%%%%%%%%%%
 \subsubsection{ssmMoveToORP}\label{sssec:ssmMoveToORP}
 The top level MOVE_TO_ORP state is expanded into the ssmMoveToORP \glsentryshort{ssm} and shown in figure \ref{ssmMoveToORPDiagram}.
 
-\begin{figure}[h]
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\textwidth]{../figures/ssmMoveToORPDiagram}
 \caption{\label{ssmMoveToORPDiagram} Horizontal slice: MoveToORP diagram.}
 \end{figure}
-
+\clearpage
                   %%%%%%%%%%%%% Subsection ssmConductORP %%%%%%%%%%%%%%%%%%
 \subsubsection{ssmConductORP}\label{sssec:ssmConductORP}
 The top level CONDUCT_ORP state is expanded into the ssmConductORP \glsentryshort{ssm} and shown in figure \ref{ssmConductORPDiagram}.
 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{../figures/ssmConductORPDiagram}
 \caption{\label{ssmConductORPDiagram} Horizontal slice: ConductORP diagram.}
 \end{figure}
-
+\clearpage
                   %%%%%%%%%%%%% Subsection ssmMoveToPB %%%%%%%%%%%%%%%%%%%
 \subsubsection{ssmMoveToPB}\label{sssec:ssmMoveToPB}
 The top level MOVE_TO_PB state is expanded into the ssmMoveToPB \glsentryshort{ssm} and shown in figure \ref{ssmMoveToPBDiagram}.
 
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.8\textwidth]{../figures/ssmMoveToPBDiagram}
 \caption{\label{ssmMoveToPBDiagram} Horizontal slice: MoveToPB diagram.}
 \end{figure}
-
+\clearpage
                   %%%%%%%%%%%%% Subsection ssmConductPB %%%%%%%%%%%%%%%%%%%
 \subsubsection{ssmConductPB}\label{sssec:ssmConductPB}
 The top level CONDUCT_PB state is expanded into the ssmConductPB \glsentryshort{ssm} and shown in figure \ref{ssmConductPBDiagram}.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{../figures/ssmConductPBDiagram}
 \caption{\label{ssmConductPBDiagram} Horizontal slice: ConductPB diagram.}
 \end{figure}
-
+\clearpage
 
           %%%%%%%%%%%%%%%% Subsection Vertical Slice %%%%%%%%%%%%%%%%%%%%
 \subsection{Vertical Slice}\label{ssec:verticalslice}
+The vertical slice is an expansion of one state at each level of the hierarchy.  It is the middle section in the overall, squished diagram in figure \ref{overalldiagramsquashed}.  This is the only section of the patrol base operations that are modeled through to the lowest level of abstraction.
 
+The vertical slice starts at the top level state MOVE_TO_ORP.  This state is expanded into the ssmMoveToORP \glsentryshort{ssm} described in section \ref{sssec:ssmMoveToORP}. In this sub level, the state SECURE_HALT is expanded into the ssmSecureHalt \glsentryshort{ssm} described in the next section (\ref{sssec:ssmSecureHalt}).  In this sub-sub-level \glsentryshort{ssm}, the state ORP_RECON is expanded into the ssmORPRecon \glsentryshort{ssm} described below in section \ref{sssec:ssmORPRecon}.  In this \glsentryshort{ssm}, the state MOVE_TO_ORP is expanded into the ssmMoveToORP4L \glsentryshort{ssm} described below in section \ref{sssec:ssmMoveToORP4L}.  In this \glsentryshort{ssm}, the state FORM_RT is expanded into the ssmFormRT \glsentryshort{ssm} described below in section \ref{sssec:ssmFormRT}.  
+
+
+These states are described in the following sections.
                   %%%%%%%%%%%%% Subsection ssmSecureHalt %%%%%%%%%%%%%%%%%%%
 \subsubsection{ssmSecureHalt}\label{sssec:ssmSecureHalt}
+The sub-sub-level SECURE_HALT state is expanded into the ssmSecureHalt \glsentryshort{ssm} and shown in figure \ref{ssmSecurtHaltDiagram}.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.85\textwidth]{../figures/ssmSecurtHaltDiagram}
 \caption{\label{ssmSecurtHaltDiagram} Vertical slice: SecureHalt diagram.}
 \end{figure}
-
-
+\clearpage
 
                   %%%%%%%%%%%%% Subsection ssmORPRecon %%%%%%%%%%%%%%%%%%%
 \subsubsection{ssmORPRecon}\label{sssec:ssmORPRecon}
+The sub-sub-sub-level ORP_RECON state is expanded into the ssmORPRecon \glsentryshort{ssm} and shown in figure \ref{ssmORPReconDiagram}.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{../figures/ssmORPReconDiagram}
 \caption{\label{ssmORPReconDiagram} Vertical slice: ORPRecon diagram.}
 \end{figure}
+\clearpage
                   %%%%%%%%%%%%% Subsection ssmMoveToORP4L %%%%%%%%%%%%%%%%%
 \subsubsection{ssmMoveToORP4L}\label{sssec:ssmMoveToORP4L}
+The 4th level MOVE_TO_ORP state is expanded into the ssmMoveToORP4L \glsentryshort{ssm} and shown in figure \ref{moveToORP4LDiagram}.  Recall that there is no module at the 5th level.  
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=0.85\textwidth]{../figures/moveToORP4LDiagram}
 \caption{\label{moveToORP4LDiagram} Vertical slice: MoveToORP4L diagram.}
 \end{figure}
+\clearpage
 
                   %%%%%%%%%%%%% Subsection ssmFormRT %%%%%%%%%%%%%%%%%%%%
 \subsubsection{ssmFormRT}\label{sssec:ssmFormRT}
+The 6th level FORM_RT state is expanded into the ssmFormRT \glsentryshort{ssm} and shown in figure \ref{moveToORP4LDiagram}.  (Recall that there is no module at the 5th level for this slice.  Also, the 8th level is not modeled.)
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.85\textwidth]{../figures/ssmFormRTDiagram}
+\caption{\label{ssmFormRTDiagram} Vertical slice: FormRT diagram.}
+\end{figure}
+\clearpage
 
 \end{document}
