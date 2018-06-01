@@ -148,6 +148,7 @@ What follows are the naming conventions for the diagrams.  The also apply to the
 The OMNI level is not represented in the Visio diagram.  It is not really a level.  More specifically, the OMNI level represents an imaginary all-knowing entity.  The main purpose of this entity is to relay messages from one \glsentryshort{ssm} to another.  This allows for greater encapsulation of the modules. 
 
 In all \glsentryshortpl{ssm}, OMNI is a principal who has authority over OMNI level commands.  These commands communicate the completion of a lower-level \glsentryshort{ssm}.  For example, at the top level, before the Platoon Leader can transition from the PLAN_PB state to the MOVE_TO_ORP state, he must receive the command \textit{OMNI says ssmPlanPBComplete}.  The top level security policy contains the clause \textit{OMNI controls ssmPlanPBComplete}.  The \textit{Controls} rule discussed in section \ref{ssec:inferencerules} then allows the Platoon Leader to conclude that the lower-level \glsentryshort{smm} is complete.  
+\clearpage
 
           %%%%%%%%%%%%%%%% Subsection Escape %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Escape}\label{ssec:escape}
@@ -158,13 +159,13 @@ A diagram of the escape level is shown in figure \ref{escapeDiagram}.  The purpo
 \includegraphics[width=0.45\textwidth]{../figures/escapeDiagram}
 \caption{\label{escapeDiagram} Escape level diagram.}
 \end{figure}
-\clearpage
 
 This is also not really a  level, nor is it an \glsentryshort{ssm}. The square boxes in the diagram represent communication from outside the module.  They represent external signals from the OMNI level.  The only state is the ABORT_MISSION state.  But, one state is not sufficient for an \glsentryshort{ssm}\footnote{This is not necessarily a rule.  But, for the purposes of this master thesis it is a rule.}.
 
 The abortable conditions are \textit{returnToBase}, \textit{changeMission}, \textit{resupply}, and \textit{reactToContact}.  OMNI receives information from somewhere else that one of these conditions is true, for example \textit{returnToBase}.  In response, OMNI submits a request to the escape level:  \textit{OMNI says returnToBase} (etc.).  The security policy for the escape level contains the clause \textit{OMNI controls returnToBase}.  Using the \textit{Controls} rule discussed in section \ref{ssec:inferencerules}, the proposition \textit{returnToBase} must be true.  
 
 Now, the Platoon Leader makes a request to abort the mission: \textit{PlatoonLeader says abortMission}.  Another clause in the security policy is \textit{returnToBase impf PlatoonLeader controls abortMission}.  There is now sufficient information to justify aborting the mission. 
+ \clearpage
 
           %%%%%%%%%%%%%%%% Subsection Top Level %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Top Level}\label{ssec:toplevel}
@@ -175,9 +176,9 @@ The top level for the hierarchy of \glsentryshortpl{ssm} is shown in figure \ref
 \includegraphics[width=\textwidth]{../figures/ssmPBDiagram}
 \caption{\label{ssmPBDiagram} Top level diagram.}
 \end{figure}
- \clearpage
  The details are discussed along with figure \ref{pbtoplevel}.  The only difference in this diagram is that the state names are all capitalized with underscores substituted for spaces.
 
+ \clearpage
 
           %%%%%%%%%%%%%%%% Subsection Horizontal Slice %%%%%%%%%%%%%%%%%%%
 \subsection{Horizontal Slice}\label{ssec:horizontalslice}
@@ -192,13 +193,21 @@ The top level PLAN_PB state is expanded into the ssmPlanPB \glsentryshort{ssm} a
 \includegraphics[width=\textwidth]{../figures/ssmPlanPBDiagram}
 \caption{\label{ssmPlanPBDiagram} Horizontal slice: PlanPB diagram.}
 \end{figure}
-\clearpage
+
 
 ssmPlanPB has two principals: PlatoonLeader and PlatoonSergeant.  Only the PlatoonLeader is authorized to make transitions among states.  
 
-All transitions are sequential.  However, the original module contains three non-sequential states.  These are represented in the diagram as the white circle. These states are TENTATIVE_PLAN, INITIATE_MOVEMENT, and RECON.  To transition from the WARNO state to the 
+All transitions are sequential.  However, the original module contains three non-sequential states.  These are represented in the diagram as the white circle. These states are TENTATIVE_PLAN, INITIATE_MOVEMENT, and RECON.  To transition from WARNO to REPORT1 requires that all three of these states be completed, but not in any specific order\footnote{The complexities of this \glsentryshort{ssm} lead to a revision of the original parameterized \glsentryshort{ssm} discussed in chapter \ref{chp:ssmmodel} section \ref{sec:sminHOL}.}. 
+
+To solve this problem, the three states are not represented as states.  The completion of these "tasks" is indicated by the following three statements: \textit{PlatoonLeader says tentativePlan}, \textit{PlatoonSergeant says initiateMovement}, and \textit{PlatoonLeader says recon}.  Thus, the transition from WARNO to REPORT1 now requires four statements: \textit{PlatoonLeader says tentativePlan}, \textit{PlatoonSergeant says initiateMovement}, \textit{PlatoonLeader says recon}, \textbf{AND} \textit{PlatoonLeader says report1}. The latter-most statement is the actual request.
+
+To be certain that the transition from WARNO to REPORT1 occurs if and only if these three statements are made, the security policy has an additional clause: \textit{tentativePlan andf initiateMovement andf recon impf PlatoonLeader controls report1}.  In the \glsentryshort{hol} a function extracts \textit{tentativePlan} from \textit{PlatoonLeader says tentativePlan}, and so on for all three statements. The security policy uses this function to verify that all four statements are present in the request to transition.
+
+Note that these three statements are made without authentication and authorization.  It wouldn't be too much effort to add this.  But, these communications can also be thought of as the Platoon Leader receiving these statements directly from the sources.  In this case, the Platoon Leader should recognize himself and his Platoon Sergeant.  The actual implementation for a real world application would need to consider which is most appropriate for the situation.
 
 
+
+\clearpage
                   %%%%%%%%%%%%% Subsection ssmMoveToORP %%%%%%%%%%%%%%%%%%%
 \subsubsection{ssmMoveToORP}\label{sssec:ssmMoveToORP}
 The top level MOVE_TO_ORP state is expanded into the ssmMoveToORP \glsentryshort{ssm} and shown in figure \ref{ssmMoveToORPDiagram}.
@@ -208,7 +217,10 @@ The top level MOVE_TO_ORP state is expanded into the ssmMoveToORP \glsentryshort
 \includegraphics[width=0.8\textwidth]{../figures/ssmMoveToORPDiagram}
 \caption{\label{ssmMoveToORPDiagram} Horizontal slice: MoveToORP diagram.}
 \end{figure}
+
+ssmMoveToORP is straight forward. There is only one principal authorized to make transitions.  This is the Platoon Leader.  Everything follows sequentially.  
 \clearpage
+
                   %%%%%%%%%%%%% Subsection ssmConductORP %%%%%%%%%%%%%%%%%%
 \subsubsection{ssmConductORP}\label{sssec:ssmConductORP}
 The top level CONDUCT_ORP state is expanded into the ssmConductORP \glsentryshort{ssm} and shown in figure \ref{ssmConductORPDiagram}.
@@ -219,17 +231,22 @@ The top level CONDUCT_ORP state is expanded into the ssmConductORP \glsentryshor
 \includegraphics[width=\textwidth]{../figures/ssmConductORPDiagram}
 \caption{\label{ssmConductORPDiagram} Horizontal slice: ConductORP diagram.}
 \end{figure}
+
+ssmConductORP is straight forward. But, there are two principals. The PlatoonLeader is authorized on all transitions except for the transition from SECURE to ACTIONS_IN.  The PlatoonSergeant is responsible for this transition.  Everything follows sequentially.  
+
 \clearpage
+
                   %%%%%%%%%%%%% Subsection ssmMoveToPB %%%%%%%%%%%%%%%%%%%
 \subsubsection{ssmMoveToPB}\label{sssec:ssmMoveToPB}
 The top level MOVE_TO_PB state is expanded into the ssmMoveToPB \glsentryshort{ssm} and shown in figure \ref{ssmMoveToPBDiagram}.
-
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.8\textwidth]{../figures/ssmMoveToPBDiagram}
 \caption{\label{ssmMoveToPBDiagram} Horizontal slice: MoveToPB diagram.}
 \end{figure}
+
+ssmMoveToPB is straight forward. There is only one principal authorized to make transitions.  This is the Platoon Leader.  Everything follows sequentially.  
 \clearpage
                   %%%%%%%%%%%%% Subsection ssmConductPB %%%%%%%%%%%%%%%%%%%
 \subsubsection{ssmConductPB}\label{sssec:ssmConductPB}
@@ -240,6 +257,8 @@ The top level CONDUCT_PB state is expanded into the ssmConductPB \glsentryshort{
 \includegraphics[width=\textwidth]{../figures/ssmConductPBDiagram}
 \caption{\label{ssmConductPBDiagram} Horizontal slice: ConductPB diagram.}
 \end{figure}
+
+ssmConductPB is straight forward. But, there are two principals. The PlatoonLeader is authorized on all transitions except for the transition from SECURE to ACTIONS_IN.  The PlatoonSergeant is responsible for this transition.  Everything follows sequentially.  
 \clearpage
 
           %%%%%%%%%%%%%%%% Subsection Vertical Slice %%%%%%%%%%%%%%%%%%%%
@@ -248,8 +267,9 @@ The vertical slice is an expansion of one state at each level of the hierarchy. 
 
 The vertical slice starts at the top level state MOVE_TO_ORP.  This state is expanded into the ssmMoveToORP \glsentryshort{ssm} described in section \ref{sssec:ssmMoveToORP}. In this sub level, the state SECURE_HALT is expanded into the ssmSecureHalt \glsentryshort{ssm} described in the next section (\ref{sssec:ssmSecureHalt}).  In this sub-sub-level \glsentryshort{ssm}, the state ORP_RECON is expanded into the ssmORPRecon \glsentryshort{ssm} described below in section \ref{sssec:ssmORPRecon}.  In this \glsentryshort{ssm}, the state MOVE_TO_ORP is expanded into the ssmMoveToORP4L \glsentryshort{ssm} described below in section \ref{sssec:ssmMoveToORP4L}.  In this \glsentryshort{ssm}, the state FORM_RT is expanded into the ssmFormRT \glsentryshort{ssm} described below in section \ref{sssec:ssmFormRT}.  
 
+Note that the overall diagram (the squashed diagram in figure \ref{overalldiagramsquashed}) does not annotate transitions beyond the sub-sub-level. The principals assigned to transitions in the following modules are a best guess\footnote{Describing the patrol base operations requires a subject matter expert.  There was no indication at the time that he was developing the model that these lower-level transitions would be implemented in \glsentryshort{hol}.}.  
 
-These states are described in the following sections.
+\clearpage
                   %%%%%%%%%%%%% Subsection ssmSecureHalt %%%%%%%%%%%%%%%%%%%
 \subsubsection{ssmSecureHalt}\label{sssec:ssmSecureHalt}
 The sub-sub-level SECURE_HALT state is expanded into the ssmSecureHalt \glsentryshort{ssm} and shown in figure \ref{ssmSecurtHaltDiagram}.
@@ -259,6 +279,8 @@ The sub-sub-level SECURE_HALT state is expanded into the ssmSecureHalt \glsentry
 \includegraphics[width=0.85\textwidth]{../figures/ssmSecurtHaltDiagram}
 \caption{\label{ssmSecurtHaltDiagram} Vertical slice: SecureHalt diagram.}
 \end{figure}
+
+ssmSecureHalt is straight forward. There is only one principal authorized to make transitions.  This is the Platoon Leader.  Everything follows sequentially.  
 \clearpage
 
                   %%%%%%%%%%%%% Subsection ssmORPRecon %%%%%%%%%%%%%%%%%%%
@@ -270,6 +292,9 @@ The sub-sub-sub-level ORP_RECON state is expanded into the ssmORPRecon \glsentry
 \includegraphics[width=\textwidth]{../figures/ssmORPReconDiagram}
 \caption{\label{ssmORPReconDiagram} Vertical slice: ORPRecon diagram.}
 \end{figure}
+
+ssmOPRRecon is straight forward. There is only one principal authorized to make transitions.  This is the Platoon Leader.  Everything follows sequentially.  
+
 \clearpage
                   %%%%%%%%%%%%% Subsection ssmMoveToORP4L %%%%%%%%%%%%%%%%%
 \subsubsection{ssmMoveToORP4L}\label{sssec:ssmMoveToORP4L}
@@ -280,6 +305,8 @@ The 4th level MOVE_TO_ORP state is expanded into the ssmMoveToORP4L \glsentrysho
 \includegraphics[width=0.85\textwidth]{../figures/moveToORP4LDiagram}
 \caption{\label{moveToORP4LDiagram} Vertical slice: MoveToORP4L diagram.}
 \end{figure}
+
+ssmMoveToORP4L is straight forward. There is only one principal authorized to make transitions.  This is the Platoon Leader.  Everything follows sequentially.  
 \clearpage
 
                   %%%%%%%%%%%%% Subsection ssmFormRT %%%%%%%%%%%%%%%%%%%%
@@ -291,6 +318,7 @@ The 6th level FORM_RT state is expanded into the ssmFormRT \glsentryshort{ssm} a
 \includegraphics[width=0.85\textwidth]{../figures/ssmFormRTDiagram}
 \caption{\label{ssmFormRTDiagram} Vertical slice: FormRT diagram.}
 \end{figure}
-\clearpage
+
+ssmFormRT is straight forward. There is only one principal authorized to make transitions.  This is the Squad Leader.  Everything follows sequentially.  
 
 \end{document}
