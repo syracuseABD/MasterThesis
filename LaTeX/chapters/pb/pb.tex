@@ -114,13 +114,28 @@ The red dots representing the escape level \glsentryshort{ssm} are best thought 
 Details of each level follow in the next section.
 
 \subsection{Descriptions of Individual Modules}
-Each module follows a pattern.  It starts at one state and then flows sequentially\footnote{ssmPlanPB contains one series of states that are non-sequential.  This is discussed in section \ref{sssec:ssmPlanPB}.} to the end of the module.  The last state in the module is typically named COMPLETE. 
+Each module is described diagrammatically in the following sections.  They all follow a similar pattern.  The general pattern is discussed in this section.  Exceptions are discussed along with the diagrammatic descriptions for each individual module. (Note also that "module" and "SSM" are used interchangeably in the following sections.)
 
-Each module is described with a diagram of its \glsentryshort{ssm} representation.  The colors of the states in the diagrams correspond to their colors in the overall squished diagram shown in figure \ref{overalldiagramsquashed}.  
+\paragraph*{Flow}
+Each module follows a sequential pattern.  It starts at one state and then flows sequentially to the end of the module. Each module has a set of principals who are authorized on some set of transitions (or commands).  Each module has its own security policy that dictates the conditions under which transition requests are granted.  
 
-All lines represent allowable transitions with an arrow indicating the direction of the transition.  Each line is annotated with the appropriate \glsentryshort{acl} request (or command).  The last line in each module connects the COMPLETE state to the initial state.  This line is not annotated.  It is not an actual transition but an indictor that the completion of this lower-level \glsentryshort{ssm} links to the higher-level \glsentryshort{ssm}.  It is implemented in the \glsentryshort{ssm} above it as a signal from the OMNI level that the lower-level \glsentryshort{ssm} is complete.
+\paragraph*{Requests And Security Policies}
+Principals make requests to transition from one state to another.  Requests are of the form \textit{Principal says command}.  
 
-The naming convention obeys that following pattern:
+Transitions at one level require confirmation of completion of that state at the lower level.  For example, the PLAN_PB state at the top level is the basis for the less abstract ssmPlanPB secure state machine one level below it.  Before the top level can transition from the PLAN_PB state to the MOVE_TO_ORP state, ssmPlanPB must be in the COMPLETE state.  
+
+But, encapsulation requires that each module be isolated from the other.  To accommodate this, an OMNI level principal communicates when a sub level is complete. Thus, transitions from one state to another require a statement from OMNI and a request from an authorized authority.  An example is \textit{OMNI says ssmPlanPBComplete} and \textit{PlatoonLeader says crossLD}.
+
+The security policy for each module has a policy for OMNI and a policy for all authorized principals.  For OMNI, the security policy contains the clause \textit{OMNI controls omniCommands}.  In the example above, the command ssmPlanPBComplete is defined as an omniCommand.  For everyone else, the security policy has clauses of the form \textit{ssmPlanPBComplete impf (PlatoonLeader controls crossLD)}.  This is sufficient to prove complete mediation for transitions.
+
+
+\paragraph*{Diagrammatic Description}
+The colors of the states in the diagrams correspond to their colors in the overall squished diagram shown in figure \ref{overalldiagramsquashed}.  
+
+All lines represent allowable transitions with an arrow indicating the direction of the transition.  Each line is annotated with the appropriate \glsentryshort{acl} request (or command).  The last line in each module is an exception.  It connects the COMPLETE state to the initial state.  This line is not annotated.  It is not an actual transition but an indictor that the completion of this lower-level \glsentryshort{ssm} links to the higher-level \glsentryshort{ssm}.  It is implemented in the \glsentryshort{ssm} above it as a signal from the OMNI level\footnote{OMNI is all knowing.} that the lower-level \glsentryshort{ssm} is complete\footnote{Note, it is possible that the output for the transition to the COMPLETE state is \textit{OMNI says ssmPlanPBComplete}.  This may or may not have been implemented in the \glsentryshort{hol} proofs at the time this master thesis was complete.}. 
+
+\paragraph*{Naming conventions}
+What follows are the naming conventions for the diagrams.  The also apply to the \glsentryshort{hol} implementation of the \glsentryshortpl{ssm}.
 \begin{description}
 \item[state: ] all capital letters with underscores representing spaces.  Examples include: MOVE_TO_ORP, PLAN_PB, etc.
 \item[commands (or requests):] first letter is lower case.  The remaining letters toggle with a capital letter for each new word.  Examples include: moveToORP,  receiveMission, etc.  Furthermore, all commands take the name of the next state. For example, the transition from the state MOVE_TO_PB to CONDUCT_PB is conductPB.  The transition from the state COMPLETE_PLAN to ISSUE_OPORD is issueOPORD.  The only exception is the transition from the top level state PLAN_PB to the next state MOVE_TO_ORP.  The command for this transition is crossLD and not moveToORP.
@@ -128,10 +143,6 @@ The naming convention obeys that following pattern:
 \item [\glsentryshort{acl} transition requests:] all are of the form \textit{Principal says command}.  Examples include: \textit{PlatoonLeader says moveToORP}, \textit{PlatoonSergreant says actionsIn}, etc.
 \end{description}
 
-These naming conventions extend to the \glsentryshort{hol} representations of the \glsentryshortpl{ssm}.  Note also that "module" and "SSM" are used interchangeably in the following sections.  
-
-The primary purpose of the following diagrams is to present the modules in a readable manner.  (The overall, squished diagram is too small.)  These diagrams are also the basis for the \glsentryshort{hol} representation of the patrol base operations.
- 
           %%%%%%%%%%%%%%%% Subsection OMNI-Level %%%%%%%%%%%%%%%%%%%%%
 \subsection{OMNI-Level}\label{ssec:omnilevel}
 The OMNI level is not represented in the Visio diagram.  It is not really a level.  More specifically, the OMNI level represents an imaginary all-knowing entity.  The main purpose of this entity is to relay messages from one \glsentryshort{ssm} to another.  This allows for greater encapsulation of the modules. 
@@ -171,6 +182,7 @@ The top level for the hierarchy of \glsentryshortpl{ssm} is shown in figure \ref
           %%%%%%%%%%%%%%%% Subsection Horizontal Slice %%%%%%%%%%%%%%%%%%%
 \subsection{Horizontal Slice}\label{ssec:horizontalslice}
 The horizontal slice is an expansion of the states in the top level \glsentryshort{ssm}.  Each state save for the COMPLETE_PB state is expanded into an \glsentryshort{ssm}.  Each of these \glsentryshortpl{ssm} is described in the following sections.
+
                   %%%%%%%%%%%%% Subsection ssmPlanPB %%%%%%%%%%%%%%%%%%%%%
 \subsubsection{ssmPlanPB}\label{sssec:ssmPlanPB}
 The top level PLAN_PB state is expanded into the ssmPlanPB \glsentryshort{ssm} and shown in figure \ref{ssmPlanPBDiagram}.
@@ -181,6 +193,11 @@ The top level PLAN_PB state is expanded into the ssmPlanPB \glsentryshort{ssm} a
 \caption{\label{ssmPlanPBDiagram} Horizontal slice: PlanPB diagram.}
 \end{figure}
 \clearpage
+
+ssmPlanPB has two principals: PlatoonLeader and PlatoonSergeant.  Only the PlatoonLeader is authorized to make transitions among states.  
+
+All transitions are sequential.  However, the original module contains three non-sequential states.  These are represented in the diagram as the white circle. These states are TENTATIVE_PLAN, INITIATE_MOVEMENT, and RECON.  To transition from the WARNO state to the 
+
 
                   %%%%%%%%%%%%% Subsection ssmMoveToORP %%%%%%%%%%%%%%%%%%%
 \subsubsection{ssmMoveToORP}\label{sssec:ssmMoveToORP}
