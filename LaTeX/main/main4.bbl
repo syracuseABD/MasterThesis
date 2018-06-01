@@ -5,6 +5,11 @@ United States Army Ranger School, ATTN: ATSH-RB, 10850 Schneider Rd, Bldg 5024,
   Ft Benning, GA 31905.
 \newblock {\em Ranger handbook}, April 2017.
 
+\bibitem{types}
+{\em Introduction to Programming Languages/Algebraic Data Types}.
+\newblock used under the Creative Commons Attribution-ShareAlike 3.0 License,
+  August 2017.
+
 \bibitem{ChinOlder}
 Shiu-Kai Chin and Susan~Beth Older.
 \newblock {\em Access Control, Security, and Trust: A Logical Approach}.
@@ -66,10 +71,9 @@ David Turner and Yannick Welsch.
 Jagatheesan Kunasaikaran, Azlan Iqbal, Jalan Dua, and Chan~Sow Lin.
 \newblock A brief overview of functional programming languages, 2016.
 
-\bibitem{types}
-{\em Introduction to Programming Languages/Algebraic Data Types}.
-\newblock used under the Creative Commons Attribution-ShareAlike 3.0 License,
-  August 2017.
+\bibitem{constructor}
+Mathew Fluet.
+\newblock Typeconstructor, January 2015.
 
 \bibitem{BSDlicenses}
 Bsd licenses, May 2018.
@@ -121,8 +125,5 @@ Saul kripke, May 2018.
 Charles~Q. Choi.
 \newblock Alien planets with extra suns can have strange orbits.
 \newblock {\em Space.com}.
-
-\bibitem{wikiadt}
-Algebraic data types, May 2018.
 
 \end{thebibliography}
