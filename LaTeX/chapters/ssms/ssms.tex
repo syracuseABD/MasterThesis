@@ -74,7 +74,8 @@ Authentication is a way of controlling who has access to what by means of a secu
 
 Authentication in the \glsentryshort{ssm} is typically one or more functions that define which principals have control over which transitions.  A simple authorization in a \glsentryshort{ssm} is \textit{SomePrincipal controls someCommand}.    Using the access-control logic (ACL) described in Chapter \ref{chp:csbdacl} and a request of the form \textit{SomePrincipal says someCommand}, \textit{someCommand} is justified.  Of course, the monitor must first check the authentication of SomePrincipal.  Once that is verified, the monitor returns the transition type and command pair \textit{exec someCommand}.
 
-Authorization may be more complicated.  For example, transition from the PLAN_PB state to the MOVE_TO_ORP state in 
+Authorization is often more complicated.  For example, there are two security policies for the top level \glsentryshort{ssm} shown in figure \ref{ssmPBDiagram2}.  The security policy for the Omni principal is
+\[\text{\textit{Omni controls omniCommand}}.\]  This means that the Omni principal is authorized on any command type \glsentryshort{omniCommand}.  \textit{ssmPlanPBComplete} is one \textit{omniCommand} in the top level \glsentryshort{ssm} in figure \ref{ssmPBDiagram2}.  The security policy for the Platoon Leader depends on the current state because the Platoon Leader is only authorized to transition to the next state if the current state is complete.  (Omni indicates when the current state is complete.)  Thus, the security policy for the Platoon Leader on the transition from the PLAN_PB state to the MOVE_TO_ORP state in figure \ref{ssmPBDiagram2} has the form \[\text{\textit{ssmPlanPBComplete impf PlatoonLeader controls crossLE}}\]where \textit{impf} is the \glsentryshort{acl} operator for implication.
 
 \subsection{Next-state And Next-output Functions}
 The next-state and next-output functions define the behavior for the \glsentryshort{ssm}.  Whereas the behavior of the state machine is defined only for states and commands, the behavior in the \glsentryshort{ssm} includes the behavior for each transition type in combination with each command.  This means that for each command, the next-state and next-output functions define three separate behaviors: \textit{exec someCommand}, \textit{trap someCommand}, and \textit{discard someCommand}.  
@@ -88,7 +89,7 @@ Secure state machine configurations consist of five parts.
 
 \subsection{Parameterizable Secure State Machine}
 \subsection{Input Stream}
-The input to the secure state machines is in the form of a list of inputs.  Typically, these inputs are of the form \textit{P says prop (SOME cmd)}.  It is necessary to extract particular components from the list and list elements.  Several functions are defined to do this.  They are described below.  These are essentially helper functions.
+The input to the secure state machines is in the form of a list of inputs.  Elements in the list are of the form \textit{P says prop (SOME cmd)}.  It is necessary to extract particular components from the list and list elements.  Several functions are defined to do this.  They are described below.  These are essentially helper functions.
 
 \paragraph*{extractCommand}
 extractCommand takes one input of the form \textit{P says prop (SOME cmd)} and extracts the \textit{cmd} part.
@@ -214,46 +215,89 @@ This is defined similarly to \HOLFreeVar{command}.  There are two datatypes that
 \paragraph*{Option Type with Commands}
 With these definitions, it is possible to see how the options types are used with commands (datatypes).  What follows is a list of examples using the option types and commands (datatypes) described above.  The type signatures are also included because it will help the reader recognize them in the \glsentryshort{hol} code.
 \begin{description}
-\item[ ] SOME returnToBase \\
+\item[ ] SOME (SLc (ESCc returnToBase)) \\
+The type for this is escCommand Option
 The type for this is (escCommand command)Option.
-\item[ ] SOME moveToORP  \\
+\item[ ] SOME (SLc (PL moveToORP))  \\
 The type for this is ((plCommand slCommand) command)Option.  
-\item[ ] SOME ssmMoveToORPComplete\\
+\item[ ] SOME (SLc (OMNI ssmMoveToORPComplete))\\
 The type for this is ((omniCommand slCommand) command)Option.  
 \end{description}
 
-Note that in the \glsentryshort{hol} code for the patrol base operations, the reader will typically see (slCommand command)Option.  This is because the definitions require a type \HOLFreeVar{slCommand}, which includes \HOLFreeVar{plCommand}  and \HOLFreeVar{omniCommand}.
+Note that the constructors are necessary for each command. Also, note that in the \glsentryshort{hol} code for the patrol base operations, the reader will typically see (slCommand command)Option.  This is because the definitions require a type \HOLFreeVar{slCommand}, which includes \HOLFreeVar{plCommand}  and \HOLFreeVar{omniCommand}.
 
 
 
 
 \subsubsection{Transition Types}
 Transition datatypes indicate how a command is handled by the monitor.  The three transition datatypes are described below. 
+
 \HOLFreeVar{trType} = \HOLConst{discard} 'cmdlist \HOLTokenBar{} \HOLConst{trap} 'cmdlist \HOLTokenBar{} \HOLConst{exec} 'cmdlist
 
+The 'cmdlist refers to a list of commands of the form discussed in the section above.  For example, to execute the transition from the PLAN_PB state to the MOVE_TO_ORP state, the monitor must return the transition type and command pair with the later of the pair in the form of a list 
+\[\text{\textit{exec [SOME (SLc (PL crossLD))]}} \]
 
+where \textit{SOME (SLc (PL crossLD))} is the single item in the cmdlist.  The transition type with the command list is then passed to the next-state and next-output functions.
 
-
-\subsubsection{Command Type}
 \subsection{Authentication}
+Authorization is context dependent. But, a parametrizable authentication is defined in the parametrizable \glsentryshort{ssm}.
 
 \begin{tabbing}
 \parskip=8pt
 
 \HOLTokenTurnstile{} \=\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{elementTest} \HOLBoundVar{x}. \\
-    \> \HOLConst{authenticationTest} \HOLBoundVar{elementTest} \HOLBoundVar{x} \\
-    \> \HOLSymConst{\HOLTokenEquiv{}} \\
+    \> \HOLConst{authenticationTest} \HOLBoundVar{elementTest} \HOLBoundVar{x}  \HOLSymConst{\HOLTokenEquiv{}} \\
     \> \HOLConst{FOLDR} (\HOLTokenLambda{}\HOLBoundVar{p} \HOLBoundVar{q}. \HOLBoundVar{p} \HOLSymConst{\HOLTokenConj{}} \HOLBoundVar{q}) \HOLConst{T} (\HOLConst{MAP} \HOLBoundVar{elementTest} \HOLBoundVar{x})
 \parskip=18pt
 \end{tabbing}
+
+This function takes an elementTest function and an input list as parameters.  The elementTest function is named inputOK and it is defined separately for each \glsentryshort{ssm}.  elementTest takes a single input of the form \textit{SomePrincipal says someCommand}.  It returns TT (the \glsentryshort{acl} representation of True) if the input is authenticated and FF otherwise.  The authenticationTest function FOLDRs the elementTest function over the input list x with the conjunction function and True as the accumulator\footnote{This means that the elementTest function is applied to each element in the input list x, resulting in a TT or FF value for each element in the input list x.   Then, in essence, the value of the conjunction of all these values is returned.}  Thus, if all the input elements in the input list x pass the elementTest, the authenticationTest function returns true, otherwise it returns false.  
      
 \subsection{Authorization}
-\subsection{Next-state Function}
-\subsection{Next-output Function}
+Authorization is the security context and it is \glsentryshort{ssm}-dependent. This means that each \glsentryshort{ssm} defines its own security context.  The parametrizable \glsentryshort{ssm} allows for two ways to define the security context and pass them as parameters.  The first is the state interpretation function. This function takes a state and an input list as parameters.  It defines the security context based on state.  All state-dependent behavior may also be defined in this function.
+
+The second function is the security context function.  It takes only the input list as a parameter.  It defines the security context based that is true for any state.
+
+\subsection{Next-state And Next-output Functions}
+The next-state and next-output functions are parameters to the parametrizable \glsentryshort{ssm}.  They are defined separately in each \glsentryshort{ssm}.  In the parametrizable \glsentryshort{ssm} they are denoted by NS and Out, respectively.
 
 \subsection{Configurations}
-The five-part representation of configurations in \glsentryshort{hol} are shown below.
+Configurations in the \glsentryshortpl{ssm} have six components.  Each components are defined separately in the \glsentryshortpl{ssm}.  The \glsentryshortpl{ssm} must define each of the six components to use the parametrizable \glsentryshort{ssm}.  These components are:
+\begin{enumerate}
+\item authentication test function.  \\
+The type signature is 
 
+\hspace{0.5cm}  (('command \HOLTyOp{option}, 'principal, 'd, 'e) \HOLTyOp{Form} -> \HOLTyOp{bool})
+
+\item state interpretation function.  \\
+The type signature is
+\begin{tabbing}
+\hspace{0.5cm}('state -> \=('command \HOLTyOp{option}, 'principal, 'd, 'e) \HOLTyOp{Form} \HOLTyOp{list} -> \\
+				      \>('command \HOLTyOp{option}, 'principal, 'd, 'e) \HOLTyOp{Form} \HOLTyOp{list}) 
+\end{tabbing}
+\item security context function.  \\
+The type signature is 
+
+ \hspace{0.5cm}   (('command \HOLTyOp{option}, 'principal, 'd, 'e) \HOLTyOp{Form} \HOLTyOp{list} -> \\
+\hspace{0.5cm}    ('command \HOLTyOp{option}, 'principal, 'd, 'e) \HOLTyOp{Form} \HOLTyOp{list}) 
+
+\item input list stream.  \\
+The type signature is
+
+ \hspace{0.5cm}  (('command \HOLTyOp{option}, 'principal, 'd, 'e) \HOLTyOp{Form} \HOLTyOp{list} \HOLTyOp{list}) \
+
+\item state.  \\
+The type signature is
+
+\hspace{0.5cm}   'state
+
+\item output stream.  \\
+The type signature is 
+
+\hspace{0.5cm} ('output \HOLTyOp{list})
+\end{enumerate}
+
+The definition for the configuration datatype is shown below.
 
 \begin{tabbing}
 \parskip=8pt
@@ -270,11 +314,8 @@ The five-part representation of configurations in \glsentryshort{hol} are shown 
 \parskip=18pt
 \end{tabbing}
 
-\subsubsection{State Interpretation}
-\subsubsection{Security context}
-\subsubsection{Input stream}
-\subsubsection{State}
-\subsubsection{Output stream}
+CFG is the constructor for the datatype.
+
 \subsection{Configuration Interpretation}
 
 \begin{tabbing}
