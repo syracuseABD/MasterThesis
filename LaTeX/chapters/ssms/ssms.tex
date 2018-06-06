@@ -340,12 +340,14 @@ With satList defined, the meaning of CFGInterpret should follow.
 \HOLTokenTurnstile{} \HOLConst{CFGInterpret}\\
 \hspace{0.5cm}(\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os})
      (\HOLConst{CFG} \HOLFreeVar{elementTest} \HOLFreeVar{stateInterp} \HOLFreeVar{context} (\HOLFreeVar{x}\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{state}
-        \HOLFreeVar{outStream}) \HOLSymConst{\HOLTokenEquiv{}} \\
+     \HOLFreeVar{outStream}) \HOLSymConst{\HOLTokenEquiv{}} \\
 \hspace{0.5cm}(\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) \HOLConst{satList} \HOLFreeVar{context} \HOLFreeVar{x} \HOLSymConst{\HOLTokenConj{}} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) \HOLConst{satList} \HOLFreeVar{x} \HOLSymConst{\HOLTokenConj{}}\\
 \hspace{0.5cm}(\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) \HOLConst{satList} \HOLFreeVar{stateInterp} \HOLFreeVar{state} \HOLFreeVar{x}
 \parskip=18pt
 \end{tabbing}
 
+\subsection{Transition Definitions}
+Transitions are defined in \glsentryshort{hol} 
 \paragraph*{rule0}
 \parskip=8pt
 \begin{tabbing}
@@ -433,84 +435,6 @@ With satList defined, the meaning of CFGInterpret should follow.
 \end{tabbing}
 
 
-\subsection{Transition Definitions}
-
-
-\paragraph*{(TR_rules, TR_cases_TR_ind)}
-\begin{tabbing}
-\parskip=8pt
-\HOLTokenTurnstile{} \\
-\hspace{0.3cm}(\HOLConst{TR} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) (\HOLConst{exec} (\HOLConst{inputList} \HOLFreeVar{x}))\\
-\hspace{0.5cm}(\HOLConst{CFG} \\
-\hspace{0.9cm}\HOLFreeVar{elementTest} \\
-\hspace{0.9cm}\HOLFreeVar{stateInterp} \\
-\hspace{0.9cm}\HOLFreeVar{context} \\
-\hspace{0.9cm}(\HOLFreeVar{x}\HOLSymConst{::}\HOLFreeVar{ins}) \\
-\hspace{0.9cm}\HOLFreeVar{s} \\
-\hspace{0.9cm}\HOLFreeVar{outs})\\
-\hspace{0.5cm}(\HOLConst{CFG} \\
-\hspace{0.9cm}\HOLFreeVar{elementTest} \\
-\hspace{0.9cm}\HOLFreeVar{stateInterp} \\
-\hspace{0.9cm}\HOLFreeVar{context} \\
-\hspace{0.9cm}\HOLFreeVar{ins}\\
-\hspace{0.9cm}(\HOLFreeVar{NS} \HOLFreeVar{s} (\HOLConst{exec} (\HOLConst{inputList} \HOLFreeVar{x})))\\
-\hspace{0.9cm}(\HOLFreeVar{Out} \HOLFreeVar{s} (\HOLConst{exec} (\HOLConst{inputList} \HOLFreeVar{x}))\HOLSymConst{::}\HOLFreeVar{outs})) \\
-\hspace{0.3cm}\HOLSymConst{\HOLTokenEquiv{}}\\
-\hspace{0.3cm}\HOLConst{authenticationTest} \HOLFreeVar{elementTest} \HOLFreeVar{x} \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}\HOLConst{CFGInterpret} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os})\\
-\hspace{0.5cm}(\HOLConst{CFG} \\
-\hspace{0.9cm}\HOLFreeVar{elementTest} \\
-\hspace{0.9cm}\HOLFreeVar{stateInterp} \\
-\hspace{0.9cm}\HOLFreeVar{context} (\HOLFreeVar{x}\HOLSymConst{::}\HOLFreeVar{ins}) \\
-\hspace{0.9cm}\HOLFreeVar{s} \\
-\hspace{0.9cm}\HOLFreeVar{outs})) \\
-\hspace{0.3cm}\HOLSymConst{\HOLTokenConj{}}\\ 
-\hspace{0.3cm}(\HOLConst{TR} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) (\HOLConst{trap} (\HOLConst{inputList} \HOLFreeVar{x}))\\
-\hspace{0.5cm}(\HOLConst{CFG} \\
-\hspace{0.9cm}\HOLFreeVar{elementTest} \\
-\hspace{0.9cm}\HOLFreeVar{stateInterp} \\
-\hspace{0.9cm}\HOLFreeVar{context} \\
-\hspace{0.9cm}(\HOLFreeVar{x}\HOLSymConst{::}\HOLFreeVar{ins}) \\
-\hspace{0.9cm}\HOLFreeVar{s} \\
-\hspace{0.9cm}\HOLFreeVar{outs})\\
-\hspace{0.5cm}(\HOLConst{CFG} \\
-\hspace{0.9cm}\HOLFreeVar{elementTest} \\
-\hspace{0.9cm}\HOLFreeVar{stateInterp} \\
-\hspace{0.9cm}\HOLFreeVar{context} \\
-\hspace{0.9cm}\HOLFreeVar{ins}\\
-\hspace{0.9cm}(\HOLFreeVar{NS} \HOLFreeVar{s} (\HOLConst{trap} (\HOLConst{inputList} \HOLFreeVar{x})))\\
-\hspace{0.9cm}(\HOLFreeVar{Out} \HOLFreeVar{s} (\HOLConst{trap} (\HOLConst{inputList} \HOLFreeVar{x}))\HOLSymConst{::}\HOLFreeVar{outs})) \\
-\hspace{0.3cm}\HOLSymConst{\HOLTokenEquiv{}}\\
-\hspace{0.3cm}\HOLConst{authenticationTest} \HOLFreeVar{elementTest} \HOLFreeVar{x} \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}\HOLConst{CFGInterpret} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os})\\
-\hspace{0.5cm}(\HOLConst{CFG} \\
-\hspace{0.9cm}\HOLFreeVar{elementTest} \\
-\hspace{0.9cm}\HOLFreeVar{stateInterp} \\
-\hspace{0.9cm}\HOLFreeVar{context} \\
-\hspace{0.9cm}(\HOLFreeVar{x}\HOLSymConst{::}\HOLFreeVar{ins}) \\
-\hspace{0.9cm}\HOLFreeVar{s} \HOLFreeVar{outs})) \\
-\hspace{0.3cm}\HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{TR} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) (\HOLConst{discard} (\HOLConst{inputList} \HOLFreeVar{x}))\\
-\hspace{0.5cm}(\HOLConst{CFG} \\
-\hspace{0.9cm}\HOLFreeVar{elementTest} \\
-\hspace{0.9cm}\HOLFreeVar{stateInterp} \\
-\hspace{0.9cm}\HOLFreeVar{context} \\
-\hspace{0.9cm}(\HOLFreeVar{x}\HOLSymConst{::}\HOLFreeVar{ins}) \\
-\hspace{0.9cm}\HOLFreeVar{s} \HOLFreeVar{outs})\\
-\hspace{0.5cm}(\HOLConst{CFG} \\
-\hspace{0.9cm}\HOLFreeVar{elementTest}\\
-\hspace{0.9cm}\HOLFreeVar{stateInterp} \\
-\hspace{0.9cm}\HOLFreeVar{context} \\
-\hspace{0.9cm}\HOLFreeVar{ins}\\
-\hspace{0.9cm}(\HOLFreeVar{NS} \HOLFreeVar{s} (\HOLConst{discard} (\HOLConst{inputList} \HOLFreeVar{x})))\\
-\hspace{0.9cm}(\HOLFreeVar{Out} \HOLFreeVar{s} (\HOLConst{discard} (\HOLConst{inputList} \HOLFreeVar{x}))\HOLSymConst{::}\HOLFreeVar{outs})) \\
-\hspace{0.3cm}\HOLSymConst{\HOLTokenEquiv{}}\\
-\hspace{0.3cm}\HOLSymConst{\HOLTokenNeg{}}\HOLConst{authenticationTest} \HOLFreeVar{elementTest} \HOLFreeVar{x})
-\parskip=18pt
-\end{tabbing}
-
-
-
 \paragraph*{TR_exec_cmd_rule}
 \begin{tabbing}
 \parskip=8pt
@@ -552,6 +476,51 @@ With satList defined, the meaning of CFGInterpret should follow.
 \hspace{1.1cm}\HOLBoundVar{s} \\
 \hspace{1.1cm}\HOLBoundVar{outs}) \\
 \hspace{0.5cm}\HOLSymConst{\HOLTokenConj{}} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{satList} \HOLConst{propCommandList} \HOLBoundVar{x}
+\parskip=18pt
+\end{tabbing}
+
+\paragraph*{TR_trap_cmd_rule}
+\begin{tabbing}
+\parskip=8pt
+\HOLTokenTurnstile{} \\
+\hspace{0.3cm}\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{elementTest} \HOLBoundVar{context} \HOLBoundVar{stateInterp} \HOLBoundVar{x} \HOLBoundVar{ins} \HOLBoundVar{s} \HOLBoundVar{outs}.\\
+\hspace{0.5cm} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.\\
+\hspace{0.9cm}\HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})\\
+\hspace{1.1cm}(\HOLConst{CFG} \\
+\hspace{1.3cm}\HOLBoundVar{elementTest} \\
+\hspace{1.3cm}\HOLBoundVar{stateInterp} \\
+\hspace{1.3cm}\HOLBoundVar{context} \\
+\hspace{1.3cm}(\HOLBoundVar{x}\HOLSymConst{::}\HOLBoundVar{ins}) \\
+\hspace{1.3cm}\HOLBoundVar{s}\\
+\hspace{1.3cm}\HOLBoundVar{outs}) \\
+\hspace{0.9cm}\HOLSymConst{\HOLTokenImp{}} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{sat} \HOLConst{prop} \HOLConst{NONE}) \\
+\hspace{0.5cm}\HOLSymConst{\HOLTokenImp{}} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{NS} \HOLBoundVar{Out} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.\\
+\hspace{0.9cm}\HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{trap} (\HOLConst{inputList} \HOLBoundVar{x}))\\
+\hspace{1.1cm}(\HOLConst{CFG} \\
+\hspace{1.3cm}\HOLBoundVar{elementTest} \\
+\hspace{1.3cm}\HOLBoundVar{stateInterp} \\
+\hspace{1.3cm}\HOLBoundVar{context} \\
+\hspace{1.3cm}(\HOLBoundVar{x}\HOLSymConst{::}\HOLBoundVar{ins}) \\
+\hspace{1.3cm}\HOLBoundVar{s} \\
+\hspace{1.3cm}\HOLBoundVar{outs})\\
+\hspace{1.1cm}(\HOLConst{CFG} \\
+\hspace{1.3cm}\HOLBoundVar{elementTest} \\
+\hspace{1.3cm}\HOLBoundVar{stateInterp} \\
+\hspace{1.3cm}\HOLBoundVar{context} \\
+\hspace{1.3cm}\HOLBoundVar{ins}\\
+\hspace{1.3cm}(\HOLBoundVar{NS} \HOLBoundVar{s} (\HOLConst{trap} (\HOLConst{inputList} \HOLBoundVar{x})))\\
+\hspace{1.3cm}(\HOLBoundVar{Out} \HOLBoundVar{s} (\HOLConst{trap} (\HOLConst{inputList} \HOLBoundVar{x}))\HOLSymConst{::}\HOLBoundVar{outs})) \\
+\hspace{0.5cm}\HOLSymConst{\HOLTokenEquiv{}} \HOLConst{authenticationTest} \HOLBoundVar{elementTest} \HOLBoundVar{x} \\
+\hspace{0.5cm}\HOLSymConst{\HOLTokenConj{}} \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})\\
+\hspace{0.9cm}(\HOLConst{CFG} \\
+\hspace{1.1cm}\HOLBoundVar{elementTest} \\
+\hspace{1.1cm}\HOLBoundVar{stateInterp} \\
+\hspace{1.1cm}\HOLBoundVar{context} \\
+\hspace{1.1cm}(\HOLBoundVar{x}\HOLSymConst{::}\HOLBoundVar{ins}) \\
+\hspace{1.1cm}\HOLBoundVar{s} \\
+\hspace{1.1cm}\HOLBoundVar{outs}) \\
+\hspace{1.1cm}\HOLSymConst{\HOLTokenConj{}}\\
+\hspace{0.5cm}(\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{sat} \HOLConst{prop} \HOLConst{NONE}
 \parskip=18pt
 \end{tabbing}
 
