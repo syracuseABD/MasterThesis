@@ -101,7 +101,7 @@
 \contentsline {subsection}{\numberline {6.3.6}Next-state And Next-output Functions}{82}{subsection.6.3.6}
 \contentsline {subsection}{\numberline {6.3.7}Configurations}{82}{subsection.6.3.7}
 \contentsline {subsection}{\numberline {6.3.8}Configuration Interpretation}{83}{subsection.6.3.8}
-\contentsline {subsection}{\numberline {6.3.9}Transition Definitions}{86}{subsection.6.3.9}
+\contentsline {subsection}{\numberline {6.3.9}Transition Definitions}{87}{subsection.6.3.9}
 \contentsline {chapter}{\numberline {7}Patrol Base Operations as Secure State Machines}{92}{chapter.7}
 \contentsline {section}{\numberline {7.1}ssmPB: A Typical Example from the Hierarchy}{93}{section.7.1}
 \contentsline {subsection}{\numberline {7.1.1}Principals}{93}{subsection.7.1.1}

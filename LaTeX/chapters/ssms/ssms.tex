@@ -317,6 +317,23 @@ The definition for the configuration datatype is shown below.
 CFG is the constructor for the datatype.
 
 \subsection{Configuration Interpretation}
+The monitor must interpret the configuration.  The CFGInterpret function take as input a Kripke structure and a configuration.  It returns a conjunction of three things: a satList of the security context, a satList of the input stream, and a satList of the stateInterpretation function.  
+
+satList is a list of elements that satisfy the property of soundness as discussed in chapter \ref{chp:csbdacl} section \ref{sssec:soundness}\footnote{Note that in the \glsentryshort{acl} implementation of the "satisfies" and "soundness" properties, "satisfies" serves as "soundness" when it is generalized for all Kripke structures.}.  satList is defined in satListTheory.  
+
+\begin{tabbing}
+\parskip=8pt
+\HOLTokenTurnstile{} \hspace{0.3cm}\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os} \HOLBoundVar{formList}.\\
+\hspace{0.5cm}(\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{satList} \HOLBoundVar{formList} \HOLSymConst{\HOLTokenEquiv{}} \\
+\hspace{0.5cm} \HOLConst{FOLDR} (\HOLTokenLambda{}\HOLBoundVar{x} \HOLBoundVar{y}. \HOLBoundVar{x} \HOLSymConst{\HOLTokenConj{}} \HOLBoundVar{y}) \HOLConst{T} (\HOLConst{MAP} (\HOLTokenLambda{}\HOLBoundVar{f}. (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{sat} \HOLBoundVar{f}) \HOLBoundVar{formList})
+\parskip=18pt
+\end{tabbing}
+
+satList MAPs the \textit{sat} operator onto each element in the formList. It then FOLDRs the formList elements with the conjunction function and accumulator True.  This means that satList applied to formList returns true if each element in the list satisfies the \textit{sat} property.
+
+Other properties of satList can be found in appendix \ref{ppacl}.
+
+With satList defined, the meaning of CFGInterpret should follow.  
 
 \begin{tabbing}
 \parskip=8pt
