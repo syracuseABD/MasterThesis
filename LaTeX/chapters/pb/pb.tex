@@ -150,6 +150,11 @@ The OMNI level is not represented in the Visio diagram.  It is not really a leve
 In all \glsentryshortpl{ssm}, OMNI is a principal who has authority over OMNI level commands.  These commands communicate the completion of a lower-level \glsentryshort{ssm}.  For example, at the top level, before the Platoon Leader can transition from the PLAN_PB state to the MOVE_TO_ORP state, he must receive the command \textit{OMNI says ssmPlanPBComplete}.  The top level security policy contains the clause \textit{OMNI controls ssmPlanPBComplete}.  The \textit{Controls} rule discussed in section \ref{ssec:inferencerules} then allows the Platoon Leader to conclude that the lower-level \glsentryshort{smm} is complete.  
 \clearpage
 
+
+%OMNI serves as an integrating principal.  OMNI was created to accommodate encapsulation of all the secure state machines.  OMNI "knows" when one secure state machine is complete and then conveys that information to other secure state machines as needed.  For example, In the top level \glsentryshort{ssm}, transition from the PLAN_PB state to the MOVE_TO_ORP state requires completion of the ssmPlanPB secure state machine.  OMNI knows when this happens and relays that information to the top level \glsentryshort{ssm}.  In this way, the top level knows what is happening at other levels only through OMNI and need not be concerned with the lower level \glsentryshortpl{ssm} otherwise.
+
+
+
           %%%%%%%%%%%%%%%% Subsection Escape %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Escape}\label{ssec:escape}
 A diagram of the escape level is shown in figure \ref{escapeDiagram}.  The purpose of the escape level is to model situation wherein the patrol base operations must be aborted.  
@@ -176,6 +181,7 @@ The top level for the hierarchy of \glsentryshortpl{ssm} is shown in figure \ref
 \includegraphics[width=\textwidth]{../figures/ssmPBDiagram}
 \caption{\label{ssmPBDiagram} Top level diagram.}
 \end{figure}
+
  The details are discussed along with figure \ref{pbtoplevel}.  The only difference in this diagram is that the state names are all capitalized with underscores substituted for spaces.
 
  \clearpage
