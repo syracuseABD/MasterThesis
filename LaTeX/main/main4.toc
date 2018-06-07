@@ -128,8 +128,8 @@
 \contentsline {subsection}{\numberline {7.3.3}Commands}{97}{subsection.7.3.3}
 \contentsline {subsection}{\numberline {7.3.4}Output}{98}{subsection.7.3.4}
 \contentsline {subsection}{\numberline {7.3.5}Next-State Function}{99}{subsection.7.3.5}
-\contentsline {subsection}{\numberline {7.3.6}Next-Output Function}{99}{subsection.7.3.6}
-\contentsline {subsection}{\numberline {7.3.7}Authentication}{100}{subsection.7.3.7}
+\contentsline {subsection}{\numberline {7.3.6}Next-Output Function}{100}{subsection.7.3.6}
+\contentsline {subsection}{\numberline {7.3.7}Authentication}{101}{subsection.7.3.7}
 \contentsline {subsection}{\numberline {7.3.8}Authorization}{102}{subsection.7.3.8}
 \contentsline {subsection}{\numberline {7.3.9}Proved Theorems}{102}{subsection.7.3.9}
 \contentsline {chapter}{\numberline {8}Other Theories}{103}{chapter.8}
