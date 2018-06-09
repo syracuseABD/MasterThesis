@@ -44,10 +44,36 @@ The next-output function describes the next output of the state machine given th
 In this master thesis, the next-output function contains the line \[\text{\textit{NS MOVE_TO_ORP conductORP = ConductORP}}\]
 
 \subsection{Configuration}
-A configuration describes the status of a state machine using there pieces of information: (1) current state, (2) a list of inputs (input stream), and (3) a list of outputs (output stream). The information in the configuration is sufficient to instruct the state machine's next behavior.
+A configuration describes the state machine using input and output streams \cite{certmanual}. A configuration has there components: (1) current state, (2) a list of inputs (input stream), and (3) a list of outputs (output stream). The information in the configuration is sufficient to instruct the state machine's next behavior.
 
-\subsection{Transitions}
+\subsection{TR Relations}
+Transition relations define the behavior of the state machine based on its input, configuration, and the next configuration.  TR (transition relation) takes an input, an initial configuration, and a final configuration.  This should be thought of as a proposition\footnote{Proposition are necessary for proving properties of the state machine.  In the case of transitions, they can be proved to be either true or false.}?  For example, given the input and the initial configuration does the final configuration follow?  If so, then the proposition is true.  Otherwise, it is false.  A TR definition using configurations is shown below.
 
+TR input\\
+CFG \\
+\hspace{1cm}input::inputList\\
+\hspace{1cm}CURRENT_STATE\\
+\hspace{1cm}outList\\
+CFG\\
+\hspace{1cm}inputList\\
+\hspace{1cm}(NS input CURRENT_STATE)\\
+\hspace{1cm}(NOut input CURRENT_STATE )::output
+
+
+CFG denotes that what follows are the configuration components.  The first configuration is before transition and the second configuration is after.  The second configuration has the next-state, the next input (in the input stream) and the next-output as components.  
+
+The input stream n the first configuration is a list. The double colons (::) separate the first element of the list (head) from the remainder of the list.  Using an input stream, the next configuration can be defined using the remainder of the input stream (which could be the empty list) inputList as its input. 
+
+The state in the first configuration is just the current state.  The next state in the final configuration is the result of the next-state function \textit{NS input CURRENT_STATE}.
+
+The output in the first configuration is the outputList.  It's head should be the output that corresponds to the current state.  The output in the final configuration is the result of the next-output function cons'd onto the front of the outputList.
+
+TR relations with configurations form the basis for the \glsentryshort{hol} representation of state machines, which is a precursor to the secure state machines implemented in this master thesis.  
+
+
+
+
+$\text{TR } x \xrightarrow[\text{}]{\text{x}}$
 
       %%%%%%%%%%%%%%%%%%% Section Secure State Machines %%%%%%%%%
 \section{Secure State Machines}\label{sec:ssm}
@@ -112,13 +138,40 @@ Authorization is often more complicated.  For example, there are two security po
 The next-state and next-output functions define the behavior for the \glsentryshort{ssm}.  Whereas the behavior of the state machine is defined only for states and commands, the behavior in the \glsentryshort{ssm} includes the behavior for each transition type in combination with each command.  This means that for each command, the next-state and next-output functions define three separate behaviors: \textit{exec someCommand}, \textit{trap someCommand}, and \textit{discard someCommand}.  
 
 \subsection{Configurations}
-The configuration is a description of the status of the \glsentryshort{ssm} using six pieces of information: (1) an authentication function, (2) a state interpretation function (a state-dependent security policy), (3), a security context, (4) an input list (a command list), (5) a state, and (6) an output list.   The next-state and next-output functions are not part of the configuration because they define the permanent structure of the \glsentryshort{ssm}.
+The configuration in the secure state machine adds three additional components, for a total of six: (1) an authentication function, (2) a state interpretation function (a state-dependent security policy), (3), a security context, (4) an input list (a command list), (5) a state, and (6) an output list.   The next-state and next-output functions are not part of the configuration because they define the permanent structure of the \glsentryshort{ssm}.
+
+\subsection{TR Relations}
+Transition relations in the secure state machine are similar to those for the state machine.  
+
+TR (trTpye input)\\
+CFG \\
+\hspace{1cm}authenticationTest\\
+\hspace{1cm}stateInterpretation\\
+\hspace{1cm}securityContext\\
+\hspace{1cm}input::inputList\\
+\hspace{1cm}CURRENT_STATE\\
+\hspace{1cm}outList\\
+CFG\\
+\hspace{1cm}authenticationTest\\
+\hspace{1cm}stateInterpretation\\
+\hspace{1cm}securityContext\\
+\hspace{1cm}inputList\\
+\hspace{1cm}(NS (tyType input) CURRENT_STATE)\\
+\hspace{1cm}(NOut (trType input) CURRENT_STATE )::output
+
+In addition to the three additional components, the transition type (trType) is added to the front of the input.  Because the next-state and next-output functions are defined in terms of the transition type and command pair, the trType is also used in these functions.   
+
+The authenticationTest, stateInterpretation, and securityContext functions are the same in both the initial and final configurations.
+
 
 
       %%%%%%%%%%%%%%%%%%% Section SSMs in HOL %%%%%%%%%%%%%
 \section{Secure State Machines in HOL}\label{sec:sminHOL}
+The secure state machines are implemented in \glsentryshort{hol}.  This section describes the components of the parametrizable secure state machine (denoted ssm with lower-case letters).
 
 \subsection{Parameterizable Secure State Machine}
+ssm is implemented as a parametrizable secure state machine. Parametrization allows for re-use of common definitions and theorems in the \glsentryshort{ssm} model.
+
 \subsection{Input Stream}
 The input to the secure state machines is in the form of a list of inputs.  Elements in the list are of the form \textit{P says prop (SOME cmd)}.  It is necessary to extract particular components from the list and list elements.  Several functions are defined to do this.  They are described below.  These are essentially helper functions.
 
