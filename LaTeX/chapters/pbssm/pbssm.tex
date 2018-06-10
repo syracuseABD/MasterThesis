@@ -161,7 +161,7 @@ There are 14 outputs.  But, PlanPB, TentativePlan, InitiateMovement, and Recon a
 \end{tabbing}
 
 \subsection{Next-State Function}
-The next-state function takes the current state and a transition type and inputList pair.  It returns the next-state.  For the \textit{exec} transition type, an if-then-else decision statement checks the state and input.  If the input indicates a transition, then transition occurs, else no state change occurs.  
+The next-state function takes the current state and a transition type and inputList pair.  It returns the next-state.  For the \textit{exec} transition type, an if-then-else decision statement checks the state and input.  If the input indicates a transition, then transition occurs, else no state change occurs.  The WARNO state is an exception.  It requires four inputs as described at the beginning of this section. To do this, four functions extract the appropriate command from the input list.  If all four commands are not present, then the else state returns WARNO (i.e., no state change occurs).
 
 For the \textit{trap} and \textit{discard} transition types (the last two statements on the last line), the current state is returned for any command. 
 

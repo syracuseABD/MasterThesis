@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 JUN 2018 17:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  10 JUN 2018 18:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1439,16 +1439,15 @@ Package pdftex.def Info: ../figures/ssmPlanPBDiagram.png used on input line 58.
 
 (pdftex.def)             Requested size: 452.9679pt x 178.59235pt.
  [102] [103]
-[104] [105]
+[104] [105] [106]
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 166.
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 166.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 168.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 168.
 
  (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-[106] [107] [108] [109] [110] [111] [112] [113] [114] [115] [116] [117]
-[118] [119] [120]) [121] (../chapters/other/other.tex
+) [107] [108] [109] [110] [111] [112] [113] [114] [115] [116] [117] [118]
+[119] [120]) [121] (../chapters/other/other.tex
 Chapter 8.
 [122
 
@@ -3666,7 +3665,7 @@ sfti0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sf
 ti1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti
 1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on main4.pdf (261 pages, 4645204 bytes).
+Output written on main4.pdf (261 pages, 4645439 bytes).
 PDF statistics:
  4138 PDF objects out of 4296 (max. 8388607)
  3613 compressed objects within 37 object streams
