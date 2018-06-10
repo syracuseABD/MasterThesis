@@ -117,7 +117,7 @@ val secContext_def = Define `
 secContext (s:slState) (x:((slCommand command)option, stateRole, 'd,'e)Form list) =
     if (s = WARNO) then
         (if (getRecon         x = [SOME (SLc (PL recon))
-	    		           :(slCommand command)option] ) /\
+                                   :(slCommand command)option] ) /\
 	    (getTenativePlan  x = [SOME (SLc (PL tentativePlan))
 	    		      	   :(slCommand command)option]) /\
             (getReport        x = [SOME (SLc (PL report1))
@@ -136,6 +136,11 @@ secContext (s:slState) (x:((slCommand command)option, stateRole, 'd,'e)Form list
 	 else [PL_notWARNO_Auth (getPlCom x)]`
 
 (* ==== Back-up copy ====
+(* Test theorem for EmitTeX printing. *)
+
+val testTheorem = ASSUME``T=T``
+
+val _= save_thm("testTheorem",testTheorem)
 
  ==== End back-up copy ==== *)
 

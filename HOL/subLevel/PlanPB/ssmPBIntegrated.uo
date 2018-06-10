@@ -3,5 +3,5 @@ $(HOLDIR)/sigobj/Overlay
 $(HOLDIR)/sigobj/Parse
 $(HOLDIR)/sigobj/boolLib
 $(HOLDIR)/sigobj/bossLib
-/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/subLevel/PlanPB/ssmPBIntegrated
-/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/subLevel/PlanPB/ssmPBIntegrated.sml
+/home/sun_goddess/Desktop/MT10June2018/MasterThesis/HOL/subLevel/PlanPB/ssmPBIntegrated
+/home/sun_goddess/Desktop/MT10June2018/MasterThesis/HOL/subLevel/PlanPB/ssmPBIntegrated.sml

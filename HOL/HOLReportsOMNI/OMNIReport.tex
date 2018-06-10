@@ -10,7 +10,7 @@
 \input{HOLssm}
 \input{HOLsatList}
 \input{HOLssminfRules}
-\input{HOLssmPB}
+\input{HOLPBssmPBIntegrated}
 \input{HOLPBTypeIntegrated}
 \input{HOLPBIntegratedDef}
 \input{HOLssmConductORP}
@@ -23,6 +23,7 @@
 \input{HOLMoveToPBType}
 \input{HOLssmPlanPB}
 \input{HOLPlanPBType}
+\input{HOLPlanPBDef}
 
 \tableofcontents
 \cleardoublepage
@@ -129,28 +130,6 @@
 \HOLsatListTheorems
 
 
-% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-\section{ssmPB Theory}
-\index{ssmPB Theory@\textbf  {ssmPB Theory}}
-\begin{flushleft}
-\textbf{Built:} \HOLssmPBDate \\[2pt]
-\textbf{Parent Theories:} PBType, ssm11, OMNIType
-\end{flushleft}
-% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-% No datatypes
-
-\subsection{Definitions}
-\index{ssmPB Theory@\textbf  {ssmPB Theory}!Definitions}
-% .....................................
-
-\HOLssmPBDefinitions
-
-\subsection{Theorems}
-\index{ssmPB Theory@\textbf  {ssmPB Theory}!Theorems}
-% .....................................
-
-\HOLssmPBTheorems
 
 % ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 \section{PBTypeIntegrated Theory}
@@ -423,6 +402,29 @@
 % .....................................
 
 \HOLPlanPBTypeTheorems
+
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+\section{PlanPBDef Theory}
+\index{PlanPBDef Theory@\textbf  {PlanPBDef Theory}}
+\begin{flushleft}
+\textbf{Built:} \HOLPlanPBDefDate \\[2pt]
+\textbf{Parent Theories:} PlanPBType, aclfoundation, OMNIType
+\end{flushleft}
+% ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+% No datatypes
+
+\subsection{Definitions}
+\index{PlanPBDef Theory@\textbf  {PlanPBDef Theory}!Definitions}
+% .....................................
+
+\HOLPlanPBDefDefinitions
+
+\subsection{Theorems}
+\index{PlanPBDef Theory@\textbf  {PlanPBDef Theory}!Theorems}
+% .....................................
+
+\HOLPlanPBDefTheorems
 
 \HOLindex
 

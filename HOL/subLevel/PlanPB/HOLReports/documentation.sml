@@ -1,7 +1,7 @@
-app load [ "PlanPBTypeTheory", "ssmPlanPBTheory",
+app load [ "PlanPBTypeTheory", "ssmPlanPBTheory","PlanPBDefTheory",
           "EmitTeX"];
 
 open EmitTeX;
 
 print_theories_as_tex_doc
-["PlanPBType", "ssmPlanPB"] "Report";
+["PlanPBType", "ssmPlanPB","PlanPBDef"] "Report";

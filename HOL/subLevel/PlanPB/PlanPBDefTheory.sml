@@ -13,17 +13,17 @@ struct
   in end;
   val _ = Theory.link_parents
           ("PlanPBDef",
-          Arbnum.fromString "1526502834",
-          Arbnum.fromString "946399")
+          Arbnum.fromString "1528669411",
+          Arbnum.fromString "956487")
           [("PlanPBType",
-           Arbnum.fromString "1526502832",
-           Arbnum.fromString "633071"),
+           Arbnum.fromString "1528669409",
+           Arbnum.fromString "421593"),
            ("aclfoundation",
-           Arbnum.fromString "1526502736",
-           Arbnum.fromString "334353"),
+           Arbnum.fromString "1528669307",
+           Arbnum.fromString "917513"),
            ("OMNIType",
-           Arbnum.fromString "1526502768",
-           Arbnum.fromString "51917")];
+           Arbnum.fromString "1528669340",
+           Arbnum.fromString "42550")];
   val _ = Theory.incorporate_types "PlanPBDef" [];
 
   val idvector = 
