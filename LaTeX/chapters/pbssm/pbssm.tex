@@ -167,50 +167,179 @@ For the \textit{trap} and \textit{discard} transition types (the last two statem
 
 \HOLThmTag{ssmPlanPB}{planPBNS_def}\HOLssmPlanPBTheoremsplanPBNSXXdef
 
-Five functions are defined (see below) to extract the command from the input list.  These are getRecon, getTentativePlan, getReport, getInitMove, and getPlCom.  Each of these functions takes an input list as a parameter and returns a command with its option type.
+Five functions are defined (see below) to extract the command from the input list.  These are getRecon, getTentativePlan, getReport, getInitMove, and getPlCom.  Each of these functions takes an input list as a parameter and returns a command with its option type.  For the sake of brevity, only getRecon is shown below.  The other functions are similar.
 
+\paragraph*{HOL Definition for getRecon}...
 
+\begin{lstlisting}
+val getRecon_def = Define `
+    (getRecon ([]:((slCommand command)option, stateRole, 'd,'e)Form list) =
+    	      [NONE]) /\
+    (getRecon ((Name PlatoonLeader) says (prop (SOME (SLc (PL recon))))
+               :((slCommand command)option, stateRole, 'd,'e)Form::xs)
+    	      	        = [SOME (SLc (PL recon)):(slCommand command)option]) /\
+    (getRecon (_::xs) = getRecon xs)`
+\end{lstlisting}
 
+getRecon is defined recursively and uses pattern matching.  The first line beginning with getRecon pattern matches against an empty list of type \textit{((slCommand command)option, stateRole, 'd,'e)Form list)} as input.  It returns the option type NONE.  The next getRecon pattern matches the head of the list with \textit{((Name PlatoonLeader) says (prop (SOME (SLc (PL recon))))} of type  \textit{((slCommand command)option, stateRole, 'd,'e)Form list)}.  This returns \textit{[SOME (SLc (PL recon)):(slCommand command)option]}.  The final getRecon pattern matches the wild card "_" to any other input.  It recursively calls getRecon on the remainder of the list, while throwing out the head.
+
+\paragraph*{HOL Generated Output for getRecon}...
+The \glsentryshort{hol} generated code converts the wild card into all allowable cases for head of the list.  It is shown below.
+
+\HOLThmTag{PlanPBDef}{getRecon_def}\HOLPlanPBDefTheoremsgetReconXXdef
 
 \subsection{Next-Output Function}
-
+The next-output differs from the next-state function in that it returns an output rather than a state.  It follows the same logic.  The \textit{trap} and \textit{discard} transition types return the outputs unAuthorized and unAuthenticated, respectively.
 \HOLThmTag{ssmPlanPB}{planPBOut_def}\HOLssmPlanPBTheoremsplanPBOutXXdef
 
 
 \subsection{Authentication}
+The authenticationTest function takes an elementTest function and an input list as parameters.  authenticationTest is defined in the parametrizable ssm.  elementTest function is defined as a parameter in each \glsentryshort{ssm}.  In the \glsentryshortpl{ssm}, elementTest is named inputOK.  
 
+\paragraph*{HOL Definition for inputOK}
+
+The \glsentryshort{hol} definition for inputOK uses the wild card "_".  Thus, the \glsentryshort{hol} definition differs from the \glsentryshort{hol} generated output.  The \glsentryshort{hol} definition is shown below. 
+
+\begin{lstlisting}
+val inputOK_def = Define
+`(inputOK
+	(((Name PlatoonLeader) says (prop  (cmd:((slCommand command)option))))
+	       :((slCommand command)option, stateRole, 'd,'e)Form) = T)  /\
+(inputOK
+	(((Name PlatoonSergeant) says (prop  (cmd:((slCommand command)option))))
+	       :((slCommand command)option, stateRole, 'd,'e)Form) = T)  /\
+(inputOK _ = F)`
+\end{lstlisting}
+
+inputOK uses pattern matching, but not recursion.  The first inputOK pattern matches the input against \textit{(((Name PlatoonLeader) says (prop  (cmd:((slCommand command)option))))} which is of type \textit{((slCommand command)option, stateRole, 'd,'e)Form)}.  This is defined as T (True).  This authenticates the PlatoonLeader on any slCommand.  The next inputOK pattern matches the input against \textit{((Name PlatoonSergeant) says (prop  (cmd:((slCommand command)option))))} which is of the same type as the first pattern.  This is defined as T (True).  This authenticates the PlatoonSergeant on any slCommand.  The last inputOK pattern uses the wild card to match ANY OTHER input.  ANY OTHER input is defined as F (false).
+	 
+	 
+\paragraph*{HOL Generated Output for inputOK}
+
+The \glsentryshort{hol} generated output matches the wild card to all other possible values for the input.
 
 \HOLThmTag{ssmPlanPB}{inputOK_def}\HOLssmPlanPBTheoremsinputOKXXdef
 
+The theorem inputOK_cmd_reject_lemma proves that any command that is not requested by a principal is false.
+
+\begin{lstlisting}
+val inputOK_cmd_reject_lemma =
+TAC_PROOF(
+  ([],
+   ``!cmd. ~(inputOK
+   	   ((prop (SOME cmd)):((slCommand command)option, stateRole, 'd,'e)Form))``),
+  PROVE_TAC[inputOK_def])
+\end{lstlisting}
+
 
 \subsection{Authorization}
+Authorization is defined in two ways.  Authorization is state-dependent because of the added requirement for the transition from the WARNO state to the REPORT1 state.  This is equivalent to the stateInterp function in ssm.  In ssmPlanPB, this function is called secContext.
+
+\begin{lstlisting}
+val secContext_def = Define `
+secContext (s:slState) (x:((slCommand command)option, stateRole, 'd,'e)Form list) =
+    if (s = WARNO) then
+        (if (getRecon         x = [SOME (SLc (PL recon))
+                                   :(slCommand command)option] ) /\
+	    (getTenativePlan  x = [SOME (SLc (PL tentativePlan))
+	    		      	   :(slCommand command)option]) /\
+            (getReport        x = [SOME (SLc (PL report1))
+	    		      	   :(slCommand command)option]) /\
+	    (getInitMove      x = [SOME (SLc (PSG initiateMovement))
+	    		      	   :(slCommand command)option])
+         then [
+	       PL_WARNO_Auth
+	        :((slCommand command)option, stateRole, 'd,'e)Form;
+		(Name PlatoonLeader) controls prop (SOME (SLc (PL recon)));
+		(Name PlatoonLeader) controls prop (SOME (SLc (PL tentativePlan)));
+	       (Name PlatoonSergeant) controls prop (SOME (SLc (PSG initiateMovement)))]
+	 else [(prop NONE):((slCommand command)option, stateRole, 'd,'e)Form])
+    else if ((getPlCom x) = invalidPlCommand)
+    	 then [(prop NONE):((slCommand command)option, stateRole, 'd,'e)Form]
+	 else [PL_notWARNO_Auth (getPlCom x)]`
+\end{lstlisting}
+
+secContext uses pattern matching, but not recursion. It is similar to the definition for the next state function.  If the \textit{s = WARNO}, then secContext looks for all four statements using the get* functions.   If these are all present, then secContext returns \textit{PL_WARNO_Auth}. \textit{PL_WARNO_Auth} contains the implication that authorizes the Platoon Leader on the transition to REPORT1.  If all four statements are not present, then \textit{ [(prop NONE)]} is returned.
+
+
+\begin{lstlisting}
+val PL_WARNO_Auth_def = Define `
+    PL_WARNO_Auth =
+    ^(impfTermList
+    [``(prop (SOME (SLc (PL recon))))
+         :((slCommand command)option, stateRole, 'd,'e)Form``,
+     ``(prop (SOME (SLc (PL tentativePlan))))
+         :((slCommand command)option, stateRole, 'd,'e)Form``,
+     ``(prop (SOME (SLc (PSG initiateMovement))))
+         :((slCommand command)option, stateRole, 'd,'e)Form``,
+     ``(Name PlatoonLeader) controls prop (SOME (SLc (PL report1)))
+         :((slCommand command)option, stateRole, 'd,'e)Form``]
+     ``:((slCommand command)option, stateRole, 'd,'e)Form``)`
+\end{lstlisting}
+
+The remainder of secContext applies to all other states.  If the getPlCom function returns \textit{invalidPlComand}, then secContext returns  \textit{ [(prop NONE)]} is returned.  Otherwise, it returns \textit{PL_notWARNO_Auth}.  \textit{PL_notWARNO_Auth} authorizes the PlatoonLeader on any plCommand except \textit{report1}. If the command is \textit{report1} is found, then it returns \textit{ [(prop NONE)]}.
+
+\begin{lstlisting}
+val PL_notWARNO_Auth_def = Define `
+    PL_notWARNO_Auth (cmd:plCommand) =
+    if (cmd = report1) (* report1 exits WARNO state *)
+    then
+      (prop NONE):((slCommand command)option, stateRole, 'd,'e)Form
+    else
+      ((Name PlatoonLeader) says (prop (SOME (SLc (PL cmd)))
+       :((slCommand command)option, stateRole, 'd,'e)Form) impf
+      (((Name PlatoonLeader) controls prop (SOME (SLc (PL cmd))))
+      :((slCommand command)option, stateRole, 'd,'e)Form)) `
+\end{lstlisting}
+
 \subsection{Proved Theorems}
+The following theorems prove various properties about the \glsentryshort{ssm}.  Descriptions are similar to those of previously described \glsentryshortpl{ssm}.  
+
+
+\paragraph*{PlatoonLeader_notWARNO_notreport1_exec_plCommand_justified_thm}
+This theorem proves that if the state is NOT WARNO and the PlatoonLeader issues any plCommand other than \textit{report1}, then that command should be executed.  Two lemmas are required first.
+
+\HOLThmTag{ssmPlanPB}{PlatoonLeader_notWARNO_notreport1_exec_plCommand_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXnotWARNOXXnotreportOneXXexecXXplCommandXXlemma
 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_notWARNO_notreport1_exec_plCommand_justified_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXnotWARNOXXnotreportOneXXexecXXplCommandXXjustifiedXXlemma
 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_notWARNO_notreport1_exec_plCommand_justified_thm}\HOLssmPlanPBTheoremsPlatoonLeaderXXnotWARNOXXnotreportOneXXexecXXplCommandXXjustifiedXXthm
 
-\HOLThmTag{ssmPlanPB}{PlatoonLeader_notWARNO_notreport1_exec_plCommand_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXnotWARNOXXnotreportOneXXexecXXplCommandXXlemma
-
+\paragraph*{PlatoonLeader_psgCommand_notDiscard_thm}
+This next theorem proves that if the PlatoonLeader issues a psgCommand then that command is not discarded.  The reason for this is that the psgCommand is an slCommand.  In inputOK, the PlatoonLeader is authenticated on all psgCommand.  Therefore, this command should be trapped an not discarded.
 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_psgCommand_notDiscard_thm}\HOLssmPlanPBTheoremsPlatoonLeaderXXpsgCommandXXnotDiscardXXthm
 
-\HOLThmTag{ssmPlanPB}{PlatoonLeader_trap_psgCommand_justified_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXtrapXXpsgCommandXXjustifiedXXlemma
+
+\paragraph*{PlatoonSergeant_trap_plCommand_justified_thm}
+This next theorem proves that if the PlatoonLeader issues a psgCommand then that command is trapped.  It requires two lemmas.
 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_trap_psgCommand_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXtrapXXpsgCommandXXlemma
+
+\HOLThmTag{ssmPlanPB}{PlatoonLeader_trap_psgCommand_justified_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXtrapXXpsgCommandXXjustifiedXXlemma
+
+\HOLThmTag{ssmPlanPB}{PlatoonSergeant_trap_plCommand_justified_thm}\HOLssmPlanPBTheoremsPlatoonSergeantXXtrapXXplCommandXXjustifiedXXthm
+
+\paragraph*{PlatoonLeader_WARNO_exec_report1_justified_thm}
+This theorem proves that if the state IS WARNO and the PlatoonLeader issues the plCommand \textit{report1}, then that command should be executed.  Two lemmas are required first.  
+
+Notice that the 
+
+\HOLThmTag{ssmPlanPB}{PlatoonLeader_WARNO_exec_report1_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXWARNOXXexecXXreportOneXXlemma
 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_WARNO_exec_report1_justified_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXWARNOXXexecXXreportOneXXjustifiedXXlemma
 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_WARNO_exec_report1_justified_thm}\HOLssmPlanPBTheoremsPlatoonLeaderXXWARNOXXexecXXreportOneXXjustifiedXXthm
 
-\HOLThmTag{ssmPlanPB}{PlatoonLeader_WARNO_exec_report1_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXWARNOXXexecXXreportOneXXlemma
+
+\paragraph*{PlatoonSergeant_trap_plCommand_justified_thm}
+This theorem proves that the PlatoonSergeant is trapped on all plCommands.  It requires two lemmas.
+
+\HOLThmTag{ssmPlanPB}{PlatoonSergeant_trap_plCommand_lemma}\HOLssmPlanPBTheoremsPlatoonSergeantXXtrapXXplCommandXXlemma
 
 \HOLThmTag{ssmPlanPB}{PlatoonSergeant_trap_plCommand_justified_lemma}\HOLssmPlanPBTheoremsPlatoonSergeantXXtrapXXplCommandXXjustifiedXXlemma
 
 \HOLThmTag{ssmPlanPB}{PlatoonSergeant_trap_plCommand_justified_thm}\HOLssmPlanPBTheoremsPlatoonSergeantXXtrapXXplCommandXXjustifiedXXthm
-
-\HOLThmTag{ssmPlanPB}{PlatoonSergeant_trap_plCommand_lemma}\HOLssmPlanPBTheoremsPlatoonSergeantXXtrapXXplCommandXXlemma
-
 
 
 \end{document}
