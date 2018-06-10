@@ -13,14 +13,14 @@ struct
   in end;
   val _ = Theory.link_parents
           ("ssmPlanPB",
-          Arbnum.fromString "1526502854",
-          Arbnum.fromString "707958")
+          Arbnum.fromString "1528669433",
+          Arbnum.fromString "138581")
           [("PlanPBDef",
-           Arbnum.fromString "1526502834",
-           Arbnum.fromString "946399"),
+           Arbnum.fromString "1528669411",
+           Arbnum.fromString "956487"),
            ("ssm",
-           Arbnum.fromString "1526502756",
-           Arbnum.fromString "780457")];
+           Arbnum.fromString "1528669327",
+           Arbnum.fromString "886937")];
   val _ = Theory.incorporate_types "ssmPlanPB" [];
 
   val idvector = 
