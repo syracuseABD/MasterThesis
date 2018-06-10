@@ -1,6 +1,7 @@
 \contentsline {chapter}{Abstract}{i}{section*.1}
-\contentsline {chapter}{List of Figures}{v}{chapter*.8}
-\contentsline {chapter}{List of Tables}{vi}{chapter*.10}
+\contentsline {chapter}{List of Figures}{x}{chapter*.8}
+\contentsline {chapter}{List of Tables}{xii}{chapter*.10}
+\contentsline {chapter}{List of Acronyms}{xiii}{section*.11}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Systems Are Everywhere}{1}{subsection.1.1.1}
@@ -131,8 +132,8 @@
 \contentsline {subsection}{\numberline {7.3.3}Commands}{104}{subsection.7.3.3}
 \contentsline {subsection}{\numberline {7.3.4}Output}{105}{subsection.7.3.4}
 \contentsline {subsection}{\numberline {7.3.5}Next-State Function}{106}{subsection.7.3.5}
-\contentsline {subsection}{\numberline {7.3.6}Next-Output Function}{107}{subsection.7.3.6}
-\contentsline {subsection}{\numberline {7.3.7}Authentication}{108}{subsection.7.3.7}
+\contentsline {subsection}{\numberline {7.3.6}Next-Output Function}{108}{subsection.7.3.6}
+\contentsline {subsection}{\numberline {7.3.7}Authentication}{109}{subsection.7.3.7}
 \contentsline {subsection}{\numberline {7.3.8}Authorization}{110}{subsection.7.3.8}
 \contentsline {subsection}{\numberline {7.3.9}Proved Theorems}{110}{subsection.7.3.9}
 \contentsline {chapter}{\numberline {8}Other Theories}{122}{chapter.8}
@@ -145,7 +146,7 @@
 \contentsline {chapter}{\numberline {10}Future Work}{125}{chapter.10}
 \contentsline {section}{\numberline {10.1}Applicability}{125}{section.10.1}
 \contentsline {subsection}{\numberline {10.1.1}Accountability Systems}{126}{subsection.10.1.1}
-\contentsline {chapter}{Appendices}{127}{section*.37}
+\contentsline {chapter}{Appendices}{127}{section*.39}
 \contentsline {chapter}{\numberline {A}Access Control Logic Theories: Pretty-Printed Theories}{128}{Appendix.a.A}
 \contentsline {chapter}{\numberline {B}Secure State Machine \& Patrol Base Operations: Pretty-Printed Theories }{151}{Appendix.a.B}
 \contentsline {chapter}{\numberline {C}Secure State Machine Theories: HOL Script Files}{226}{Appendix.a.C}
@@ -197,4 +198,4 @@
 \contentsline {subsubsection}{\numberline {D.5.4.2}FormRTDef Theory: Authentication \& Authorization Definitions}{241}{subsubsection.a.D.5.4.2}
 \contentsline {subsubsection}{\numberline {D.5.4.3}ssmFormRT Theory: Theorems}{241}{subsubsection.a.D.5.4.3}
 \contentsline {chapter}{\numberline {E}Map of The File Folder Structure}{242}{Appendix.a.E}
-\contentsline {chapter}{References}{243}{chapter*.38}
+\contentsline {chapter}{References}{243}{chapter*.40}
