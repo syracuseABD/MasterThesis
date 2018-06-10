@@ -6,7 +6,7 @@ app load ["OMNITypeTheory", "ssm11Theory", "ssmTheory",
 	  "ssmConductPBTheory","ConductPBTypeTheory",
 	  "ssmMoveToORPTheory","MoveToORPTypeTheory",
 	  "ssmMoveToPBTheory","MoveToPBTypeTheory",
-	  "ssmPlanPBTheory","PlanPBTypeTheory",
+	  "ssmPlanPBTheory","PlanPBTypeTheory","PlanPBDefTheory",
           "EmitTeX"];
 
 open EmitTeX;
@@ -18,4 +18,4 @@ print_theories_as_tex_doc
  "PBTypeIntegrated","PBIntegratedDef",
  "ssmConductORP","ConductORPType",
  "ssmConductPB","ConductPBType","ssmMoveToORP","MoveToORPType",
- "ssmMoveToPB","MoveToPBType","ssmPlanPB","PlanPBType" ] "OMNIReport";
+ "ssmMoveToPB","MoveToPBType","ssmPlanPB","PlanPBType","PlanPBDef" ] "OMNIReport";
