@@ -1,10 +1,10 @@
 \begin{theindex}
 
-  \item \textbf  {PBIntegratedDef Theory}, 11
+  \item \textbf  {PBIntegratedDef Theory}, 12
     \subitem Definitions, 12
       \subsubitem secAuthorization_def, 12
       \subsubitem secContext_def, 12
-      \subsubitem secHelper_def, 12
+      \subsubitem secHelper_def, 13
     \subitem Theorems, 13
       \subsubitem getOmniCommand_def, 13
       \subsubitem getOmniCommand_ind, 15
@@ -23,6 +23,7 @@
 
   \item \textbf  {ssmPBIntegrated Theory}, 4
     \subitem Theorems, 5
+      \subsubitem inputOK_cmd_reject_lemma, 5
       \subsubitem inputOK_def, 5
       \subsubitem inputOK_ind, 5
       \subsubitem PBNS_def, 6

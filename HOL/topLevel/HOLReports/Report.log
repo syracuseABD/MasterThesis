@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.23)  11 JUN 2018 01:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.23)  11 JUN 2018 01:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -211,23 +211,18 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14]
 [15] [16] (./Report.ind
-Overfull \hbox (20.22984pt too wide) in paragraph at lines 32--33
+Overfull \hbox (20.22984pt too wide) in paragraph at lines 33--34
 []| \OT1/cmr/m/n/10.95 Pla-toon-Leader[]-Omni[]-not-Dis-card[]-slCom-
  []
 
 
-Overfull \hbox (2.63681pt too wide) in paragraph at lines 33--34
+Overfull \hbox (2.63681pt too wide) in paragraph at lines 34--35
 []| \OT1/cmr/m/n/10.95 Pla-toon-Leader[]-PLAN[]-PB[]-exec[]-jus-ti-
  []
 
 
-Overfull \hbox (12.6135pt too wide) in paragraph at lines 34--35
+Overfull \hbox (12.6135pt too wide) in paragraph at lines 35--36
 []| \OT1/cmr/m/n/10.95 Pla-toon-Leader[]-PLAN[]-PB[]-exec[]-lemma,
- []
-
-
-Overfull \hbox (2.36307pt too wide) in paragraph at lines 35--36
-[]| \OT1/cmr/m/n/10.95 Pla-toon-Leader[]-PLAN[]-PB[]-trap[]-jus-ti-
  []
 
 
@@ -236,7 +231,12 @@ Overfull \hbox (2.36307pt too wide) in paragraph at lines 36--37
  []
 
 
-Overfull \hbox (12.33975pt too wide) in paragraph at lines 37--38
+Overfull \hbox (2.36307pt too wide) in paragraph at lines 37--38
+[]| \OT1/cmr/m/n/10.95 Pla-toon-Leader[]-PLAN[]-PB[]-trap[]-jus-ti-
+ []
+
+
+Overfull \hbox (12.33975pt too wide) in paragraph at lines 38--39
 []| \OT1/cmr/m/n/10.95 Pla-toon-Leader[]-PLAN[]-PB[]-trap[]-lemma,
  []
 
@@ -246,13 +246,13 @@ Overfull \hbox (12.33975pt too wide) in paragraph at lines 37--38
 
 ]) (./Report.aux) ) 
 Here is how much of TeX's memory you used:
- 2540 strings out of 493029
- 36646 string characters out of 6136234
- 146484 words of memory out of 5000000
- 6050 multiletter control sequences out of 15000+600000
+ 2542 strings out of 493029
+ 36758 string characters out of 6136234
+ 146653 words of memory out of 5000000
+ 6052 multiletter control sequences out of 15000+600000
  13532 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,11n,45p,507b,403s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,12n,45p,507b,403s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
 12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
@@ -263,7 +263,7 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Report.pdf (17 pages, 145885 bytes).
+Output written on Report.pdf (17 pages, 145092 bytes).
 PDF statistics:
  99 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream
