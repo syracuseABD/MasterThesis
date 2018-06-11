@@ -223,11 +223,35 @@ This theorem proves that if the PlatoonLeader issues an omniCommand and Omni iss
      
       %%%%%%%%%%%%%%%%%%% Multiple Principles %%%%%%%%%%%%%
 \section{ssmConductORP: Multiple Principals}
-ssmConductORP is an example of a \glsentryshort{ssm} with more than one principal authorized to execute transitions among states.
+ssmConductORP is an example of a \glsentryshort{ssm} with more than one principal authorized to execute transitions among states. The diagram is shown in figure \ref{ssmMoveToORPDiagram2}.
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.8\textwidth]{../figures/ssmMoveToORPDiagram}
+\caption{\label{ssmMoveToORPDiagram2} Horizontal slice: MoveToORP diagram.}
+\end{figure}
+
+Other than the number of principals, ssmMoveToORP follows the same structure as ssmPB described in the previous section.  
 
 \subsection{Principals}
+The principals are defined in the datatype stateRole.  
+
+
+
 \subsection{States}
+\HOLFreeVar{slState} = \HOLConst{MOVE_TO_ORP} \HOLTokenBar{} \HOLConst{PLT_FORM} \HOLTokenBar{} \HOLConst{PLT_MOVE} \HOLTokenBar{} \HOLConst{PLT_SECURE_HALT}
+        \HOLTokenBar{} \HOLConst{COMPLETE}
+
+\subsection{Outputs}
+\HOLFreeVar{slOutput} = \HOLConst{MoveToORP} \HOLTokenBar{} \HOLConst{PLTForm} \HOLTokenBar{} \HOLConst{PLTMove} \HOLTokenBar{} \HOLConst{PLTSecureHalt}
+         \HOLTokenBar{} \HOLConst{Complete} \HOLTokenBar{} \HOLConst{unAuthorized} \HOLTokenBar{} \HOLConst{unAuthenticated}
+
 \subsection{Commands}
+
+\HOLFreeVar{slCommand} = \HOLConst{pltForm} \HOLTokenBar{} \HOLConst{pltMove} \HOLTokenBar{} \HOLConst{pltSecureHalt} \HOLTokenBar{} \HOLConst{complete}
+          \HOLTokenBar{} \HOLConst{incomplete}
+
 \subsection{Next-State Function}
 \subsection{Next-Output Function}
 \subsection{Authentication}
