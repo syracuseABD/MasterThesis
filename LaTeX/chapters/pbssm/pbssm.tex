@@ -36,7 +36,7 @@ This clause is state dependent because \textit{stateComplete} is specific for th
 There is also a state-independent security context.  This has one clause authorizing the Omni principal on all omniCommands.   It has the form
 \[\text{\textit{Omni controls stateComplete}}\]
 
-Both the Omni and PlatoonLeader principals are authenticated on all slComands.  This includes omniCommands and plCommands.  However, authorization does distinguish between omniCommand and plCommand.  The authentication function has two statements of the form
+Both the Omni and PlatoonLeader principals are authenticated on all slCommands.  This includes omniCommands and plCommands.  However, authorization does distinguish between omniCommand and plCommand.  The authentication function has two statements of the form
 \[\text{\textit{Omni says slCommand}}\]
 \[\text{\textit{PlatoonLeader says slCommand}}\]  
 
@@ -223,14 +223,15 @@ This theorem proves that if the PlatoonLeader issues an omniCommand and Omni iss
      
       %%%%%%%%%%%%%%%%%%% Multiple Principles %%%%%%%%%%%%%
 \section{ssmConductORP: Multiple Principals}
-ssmConductORP is an example of a \glsentryshort{ssm} with more than one principal authorized to execute transitions among states. The diagram is shown in figure \ref{ssmMoveToORPDiagram2}.
+ssmConductORP is an example of a \glsentryshort{ssm} with more than one principal authorized to execute transitions among states. The diagram is shown in figure \ref{ssmConductORPDiagram2}.
 
 
-\begin{figure}[!h]
+\begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth]{../figures/ssmMoveToORPDiagram}
-\caption{\label{ssmMoveToORPDiagram2} Horizontal slice: MoveToORP diagram.}
+\includegraphics[width=\textwidth]{../figures/ssmConductORPDiagram}
+\caption{\label{ssmConductORPDiagram2} Horizontal slice: ConductORP diagram.}
 \end{figure}
+
 
 Other than the number of principals, ssmMoveToORP follows the same structure as ssmPB described in the previous section.  
 
@@ -240,29 +241,131 @@ The principals are defined in the datatype stateRole.
 
 
 \subsection{States}
-\HOLFreeVar{slState} = \HOLConst{MOVE_TO_ORP} \HOLTokenBar{} \HOLConst{PLT_FORM} \HOLTokenBar{} \HOLConst{PLT_MOVE} \HOLTokenBar{} \HOLConst{PLT_SECURE_HALT}
-        \HOLTokenBar{} \HOLConst{COMPLETE}
+\begin{tabbing}
+\HOLFreeVar{slState} = \=\HOLConst{MOVE_TO_ORP} \\
+				   	\>\HOLTokenBar{} \HOLConst{PLT_FORM} \\
+					\>\HOLTokenBar{} \HOLConst{PLT_MOVE} \\
+					\>\HOLTokenBar{} \HOLConst{PLT_SECURE_HALT}\\
+        					\>\HOLTokenBar{} \HOLConst{COMPLETE}
+\end{tabbing}
 
 \subsection{Outputs}
-\HOLFreeVar{slOutput} = \HOLConst{MoveToORP} \HOLTokenBar{} \HOLConst{PLTForm} \HOLTokenBar{} \HOLConst{PLTMove} \HOLTokenBar{} \HOLConst{PLTSecureHalt}
-         \HOLTokenBar{} \HOLConst{Complete} \HOLTokenBar{} \HOLConst{unAuthorized} \HOLTokenBar{} \HOLConst{unAuthenticated}
+\begin{tabbing}
+\HOLFreeVar{slOutput} = \=\HOLConst{MoveToORP} \\
+					\>\HOLTokenBar{} \HOLConst{PLTForm} \\
+					\>\HOLTokenBar{} \HOLConst{PLTMove} \\
+					\>\HOLTokenBar{} \HOLConst{PLTSecureHalt}\\
+         				\>\HOLTokenBar{} \HOLConst{Complete} \\
+					\>\HOLTokenBar{} \HOLConst{unAuthorized} \\
+					\>\HOLTokenBar{} \HOLConst{unAuthenticated}
+\end{tabbing}
 
 \subsection{Commands}
 
-\HOLFreeVar{slCommand} = \HOLConst{pltForm} \HOLTokenBar{} \HOLConst{pltMove} \HOLTokenBar{} \HOLConst{pltSecureHalt} \HOLTokenBar{} \HOLConst{complete}
-          \HOLTokenBar{} \HOLConst{incomplete}
+\begin{tabbing}
+\HOLFreeVar{slCommand} =\=\HOLConst{PL} \HOLTyOp{plCommand}\\
+  						\>\HOLTokenBar{} \HOLConst{PSG} \HOLTyOp{psgCommand}\\
+  						\>\HOLTokenBar{} \HOLConst{OMNI} \HOLTyOp{omniCommand}
+\end{tabbing}
+
+\begin{tabbing}
+\HOLFreeVar{plCommand} = \=\HOLConst{secure} \\
+						\>\HOLTokenBar{} \HOLConst{withdraw} \\
+						\>\HOLTokenBar{} \HOLConst{complete} \\
+						\>\HOLTokenBar{} \HOLConst{plIncomplete}
+\end{tabbing}
+
+\HOLFreeVar{psgCommand} = \HOLConst{actionsIn} \HOLTokenBar{} \HOLConst{psgIncomplete}
+
+\begin{tabbing}
+\HOLFreeVar{omniCommand} = \=\HOLConst{ssmSecureComplete} \\
+						\>\HOLTokenBar{} \HOLConst{ssmActionsInComplete}\\
+            					\>\HOLTokenBar{} \HOLConst{ssmWithdrawComplete} \\
+						\>\HOLTokenBar{} \HOLConst{invalidOmniCommand}
+\end{tabbing}
+
+
 
 \subsection{Next-State Function}
+The next-state function follows the same pattern as for ssmPB.  The only difference is that one of the transitions requires a psgCommand instead of a plCommand.
+
+\HOLThmTag{ssmConductORP}{conductORPNS_def}\HOLssmConductORPTheoremsconductORPNSXXdef
+
+\begin{lstlisting}
+val getPlCom_def =
+Define`
+  (getPlCom ([]:((slCommand command)option)list)
+  		      = plIncomplete:plCommand) /\
+  (getPlCom (SOME (SLc (PL cmd)):(slCommand command)option::xs)
+  		      = cmd:plCommand) /\
+  (getPlCom (_::(xs :(slCommand command)option list))
+  		      =  (getPlCom xs))`
+
+val getPsgCom_def =
+Define`
+  (getPsgCom ([]:((slCommand command)option)list)
+  		      = psgIncomplete:psgCommand) /\
+  (getPsgCom (SOME (SLc (PSG cmd)):(slCommand command)option::xs)
+  		      = cmd:psgCommand) /\
+  (getPsgCom (_::(xs :(slCommand command)option list))
+  		      =  (getPsgCom xs))`
+ \end{lstlisting}
+
+
 \subsection{Next-Output Function}
+\HOLThmTag{ssmConductORP}{conductORPOut_def}\HOLssmConductORPTheoremsconductORPOutXXdef
+
 \subsection{Authentication}
-\HOLThmTag{ssmPlanPB}{inputOK_def}\HOLssmPlanPBTheoremsinputOKXXdef
 
+\begin{lstlisting}
+val getOmniCommand_def =
+Define`
+  (getOmniCommand ([]:((slCommand command)option, stateRole, 'd,'e)Form list)
+  		      = invalidOmniCommand:omniCommand) /\
+  (getOmniCommand (((Name Omni) says prop (SOME (SLc (OMNI cmd))))::xs)
+  		      = (cmd:omniCommand)) /\
+  (getOmniCommand ((x:((slCommand command)option, stateRole, 'd,'e)Form)::xs)
+  		      =  (getOmniCommand xs))`
+ \end{lstlisting}
 
-\HOLThmTag{PBIntegratedDef}{getOmniCommand_def}\HOLPBIntegratedDefTheoremsgetOmniCommandXXdef
+\paragraph*{HOL Definition for inputOK}
+The \glsentryshort{hol} definition for inputOK uses pattern matching.  This follows the same logic as \textit{inputOK} for ssmPB.  It adds one additional pattern for the PlatoonSergeant.
+
+\begin{lstlisting}
+val inputOK_def =
+Define
+`(inputOK
+ ((Name PlatoonLeader) says (prop  (cmd:(slCommand command)option))
+ 	:((slCommand command)option,stateRole,'d,'e)Form) = T) /\
+ (inputOK
+ ((Name PlatoonSergeant) says (prop  (cmd:(slCommand command)option))
+ 	:((slCommand command)option,stateRole,'d,'e)Form) = T) /\
+ (inputOK
+ ((Name Omni) says (prop (cmd:(slCommand command)option))
+  	:((slCommand command)option,stateRole,'d,'e)Form) = T) /\
+ (inputOK _= F)`
+ \end{lstlisting}
+
+This follows the same logic as \textit{inputOK} for ssmPB.  It adds one additional pattern for the PlatoonSergeant.
+
+It is straight forward to prove that any command that is not issued by a principal is rejected.  This should follow directly from the definition of \textit{inputOK}.
+
+\HOLThmTag{ssmConductORP}{inputOK_cmd_reject_lemma}\HOLssmConductORPTheoremsinputOKXXcmdXXrejectXXlemma
 
 
 \subsection{Authorization}
 \subsection{Proved Theorems}
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_justified_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXthm
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_justified_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXthm
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonLeader_CONDUCT_ORP_exec_secure_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXCONDUCTXXORPXXexecXXsecureXXjustifiedXXthm
+\HOLThmTag{ssmConductORP}{PlatoonLeader_CONDUCT_ORP_exec_secure_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXCONDUCTXXORPXXexecXXsecureXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonSergeant_SECURE_exec_justified_lemma}\HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXjustifiedXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonSergeant_SECURE_exec_justified_thm}\HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXjustifiedXXthm
+\HOLThmTag{ssmConductORP}{PlatoonSergeant_SECURE_exec_lemma}\HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXlemma
 
 
 
