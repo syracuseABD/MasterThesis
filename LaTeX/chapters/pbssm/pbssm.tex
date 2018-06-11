@@ -14,15 +14,50 @@ The hierarchy of secure state machines (\glsentryshortpl{ssm}) consists of many 
 
       %%%%%%%%%%%%%%%%%%% Section ssmPB %%%%%%%%%%%%%
 \section{ssmPB: A Typical Example from the Hierarchy}\label{sec:ssmpb}
-ssmPB is the top level \glsentryshort{ssm}.  It is an example of a typical one-principal \glsentryshort{ssm}.
+ssmPB is the top level \glsentryshort{ssm}.  It is an example of a typical one-principal \glsentryshort{ssm}.  A diagram of ssmPB is shown in figure \ref{ssmPBDiagram2}.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\textwidth]{../figures/ssmPBDiagram}
+\caption{\label{ssmPBDiagram2} Top level diagram.}
+\end{figure}
+
+ssmPB runs sequentially from the initial state PLAN_PB to the final state COMPLETE_PB.  State transitions require notification from the Omni principal that the state is complete and a request from the Platoon Leader to change states.  Thus, a transition request has the form 
+\[\text{\textit{Omni says stateComplete}};\]
+\[\text{\textit{PlatoonLeader says moveToNextState}}\]  
+
+The security context reflects this two input requirement.  It authorizes the Platoon Leader on \textit{moveToTheNextState} if the current state is complete. A clause in the security context has the form
+\[\text{\textit{stateComplete impf}}\]
+\[\text{\textit{PlatoonLeader controls moveToNextState}}\]  
+
+This clause is state dependent because \textit{stateComplete} is specific for the current state.  Thus, there are five statements in the state-dependent security context.
+
+There is also a state-independent security context.  This has one clause authorizing the Omni principal on all omniCommands.   It has the form
+\[\text{\textit{Omni controls stateComplete}}\]
+
+Both the Omni and PlatoonLeader principals are authenticated on all slComands.  This includes omniCommands and plCommands.  However, authorization does distinguish between omniCommand and plCommand.  The authentication function has two statements of the form
+\[\text{\textit{Omni says slCommand}}\]
+\[\text{\textit{PlatoonLeader says slCommand}}\]  
+
+The \glsentryshort{hol} implementation of the datatypes, functions, and theorems are included below.
+
 
 \subsection{Principals}
-There are two principals for this \glsentryshort{ssm}: Omni and PlatoonLeader. 
+The principal datatype is defined in OMNITypeScript.sml.  It has a constructor and one datatype variable.
+
+\HOLFreeVar{principal} = \HOLConst{SR} 'stateRole
+
+SR is the type constructor and 'stateRole is the type variable.  Each \glsentryshort{ssm} defines its own principal as a stateRole. In ssmPB, the stateRole datatype has two principals.
 
 \HOLFreeVar{stateRole} = \HOLConst{PlatoonLeader} \HOLTokenBar{} \HOLConst{Omni}
 
 \subsection{States}
-The states are those shown in figure \ref{}.
+States are also defined in OMNITyrpeScript.sml.
+
+\HOLFreeVar{state} = \HOLConst{ESCs} \HOLTyOp{escState} \HOLTokenBar{} \HOLConst{SLs} 'slState
+
+'slState is a state-dependent state which is further defined in each \glsentryshort{ssm}.  ssmPB defines six states.
 
 \begin{tabbing}
 \HOLFreeVar{slState} = \=\HOLConst{PLAN_PB} \\
@@ -34,7 +69,11 @@ The states are those shown in figure \ref{}.
 \end{tabbing}
 
 \subsection{Outputs}
-The outputs are straight forward.  The unAuthorized and unAuthenticated are returned for \textit{trap} and \textit{discard} transition types, respectively.
+Outputs are defined in OMNITyrpeScript.sml.
+
+\HOLFreeVar{output} = \HOLConst{ESCo} \HOLTyOp{escOutput} \HOLTokenBar{} \HOLConst{SLo} 'slOutput
+
+\HOLConst{SLo} 'slOutput is the state-dependent output.  It is defined further in each \glsentryshort{ssm}.  ssmPB defines seven outputs.
 
 \begin{tabbing}
 \HOLFreeVar{slOutput} = \=\HOLConst{PlanPB} \\
@@ -47,15 +86,18 @@ The outputs are straight forward.  The unAuthorized and unAuthenticated are retu
          				\>\HOLTokenBar{} \HOLConst{unAuthorized}
 \end{tabbing}
 
+The unAuthorized and unAuthenticated pertain to \textit{trap} and \textit{discard} transition types, respectively.
 
 \subsection{Commands}
-The state-level commands are defined below.
+OMNITyrpeScript.sml defines datatypes for all the \glsentryshortpl{ssm}.
+
+\HOLFreeVar{command} = \HOLConst{ESCc} \HOLTyOp{escCommand} \HOLTokenBar{} \HOLConst{SLc} 'slCommand
+
+\HOLConst{SLc} 'slCommand is further defined in each \glsentryshort{ssm}.  ssmPB defines two datatypes for the slCommand.
 
 \HOLFreeVar{slCommand} = \HOLConst{PL} \HOLTyOp{plCommand} \HOLTokenBar{} \HOLConst{OMNI} \HOLTyOp{omniCommand}
 
-Omni and PlatoonLeader both have distinct sets of commands on which they are authorized, omniCommand and plCommand, respectively.  Omni commands indicate when lower-level states are complete.  PlatoonLeader commands are issued to transition among states in this \glsentryshort{ssm}
-
-Omni commands indicate when lower-level states are complete.  
+The omniCommand and plCommand are further defined in ssmPB.
 
 \begin{tabbing}
 \HOLFreeVar{omniCommand} = \=\HOLConst{ssmPlanPBComplete} \\
@@ -65,8 +107,6 @@ Omni commands indicate when lower-level states are complete.
             					\>\HOLTokenBar{} \HOLConst{ssmConductPBComplete} \\
 						\>\HOLTokenBar{} \HOLConst{invalidOmniCommand}
 \end{tabbing}
-
-PlatoonLeader commands are issued to transition among states in this \glsentryshort{ssm}
 
 \begin{tabbing}
 \HOLFreeVar{plCommand} = \=\HOLConst{crossLD} \\
@@ -78,17 +118,33 @@ PlatoonLeader commands are issued to transition among states in this \glsentrysh
 \end{tabbing}
 
 \subsection{Next-State Function}
+Each \glsentryshort{ssm} defines its own next-state function.  
 
 \HOLThmTag{ssmPBIntegrated}{PBNS_def}\HOLssmPBIntegratedTheoremsPBNSXXdef
 
+The next-state function for ssmPB uses pattern matching and if-then-else statements.  The function \textit{getPlCom} extracts the plCommand from the command list. It compares the extracted command to the command to transition.  If they are equal, then the transition occurs.  Otherwise, no transition occurs. 
 
+For the \textit{trap} and \textit{discard} transition types, no transition occurs regardless of the command.  Therefore, the command is not checked.
+
+
+PBNS takes a state and a transition (\textit{exec}, \textit{trap}, or \textit{discard}) and command list (\textit{x}) pair.
 \subsection{Next-Output Function}
+Each \glsentryshort{ssm} defines its own next-state function. 
 
 \HOLThmTag{ssmPBIntegrated}{PBOut_def}\HOLssmPBIntegratedTheoremsPBOutXXdef
 
+The next-output function behaves similarly to the next-state function.  But, instead of returning the next state, it returns the next function.  The \textit{trap} and \textit{discard} transition types return \textit{unAuthenticated} and \textit{unAuthorized}, respectively.
+
 \subsection{Authentication}
+The \textit{authenticationTest} function is defined in the parametrizable ssm.  It takes a function as an input and that function takes an input list as an input.  The first function is named \textit{elementTest} in ssm.  It is named \textit{inputOK} in the \glsentryshortpl{ssm}.
+
+In \glsentryshort{hol}, \textit{inputOK} uses the wild card denoted by an underscore "_".  The underscore causes additional output from \glsentryshort{hol}.  For this reason, the \glsentryshort{hol} definition is shown first.  It is followed by the \glsentryshort{hol} code generated by the function.
+
 
 \paragraph*{HOL Definition for inputOK}
+The \glsentryshort{hol} definition for inputOK uses pattern matching.
+
+\begin{lstlisting}
 val inputOK_def =
 Define`
 (inputOK (((Name PlatoonLeader) says prop (cmd:((slCommand command)option)))
@@ -96,24 +152,35 @@ Define`
 (inputOK (((Name Omni)          says prop (cmd:((slCommand command)option)))
 	   :((slCommand command)option, stateRole,'d,'e)Form) = T) /\
 (inputOK _ = F)`
+\end{lstlisting}
+
+
+The first call to \textit{inputOK} matches the input to \textit{(((Name PlatoonLeader) says prop (cmd:((slCommand command)option)))}.  If it matches, the function returns T for true.  The second call to inputOK matches the input to \textit{(((Name Omni)          says prop (cmd:((slCommand command)option)))}.  If it matches, it returns true.  The last call to \textit{inputOK}  uses the wild card.  This returns false for any other input.
+
+The first two calls to \textit{inputOK} authenticate the PlatoonLeader and Omni principals on any slCommand.
 
 \paragraph*{HOL Generated Output for inputOK}
 
 \HOLThmTag{ssmPBIntegrated}{inputOK_def}\HOLssmPBIntegratedTheoremsinputOKXXdef
 
+It is straight forward to prove that any command that is not issued by a principal is rejected.  This should follow directly from the definition of \textit{inputOK}.
+
 \HOLThmTag{ssmPBIntegrated}{inputOK_cmd_reject_lemma}\HOLssmPBIntegratedTheoremsinputOKXXcmdXXrejectXXlemma
 
 \subsection{Authorization}
+There are two functions for authentication in the parametrizable ssm.  One is state-dependent, the other is not.  
+
+\paragraph*{State-dependent Authorization}
+In ssmPB, the state-dependent authentication function is named \textit{secContext}.  \textit{secContext} uses both pattern matching and if-then-else statements. It takes a state and an input list as parameters.
+
 \HOLDfnTag{PBIntegratedDef}{secContext_def}\HOLPBIntegratedDefDefinitionssecContextXXdef
 
-\HOLDfnTag{PBIntegratedDef}{secAuthorization_def}\HOLPBIntegratedDefDefinitionssecAuthorizationXXdef
-
-\HOLDfnTag{PBIntegratedDef}{secHelper_def}\HOLPBIntegratedDefDefinitionssecHelperXXdef
-
-
+\textit{secContext} uses a helper function named \textit{getOmniCommand} to extract the omniCommand from the input list.  It compares this command to the expected command.  If it matches, it returns an implication of the form described at the top of this section.
 
 \paragraph*{HOL Definition for getOmniCommand}
+\textit{getOmniCommand} also uses an underscore.  For brevity, only the \glsentryshort{hol} definition is presented.
 
+\begin{lstlisting}
 val getOmniCommand_def =
 Define`
   (getOmniCommand ([]:((slCommand command)option, stateRole, 'd,'e)Form list)
@@ -122,10 +189,20 @@ Define`
   		      = (cmd:omniCommand)) /\
   (getOmniCommand ((x:((slCommand command)option, stateRole, 'd,'e)Form)::xs)
   		      =  (getOmniCommand xs))`
+\end{lstlisting}
 
-\paragraph*{HOL Generated Output for getOmniCommand}
+\textit{getOmniCommand}  uses pattern matching and recursion.  The first pattern matches the input against the empty list.  It returns \textit{invalidOmniCommand}.  The second pattern matches against a statement of the form \textit{Omni says cmd}.  It returns \textit{cmd}.  The final pattern is a recursive call to \textit{getOmniCommand}.
 
-\HOLThmTag{PBIntegratedDef}{getOmniCommand_def}\HOLPBIntegratedDefTheoremsgetOmniCommandXXdef
+
+\paragraph*{State-independent Authorization}
+The state-independent authorization function takes an input list as a parameter.  It is uses a helper function called \textit{secHelper}.  \textit{secHelper} calls \textit{getOmniCommand}.  It return a authorization statement of the form 
+\[\text{\textit{Omni controls cmd.}}\]
+
+
+\HOLDfnTag{PBIntegratedDef}{secAuthorization_def}\HOLPBIntegratedDefDefinitionssecAuthorizationXXdef
+
+\HOLDfnTag{PBIntegratedDef}{secHelper_def}\HOLPBIntegratedDefDefinitionssecHelperXXdef
+
 
 \subsection{Proved Theorems}
 
