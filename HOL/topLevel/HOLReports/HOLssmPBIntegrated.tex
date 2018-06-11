@@ -1,5 +1,5 @@
-\newcommand{\HOLssmPBIntegratedDate}{10 June 2018}
-\newcommand{\HOLssmPBIntegratedTime}{23:45}
+\newcommand{\HOLssmPBIntegratedDate}{11 June 2018}
+\newcommand{\HOLssmPBIntegratedTime}{01:35}
 \begin{SaveVerbatim}{HOLssmPBIntegratedTheoremsinputOKXXdef}
 \HOLTokenTurnstile{} (\HOLConst{inputOK} (\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{cmd}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{T}) \HOLSymConst{\HOLTokenConj{}}
    (\HOLConst{inputOK} (\HOLConst{Name} \HOLConst{Omni} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{cmd}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{T}) \HOLSymConst{\HOLTokenConj{}}
@@ -209,6 +209,43 @@
                   \HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLFreeVar{omniCommand}))])\HOLSymConst{::}\HOLFreeVar{outs}))
 \end{SaveVerbatim}
 \newcommand{\HOLssmPBIntegratedTheoremsPlatoonLeaderXXOmniXXnotDiscardXXslCommandXXthm}{\UseVerbatim{HOLssmPBIntegratedTheoremsPlatoonLeaderXXOmniXXnotDiscardXXslCommandXXthm}}
+\begin{SaveVerbatim}{HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXjustifiedXXthm}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{NS} \HOLBoundVar{Out} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
+     \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{exec}
+          [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmPlanPBComplete}));
+           \HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{crossLD}))])
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmPlanPBComplete})));
+            \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{crossLD})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{PLAN_PB} \HOLFreeVar{outs})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization} \HOLFreeVar{ins}
+          (\HOLBoundVar{NS} \HOLConst{PLAN_PB}
+             (\HOLConst{exec}
+                [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmPlanPBComplete}));
+                 \HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{crossLD}))]))
+          (\HOLBoundVar{Out} \HOLConst{PLAN_PB}
+             (\HOLConst{exec}
+                [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmPlanPBComplete}));
+                 \HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{crossLD}))])\HOLSymConst{::}\HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+     \HOLConst{authenticationTest} \HOLConst{inputOK}
+       [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmPlanPBComplete})));
+        \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{crossLD})))] \HOLSymConst{\HOLTokenConj{}}
+     \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmPlanPBComplete})));
+            \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{crossLD})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{PLAN_PB}
+          \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{satList}
+     [\HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmPlanPBComplete})));
+      \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{crossLD})))]
+\end{SaveVerbatim}
+\newcommand{\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXjustifiedXXthm}{\UseVerbatim{HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXjustifiedXXthm}}
 \begin{SaveVerbatim}{HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXlemma}
 \HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
      \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
@@ -321,6 +358,7 @@
 \HOLThmTag{ssmPBIntegrated}{PBOut_def}\HOLssmPBIntegratedTheoremsPBOutXXdef
 \HOLThmTag{ssmPBIntegrated}{PBOut_ind}\HOLssmPBIntegratedTheoremsPBOutXXind
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_Omni_notDiscard_slCommand_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXOmniXXnotDiscardXXslCommandXXthm
+\HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_exec_justified_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXjustifiedXXthm
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_exec_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXlemma
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_justified_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXjustifiedXXlemma
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_justified_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXjustifiedXXthm
