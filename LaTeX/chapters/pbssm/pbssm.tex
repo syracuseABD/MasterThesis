@@ -88,7 +88,20 @@ PlatoonLeader commands are issued to transition among states in this \glsentrysh
 
 \subsection{Authentication}
 
+\paragraph*{HOL Definition for inputOK}
+val inputOK_def =
+Define`
+(inputOK (((Name PlatoonLeader) says prop (cmd:((slCommand command)option)))
+	   :((slCommand command)option, stateRole,'d,'e)Form) = T) /\
+(inputOK (((Name Omni)          says prop (cmd:((slCommand command)option)))
+	   :((slCommand command)option, stateRole,'d,'e)Form) = T) /\
+(inputOK _ = F)`
+
+\paragraph*{HOL Generated Output for inputOK}
+
 \HOLThmTag{ssmPBIntegrated}{inputOK_def}\HOLssmPBIntegratedTheoremsinputOKXXdef
+
+\HOLThmTag{ssmPBIntegrated}{inputOK_cmd_reject_lemma}\HOLssmPBIntegratedTheoremsinputOKXXcmdXXrejectXXlemma
 
 \subsection{Authorization}
 \HOLDfnTag{PBIntegratedDef}{secContext_def}\HOLPBIntegratedDefDefinitionssecContextXXdef
@@ -96,6 +109,23 @@ PlatoonLeader commands are issued to transition among states in this \glsentrysh
 \HOLDfnTag{PBIntegratedDef}{secAuthorization_def}\HOLPBIntegratedDefDefinitionssecAuthorizationXXdef
 
 \HOLDfnTag{PBIntegratedDef}{secHelper_def}\HOLPBIntegratedDefDefinitionssecHelperXXdef
+
+
+
+\paragraph*{HOL Definition for getOmniCommand}
+
+val getOmniCommand_def =
+Define`
+  (getOmniCommand ([]:((slCommand command)option, stateRole, 'd,'e)Form list)
+  		      = invalidOmniCommand:omniCommand) /\
+  (getOmniCommand (((Name Omni) says prop (SOME (SLc (OMNI cmd))))::xs)
+  		      = (cmd:omniCommand)) /\
+  (getOmniCommand ((x:((slCommand command)option, stateRole, 'd,'e)Form)::xs)
+  		      =  (getOmniCommand xs))`
+
+\paragraph*{HOL Generated Output for getOmniCommand}
+
+\HOLThmTag{PBIntegratedDef}{getOmniCommand_def}\HOLPBIntegratedDefTheoremsgetOmniCommandXXdef
 
 \subsection{Proved Theorems}
 
