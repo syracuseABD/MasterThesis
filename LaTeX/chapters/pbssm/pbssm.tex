@@ -17,12 +17,76 @@ The hierarchy of secure state machines (\glsentryshortpl{ssm}) consists of many 
 ssmPB is the top level \glsentryshort{ssm}.  It is an example of a typical one-principal \glsentryshort{ssm}.
 
 \subsection{Principals}
+There are two principals for this \glsentryshort{ssm}: Omni and PlatoonLeader. 
+
+\HOLFreeVar{stateRole} = \HOLConst{PlatoonLeader} \HOLTokenBar{} \HOLConst{Omni}
+
 \subsection{States}
+The states are those shown in figure \ref{}.
+
+\begin{tabbing}
+\HOLFreeVar{slState} = \=\HOLConst{PLAN_PB} \\
+					\>\HOLTokenBar{} \HOLConst{MOVE_TO_ORP} \\
+					\>\HOLTokenBar{} \HOLConst{CONDUCT_ORP} \\
+					\>\HOLTokenBar{} \HOLConst{MOVE_TO_PB}\\
+        					\>\HOLTokenBar{} \HOLConst{CONDUCT_PB} \\
+					\>\HOLTokenBar{} \HOLConst{COMPLETE_PB}
+\end{tabbing}
+
+\subsection{Outputs}
+The outputs are straight forward.  The unAuthorized and unAuthenticated are returned for \textit{trap} and \textit{discard} transition types, respectively.
+
+\begin{tabbing}
+\HOLFreeVar{slOutput} = \=\HOLConst{PlanPB} \\
+					\>\HOLTokenBar{} \HOLConst{MoveToORP} \\
+					\>\HOLTokenBar{} \HOLConst{ConductORP} \\
+					\>\HOLTokenBar{} \HOLConst{MoveToPB}\\
+         				\>\HOLTokenBar{} \HOLConst{ConductPB} \\
+					\>\HOLTokenBar{} \HOLConst{CompletePB} \\
+					\>\HOLTokenBar{} \HOLConst{unAuthenticated}\\
+         				\>\HOLTokenBar{} \HOLConst{unAuthorized}
+\end{tabbing}
+
+
 \subsection{Commands}
+The state-level commands are defined below.
+
+\HOLFreeVar{slCommand} = \HOLConst{PL} \HOLTyOp{plCommand} \HOLTokenBar{} \HOLConst{OMNI} \HOLTyOp{omniCommand}
+
+Omni and PlatoonLeader both have distinct sets of commands on which they are authorized, omniCommand and plCommand, respectively.  Omni commands indicate when lower-level states are complete.  PlatoonLeader commands are issued to transition among states in this \glsentryshort{ssm}
+
+Omni commands indicate when lower-level states are complete.  
+
+\begin{tabbing}
+\HOLFreeVar{omniCommand} = \=\HOLConst{ssmPlanPBComplete} \\
+						\>\HOLTokenBar{} \HOLConst{ssmMoveToORPComplete}\\
+            					\>\HOLTokenBar{} \HOLConst{ssmConductORPComplete} \\
+						\>\HOLTokenBar{} \HOLConst{ssmMoveToPBComplete}\\
+            					\>\HOLTokenBar{} \HOLConst{ssmConductPBComplete} \\
+						\>\HOLTokenBar{} \HOLConst{invalidOmniCommand}
+\end{tabbing}
+
+PlatoonLeader commands are issued to transition among states in this \glsentryshort{ssm}
+
+\begin{tabbing}
+\HOLFreeVar{plCommand} = \=\HOLConst{crossLD} \\
+						\>\HOLTokenBar{} \HOLConst{conductORP} \\
+						\>\HOLTokenBar{} \HOLConst{moveToPB} \\
+						\>\HOLTokenBar{} \HOLConst{conductPB}\\
+          					\>\HOLTokenBar{} \HOLConst{completePB} \\
+						\>\HOLTokenBar{} \HOLConst{incomplete}
+\end{tabbing}
+
 \subsection{Next-State Function}
+
+
 \subsection{Next-Output Function}
+
 \subsection{Authentication}
 \subsection{Authorization}
+
+\HOLThmTag{PBIntegratedDef}{secContext_def}\HOLPBIntegratedDefTheoremssecContextXXdef
+
 \subsection{Proved Theorems}
 \subsubsection{Platoon Leader Is Trusted on plCommands}
 
@@ -38,6 +102,12 @@ ssmConductORP is an example of a \glsentryshort{ssm} with more than one principa
 \subsection{Next-State Function}
 \subsection{Next-Output Function}
 \subsection{Authentication}
+\HOLThmTag{ssmPlanPB}{inputOK_def}\HOLssmPlanPBTheoremsinputOKXXdef
+
+
+\HOLThmTag{PBIntegratedDef}{getOmniCommand_def}\HOLPBIntegratedDefTheoremsgetOmniCommandXXdef
+
+
 \subsection{Authorization}
 \subsection{Proved Theorems}
 
@@ -133,7 +203,7 @@ The two datatypes for plCommand and psgCommand represent the PlatoonLeader and P
 
 Providing each principal with her own set of commands simplifies the authentication and authorization functions.
 \subsection{Output}
-There are 14 outputs.  But, PlanPB, TentativePlan, InitiateMovement, and Recon are not used in the next-output function.  The unAuthorized output is returned for discarded commands.  The unAuthenticated output is returned for discarded commands.
+There are 14 outputs.  But, PlanPB, TentativePlan, InitiateMovement, and Recon are not used in the next-output function.  The unAuthorized output is returned for trapped commands.  The unAuthenticated output is returned for discarded commands.
 
 \begin{tabbing}
 \parskip=8pt
@@ -155,139 +225,185 @@ There are 14 outputs.  But, PlanPB, TentativePlan, InitiateMovement, and Recon a
 \end{tabbing}
 
 \subsection{Next-State Function}
-\begin{tabbing}
-\parskip=8pt
-\HOLTokenTurnstile{} \\
-\hspace{0.3cm}(\HOLConst{planPBNS} \HOLConst{WARNO} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}\\
-\hspace{0.5cm} \HOLKeyword{if}\\
-\hspace{0.9cm}(\HOLConst{getRecon} \HOLFreeVar{x} \HOLSymConst{=} [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{recon}))]) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.9cm}(\HOLConst{getTenativePlan} \HOLFreeVar{x} \HOLSymConst{=} [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{tentativePlan}))]) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.9cm}(\HOLConst{getReport} \HOLFreeVar{x} \HOLSymConst{=} [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{report1}))]) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.9cm}(\HOLConst{getInitMove} \HOLFreeVar{x} \HOLSymConst{=} [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{initiateMovement}))])
-\hspace{0.5cm}\HOLKeyword{then}\\
-\hspace{0.9cm}\HOLConst{REPORT1}
-\hspace{0.5cm}\HOLKeyword{else} \\
-\hspace{0.9cm}\HOLConst{WARNO}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{planPBNS} \HOLConst{PLAN_PB} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}\\
-\hspace{0.5cm}\HOLKeyword{if} \HOLConst{getPlCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{receiveMission} \\
-\hspace{0.5cm}\HOLKeyword{then} \\
-\hspace{0.9cm}\HOLConst{RECEIVE_MISSION}\\
-\hspace{0.5cm}\HOLKeyword{else} \\
-\hspace{0.9cm}\HOLConst{PLAN_PB}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.5cm}(\HOLConst{planPBNS} \HOLConst{RECEIVE_MISSION} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}\\
-\hspace{0.5cm}\HOLKeyword{if} \\
-\hspace{0.9cm}\HOLConst{getPlCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{warno} \HOLKeyword{then} \HOLConst{WARNO} \HOLKeyword{else} \HOLConst{RECEIVE_MISSION}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{planPBNS} \HOLConst{REPORT1} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}
-    \HOLKeyword{if} \HOLConst{getPlCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{completePlan} \HOLKeyword{then} \HOLConst{COMPLETE_PLAN}
-    \HOLKeyword{else} \HOLConst{REPORT1}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{planPBNS} \HOLConst{COMPLETE_PLAN} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}
-    \HOLKeyword{if} \HOLConst{getPlCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{opoid} \HOLKeyword{then} \HOLConst{OPOID} \HOLKeyword{else} \HOLConst{COMPLETE_PLAN}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{planPBNS} \HOLConst{OPOID} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}
-    \HOLKeyword{if} \HOLConst{getPlCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{supervise} \HOLKeyword{then} \HOLConst{SUPERVISE} \HOLKeyword{else} \HOLConst{OPOID}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{planPBNS} \HOLConst{SUPERVISE} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}
-    \HOLKeyword{if} \HOLConst{getPlCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{report2} \HOLKeyword{then} \HOLConst{REPORT2} \HOLKeyword{else} \HOLConst{SUPERVISE}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{planPBNS} \HOLConst{REPORT2} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}
-    \HOLKeyword{if} \HOLConst{getPlCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{complete} \HOLKeyword{then} \HOLConst{COMPLETE} \HOLKeyword{else} \HOLConst{REPORT2}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{planPBNS} \HOLFreeVar{s} (\HOLConst{trap} \HOLFreeVar{v\sb{\mathrm{0}}}) \HOLSymConst{=} \HOLFreeVar{s}) \HOLSymConst{\HOLTokenConj{}} (\HOLConst{planPBNS} \HOLFreeVar{s} (\HOLConst{discard} \HOLFreeVar{v\sb{\mathrm{1}}}) \HOLSymConst{=} \HOLFreeVar{s})
-\parskip=18pt
-\end{tabbing}
+The next-state function takes the current state and a transition type and inputList pair.  It returns the next-state.  For the \textit{exec} transition type, an if-then-else decision statement checks the state and input.  If the input indicates a transition, then transition occurs, else no state change occurs.  The WARNO state is an exception.  It requires four inputs as described at the beginning of this section. To do this, four functions extract the appropriate command from the input list.  If all four commands are not present, then the else state returns WARNO (i.e., no state change occurs).
+
+For the \textit{trap} and \textit{discard} transition types (the last two statements on the last line), the current state is returned for any command. 
+
+\HOLThmTag{ssmPlanPB}{planPBNS_def}\HOLssmPlanPBTheoremsplanPBNSXXdef
+
+Five functions are defined (see below) to extract the command from the input list.  These are getRecon, getTentativePlan, getReport, getInitMove, and getPlCom.  Each of these functions takes an input list as a parameter and returns a command with its option type.  For the sake of brevity, only getRecon is shown below.  The other functions are similar.
+
+\paragraph*{HOL Definition for getRecon}...
+
+\begin{lstlisting}
+val getRecon_def = Define `
+    (getRecon ([]:((slCommand command)option, stateRole, 'd,'e)Form list) =
+    	      [NONE]) /\
+    (getRecon ((Name PlatoonLeader) says (prop (SOME (SLc (PL recon))))
+               :((slCommand command)option, stateRole, 'd,'e)Form::xs)
+    	      	        = [SOME (SLc (PL recon)):(slCommand command)option]) /\
+    (getRecon (_::xs) = getRecon xs)`
+\end{lstlisting}
+
+getRecon is defined recursively and uses pattern matching.  The first line beginning with getRecon pattern matches against an empty list of type \textit{((slCommand command)option, stateRole, 'd,'e)Form list)} as input.  It returns the option type NONE.  The next getRecon pattern matches the head of the list with \textit{((Name PlatoonLeader) says (prop (SOME (SLc (PL recon))))} of type  \textit{((slCommand command)option, stateRole, 'd,'e)Form list)}.  This returns \textit{[SOME (SLc (PL recon)):(slCommand command)option]}.  The final getRecon pattern matches the wild card "_" to any other input.  It recursively calls getRecon on the remainder of the list, while throwing out the head.
+
+\paragraph*{HOL Generated Output for getRecon}...
+The \glsentryshort{hol} generated code converts the wild card into all allowable cases for head of the list.  It is shown below.
+
+\HOLThmTag{PlanPBDef}{getRecon_def}\HOLPlanPBDefTheoremsgetReconXXdef
 
 \subsection{Next-Output Function}
+The next-output differs from the next-state function in that it returns an output rather than a state.  It follows the same logic.  The \textit{trap} and \textit{discard} transition types return the outputs unAuthorized and unAuthenticated, respectively.
+\HOLThmTag{ssmPlanPB}{planPBOut_def}\HOLssmPlanPBTheoremsplanPBOutXXdef
 
-\begin{tabbing}
-\parskip=8pt
-\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{P}.
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{WARNO} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{PLAN_PB} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{RECEIVE_MISSION} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{REPORT1} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{COMPLETE_PLAN} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{OPOID} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{SUPERVISE} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{REPORT2} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{s} \HOLBoundVar{v\sb{\mathrm{0}}}. \HOLBoundVar{P} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{v\sb{\mathrm{0}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{s} \HOLBoundVar{v\sb{\mathrm{1}}}. \HOLBoundVar{P} \HOLBoundVar{s} (\HOLConst{discard} \HOLBoundVar{v\sb{\mathrm{1}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{6}}}. \HOLBoundVar{P} \HOLConst{TENTATIVE_PLAN} (\HOLConst{exec} \HOLBoundVar{v\sb{\mathrm{6}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{7}}}. \HOLBoundVar{P} \HOLConst{INITIATE_MOVEMENT} (\HOLConst{exec} \HOLBoundVar{v\sb{\mathrm{7}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{8}}}. \HOLBoundVar{P} \HOLConst{RECON} (\HOLConst{exec} \HOLBoundVar{v\sb{\mathrm{8}}})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{9}}}. \HOLBoundVar{P} \HOLConst{COMPLETE} (\HOLConst{exec} \HOLBoundVar{v\sb{\mathrm{9}}})) \HOLSymConst{\HOLTokenImp{}}
-     \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v} \HOLBoundVar{v\sb{\mathrm{1}}}. \HOLBoundVar{P} \HOLBoundVar{v} \HOLBoundVar{v\sb{\mathrm{1}}}
-\parskip=18pt
-\end{tabbing}
 
 \subsection{Authentication}
+The authenticationTest function takes an elementTest function and an input list as parameters.  authenticationTest is defined in the parametrizable ssm.  elementTest function is defined as a parameter in each \glsentryshort{ssm}.  In the \glsentryshortpl{ssm}, elementTest is named inputOK.  
 
-\begin{tabbing}
-\parskip=8pt
-\HOLTokenTurnstile{} \\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{cmd}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{T})  \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{cmd}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{T}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} \HOLConst{TT} \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}} (\HOLConst{inputOK} \HOLConst{FF} \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLConst{prop} \HOLFreeVar{v}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}} (\HOLConst{inputOK} (\HOLConst{notf} \HOLFreeVar{v\sb{\mathrm{1}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{2}}} \HOLConst{andf} \HOLFreeVar{v\sb{\mathrm{3}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\ \hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{4}}} \HOLConst{orf} \HOLFreeVar{v\sb{\mathrm{5}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{6}}} \HOLConst{impf} \HOLFreeVar{v\sb{\mathrm{7}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}} \\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{8}}} \HOLConst{eqf} \HOLFreeVar{v\sb{\mathrm{9}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{TT}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}} \\\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{FF}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v133} \HOLConst{meet} \HOLFreeVar{v134} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{v\sb{\mathrm{66}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v135} \HOLConst{quoting} \HOLFreeVar{v136} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{v\sb{\mathrm{66}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{notf} \HOLFreeVar{v\sb{\mathrm{67}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLFreeVar{v\sb{\mathrm{68}}} \HOLConst{andf} \HOLFreeVar{v\sb{\mathrm{69}}})) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLFreeVar{v\sb{\mathrm{70}}} \HOLConst{orf} \HOLFreeVar{v\sb{\mathrm{71}}})) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLFreeVar{v\sb{\mathrm{72}}} \HOLConst{impf} \HOLFreeVar{v\sb{\mathrm{73}}})) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLFreeVar{v\sb{\mathrm{74}}} \HOLConst{eqf} \HOLFreeVar{v\sb{\mathrm{75}}})) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{76}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{77}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{78}}} \HOLConst{speaks_for} \HOLFreeVar{v\sb{\mathrm{79}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{80}}} \HOLConst{controls} \HOLFreeVar{v\sb{\mathrm{81}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{reps} \HOLFreeVar{v\sb{\mathrm{82}}} \HOLFreeVar{v\sb{\mathrm{83}}} \HOLFreeVar{v\sb{\mathrm{84}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{85}}} \HOLConst{domi} \HOLFreeVar{v\sb{\mathrm{86}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{87}}} \HOLConst{eqi} \HOLFreeVar{v\sb{\mathrm{88}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{89}}} \HOLConst{doms} \HOLFreeVar{v\sb{\mathrm{90}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{91}}} \HOLConst{eqs} \HOLFreeVar{v\sb{\mathrm{92}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{93}}} \HOLConst{eqn} \HOLFreeVar{v\sb{\mathrm{94}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{95}}} \HOLConst{lte} \HOLFreeVar{v\sb{\mathrm{96}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{97}}} \HOLConst{lt} \HOLFreeVar{v\sb{\mathrm{98}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{12}}} \HOLConst{speaks_for} \HOLFreeVar{v\sb{\mathrm{13}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{14}}} \HOLConst{controls} \HOLFreeVar{v\sb{\mathrm{15}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLConst{reps} \HOLFreeVar{v\sb{\mathrm{16}}} \HOLFreeVar{v\sb{\mathrm{17}}} \HOLFreeVar{v\sb{\mathrm{18}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{19}}} \HOLConst{domi} \HOLFreeVar{v\sb{\mathrm{20}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{21}}} \HOLConst{eqi} \HOLFreeVar{v\sb{\mathrm{22}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{23}}} \HOLConst{doms} \HOLFreeVar{v\sb{\mathrm{24}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{25}}} \HOLConst{eqs} \HOLFreeVar{v\sb{\mathrm{26}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}} (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{27}}} \HOLConst{eqn} \HOLFreeVar{v\sb{\mathrm{28}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}\\
-\hspace{0.3cm}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{29}}} \HOLConst{lte} \HOLFreeVar{v\sb{\mathrm{30}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}(\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{31}}} \HOLConst{lt} \HOLFreeVar{v\sb{\mathrm{32}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F})
-\parskip=18pt
-\end{tabbing}
+\paragraph*{HOL Definition for inputOK}
 
+The \glsentryshort{hol} definition for inputOK uses the wild card "_".  Thus, the \glsentryshort{hol} definition differs from the \glsentryshort{hol} generated output.  The \glsentryshort{hol} definition is shown below. 
 
-\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{P}.
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{cmd}. \HOLBoundVar{P} (\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says} \HOLConst{prop} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{cmd}. \HOLBoundVar{P} (\HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says} \HOLConst{prop} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}} \HOLBoundVar{P} \HOLConst{TT} \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{FF} \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v}. \HOLBoundVar{P} (\HOLConst{prop} \HOLBoundVar{v})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{1}}}. \HOLBoundVar{P} (\HOLConst{notf} \HOLBoundVar{v\sb{\mathrm{1}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{2}}} \HOLBoundVar{v\sb{\mathrm{3}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{2}}} \HOLConst{andf} \HOLBoundVar{v\sb{\mathrm{3}}})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{4}}} \HOLBoundVar{v\sb{\mathrm{5}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{4}}} \HOLConst{orf} \HOLBoundVar{v\sb{\mathrm{5}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{6}}} \HOLBoundVar{v\sb{\mathrm{7}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{6}}} \HOLConst{impf} \HOLBoundVar{v\sb{\mathrm{7}}})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{8}}} \HOLBoundVar{v\sb{\mathrm{9}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{8}}} \HOLConst{eqf} \HOLBoundVar{v\sb{\mathrm{9}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{TT})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{FF})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v133} \HOLBoundVar{v134} \HOLBoundVar{v\sb{\mathrm{66}}}. \HOLBoundVar{P} (\HOLBoundVar{v133} \HOLConst{meet} \HOLBoundVar{v134} \HOLConst{says} \HOLConst{prop} \HOLBoundVar{v\sb{\mathrm{66}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v135} \HOLBoundVar{v136} \HOLBoundVar{v\sb{\mathrm{66}}}. \HOLBoundVar{P} (\HOLBoundVar{v135} \HOLConst{quoting} \HOLBoundVar{v136} \HOLConst{says} \HOLConst{prop} \HOLBoundVar{v\sb{\mathrm{66}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{67}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{notf} \HOLBoundVar{v\sb{\mathrm{67}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{68}}} \HOLBoundVar{v\sb{\mathrm{69}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLBoundVar{v\sb{\mathrm{68}}} \HOLConst{andf} \HOLBoundVar{v\sb{\mathrm{69}}}))) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{70}}} \HOLBoundVar{v\sb{\mathrm{71}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLBoundVar{v\sb{\mathrm{70}}} \HOLConst{orf} \HOLBoundVar{v\sb{\mathrm{71}}}))) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{72}}} \HOLBoundVar{v\sb{\mathrm{73}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLBoundVar{v\sb{\mathrm{72}}} \HOLConst{impf} \HOLBoundVar{v\sb{\mathrm{73}}}))) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{74}}} \HOLBoundVar{v\sb{\mathrm{75}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLBoundVar{v\sb{\mathrm{74}}} \HOLConst{eqf} \HOLBoundVar{v\sb{\mathrm{75}}}))) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{76}}} \HOLBoundVar{v\sb{\mathrm{77}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{76}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{77}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{78}}} \HOLBoundVar{v\sb{\mathrm{79}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{78}}} \HOLConst{speaks_for} \HOLBoundVar{v\sb{\mathrm{79}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{80}}} \HOLBoundVar{v\sb{\mathrm{81}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{80}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{81}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{82}}} \HOLBoundVar{v\sb{\mathrm{83}}} \HOLBoundVar{v\sb{\mathrm{84}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{reps} \HOLBoundVar{v\sb{\mathrm{82}}} \HOLBoundVar{v\sb{\mathrm{83}}} \HOLBoundVar{v\sb{\mathrm{84}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{85}}} \HOLBoundVar{v\sb{\mathrm{86}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{85}}} \HOLConst{domi} \HOLBoundVar{v\sb{\mathrm{86}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{87}}} \HOLBoundVar{v\sb{\mathrm{88}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{87}}} \HOLConst{eqi} \HOLBoundVar{v\sb{\mathrm{88}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{89}}} \HOLBoundVar{v\sb{\mathrm{90}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{89}}} \HOLConst{doms} \HOLBoundVar{v\sb{\mathrm{90}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{91}}} \HOLBoundVar{v\sb{\mathrm{92}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{91}}} \HOLConst{eqs} \HOLBoundVar{v\sb{\mathrm{92}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{93}}} \HOLBoundVar{v\sb{\mathrm{94}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{93}}} \HOLConst{eqn} \HOLBoundVar{v\sb{\mathrm{94}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{95}}} \HOLBoundVar{v\sb{\mathrm{96}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{95}}} \HOLConst{lte} \HOLBoundVar{v\sb{\mathrm{96}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}} \HOLBoundVar{v\sb{\mathrm{97}}} \HOLBoundVar{v\sb{\mathrm{98}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLBoundVar{v\sb{\mathrm{97}}} \HOLConst{lt} \HOLBoundVar{v\sb{\mathrm{98}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{12}}} \HOLBoundVar{v\sb{\mathrm{13}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{12}}} \HOLConst{speaks_for} \HOLBoundVar{v\sb{\mathrm{13}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{14}}} \HOLBoundVar{v\sb{\mathrm{15}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{14}}} \HOLConst{controls} \HOLBoundVar{v\sb{\mathrm{15}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{17}}} \HOLBoundVar{v\sb{\mathrm{18}}}. \HOLBoundVar{P} (\HOLConst{reps} \HOLBoundVar{v\sb{\mathrm{16}}} \HOLBoundVar{v\sb{\mathrm{17}}} \HOLBoundVar{v\sb{\mathrm{18}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{19}}} \HOLBoundVar{v\sb{\mathrm{20}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{19}}} \HOLConst{domi} \HOLBoundVar{v\sb{\mathrm{20}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{21}}} \HOLBoundVar{v\sb{\mathrm{22}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{21}}} \HOLConst{eqi} \HOLBoundVar{v\sb{\mathrm{22}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{23}}} \HOLBoundVar{v\sb{\mathrm{24}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{23}}} \HOLConst{doms} \HOLBoundVar{v\sb{\mathrm{24}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{25}}} \HOLBoundVar{v\sb{\mathrm{26}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{25}}} \HOLConst{eqs} \HOLBoundVar{v\sb{\mathrm{26}}})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{27}}} \HOLBoundVar{v\sb{\mathrm{28}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{27}}} \HOLConst{eqn} \HOLBoundVar{v\sb{\mathrm{28}}})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{29}}} \HOLBoundVar{v\sb{\mathrm{30}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{29}}} \HOLConst{lte} \HOLBoundVar{v\sb{\mathrm{30}}})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{31}}} \HOLBoundVar{v\sb{\mathrm{32}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{31}}} \HOLConst{lt} \HOLBoundVar{v\sb{\mathrm{32}}})) \HOLSymConst{\HOLTokenImp{}}
-     \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v}. \HOLBoundVar{P} \HOLBoundVar{v}
+\begin{lstlisting}
+val inputOK_def = Define
+`(inputOK
+	(((Name PlatoonLeader) says (prop  (cmd:((slCommand command)option))))
+	       :((slCommand command)option, stateRole, 'd,'e)Form) = T)  /\
+(inputOK
+	(((Name PlatoonSergeant) says (prop  (cmd:((slCommand command)option))))
+	       :((slCommand command)option, stateRole, 'd,'e)Form) = T)  /\
+(inputOK _ = F)`
+\end{lstlisting}
+
+inputOK uses pattern matching, but not recursion.  The first inputOK pattern matches the input against \textit{(((Name PlatoonLeader) says (prop  (cmd:((slCommand command)option))))} which is of type \textit{((slCommand command)option, stateRole, 'd,'e)Form)}.  This is defined as T (True).  This authenticates the PlatoonLeader on any slCommand.  The next inputOK pattern matches the input against \textit{((Name PlatoonSergeant) says (prop  (cmd:((slCommand command)option))))} which is of the same type as the first pattern.  This is defined as T (True).  This authenticates the PlatoonSergeant on any slCommand.  The last inputOK pattern uses the wild card to match ANY OTHER input.  ANY OTHER input is defined as F (false).
+	 
+	 
+\paragraph*{HOL Generated Output for inputOK}
+
+The \glsentryshort{hol} generated output matches the wild card to all other possible values for the input.
+
+\HOLThmTag{ssmPlanPB}{inputOK_def}\HOLssmPlanPBTheoremsinputOKXXdef
+
+The theorem inputOK_cmd_reject_lemma proves that any command that is not requested by a principal is false.
+
+\begin{lstlisting}
+val inputOK_cmd_reject_lemma =
+TAC_PROOF(
+  ([],
+   ``!cmd. ~(inputOK
+   	   ((prop (SOME cmd)):((slCommand command)option, stateRole, 'd,'e)Form))``),
+  PROVE_TAC[inputOK_def])
+\end{lstlisting}
+
 
 \subsection{Authorization}
+Authorization is defined in two ways.  Authorization is state-dependent because of the added requirement for the transition from the WARNO state to the REPORT1 state.  This is equivalent to the stateInterp function in ssm.  In ssmPlanPB, this function is called secContext.
+
+\begin{lstlisting}
+val secContext_def = Define `
+secContext (s:slState) (x:((slCommand command)option, stateRole, 'd,'e)Form list) =
+    if (s = WARNO) then
+        (if (getRecon         x = [SOME (SLc (PL recon))
+                                   :(slCommand command)option] ) /\
+	    (getTenativePlan  x = [SOME (SLc (PL tentativePlan))
+	    		      	   :(slCommand command)option]) /\
+            (getReport        x = [SOME (SLc (PL report1))
+	    		      	   :(slCommand command)option]) /\
+	    (getInitMove      x = [SOME (SLc (PSG initiateMovement))
+	    		      	   :(slCommand command)option])
+         then [
+	       PL_WARNO_Auth
+	        :((slCommand command)option, stateRole, 'd,'e)Form;
+		(Name PlatoonLeader) controls prop (SOME (SLc (PL recon)));
+		(Name PlatoonLeader) controls prop (SOME (SLc (PL tentativePlan)));
+	       (Name PlatoonSergeant) controls prop (SOME (SLc (PSG initiateMovement)))]
+	 else [(prop NONE):((slCommand command)option, stateRole, 'd,'e)Form])
+    else if ((getPlCom x) = invalidPlCommand)
+    	 then [(prop NONE):((slCommand command)option, stateRole, 'd,'e)Form]
+	 else [PL_notWARNO_Auth (getPlCom x)]`
+\end{lstlisting}
+
+secContext uses pattern matching, but not recursion. It is similar to the definition for the next state function.  If the \textit{s = WARNO}, then secContext looks for all four statements using the get* functions.   If these are all present, then secContext returns \textit{PL_WARNO_Auth}. \textit{PL_WARNO_Auth} contains the implication that authorizes the Platoon Leader on the transition to REPORT1.  If all four statements are not present, then \textit{ [(prop NONE)]} is returned.
+
+
+\begin{lstlisting}
+val PL_WARNO_Auth_def = Define `
+    PL_WARNO_Auth =
+    ^(impfTermList
+    [``(prop (SOME (SLc (PL recon))))
+         :((slCommand command)option, stateRole, 'd,'e)Form``,
+     ``(prop (SOME (SLc (PL tentativePlan))))
+         :((slCommand command)option, stateRole, 'd,'e)Form``,
+     ``(prop (SOME (SLc (PSG initiateMovement))))
+         :((slCommand command)option, stateRole, 'd,'e)Form``,
+     ``(Name PlatoonLeader) controls prop (SOME (SLc (PL report1)))
+         :((slCommand command)option, stateRole, 'd,'e)Form``]
+     ``:((slCommand command)option, stateRole, 'd,'e)Form``)`
+\end{lstlisting}
+
+The remainder of secContext applies to all other states.  If the getPlCom function returns \textit{invalidPlComand}, then secContext returns  \textit{ [(prop NONE)]} is returned.  Otherwise, it returns \textit{PL_notWARNO_Auth}.  \textit{PL_notWARNO_Auth} authorizes the PlatoonLeader on any plCommand except \textit{report1}. If the command is \textit{report1} is found, then it returns \textit{ [(prop NONE)]}.
+
+\begin{lstlisting}
+val PL_notWARNO_Auth_def = Define `
+    PL_notWARNO_Auth (cmd:plCommand) =
+    if (cmd = report1) (* report1 exits WARNO state *)
+    then
+      (prop NONE):((slCommand command)option, stateRole, 'd,'e)Form
+    else
+      ((Name PlatoonLeader) says (prop (SOME (SLc (PL cmd)))
+       :((slCommand command)option, stateRole, 'd,'e)Form) impf
+      (((Name PlatoonLeader) controls prop (SOME (SLc (PL cmd))))
+      :((slCommand command)option, stateRole, 'd,'e)Form)) `
+\end{lstlisting}
+
 \subsection{Proved Theorems}
+The following theorems prove various properties about the \glsentryshort{ssm}.  Descriptions are similar to those of previously described \glsentryshortpl{ssm}.  
+
+
+\paragraph*{PlatoonLeader_notWARNO_notreport1_exec_plCommand_justified_thm}
+This theorem proves that if the state is NOT WARNO and the PlatoonLeader issues any plCommand other than \textit{report1}, then that command should be executed.  Two lemmas are required first.
+
+\HOLThmTag{ssmPlanPB}{PlatoonLeader_notWARNO_notreport1_exec_plCommand_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXnotWARNOXXnotreportOneXXexecXXplCommandXXlemma
+
+\HOLThmTag{ssmPlanPB}{PlatoonLeader_notWARNO_notreport1_exec_plCommand_justified_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXnotWARNOXXnotreportOneXXexecXXplCommandXXjustifiedXXlemma
+
+\HOLThmTag{ssmPlanPB}{PlatoonLeader_notWARNO_notreport1_exec_plCommand_justified_thm}\HOLssmPlanPBTheoremsPlatoonLeaderXXnotWARNOXXnotreportOneXXexecXXplCommandXXjustifiedXXthm
+
+\paragraph*{PlatoonLeader_psgCommand_notDiscard_thm}
+This next theorem proves that if the PlatoonLeader issues a psgCommand then that command is not discarded.  The reason for this is that the psgCommand is an slCommand.  In inputOK, the PlatoonLeader is authenticated on all psgCommand.  Therefore, this command should be trapped an not discarded.
+
+\HOLThmTag{ssmPlanPB}{PlatoonLeader_psgCommand_notDiscard_thm}\HOLssmPlanPBTheoremsPlatoonLeaderXXpsgCommandXXnotDiscardXXthm
+
+
+\paragraph*{PlatoonSergeant_trap_plCommand_justified_thm}
+This next theorem proves that if the PlatoonLeader issues a psgCommand then that command is trapped.  It requires two lemmas.
+
+\HOLThmTag{ssmPlanPB}{PlatoonLeader_trap_psgCommand_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXtrapXXpsgCommandXXlemma
+
+\HOLThmTag{ssmPlanPB}{PlatoonLeader_trap_psgCommand_justified_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXtrapXXpsgCommandXXjustifiedXXlemma
+
+\HOLThmTag{ssmPlanPB}{PlatoonSergeant_trap_plCommand_justified_thm}\HOLssmPlanPBTheoremsPlatoonSergeantXXtrapXXplCommandXXjustifiedXXthm
+
+\paragraph*{PlatoonLeader_WARNO_exec_report1_justified_thm}
+This theorem proves that if the state IS WARNO and the PlatoonLeader issues the plCommand \textit{report1}, then that command should be executed.  Two lemmas are required first.  
+
+Notice that the 
+
+\HOLThmTag{ssmPlanPB}{PlatoonLeader_WARNO_exec_report1_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXWARNOXXexecXXreportOneXXlemma
+
+\HOLThmTag{ssmPlanPB}{PlatoonLeader_WARNO_exec_report1_justified_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXWARNOXXexecXXreportOneXXjustifiedXXlemma
+
+\HOLThmTag{ssmPlanPB}{PlatoonLeader_WARNO_exec_report1_justified_thm}\HOLssmPlanPBTheoremsPlatoonLeaderXXWARNOXXexecXXreportOneXXjustifiedXXthm
+
+
+\paragraph*{PlatoonSergeant_trap_plCommand_justified_thm}
+This theorem proves that the PlatoonSergeant is trapped on all plCommands.  It requires two lemmas.
+
+\HOLThmTag{ssmPlanPB}{PlatoonSergeant_trap_plCommand_lemma}\HOLssmPlanPBTheoremsPlatoonSergeantXXtrapXXplCommandXXlemma
+
+\HOLThmTag{ssmPlanPB}{PlatoonSergeant_trap_plCommand_justified_lemma}\HOLssmPlanPBTheoremsPlatoonSergeantXXtrapXXplCommandXXjustifiedXXlemma
+
+\HOLThmTag{ssmPlanPB}{PlatoonSergeant_trap_plCommand_justified_thm}\HOLssmPlanPBTheoremsPlatoonSergeantXXtrapXXplCommandXXjustifiedXXthm
 
 
 \end{document}
