@@ -1,5 +1,5 @@
 \newcommand{\HOLPBIntegratedDefDate}{11 June 2018}
-\newcommand{\HOLPBIntegratedDefTime}{01:51}
+\newcommand{\HOLPBIntegratedDefTime}{16:27}
 \begin{SaveVerbatim}{HOLPBIntegratedDefDefinitionssecAuthorizationXXdef}
 \HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs}. \HOLConst{secAuthorization} \HOLBoundVar{xs} \HOLSymConst{=} \HOLConst{secHelper} (\HOLConst{getOmniCommand} \HOLBoundVar{xs})
 \end{SaveVerbatim}
@@ -228,7 +228,26 @@
      \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v}. \HOLBoundVar{P} \HOLBoundVar{v}
 \end{SaveVerbatim}
 \newcommand{\HOLPBIntegratedDefTheoremsgetOmniCommandXXind}{\UseVerbatim{HOLPBIntegratedDefTheoremsgetOmniCommandXXind}}
+\begin{SaveVerbatim}{HOLPBIntegratedDefTheoremsgetPlComXXdef}
+\HOLTokenTurnstile{} (\HOLConst{getPlCom} [] \HOLSymConst{=} \HOLConst{incomplete}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{cmd}. \HOLConst{getPlCom} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLBoundVar{cmd}))\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLBoundVar{cmd}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs}. \HOLConst{getPlCom} (\HOLConst{NONE}\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getPlCom} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{4}}}. \HOLConst{getPlCom} (\HOLConst{SOME} (\HOLConst{ESCc} \HOLBoundVar{v\sb{\mathrm{4}}})\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getPlCom} \HOLBoundVar{xs}) \HOLSymConst{\HOLTokenConj{}}
+   \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs} \HOLBoundVar{v\sb{\mathrm{9}}}. \HOLConst{getPlCom} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLBoundVar{v\sb{\mathrm{9}}}))\HOLSymConst{::}\HOLBoundVar{xs}) \HOLSymConst{=} \HOLConst{getPlCom} \HOLBoundVar{xs}
+\end{SaveVerbatim}
+\newcommand{\HOLPBIntegratedDefTheoremsgetPlComXXdef}{\UseVerbatim{HOLPBIntegratedDefTheoremsgetPlComXXdef}}
+\begin{SaveVerbatim}{HOLPBIntegratedDefTheoremsgetPlComXXind}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{P}.
+     \HOLBoundVar{P} [] \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{cmd} \HOLBoundVar{xs}. \HOLBoundVar{P} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLBoundVar{cmd}))\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLConst{NONE}\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{4}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLConst{SOME} (\HOLConst{ESCc} \HOLBoundVar{v\sb{\mathrm{4}}})\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{9}}} \HOLBoundVar{xs}. \HOLBoundVar{P} \HOLBoundVar{xs} \HOLSymConst{\HOLTokenImp{}} \HOLBoundVar{P} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLBoundVar{v\sb{\mathrm{9}}}))\HOLSymConst{::}\HOLBoundVar{xs})) \HOLSymConst{\HOLTokenImp{}}
+     \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v}. \HOLBoundVar{P} \HOLBoundVar{v}
+\end{SaveVerbatim}
+\newcommand{\HOLPBIntegratedDefTheoremsgetPlComXXind}{\UseVerbatim{HOLPBIntegratedDefTheoremsgetPlComXXind}}
 \newcommand{\HOLPBIntegratedDefTheorems}{
 \HOLThmTag{PBIntegratedDef}{getOmniCommand_def}\HOLPBIntegratedDefTheoremsgetOmniCommandXXdef
 \HOLThmTag{PBIntegratedDef}{getOmniCommand_ind}\HOLPBIntegratedDefTheoremsgetOmniCommandXXind
+\HOLThmTag{PBIntegratedDef}{getPlCom_def}\HOLPBIntegratedDefTheoremsgetPlComXXdef
+\HOLThmTag{PBIntegratedDef}{getPlCom_ind}\HOLPBIntegratedDefTheoremsgetPlComXXind
 }
