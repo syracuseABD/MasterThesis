@@ -137,7 +137,7 @@ val PlatoonLeader_PLAN_PB_exec_justified_thm =
 REWRITE_RULE[inputList_def, extractInput_def, MAP, propCommandList_def,
   extractPropCommand_def, PlatoonLeader_PLAN_PB_exec_lemma] thPlanPB
 
-val _= ("PlatoonLeader_PLAN_PB_exec_justified_thm",
+val _= save_thm("PlatoonLeader_PLAN_PB_exec_justified_thm",
        PlatoonLeader_PLAN_PB_exec_justified_thm)
 
 
