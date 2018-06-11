@@ -1,5 +1,5 @@
 \newcommand{\HOLssmPlanPBDate}{10 June 2018}
-\newcommand{\HOLssmPlanPBTime}{18:23}
+\newcommand{\HOLssmPlanPBTime}{23:46}
 \begin{SaveVerbatim}{HOLssmPlanPBTheoremsinputOKXXdef}
 \HOLTokenTurnstile{} (\HOLConst{inputOK} (\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{cmd}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{T}) \HOLSymConst{\HOLTokenConj{}}
    (\HOLConst{inputOK} (\HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{cmd}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{T}) \HOLSymConst{\HOLTokenConj{}}
@@ -238,25 +238,13 @@
 \newcommand{\HOLssmPlanPBTheoremsPlatoonLeaderXXnotWARNOXXnotreportOneXXexecXXplCommandXXlemma}{\UseVerbatim{HOLssmPlanPBTheoremsPlatoonLeaderXXnotWARNOXXnotreportOneXXexecXXplCommandXXlemma}}
 \begin{SaveVerbatim}{HOLssmPlanPBTheoremsPlatoonLeaderXXpsgCommandXXnotDiscardXXthm}
 \HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{NS} \HOLBoundVar{Out} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
-     \HOLSymConst{\HOLTokenNeg{}}\HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
-        (\HOLConst{discard}
-           (\HOLConst{inputList}
-              [\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
-               \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand})))]))
+     \HOLSymConst{\HOLTokenNeg{}}\HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{discard} [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand}))])
         (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secContextNull}
            ([\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
              \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs})
         (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secContextNull} \HOLFreeVar{ins}
-           (\HOLBoundVar{NS} \HOLFreeVar{s}
-              (\HOLConst{discard}
-                 (\HOLConst{inputList}
-                    [\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
-                     \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand})))])))
-           (\HOLBoundVar{Out} \HOLFreeVar{s}
-              (\HOLConst{discard}
-                 (\HOLConst{inputList}
-                    [\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
-                     \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand})))]))\HOLSymConst{::}
+           (\HOLBoundVar{NS} \HOLFreeVar{s} (\HOLConst{discard} [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand}))]))
+           (\HOLBoundVar{Out} \HOLFreeVar{s} (\HOLConst{discard} [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand}))])\HOLSymConst{::}
                 \HOLFreeVar{outs}))
 \end{SaveVerbatim}
 \newcommand{\HOLssmPlanPBTheoremsPlatoonLeaderXXpsgCommandXXnotDiscardXXthm}{\UseVerbatim{HOLssmPlanPBTheoremsPlatoonLeaderXXpsgCommandXXnotDiscardXXthm}}
