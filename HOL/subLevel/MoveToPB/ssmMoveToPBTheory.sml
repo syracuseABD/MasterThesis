@@ -13,17 +13,17 @@ struct
   in end;
   val _ = Theory.link_parents
           ("ssmMoveToPB",
-          Arbnum.fromString "1526502825",
-          Arbnum.fromString "540356")
+          Arbnum.fromString "1528688771",
+          Arbnum.fromString "224366")
           [("MoveToPBType",
-           Arbnum.fromString "1526502822",
-           Arbnum.fromString "972979"),
+           Arbnum.fromString "1528688768",
+           Arbnum.fromString "271188"),
            ("ssm11",
-           Arbnum.fromString "1526502756",
-           Arbnum.fromString "497196"),
+           Arbnum.fromString "1528688695",
+           Arbnum.fromString "219693"),
            ("OMNIType",
-           Arbnum.fromString "1526502768",
-           Arbnum.fromString "51917")];
+           Arbnum.fromString "1528688707",
+           Arbnum.fromString "689204")];
   val _ = Theory.incorporate_types "ssmMoveToPB" [];
 
   val idvector = 

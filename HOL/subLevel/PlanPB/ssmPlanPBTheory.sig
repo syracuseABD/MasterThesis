@@ -287,25 +287,13 @@ sig
    [PlatoonLeader_psgCommand_notDiscard_thm]  Theorem
 
       |- ∀NS Out M Oi Os.
-           ¬TR (M,Oi,Os)
-              (discard
-                 (inputList
-                    [Name PlatoonLeader says
-                     prop (SOME (SLc (PSG psgCommand)))]))
+           ¬TR (M,Oi,Os) (discard [SOME (SLc (PSG psgCommand))])
               (CFG inputOK secContext secContextNull
                  ([Name PlatoonLeader says
                    prop (SOME (SLc (PSG psgCommand)))]::ins) s outs)
               (CFG inputOK secContext secContextNull ins
-                 (NS s
-                    (discard
-                       (inputList
-                          [Name PlatoonLeader says
-                           prop (SOME (SLc (PSG psgCommand)))])))
-                 (Out s
-                    (discard
-                       (inputList
-                          [Name PlatoonLeader says
-                           prop (SOME (SLc (PSG psgCommand)))]))::outs))
+                 (NS s (discard [SOME (SLc (PSG psgCommand))]))
+                 (Out s (discard [SOME (SLc (PSG psgCommand))])::outs))
 
    [PlatoonLeader_trap_psgCommand_justified_lemma]  Theorem
 

@@ -213,5 +213,5 @@ Theorems:
            Efn Oi Os M (P speaks_for Q) =
            if Jext (jKS M) Q ⊆ᵣ Jext (jKS M) P then 𝕌(:φ) else ∅
 Exporting theory "aclsemantics" ... done.
-Theory "aclsemantics" took 0.67902s to build
+Theory "aclsemantics" took 0.65823s to build
 Completed load of aclsemanticsScript

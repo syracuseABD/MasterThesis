@@ -13,11 +13,11 @@ struct
   in end;
   val _ = Theory.link_parents
           ("PBTypeIntegrated",
-          Arbnum.fromString "1526502772",
-          Arbnum.fromString "930871")
+          Arbnum.fromString "1528688712",
+          Arbnum.fromString "394032")
           [("OMNIType",
-           Arbnum.fromString "1526502768",
-           Arbnum.fromString "51917")];
+           Arbnum.fromString "1528688707",
+           Arbnum.fromString "689204")];
   val _ = Theory.incorporate_types "PBTypeIntegrated"
        [("stateRole", 0), ("slState", 0), ("slOutput", 0),
         ("slCommand", 0), ("plCommand", 0), ("omniCommand", 0)];

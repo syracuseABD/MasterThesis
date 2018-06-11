@@ -4,20 +4,20 @@
     \subitem Definitions, 16
       \subsubitem PL_notWARNO_Auth_def, 16
       \subsubitem PL_WARNO_Auth_def, 16
-      \subsubitem secContext_def, 17
+      \subsubitem secContext_def, 16
       \subsubitem secContextNull_def, 17
     \subitem Theorems, 17
       \subsubitem getInitMove_def, 17
       \subsubitem getInitMove_ind, 19
       \subsubitem getPlCom_def, 21
-      \subsubitem getPlCom_ind, 23
+      \subsubitem getPlCom_ind, 22
       \subsubitem getPsgCom_def, 24
-      \subsubitem getPsgCom_ind, 26
+      \subsubitem getPsgCom_ind, 25
       \subsubitem getRecon_def, 27
       \subsubitem getRecon_ind, 30
       \subsubitem getReport_def, 32
       \subsubitem getReport_ind, 35
-      \subsubitem getTenativePlan_def, 38
+      \subsubitem getTenativePlan_def, 37
       \subsubitem getTenativePlan_ind, 41
   \item \textbf  {PlanPBType Theory}, 3
     \subitem Datatypes, 3
@@ -48,7 +48,7 @@
 		10
       \subsubitem PlatoonLeader_psgCommand_notDiscard_thm, 11
       \subsubitem PlatoonLeader_trap_psgCommand_justified_lemma, 11
-      \subsubitem PlatoonLeader_trap_psgCommand_lemma, 12
+      \subsubitem PlatoonLeader_trap_psgCommand_lemma, 11
       \subsubitem PlatoonLeader_WARNO_exec_report1_justified_lemma, 12
       \subsubitem PlatoonLeader_WARNO_exec_report1_justified_thm, 13
       \subsubitem PlatoonLeader_WARNO_exec_report1_lemma, 14

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.23)  16 MAY 2018 16:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.23)  10 JUN 2018 23:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -183,10 +183,11 @@ LaTeX Font Info:    ... okay on input line 6.
 \MPnumerator=\count98
 \makeMPintoPDFobject=\count99
 \everyMPtoPDFconversion=\toks18
-) (./HOLPBTypeIntegrated.tex) (./HOLssmPB.tex) (./HOLPBIntegratedDef.tex)
-(./Report.toc
+) (./HOLPBTypeIntegrated.tex) (./HOLssmPBIntegrated.tex)
+(./HOLPBIntegratedDef.tex) (./Report.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 2.
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 2.
@@ -202,54 +203,66 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ] [3] [4] [5] [6] [7] [8] [9] [10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 73.
 
- [11]
-[12]
+[11] [12]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13]
-[14] (./Report.ind
-Overfull \hbox (8.42813pt too wide) in paragraph at lines 30--31
-[]| \OT1/cmr/m/n/10.95 au-then-ti-ca-tion-Test[]-cmd[]-re-ject[]-lemma,
+[14] [15] [16
+
+] (./Report.ind
+Overfull \hbox (20.22984pt too wide) in paragraph at lines 32--33
+[]| \OT1/cmr/m/n/10.95 Pla-toon-Leader[]-Omni[]-not-Dis-card[]-slCom-
  []
 
 
-Overfull \hbox (2.10147pt too wide) in paragraph at lines 37--38
-[]| \OT1/cmr/m/n/10.95 Pla-toon-Leader[]-exec[]-slCom-mand[]-jus-
+Overfull \hbox (12.6135pt too wide) in paragraph at lines 33--34
+[]| \OT1/cmr/m/n/10.95 Pla-toon-Leader[]-PLAN[]-PB[]-exec[]-lemma,
  []
 
 
-Overfull \hbox (3.20865pt too wide) in paragraph at lines 38--39
-[]| \OT1/cmr/m/n/10.95 Pla-toon-Leader[]-slCom-mand[]-lemma, 9 
+Overfull \hbox (2.36307pt too wide) in paragraph at lines 34--35
+[]| \OT1/cmr/m/n/10.95 Pla-toon-Leader[]-PLAN[]-PB[]-trap[]-jus-ti-
  []
 
-[15
 
+Overfull \hbox (2.36307pt too wide) in paragraph at lines 35--36
+[]| \OT1/cmr/m/n/10.95 Pla-toon-Leader[]-PLAN[]-PB[]-trap[]-jus-ti-
+ []
+
+
+Overfull \hbox (12.33975pt too wide) in paragraph at lines 36--37
+[]| \OT1/cmr/m/n/10.95 Pla-toon-Leader[]-PLAN[]-PB[]-trap[]-lemma,
+ []
+
+[17
 
 
 ]) (./Report.aux) ) 
 Here is how much of TeX's memory you used:
  2538 strings out of 493029
- 36215 string characters out of 6136234
- 138525 words of memory out of 5000000
- 6049 multiletter control sequences out of 15000+600000
- 13238 words of font info for 51 fonts, out of 8000000 for 9000
+ 36498 string characters out of 6136234
+ 144575 words of memory out of 5000000
+ 6048 multiletter control sequences out of 15000+600000
+ 13532 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,11n,45p,497b,403s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,11n,45p,507b,403s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx
 12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Report.pdf (15 pages, 134575 bytes).
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Report.pdf (17 pages, 144588 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 99 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

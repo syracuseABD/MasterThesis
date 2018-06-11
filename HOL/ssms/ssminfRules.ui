@@ -3,5 +3,5 @@ $(HOLDIR)/sigobj/Overlay
 $(HOLDIR)/sigobj/Term
 $(HOLDIR)/sigobj/Thm
 $(HOLDIR)/sigobj/Type
-/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ssms/ssminfRules
-/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ssms/ssminfRules.sig
+/home/sun_goddess/Desktop/MT10June2018/MasterThesis/HOL/ssms/ssminfRules
+/home/sun_goddess/Desktop/MT10June2018/MasterThesis/HOL/ssms/ssminfRules.sig

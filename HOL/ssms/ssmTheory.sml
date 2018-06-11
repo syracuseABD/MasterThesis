@@ -12,10 +12,10 @@ struct
   local open satListTheory
   in end;
   val _ = Theory.link_parents
-          ("ssm",Arbnum.fromString "1526502756",Arbnum.fromString "780457")
+          ("ssm",Arbnum.fromString "1528688695",Arbnum.fromString "391911")
           [("satList",
-           Arbnum.fromString "1526502752",
-           Arbnum.fromString "58293")];
+           Arbnum.fromString "1528688691",
+           Arbnum.fromString "225396")];
   val _ = Theory.incorporate_types "ssm"
        [("trType", 1), ("configuration", 6)];
 

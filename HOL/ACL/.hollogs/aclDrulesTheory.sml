@@ -123,5 +123,5 @@ Theorems:
            (M,Oi,Os) sat l2 doms l1 ⇒
            (M,Oi,Os) sat sl Q doms sl P
 Exporting theory "aclDrules" ... done.
-Theory "aclDrules" took 0.57643s to build
+Theory "aclDrules" took 0.54984s to build
 Completed load of aclDrulesScript

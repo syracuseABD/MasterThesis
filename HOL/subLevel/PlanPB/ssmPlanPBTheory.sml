@@ -13,14 +13,14 @@ struct
   in end;
   val _ = Theory.link_parents
           ("ssmPlanPB",
-          Arbnum.fromString "1528669433",
-          Arbnum.fromString "138581")
+          Arbnum.fromString "1528688805",
+          Arbnum.fromString "619005")
           [("PlanPBDef",
-           Arbnum.fromString "1528669411",
-           Arbnum.fromString "956487"),
+           Arbnum.fromString "1528688782",
+           Arbnum.fromString "233718"),
            ("ssm",
-           Arbnum.fromString "1528669327",
-           Arbnum.fromString "886937")];
+           Arbnum.fromString "1528688695",
+           Arbnum.fromString "391911")];
   val _ = Theory.incorporate_types "ssmPlanPB" [];
 
   val idvector = 
@@ -336,8 +336,8 @@ struct
     ThmBind.DT(((("ssmPlanPB",17),
                 [("aclfoundation",[33,110]),("bool",[15,50,53,62]),
                  ("combin",[19]),("list",[23,27]),("relation",[113,132]),
-                 ("ssm",[36,57]),("ssmPlanPB",[8])]),["DISK_THM"]),
-               [ThmBind.read"%173%1%174%4%168%0%178%2%179%3%295%235%182$2@%183$1@$0@3%247%263%199%284%213%219@2%274%230%229%218%14@6%210@4%193%264@%285@%286@%200%199%284%213%219@2%274%230%229%218%14@6%210@2%11@2%15@%12@2%193%264@%285@%286@%11@$4%15@%247%263%199%284%213%219@2%274%230%229%218%14@6%210@5%202$3%15@%247%263%199%284%213%219@2%274%230%229%218%14@6%210@5%12@4|@|@|@|@|@"])
+                 ("ssm",[36,47,48,57]),("ssmPlanPB",[8])]),["DISK_THM"]),
+               [ThmBind.read"%173%1%174%4%168%0%178%2%179%3%295%235%182$2@%183$1@$0@3%247%201%230%229%218%14@4%211@3%193%264@%285@%286@%200%199%284%213%219@2%274%230%229%218%14@6%210@2%11@2%15@%12@2%193%264@%285@%286@%11@$4%15@%247%201%230%229%218%14@4%211@4%202$3%15@%247%201%230%229%218%14@4%211@4%12@4|@|@|@|@|@"])
   fun op PlatoonLeader_trap_psgCommand_lemma x = x
     val op PlatoonLeader_trap_psgCommand_lemma =
     ThmBind.DT(((("ssmPlanPB",18),

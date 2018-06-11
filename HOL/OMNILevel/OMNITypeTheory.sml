@@ -13,8 +13,8 @@ struct
   in end;
   val _ = Theory.link_parents
           ("OMNIType",
-          Arbnum.fromString "1526502768",
-          Arbnum.fromString "51917")
+          Arbnum.fromString "1528688707",
+          Arbnum.fromString "689204")
           [("indexedLists",
            Arbnum.fromString "1501974078",
            Arbnum.fromString "687272"),

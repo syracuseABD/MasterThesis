@@ -63,5 +63,5 @@ Saved definition __ "imapKS_def"
 Saved definition __ "smapKS_def"
 Saved theorem _____ "KS_bij"
 Exporting theory "aclfoundation" ... done.
-Theory "aclfoundation" took 1.3s to build
+Theory "aclfoundation" took 1.2s to build
 Completed load of aclfoundationScript

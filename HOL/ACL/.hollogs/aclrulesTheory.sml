@@ -292,5 +292,5 @@ Theorems:
            w ∈ Efn Oi Os M (P says f) ⇔
            ∀v. v ∈ Jext (jKS M) P w ⇒ v ∈ Efn Oi Os M f
 Exporting theory "aclrules" ... done.
-Theory "aclrules" took 0.67907s to build
+Theory "aclrules" took 0.57850s to build
 Completed load of aclrulesScript

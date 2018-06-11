@@ -70,5 +70,5 @@ Saved theorem _____ "stateRole_Axiom"
 Saved theorem _____ "stateRole_induction"
 <<HOL message: Defined type: "stateRole">>
 Exporting theory "MoveToPBType" ... done.
-Theory "MoveToPBType" took 0.02138s to build
+Theory "MoveToPBType" took 0.02029s to build
 Completed load of MoveToPBTypeScript

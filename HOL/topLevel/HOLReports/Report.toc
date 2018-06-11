@@ -1,9 +1,8 @@
 \contentsline {section}{\numberline {1}PBTypeIntegrated Theory}{3}
 \contentsline {subsection}{\numberline {1.1}Datatypes}{3}
 \contentsline {subsection}{\numberline {1.2}Theorems}{3}
-\contentsline {section}{\numberline {2}ssmPB Theory}{4}
-\contentsline {subsection}{\numberline {2.1}Definitions}{5}
-\contentsline {subsection}{\numberline {2.2}Theorems}{5}
-\contentsline {section}{\numberline {3}PBIntegratedDef Theory}{9}
-\contentsline {subsection}{\numberline {3.1}Definitions}{9}
-\contentsline {subsection}{\numberline {3.2}Theorems}{10}
+\contentsline {section}{\numberline {2}ssmPBIntegrated Theory}{4}
+\contentsline {subsection}{\numberline {2.1}Theorems}{5}
+\contentsline {section}{\numberline {3}PBIntegratedDef Theory}{11}
+\contentsline {subsection}{\numberline {3.1}Definitions}{11}
+\contentsline {subsection}{\numberline {3.2}Theorems}{12}

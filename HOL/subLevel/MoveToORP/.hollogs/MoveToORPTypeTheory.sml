@@ -70,5 +70,5 @@ Saved theorem _____ "stateRole_Axiom"
 Saved theorem _____ "stateRole_induction"
 <<HOL message: Defined type: "stateRole">>
 Exporting theory "MoveToORPType" ... done.
-Theory "MoveToORPType" took 0.01430s to build
+Theory "MoveToORPType" took 0.02410s to build
 Completed load of MoveToORPTypeScript

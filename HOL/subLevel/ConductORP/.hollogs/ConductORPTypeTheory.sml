@@ -100,5 +100,5 @@ Saved theorem _____ "stateRole_induction"
 <<HOL message: Defined type: "stateRole">>
 Saved theorem _____ "slRole_distinct_clauses"
 Exporting theory "ConductORPType" ... done.
-Theory "ConductORPType" took 0.01906s to build
+Theory "ConductORPType" took 0.02183s to build
 Completed load of ConductORPTypeScript

@@ -13,8 +13,8 @@ struct
   in end;
   val _ = Theory.link_parents
           ("ConductPBType",
-          Arbnum.fromString "1526502803",
-          Arbnum.fromString "373646")
+          Arbnum.fromString "1528688747",
+          Arbnum.fromString "164967")
           [("indexedLists",
            Arbnum.fromString "1501974078",
            Arbnum.fromString "687272"),

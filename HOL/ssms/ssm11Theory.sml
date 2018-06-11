@@ -13,11 +13,11 @@ struct
   in end;
   val _ = Theory.link_parents
           ("ssm11",
-          Arbnum.fromString "1526502756",
-          Arbnum.fromString "497196")
+          Arbnum.fromString "1528688695",
+          Arbnum.fromString "219693")
           [("satList",
-           Arbnum.fromString "1526502752",
-           Arbnum.fromString "58293")];
+           Arbnum.fromString "1528688691",
+           Arbnum.fromString "225396")];
   val _ = Theory.incorporate_types "ssm11"
        [("trType", 1), ("order", 1), ("configuration", 6)];
 

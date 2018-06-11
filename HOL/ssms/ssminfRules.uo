@@ -5,6 +5,6 @@ $(HOLDIR)/sigobj/TypeBase
 $(HOLDIR)/sigobj/boolLib
 $(HOLDIR)/sigobj/bossLib
 $(HOLDIR)/sigobj/reduceLib
-/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ssms/ssminfRules
-/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ssms/ssminfRules
-/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ssms/ssminfRules.sml
+/home/sun_goddess/Desktop/MT10June2018/MasterThesis/HOL/ssms/ssminfRules
+/home/sun_goddess/Desktop/MT10June2018/MasterThesis/HOL/ssms/ssminfRules
+/home/sun_goddess/Desktop/MT10June2018/MasterThesis/HOL/ssms/ssminfRules.sml

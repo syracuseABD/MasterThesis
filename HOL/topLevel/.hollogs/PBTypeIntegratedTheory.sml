@@ -100,5 +100,5 @@ Saved theorem _____ "slOutput_induction"
 <<HOL message: Defined type: "slOutput">>
 Saved theorem _____ "slOutput_distinct_clauses"
 Exporting theory "PBTypeIntegrated" ... done.
-Theory "PBTypeIntegrated" took 0.03693s to build
+Theory "PBTypeIntegrated" took 0.05119s to build
 Completed load of PBTypeIntegratedScript

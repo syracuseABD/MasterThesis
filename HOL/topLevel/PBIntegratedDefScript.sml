@@ -31,9 +31,12 @@ val _ = new_theory "PBIntegratedDef";
 (* This function doesn't do anything but is necessary to specialize other     *)
 (* theorems.                                                                  *)
 (* -------------------------------------------------------------------------- *)
-val secContext_def = Define `
+(*
+val secContextNull_def = Define `
     secContext (x:((slCommand command)option, stateRole, 'd,'e)Form list) =
-        [(TT:((slCommand command)option, stateRole, 'd,'e)Form)]`
+        [(Name Omni) controls prop (SOME (SLc (OMNI omniCommand)))
+	:((slCommand command)option, stateRole, 'd,'e)Form]`
+*)
 
 val secHelper =
 Define`
@@ -44,7 +47,7 @@ val getOmniCommand_def =
 Define`
   (getOmniCommand ([]:((slCommand command)option, stateRole, 'd,'e)Form list)
   		      = invalidOmniCommand:omniCommand) /\
-  (getOmniCommand (((Name Omni) controls prop (SOME (SLc (OMNI cmd))))::xs)
+  (getOmniCommand (((Name Omni) says prop (SOME (SLc (OMNI cmd))))::xs)
   		      = (cmd:omniCommand)) /\
   (getOmniCommand ((x:((slCommand command)option, stateRole, 'd,'e)Form)::xs)
   		      =  (getOmniCommand xs))`
@@ -57,23 +60,38 @@ Define`
 
 val secContext_def =
 Define`
- (secContext (PLAN_PB) ((x:((slCommand command)option, stateRole, 'd,'e)Form)::xs) =
+ (secContext (PLAN_PB) (xs:((slCommand command)option, stateRole, 'd,'e)Form list) =
+    if ((getOmniCommand xs) = ssmPlanPBComplete:omniCommand)
+    then
  	[(prop (SOME (SLc (OMNI (ssmPlanPBComplete))))
 	 :((slCommand command)option, stateRole, 'd,'e)Form) impf
 	 (Name PlatoonLeader) controls prop (SOME (SLc (PL crossLD)))
-	  :((slCommand command)option, stateRole, 'd,'e)Form])          /\
- (secContext (MOVE_TO_ORP) ((x:((slCommand command)option, stateRole, 'd,'e)Form)::xs) =
+	  :((slCommand command)option, stateRole, 'd,'e)Form]
+    else [prop NONE:((slCommand command)option, stateRole, 'd,'e)Form])         /\
+ (secContext (MOVE_TO_ORP) (xs:((slCommand command)option, stateRole, 'd,'e)Form list) =
+     if (getOmniCommand xs = ssmMoveToORPComplete)
+     then
  	[prop (SOME (SLc  (OMNI (ssmMoveToORPComplete)))) impf
-	 (Name PlatoonLeader) controls prop (SOME (SLc (PL conductORP)))]) /\
- (secContext (CONDUCT_ORP) ((x:((slCommand command)option, stateRole, 'd,'e)Form)::xs) =
+	 (Name PlatoonLeader) controls prop (SOME (SLc (PL conductORP)))]
+     else [prop NONE]) /\
+ (secContext (CONDUCT_ORP) (xs:((slCommand command)option, stateRole, 'd,'e)Form list) =
+     if (getOmniCommand xs = ssmConductORPComplete)
+     then
  	[prop (SOME (SLc (OMNI (ssmConductORPComplete)))) impf
-	 (Name PlatoonLeader) controls prop (SOME (SLc (PL moveToPB)))]) /\
- (secContext (MOVE_TO_PB) ((x:((slCommand command)option, stateRole, 'd,'e)Form)::xs) =
+	 (Name PlatoonLeader) controls prop (SOME (SLc (PL moveToPB)))]
+     else [prop NONE]) /\
+ (secContext (MOVE_TO_PB) (xs:((slCommand command)option, stateRole, 'd,'e)Form list) =
+     if (getOmniCommand xs = ssmConductORPComplete)
+     then
  	[prop (SOME (SLc (OMNI (ssmMoveToPBComplete)))) impf
-	 (Name PlatoonLeader) controls prop (SOME (SLc (PL conductPB)))]) /\
- (secContext (CONDUCT_PB) ((x:((slCommand command)option, stateRole, 'd,'e)Form)::xs) =
+	 (Name PlatoonLeader) controls prop (SOME (SLc (PL conductPB)))]
+     else [prop NONE]) /\
+ (secContext (CONDUCT_PB) (xs:((slCommand command)option, stateRole, 'd,'e)Form list) =
+     if (getOmniCommand xs = ssmConductPBComplete)
+     then
  	[prop (SOME (SLc (OMNI (ssmConductPBComplete)))) impf
-	 (Name PlatoonLeader) controls prop (SOME (SLc (PL completePB)))])`
+	 (Name PlatoonLeader) controls prop (SOME (SLc (PL completePB)))]
+     else [prop NONE])`
 
 (* ===== Area 52 ====
 

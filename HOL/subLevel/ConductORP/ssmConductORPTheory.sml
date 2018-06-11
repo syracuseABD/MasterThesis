@@ -13,17 +13,17 @@ struct
   in end;
   val _ = Theory.link_parents
           ("ssmConductORP",
-          Arbnum.fromString "1526502795",
-          Arbnum.fromString "833453")
+          Arbnum.fromString "1528688739",
+          Arbnum.fromString "295806")
           [("ConductORPType",
-           Arbnum.fromString "1526502793",
-           Arbnum.fromString "111386"),
+           Arbnum.fromString "1528688735",
+           Arbnum.fromString "907261"),
            ("ssm11",
-           Arbnum.fromString "1526502756",
-           Arbnum.fromString "497196"),
+           Arbnum.fromString "1528688695",
+           Arbnum.fromString "219693"),
            ("OMNIType",
-           Arbnum.fromString "1526502768",
-           Arbnum.fromString "51917")];
+           Arbnum.fromString "1528688707",
+           Arbnum.fromString "689204")];
   val _ = Theory.incorporate_types "ssmConductORP" [];
 
   val idvector = 

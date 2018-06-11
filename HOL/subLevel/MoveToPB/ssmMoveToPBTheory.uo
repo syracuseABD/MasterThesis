@@ -1,5 +1,5 @@
-/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/OMNILevel/OMNITypeTheory
-/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/ssms/ssm11Theory
+/home/sun_goddess/Desktop/MT10June2018/MasterThesis/HOL/OMNILevel/OMNITypeTheory
+/home/sun_goddess/Desktop/MT10June2018/MasterThesis/HOL/ssms/ssm11Theory
 $(HOLDIR)/sigobj/Arbnum
 $(HOLDIR)/sigobj/DB
 $(HOLDIR)/sigobj/Feedback
@@ -16,7 +16,7 @@ $(HOLDIR)/sigobj/Thm
 $(HOLDIR)/sigobj/Type
 $(HOLDIR)/sigobj/term_grammar
 $(HOLDIR)/sigobj/type_grammar
-/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/subLevel/MoveToPB/MoveToPBTypeTheory
-/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/subLevel/MoveToPB/ssmMoveToPBTheory
-/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/subLevel/MoveToPB/ssmMoveToPBTheory
-/home/sun_goddess/Desktop/ABD10May2018/ABD/PatrolBase/HOL/subLevel/MoveToPB/ssmMoveToPBTheory.sml
+/home/sun_goddess/Desktop/MT10June2018/MasterThesis/HOL/subLevel/MoveToPB/MoveToPBTypeTheory
+/home/sun_goddess/Desktop/MT10June2018/MasterThesis/HOL/subLevel/MoveToPB/ssmMoveToPBTheory
+/home/sun_goddess/Desktop/MT10June2018/MasterThesis/HOL/subLevel/MoveToPB/ssmMoveToPBTheory
+/home/sun_goddess/Desktop/MT10June2018/MasterThesis/HOL/subLevel/MoveToPB/ssmMoveToPBTheory.sml

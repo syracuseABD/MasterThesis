@@ -300,7 +300,8 @@ val th3d = LIST_BETA_CONV (Term `(\p q. p /\ q) F ((\p q. p/\q) T ((\p q. p /\ q
 val th3d2 = LIST_BETA_CONV (Term `(\p q. p/\q) T T`)
 
 val PlatoonLeader_psgCommand_notDiscard_thm = REWRITE_RULE
-[authenticationTest_def, MAP, inputOK_def, FOLDR, th3d, th3d2] th2d
+[inputList_def, extractInput_def, authenticationTest_def, MAP,
+ inputOK_def, FOLDR, th3d, th3d2] th2d
 
 val _= save_thm("PlatoonLeader_psgCommand_notDiscard_thm",
                  PlatoonLeader_psgCommand_notDiscard_thm)

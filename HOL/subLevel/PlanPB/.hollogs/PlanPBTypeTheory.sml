@@ -100,5 +100,5 @@ Saved theorem _____ "stateRole_induction"
 <<HOL message: Defined type: "stateRole">>
 Saved theorem _____ "slRole_distinct_clauses"
 Exporting theory "PlanPBType" ... done.
-Theory "PlanPBType" took 0.06393s to build
+Theory "PlanPBType" took 0.11215s to build
 Completed load of PlanPBTypeScript

@@ -1,14 +1,13 @@
 \begin{theindex}
 
-  \item \textbf  {PBIntegratedDef Theory}, 9
-    \subitem Definitions, 9
-      \subsubitem secAuthorization_def, 10
-      \subsubitem secHelper_def, 10
-    \subitem Theorems, 10
-      \subsubitem getOmniCommand_def, 10
-      \subsubitem getOmniCommand_ind, 12
-      \subsubitem secContext_def, 14
-      \subsubitem secContext_ind, 14
+  \item \textbf  {PBIntegratedDef Theory}, 11
+    \subitem Definitions, 11
+      \subsubitem secAuthorization_def, 11
+      \subsubitem secContext_def, 11
+      \subsubitem secHelper_def, 12
+    \subitem Theorems, 12
+      \subsubitem getOmniCommand_def, 12
+      \subsubitem getOmniCommand_ind, 14
   \item \textbf  {PBTypeIntegrated Theory}, 3
     \subitem Datatypes, 3
     \subitem Theorems, 3
@@ -22,19 +21,18 @@
 
   \indexspace
 
-  \item \textbf  {ssmPB Theory}, 4
-    \subitem Definitions, 5
-      \subsubitem secContext_def, 5
-      \subsubitem ssmPBStateInterp_def, 5
+  \item \textbf  {ssmPBIntegrated Theory}, 4
     \subitem Theorems, 5
-      \subsubitem authenticationTest_cmd_reject_lemma, 5
-      \subsubitem authenticationTest_def, 5
-      \subsubitem authenticationTest_ind, 6
+      \subsubitem inputOK_def, 5
+      \subsubitem inputOK_ind, 5
       \subsubitem PBNS_def, 6
-      \subsubitem PBNS_ind, 7
-      \subsubitem PBOut_def, 8
-      \subsubitem PBOut_ind, 8
-      \subsubitem PlatoonLeader_exec_slCommand_justified_thm, 9
-      \subsubitem PlatoonLeader_slCommand_lemma, 9
+      \subsubitem PBNS_ind, 6
+      \subsubitem PBOut_def, 7
+      \subsubitem PBOut_ind, 7
+      \subsubitem PlatoonLeader_Omni_notDiscard_slCommand_thm, 8
+      \subsubitem PlatoonLeader_PLAN_PB_exec_lemma, 9
+      \subsubitem PlatoonLeader_PLAN_PB_trap_justified_lemma, 9
+      \subsubitem PlatoonLeader_PLAN_PB_trap_justified_thm, 10
+      \subsubitem PlatoonLeader_PLAN_PB_trap_lemma, 10
 
 \end{theindex}

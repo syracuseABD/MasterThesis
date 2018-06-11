@@ -10,6 +10,11 @@ sig
     val PBNS_ind : thm
     val PBOut_def : thm
     val PBOut_ind : thm
+    val PlatoonLeader_Omni_notDiscard_slCommand_thm : thm
+    val PlatoonLeader_PLAN_PB_exec_lemma : thm
+    val PlatoonLeader_PLAN_PB_trap_justified_lemma : thm
+    val PlatoonLeader_PLAN_PB_trap_justified_thm : thm
+    val PlatoonLeader_PLAN_PB_trap_lemma : thm
     val inputOK_def : thm
     val inputOK_ind : thm
 
@@ -172,6 +177,123 @@ sig
               P v26 (exec (SOME (SLc (PL v25))::v22::v23))) ∧
            (∀v28 v19 v27. P v28 (exec (SOME (SLc (OMNI v19))::v27))) ⇒
            ∀v v1. P v v1
+
+   [PlatoonLeader_Omni_notDiscard_slCommand_thm]  Theorem
+
+      |- ∀NS Out M Oi Os.
+           ¬TR (M,Oi,Os)
+              (discard
+                 [SOME (SLc (PL plCommand));
+                  SOME (SLc (OMNI omniCommand))])
+              (CFG inputOK secContext secAuthorization
+                 ([Name Omni says prop (SOME (SLc (PL plCommand)));
+                   Name PlatoonLeader says
+                   prop (SOME (SLc (OMNI omniCommand)))]::ins) PLAN_PB
+                 outs)
+              (CFG inputOK secContext secAuthorization ins
+                 (NS PLAN_PB
+                    (discard
+                       [SOME (SLc (PL plCommand));
+                        SOME (SLc (OMNI omniCommand))]))
+                 (Out PLAN_PB
+                    (discard
+                       [SOME (SLc (PL plCommand));
+                        SOME (SLc (OMNI omniCommand))])::outs))
+
+   [PlatoonLeader_PLAN_PB_exec_lemma]  Theorem
+
+      |- ∀M Oi Os.
+           CFGInterpret (M,Oi,Os)
+             (CFG inputOK secContext secAuthorization
+                ([Name Omni says
+                  prop (SOME (SLc (OMNI ssmPlanPBComplete)));
+                  Name PlatoonLeader says prop (SOME (SLc (PL crossLD)))]::
+                     ins) PLAN_PB outs) ⇒
+           (M,Oi,Os) satList
+           propCommandList
+             [Name Omni says prop (SOME (SLc (OMNI ssmPlanPBComplete)));
+              Name PlatoonLeader says prop (SOME (SLc (PL crossLD)))]
+
+   [PlatoonLeader_PLAN_PB_trap_justified_lemma]  Theorem
+
+      |- omniCommand ≠ ssmPlanPBComplete ⇒
+         (s = PLAN_PB) ⇒
+         ∀NS Out M Oi Os.
+           TR (M,Oi,Os)
+             (trap
+                (inputList
+                   [Name Omni says prop (SOME (SLc (OMNI omniCommand)));
+                    Name PlatoonLeader says
+                    prop (SOME (SLc (PL crossLD)))]))
+             (CFG inputOK secContext secAuthorization
+                ([Name Omni says prop (SOME (SLc (OMNI omniCommand)));
+                  Name PlatoonLeader says prop (SOME (SLc (PL crossLD)))]::
+                     ins) PLAN_PB outs)
+             (CFG inputOK secContext secAuthorization ins
+                (NS PLAN_PB
+                   (trap
+                      (inputList
+                         [Name Omni says
+                          prop (SOME (SLc (OMNI omniCommand)));
+                          Name PlatoonLeader says
+                          prop (SOME (SLc (PL crossLD)))])))
+                (Out PLAN_PB
+                   (trap
+                      (inputList
+                         [Name Omni says
+                          prop (SOME (SLc (OMNI omniCommand)));
+                          Name PlatoonLeader says
+                          prop (SOME (SLc (PL crossLD)))]))::outs)) ⇔
+           authenticationTest inputOK
+             [Name Omni says prop (SOME (SLc (OMNI omniCommand)));
+              Name PlatoonLeader says prop (SOME (SLc (PL crossLD)))] ∧
+           CFGInterpret (M,Oi,Os)
+             (CFG inputOK secContext secAuthorization
+                ([Name Omni says prop (SOME (SLc (OMNI omniCommand)));
+                  Name PlatoonLeader says prop (SOME (SLc (PL crossLD)))]::
+                     ins) PLAN_PB outs) ∧ (M,Oi,Os) sat prop NONE
+
+   [PlatoonLeader_PLAN_PB_trap_justified_thm]  Theorem
+
+      |- omniCommand ≠ ssmPlanPBComplete ⇒
+         (s = PLAN_PB) ⇒
+         ∀NS Out M Oi Os.
+           TR (M,Oi,Os)
+             (trap
+                [SOME (SLc (OMNI omniCommand)); SOME (SLc (PL crossLD))])
+             (CFG inputOK secContext secAuthorization
+                ([Name Omni says prop (SOME (SLc (OMNI omniCommand)));
+                  Name PlatoonLeader says prop (SOME (SLc (PL crossLD)))]::
+                     ins) PLAN_PB outs)
+             (CFG inputOK secContext secAuthorization ins
+                (NS PLAN_PB
+                   (trap
+                      [SOME (SLc (OMNI omniCommand));
+                       SOME (SLc (PL crossLD))]))
+                (Out PLAN_PB
+                   (trap
+                      [SOME (SLc (OMNI omniCommand));
+                       SOME (SLc (PL crossLD))])::outs)) ⇔
+           authenticationTest inputOK
+             [Name Omni says prop (SOME (SLc (OMNI omniCommand)));
+              Name PlatoonLeader says prop (SOME (SLc (PL crossLD)))] ∧
+           CFGInterpret (M,Oi,Os)
+             (CFG inputOK secContext secAuthorization
+                ([Name Omni says prop (SOME (SLc (OMNI omniCommand)));
+                  Name PlatoonLeader says prop (SOME (SLc (PL crossLD)))]::
+                     ins) PLAN_PB outs) ∧ (M,Oi,Os) sat prop NONE
+
+   [PlatoonLeader_PLAN_PB_trap_lemma]  Theorem
+
+      |- omniCommand ≠ ssmPlanPBComplete ⇒
+         (s = PLAN_PB) ⇒
+         ∀M Oi Os.
+           CFGInterpret (M,Oi,Os)
+             (CFG inputOK secContext secAuthorization
+                ([Name Omni says prop (SOME (SLc (OMNI omniCommand)));
+                  Name PlatoonLeader says prop (SOME (SLc (PL crossLD)))]::
+                     ins) PLAN_PB outs) ⇒
+           (M,Oi,Os) sat prop NONE
 
    [inputOK_def]  Theorem
 

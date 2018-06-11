@@ -92,5 +92,5 @@ Saved theorem _____ "principal_induction"
 <<HOL message: Defined type: "principal">>
 Saved theorem _____ "principal_one_one"
 Exporting theory "OMNIType" ... done.
-Theory "OMNIType" took 0.02255s to build
+Theory "OMNIType" took 0.02714s to build
 Completed load of OMNITypeScript

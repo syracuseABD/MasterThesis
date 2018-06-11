@@ -12,15 +12,13 @@ struct
   local open OMNITypeTheory aclDrulesTheory
   in end;
   val _ = Theory.link_parents
-          ("OMNI",
-          Arbnum.fromString "1526502770",
-          Arbnum.fromString "178392")
+          ("OMNI",Arbnum.fromString "1528688710",Arbnum.fromString "94191")
           [("OMNIType",
-           Arbnum.fromString "1526502768",
-           Arbnum.fromString "51917"),
+           Arbnum.fromString "1528688707",
+           Arbnum.fromString "689204"),
            ("aclDrules",
-           Arbnum.fromString "1526502743",
-           Arbnum.fromString "903081")];
+           Arbnum.fromString "1528688683",
+           Arbnum.fromString "147962")];
   val _ = Theory.incorporate_types "OMNI" [];
 
   val idvector = 
