@@ -15,8 +15,8 @@
     \subitem Theorems, 47
       \subsubitem plCommandPB_distinct_clauses, 47
       \subsubitem psgCommandPB_distinct_clauses, 47
-      \subsubitem slCommand_distinct_clauses, 47
-      \subsubitem slCommand_one_one, 47
+      \subsubitem slCommand_distinct_clauses, 48
+      \subsubitem slCommand_one_one, 48
       \subsubitem slOutput_distinct_clauses, 48
       \subsubitem slRole_distinct_clauses, 48
       \subsubitem slState_distinct_clauses, 48
@@ -28,11 +28,11 @@
     \subitem Theorems, 53
       \subsubitem slCommand_distinct_clauses, 53
       \subsubitem slOutput_distinct_clauses, 53
-      \subsubitem slState_distinct_clauses, 53
+      \subsubitem slState_distinct_clauses, 54
   \item \textbf  {MoveToPBType Theory}, 58
     \subitem Datatypes, 58
     \subitem Theorems, 58
-      \subsubitem slCommand_distinct_clauses, 58
+      \subsubitem slCommand_distinct_clauses, 59
       \subsubitem slOutput_distinct_clauses, 59
       \subsubitem slState_distinct_clauses, 59
 
@@ -74,7 +74,7 @@
       \subsubitem stateRole_distinct_clauses, 23
   \item \textbf  {PlanPBDef Theory}, 72
     \subitem Definitions, 72
-      \subsubitem PL_notWARNO_Auth_def, 72
+      \subsubitem PL_notWARNO_Auth_def, 73
       \subsubitem PL_WARNO_Auth_def, 73
       \subsubitem secContext_def, 73
       \subsubitem secContextNull_def, 73
@@ -88,18 +88,18 @@
       \subsubitem getRecon_def, 83
       \subsubitem getRecon_ind, 86
       \subsubitem getReport_def, 89
-      \subsubitem getReport_ind, 91
+      \subsubitem getReport_ind, 92
       \subsubitem getTenativePlan_def, 94
-      \subsubitem getTenativePlan_ind, 97
+      \subsubitem getTenativePlan_ind, 98
   \item \textbf  {PlanPBType Theory}, 69
     \subitem Datatypes, 69
     \subitem Theorems, 70
       \subsubitem plCommand_distinct_clauses, 70
       \subsubitem psgCommand_distinct_clauses, 70
       \subsubitem slCommand_distinct_clauses, 70
-      \subsubitem slCommand_one_one, 70
+      \subsubitem slCommand_one_one, 71
       \subsubitem slOutput_distinct_clauses, 71
-      \subsubitem slRole_distinct_clauses, 71
+      \subsubitem slRole_distinct_clauses, 72
       \subsubitem slState_distinct_clauses, 72
 
   \indexspace
@@ -168,18 +168,18 @@
       \subsubitem secContextConductORP_def, 35
       \subsubitem ssmConductORPStateInterp_def, 35
     \subitem Theorems, 35
-      \subsubitem authTestConductORP_cmd_reject_lemma, 35
+      \subsubitem authTestConductORP_cmd_reject_lemma, 36
       \subsubitem authTestConductORP_def, 36
       \subsubitem authTestConductORP_ind, 36
       \subsubitem conductORPNS_def, 37
-      \subsubitem conductORPNS_ind, 37
+      \subsubitem conductORPNS_ind, 38
       \subsubitem conductORPOut_def, 38
       \subsubitem conductORPOut_ind, 38
       \subsubitem PlatoonLeader_exec_plCommand_justified_thm, 39
       \subsubitem PlatoonLeader_plCommand_lemma, 39
       \subsubitem PlatoonSergeant_exec_psgCommand_justified_thm, 40
       \subsubitem PlatoonSergeant_psgCommand_lemma, 40
-  \item \textbf  {ssmConductPB Theory}, 41
+  \item \textbf  {ssmConductPB Theory}, 42
     \subitem Definitions, 42
       \subsubitem secContextConductPB_def, 42
       \subsubitem ssmConductPBStateInterp_def, 42
@@ -199,8 +199,8 @@
     \subitem Definitions, 48
       \subsubitem secContextMoveToORP_def, 48
       \subsubitem ssmMoveToORPStateInterp_def, 48
-    \subitem Theorems, 48
-      \subsubitem authTestMoveToORP_cmd_reject_lemma, 48
+    \subitem Theorems, 49
+      \subsubitem authTestMoveToORP_cmd_reject_lemma, 49
       \subsubitem authTestMoveToORP_def, 49
       \subsubitem authTestMoveToORP_ind, 49
       \subsubitem moveToORPNS_def, 50
@@ -208,7 +208,7 @@
       \subsubitem moveToORPOut_def, 51
       \subsubitem moveToORPOut_ind, 51
       \subsubitem PlatoonLeader_exec_slCommand_justified_thm, 52
-      \subsubitem PlatoonLeader_slCommand_lemma, 52
+      \subsubitem PlatoonLeader_slCommand_lemma, 53
   \item \textbf  {ssmMoveToPB Theory}, 54
     \subitem Definitions, 54
       \subsubitem secContextMoveToPB_def, 54
@@ -217,17 +217,18 @@
       \subsubitem authTestMoveToPB_cmd_reject_lemma, 54
       \subsubitem authTestMoveToPB_def, 54
       \subsubitem authTestMoveToPB_ind, 55
-      \subsubitem moveToPBNS_def, 55
+      \subsubitem moveToPBNS_def, 56
       \subsubitem moveToPBNS_ind, 56
-      \subsubitem moveToPBOut_def, 56
+      \subsubitem moveToPBOut_def, 57
       \subsubitem moveToPBOut_ind, 57
-      \subsubitem PlatoonLeader_exec_slCommand_justified_thm, 57
+      \subsubitem PlatoonLeader_exec_slCommand_justified_thm, 58
       \subsubitem PlatoonLeader_slCommand_lemma, 58
   \item \textbf  {ssmPBIntegrated Theory}, 28
     \subitem Theorems, 28
+      \subsubitem inputOK_cmd_reject_lemma, 28
       \subsubitem inputOK_def, 28
       \subsubitem inputOK_ind, 29
-      \subsubitem PBNS_def, 29
+      \subsubitem PBNS_def, 30
       \subsubitem PBNS_ind, 30
       \subsubitem PBOut_def, 31
       \subsubitem PBOut_ind, 31
@@ -243,14 +244,14 @@
       \subsubitem inputOK_ind, 60
       \subsubitem planPBNS_def, 61
       \subsubitem planPBNS_ind, 61
-      \subsubitem planPBOut_def, 61
+      \subsubitem planPBOut_def, 62
       \subsubitem planPBOut_ind, 62
       \subsubitem PlatoonLeader_notWARNO_notreport1_exec_plCommand_justified_lemma, 
 		62
       \subsubitem PlatoonLeader_notWARNO_notreport1_exec_plCommand_justified_thm, 
 		63
       \subsubitem PlatoonLeader_notWARNO_notreport1_exec_plCommand_lemma, 
-		63
+		64
       \subsubitem PlatoonLeader_psgCommand_notDiscard_thm, 64
       \subsubitem PlatoonLeader_trap_psgCommand_justified_lemma, 64
       \subsubitem PlatoonLeader_trap_psgCommand_lemma, 65
@@ -258,7 +259,7 @@
       \subsubitem PlatoonLeader_WARNO_exec_report1_justified_thm, 66
       \subsubitem PlatoonLeader_WARNO_exec_report1_lemma, 67
       \subsubitem PlatoonSergeant_trap_plCommand_justified_lemma, 68
-      \subsubitem PlatoonSergeant_trap_plCommand_justified_thm, 68
+      \subsubitem PlatoonSergeant_trap_plCommand_justified_thm, 69
       \subsubitem PlatoonSergeant_trap_plCommand_lemma, 69
 
 \end{theindex}

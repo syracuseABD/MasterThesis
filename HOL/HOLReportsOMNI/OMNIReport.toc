@@ -26,7 +26,7 @@
 \contentsline {section}{\numberline {9}ConductORPType Theory}{40}
 \contentsline {subsection}{\numberline {9.1}Datatypes}{40}
 \contentsline {subsection}{\numberline {9.2}Theorems}{41}
-\contentsline {section}{\numberline {10}ssmConductPB Theory}{41}
+\contentsline {section}{\numberline {10}ssmConductPB Theory}{42}
 \contentsline {subsection}{\numberline {10.1}Definitions}{42}
 \contentsline {subsection}{\numberline {10.2}Theorems}{42}
 \contentsline {section}{\numberline {11}ConductPBType Theory}{47}
@@ -34,7 +34,7 @@
 \contentsline {subsection}{\numberline {11.2}Theorems}{47}
 \contentsline {section}{\numberline {12}ssmMoveToORP Theory}{48}
 \contentsline {subsection}{\numberline {12.1}Definitions}{48}
-\contentsline {subsection}{\numberline {12.2}Theorems}{48}
+\contentsline {subsection}{\numberline {12.2}Theorems}{49}
 \contentsline {section}{\numberline {13}MoveToORPType Theory}{53}
 \contentsline {subsection}{\numberline {13.1}Datatypes}{53}
 \contentsline {subsection}{\numberline {13.2}Theorems}{53}
