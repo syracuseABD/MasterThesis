@@ -50,23 +50,34 @@ val _ = new_theory  "ssmPBIntegrated";
 (******************************************************************************)
 val PBNS_def =
 Define`
-(PBNS PLAN_PB     (exec [SOME (SLc (PL crossLD))])    = MOVE_TO_ORP) /\
-(PBNS MOVE_TO_ORP (exec [SOME (SLc (PL conductORP))]) = CONDUCT_ORP) /\
-(PBNS CONDUCT_ORP (exec [SOME (SLc (PL moveToPB))])   = MOVE_TO_PB)  /\
-(PBNS MOVE_TO_PB  (exec [SOME (SLc (PL conductPB))]) =  CONDUCT_PB)  /\
-(PBNS CONDUCT_PB  (exec [SOME (SLc (PL completePB))]) = COMPLETE_PB) /\
+(PBNS PLAN_PB     (exec x) =
+  if (getPlCom x) = crossLD    then MOVE_TO_ORP else PLAN_PB) /\
+(PBNS MOVE_TO_ORP (exec x) =
+  if (getPlCom x) = conductORP then CONDUCT_ORP else MOVE_TO_ORP) /\
+(PBNS CONDUCT_ORP (exec x) =
+  if (getPlCom x) = moveToPB   then MOVE_TO_PB else CONDUCT_ORP)  /\
+(PBNS MOVE_TO_PB  (exec x) =
+  if (getPlCom x) = conductPB  then CONDUCT_PB else MOVE_TO_PB)  /\
+(PBNS CONDUCT_PB  (exec x) =
+  if (getPlCom x) = completePB then COMPLETE_PB else CONDUCT_PB) /\
 (PBNS (s:slState) (trap _)    = s) /\
 (PBNS (s:slState) (discard _) = s)`
 
 val PBOut_def =
 Define`
-(PBOut PLAN_PB     (exec [SOME (SLc (PL crossLD))])    = MoveToORP) /\
-(PBOut MOVE_TO_ORP (exec [SOME (SLc (PL conductORP))]) = ConductORP) /\
-(PBOut CONDUCT_ORP (exec [SOME (SLc (PL moveToPB))])   = MoveToPB)  /\
-(PBOut MOVE_TO_PB  (exec [SOME (SLc (PL conductPB))]) =  ConductPB)  /\
-(PBOut CONDUCT_PB  (exec [SOME (SLc (PL completePB))]) = CompletePB) /\
+(PBOut PLAN_PB     (exec x) =
+  if (getPlCom x) = crossLD    then MoveToORP else PlanPB) /\
+(PBOut MOVE_TO_ORP (exec x) =
+  if (getPlCom x) = conductORP then ConductORP else MoveToORP) /\
+(PBOut CONDUCT_ORP (exec x) =
+  if (getPlCom x) = moveToPB   then MoveToORP else ConductORP)  /\
+(PBOut MOVE_TO_PB  (exec x) =
+  if (getPlCom x) = conductPB  then ConductPB else MoveToPB)  /\
+(PBOut CONDUCT_PB  (exec x) =
+  if (getPlCom x) = completePB then CompletePB else ConductPB) /\
 (PBOut (s:slState) (trap _)    = unAuthorized) /\
 (PBOut (s:slState) (discard _) = unAuthenticated)`
+
 
 (******************************************************************************)
 (* Define authentication function                                             *)
@@ -125,7 +136,6 @@ val _= save_thm("PlatoonLeader_PLAN_PB_exec_lemma",
 		 PlatoonLeader_PLAN_PB_exec_lemma)
 
 
-(* ===== save for now === 
 val PlatoonLeader_PLAN_PB_exec_justified_lemma =
 TAC_PROOF(
   ([],snd(dest_imp(concl thPlanPB))),
@@ -133,11 +143,11 @@ PROVE_TAC[PlatoonLeader_PLAN_PB_exec_lemma, TR_exec_cmd_rule])
 
 val _= save_thm("PlatoonLeader_PLAN_PB_exec_justified_lemma",
 		PlatoonLeader_PLAN_PB_exec_justified_lemma)
-  ===== save for now === *)
 
 val PlatoonLeader_PLAN_PB_exec_justified_thm =
 REWRITE_RULE[inputList_def, extractInput_def, MAP, propCommandList_def,
-  extractPropCommand_def, PlatoonLeader_PLAN_PB_exec_lemma] thPlanPB
+  extractPropCommand_def, PlatoonLeader_PLAN_PB_exec_lemma]
+  PlatoonLeader_PLAN_PB_exec_justified_lemma
 
 val _= save_thm("PlatoonLeader_PLAN_PB_exec_justified_thm",
        PlatoonLeader_PLAN_PB_exec_justified_thm)
@@ -208,6 +218,10 @@ REWRITE_RULE[inputList_def, extractInput_def, MAP, propCommandList_def,
 val _= save_thm("PlatoonLeader_PLAN_PB_trap_justified_thm",
 		PlatoonLeader_PLAN_PB_trap_justified_thm)
 
+(* -------------------------------------------------------------------------- *)
+(* Theorem: PlatoonLeader is not discarded on omniCommand and                 *)
+(*   Omni is not discarded on plCommand  		         	      *)
+(* -------------------------------------------------------------------------- *)
 val thgen =
 GENL
 [``(elementTest :('command option, 'principal, 'd, 'e) Form -> bool)``,
@@ -227,9 +241,6 @@ GENL
  ``(M :('command option, 'b, 'principal, 'd, 'e) Kripke)``,
  ``(Oi :'d po)``,``(Os :'e po)``]
 TR_discard_cmd_rule
-
-
-
 
 val thPlanPBdiscard =
   ISPECL
