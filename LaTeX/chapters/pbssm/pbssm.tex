@@ -79,17 +79,35 @@ PlatoonLeader commands are issued to transition among states in this \glsentrysh
 
 \subsection{Next-State Function}
 
+\HOLThmTag{ssmPBIntegrated}{PBNS_def}\HOLssmPBIntegratedTheoremsPBNSXXdef
+
 
 \subsection{Next-Output Function}
 
+\HOLThmTag{ssmPBIntegrated}{PBOut_def}\HOLssmPBIntegratedTheoremsPBOutXXdef
+
 \subsection{Authentication}
+
+\HOLThmTag{ssmPBIntegrated}{inputOK_def}\HOLssmPBIntegratedTheoremsinputOKXXdef
+
 \subsection{Authorization}
 
 \HOLThmTag{PBIntegratedDef}{secContext_def}\HOLPBIntegratedDefTheoremssecContextXXdef
 
 \subsection{Proved Theorems}
-\subsubsection{Platoon Leader Is Trusted on plCommands}
 
+\paragraph*{PlatoonLeader_PLAN_PB_exec_justified_thm}
+\HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_exec_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXlemma
+
+\paragraph*{PlatoonLeader_PLAN_PB_trap_justified_thm}
+\HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXlemma
+\HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_justified_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXjustifiedXXlemma
+\HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_justified_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXjustifiedXXthm
+
+\paragraph*{PlatoonLeader_Omni_notDiscard_slCommand_thm}
+This theorem proves that if the PlatoonLeader issues an omniCommand and Omni issues a plCommand, the command is not discarded.  The reason for this is that plCommand and omniCommand are both slCommand.  inputOK authenticates both principals for slCommand.  This is a forward proof without any lemmas.
+
+\HOLThmTag{ssmPBIntegrated}{PlatoonLeader_Omni_notDiscard_slCommand_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXOmniXXnotDiscardXXslCommandXXthm
 
      
       %%%%%%%%%%%%%%%%%%% Multiple Principles %%%%%%%%%%%%%
