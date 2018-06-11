@@ -40,8 +40,19 @@ val psgCommand_distinct_clauses = distinct_of``:psgCommand``
 val _ = save_thm("psgCommand_distinct_clauses",psgCommand_distinct_clauses)
 
 val _=
+Datatype `omniCommand = ssmSecureComplete
+	 	      | ssmActionsInComplete
+		      | ssmWithdrawComplete
+		      | invalidOmniCommand`
+
+val omniCommand_distinct_clauses = distinct_of``:omniCommand``
+val _ = save_thm("omniCommand_distinct_clauses",omniCommand_distinct_clauses)
+
+
+val _=
 Datatype `slCommand = PL  plCommand
-	 	    | PSG psgCommand`
+	 	    | PSG psgCommand
+		    | OMNI omniCommand`
 		    
 val slCommand_distinct_clauses = distinct_of``:slCommand``
 val _ = save_thm("slCommand_distinct_clauses",slCommand_distinct_clauses)
@@ -77,7 +88,8 @@ val _ = save_thm("slOutput_distinct_clauses",slOutput_distinct_clauses)
 (******************principals ****************************************)
 val _=
 Datatype `stateRole = PlatoonLeader
-	 	    | PlatoonSergeant`
+	 	    | PlatoonSergeant
+		    | Omni`
 
 val slRole_distinct_clauses = distinct_of``:stateRole``
 val _ = save_thm("slRole_distinct_clauses",slRole_distinct_clauses)

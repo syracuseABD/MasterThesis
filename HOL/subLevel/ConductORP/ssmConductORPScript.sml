@@ -12,25 +12,24 @@ structure ssmConductORPScript = struct
 (* ===== Interactive Mode ====
 app load ["TypeBase", "listTheory","optionTheory",
           "acl_infRules","aclDrulesTheory","aclrulesTheory",
-    	  "satListTheory","ssm11Theory","ssminfRules",
-	  "OMNITypeTheory", "ConductORPTypeTheory"];
-	  
+    	  "satListTheory","ssmTheory","ssminfRules",
+	  "OMNITypeTheory",
+	  "ConductORPTypeTheory", "ConductORPDefTheory",
 	  "ssmConductORPTheory"];
+	  
 open TypeBase listTheory optionTheory
      acl_infRules aclDrulesTheory aclrulesTheory
-     satListTheory ssm11Theory ssminfRules
-     OMNITypeTheory ConductORPTypeTheory
+     satListTheory ssmTheory ssminfRules
+     OMNITypeTheory
+     ConductORPTypeTheory ConductORPDefTheory
      ssmConductORPTheory
-
-
-
  ==== end Interactive Mode ==== *)
 
 open HolKernel Parse boolLib bossLib;
 open TypeBase listTheory optionTheory
 open acl_infRules aclDrulesTheory aclrulesTheory
-open satListTheory ssm11Theory ssminfRules
-open OMNITypeTheory ConductORPTypeTheory
+open satListTheory ssmTheory ssminfRules
+open OMNITypeTheory ConductORPTypeTheory ConductORPDefTheory 
 
 val _ = new_theory "ssmConductORP";
 
@@ -40,21 +39,18 @@ val _ = new_theory "ssmConductORP";
 val conductORPNS_def =
 Define
 `
-(* executing *)
- (conductORPNS CONDUCT_ORP (exec (PL secure))          = SECURE)      /\
- (conductORPNS CONDUCT_ORP (exec (PL plIncomplete))    = CONDUCT_ORP) /\
- (conductORPNS SECURE      (exec (PSG actionsIn))      = ACTIONS_IN)  /\
- (conductORPNS SECURE      (exec (PSG psgIncomplete))  = SECURE)      /\
- (conductORPNS ACTIONS_IN  (exec (PL withdraw))        = WITHDRAW)    /\
- (conductORPNS ACTIONS_IN  (exec (PL plIncomplete))    = ACTIONS_IN)  /\
- (conductORPNS WITHDRAW    (exec (PL complete))        = COMPLETE)    /\
- (conductORPNS WITHDRAW    (exec (PL plIncomplete))    = WITHDRAW)    /\
+ (conductORPNS CONDUCT_ORP (exec x) =
+   if (getPlCom x) = secure then SECURE else CONDUCT_ORP)     /\
+ (conductORPNS SECURE      (exec x) =
+   if (getPsgCom x) = actionsIn then ACTIONS_IN else SECURE)  /\
+ (conductORPNS ACTIONS_IN  (exec x) =
+   if (getPlCom x) = withdraw then WITHDRAW else ACTIONS_IN)    /\
+ (conductORPNS WITHDRAW    (exec x) =
+   if (getPlCom x) = complete then COMPLETE else WITHDRAW)    /\
 (* trapping *) 
- (conductORPNS (s:slState) (trap (PL (cmd:plCommand)))   = s) /\
- (conductORPNS (s:slState) (trap (PSG (cmd:psgCommand))) = s) /\
+ (conductORPNS (s:slState) (trap x) = s) /\
 (* discarding *)
- (conductORPNS (s:slState) (discard (PL (cmd:plCommand)))   = s) /\
- (conductORPNS (s:slState) (discard (PSG (cmd:psgCommand))) = s)`
+ (conductORPNS (s:slState) (discard x) = s)`
 
 (* -------------------------------------------------------------------------- *)
 (* Define next-output function for the state machine                          *)
@@ -62,327 +58,270 @@ Define
 val conductORPOut_def =
 Define
 `
-(* executing *)
- (conductORPOut CONDUCT_ORP (exec (PL secure))         = Secure)     /\
- (conductORPOut CONDUCT_ORP (exec (PL plIncomplete))   = ConductORP) /\
- (conductORPOut SECURE      (exec (PSG actionsIn))     = ActionsIn)  /\
- (conductORPOut SECURE      (exec (PSG psgIncomplete)) = Secure)     /\
- (conductORPOut ACTIONS_IN  (exec (PL withdraw))       = Withdraw)   /\
- (conductORPOut ACTIONS_IN  (exec (PL plIncomplete))   = ActionsIn)  /\
- (conductORPOut WITHDRAW    (exec (PL complete))       = Complete)   /\
- (conductORPOut WITHDRAW    (exec (PL plIncomplete))   = Withdraw)   /\
+ (conductORPOut CONDUCT_ORP (exec x) =
+   if (getPlCom x) = secure then Secure else ConductORP)     /\
+ (conductORPOut SECURE      (exec x) =
+   if (getPsgCom x) = actionsIn then ActionsIn else Secure)  /\
+ (conductORPOut ACTIONS_IN  (exec x) =
+   if (getPlCom x) = withdraw then Withdraw else ActionsIn)    /\
+ (conductORPOut WITHDRAW    (exec x) =
+   if (getPlCom x) = complete then Complete else Withdraw)    /\
 (* trapping *) 
- (conductORPOut (s:slState) (trap (PL (cmd:plCommand)))   = unAuthorized) /\
- (conductORPOut (s:slState) (trap (PSG (cmd:psgCommand))) = unAuthorized) /\
+ (conductORPOut (s:slState) (trap x) = unAuthorized) /\
 (* discarding *)
- (conductORPOut (s:slState) (discard (PL (cmd:plCommand)))   = unAuthenticated) /\
- (conductORPOut (s:slState) (discard (PSG (cmd:psgCommand))) = unAuthenticated)`
+ (conductORPOut (s:slState) (discard x) = unAuthenticated)`
 
 
 (******************************************************************************)
 (* Input Authentication                                                       *)
 (******************************************************************************)
-val authTestConductORP_def =
+val inputOK_def =
 Define
-`(authTestConductORP
- ((Name PlatoonLeader) says (prop  (cmd:(slCommand command)order))
- 	:((slCommand command)order,stateRole,'d,'e)Form) = T) /\
- (authTestConductORP
- ((Name PlatoonSergeant) says (prop  (cmd:(slCommand command)order))
- 	:((slCommand command)order,stateRole,'d,'e)Form) = T) /\
- (authTestConductORP _= F)`
+`(inputOK
+ ((Name PlatoonLeader) says (prop  (cmd:(slCommand command)option))
+ 	:((slCommand command)option,stateRole,'d,'e)Form) = T) /\
+ (inputOK
+ ((Name PlatoonSergeant) says (prop  (cmd:(slCommand command)option))
+ 	:((slCommand command)option,stateRole,'d,'e)Form) = T) /\
+ (inputOK
+ ((Name Omni) says (prop (cmd:(slCommand command)option))
+  	:((slCommand command)option,stateRole,'d,'e)Form) = T) /\
+ (inputOK _= F)`
 
 
-(******************************************************************************)
-(* "State Interpretation: this is the trivial assumption TT, as the machine   *)
-(* state has no influence on access privileges"--Prof. Chin, SM0Script.sml    *)
-(******************************************************************************)
-val ssmConductORPStateInterp_def =
-Define
-`ssmConductORPStateInterp (slState:slState) = 
-                    ( TT:((slCommand command)order,stateRole,'d,'e)Form)`
-
-
-(* ==== This is no longer necessary...but, I worked hard to write and I am not
-ready to part with it just yet. ====
-val ssmConductORPStateInterp_def =
-Define
-`(ssmConductORPStateInterp CONDUCT_ORP =
-                    (  ((Name (PlatoonLeader:stateRole)) controls
-      (prop (SOME (SLc (incomplete:slCommand)))) )
-        :((slCommand command)order,stateRole,'d,'e)Form)) /\
-(ssmConductORPStateInterp ACTIONS_IN =
-                    (  ((Name (PlatoonLeader:stateRole)) controls
-      (prop (SOME (SLc (incomplete:slCommand)))) )
-        :((slCommand command)order,stateRole,'d,'e)Form)) /\
-(ssmConductORPStateInterp WITHDRAW =
-                    (  ((Name (PlatoonLeader:stateRole)) controls
-      (prop (SOME (SLc (incomplete:slCommand)))) )
-        :((slCommand command)order,stateRole,'d,'e)Form)) /\
-(ssmConductORPStateInterp SECURE =
-                    (  ((Name (PlatoonSergeant:stateRole)) controls
-      (prop (SOME (SLc (incomplete:slCommand)))) )
-        :((slCommand command)order,stateRole,'d,'e)Form)) /\
-(ssmConductORPStateInterp COMPLETE =
-                    ( TT:((slCommand command)order,stateRole,'d,'e)Form))`
- ==== Still not parting with it yet. ==== *)
 (******************************************************************************)
 (* "A theorem showing commands without a principal are rejected."--Prof       *)
 (*  Chin, SM0Script.sml       	       	 	       			      *)
 (******************************************************************************)
-val authTestConductORP_cmd_reject_lemma =
+val inputOK_cmd_reject_lemma =
 TAC_PROOF(
  ([],
-  ``!cmd. ~(authTestConductORP
-      ((prop (SOME cmd)):((slCommand command)order,stateRole,'d,'e)Form))``),
-PROVE_TAC[authTestConductORP_def])
+  ``!cmd. ~(inputOK
+      ((prop (SOME cmd)):((slCommand command)option,stateRole,'d,'e)Form))``),
+PROVE_TAC[inputOK_def])
 
-val _ = save_thm("authTestConductORP_cmd_reject_lemma",
-                 authTestConductORP_cmd_reject_lemma)
-
-
-(* -------------------------------------------------------------------------- *)
-(* securityContext definition:                                                *)
-(* -------------------------------------------------------------------------- *)
-val secContextConductORP_def =
-Define
-`secContextConductORP (plcmd:plCommand)(psgcmd:psgCommand)(incomplete:slCommand) =
- [((Name PlatoonLeader) controls
-      (prop (SOME (SLc (PL plcmd)))) )
-        :((slCommand command)order,stateRole,'d,'e)Form;
-  ((Name PlatoonSergeant) controls
-      (prop (SOME (SLc (PSG psgcmd)))) )
-        :((slCommand command)order,stateRole,'d,'e)Form;
-  ((Name PlatoonLeader) says
-      (prop (SOME (SLc (PSG psgcmd)))) impf (prop NONE))
-      :((slCommand command)order,stateRole,'d,'e)Form;
-  ((Name PlatoonSergeant) says
-      (prop (SOME (SLc (PL plcmd)))) impf (prop NONE))
-      :((slCommand command)order,stateRole,'d,'e)Form]`
-
+val _ = save_thm("inputOK_cmd_reject_lemma",
+                 inputOK_cmd_reject_lemma)
 
 (******************************************************************************)
-(* PlatoonLeader is authorized on any plCommand                               *)
+(* PlatoonLeader is justified on secure.				      *)
 (******************************************************************************)
-val PlatoonLeader_plCommand_lemma =
+val th1 =
+  ISPECL
+  [``inputOK:((slCommand command)option, stateRole, 'd,'e)Form -> bool``,
+  ``secAuthorization :((slCommand command)option, stateRole, 'd,'e)Form list ->
+      ((slCommand command)option, stateRole, 'd,'e)Form list``,
+  ``secContext: (slState) ->
+       ((slCommand command)option, stateRole, 'd,'e)Form list ->
+      ((slCommand command)option, stateRole, 'd,'e)Form list``,
+  ``[((Name PlatoonLeader) says (prop (SOME (SLc (PL secure)))))
+     :((slCommand command)option, stateRole, 'd,'e)Form]``,
+  ``ins:((slCommand command)option, stateRole, 'd,'e)Form list list``,
+  ``(CONDUCT_ORP)``,
+  ``outs:slOutput output list trType list``] TR_exec_cmd_rule
+
+val temp = fst(dest_imp(concl th1))
+
+val PlatoonLeader_CONDUCT_ORP_exec_secure_lemma =
 TAC_PROOF(
-([],
-``CFGInterpret ((M:((slCommand command)order,'b,stateRole,'d,'e)Kripke),Oi,Os)
-   (CFG
-      authTestConductORP
-      ssmConductORPStateInterp
-      (secContextConductORP
-         (plCommand:plCommand)(psgCommand:psgCommand)(incomplete:slCommand))
-       (((Name PlatoonLeader) says (prop (SOME (SLc (PL plCommand)))))::ins)
-      (s:slState)
-      (outs:(slOutput output) list) ) ==>
-  ((M,Oi,Os) sat (prop (SOME (SLc (PL plCommand)))))``),
-REWRITE_TAC[CFGInterpret_def,secContextConductORP_def,ssmConductORPStateInterp_def,
-		satList_CONS,satList_nil, sat_TT] THEN
+   ([],
+	fst(dest_imp(concl th1))),
+REWRITE_TAC
+ [CFGInterpret_def, secContext_def, secAuthorization_def,
+  getOmniCommand_def,
+  inputList_def, extractInput_def, MAP,
+  propCommandList_def, extractPropCommand_def, satList_CONS,
+  satList_nil, GSYM satList_conj] THEN
 PROVE_TAC[Controls])
 
-val _ = save_thm("PlatoonLeader_plCommand_lemma",
-		 PlatoonLeader_plCommand_lemma)
+val _= save_thm("PlatoonLeader_CONDUCT_ORP_exec_secure_lemma",
+		 PlatoonLeader_CONDUCT_ORP_exec_secure_lemma)
 
-(* -------------------------------------------------------------------------- *)
-(* exec plCommand occurs if and only if PlatoonLeaders's command is           *)
-(* authenticated and authorized                                               *)
-(* -------------------------------------------------------------------------- *)
-val PlatoonLeader_exec_plCommand_justified_thm =
-let
- val th1 =
- ISPECL
- [``authTestConductORP:((slCommand command)order, stateRole,'d,'e)Form -> bool``,
-  ``(secContextConductORP
-           (plCommand:plCommand)(psgCommand:psgCommand)(incomplete:slCommand))
-           :((slCommand command)order, stateRole,'d,'e)Form list``,
-  ``ssmConductORPStateInterp:(slState)->
-           ((slCommand command)order, stateRole,'d,'e)Form``,
-  ``Name PlatoonLeader``,``SLc (PL plCommand):(slCommand command)``,
-  ``ins:((slCommand command)order,stateRole,'d,'e)Form list``,
-  ``s:(slState)``,``outs:(slOutput output) list``]
- TR_exec_cmd_rule
-in 
- TAC_PROOF(([],
-  ``!(NS :(slState) -> (slCommand command)trType -> (slState))
-     (Out :(slState) -> (slCommand command)trType -> (slOutput output))
-     (M :((slCommand command)order, 'b, stateRole, 'd, 'e) Kripke)
-     (Oi :'d po)
-     (Os :'e po).
-    TR (M,Oi,Os) (exec (SLc (PL plCommand)):((slCommand command)trType))
-      (CFG
-        (authTestConductORP
-           :((slCommand command)order, stateRole, 'd, 'e) Form -> bool)
-        (ssmConductORPStateInterp :(slState)
-           -> ((slCommand command)order, stateRole, 'd, 'e) Form)
-        ((secContextConductORP
-           (plCommand:plCommand)(psgCommand:psgCommand)(incomplete:slCommand))
-           :((slCommand command)order, stateRole,'d,'e)Form list)
-        (Name PlatoonLeader says
-           (prop (SOME (SLc (PL plCommand)):(slCommand command)order):
-             ((slCommand command)order, stateRole, 'd, 'e)Form)::
-             (ins :((slCommand command)order, stateRole,'d,'e)Form list))
-        (s:(slState))
-        (outs:(slOutput output) list) )
-      (CFG
-	(authTestConductORP
-	   :((slCommand command)order, stateRole, 'd, 'e) Form -> bool)
-        (ssmConductORPStateInterp :(slState)
-           -> ((slCommand command)order, stateRole, 'd, 'e) Form)
-        ((secContextConductORP
-           (plCommand:plCommand)(psgCommand:psgCommand)(incomplete:slCommand))
-           :((slCommand command)order, stateRole,'d,'e)Form list)
-        ins
-        (NS
-	 (s:(slState))
-	 (exec (SLc (PL plCommand)):((slCommand command)trType)) )
-        (Out
-	 (s:(slState))
-	 (exec (SLc (PL plCommand)):((slCommand command)trType))::outs )  )
-   <=>
-   authTestConductORP
-       (Name PlatoonLeader says
-           (prop (SOME (SLc (PL plCommand)):(slCommand command)order):
-             ((slCommand command)order, stateRole, 'd, 'e)Form))
-       /\
-   CFGInterpret (M,Oi,Os)
-      (CFG
-        (authTestConductORP
-           :((slCommand command)order, stateRole, 'd, 'e) Form -> bool)
-        (ssmConductORPStateInterp :(slState)
-           -> ((slCommand command)order, stateRole, 'd, 'e) Form)
-        ((secContextConductORP
-           (plCommand:plCommand)(psgCommand:psgCommand)(incomplete:slCommand))
-           :((slCommand command)order, stateRole,'d,'e)Form list)
-        (Name PlatoonLeader says
-           (prop (SOME (SLc (PL plCommand)):(slCommand command)order):
-             ((slCommand command)order, stateRole, 'd, 'e)Form)::
-             (ins :((slCommand command)order, stateRole,'d,'e)Form list))
-        (s:(slState))
-        (outs:(slOutput output) list) )
-      /\
-   (M,Oi,Os) sat
-        (prop (SOME (SLc (PL plCommand)):(slCommand command)order):
-           ((slCommand command)order, stateRole, 'd, 'e)Form)``),
- PROVE_TAC[th1,PlatoonLeader_plCommand_lemma])
-end
-
-val _ =
- save_thm("PlatoonLeader_exec_plCommand_justified_thm",
-           PlatoonLeader_exec_plCommand_justified_thm)
-
-(******************************************************************************)
-(* PlatoonSergeant is authorized on any psgCommand                            *)
-(******************************************************************************)
-val PlatoonSergeant_psgCommand_lemma =
+val PlatoonLeader_CONDUCT_ORP_exec_secure_justified_thm =
 TAC_PROOF(
-([],
-``CFGInterpret ((M:((slCommand command)order,'b,stateRole,'d,'e)Kripke),Oi,Os)
-   (CFG
-      authTestConductORP
-      ssmConductORPStateInterp
-      (secContextConductORP (plCommand:plCommand)(psgCommand:psgCommand)(incomplete:slCommand))
-       (((Name PlatoonSergeant) says (prop (SOME (SLc (PSG psgCommand)))))::ins)
-      (s:slState)
-      (outs:(slOutput output) list) ) ==>
-  ((M,Oi,Os) sat (prop (SOME (SLc (PSG psgCommand)))))``),
-REWRITE_TAC[CFGInterpret_def,secContextConductORP_def,ssmConductORPStateInterp_def,
-		satList_CONS,satList_nil, sat_TT] THEN
-PROVE_TAC[Controls])
+  ([],snd(dest_imp(concl th1))),
+PROVE_TAC[PlatoonLeader_CONDUCT_ORP_exec_secure_lemma, TR_exec_cmd_rule])
 
-val _ = save_thm("PlatoonSergeant_psgCommand_lemma",
-		 PlatoonSergeant_psgCommand_lemma)
+val _= save_thm("PlatoonLeader_CONDUCT_ORP_exec_secure_justified_thm",
+	      PlatoonLeader_CONDUCT_ORP_exec_secure_justified_thm)
 
-(* -------------------------------------------------------------------------- *)
-(* exec psgCommand occurs if and only if PlatoonSergeant's command is         *)
-(* authenticated and authorized                                               *)
-(* -------------------------------------------------------------------------- *)
-val PlatoonSergeant_exec_psgCommand_justified_thm =
-let
- val th1 =
- ISPECL
- [``authTestConductORP:((slCommand command)order, stateRole,'d,'e)Form -> bool``,
-  ``(secContextConductORP
-           (plCommand:plCommand)(psgCommand:psgCommand)(incomplete:slCommand))
-           :((slCommand command)order, stateRole,'d,'e)Form list``,
-  ``ssmConductORPStateInterp:(slState)->
-           ((slCommand command)order, stateRole,'d,'e)Form``,
-  ``Name PlatoonSergeant``,``SLc (PSG psgCommand):(slCommand command)``,
-  ``ins:((slCommand command)order,stateRole,'d,'e)Form list``,
-  ``s:(slState)``,``outs:(slOutput output) list``]
- TR_exec_cmd_rule
-in 
- TAC_PROOF(([],
-  ``!(NS :(slState) -> (slCommand command)trType -> (slState))
-     (Out :(slState) -> (slCommand command)trType -> (slOutput output))
-     (M :((slCommand command)order, 'b, stateRole, 'd, 'e) Kripke)
-     (Oi :'d po)
-     (Os :'e po).
-    TR (M,Oi,Os) (exec (SLc (PSG psgCommand)):((slCommand command)trType))
-      (CFG
-        (authTestConductORP
-           :((slCommand command)order, stateRole, 'd, 'e) Form -> bool)
-        (ssmConductORPStateInterp :(slState)
-           -> ((slCommand command)order, stateRole, 'd, 'e) Form)
-        ((secContextConductORP
-           (plCommand:plCommand)(psgCommand:psgCommand)(incomplete:slCommand))
-           :((slCommand command)order, stateRole,'d,'e)Form list)
-        (Name PlatoonSergeant says
-           (prop (SOME (SLc (PSG psgCommand)):(slCommand command)order):
-             ((slCommand command)order, stateRole, 'd, 'e)Form)::
-             (ins :((slCommand command)order, stateRole,'d,'e)Form list))
-        (s:(slState))
-        (outs:(slOutput output) list) )
-      (CFG
-	(authTestConductORP
-	   :((slCommand command)order, stateRole, 'd, 'e) Form -> bool)
-        (ssmConductORPStateInterp :(slState)
-           -> ((slCommand command)order, stateRole, 'd, 'e) Form)
-        ((secContextConductORP
-           (plCommand:plCommand)(psgCommand:psgCommand)(incomplete:slCommand))
-           :((slCommand command)order, stateRole,'d,'e)Form list)
-        ins
-        (NS
-	 (s:(slState))
-	 (exec (SLc (PSG psgCommand)):((slCommand command)trType)) )
-        (Out
-	 (s:(slState))
-	 (exec (SLc (PSG psgCommand)):((slCommand command)trType))::outs )  )
-   <=>
-   authTestConductORP
-       (Name PlatoonSergeant says
-           (prop (SOME (SLc (PSG psgCommand)):(slCommand command)order):
-             ((slCommand command)order, stateRole, 'd, 'e)Form))
-       /\
-   CFGInterpret (M,Oi,Os)
-      (CFG
-        (authTestConductORP
-           :((slCommand command)order, stateRole, 'd, 'e) Form -> bool)
-        (ssmConductORPStateInterp :(slState)
-           -> ((slCommand command)order, stateRole, 'd, 'e) Form)
-        ((secContextConductORP
-           (plCommand:plCommand)(psgCommand:psgCommand)(incomplete:slCommand))
-           :((slCommand command)order, stateRole,'d,'e)Form list)
-        (Name PlatoonSergeant says
-           (prop (SOME (SLc (PSG psgCommand)):(slCommand command)order):
-             ((slCommand command)order, stateRole, 'd, 'e)Form)::
-             (ins :((slCommand command)order, stateRole,'d,'e)Form list))
-        (s:(slState))
-        (outs:(slOutput output) list) )
-      /\
-   (M,Oi,Os) sat
-        (prop (SOME (SLc (PSG psgCommand)):(slCommand command)order):
-           ((slCommand command)order, stateRole, 'd, 'e)Form)``),
- PROVE_TAC[th1,PlatoonSergeant_psgCommand_lemma])
-end
+val PlatoonLeader_CONDUCT_ORP_exec_secure_justified_thm =
+REWRITE_RULE[inputList_def, extractInput_def, MAP, propCommandList_def,
+  extractPropCommand_def, PlatoonLeader_CONDUCT_ORP_exec_secure_lemma]
+  PlatoonLeader_CONDUCT_ORP_exec_secure_justified_thm
 
-val _ =
- save_thm("PlatoonSergeant_exec_psgCommand_justified_thm",
-           PlatoonSergeant_exec_psgCommand_justified_thm)
-(* ==== Testing here ====
+val _= save_thm("PlatoonLeader_CONDUCT_ORP_exec_secure_justified_thm",
+		PlatoonLeader_CONDUCT_ORP_exec_secure_justified_thm)
 
-==== End Testing Here ==== *)
+(******************************************************************************)
+(* PlatoonSergeant is justified on actionsIn if                               *)
+(* if Omni says ssmSecureComplete.					      *)
+(******************************************************************************)
+val th1 =
+  ISPECL
+  [``inputOK:((slCommand command)option, stateRole, 'd,'e)Form -> bool``,
+  ``secAuthorization :((slCommand command)option, stateRole, 'd,'e)Form list ->
+                    ((slCommand command)option, stateRole, 'd,'e)Form list``,
+  ``secContext: (slState) ->
+       ((slCommand command)option, stateRole, 'd,'e)Form list ->
+       ((slCommand command)option, stateRole, 'd,'e)Form list``,
+  ``[(Name Omni) says (prop (SOME (SLc (OMNI ssmSecureComplete))))
+      :((slCommand command)option, stateRole, 'd,'e)Form;
+     (Name PlatoonSergeant) says (prop (SOME (SLc (PSG actionsIn))))
+      :((slCommand command)option, stateRole, 'd,'e)Form]``,
+  ``ins:((slCommand command)option, stateRole, 'd,'e)Form list list``,
+  ``(SECURE)``,
+  ``outs:slOutput output list trType list``] TR_exec_cmd_rule
 
+
+val PlatoonSergeant_SECURE_exec_lemma =
+TAC_PROOF(
+  ([],fst(dest_imp(concl th1))),
+REWRITE_TAC[CFGInterpret_def, secContext_def, secAuthorization_def, secHelper_def,
+            propCommandList_def,extractPropCommand_def, inputList_def,
+	    getOmniCommand_def,
+	    MAP,extractInput_def, satList_CONS, satList_nil, GSYM satList_conj]  THEN
+PROVE_TAC[Controls,Modus_Ponens])
+
+val _= save_thm("PlatoonSergeant_SECURE_exec_lemma",
+		 PlatoonSergeant_SECURE_exec_lemma)
+
+val PlatoonSergeant_SECURE_exec_justified_lemma =
+TAC_PROOF(
+  ([],snd(dest_imp(concl th1))),
+PROVE_TAC[PlatoonSergeant_SECURE_exec_lemma, TR_exec_cmd_rule])
+
+val _= save_thm("PlatoonSergeant_SECURE_exec_justified_lemma",
+		 PlatoonSergeant_SECURE_exec_justified_lemma)
+
+val PlatoonSergeant_SECURE_exec_justified_thm =
+REWRITE_RULE[inputList_def, extractInput_def, MAP, propCommandList_def,
+  extractPropCommand_def, PlatoonSergeant_SECURE_exec_lemma]
+  PlatoonSergeant_SECURE_exec_justified_lemma
+
+val _= save_thm("PlatoonSergeant_SECURE_exec_justified_thm",
+		PlatoonSergeant_SECURE_exec_justified_thm)
+
+
+(******************************************************************************)
+(* PlatoonLeader is justified on withdraw if                                  *)
+(* if Omni says ssmActionsInComplete.					      *)
+(******************************************************************************)
+val th1 =
+  ISPECL
+  [``inputOK:((slCommand command)option, stateRole, 'd,'e)Form -> bool``,
+  ``secAuthorization :((slCommand command)option, stateRole, 'd,'e)Form list ->
+                    ((slCommand command)option, stateRole, 'd,'e)Form list``,
+  ``secContext: (slState) ->
+       ((slCommand command)option, stateRole, 'd,'e)Form list ->
+       ((slCommand command)option, stateRole, 'd,'e)Form list``,
+  ``[(Name Omni) says (prop (SOME (SLc (OMNI ssmActionsInComplete))))
+      :((slCommand command)option, stateRole, 'd,'e)Form;
+     (Name PlatoonLeader) says (prop (SOME (SLc (PL withdraw))))
+      :((slCommand command)option, stateRole, 'd,'e)Form]``,
+  ``ins:((slCommand command)option, stateRole, 'd,'e)Form list list``,
+  ``(ACTIONS_IN)``,
+  ``outs:slOutput output list trType list``] TR_exec_cmd_rule
+
+
+val PlatoonLeader_ACTIONS_IN_exec_lemma =
+TAC_PROOF(
+ ([],fst(dest_imp(concl th1))),
+REWRITE_TAC[CFGInterpret_def, secContext_def, secAuthorization_def, secHelper_def,
+            propCommandList_def,extractPropCommand_def, inputList_def,
+	    getOmniCommand_def,
+	    MAP,extractInput_def, satList_CONS, satList_nil, GSYM satList_conj]
+THEN
+PROVE_TAC[Controls,Modus_Ponens])
+
+val _= save_thm("PlatoonLeader_ACTIONS_IN_exec_lemma",
+		 PlatoonLeader_ACTIONS_IN_exec_lemma)
+
+val PlatoonLeader_ACTIONS_IN_exec_justified_lemma =
+TAC_PROOF(
+  ([],snd(dest_imp(concl th1))),
+PROVE_TAC[PlatoonLeader_ACTIONS_IN_exec_lemma, TR_exec_cmd_rule])
+
+val _= save_thm("PlatoonLeader_ACTIONS_IN_exec_justified_lemma",
+	      PlatoonLeader_ACTIONS_IN_exec_justified_lemma)
+
+val PlatoonLeader_ACTIONS_IN_exec_justified_thm =
+REWRITE_RULE[inputList_def, extractInput_def, MAP, propCommandList_def,
+  extractPropCommand_def, PlatoonLeader_ACTIONS_IN_exec_lemma]
+  PlatoonLeader_ACTIONS_IN_exec_justified_lemma
+
+val _= save_thm("PlatoonLeader_ACTIONS_IN_exec_justified_thm",
+	  	 PlatoonLeader_ACTIONS_IN_exec_justified_thm)
+
+(******************************************************************************)
+(* PlatoonLeader is trapped on withdraw if                                    *)
+(* if not Omni says ssmActionsInComplete.				      *)
+(******************************************************************************)
+val thTrap =
+  ISPECL
+  [``inputOK:((slCommand command)option, stateRole, 'd,'e)Form -> bool``,
+  ``secAuthorization :((slCommand command)option, stateRole, 'd,'e)Form list ->
+                    ((slCommand command)option, stateRole, 'd,'e)Form list``,
+  ``secContext: (slState) ->
+       ((slCommand command)option, stateRole, 'd,'e)Form list ->
+       ((slCommand command)option, stateRole, 'd,'e)Form list``,
+  ``[(Name Omni) says (prop (SOME (SLc (OMNI omniCommand))))
+      :((slCommand command)option, stateRole, 'd,'e)Form;
+     (Name PlatoonLeader) says (prop (SOME (SLc (PL withdraw))))
+      :((slCommand command)option, stateRole, 'd,'e)Form]``,
+  ``ins:((slCommand command)option, stateRole, 'd,'e)Form list list``,
+  ``(ACTIONS_IN)``,
+  ``outs:slOutput output list trType list``] TR_trap_cmd_rule
+
+val temp2 = fst(dest_imp(concl thTrap))
+
+val PlatoonLeader_ACTIONS_IN_trap_lemma =
+TAC_PROOF(
+   ([],
+        Term`(~((omniCommand:omniCommand) = ssmActionsInComplete)) ==>
+	     ((s:slState) = ACTIONS_IN) ==>
+	     ^temp2`),
+DISCH_TAC THEN
+DISCH_TAC THEN
+ASM_REWRITE_TAC[CFGInterpret_def, secContext_def, secAuthorization_def,
+	    secHelper_def,
+            propCommandList_def,extractPropCommand_def, inputList_def,
+	    getOmniCommand_def,
+	    MAP,extractInput_def, satList_CONS, satList_nil, GSYM satList_conj]  THEN
+PROVE_TAC[Controls,Modus_Ponens])
+
+val _= save_thm("PlatoonLeader_ACTIONS_IN_trap_lemma",
+		 PlatoonLeader_ACTIONS_IN_trap_lemma)
+
+
+val temp3 = snd(dest_imp(concl thTrap))
+
+val PlatoonLeader_ACTIONS_IN_trap_justified_lemma =
+TAC_PROOF(
+   ([],
+        Term`(~((omniCommand:omniCommand) = ssmActionsInComplete)) ==>
+	     ((s:slState) = ACTIONS_IN) ==>
+	     ^temp3`),
+DISCH_TAC THEN
+DISCH_TAC THEN
+PROVE_TAC[PlatoonLeader_ACTIONS_IN_trap_lemma, TR_trap_cmd_rule])
+
+val _= save_thm("PlatoonLeader_ACTIONS_IN_trap_justified_lemma",
+		 PlatoonLeader_ACTIONS_IN_trap_justified_lemma)
+
+val PlatoonLeader_ACTIONS_IN_trap_justified_thm =
+REWRITE_RULE[inputList_def, extractInput_def, MAP, propCommandList_def,
+             extractPropCommand_def,
+	     PlatoonLeader_ACTIONS_IN_trap_lemma]
+	     PlatoonLeader_ACTIONS_IN_trap_justified_lemma 
+
+
+val _= save_thm("PlatoonLeader_ACTIONS_IN_trap_justified_thm",
+	      PlatoonLeader_ACTIONS_IN_trap_justified_thm)
+
+(* ===== Interactive Mode =====
+
+===== Interactive Mode ===== *)
 
 val _ = export_theory();
 
