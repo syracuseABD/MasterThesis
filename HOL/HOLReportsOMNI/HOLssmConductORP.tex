@@ -1,78 +1,96 @@
-\newcommand{\HOLssmConductORPDate}{10 June 2018}
-\newcommand{\HOLssmConductORPTime}{23:45}
-\begin{SaveVerbatim}{HOLssmConductORPDefinitionssecContextConductORPXXdef}
-\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{plcmd} \HOLBoundVar{psgcmd} \HOLBoundVar{incomplete}.
-     \HOLConst{secContextConductORP} \HOLBoundVar{plcmd} \HOLBoundVar{psgcmd} \HOLBoundVar{incomplete} \HOLSymConst{=}
-     [\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{controls} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLBoundVar{plcmd})));
-      \HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{controls}
-      \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLBoundVar{psgcmd})));
-      \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
-      \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLBoundVar{psgcmd}))) \HOLConst{impf} \HOLConst{prop} \HOLConst{NONE};
-      \HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
-      \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLBoundVar{plcmd}))) \HOLConst{impf} \HOLConst{prop} \HOLConst{NONE}]
+\newcommand{\HOLssmConductORPDate}{11 June 2018}
+\newcommand{\HOLssmConductORPTime}{16:11}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsconductORPNSXXdef}
+\HOLTokenTurnstile{} (\HOLConst{conductORPNS} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}
+    \HOLKeyword{if} \HOLConst{getPlCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{secure} \HOLKeyword{then} \HOLConst{SECURE} \HOLKeyword{else} \HOLConst{CONDUCT_ORP}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{conductORPNS} \HOLConst{SECURE} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}
+    \HOLKeyword{if} \HOLConst{getPsgCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{actionsIn} \HOLKeyword{then} \HOLConst{ACTIONS_IN} \HOLKeyword{else} \HOLConst{SECURE}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{conductORPNS} \HOLConst{ACTIONS_IN} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}
+    \HOLKeyword{if} \HOLConst{getPlCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{withdraw} \HOLKeyword{then} \HOLConst{WITHDRAW} \HOLKeyword{else} \HOLConst{ACTIONS_IN}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{conductORPNS} \HOLConst{WITHDRAW} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}
+    \HOLKeyword{if} \HOLConst{getPlCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{complete} \HOLKeyword{then} \HOLConst{COMPLETE} \HOLKeyword{else} \HOLConst{WITHDRAW}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{conductORPNS} \HOLFreeVar{s} (\HOLConst{trap} \HOLFreeVar{x}) \HOLSymConst{=} \HOLFreeVar{s}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{conductORPNS} \HOLFreeVar{s} (\HOLConst{discard} \HOLFreeVar{x}) \HOLSymConst{=} \HOLFreeVar{s})
 \end{SaveVerbatim}
-\newcommand{\HOLssmConductORPDefinitionssecContextConductORPXXdef}{\UseVerbatim{HOLssmConductORPDefinitionssecContextConductORPXXdef}}
-\begin{SaveVerbatim}{HOLssmConductORPDefinitionsssmConductORPStateInterpXXdef}
-\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{slState}. \HOLConst{ssmConductORPStateInterp} \HOLBoundVar{slState} \HOLSymConst{=} \HOLConst{TT}
+\newcommand{\HOLssmConductORPTheoremsconductORPNSXXdef}{\UseVerbatim{HOLssmConductORPTheoremsconductORPNSXXdef}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsconductORPNSXXind}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{P}.
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{SECURE} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{ACTIONS_IN} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{WITHDRAW} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{s} \HOLBoundVar{x}. \HOLBoundVar{P} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{s} \HOLBoundVar{x}. \HOLBoundVar{P} \HOLBoundVar{s} (\HOLConst{discard} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{5}}}. \HOLBoundVar{P} \HOLConst{COMPLETE} (\HOLConst{exec} \HOLBoundVar{v\sb{\mathrm{5}}})) \HOLSymConst{\HOLTokenImp{}}
+     \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v} \HOLBoundVar{v\sb{\mathrm{1}}}. \HOLBoundVar{P} \HOLBoundVar{v} \HOLBoundVar{v\sb{\mathrm{1}}}
 \end{SaveVerbatim}
-\newcommand{\HOLssmConductORPDefinitionsssmConductORPStateInterpXXdef}{\UseVerbatim{HOLssmConductORPDefinitionsssmConductORPStateInterpXXdef}}
-\newcommand{\HOLssmConductORPDefinitions}{
-\HOLDfnTag{ssmConductORP}{secContextConductORP_def}\HOLssmConductORPDefinitionssecContextConductORPXXdef
-\HOLDfnTag{ssmConductORP}{ssmConductORPStateInterp_def}\HOLssmConductORPDefinitionsssmConductORPStateInterpXXdef
-}
-\begin{SaveVerbatim}{HOLssmConductORPTheoremsauthTestConductORPXXcmdXXrejectXXlemma}
-\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{cmd}. \HOLSymConst{\HOLTokenNeg{}}\HOLConst{authTestConductORP} (\HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd}))
+\newcommand{\HOLssmConductORPTheoremsconductORPNSXXind}{\UseVerbatim{HOLssmConductORPTheoremsconductORPNSXXind}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsconductORPOutXXdef}
+\HOLTokenTurnstile{} (\HOLConst{conductORPOut} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}
+    \HOLKeyword{if} \HOLConst{getPlCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{secure} \HOLKeyword{then} \HOLConst{Secure} \HOLKeyword{else} \HOLConst{ConductORP}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{conductORPOut} \HOLConst{SECURE} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}
+    \HOLKeyword{if} \HOLConst{getPsgCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{actionsIn} \HOLKeyword{then} \HOLConst{ActionsIn} \HOLKeyword{else} \HOLConst{Secure}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{conductORPOut} \HOLConst{ACTIONS_IN} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}
+    \HOLKeyword{if} \HOLConst{getPlCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{withdraw} \HOLKeyword{then} \HOLConst{Withdraw} \HOLKeyword{else} \HOLConst{ActionsIn}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{conductORPOut} \HOLConst{WITHDRAW} (\HOLConst{exec} \HOLFreeVar{x}) \HOLSymConst{=}
+    \HOLKeyword{if} \HOLConst{getPlCom} \HOLFreeVar{x} \HOLSymConst{=} \HOLConst{complete} \HOLKeyword{then} \HOLConst{Complete} \HOLKeyword{else} \HOLConst{Withdraw}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{conductORPOut} \HOLFreeVar{s} (\HOLConst{trap} \HOLFreeVar{x}) \HOLSymConst{=} \HOLConst{unAuthorized}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{conductORPOut} \HOLFreeVar{s} (\HOLConst{discard} \HOLFreeVar{x}) \HOLSymConst{=} \HOLConst{unAuthenticated})
 \end{SaveVerbatim}
-\newcommand{\HOLssmConductORPTheoremsauthTestConductORPXXcmdXXrejectXXlemma}{\UseVerbatim{HOLssmConductORPTheoremsauthTestConductORPXXcmdXXrejectXXlemma}}
-\begin{SaveVerbatim}{HOLssmConductORPTheoremsauthTestConductORPXXdef}
-\HOLTokenTurnstile{} (\HOLConst{authTestConductORP} (\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{cmd}) \HOLSymConst{\HOLTokenEquiv{}}
-    \HOLConst{T}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{cmd}) \HOLSymConst{\HOLTokenEquiv{}}
-    \HOLConst{T}) \HOLSymConst{\HOLTokenConj{}} (\HOLConst{authTestConductORP} \HOLConst{TT} \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} \HOLConst{FF} \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLConst{prop} \HOLFreeVar{v}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLConst{notf} \HOLFreeVar{v\sb{\mathrm{1}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{2}}} \HOLConst{andf} \HOLFreeVar{v\sb{\mathrm{3}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{4}}} \HOLConst{orf} \HOLFreeVar{v\sb{\mathrm{5}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{6}}} \HOLConst{impf} \HOLFreeVar{v\sb{\mathrm{7}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{8}}} \HOLConst{eqf} \HOLFreeVar{v\sb{\mathrm{9}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{TT}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{FF}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v133} \HOLConst{meet} \HOLFreeVar{v134} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{v\sb{\mathrm{66}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v135} \HOLConst{quoting} \HOLFreeVar{v136} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{v\sb{\mathrm{66}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{notf} \HOLFreeVar{v\sb{\mathrm{67}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLFreeVar{v\sb{\mathrm{68}}} \HOLConst{andf} \HOLFreeVar{v\sb{\mathrm{69}}})) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLFreeVar{v\sb{\mathrm{70}}} \HOLConst{orf} \HOLFreeVar{v\sb{\mathrm{71}}})) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLFreeVar{v\sb{\mathrm{72}}} \HOLConst{impf} \HOLFreeVar{v\sb{\mathrm{73}}})) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLFreeVar{v\sb{\mathrm{74}}} \HOLConst{eqf} \HOLFreeVar{v\sb{\mathrm{75}}})) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{76}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{77}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{78}}} \HOLConst{speaks_for} \HOLFreeVar{v\sb{\mathrm{79}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{80}}} \HOLConst{controls} \HOLFreeVar{v\sb{\mathrm{81}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{reps} \HOLFreeVar{v\sb{\mathrm{82}}} \HOLFreeVar{v\sb{\mathrm{83}}} \HOLFreeVar{v\sb{\mathrm{84}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{85}}} \HOLConst{domi} \HOLFreeVar{v\sb{\mathrm{86}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{87}}} \HOLConst{eqi} \HOLFreeVar{v\sb{\mathrm{88}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{89}}} \HOLConst{doms} \HOLFreeVar{v\sb{\mathrm{90}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{91}}} \HOLConst{eqs} \HOLFreeVar{v\sb{\mathrm{92}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{93}}} \HOLConst{eqn} \HOLFreeVar{v\sb{\mathrm{94}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{95}}} \HOLConst{lte} \HOLFreeVar{v\sb{\mathrm{96}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{97}}} \HOLConst{lt} \HOLFreeVar{v\sb{\mathrm{98}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{12}}} \HOLConst{speaks_for} \HOLFreeVar{v\sb{\mathrm{13}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{14}}} \HOLConst{controls} \HOLFreeVar{v\sb{\mathrm{15}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLConst{reps} \HOLFreeVar{v\sb{\mathrm{16}}} \HOLFreeVar{v\sb{\mathrm{17}}} \HOLFreeVar{v\sb{\mathrm{18}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{19}}} \HOLConst{domi} \HOLFreeVar{v\sb{\mathrm{20}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{21}}} \HOLConst{eqi} \HOLFreeVar{v\sb{\mathrm{22}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{23}}} \HOLConst{doms} \HOLFreeVar{v\sb{\mathrm{24}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{25}}} \HOLConst{eqs} \HOLFreeVar{v\sb{\mathrm{26}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{27}}} \HOLConst{eqn} \HOLFreeVar{v\sb{\mathrm{28}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{29}}} \HOLConst{lte} \HOLFreeVar{v\sb{\mathrm{30}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{authTestConductORP} (\HOLFreeVar{v\sb{\mathrm{31}}} \HOLConst{lt} \HOLFreeVar{v\sb{\mathrm{32}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F})
+\newcommand{\HOLssmConductORPTheoremsconductORPOutXXdef}{\UseVerbatim{HOLssmConductORPTheoremsconductORPOutXXdef}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsconductORPOutXXind}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{P}.
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{SECURE} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{ACTIONS_IN} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \HOLBoundVar{P} \HOLConst{WITHDRAW} (\HOLConst{exec} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{s} \HOLBoundVar{x}. \HOLBoundVar{P} \HOLBoundVar{s} (\HOLConst{trap} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{s} \HOLBoundVar{x}. \HOLBoundVar{P} \HOLBoundVar{s} (\HOLConst{discard} \HOLBoundVar{x})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{5}}}. \HOLBoundVar{P} \HOLConst{COMPLETE} (\HOLConst{exec} \HOLBoundVar{v\sb{\mathrm{5}}})) \HOLSymConst{\HOLTokenImp{}}
+     \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v} \HOLBoundVar{v\sb{\mathrm{1}}}. \HOLBoundVar{P} \HOLBoundVar{v} \HOLBoundVar{v\sb{\mathrm{1}}}
 \end{SaveVerbatim}
-\newcommand{\HOLssmConductORPTheoremsauthTestConductORPXXdef}{\UseVerbatim{HOLssmConductORPTheoremsauthTestConductORPXXdef}}
-\begin{SaveVerbatim}{HOLssmConductORPTheoremsauthTestConductORPXXind}
+\newcommand{\HOLssmConductORPTheoremsconductORPOutXXind}{\UseVerbatim{HOLssmConductORPTheoremsconductORPOutXXind}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsinputOKXXcmdXXrejectXXlemma}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{cmd}. \HOLSymConst{\HOLTokenNeg{}}\HOLConst{inputOK} (\HOLConst{prop} (\HOLConst{SOME} \HOLBoundVar{cmd}))
+\end{SaveVerbatim}
+\newcommand{\HOLssmConductORPTheoremsinputOKXXcmdXXrejectXXlemma}{\UseVerbatim{HOLssmConductORPTheoremsinputOKXXcmdXXrejectXXlemma}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsinputOKXXdef}
+\HOLTokenTurnstile{} (\HOLConst{inputOK} (\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{cmd}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{T}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{cmd}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{T}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLConst{Name} \HOLConst{Omni} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{cmd}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{T}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} \HOLConst{TT} \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}} (\HOLConst{inputOK} \HOLConst{FF} \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLConst{prop} \HOLFreeVar{v}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}} (\HOLConst{inputOK} (\HOLConst{notf} \HOLFreeVar{v\sb{\mathrm{1}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{2}}} \HOLConst{andf} \HOLFreeVar{v\sb{\mathrm{3}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}} (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{4}}} \HOLConst{orf} \HOLFreeVar{v\sb{\mathrm{5}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{6}}} \HOLConst{impf} \HOLFreeVar{v\sb{\mathrm{7}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}} (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{8}}} \HOLConst{eqf} \HOLFreeVar{v\sb{\mathrm{9}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{TT}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}} (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{FF}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v133} \HOLConst{meet} \HOLFreeVar{v134} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{v\sb{\mathrm{66}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v135} \HOLConst{quoting} \HOLFreeVar{v136} \HOLConst{says} \HOLConst{prop} \HOLFreeVar{v\sb{\mathrm{66}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{notf} \HOLFreeVar{v\sb{\mathrm{67}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLFreeVar{v\sb{\mathrm{68}}} \HOLConst{andf} \HOLFreeVar{v\sb{\mathrm{69}}})) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLFreeVar{v\sb{\mathrm{70}}} \HOLConst{orf} \HOLFreeVar{v\sb{\mathrm{71}}})) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLFreeVar{v\sb{\mathrm{72}}} \HOLConst{impf} \HOLFreeVar{v\sb{\mathrm{73}}})) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} (\HOLFreeVar{v\sb{\mathrm{74}}} \HOLConst{eqf} \HOLFreeVar{v\sb{\mathrm{75}}})) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{76}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{77}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{78}}} \HOLConst{speaks_for} \HOLFreeVar{v\sb{\mathrm{79}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{80}}} \HOLConst{controls} \HOLFreeVar{v\sb{\mathrm{81}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{reps} \HOLFreeVar{v\sb{\mathrm{82}}} \HOLFreeVar{v\sb{\mathrm{83}}} \HOLFreeVar{v\sb{\mathrm{84}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{85}}} \HOLConst{domi} \HOLFreeVar{v\sb{\mathrm{86}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{87}}} \HOLConst{eqi} \HOLFreeVar{v\sb{\mathrm{88}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{89}}} \HOLConst{doms} \HOLFreeVar{v\sb{\mathrm{90}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{91}}} \HOLConst{eqs} \HOLFreeVar{v\sb{\mathrm{92}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{93}}} \HOLConst{eqn} \HOLFreeVar{v\sb{\mathrm{94}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{95}}} \HOLConst{lte} \HOLFreeVar{v\sb{\mathrm{96}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLFreeVar{v\sb{\mathrm{97}}} \HOLConst{lt} \HOLFreeVar{v\sb{\mathrm{98}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{12}}} \HOLConst{speaks_for} \HOLFreeVar{v\sb{\mathrm{13}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{14}}} \HOLConst{controls} \HOLFreeVar{v\sb{\mathrm{15}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLConst{reps} \HOLFreeVar{v\sb{\mathrm{16}}} \HOLFreeVar{v\sb{\mathrm{17}}} \HOLFreeVar{v\sb{\mathrm{18}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{19}}} \HOLConst{domi} \HOLFreeVar{v\sb{\mathrm{20}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{21}}} \HOLConst{eqi} \HOLFreeVar{v\sb{\mathrm{22}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{23}}} \HOLConst{doms} \HOLFreeVar{v\sb{\mathrm{24}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{25}}} \HOLConst{eqs} \HOLFreeVar{v\sb{\mathrm{26}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}} (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{27}}} \HOLConst{eqn} \HOLFreeVar{v\sb{\mathrm{28}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}}
+   (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{29}}} \HOLConst{lte} \HOLFreeVar{v\sb{\mathrm{30}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F}) \HOLSymConst{\HOLTokenConj{}} (\HOLConst{inputOK} (\HOLFreeVar{v\sb{\mathrm{31}}} \HOLConst{lt} \HOLFreeVar{v\sb{\mathrm{32}}}) \HOLSymConst{\HOLTokenEquiv{}} \HOLConst{F})
+\end{SaveVerbatim}
+\newcommand{\HOLssmConductORPTheoremsinputOKXXdef}{\UseVerbatim{HOLssmConductORPTheoremsinputOKXXdef}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsinputOKXXind}
 \HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{P}.
      (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{cmd}. \HOLBoundVar{P} (\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says} \HOLConst{prop} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{cmd}. \HOLBoundVar{P} (\HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says} \HOLConst{prop} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}} \HOLBoundVar{P} \HOLConst{TT} \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{FF} \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v}. \HOLBoundVar{P} (\HOLConst{prop} \HOLBoundVar{v})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{1}}}. \HOLBoundVar{P} (\HOLConst{notf} \HOLBoundVar{v\sb{\mathrm{1}}})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{cmd}. \HOLBoundVar{P} (\HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says} \HOLConst{prop} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{cmd}. \HOLBoundVar{P} (\HOLConst{Name} \HOLConst{Omni} \HOLConst{says} \HOLConst{prop} \HOLBoundVar{cmd})) \HOLSymConst{\HOLTokenConj{}} \HOLBoundVar{P} \HOLConst{TT} \HOLSymConst{\HOLTokenConj{}} \HOLBoundVar{P} \HOLConst{FF} \HOLSymConst{\HOLTokenConj{}}
+     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v}. \HOLBoundVar{P} (\HOLConst{prop} \HOLBoundVar{v})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{1}}}. \HOLBoundVar{P} (\HOLConst{notf} \HOLBoundVar{v\sb{\mathrm{1}}})) \HOLSymConst{\HOLTokenConj{}}
      (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{2}}} \HOLBoundVar{v\sb{\mathrm{3}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{2}}} \HOLConst{andf} \HOLBoundVar{v\sb{\mathrm{3}}})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{4}}} \HOLBoundVar{v\sb{\mathrm{5}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{4}}} \HOLConst{orf} \HOLBoundVar{v\sb{\mathrm{5}}})) \HOLSymConst{\HOLTokenConj{}}
      (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{6}}} \HOLBoundVar{v\sb{\mathrm{7}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{6}}} \HOLConst{impf} \HOLBoundVar{v\sb{\mathrm{7}}})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{8}}} \HOLBoundVar{v\sb{\mathrm{9}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{8}}} \HOLConst{eqf} \HOLBoundVar{v\sb{\mathrm{9}}})) \HOLSymConst{\HOLTokenConj{}}
      (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{TT})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{10}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{10}}} \HOLConst{says} \HOLConst{FF})) \HOLSymConst{\HOLTokenConj{}}
@@ -104,170 +122,360 @@
      (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{29}}} \HOLBoundVar{v\sb{\mathrm{30}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{29}}} \HOLConst{lte} \HOLBoundVar{v\sb{\mathrm{30}}})) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{31}}} \HOLBoundVar{v\sb{\mathrm{32}}}. \HOLBoundVar{P} (\HOLBoundVar{v\sb{\mathrm{31}}} \HOLConst{lt} \HOLBoundVar{v\sb{\mathrm{32}}})) \HOLSymConst{\HOLTokenImp{}}
      \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v}. \HOLBoundVar{P} \HOLBoundVar{v}
 \end{SaveVerbatim}
-\newcommand{\HOLssmConductORPTheoremsauthTestConductORPXXind}{\UseVerbatim{HOLssmConductORPTheoremsauthTestConductORPXXind}}
-\begin{SaveVerbatim}{HOLssmConductORPTheoremsconductORPNSXXdef}
-\HOLTokenTurnstile{} (\HOLConst{conductORPNS} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{secure})) \HOLSymConst{=} \HOLConst{SECURE}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPNS} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{plIncomplete})) \HOLSymConst{=}
-    \HOLConst{CONDUCT_ORP}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPNS} \HOLConst{SECURE} (\HOLConst{exec} (\HOLConst{PSG} \HOLConst{actionsIn})) \HOLSymConst{=} \HOLConst{ACTIONS_IN}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPNS} \HOLConst{SECURE} (\HOLConst{exec} (\HOLConst{PSG} \HOLConst{psgIncomplete})) \HOLSymConst{=} \HOLConst{SECURE}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPNS} \HOLConst{ACTIONS_IN} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{withdraw})) \HOLSymConst{=} \HOLConst{WITHDRAW}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPNS} \HOLConst{ACTIONS_IN} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{plIncomplete})) \HOLSymConst{=}
-    \HOLConst{ACTIONS_IN}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPNS} \HOLConst{WITHDRAW} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{complete})) \HOLSymConst{=} \HOLConst{COMPLETE}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPNS} \HOLConst{WITHDRAW} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{plIncomplete})) \HOLSymConst{=} \HOLConst{WITHDRAW}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPNS} \HOLFreeVar{s} (\HOLConst{trap} (\HOLConst{PL} \HOLFreeVar{cmd\sp{\prime}})) \HOLSymConst{=} \HOLFreeVar{s}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPNS} \HOLFreeVar{s} (\HOLConst{trap} (\HOLConst{PSG} \HOLFreeVar{cmd})) \HOLSymConst{=} \HOLFreeVar{s}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPNS} \HOLFreeVar{s} (\HOLConst{discard} (\HOLConst{PL} \HOLFreeVar{cmd\sp{\prime}})) \HOLSymConst{=} \HOLFreeVar{s}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPNS} \HOLFreeVar{s} (\HOLConst{discard} (\HOLConst{PSG} \HOLFreeVar{cmd})) \HOLSymConst{=} \HOLFreeVar{s})
-\end{SaveVerbatim}
-\newcommand{\HOLssmConductORPTheoremsconductORPNSXXdef}{\UseVerbatim{HOLssmConductORPTheoremsconductORPNSXXdef}}
-\begin{SaveVerbatim}{HOLssmConductORPTheoremsconductORPNSXXind}
-\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{P}.
-     \HOLBoundVar{P} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{secure})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{plIncomplete})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{SECURE} (\HOLConst{exec} (\HOLConst{PSG} \HOLConst{actionsIn})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{SECURE} (\HOLConst{exec} (\HOLConst{PSG} \HOLConst{psgIncomplete})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{ACTIONS_IN} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{withdraw})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{ACTIONS_IN} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{plIncomplete})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{WITHDRAW} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{complete})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{WITHDRAW} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{plIncomplete})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{s} \HOLBoundVar{cmd}. \HOLBoundVar{P} \HOLBoundVar{s} (\HOLConst{trap} (\HOLConst{PL} \HOLBoundVar{cmd}))) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{s} \HOLBoundVar{cmd}. \HOLBoundVar{P} \HOLBoundVar{s} (\HOLConst{trap} (\HOLConst{PSG} \HOLBoundVar{cmd}))) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{s} \HOLBoundVar{cmd}. \HOLBoundVar{P} \HOLBoundVar{s} (\HOLConst{discard} (\HOLConst{PL} \HOLBoundVar{cmd}))) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{s} \HOLBoundVar{cmd}. \HOLBoundVar{P} \HOLBoundVar{s} (\HOLConst{discard} (\HOLConst{PSG} \HOLBoundVar{cmd}))) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{withdraw})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{complete})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{11}}}. \HOLBoundVar{P} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} (\HOLConst{PSG} \HOLBoundVar{v\sb{\mathrm{11}}}))) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{13}}}. \HOLBoundVar{P} \HOLConst{SECURE} (\HOLConst{exec} (\HOLConst{PL} \HOLBoundVar{v\sb{\mathrm{13}}}))) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{ACTIONS_IN} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{secure})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{ACTIONS_IN} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{complete})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{17}}}. \HOLBoundVar{P} \HOLConst{ACTIONS_IN} (\HOLConst{exec} (\HOLConst{PSG} \HOLBoundVar{v\sb{\mathrm{17}}}))) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{WITHDRAW} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{secure})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{WITHDRAW} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{withdraw})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{20}}}. \HOLBoundVar{P} \HOLConst{WITHDRAW} (\HOLConst{exec} (\HOLConst{PSG} \HOLBoundVar{v\sb{\mathrm{20}}}))) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{21}}}. \HOLBoundVar{P} \HOLConst{COMPLETE} (\HOLConst{exec} \HOLBoundVar{v\sb{\mathrm{21}}})) \HOLSymConst{\HOLTokenImp{}}
-     \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v} \HOLBoundVar{v\sb{\mathrm{1}}}. \HOLBoundVar{P} \HOLBoundVar{v} \HOLBoundVar{v\sb{\mathrm{1}}}
-\end{SaveVerbatim}
-\newcommand{\HOLssmConductORPTheoremsconductORPNSXXind}{\UseVerbatim{HOLssmConductORPTheoremsconductORPNSXXind}}
-\begin{SaveVerbatim}{HOLssmConductORPTheoremsconductORPOutXXdef}
-\HOLTokenTurnstile{} (\HOLConst{conductORPOut} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{secure})) \HOLSymConst{=} \HOLConst{Secure}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPOut} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{plIncomplete})) \HOLSymConst{=}
-    \HOLConst{ConductORP}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPOut} \HOLConst{SECURE} (\HOLConst{exec} (\HOLConst{PSG} \HOLConst{actionsIn})) \HOLSymConst{=} \HOLConst{ActionsIn}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPOut} \HOLConst{SECURE} (\HOLConst{exec} (\HOLConst{PSG} \HOLConst{psgIncomplete})) \HOLSymConst{=} \HOLConst{Secure}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPOut} \HOLConst{ACTIONS_IN} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{withdraw})) \HOLSymConst{=} \HOLConst{Withdraw}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPOut} \HOLConst{ACTIONS_IN} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{plIncomplete})) \HOLSymConst{=}
-    \HOLConst{ActionsIn}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPOut} \HOLConst{WITHDRAW} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{complete})) \HOLSymConst{=} \HOLConst{Complete}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPOut} \HOLConst{WITHDRAW} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{plIncomplete})) \HOLSymConst{=}
-    \HOLConst{Withdraw}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPOut} \HOLFreeVar{s} (\HOLConst{trap} (\HOLConst{PL} \HOLFreeVar{cmd\sp{\prime}})) \HOLSymConst{=} \HOLConst{unAuthorized}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPOut} \HOLFreeVar{s} (\HOLConst{trap} (\HOLConst{PSG} \HOLFreeVar{cmd})) \HOLSymConst{=} \HOLConst{unAuthorized}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPOut} \HOLFreeVar{s} (\HOLConst{discard} (\HOLConst{PL} \HOLFreeVar{cmd\sp{\prime}})) \HOLSymConst{=} \HOLConst{unAuthenticated}) \HOLSymConst{\HOLTokenConj{}}
-   (\HOLConst{conductORPOut} \HOLFreeVar{s} (\HOLConst{discard} (\HOLConst{PSG} \HOLFreeVar{cmd})) \HOLSymConst{=} \HOLConst{unAuthenticated})
-\end{SaveVerbatim}
-\newcommand{\HOLssmConductORPTheoremsconductORPOutXXdef}{\UseVerbatim{HOLssmConductORPTheoremsconductORPOutXXdef}}
-\begin{SaveVerbatim}{HOLssmConductORPTheoremsconductORPOutXXind}
-\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{P}.
-     \HOLBoundVar{P} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{secure})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{plIncomplete})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{SECURE} (\HOLConst{exec} (\HOLConst{PSG} \HOLConst{actionsIn})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{SECURE} (\HOLConst{exec} (\HOLConst{PSG} \HOLConst{psgIncomplete})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{ACTIONS_IN} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{withdraw})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{ACTIONS_IN} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{plIncomplete})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{WITHDRAW} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{complete})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{WITHDRAW} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{plIncomplete})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{s} \HOLBoundVar{cmd}. \HOLBoundVar{P} \HOLBoundVar{s} (\HOLConst{trap} (\HOLConst{PL} \HOLBoundVar{cmd}))) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{s} \HOLBoundVar{cmd}. \HOLBoundVar{P} \HOLBoundVar{s} (\HOLConst{trap} (\HOLConst{PSG} \HOLBoundVar{cmd}))) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{s} \HOLBoundVar{cmd}. \HOLBoundVar{P} \HOLBoundVar{s} (\HOLConst{discard} (\HOLConst{PL} \HOLBoundVar{cmd}))) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{s} \HOLBoundVar{cmd}. \HOLBoundVar{P} \HOLBoundVar{s} (\HOLConst{discard} (\HOLConst{PSG} \HOLBoundVar{cmd}))) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{withdraw})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{complete})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{11}}}. \HOLBoundVar{P} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} (\HOLConst{PSG} \HOLBoundVar{v\sb{\mathrm{11}}}))) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{13}}}. \HOLBoundVar{P} \HOLConst{SECURE} (\HOLConst{exec} (\HOLConst{PL} \HOLBoundVar{v\sb{\mathrm{13}}}))) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{ACTIONS_IN} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{secure})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{ACTIONS_IN} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{complete})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{17}}}. \HOLBoundVar{P} \HOLConst{ACTIONS_IN} (\HOLConst{exec} (\HOLConst{PSG} \HOLBoundVar{v\sb{\mathrm{17}}}))) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{WITHDRAW} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{secure})) \HOLSymConst{\HOLTokenConj{}}
-     \HOLBoundVar{P} \HOLConst{WITHDRAW} (\HOLConst{exec} (\HOLConst{PL} \HOLConst{withdraw})) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{20}}}. \HOLBoundVar{P} \HOLConst{WITHDRAW} (\HOLConst{exec} (\HOLConst{PSG} \HOLBoundVar{v\sb{\mathrm{20}}}))) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v\sb{\mathrm{21}}}. \HOLBoundVar{P} \HOLConst{COMPLETE} (\HOLConst{exec} \HOLBoundVar{v\sb{\mathrm{21}}})) \HOLSymConst{\HOLTokenImp{}}
-     \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{v} \HOLBoundVar{v\sb{\mathrm{1}}}. \HOLBoundVar{P} \HOLBoundVar{v} \HOLBoundVar{v\sb{\mathrm{1}}}
-\end{SaveVerbatim}
-\newcommand{\HOLssmConductORPTheoremsconductORPOutXXind}{\UseVerbatim{HOLssmConductORPTheoremsconductORPOutXXind}}
-\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonLeaderXXexecXXplCommandXXjustifiedXXthm}
+\newcommand{\HOLssmConductORPTheoremsinputOKXXind}{\UseVerbatim{HOLssmConductORPTheoremsinputOKXXind}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXlemma}
 \HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{NS} \HOLBoundVar{Out} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
-     \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{exec} (\HOLConst{SLc} (\HOLConst{PL} \HOLFreeVar{plCommand})))
-       (\HOLConst{CFG} \HOLConst{authTestConductORP} \HOLConst{ssmConductORPStateInterp}
-          (\HOLConst{secContextConductORP} \HOLFreeVar{plCommand} \HOLFreeVar{psgCommand} \HOLFreeVar{incomplete})
-          (\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
-           \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLFreeVar{plCommand})))\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs})
-       (\HOLConst{CFG} \HOLConst{authTestConductORP} \HOLConst{ssmConductORPStateInterp}
-          (\HOLConst{secContextConductORP} \HOLFreeVar{plCommand} \HOLFreeVar{psgCommand} \HOLFreeVar{incomplete})
-          \HOLFreeVar{ins} (\HOLBoundVar{NS} \HOLFreeVar{s} (\HOLConst{exec} (\HOLConst{SLc} (\HOLConst{PL} \HOLFreeVar{plCommand}))))
-          (\HOLBoundVar{Out} \HOLFreeVar{s} (\HOLConst{exec} (\HOLConst{SLc} (\HOLConst{PL} \HOLFreeVar{plCommand})))\HOLSymConst{::}\HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
-     \HOLConst{authTestConductORP}
-       (\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
-        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLFreeVar{plCommand})))) \HOLSymConst{\HOLTokenConj{}}
+     \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{exec}
+          (\HOLConst{inputList}
+             [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+              \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete})));
+              \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+              \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]))
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete})));
+            \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{ACTIONS_IN}
+          \HOLFreeVar{outs})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization} \HOLFreeVar{ins}
+          (\HOLBoundVar{NS} \HOLConst{ACTIONS_IN}
+             (\HOLConst{exec}
+                (\HOLConst{inputList}
+                   [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+                    \HOLConst{prop}
+                      (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete})));
+                    \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+                    \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))])))
+          (\HOLBoundVar{Out} \HOLConst{ACTIONS_IN}
+             (\HOLConst{exec}
+                (\HOLConst{inputList}
+                   [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+                    \HOLConst{prop}
+                      (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete})));
+                    \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+                    \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]))\HOLSymConst{::}
+               \HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+     \HOLConst{authenticationTest} \HOLConst{inputOK}
+       [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete})));
+        \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))] \HOLSymConst{\HOLTokenConj{}}
      \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
-       (\HOLConst{CFG} \HOLConst{authTestConductORP} \HOLConst{ssmConductORPStateInterp}
-          (\HOLConst{secContextConductORP} \HOLFreeVar{plCommand} \HOLFreeVar{psgCommand} \HOLFreeVar{incomplete})
-          (\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
-           \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLFreeVar{plCommand})))\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{sat} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLFreeVar{plCommand})))
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete})));
+            \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{ACTIONS_IN}
+          \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{satList}
+     \HOLConst{propCommandList}
+       [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete})));
+        \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]
 \end{SaveVerbatim}
-\newcommand{\HOLssmConductORPTheoremsPlatoonLeaderXXexecXXplCommandXXjustifiedXXthm}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonLeaderXXexecXXplCommandXXjustifiedXXthm}}
-\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonLeaderXXplCommandXXlemma}
-\HOLTokenTurnstile{} \HOLConst{CFGInterpret} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os})
-     (\HOLConst{CFG} \HOLConst{authTestConductORP} \HOLConst{ssmConductORPStateInterp}
-        (\HOLConst{secContextConductORP} \HOLFreeVar{plCommand} \HOLFreeVar{psgCommand} \HOLFreeVar{incomplete})
-        (\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
-         \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLFreeVar{plCommand})))\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenImp{}}
-   (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) \HOLConst{sat} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLFreeVar{plCommand})))
-\end{SaveVerbatim}
-\newcommand{\HOLssmConductORPTheoremsPlatoonLeaderXXplCommandXXlemma}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonLeaderXXplCommandXXlemma}}
-\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonSergeantXXexecXXpsgCommandXXjustifiedXXthm}
+\newcommand{\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXlemma}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXlemma}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXthm}
 \HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{NS} \HOLBoundVar{Out} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
-     \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{exec} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand})))
-       (\HOLConst{CFG} \HOLConst{authTestConductORP} \HOLConst{ssmConductORPStateInterp}
-          (\HOLConst{secContextConductORP} \HOLFreeVar{plCommand} \HOLFreeVar{psgCommand} \HOLFreeVar{incomplete})
-          (\HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
-           \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand})))\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs})
-       (\HOLConst{CFG} \HOLConst{authTestConductORP} \HOLConst{ssmConductORPStateInterp}
-          (\HOLConst{secContextConductORP} \HOLFreeVar{plCommand} \HOLFreeVar{psgCommand} \HOLFreeVar{incomplete})
-          \HOLFreeVar{ins} (\HOLBoundVar{NS} \HOLFreeVar{s} (\HOLConst{exec} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand}))))
-          (\HOLBoundVar{Out} \HOLFreeVar{s} (\HOLConst{exec} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand})))\HOLSymConst{::}\HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
-     \HOLConst{authTestConductORP}
-       (\HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
-        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand})))) \HOLSymConst{\HOLTokenConj{}}
+     \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{exec}
+          [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete}));
+           \HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw}))])
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete})));
+            \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{ACTIONS_IN}
+          \HOLFreeVar{outs})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization} \HOLFreeVar{ins}
+          (\HOLBoundVar{NS} \HOLConst{ACTIONS_IN}
+             (\HOLConst{exec}
+                [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete}));
+                 \HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw}))]))
+          (\HOLBoundVar{Out} \HOLConst{ACTIONS_IN}
+             (\HOLConst{exec}
+                [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete}));
+                 \HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw}))])\HOLSymConst{::}\HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+     \HOLConst{authenticationTest} \HOLConst{inputOK}
+       [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete})));
+        \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))] \HOLSymConst{\HOLTokenConj{}}
      \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
-       (\HOLConst{CFG} \HOLConst{authTestConductORP} \HOLConst{ssmConductORPStateInterp}
-          (\HOLConst{secContextConductORP} \HOLFreeVar{plCommand} \HOLFreeVar{psgCommand} \HOLFreeVar{incomplete})
-          (\HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
-           \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand})))\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenConj{}}
-     (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{sat} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand})))
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete})));
+            \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{ACTIONS_IN}
+          \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{satList}
+     [\HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete})));
+      \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]
 \end{SaveVerbatim}
-\newcommand{\HOLssmConductORPTheoremsPlatoonSergeantXXexecXXpsgCommandXXjustifiedXXthm}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonSergeantXXexecXXpsgCommandXXjustifiedXXthm}}
-\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonSergeantXXpsgCommandXXlemma}
-\HOLTokenTurnstile{} \HOLConst{CFGInterpret} (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os})
-     (\HOLConst{CFG} \HOLConst{authTestConductORP} \HOLConst{ssmConductORPStateInterp}
-        (\HOLConst{secContextConductORP} \HOLFreeVar{plCommand} \HOLFreeVar{psgCommand} \HOLFreeVar{incomplete})
-        (\HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
-         \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand})))\HOLSymConst{::}\HOLFreeVar{ins}) \HOLFreeVar{s} \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenImp{}}
-   (\HOLFreeVar{M}\HOLSymConst{,}\HOLFreeVar{Oi}\HOLSymConst{,}\HOLFreeVar{Os}) \HOLConst{sat} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLFreeVar{psgCommand})))
+\newcommand{\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXthm}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXthm}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXlemma}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
+     \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete})));
+            \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{ACTIONS_IN}
+          \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenImp{}}
+     (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{satList}
+     \HOLConst{propCommandList}
+       [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmActionsInComplete})));
+        \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]
 \end{SaveVerbatim}
-\newcommand{\HOLssmConductORPTheoremsPlatoonSergeantXXpsgCommandXXlemma}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonSergeantXXpsgCommandXXlemma}}
+\newcommand{\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXlemma}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXlemma}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXlemma}
+\HOLTokenTurnstile{} \HOLFreeVar{omniCommand} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmActionsInComplete} \HOLSymConst{\HOLTokenImp{}}
+   (\HOLFreeVar{s} \HOLSymConst{=} \HOLConst{ACTIONS_IN}) \HOLSymConst{\HOLTokenImp{}}
+   \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{NS} \HOLBoundVar{Out} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
+     \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{trap}
+          (\HOLConst{inputList}
+             [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+              \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLFreeVar{omniCommand})));
+              \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+              \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]))
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLFreeVar{omniCommand})));
+            \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{ACTIONS_IN}
+          \HOLFreeVar{outs})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization} \HOLFreeVar{ins}
+          (\HOLBoundVar{NS} \HOLConst{ACTIONS_IN}
+             (\HOLConst{trap}
+                (\HOLConst{inputList}
+                   [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+                    \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLFreeVar{omniCommand})));
+                    \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+                    \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))])))
+          (\HOLBoundVar{Out} \HOLConst{ACTIONS_IN}
+             (\HOLConst{trap}
+                (\HOLConst{inputList}
+                   [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+                    \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLFreeVar{omniCommand})));
+                    \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+                    \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]))\HOLSymConst{::}
+               \HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+     \HOLConst{authenticationTest} \HOLConst{inputOK}
+       [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLFreeVar{omniCommand})));
+        \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))] \HOLSymConst{\HOLTokenConj{}}
+     \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLFreeVar{omniCommand})));
+            \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{ACTIONS_IN}
+          \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenConj{}} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{sat} \HOLConst{prop} \HOLConst{NONE}
+\end{SaveVerbatim}
+\newcommand{\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXlemma}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXlemma}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXthm}
+\HOLTokenTurnstile{} \HOLFreeVar{omniCommand} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmActionsInComplete} \HOLSymConst{\HOLTokenImp{}}
+   (\HOLFreeVar{s} \HOLSymConst{=} \HOLConst{ACTIONS_IN}) \HOLSymConst{\HOLTokenImp{}}
+   \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{NS} \HOLBoundVar{Out} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
+     \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{trap}
+          [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLFreeVar{omniCommand}));
+           \HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw}))])
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLFreeVar{omniCommand})));
+            \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{ACTIONS_IN}
+          \HOLFreeVar{outs})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization} \HOLFreeVar{ins}
+          (\HOLBoundVar{NS} \HOLConst{ACTIONS_IN}
+             (\HOLConst{trap}
+                [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLFreeVar{omniCommand}));
+                 \HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw}))]))
+          (\HOLBoundVar{Out} \HOLConst{ACTIONS_IN}
+             (\HOLConst{trap}
+                [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLFreeVar{omniCommand}));
+                 \HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw}))])\HOLSymConst{::}\HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+     \HOLConst{authenticationTest} \HOLConst{inputOK}
+       [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLFreeVar{omniCommand})));
+        \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))] \HOLSymConst{\HOLTokenConj{}}
+     \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLFreeVar{omniCommand})));
+            \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{ACTIONS_IN}
+          \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenConj{}} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{sat} \HOLConst{prop} \HOLConst{NONE}
+\end{SaveVerbatim}
+\newcommand{\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXthm}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXthm}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXlemma}
+\HOLTokenTurnstile{} \HOLFreeVar{omniCommand} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmActionsInComplete} \HOLSymConst{\HOLTokenImp{}}
+   (\HOLFreeVar{s} \HOLSymConst{=} \HOLConst{ACTIONS_IN}) \HOLSymConst{\HOLTokenImp{}}
+   \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
+     \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLFreeVar{omniCommand})));
+            \HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{withdraw})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{ACTIONS_IN}
+          \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenImp{}}
+     (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{sat} \HOLConst{prop} \HOLConst{NONE}
+\end{SaveVerbatim}
+\newcommand{\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXlemma}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXlemma}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonLeaderXXCONDUCTXXORPXXexecXXsecureXXjustifiedXXthm}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{NS} \HOLBoundVar{Out} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
+     \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) (\HOLConst{exec} [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{secure}))])
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{secure})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{CONDUCT_ORP}
+          \HOLFreeVar{outs})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization} \HOLFreeVar{ins}
+          (\HOLBoundVar{NS} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{secure}))]))
+          (\HOLBoundVar{Out} \HOLConst{CONDUCT_ORP} (\HOLConst{exec} [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{secure}))])\HOLSymConst{::}
+               \HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+     \HOLConst{authenticationTest} \HOLConst{inputOK}
+       [\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{secure})))] \HOLSymConst{\HOLTokenConj{}}
+     \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{secure})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{CONDUCT_ORP}
+          \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{satList} [\HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{secure})))]
+\end{SaveVerbatim}
+\newcommand{\HOLssmConductORPTheoremsPlatoonLeaderXXCONDUCTXXORPXXexecXXsecureXXjustifiedXXthm}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonLeaderXXCONDUCTXXORPXXexecXXsecureXXjustifiedXXthm}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonLeaderXXCONDUCTXXORPXXexecXXsecureXXlemma}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
+     \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{secure})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{CONDUCT_ORP}
+          \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenImp{}}
+     (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{satList}
+     \HOLConst{propCommandList}
+       [\HOLConst{Name} \HOLConst{PlatoonLeader} \HOLConst{says} \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PL} \HOLConst{secure})))]
+\end{SaveVerbatim}
+\newcommand{\HOLssmConductORPTheoremsPlatoonLeaderXXCONDUCTXXORPXXexecXXsecureXXlemma}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonLeaderXXCONDUCTXXORPXXexecXXsecureXXlemma}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXjustifiedXXlemma}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{NS} \HOLBoundVar{Out} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
+     \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{exec}
+          (\HOLConst{inputList}
+             [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+              \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete})));
+              \HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
+              \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn})))]))
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete})));
+            \HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{SECURE}
+          \HOLFreeVar{outs})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization} \HOLFreeVar{ins}
+          (\HOLBoundVar{NS} \HOLConst{SECURE}
+             (\HOLConst{exec}
+                (\HOLConst{inputList}
+                   [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+                    \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete})));
+                    \HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
+                    \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn})))])))
+          (\HOLBoundVar{Out} \HOLConst{SECURE}
+             (\HOLConst{exec}
+                (\HOLConst{inputList}
+                   [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+                    \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete})));
+                    \HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
+                    \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn})))]))\HOLSymConst{::}
+               \HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+     \HOLConst{authenticationTest} \HOLConst{inputOK}
+       [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete})));
+        \HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn})))] \HOLSymConst{\HOLTokenConj{}}
+     \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete})));
+            \HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{SECURE}
+          \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{satList}
+     \HOLConst{propCommandList}
+       [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete})));
+        \HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn})))]
+\end{SaveVerbatim}
+\newcommand{\HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXjustifiedXXlemma}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXjustifiedXXlemma}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXjustifiedXXthm}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{NS} \HOLBoundVar{Out} \HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
+     \HOLConst{TR} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{exec}
+          [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete}));
+           \HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn}))])
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete})));
+            \HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{SECURE}
+          \HOLFreeVar{outs})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization} \HOLFreeVar{ins}
+          (\HOLBoundVar{NS} \HOLConst{SECURE}
+             (\HOLConst{exec}
+                [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete}));
+                 \HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn}))]))
+          (\HOLBoundVar{Out} \HOLConst{SECURE}
+             (\HOLConst{exec}
+                [\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete}));
+                 \HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn}))])\HOLSymConst{::}\HOLFreeVar{outs})) \HOLSymConst{\HOLTokenEquiv{}}
+     \HOLConst{authenticationTest} \HOLConst{inputOK}
+       [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete})));
+        \HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn})))] \HOLSymConst{\HOLTokenConj{}}
+     \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete})));
+            \HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{SECURE}
+          \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenConj{}}
+     (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{satList}
+     [\HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete})));
+      \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn})))]
+\end{SaveVerbatim}
+\newcommand{\HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXjustifiedXXthm}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXjustifiedXXthm}}
+\begin{SaveVerbatim}{HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXlemma}
+\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{M} \HOLBoundVar{Oi} \HOLBoundVar{Os}.
+     \HOLConst{CFGInterpret} (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os})
+       (\HOLConst{CFG} \HOLConst{inputOK} \HOLConst{secContext} \HOLConst{secAuthorization}
+          ([\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete})));
+            \HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
+            \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn})))]\HOLSymConst{::}\HOLFreeVar{ins}) \HOLConst{SECURE}
+          \HOLFreeVar{outs}) \HOLSymConst{\HOLTokenImp{}}
+     (\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{satList}
+     \HOLConst{propCommandList}
+       [\HOLConst{Name} \HOLConst{Omni} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{OMNI} \HOLConst{ssmSecureComplete})));
+        \HOLConst{Name} \HOLConst{PlatoonSergeant} \HOLConst{says}
+        \HOLConst{prop} (\HOLConst{SOME} (\HOLConst{SLc} (\HOLConst{PSG} \HOLConst{actionsIn})))]
+\end{SaveVerbatim}
+\newcommand{\HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXlemma}{\UseVerbatim{HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXlemma}}
 \newcommand{\HOLssmConductORPTheorems}{
-\HOLThmTag{ssmConductORP}{authTestConductORP_cmd_reject_lemma}\HOLssmConductORPTheoremsauthTestConductORPXXcmdXXrejectXXlemma
-\HOLThmTag{ssmConductORP}{authTestConductORP_def}\HOLssmConductORPTheoremsauthTestConductORPXXdef
-\HOLThmTag{ssmConductORP}{authTestConductORP_ind}\HOLssmConductORPTheoremsauthTestConductORPXXind
 \HOLThmTag{ssmConductORP}{conductORPNS_def}\HOLssmConductORPTheoremsconductORPNSXXdef
 \HOLThmTag{ssmConductORP}{conductORPNS_ind}\HOLssmConductORPTheoremsconductORPNSXXind
 \HOLThmTag{ssmConductORP}{conductORPOut_def}\HOLssmConductORPTheoremsconductORPOutXXdef
 \HOLThmTag{ssmConductORP}{conductORPOut_ind}\HOLssmConductORPTheoremsconductORPOutXXind
-\HOLThmTag{ssmConductORP}{PlatoonLeader_exec_plCommand_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXexecXXplCommandXXjustifiedXXthm
-\HOLThmTag{ssmConductORP}{PlatoonLeader_plCommand_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXplCommandXXlemma
-\HOLThmTag{ssmConductORP}{PlatoonSergeant_exec_psgCommand_justified_thm}\HOLssmConductORPTheoremsPlatoonSergeantXXexecXXpsgCommandXXjustifiedXXthm
-\HOLThmTag{ssmConductORP}{PlatoonSergeant_psgCommand_lemma}\HOLssmConductORPTheoremsPlatoonSergeantXXpsgCommandXXlemma
+\HOLThmTag{ssmConductORP}{inputOK_cmd_reject_lemma}\HOLssmConductORPTheoremsinputOKXXcmdXXrejectXXlemma
+\HOLThmTag{ssmConductORP}{inputOK_def}\HOLssmConductORPTheoremsinputOKXXdef
+\HOLThmTag{ssmConductORP}{inputOK_ind}\HOLssmConductORPTheoremsinputOKXXind
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_justified_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXthm
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_justified_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXthm
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonLeader_CONDUCT_ORP_exec_secure_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXCONDUCTXXORPXXexecXXsecureXXjustifiedXXthm
+\HOLThmTag{ssmConductORP}{PlatoonLeader_CONDUCT_ORP_exec_secure_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXCONDUCTXXORPXXexecXXsecureXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonSergeant_SECURE_exec_justified_lemma}\HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXjustifiedXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonSergeant_SECURE_exec_justified_thm}\HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXjustifiedXXthm
+\HOLThmTag{ssmConductORP}{PlatoonSergeant_SECURE_exec_lemma}\HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXlemma
 }
