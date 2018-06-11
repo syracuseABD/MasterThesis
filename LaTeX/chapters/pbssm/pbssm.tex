@@ -88,21 +88,55 @@ PlatoonLeader commands are issued to transition among states in this \glsentrysh
 
 \subsection{Authentication}
 
+\paragraph*{HOL Definition for inputOK}
+val inputOK_def =
+Define`
+(inputOK (((Name PlatoonLeader) says prop (cmd:((slCommand command)option)))
+	   :((slCommand command)option, stateRole,'d,'e)Form) = T) /\
+(inputOK (((Name Omni)          says prop (cmd:((slCommand command)option)))
+	   :((slCommand command)option, stateRole,'d,'e)Form) = T) /\
+(inputOK _ = F)`
+
+\paragraph*{HOL Generated Output for inputOK}
+
 \HOLThmTag{ssmPBIntegrated}{inputOK_def}\HOLssmPBIntegratedTheoremsinputOKXXdef
 
-\subsection{Authorization}
+\HOLThmTag{ssmPBIntegrated}{inputOK_cmd_reject_lemma}\HOLssmPBIntegratedTheoremsinputOKXXcmdXXrejectXXlemma
 
-\HOLThmTag{PBIntegratedDef}{secContext_def}\HOLPBIntegratedDefTheoremssecContextXXdef
+\subsection{Authorization}
+\HOLDfnTag{PBIntegratedDef}{secContext_def}\HOLPBIntegratedDefDefinitionssecContextXXdef
+
+\HOLDfnTag{PBIntegratedDef}{secAuthorization_def}\HOLPBIntegratedDefDefinitionssecAuthorizationXXdef
+
+\HOLDfnTag{PBIntegratedDef}{secHelper_def}\HOLPBIntegratedDefDefinitionssecHelperXXdef
+
+
+
+\paragraph*{HOL Definition for getOmniCommand}
+
+val getOmniCommand_def =
+Define`
+  (getOmniCommand ([]:((slCommand command)option, stateRole, 'd,'e)Form list)
+  		      = invalidOmniCommand:omniCommand) /\
+  (getOmniCommand (((Name Omni) says prop (SOME (SLc (OMNI cmd))))::xs)
+  		      = (cmd:omniCommand)) /\
+  (getOmniCommand ((x:((slCommand command)option, stateRole, 'd,'e)Form)::xs)
+  		      =  (getOmniCommand xs))`
+
+\paragraph*{HOL Generated Output for getOmniCommand}
+
+\HOLThmTag{PBIntegratedDef}{getOmniCommand_def}\HOLPBIntegratedDefTheoremsgetOmniCommandXXdef
 
 \subsection{Proved Theorems}
 
 \paragraph*{PlatoonLeader_PLAN_PB_exec_justified_thm}
+\HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_exec_justified_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXjustifiedXXthm
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_exec_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXlemma
 
 \paragraph*{PlatoonLeader_PLAN_PB_trap_justified_thm}
-\HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXlemma
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_justified_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXjustifiedXXlemma
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_justified_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXjustifiedXXthm
+\HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXlemma
 
 \paragraph*{PlatoonLeader_Omni_notDiscard_slCommand_thm}
 This theorem proves that if the PlatoonLeader issues an omniCommand and Omni issues a plCommand, the command is not discarded.  The reason for this is that plCommand and omniCommand are both slCommand.  inputOK authenticates both principals for slCommand.  This is a forward proof without any lemmas.
