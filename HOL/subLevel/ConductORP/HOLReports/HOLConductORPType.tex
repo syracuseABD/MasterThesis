@@ -1,5 +1,10 @@
-\newcommand{\HOLConductORPTypeDate}{10 June 2018}
-\newcommand{\HOLConductORPTypeTime}{23:45}
+\newcommand{\HOLConductORPTypeDate}{11 June 2018}
+\newcommand{\HOLConductORPTypeTime}{16:11}
+\begin{SaveVerbatim}{HOLConductORPTypeDatatypesomniCommand}
+\HOLFreeVar{omniCommand} = \HOLConst{ssmSecureComplete} \HOLTokenBar{} \HOLConst{ssmActionsInComplete}
+            \HOLTokenBar{} \HOLConst{ssmWithdrawComplete} \HOLTokenBar{} \HOLConst{invalidOmniCommand}
+\end{SaveVerbatim}
+\newcommand{\HOLConductORPTypeDatatypesomniCommand}{\UseVerbatim{HOLConductORPTypeDatatypesomniCommand}}
 \begin{SaveVerbatim}{HOLConductORPTypeDatatypesplCommand}
 \HOLFreeVar{plCommand} = \HOLConst{secure} \HOLTokenBar{} \HOLConst{withdraw} \HOLTokenBar{} \HOLConst{complete} \HOLTokenBar{} \HOLConst{plIncomplete}
 \end{SaveVerbatim}
@@ -9,7 +14,7 @@
 \end{SaveVerbatim}
 \newcommand{\HOLConductORPTypeDatatypespsgCommand}{\UseVerbatim{HOLConductORPTypeDatatypespsgCommand}}
 \begin{SaveVerbatim}{HOLConductORPTypeDatatypesslCommand}
-\HOLFreeVar{slCommand} = \HOLConst{PL} \HOLTyOp{plCommand} \HOLTokenBar{} \HOLConst{PSG} \HOLTyOp{psgCommand}
+\HOLFreeVar{slCommand} = \HOLConst{PL} \HOLTyOp{plCommand} \HOLTokenBar{} \HOLConst{PSG} \HOLTyOp{psgCommand} \HOLTokenBar{} \HOLConst{OMNI} \HOLTyOp{omniCommand}
 \end{SaveVerbatim}
 \newcommand{\HOLConductORPTypeDatatypesslCommand}{\UseVerbatim{HOLConductORPTypeDatatypesslCommand}}
 \begin{SaveVerbatim}{HOLConductORPTypeDatatypesslOutput}
@@ -23,11 +28,20 @@
 \end{SaveVerbatim}
 \newcommand{\HOLConductORPTypeDatatypesslState}{\UseVerbatim{HOLConductORPTypeDatatypesslState}}
 \begin{SaveVerbatim}{HOLConductORPTypeDatatypesstateRole}
-\HOLFreeVar{stateRole} = \HOLConst{PlatoonLeader} \HOLTokenBar{} \HOLConst{PlatoonSergeant}
+\HOLFreeVar{stateRole} = \HOLConst{PlatoonLeader} \HOLTokenBar{} \HOLConst{PlatoonSergeant} \HOLTokenBar{} \HOLConst{Omni}
 \end{SaveVerbatim}
 \newcommand{\HOLConductORPTypeDatatypesstateRole}{\UseVerbatim{HOLConductORPTypeDatatypesstateRole}}
 \newcommand{\HOLConductORPTypeDatatypes}{
-\HOLConductORPTypeDatatypesplCommand\HOLConductORPTypeDatatypespsgCommand\HOLConductORPTypeDatatypesslCommand\HOLConductORPTypeDatatypesslOutput\HOLConductORPTypeDatatypesslState\HOLConductORPTypeDatatypesstateRole}
+\HOLConductORPTypeDatatypesomniCommand\HOLConductORPTypeDatatypesplCommand\HOLConductORPTypeDatatypespsgCommand\HOLConductORPTypeDatatypesslCommand\HOLConductORPTypeDatatypesslOutput\HOLConductORPTypeDatatypesslState\HOLConductORPTypeDatatypesstateRole}
+\begin{SaveVerbatim}{HOLConductORPTypeTheoremsomniCommandXXdistinctXXclauses}
+\HOLTokenTurnstile{} \HOLConst{ssmSecureComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmActionsInComplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmSecureComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmWithdrawComplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmSecureComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidOmniCommand} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmActionsInComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{ssmWithdrawComplete} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmActionsInComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidOmniCommand} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{ssmWithdrawComplete} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{invalidOmniCommand}
+\end{SaveVerbatim}
+\newcommand{\HOLConductORPTypeTheoremsomniCommandXXdistinctXXclauses}{\UseVerbatim{HOLConductORPTypeTheoremsomniCommandXXdistinctXXclauses}}
 \begin{SaveVerbatim}{HOLConductORPTypeTheoremsplCommandXXdistinctXXclauses}
 \HOLTokenTurnstile{} \HOLConst{secure} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{withdraw} \HOLSymConst{\HOLTokenConj{}} \HOLConst{secure} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{complete} \HOLSymConst{\HOLTokenConj{}}
    \HOLConst{secure} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{plIncomplete} \HOLSymConst{\HOLTokenConj{}} \HOLConst{withdraw} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{complete} \HOLSymConst{\HOLTokenConj{}}
@@ -39,12 +53,14 @@
 \end{SaveVerbatim}
 \newcommand{\HOLConductORPTypeTheoremspsgCommandXXdistinctXXclauses}{\UseVerbatim{HOLConductORPTypeTheoremspsgCommandXXdistinctXXclauses}}
 \begin{SaveVerbatim}{HOLConductORPTypeTheoremsslCommandXXdistinctXXclauses}
-\HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sp{\prime}} \HOLBoundVar{a}. \HOLConst{PL} \HOLBoundVar{a} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PSG} \HOLBoundVar{a\sp{\prime}}
+\HOLTokenTurnstile{} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sp{\prime}} \HOLBoundVar{a}. \HOLConst{PL} \HOLBoundVar{a} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PSG} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenConj{}} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sp{\prime}} \HOLBoundVar{a}. \HOLConst{PL} \HOLBoundVar{a} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{OMNI} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenConj{}}
+   \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a\sp{\prime}} \HOLBoundVar{a}. \HOLConst{PSG} \HOLBoundVar{a} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{OMNI} \HOLBoundVar{a\sp{\prime}}
 \end{SaveVerbatim}
 \newcommand{\HOLConductORPTypeTheoremsslCommandXXdistinctXXclauses}{\UseVerbatim{HOLConductORPTypeTheoremsslCommandXXdistinctXXclauses}}
 \begin{SaveVerbatim}{HOLConductORPTypeTheoremsslCommandXXoneXXone}
 \HOLTokenTurnstile{} (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a} \HOLBoundVar{a\sp{\prime}}. (\HOLConst{PL} \HOLBoundVar{a} \HOLSymConst{=} \HOLConst{PL} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}} (\HOLBoundVar{a} \HOLSymConst{=} \HOLBoundVar{a\sp{\prime}})) \HOLSymConst{\HOLTokenConj{}}
-   \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a} \HOLBoundVar{a\sp{\prime}}. (\HOLConst{PSG} \HOLBoundVar{a} \HOLSymConst{=} \HOLConst{PSG} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}} (\HOLBoundVar{a} \HOLSymConst{=} \HOLBoundVar{a\sp{\prime}})
+   (\HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a} \HOLBoundVar{a\sp{\prime}}. (\HOLConst{PSG} \HOLBoundVar{a} \HOLSymConst{=} \HOLConst{PSG} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}} (\HOLBoundVar{a} \HOLSymConst{=} \HOLBoundVar{a\sp{\prime}})) \HOLSymConst{\HOLTokenConj{}}
+   \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{a} \HOLBoundVar{a\sp{\prime}}. (\HOLConst{OMNI} \HOLBoundVar{a} \HOLSymConst{=} \HOLConst{OMNI} \HOLBoundVar{a\sp{\prime}}) \HOLSymConst{\HOLTokenEquiv{}} (\HOLBoundVar{a} \HOLSymConst{=} \HOLBoundVar{a\sp{\prime}})
 \end{SaveVerbatim}
 \newcommand{\HOLConductORPTypeTheoremsslCommandXXoneXXone}{\UseVerbatim{HOLConductORPTypeTheoremsslCommandXXoneXXone}}
 \begin{SaveVerbatim}{HOLConductORPTypeTheoremsslOutputXXdistinctXXclauses}
@@ -61,7 +77,8 @@
 \end{SaveVerbatim}
 \newcommand{\HOLConductORPTypeTheoremsslOutputXXdistinctXXclauses}{\UseVerbatim{HOLConductORPTypeTheoremsslOutputXXdistinctXXclauses}}
 \begin{SaveVerbatim}{HOLConductORPTypeTheoremsslRoleXXdistinctXXclauses}
-\HOLTokenTurnstile{} \HOLConst{PlatoonLeader} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PlatoonSergeant}
+\HOLTokenTurnstile{} \HOLConst{PlatoonLeader} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{PlatoonSergeant} \HOLSymConst{\HOLTokenConj{}} \HOLConst{PlatoonLeader} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Omni} \HOLSymConst{\HOLTokenConj{}}
+   \HOLConst{PlatoonSergeant} \HOLSymConst{\HOLTokenNotEqual{}} \HOLConst{Omni}
 \end{SaveVerbatim}
 \newcommand{\HOLConductORPTypeTheoremsslRoleXXdistinctXXclauses}{\UseVerbatim{HOLConductORPTypeTheoremsslRoleXXdistinctXXclauses}}
 \begin{SaveVerbatim}{HOLConductORPTypeTheoremsslStateXXdistinctXXclauses}
@@ -73,6 +90,7 @@
 \end{SaveVerbatim}
 \newcommand{\HOLConductORPTypeTheoremsslStateXXdistinctXXclauses}{\UseVerbatim{HOLConductORPTypeTheoremsslStateXXdistinctXXclauses}}
 \newcommand{\HOLConductORPTypeTheorems}{
+\HOLThmTag{ConductORPType}{omniCommand_distinct_clauses}\HOLConductORPTypeTheoremsomniCommandXXdistinctXXclauses
 \HOLThmTag{ConductORPType}{plCommand_distinct_clauses}\HOLConductORPTypeTheoremsplCommandXXdistinctXXclauses
 \HOLThmTag{ConductORPType}{psgCommand_distinct_clauses}\HOLConductORPTypeTheoremspsgCommandXXdistinctXXclauses
 \HOLThmTag{ConductORPType}{slCommand_distinct_clauses}\HOLConductORPTypeTheoremsslCommandXXdistinctXXclauses

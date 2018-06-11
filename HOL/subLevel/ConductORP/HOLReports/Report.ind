@@ -3,31 +3,37 @@
   \item \textbf  {ConductORPType Theory}, 3
     \subitem Datatypes, 3
     \subitem Theorems, 3
+      \subsubitem omniCommand_distinct_clauses, 3
       \subsubitem plCommand_distinct_clauses, 3
       \subsubitem psgCommand_distinct_clauses, 3
       \subsubitem slCommand_distinct_clauses, 3
-      \subsubitem slCommand_one_one, 3
-      \subsubitem slOutput_distinct_clauses, 3
+      \subsubitem slCommand_one_one, 4
+      \subsubitem slOutput_distinct_clauses, 4
       \subsubitem slRole_distinct_clauses, 4
       \subsubitem slState_distinct_clauses, 4
 
   \indexspace
 
   \item \textbf  {ssmConductORP Theory}, 4
-    \subitem Definitions, 4
-      \subsubitem secContextConductORP_def, 4
-      \subsubitem ssmConductORPStateInterp_def, 4
     \subitem Theorems, 4
-      \subsubitem authTestConductORP_cmd_reject_lemma, 4
-      \subsubitem authTestConductORP_def, 4
-      \subsubitem authTestConductORP_ind, 5
-      \subsubitem conductORPNS_def, 6
-      \subsubitem conductORPNS_ind, 6
-      \subsubitem conductORPOut_def, 7
-      \subsubitem conductORPOut_ind, 7
-      \subsubitem PlatoonLeader_exec_plCommand_justified_thm, 8
-      \subsubitem PlatoonLeader_plCommand_lemma, 8
-      \subsubitem PlatoonSergeant_exec_psgCommand_justified_thm, 8
-      \subsubitem PlatoonSergeant_psgCommand_lemma, 9
+      \subsubitem conductORPNS_def, 4
+      \subsubitem conductORPNS_ind, 5
+      \subsubitem conductORPOut_def, 5
+      \subsubitem conductORPOut_ind, 5
+      \subsubitem inputOK_cmd_reject_lemma, 5
+      \subsubitem inputOK_def, 5
+      \subsubitem inputOK_ind, 6
+      \subsubitem PlatoonLeader_ACTIONS_IN_exec_justified_lemma, 7
+      \subsubitem PlatoonLeader_ACTIONS_IN_exec_justified_thm, 8
+      \subsubitem PlatoonLeader_ACTIONS_IN_exec_lemma, 8
+      \subsubitem PlatoonLeader_ACTIONS_IN_trap_justified_lemma, 9
+      \subsubitem PlatoonLeader_ACTIONS_IN_trap_justified_thm, 10
+      \subsubitem PlatoonLeader_ACTIONS_IN_trap_lemma, 10
+      \subsubitem PlatoonLeader_CONDUCT_ORP_exec_secure_justified_thm, 
+		11
+      \subsubitem PlatoonLeader_CONDUCT_ORP_exec_secure_lemma, 11
+      \subsubitem PlatoonSergeant_SECURE_exec_justified_lemma, 11
+      \subsubitem PlatoonSergeant_SECURE_exec_justified_thm, 12
+      \subsubitem PlatoonSergeant_SECURE_exec_lemma, 13
 
 \end{theindex}
