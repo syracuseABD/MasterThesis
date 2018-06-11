@@ -90,6 +90,8 @@ Q.prove(`!cmd. ~(inputOK
 	         ((prop (SOME cmd))))`,
 		 	      (PROVE_TAC[inputOK_def]))
 
+val _= save_thm("inputOK_cmd_reject_lemma",
+		inputOK_cmd_reject_lemma)
 (* -------------------------------------------------------------------------- *)
 (* Theorem: PlatoonLeader is authorized on crossLD if                         *)
 (*   Omni says ssmPlanPBComplete					      *)
