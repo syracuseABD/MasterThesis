@@ -13,8 +13,8 @@ struct
   in end;
   val _ = Theory.link_parents
           ("ConductORPType",
-          Arbnum.fromString "1528688735",
-          Arbnum.fromString "907261")
+          Arbnum.fromString "1528747892",
+          Arbnum.fromString "292364")
           [("indexedLists",
            Arbnum.fromString "1501974078",
            Arbnum.fromString "687272"),
@@ -23,37 +23,45 @@ struct
            Arbnum.fromString "747236")];
   val _ = Theory.incorporate_types "ConductORPType"
        [("stateRole", 0), ("slState", 0), ("slOutput", 0),
-        ("slCommand", 0), ("psgCommand", 0), ("plCommand", 0)];
+        ("slCommand", 0), ("psgCommand", 0), ("plCommand", 0),
+        ("omniCommand", 0)];
 
   val idvector = 
     let fun ID(thy,oth) = {Thy = thy, Other = oth}
     in Vector.fromList
   [ID("ConductORPType", "plCommand"), ID("ConductORPType", "slOutput"),
    ID("min", "fun"), ID("num", "num"), ID("ConductORPType", "stateRole"),
-   ID("ConductORPType", "slState"), ID("ConductORPType", "slCommand"),
-   ID("ConductORPType", "psgCommand"), ID("min", "bool"),
-   ID("ind_type", "recspace"), ID("pair", "prod"), ID("bool", "!"),
-   ID("arithmetic", "+"), ID("pair", ","), ID("bool", "/\\"),
-   ID("num", "0"), ID("prim_rec", "<"), ID("min", "="), ID("min", "==>"),
-   ID("bool", "?"), ID("ConductORPType", "ACTIONS_IN"), ID("bool", "ARB"),
-   ID("ConductORPType", "ActionsIn"), ID("arithmetic", "BIT1"),
-   ID("arithmetic", "BIT2"), ID("ind_type", "BOTTOM"),
-   ID("ConductORPType", "COMPLETE"), ID("bool", "COND"),
-   ID("ConductORPType", "CONDUCT_ORP"), ID("ind_type", "CONSTR"),
-   ID("ConductORPType", "Complete"), ID("ConductORPType", "ConductORP"),
-   ID("bool", "DATATYPE"), ID("arithmetic", "NUMERAL"),
-   ID("ConductORPType", "PL"), ID("ConductORPType", "PSG"),
-   ID("ConductORPType", "PlatoonLeader"),
+   ID("ConductORPType", "omniCommand"), ID("ConductORPType", "slState"),
+   ID("ConductORPType", "slCommand"), ID("ConductORPType", "psgCommand"),
+   ID("min", "bool"), ID("ind_type", "recspace"), ID("pair", "prod"),
+   ID("bool", "!"), ID("arithmetic", "+"), ID("pair", ","),
+   ID("bool", "/\\"), ID("num", "0"), ID("prim_rec", "<"), ID("min", "="),
+   ID("min", "==>"), ID("bool", "?"), ID("ConductORPType", "ACTIONS_IN"),
+   ID("bool", "ARB"), ID("ConductORPType", "ActionsIn"),
+   ID("arithmetic", "BIT1"), ID("arithmetic", "BIT2"),
+   ID("ind_type", "BOTTOM"), ID("ConductORPType", "COMPLETE"),
+   ID("bool", "COND"), ID("ConductORPType", "CONDUCT_ORP"),
+   ID("ind_type", "CONSTR"), ID("ConductORPType", "Complete"),
+   ID("ConductORPType", "ConductORP"), ID("bool", "DATATYPE"),
+   ID("arithmetic", "NUMERAL"), ID("ConductORPType", "OMNI"),
+   ID("ConductORPType", "Omni"), ID("ConductORPType", "PL"),
+   ID("ConductORPType", "PSG"), ID("ConductORPType", "PlatoonLeader"),
    ID("ConductORPType", "PlatoonSergeant"), ID("ConductORPType", "SECURE"),
    ID("num", "SUC"), ID("ConductORPType", "Secure"),
    ID("bool", "TYPE_DEFINITION"), ID("ConductORPType", "WITHDRAW"),
    ID("ConductORPType", "Withdraw"), ID("arithmetic", "ZERO"),
    ID("bool", "\\/"), ID("ConductORPType", "actionsIn"),
-   ID("ConductORPType", "complete"), ID("ConductORPType", "num2plCommand"),
+   ID("ConductORPType", "complete"),
+   ID("ConductORPType", "invalidOmniCommand"),
+   ID("ConductORPType", "num2omniCommand"),
+   ID("ConductORPType", "num2plCommand"),
    ID("ConductORPType", "num2psgCommand"),
    ID("ConductORPType", "num2slOutput"),
    ID("ConductORPType", "num2slState"),
    ID("ConductORPType", "num2stateRole"),
+   ID("ConductORPType", "omniCommand2num"),
+   ID("ConductORPType", "omniCommand_CASE"),
+   ID("ConductORPType", "omniCommand_size"),
    ID("ConductORPType", "plCommand2num"),
    ID("ConductORPType", "plCommand_CASE"),
    ID("ConductORPType", "plCommand_size"),
@@ -70,6 +78,9 @@ struct
    ID("ConductORPType", "slState2num"),
    ID("ConductORPType", "slState_CASE"),
    ID("ConductORPType", "slState_size"),
+   ID("ConductORPType", "ssmActionsInComplete"),
+   ID("ConductORPType", "ssmSecureComplete"),
+   ID("ConductORPType", "ssmWithdrawComplete"),
    ID("ConductORPType", "stateRole2num"),
    ID("ConductORPType", "stateRole_CASE"),
    ID("ConductORPType", "stateRole_size"),
@@ -81,103 +92,120 @@ struct
   in
   val tyvector = build_type_vector idvector
   [TYOP [0], TYOP [1], TYOP [3], TYOP [4], TYOP [2, 3, 2], TYV "'a",
-   TYOP [2, 5, 5], TYOP [2, 5, 6], TYOP [2, 3, 7], TYOP [5],
-   TYOP [2, 9, 2], TYOP [2, 5, 7], TYOP [2, 5, 11], TYOP [2, 5, 12],
-   TYOP [2, 9, 13], TYOP [2, 1, 2], TYOP [2, 5, 13], TYOP [2, 5, 16],
-   TYOP [2, 1, 17], TYOP [6], TYOP [2, 19, 2], TYOP [7], TYOP [2, 21, 5],
-   TYOP [2, 22, 5], TYOP [2, 0, 5], TYOP [2, 24, 23], TYOP [2, 19, 25],
-   TYOP [2, 21, 2], TYOP [2, 21, 7], TYOP [2, 0, 2], TYOP [2, 0, 12],
-   TYOP [2, 2, 3], TYOP [2, 2, 9], TYOP [2, 2, 1], TYOP [2, 2, 21],
-   TYOP [2, 2, 0], TYOP [2, 21, 19], TYOP [2, 0, 19], TYOP [8],
-   TYOP [10, 0, 21], TYOP [9, 39], TYOP [2, 40, 38], TYOP [2, 0, 38],
-   TYOP [2, 21, 38], TYOP [2, 19, 38], TYOP [2, 1, 38], TYOP [2, 9, 38],
-   TYOP [2, 3, 38], TYOP [2, 1, 5], TYOP [2, 9, 5], TYOP [2, 3, 5],
-   TYOP [2, 19, 5], TYOP [2, 0, 42], TYOP [2, 0, 52], TYOP [2, 0, 53],
-   TYOP [2, 21, 43], TYOP [2, 19, 40], TYOP [2, 36, 38], TYOP [2, 37, 57],
-   TYOP [2, 1, 45], TYOP [2, 1, 59], TYOP [2, 1, 60], TYOP [2, 1, 61],
-   TYOP [2, 1, 62], TYOP [2, 1, 63], TYOP [2, 9, 46], TYOP [2, 9, 65],
-   TYOP [2, 9, 66], TYOP [2, 9, 67], TYOP [2, 3, 47], TYOP [2, 5, 38],
-   TYOP [2, 70, 38], TYOP [2, 24, 38], TYOP [2, 72, 38], TYOP [2, 42, 38],
-   TYOP [2, 74, 38], TYOP [2, 22, 38], TYOP [2, 76, 38], TYOP [2, 43, 38],
-   TYOP [2, 78, 38], TYOP [2, 41, 38], TYOP [2, 80, 38], TYOP [2, 44, 38],
-   TYOP [2, 82, 38], TYOP [2, 45, 38], TYOP [2, 84, 38], TYOP [2, 46, 38],
-   TYOP [2, 86, 38], TYOP [2, 47, 38], TYOP [2, 88, 38], TYOP [2, 2, 38],
-   TYOP [2, 90, 38], TYOP [2, 2, 2], TYOP [2, 2, 92], TYOP [2, 21, 39],
-   TYOP [2, 0, 94], TYOP [2, 38, 38], TYOP [2, 38, 96], TYOP [2, 2, 90],
-   TYOP [2, 5, 70], TYOP [2, 40, 41], TYOP [2, 19, 44], TYOP [2, 29, 38],
-   TYOP [2, 102, 38], TYOP [2, 27, 38], TYOP [2, 104, 38],
-   TYOP [2, 51, 38], TYOP [2, 106, 38], TYOP [2, 56, 38],
-   TYOP [2, 108, 38], TYOP [2, 48, 38], TYOP [2, 110, 38],
-   TYOP [2, 15, 38], TYOP [2, 112, 38], TYOP [2, 49, 38],
-   TYOP [2, 114, 38], TYOP [2, 10, 38], TYOP [2, 116, 38],
-   TYOP [2, 50, 38], TYOP [2, 118, 38], TYOP [2, 4, 38], TYOP [2, 120, 38],
-   TYOP [2, 38, 7], TYOP [2, 2, 40], TYOP [2, 123, 40], TYOP [2, 39, 124],
-   TYOP [2, 2, 125], TYOP [2, 90, 102], TYOP [2, 90, 104],
-   TYOP [2, 90, 112], TYOP [2, 90, 116], TYOP [2, 90, 120],
-   TYOP [2, 41, 108]]
+   TYOP [2, 5, 5], TYOP [2, 5, 6], TYOP [2, 5, 7], TYOP [2, 3, 8],
+   TYOP [5], TYOP [6], TYOP [2, 11, 2], TYOP [2, 5, 8], TYOP [2, 5, 13],
+   TYOP [2, 11, 14], TYOP [2, 1, 2], TYOP [2, 5, 14], TYOP [2, 5, 17],
+   TYOP [2, 1, 18], TYOP [7], TYOP [2, 20, 2], TYOP [2, 10, 5],
+   TYOP [2, 22, 5], TYOP [8], TYOP [2, 24, 5], TYOP [2, 25, 23],
+   TYOP [2, 0, 5], TYOP [2, 27, 26], TYOP [2, 20, 28], TYOP [2, 24, 2],
+   TYOP [2, 24, 7], TYOP [2, 0, 2], TYOP [2, 0, 13], TYOP [2, 10, 2],
+   TYOP [2, 10, 13], TYOP [2, 2, 3], TYOP [2, 2, 11], TYOP [2, 2, 1],
+   TYOP [2, 2, 24], TYOP [2, 2, 0], TYOP [2, 2, 10], TYOP [2, 24, 20],
+   TYOP [2, 0, 20], TYOP [2, 10, 20], TYOP [9], TYOP [11, 24, 10],
+   TYOP [11, 0, 46], TYOP [10, 47], TYOP [2, 48, 45], TYOP [2, 10, 45],
+   TYOP [2, 0, 45], TYOP [2, 24, 45], TYOP [2, 20, 45], TYOP [2, 1, 45],
+   TYOP [2, 11, 45], TYOP [2, 3, 45], TYOP [2, 1, 5], TYOP [2, 11, 5],
+   TYOP [2, 3, 5], TYOP [2, 20, 5], TYOP [2, 10, 50], TYOP [2, 10, 61],
+   TYOP [2, 10, 62], TYOP [2, 0, 51], TYOP [2, 0, 64], TYOP [2, 0, 65],
+   TYOP [2, 24, 52], TYOP [2, 20, 48], TYOP [2, 44, 45], TYOP [2, 42, 69],
+   TYOP [2, 43, 70], TYOP [2, 1, 54], TYOP [2, 1, 72], TYOP [2, 1, 73],
+   TYOP [2, 1, 74], TYOP [2, 1, 75], TYOP [2, 1, 76], TYOP [2, 11, 55],
+   TYOP [2, 11, 78], TYOP [2, 11, 79], TYOP [2, 11, 80], TYOP [2, 3, 56],
+   TYOP [2, 3, 82], TYOP [2, 5, 45], TYOP [2, 84, 45], TYOP [2, 22, 45],
+   TYOP [2, 86, 45], TYOP [2, 50, 45], TYOP [2, 88, 45], TYOP [2, 27, 45],
+   TYOP [2, 90, 45], TYOP [2, 51, 45], TYOP [2, 92, 45], TYOP [2, 25, 45],
+   TYOP [2, 94, 45], TYOP [2, 52, 45], TYOP [2, 96, 45], TYOP [2, 49, 45],
+   TYOP [2, 98, 45], TYOP [2, 53, 45], TYOP [2, 100, 45], TYOP [2, 54, 45],
+   TYOP [2, 102, 45], TYOP [2, 55, 45], TYOP [2, 104, 45],
+   TYOP [2, 56, 45], TYOP [2, 106, 45], TYOP [2, 2, 45], TYOP [2, 108, 45],
+   TYOP [2, 2, 2], TYOP [2, 2, 110], TYOP [2, 46, 47], TYOP [2, 0, 112],
+   TYOP [2, 10, 46], TYOP [2, 24, 114], TYOP [2, 45, 45],
+   TYOP [2, 45, 116], TYOP [2, 2, 108], TYOP [2, 5, 84], TYOP [2, 48, 49],
+   TYOP [2, 20, 53], TYOP [2, 34, 45], TYOP [2, 122, 45], TYOP [2, 32, 45],
+   TYOP [2, 124, 45], TYOP [2, 30, 45], TYOP [2, 126, 45],
+   TYOP [2, 60, 45], TYOP [2, 128, 45], TYOP [2, 68, 45],
+   TYOP [2, 130, 45], TYOP [2, 57, 45], TYOP [2, 132, 45],
+   TYOP [2, 16, 45], TYOP [2, 134, 45], TYOP [2, 58, 45],
+   TYOP [2, 136, 45], TYOP [2, 12, 45], TYOP [2, 138, 45],
+   TYOP [2, 59, 45], TYOP [2, 140, 45], TYOP [2, 4, 45], TYOP [2, 142, 45],
+   TYOP [2, 45, 7], TYOP [2, 2, 48], TYOP [2, 145, 48], TYOP [2, 47, 146],
+   TYOP [2, 2, 147], TYOP [2, 108, 122], TYOP [2, 108, 124],
+   TYOP [2, 108, 126], TYOP [2, 108, 134], TYOP [2, 108, 138],
+   TYOP [2, 108, 142], TYOP [2, 49, 130]]
   end
   val _ = Theory.incorporate_consts "ConductORPType" tyvector
      [("withdraw", 0), ("unAuthorized", 1), ("unAuthenticated", 1),
-      ("stateRole_size", 4), ("stateRole_CASE", 8), ("stateRole2num", 4),
-      ("slState_size", 10), ("slState_CASE", 14), ("slState2num", 10),
-      ("slOutput_size", 15), ("slOutput_CASE", 18), ("slOutput2num", 15),
-      ("slCommand_size", 20), ("slCommand_CASE", 26), ("secure", 0),
-      ("psgIncomplete", 21), ("psgCommand_size", 27),
-      ("psgCommand_CASE", 28), ("psgCommand2num", 27), ("plIncomplete", 0),
-      ("plCommand_size", 29), ("plCommand_CASE", 30),
-      ("plCommand2num", 29), ("num2stateRole", 31), ("num2slState", 32),
-      ("num2slOutput", 33), ("num2psgCommand", 34), ("num2plCommand", 35),
-      ("complete", 0), ("actionsIn", 21), ("Withdraw", 1), ("WITHDRAW", 9),
-      ("Secure", 1), ("SECURE", 9), ("PlatoonSergeant", 3),
-      ("PlatoonLeader", 3), ("PSG", 36), ("PL", 37), ("ConductORP", 1),
-      ("Complete", 1), ("CONDUCT_ORP", 9), ("COMPLETE", 9),
-      ("ActionsIn", 1), ("ACTIONS_IN", 9)];
+      ("stateRole_size", 4), ("stateRole_CASE", 9), ("stateRole2num", 4),
+      ("ssmWithdrawComplete", 10), ("ssmSecureComplete", 10),
+      ("ssmActionsInComplete", 10), ("slState_size", 12),
+      ("slState_CASE", 15), ("slState2num", 12), ("slOutput_size", 16),
+      ("slOutput_CASE", 19), ("slOutput2num", 16), ("slCommand_size", 21),
+      ("slCommand_CASE", 29), ("secure", 0), ("psgIncomplete", 24),
+      ("psgCommand_size", 30), ("psgCommand_CASE", 31),
+      ("psgCommand2num", 30), ("plIncomplete", 0), ("plCommand_size", 32),
+      ("plCommand_CASE", 33), ("plCommand2num", 32),
+      ("omniCommand_size", 34), ("omniCommand_CASE", 35),
+      ("omniCommand2num", 34), ("num2stateRole", 36), ("num2slState", 37),
+      ("num2slOutput", 38), ("num2psgCommand", 39), ("num2plCommand", 40),
+      ("num2omniCommand", 41), ("invalidOmniCommand", 10), ("complete", 0),
+      ("actionsIn", 24), ("Withdraw", 1), ("WITHDRAW", 11), ("Secure", 1),
+      ("SECURE", 11), ("PlatoonSergeant", 3), ("PlatoonLeader", 3),
+      ("PSG", 42), ("PL", 43), ("Omni", 3), ("OMNI", 44),
+      ("ConductORP", 1), ("Complete", 1), ("CONDUCT_ORP", 11),
+      ("COMPLETE", 11), ("ActionsIn", 1), ("ACTIONS_IN", 11)];
 
   local open SharingTables
   in
   val tmvector = build_term_vector idvector tyvector
-  [TMV("'slCommand'", 41), TMV("M", 0), TMV("M", 21), TMV("M", 19),
-   TMV("M", 1), TMV("M", 9), TMV("M", 3), TMV("M'", 0), TMV("M'", 21),
-   TMV("M'", 19), TMV("M'", 1), TMV("M'", 9), TMV("M'", 3), TMV("P", 42),
-   TMV("P", 43), TMV("P", 44), TMV("P", 45), TMV("P", 46), TMV("P", 47),
-   TMV("a", 0), TMV("a", 21), TMV("a", 1), TMV("a", 9), TMV("a", 3),
-   TMV("a'", 0), TMV("a'", 21), TMV("a'", 1), TMV("a'", 9), TMV("a'", 3),
-   TMV("a0", 40), TMV("f", 24), TMV("f", 22), TMV("f", 48), TMV("f", 49),
-   TMV("f", 50), TMV("f'", 24), TMV("f0", 24), TMV("f1", 22),
-   TMV("f1'", 22), TMV("fn", 51), TMV("m", 2), TMV("n", 2), TMV("p", 0),
-   TMV("p", 21), TMV("plCommand", 54), TMV("psgCommand", 55), TMV("r", 2),
-   TMV("r'", 2), TMV("rep", 29), TMV("rep", 27), TMV("rep", 56),
-   TMV("rep", 15), TMV("rep", 10), TMV("rep", 4), TMV("s", 19),
-   TMV("slCommand", 58), TMV("slOutput", 64), TMV("slState", 68),
-   TMV("ss", 19), TMV("stateRole", 69), TMV("v0", 5), TMV("v0'", 5),
-   TMV("v1", 5), TMV("v1'", 5), TMV("v2", 5), TMV("v2'", 5), TMV("v3", 5),
-   TMV("v3'", 5), TMV("v4", 5), TMV("v4'", 5), TMV("v5", 5), TMV("v5'", 5),
-   TMV("v6", 5), TMV("v6'", 5), TMV("x", 0), TMV("x", 21), TMV("x", 1),
-   TMV("x", 9), TMV("x", 3), TMV("x0", 5), TMV("x1", 5), TMV("x2", 5),
-   TMV("x3", 5), TMV("x4", 5), TMV("x5", 5), TMV("x6", 5), TMC(11, 71),
-   TMC(11, 73), TMC(11, 75), TMC(11, 77), TMC(11, 79), TMC(11, 81),
-   TMC(11, 83), TMC(11, 85), TMC(11, 87), TMC(11, 89), TMC(11, 91),
-   TMC(11, 74), TMC(11, 78), TMC(11, 80), TMC(11, 82), TMC(11, 84),
-   TMC(11, 86), TMC(11, 88), TMC(12, 93), TMC(13, 95), TMC(14, 97),
-   TMC(15, 2), TMC(16, 98), TMC(17, 99), TMC(17, 97), TMC(17, 98),
-   TMC(17, 52), TMC(17, 55), TMC(17, 100), TMC(17, 101), TMC(17, 59),
-   TMC(17, 65), TMC(17, 69), TMC(18, 97), TMC(19, 73), TMC(19, 103),
-   TMC(19, 77), TMC(19, 105), TMC(19, 107), TMC(19, 109), TMC(19, 111),
-   TMC(19, 113), TMC(19, 115), TMC(19, 117), TMC(19, 119), TMC(19, 121),
-   TMC(19, 91), TMC(19, 74), TMC(19, 78), TMC(19, 84), TMC(19, 86),
-   TMC(19, 88), TMC(20, 9), TMC(21, 0), TMC(21, 21), TMC(22, 1),
-   TMC(23, 92), TMC(24, 92), TMC(25, 40), TMC(26, 9), TMC(27, 122),
-   TMC(28, 9), TMC(29, 126), TMC(30, 1), TMC(31, 1), TMC(32, 96),
-   TMC(33, 92), TMC(34, 37), TMC(35, 36), TMC(36, 3), TMC(37, 3),
-   TMC(38, 9), TMC(39, 92), TMC(40, 1), TMC(41, 127), TMC(41, 128),
-   TMC(41, 129), TMC(41, 130), TMC(41, 131), TMC(41, 132), TMC(42, 9),
-   TMC(43, 1), TMC(44, 2), TMC(45, 97), TMC(46, 21), TMC(47, 0),
-   TMC(48, 35), TMC(49, 34), TMC(50, 33), TMC(51, 32), TMC(52, 31),
-   TMC(53, 29), TMC(54, 30), TMC(55, 29), TMC(56, 0), TMC(57, 27),
-   TMC(58, 28), TMC(59, 27), TMC(60, 21), TMC(61, 0), TMC(62, 26),
-   TMC(63, 20), TMC(64, 15), TMC(65, 18), TMC(66, 15), TMC(67, 10),
-   TMC(68, 14), TMC(69, 10), TMC(70, 4), TMC(71, 8), TMC(72, 4),
-   TMC(73, 1), TMC(74, 1), TMC(75, 0), TMC(76, 96)]
+  [TMV("'slCommand'", 49), TMV("M", 10), TMV("M", 0), TMV("M", 24),
+   TMV("M", 20), TMV("M", 1), TMV("M", 11), TMV("M", 3), TMV("M'", 10),
+   TMV("M'", 0), TMV("M'", 24), TMV("M'", 20), TMV("M'", 1), TMV("M'", 11),
+   TMV("M'", 3), TMV("P", 50), TMV("P", 51), TMV("P", 52), TMV("P", 53),
+   TMV("P", 54), TMV("P", 55), TMV("P", 56), TMV("a", 10), TMV("a", 0),
+   TMV("a", 24), TMV("a", 1), TMV("a", 11), TMV("a", 3), TMV("a'", 10),
+   TMV("a'", 0), TMV("a'", 24), TMV("a'", 1), TMV("a'", 11), TMV("a'", 3),
+   TMV("a0", 48), TMV("f", 22), TMV("f", 27), TMV("f", 25), TMV("f", 57),
+   TMV("f", 58), TMV("f", 59), TMV("f'", 27), TMV("f0", 27), TMV("f1", 25),
+   TMV("f1'", 25), TMV("f2", 22), TMV("f2'", 22), TMV("fn", 60),
+   TMV("m", 2), TMV("n", 2), TMV("o", 10), TMV("omniCommand", 63),
+   TMV("p", 0), TMV("p", 24), TMV("plCommand", 66), TMV("psgCommand", 67),
+   TMV("r", 2), TMV("r'", 2), TMV("rep", 34), TMV("rep", 32),
+   TMV("rep", 30), TMV("rep", 68), TMV("rep", 16), TMV("rep", 12),
+   TMV("rep", 4), TMV("s", 20), TMV("slCommand", 71), TMV("slOutput", 77),
+   TMV("slState", 81), TMV("ss", 20), TMV("stateRole", 83), TMV("v0", 5),
+   TMV("v0'", 5), TMV("v1", 5), TMV("v1'", 5), TMV("v2", 5), TMV("v2'", 5),
+   TMV("v3", 5), TMV("v3'", 5), TMV("v4", 5), TMV("v4'", 5), TMV("v5", 5),
+   TMV("v5'", 5), TMV("v6", 5), TMV("v6'", 5), TMV("x", 10), TMV("x", 0),
+   TMV("x", 24), TMV("x", 1), TMV("x", 11), TMV("x", 3), TMV("x0", 5),
+   TMV("x1", 5), TMV("x2", 5), TMV("x3", 5), TMV("x4", 5), TMV("x5", 5),
+   TMV("x6", 5), TMC(12, 85), TMC(12, 87), TMC(12, 89), TMC(12, 91),
+   TMC(12, 93), TMC(12, 95), TMC(12, 97), TMC(12, 99), TMC(12, 101),
+   TMC(12, 103), TMC(12, 105), TMC(12, 107), TMC(12, 109), TMC(12, 88),
+   TMC(12, 92), TMC(12, 96), TMC(12, 98), TMC(12, 100), TMC(12, 102),
+   TMC(12, 104), TMC(12, 106), TMC(13, 111), TMC(14, 113), TMC(14, 115),
+   TMC(15, 117), TMC(16, 2), TMC(17, 118), TMC(18, 119), TMC(18, 117),
+   TMC(18, 118), TMC(18, 61), TMC(18, 64), TMC(18, 67), TMC(18, 120),
+   TMC(18, 121), TMC(18, 72), TMC(18, 78), TMC(18, 82), TMC(19, 117),
+   TMC(20, 87), TMC(20, 123), TMC(20, 91), TMC(20, 125), TMC(20, 95),
+   TMC(20, 127), TMC(20, 129), TMC(20, 131), TMC(20, 133), TMC(20, 135),
+   TMC(20, 137), TMC(20, 139), TMC(20, 141), TMC(20, 143), TMC(20, 109),
+   TMC(20, 88), TMC(20, 92), TMC(20, 96), TMC(20, 102), TMC(20, 104),
+   TMC(20, 106), TMC(21, 11), TMC(22, 10), TMC(22, 0), TMC(22, 24),
+   TMC(23, 1), TMC(24, 110), TMC(25, 110), TMC(26, 48), TMC(27, 11),
+   TMC(28, 144), TMC(29, 11), TMC(30, 148), TMC(31, 1), TMC(32, 1),
+   TMC(33, 116), TMC(34, 110), TMC(35, 44), TMC(36, 3), TMC(37, 43),
+   TMC(38, 42), TMC(39, 3), TMC(40, 3), TMC(41, 11), TMC(42, 110),
+   TMC(43, 1), TMC(44, 149), TMC(44, 150), TMC(44, 151), TMC(44, 152),
+   TMC(44, 153), TMC(44, 154), TMC(44, 155), TMC(45, 11), TMC(46, 1),
+   TMC(47, 2), TMC(48, 117), TMC(49, 24), TMC(50, 0), TMC(51, 10),
+   TMC(52, 41), TMC(53, 40), TMC(54, 39), TMC(55, 38), TMC(56, 37),
+   TMC(57, 36), TMC(58, 34), TMC(59, 35), TMC(60, 34), TMC(61, 32),
+   TMC(62, 33), TMC(63, 32), TMC(64, 0), TMC(65, 30), TMC(66, 31),
+   TMC(67, 30), TMC(68, 24), TMC(69, 0), TMC(70, 29), TMC(71, 21),
+   TMC(72, 16), TMC(73, 19), TMC(74, 16), TMC(75, 12), TMC(76, 15),
+   TMC(77, 12), TMC(78, 10), TMC(79, 10), TMC(80, 10), TMC(81, 4),
+   TMC(82, 9), TMC(83, 4), TMC(84, 1), TMC(85, 1), TMC(86, 0),
+   TMC(87, 116)]
   end
   structure ThmBind = struct
     val DT = Thm.disk_thm
@@ -187,12 +215,12 @@ struct
     val op plCommand_TY_DEF =
     ThmBind.DT(((("ConductORPType",0),
                 [("bool",[25]),("numeral",[3,7])]),["DISK_THM"]),
-               [ThmBind.read"%121%48%160%41%108$0@%152%143%142%168@4|@$0@|@"])
+               [ThmBind.read"%140%59%184%49%124$0@%173%164%163%192@4|@$0@|@"])
   fun op plCommand_BIJ x = x
     val op plCommand_BIJ =
     ThmBind.DT(((("ConductORPType",1),
                 [("ConductORPType",[0]),("bool",[116])]),["DISK_THM"]),
-               [ThmBind.read"%106%97%19%112%172%177$0@3$0@|@2%96%46%110%41%108$0@%152%143%142%168@4|$0@2%111%177%172$0@3$0@2|@2"])
+               [ThmBind.read"%122%112%23%129%198%206$0@3$0@|@2%110%56%126%49%124$0@%173%164%163%192@4|$0@2%127%206%198$0@3$0@2|@2"])
 
 
 
@@ -200,57 +228,81 @@ struct
   fun op plCommand_size_def x = x
     val op plCommand_size_def =
     ThmBind.DT(((("ConductORPType",15),[]),[]),
-               [ThmBind.read"%97%74%111%179$0@2%107@|@"])
+               [ThmBind.read"%112%86%127%208$0@2%123@|@"])
   fun op plCommand_CASE x = x
     val op plCommand_CASE =
     ThmBind.DT(((("ConductORPType",16),[]),[]),
-               [ThmBind.read"%97%74%86%60%86%62%86%64%86%66%109%178$4@$3@$2@$1@$0@2%40%146%108$0@%152%142%168@4$4@%146%108$0@%152%143%168@4$3@%146%111$0@%152%143%168@4$2@$1@3|%177$4@3|@|@|@|@|@"])
+               [ThmBind.read"%112%86%98%71%98%73%98%75%98%77%125%207$4@$3@$2@$1@$0@2%48%167%124$0@%173%163%192@4$4@%167%124$0@%173%164%192@4$3@%167%127$0@%173%164%192@4$2@$1@3|%206$4@3|@|@|@|@|@"])
   fun op psgCommand_TY_DEF x = x
     val op psgCommand_TY_DEF =
     ThmBind.DT(((("ConductORPType",25),
                 [("bool",[25]),("numeral",[3,7])]),["DISK_THM"]),
-               [ThmBind.read"%123%49%161%41%108$0@%152%143%168@3|@$0@|@"])
+               [ThmBind.read"%142%60%185%49%124$0@%173%164%192@3|@$0@|@"])
   fun op psgCommand_BIJ x = x
     val op psgCommand_BIJ =
     ThmBind.DT(((("ConductORPType",26),
                 [("ConductORPType",[25]),("bool",[116])]),["DISK_THM"]),
-               [ThmBind.read"%106%98%20%113%173%181$0@3$0@|@2%96%46%110%41%108$0@%152%143%168@3|$0@2%111%181%173$0@3$0@2|@2"])
+               [ThmBind.read"%122%113%24%130%199%210$0@3$0@|@2%110%56%126%49%124$0@%173%164%192@3|$0@2%127%210%199$0@3$0@2|@2"])
 
 
   fun op psgCommand_size_def x = x
     val op psgCommand_size_def =
     ThmBind.DT(((("ConductORPType",38),[]),[]),
-               [ThmBind.read"%98%75%111%183$0@2%107@|@"])
+               [ThmBind.read"%113%87%127%212$0@2%123@|@"])
   fun op psgCommand_CASE x = x
     val op psgCommand_CASE =
     ThmBind.DT(((("ConductORPType",39),[]),[]),
-               [ThmBind.read"%98%75%86%60%86%62%109%182$2@$1@$0@2%40%146%111$0@%107@2$2@$1@|%181$2@3|@|@|@"])
+               [ThmBind.read"%113%87%98%71%98%73%125%211$2@$1@$0@2%48%167%127$0@%123@2$2@$1@|%210$2@3|@|@|@"])
+  fun op omniCommand_TY_DEF x = x
+    val op omniCommand_TY_DEF =
+    ThmBind.DT(((("ConductORPType",48),
+                [("bool",[25]),("numeral",[3,7])]),["DISK_THM"]),
+               [ThmBind.read"%138%58%183%49%124$0@%173%164%163%192@4|@$0@|@"])
+  fun op omniCommand_BIJ x = x
+    val op omniCommand_BIJ =
+    ThmBind.DT(((("ConductORPType",49),
+                [("ConductORPType",[48]),("bool",[116])]),["DISK_THM"]),
+               [ThmBind.read"%122%111%22%128%197%203$0@3$0@|@2%110%56%126%49%124$0@%173%164%163%192@4|$0@2%127%203%197$0@3$0@2|@2"])
+
+
+
+
+  fun op omniCommand_size_def x = x
+    val op omniCommand_size_def =
+    ThmBind.DT(((("ConductORPType",63),[]),[]),
+               [ThmBind.read"%111%85%127%205$0@2%123@|@"])
+  fun op omniCommand_CASE x = x
+    val op omniCommand_CASE =
+    ThmBind.DT(((("ConductORPType",64),[]),[]),
+               [ThmBind.read"%111%85%98%71%98%73%98%75%98%77%125%204$4@$3@$2@$1@$0@2%48%167%124$0@%173%163%192@4$4@%167%124$0@%173%164%192@4$3@%167%127$0@%173%164%192@4$2@$1@3|%203$4@3|@|@|@|@|@"])
   fun op slCommand_TY_DEF x = x
     val op slCommand_TY_DEF =
-    ThmBind.DT(((("ConductORPType",48),[("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%125%50%165%29%91%0%119%99%29%119%169%133%19%114$1@%19%148%107@%105$0@%140@2%41%144|@|$0@2|@2%134%20%114$1@%20%148%158%107@2%105%139@$0@2%41%144|@|$0@2|@3$1$0@2|@2$0$1@2|@|@$0@|@"])
+    ThmBind.DT(((("ConductORPType",73),[("bool",[26])]),["DISK_THM"]),
+               [ThmBind.read"%144%61%189%34%105%0%136%114%34%136%193%153%23%131$1@%23%169%123@%120$0@%121%161@%159@3%49%165|@|$0@2|@2%193%154%24%131$1@%24%169%181%123@2%120%160@%121$0@%159@3%49%165|@|$0@2|@2%152%22%131$1@%22%169%181%181%123@3%120%160@%121%161@$0@3%49%165|@|$0@2|@4$1$0@2|@2$0$1@2|@|@$0@|@"])
   fun op slCommand_case_def x = x
     val op slCommand_case_def =
-    ThmBind.DT(((("ConductORPType",54),
-                [("ConductORPType",[49,50,51,52,53]),("bool",[26,180]),
-                 ("ind_type",[33,34]),("pair",[8,9])]),["DISK_THM"]),
-               [ThmBind.read"%106%97%19%87%30%89%37%109%186%153$2@2$1@$0@2$1$2@2|@|@|@2%98%20%87%30%89%37%109%186%154$2@2$1@$0@2$0$2@2|@|@|@2"])
+    ThmBind.DT(((("ConductORPType",81),
+                [("ConductORPType",[74,75,76,77,78,79,80]),
+                 ("bool",[26,180]),("ind_type",[33,34]),
+                 ("pair",[8,9])]),["DISK_THM"]),
+               [ThmBind.read"%122%112%23%101%36%103%43%99%45%125%215%176$3@2$2@$1@$0@2$2$3@2|@|@|@|@2%122%113%24%101%36%103%43%99%45%125%215%177$3@2$2@$1@$0@2$1$3@2|@|@|@|@2%111%22%101%36%103%43%99%45%125%215%174$3@2$2@$1@$0@2$0$3@2|@|@|@|@3"])
   fun op slCommand_size_def x = x
     val op slCommand_size_def =
-    ThmBind.DT(((("ConductORPType",55),
-                [("ConductORPType",[49,50,51,52,53]),("bool",[26,180]),
-                 ("ind_type",[33,34]),("pair",[8,9])]),["DISK_THM"]),
-               [ThmBind.read"%106%97%19%111%187%153$0@3%104%152%142%168@3%179$0@3|@2%98%20%111%187%154$0@3%104%152%142%168@3%183$0@3|@2"])
+    ThmBind.DT(((("ConductORPType",82),
+                [("ConductORPType",[74,75,76,77,78,79,80]),
+                 ("bool",[26,180]),("ind_type",[33,34]),
+                 ("pair",[8,9])]),["DISK_THM"]),
+               [ThmBind.read"%122%112%23%127%216%176$0@3%119%173%163%192@3%208$0@3|@2%122%113%24%127%216%177$0@3%119%173%163%192@3%212$0@3|@2%111%22%127%216%174$0@3%119%173%163%192@3%205$0@3|@3"])
   fun op slState_TY_DEF x = x
     val op slState_TY_DEF =
-    ThmBind.DT(((("ConductORPType",65),
+    ThmBind.DT(((("ConductORPType",92),
                 [("bool",[25]),("numeral",[3,7])]),["DISK_THM"]),
-               [ThmBind.read"%129%52%163%41%108$0@%152%142%143%168@4|@$0@|@"])
+               [ThmBind.read"%148%63%187%49%124$0@%173%163%164%192@4|@$0@|@"])
   fun op slState_BIJ x = x
     val op slState_BIJ =
-    ThmBind.DT(((("ConductORPType",66),
-                [("ConductORPType",[65]),("bool",[116])]),["DISK_THM"]),
-               [ThmBind.read"%106%102%22%117%175%191$0@3$0@|@2%96%46%110%41%108$0@%152%142%143%168@4|$0@2%111%191%175$0@3$0@2|@2"])
+    ThmBind.DT(((("ConductORPType",93),
+                [("ConductORPType",[92]),("bool",[116])]),["DISK_THM"]),
+               [ThmBind.read"%122%117%26%134%201%220$0@3$0@|@2%110%56%126%49%124$0@%173%163%164%192@4|$0@2%127%220%201$0@3$0@2|@2"])
 
 
 
@@ -258,22 +310,22 @@ struct
 
   fun op slState_size_def x = x
     val op slState_size_def =
-    ThmBind.DT(((("ConductORPType",81),[]),[]),
-               [ThmBind.read"%102%77%111%193$0@2%107@|@"])
+    ThmBind.DT(((("ConductORPType",108),[]),[]),
+               [ThmBind.read"%117%89%127%222$0@2%123@|@"])
   fun op slState_CASE x = x
     val op slState_CASE =
-    ThmBind.DT(((("ConductORPType",82),[]),[]),
-               [ThmBind.read"%102%77%86%60%86%62%86%64%86%66%86%68%109%192$5@$4@$3@$2@$1@$0@2%40%146%108$0@%152%143%168@4%146%111$0@%107@2$5@$4@2%146%108$0@%152%142%142%168@5$3@%146%111$0@%152%142%142%168@5$2@$1@3|%191$5@3|@|@|@|@|@|@"])
+    ThmBind.DT(((("ConductORPType",109),[]),[]),
+               [ThmBind.read"%117%89%98%71%98%73%98%75%98%77%98%79%125%221$5@$4@$3@$2@$1@$0@2%48%167%124$0@%173%164%192@4%167%127$0@%123@2$5@$4@2%167%124$0@%173%163%163%192@5$3@%167%127$0@%173%163%163%192@5$2@$1@3|%220$5@3|@|@|@|@|@|@"])
   fun op slOutput_TY_DEF x = x
     val op slOutput_TY_DEF =
-    ThmBind.DT(((("ConductORPType",91),
+    ThmBind.DT(((("ConductORPType",118),
                 [("bool",[25]),("numeral",[3,7])]),["DISK_THM"]),
-               [ThmBind.read"%127%51%162%41%108$0@%152%142%142%142%168@5|@$0@|@"])
+               [ThmBind.read"%146%62%186%49%124$0@%173%163%163%163%192@5|@$0@|@"])
   fun op slOutput_BIJ x = x
     val op slOutput_BIJ =
-    ThmBind.DT(((("ConductORPType",92),
-                [("ConductORPType",[91]),("bool",[116])]),["DISK_THM"]),
-               [ThmBind.read"%106%101%21%116%174%188$0@3$0@|@2%96%46%110%41%108$0@%152%142%142%142%168@5|$0@2%111%188%174$0@3$0@2|@2"])
+    ThmBind.DT(((("ConductORPType",119),
+                [("ConductORPType",[118]),("bool",[116])]),["DISK_THM"]),
+               [ThmBind.read"%122%116%25%133%200%217$0@3$0@|@2%110%56%126%49%124$0@%173%163%163%163%192@5|$0@2%127%217%200$0@3$0@2|@2"])
 
 
 
@@ -283,94 +335,95 @@ struct
 
   fun op slOutput_size_def x = x
     val op slOutput_size_def =
-    ThmBind.DT(((("ConductORPType",109),[]),[]),
-               [ThmBind.read"%101%76%111%190$0@2%107@|@"])
+    ThmBind.DT(((("ConductORPType",136),[]),[]),
+               [ThmBind.read"%116%88%127%219$0@2%123@|@"])
   fun op slOutput_CASE x = x
     val op slOutput_CASE =
-    ThmBind.DT(((("ConductORPType",110),[]),[]),
-               [ThmBind.read"%101%76%86%60%86%62%86%64%86%66%86%68%86%70%86%72%109%189$7@$6@$5@$4@$3@$2@$1@$0@2%40%146%108$0@%152%142%142%168@5%146%108$0@%152%142%168@4$7@%146%111$0@%152%142%168@4$6@$5@3%146%108$0@%152%143%142%168@5$4@%146%108$0@%152%142%143%168@5$3@%146%111$0@%152%142%143%168@5$2@$1@4|%188$7@3|@|@|@|@|@|@|@|@"])
+    ThmBind.DT(((("ConductORPType",137),[]),[]),
+               [ThmBind.read"%116%88%98%71%98%73%98%75%98%77%98%79%98%81%98%83%125%218$7@$6@$5@$4@$3@$2@$1@$0@2%48%167%124$0@%173%163%163%192@5%167%124$0@%173%163%192@4$7@%167%127$0@%173%163%192@4$6@$5@3%167%124$0@%173%164%163%192@5$4@%167%124$0@%173%163%164%192@5$3@%167%127$0@%173%163%164%192@5$2@$1@4|%217$7@3|@|@|@|@|@|@|@|@"])
   fun op stateRole_TY_DEF x = x
     val op stateRole_TY_DEF =
-    ThmBind.DT(((("ConductORPType",119),
+    ThmBind.DT(((("ConductORPType",146),
                 [("bool",[25]),("numeral",[3,7])]),["DISK_THM"]),
-               [ThmBind.read"%131%53%164%41%108$0@%152%143%168@3|@$0@|@"])
+               [ThmBind.read"%150%64%188%49%124$0@%173%163%163%192@4|@$0@|@"])
   fun op stateRole_BIJ x = x
     val op stateRole_BIJ =
-    ThmBind.DT(((("ConductORPType",120),
-                [("ConductORPType",[119]),("bool",[116])]),["DISK_THM"]),
-               [ThmBind.read"%106%103%23%118%176%194$0@3$0@|@2%96%46%110%41%108$0@%152%143%168@3|$0@2%111%194%176$0@3$0@2|@2"])
+    ThmBind.DT(((("ConductORPType",147),
+                [("ConductORPType",[146]),("bool",[116])]),["DISK_THM"]),
+               [ThmBind.read"%122%118%27%135%202%226$0@3$0@|@2%110%56%126%49%124$0@%173%163%163%192@4|$0@2%127%226%202$0@3$0@2|@2"])
+
 
 
   fun op stateRole_size_def x = x
     val op stateRole_size_def =
-    ThmBind.DT(((("ConductORPType",132),[]),[]),
-               [ThmBind.read"%103%78%111%196$0@2%107@|@"])
+    ThmBind.DT(((("ConductORPType",160),[]),[]),
+               [ThmBind.read"%118%90%127%228$0@2%123@|@"])
   fun op stateRole_CASE x = x
     val op stateRole_CASE =
-    ThmBind.DT(((("ConductORPType",133),[]),[]),
-               [ThmBind.read"%103%78%86%60%86%62%109%195$2@$1@$0@2%40%146%111$0@%107@2$2@$1@|%194$2@3|@|@|@"])
+    ThmBind.DT(((("ConductORPType",161),[]),[]),
+               [ThmBind.read"%118%90%98%71%98%73%98%75%125%227$3@$2@$1@$0@2%48%167%124$0@%173%163%192@4$3@%167%127$0@%173%163%192@4$2@$1@2|%226$3@3|@|@|@|@"])
   fun op num2plCommand_plCommand2num x = x
     val op num2plCommand_plCommand2num =
     ThmBind.DT(((("ConductORPType",2),
                 [("ConductORPType",[1])]),["DISK_THM"]),
-               [ThmBind.read"%97%19%112%172%177$0@3$0@|@"])
+               [ThmBind.read"%112%23%129%198%206$0@3$0@|@"])
   fun op plCommand2num_num2plCommand x = x
     val op plCommand2num_num2plCommand =
     ThmBind.DT(((("ConductORPType",3),
                 [("ConductORPType",[1])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%110%108$0@%152%143%142%168@5%111%177%172$0@3$0@2|@"])
+               [ThmBind.read"%110%56%126%124$0@%173%164%163%192@5%127%206%198$0@3$0@2|@"])
   fun op num2plCommand_11 x = x
     val op num2plCommand_11 =
     ThmBind.DT(((("ConductORPType",4),
                 [("ConductORPType",[1]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%96%47%119%108$1@%152%143%142%168@5%119%108$0@%152%143%142%168@5%110%112%172$1@2%172$0@3%111$1@$0@4|@|@"])
+               [ThmBind.read"%110%56%110%57%136%124$1@%173%164%163%192@5%136%124$0@%173%164%163%192@5%126%129%198$1@2%198$0@3%127$1@$0@4|@|@"])
   fun op plCommand2num_11 x = x
     val op plCommand2num_11 =
     ThmBind.DT(((("ConductORPType",5),
                 [("ConductORPType",[1]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%97%19%97%24%110%111%177$1@2%177$0@3%112$1@$0@2|@|@"])
+               [ThmBind.read"%112%23%112%29%126%127%206$1@2%206$0@3%129$1@$0@2|@|@"])
   fun op num2plCommand_ONTO x = x
     val op num2plCommand_ONTO =
     ThmBind.DT(((("ConductORPType",6),
                 [("ConductORPType",[1]),("bool",[25,62])]),["DISK_THM"]),
-               [ThmBind.read"%97%19%132%46%106%112$1@%172$0@3%108$0@%152%143%142%168@5|@|@"])
+               [ThmBind.read"%112%23%151%56%122%129$1@%198$0@3%124$0@%173%164%163%192@5|@|@"])
   fun op plCommand2num_ONTO x = x
     val op plCommand2num_ONTO =
     ThmBind.DT(((("ConductORPType",7),
                 [("ConductORPType",[1]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%110%108$0@%152%143%142%168@5%133%19%111$1@%177$0@2|@2|@"])
+               [ThmBind.read"%110%56%126%124$0@%173%164%163%192@5%153%23%127$1@%206$0@2|@2|@"])
   fun op num2plCommand_thm x = x
     val op num2plCommand_thm =
     ThmBind.DT(((("ConductORPType",12),
                 [("ConductORPType",[8,9,10,11])]),[]),
-               [ThmBind.read"%106%112%172%107@2%185@2%106%112%172%152%142%168@4%199@2%106%112%172%152%143%168@4%171@2%112%172%152%142%142%168@5%180@4"])
+               [ThmBind.read"%122%129%198%123@2%214@2%122%129%198%173%163%192@4%231@2%122%129%198%173%164%192@4%195@2%129%198%173%163%163%192@5%209@4"])
   fun op plCommand2num_thm x = x
     val op plCommand2num_thm =
     ThmBind.DT(((("ConductORPType",13),
                 [("ConductORPType",[3,8,9,10,11]),("bool",[25,53]),
                  ("numeral",[3,7])]),["DISK_THM"]),
-               [ThmBind.read"%106%111%177%185@2%107@2%106%111%177%199@2%152%142%168@4%106%111%177%171@2%152%143%168@4%111%177%180@2%152%142%142%168@7"])
+               [ThmBind.read"%122%127%206%214@2%123@2%122%127%206%231@2%173%163%192@4%122%127%206%195@2%173%164%192@4%127%206%209@2%173%163%163%192@7"])
   fun op plCommand_EQ_plCommand x = x
     val op plCommand_EQ_plCommand =
     ThmBind.DT(((("ConductORPType",14),
                 [("ConductORPType",[5]),("bool",[57])]),["DISK_THM"]),
-               [ThmBind.read"%97%19%97%24%110%112$1@$0@2%111%177$1@2%177$0@3|@|@"])
+               [ThmBind.read"%112%23%112%29%126%129$1@$0@2%127%206$1@2%206$0@3|@|@"])
   fun op plCommand_case_def x = x
     val op plCommand_case_def =
     ThmBind.DT(((("ConductORPType",17),
                 [("ConductORPType",[13,16]),("bool",[53,55,63]),
                  ("numeral",[3,6,7])]),["DISK_THM"]),
-               [ThmBind.read"%106%86%60%86%62%86%64%86%66%109%178%185@$3@$2@$1@$0@2$3@|@|@|@|@2%106%86%60%86%62%86%64%86%66%109%178%199@$3@$2@$1@$0@2$2@|@|@|@|@2%106%86%60%86%62%86%64%86%66%109%178%171@$3@$2@$1@$0@2$1@|@|@|@|@2%86%60%86%62%86%64%86%66%109%178%180@$3@$2@$1@$0@2$0@|@|@|@|@4"])
+               [ThmBind.read"%122%98%71%98%73%98%75%98%77%125%207%214@$3@$2@$1@$0@2$3@|@|@|@|@2%122%98%71%98%73%98%75%98%77%125%207%231@$3@$2@$1@$0@2$2@|@|@|@|@2%122%98%71%98%73%98%75%98%77%125%207%195@$3@$2@$1@$0@2$1@|@|@|@|@2%98%71%98%73%98%75%98%77%125%207%209@$3@$2@$1@$0@2$0@|@|@|@|@4"])
   fun op datatype_plCommand x = x
     val op datatype_plCommand =
     ThmBind.DT(((("ConductORPType",18),[("bool",[25,170])]),["DISK_THM"]),
-               [ThmBind.read"%151%44%185@%199@%171@%180@2"])
+               [ThmBind.read"%172%54%214@%231@%195@%209@2"])
   fun op plCommand_distinct x = x
     val op plCommand_distinct =
     ThmBind.DT(((("ConductORPType",19),
                 [("ConductORPType",[13,14]),
                  ("numeral",[3,6])]),["DISK_THM"]),
-               [ThmBind.read"%106%200%112%185@%199@3%106%200%112%185@%171@3%106%200%112%185@%180@3%106%200%112%199@%171@3%106%200%112%199@%180@3%200%112%171@%180@7"])
+               [ThmBind.read"%122%232%129%214@%231@3%122%232%129%214@%195@3%122%232%129%214@%209@3%122%232%129%231@%195@3%122%232%129%231@%209@3%232%129%195@%209@7"])
   fun op plCommand_case_cong x = x
     val op plCommand_case_cong =
     ThmBind.DT(((("ConductORPType",20),
@@ -381,7 +434,7 @@ struct
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
                   106]),("numeral",[3,5,6,7,8,15,16,17]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%97%1%97%7%86%60%86%62%86%64%86%66%119%106%112$5@$4@2%106%119%112$4@%185@2%109$3@%61@3%106%119%112$4@%199@2%109$2@%63@3%106%119%112$4@%171@2%109$1@%65@3%119%112$4@%180@2%109$0@%67@7%109%178$5@$3@$2@$1@$0@2%178$4@%61@%63@%65@%67@3|@|@|@|@|@|@"])
+               [ThmBind.read"%112%2%112%9%98%71%98%73%98%75%98%77%136%122%129$5@$4@2%122%136%129$4@%214@2%125$3@%72@3%122%136%129$4@%231@2%125$2@%74@3%122%136%129$4@%195@2%125$1@%76@3%136%129$4@%209@2%125$0@%78@7%125%207$5@$3@$2@$1@$0@2%207$4@%72@%74@%76@%78@3|@|@|@|@|@|@"])
   fun op plCommand_nchotomy x = x
     val op plCommand_nchotomy =
     ThmBind.DT(((("ConductORPType",21),
@@ -392,13 +445,13 @@ struct
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
                   106]),("numeral",[3,5,6,7,8,15,16,17]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%97%19%169%112$0@%185@2%169%112$0@%199@2%169%112$0@%171@2%112$0@%180@4|@"])
+               [ThmBind.read"%112%23%193%129$0@%214@2%193%129$0@%231@2%193%129$0@%195@2%129$0@%209@4|@"])
   fun op plCommand_Axiom x = x
     val op plCommand_Axiom =
     ThmBind.DT(((("ConductORPType",22),
                 [("ConductORPType",[13]),("bool",[8,14,25,53,55,63]),
                  ("numeral",[3,8])]),["DISK_THM"]),
-               [ThmBind.read"%86%79%86%80%86%81%86%82%120%30%106%109$0%185@2$4@2%106%109$0%199@2$3@2%106%109$0%171@2$2@2%109$0%180@2$1@4|@|@|@|@|@"])
+               [ThmBind.read"%98%91%98%92%98%93%98%94%139%36%122%125$0%214@2$4@2%122%125$0%231@2$3@2%122%125$0%195@2$2@2%125$0%209@2$1@4|@|@|@|@|@"])
   fun op plCommand_induction x = x
     val op plCommand_induction =
     ThmBind.DT(((("ConductORPType",23),
@@ -409,74 +462,74 @@ struct
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
                   106]),("numeral",[3,5,6,7,8,15,16,17]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%88%13%119%106$0%171@2%106$0%180@2%106$0%185@2$0%199@5%97%19$1$0@|@2|@"])
+               [ThmBind.read"%102%16%136%122$0%195@2%122$0%209@2%122$0%214@2$0%231@5%112%23$1$0@|@2|@"])
   fun op plCommand_distinct_clauses x = x
     val op plCommand_distinct_clauses =
     ThmBind.DT(((("ConductORPType",24),
                 [("ConductORPType",[13,14]),
                  ("numeral",[3,6])]),["DISK_THM"]),
-               [ThmBind.read"%106%200%112%185@%199@3%106%200%112%185@%171@3%106%200%112%185@%180@3%106%200%112%199@%171@3%106%200%112%199@%180@3%200%112%171@%180@7"])
+               [ThmBind.read"%122%232%129%214@%231@3%122%232%129%214@%195@3%122%232%129%214@%209@3%122%232%129%231@%195@3%122%232%129%231@%209@3%232%129%195@%209@7"])
   fun op num2psgCommand_psgCommand2num x = x
     val op num2psgCommand_psgCommand2num =
     ThmBind.DT(((("ConductORPType",27),
                 [("ConductORPType",[26])]),["DISK_THM"]),
-               [ThmBind.read"%98%20%113%173%181$0@3$0@|@"])
+               [ThmBind.read"%113%24%130%199%210$0@3$0@|@"])
   fun op psgCommand2num_num2psgCommand x = x
     val op psgCommand2num_num2psgCommand =
     ThmBind.DT(((("ConductORPType",28),
                 [("ConductORPType",[26])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%110%108$0@%152%143%168@4%111%181%173$0@3$0@2|@"])
+               [ThmBind.read"%110%56%126%124$0@%173%164%192@4%127%210%199$0@3$0@2|@"])
   fun op num2psgCommand_11 x = x
     val op num2psgCommand_11 =
     ThmBind.DT(((("ConductORPType",29),
                 [("ConductORPType",[26]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%96%47%119%108$1@%152%143%168@4%119%108$0@%152%143%168@4%110%113%173$1@2%173$0@3%111$1@$0@4|@|@"])
+               [ThmBind.read"%110%56%110%57%136%124$1@%173%164%192@4%136%124$0@%173%164%192@4%126%130%199$1@2%199$0@3%127$1@$0@4|@|@"])
   fun op psgCommand2num_11 x = x
     val op psgCommand2num_11 =
     ThmBind.DT(((("ConductORPType",30),
                 [("ConductORPType",[26]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%98%20%98%25%110%111%181$1@2%181$0@3%113$1@$0@2|@|@"])
+               [ThmBind.read"%113%24%113%30%126%127%210$1@2%210$0@3%130$1@$0@2|@|@"])
   fun op num2psgCommand_ONTO x = x
     val op num2psgCommand_ONTO =
     ThmBind.DT(((("ConductORPType",31),
                 [("ConductORPType",[26]),("bool",[25,62])]),["DISK_THM"]),
-               [ThmBind.read"%98%20%132%46%106%113$1@%173$0@3%108$0@%152%143%168@4|@|@"])
+               [ThmBind.read"%113%24%151%56%122%130$1@%199$0@3%124$0@%173%164%192@4|@|@"])
   fun op psgCommand2num_ONTO x = x
     val op psgCommand2num_ONTO =
     ThmBind.DT(((("ConductORPType",32),
                 [("ConductORPType",[26]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%110%108$0@%152%143%168@4%134%20%111$1@%181$0@2|@2|@"])
+               [ThmBind.read"%110%56%126%124$0@%173%164%192@4%154%24%127$1@%210$0@2|@2|@"])
   fun op num2psgCommand_thm x = x
     val op num2psgCommand_thm =
     ThmBind.DT(((("ConductORPType",35),[("ConductORPType",[33,34])]),[]),
-               [ThmBind.read"%106%113%173%107@2%170@2%113%173%152%142%168@4%184@2"])
+               [ThmBind.read"%122%130%199%123@2%194@2%130%199%173%163%192@4%213@2"])
   fun op psgCommand2num_thm x = x
     val op psgCommand2num_thm =
     ThmBind.DT(((("ConductORPType",36),
                 [("ConductORPType",[28,33,34]),("bool",[25,53]),
                  ("numeral",[3,7])]),["DISK_THM"]),
-               [ThmBind.read"%106%111%181%170@2%107@2%111%181%184@2%152%142%168@4"])
+               [ThmBind.read"%122%127%210%194@2%123@2%127%210%213@2%173%163%192@4"])
   fun op psgCommand_EQ_psgCommand x = x
     val op psgCommand_EQ_psgCommand =
     ThmBind.DT(((("ConductORPType",37),
                 [("ConductORPType",[30]),("bool",[57])]),["DISK_THM"]),
-               [ThmBind.read"%98%20%98%25%110%113$1@$0@2%111%181$1@2%181$0@3|@|@"])
+               [ThmBind.read"%113%24%113%30%126%130$1@$0@2%127%210$1@2%210$0@3|@|@"])
   fun op psgCommand_case_def x = x
     val op psgCommand_case_def =
     ThmBind.DT(((("ConductORPType",40),
                 [("ConductORPType",[36,39]),("bool",[55,63]),
                  ("numeral",[3,6])]),["DISK_THM"]),
-               [ThmBind.read"%106%86%60%86%62%109%182%170@$1@$0@2$1@|@|@2%86%60%86%62%109%182%184@$1@$0@2$0@|@|@2"])
+               [ThmBind.read"%122%98%71%98%73%125%211%194@$1@$0@2$1@|@|@2%98%71%98%73%125%211%213@$1@$0@2$0@|@|@2"])
   fun op datatype_psgCommand x = x
     val op datatype_psgCommand =
     ThmBind.DT(((("ConductORPType",41),[("bool",[25,170])]),["DISK_THM"]),
-               [ThmBind.read"%151%45%170@%184@2"])
+               [ThmBind.read"%172%55%194@%213@2"])
   fun op psgCommand_distinct x = x
     val op psgCommand_distinct =
     ThmBind.DT(((("ConductORPType",42),
                 [("ConductORPType",[36,37]),
                  ("numeral",[3,6])]),["DISK_THM"]),
-               [ThmBind.read"%200%113%170@%184@2"])
+               [ThmBind.read"%232%130%194@%213@2"])
   fun op psgCommand_case_cong x = x
     val op psgCommand_case_cong =
     ThmBind.DT(((("ConductORPType",43),
@@ -487,7 +540,7 @@ struct
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
                   106]),("numeral",[3,5,6,7,8,15,16]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%98%2%98%8%86%60%86%62%119%106%113$3@$2@2%106%119%113$2@%170@2%109$1@%61@3%119%113$2@%184@2%109$0@%63@5%109%182$3@$1@$0@2%182$2@%61@%63@3|@|@|@|@"])
+               [ThmBind.read"%113%3%113%10%98%71%98%73%136%122%130$3@$2@2%122%136%130$2@%194@2%125$1@%72@3%136%130$2@%213@2%125$0@%74@5%125%211$3@$1@$0@2%211$2@%72@%74@3|@|@|@|@"])
   fun op psgCommand_nchotomy x = x
     val op psgCommand_nchotomy =
     ThmBind.DT(((("ConductORPType",44),
@@ -498,13 +551,13 @@ struct
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
                   106]),("numeral",[3,5,6,7,8,15,16]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%98%20%169%113$0@%170@2%113$0@%184@2|@"])
+               [ThmBind.read"%113%24%193%130$0@%194@2%130$0@%213@2|@"])
   fun op psgCommand_Axiom x = x
     val op psgCommand_Axiom =
     ThmBind.DT(((("ConductORPType",45),
                 [("ConductORPType",[36]),("bool",[8,14,25,55,63]),
                  ("numeral",[3,8])]),["DISK_THM"]),
-               [ThmBind.read"%86%79%86%80%122%31%106%109$0%170@2$2@2%109$0%184@2$1@2|@|@|@"])
+               [ThmBind.read"%98%91%98%92%141%37%122%125$0%194@2$2@2%125$0%213@2$1@2|@|@|@"])
   fun op psgCommand_induction x = x
     val op psgCommand_induction =
     ThmBind.DT(((("ConductORPType",46),
@@ -515,390 +568,498 @@ struct
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
                   106]),("numeral",[3,5,6,7,8,15,16]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%90%14%119%106$0%170@2$0%184@3%98%20$1$0@|@2|@"])
+               [ThmBind.read"%104%17%136%122$0%194@2$0%213@3%113%24$1$0@|@2|@"])
   fun op psgCommand_distinct_clauses x = x
     val op psgCommand_distinct_clauses =
     ThmBind.DT(((("ConductORPType",47),
                 [("ConductORPType",[36,37]),
                  ("numeral",[3,6])]),["DISK_THM"]),
-               [ThmBind.read"%200%113%170@%184@2"])
+               [ThmBind.read"%232%130%194@%213@2"])
+  fun op num2omniCommand_omniCommand2num x = x
+    val op num2omniCommand_omniCommand2num =
+    ThmBind.DT(((("ConductORPType",50),
+                [("ConductORPType",[49])]),["DISK_THM"]),
+               [ThmBind.read"%111%22%128%197%203$0@3$0@|@"])
+  fun op omniCommand2num_num2omniCommand x = x
+    val op omniCommand2num_num2omniCommand =
+    ThmBind.DT(((("ConductORPType",51),
+                [("ConductORPType",[49])]),["DISK_THM"]),
+               [ThmBind.read"%110%56%126%124$0@%173%164%163%192@5%127%203%197$0@3$0@2|@"])
+  fun op num2omniCommand_11 x = x
+    val op num2omniCommand_11 =
+    ThmBind.DT(((("ConductORPType",52),
+                [("ConductORPType",[49]),("bool",[26])]),["DISK_THM"]),
+               [ThmBind.read"%110%56%110%57%136%124$1@%173%164%163%192@5%136%124$0@%173%164%163%192@5%126%128%197$1@2%197$0@3%127$1@$0@4|@|@"])
+  fun op omniCommand2num_11 x = x
+    val op omniCommand2num_11 =
+    ThmBind.DT(((("ConductORPType",53),
+                [("ConductORPType",[49]),("bool",[26])]),["DISK_THM"]),
+               [ThmBind.read"%111%22%111%28%126%127%203$1@2%203$0@3%128$1@$0@2|@|@"])
+  fun op num2omniCommand_ONTO x = x
+    val op num2omniCommand_ONTO =
+    ThmBind.DT(((("ConductORPType",54),
+                [("ConductORPType",[49]),("bool",[25,62])]),["DISK_THM"]),
+               [ThmBind.read"%111%22%151%56%122%128$1@%197$0@3%124$0@%173%164%163%192@5|@|@"])
+  fun op omniCommand2num_ONTO x = x
+    val op omniCommand2num_ONTO =
+    ThmBind.DT(((("ConductORPType",55),
+                [("ConductORPType",[49]),("bool",[26])]),["DISK_THM"]),
+               [ThmBind.read"%110%56%126%124$0@%173%164%163%192@5%152%22%127$1@%203$0@2|@2|@"])
+  fun op num2omniCommand_thm x = x
+    val op num2omniCommand_thm =
+    ThmBind.DT(((("ConductORPType",60),
+                [("ConductORPType",[56,57,58,59])]),[]),
+               [ThmBind.read"%122%128%197%123@2%224@2%122%128%197%173%163%192@4%223@2%122%128%197%173%164%192@4%225@2%128%197%173%163%163%192@5%196@4"])
+  fun op omniCommand2num_thm x = x
+    val op omniCommand2num_thm =
+    ThmBind.DT(((("ConductORPType",61),
+                [("ConductORPType",[51,56,57,58,59]),("bool",[25,53]),
+                 ("numeral",[3,7])]),["DISK_THM"]),
+               [ThmBind.read"%122%127%203%224@2%123@2%122%127%203%223@2%173%163%192@4%122%127%203%225@2%173%164%192@4%127%203%196@2%173%163%163%192@7"])
+  fun op omniCommand_EQ_omniCommand x = x
+    val op omniCommand_EQ_omniCommand =
+    ThmBind.DT(((("ConductORPType",62),
+                [("ConductORPType",[53]),("bool",[57])]),["DISK_THM"]),
+               [ThmBind.read"%111%22%111%28%126%128$1@$0@2%127%203$1@2%203$0@3|@|@"])
+  fun op omniCommand_case_def x = x
+    val op omniCommand_case_def =
+    ThmBind.DT(((("ConductORPType",65),
+                [("ConductORPType",[61,64]),("bool",[53,55,63]),
+                 ("numeral",[3,6,7])]),["DISK_THM"]),
+               [ThmBind.read"%122%98%71%98%73%98%75%98%77%125%204%224@$3@$2@$1@$0@2$3@|@|@|@|@2%122%98%71%98%73%98%75%98%77%125%204%223@$3@$2@$1@$0@2$2@|@|@|@|@2%122%98%71%98%73%98%75%98%77%125%204%225@$3@$2@$1@$0@2$1@|@|@|@|@2%98%71%98%73%98%75%98%77%125%204%196@$3@$2@$1@$0@2$0@|@|@|@|@4"])
+  fun op datatype_omniCommand x = x
+    val op datatype_omniCommand =
+    ThmBind.DT(((("ConductORPType",66),[("bool",[25,170])]),["DISK_THM"]),
+               [ThmBind.read"%172%51%224@%223@%225@%196@2"])
+  fun op omniCommand_distinct x = x
+    val op omniCommand_distinct =
+    ThmBind.DT(((("ConductORPType",67),
+                [("ConductORPType",[61,62]),
+                 ("numeral",[3,6])]),["DISK_THM"]),
+               [ThmBind.read"%122%232%128%224@%223@3%122%232%128%224@%225@3%122%232%128%224@%196@3%122%232%128%223@%225@3%122%232%128%223@%196@3%232%128%225@%196@7"])
+  fun op omniCommand_case_cong x = x
+    val op omniCommand_case_cong =
+    ThmBind.DT(((("ConductORPType",68),
+                [("ConductORPType",[54,56,57,58,59,65]),
+                 ("arithmetic",
+                 [24,25,27,41,46,59,73,95,178,179,183,186,275]),
+                 ("bool",
+                 [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
+                  106]),("numeral",[3,5,6,7,8,15,16,17]),
+                 ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
+               [ThmBind.read"%111%1%111%8%98%71%98%73%98%75%98%77%136%122%128$5@$4@2%122%136%128$4@%224@2%125$3@%72@3%122%136%128$4@%223@2%125$2@%74@3%122%136%128$4@%225@2%125$1@%76@3%136%128$4@%196@2%125$0@%78@7%125%204$5@$3@$2@$1@$0@2%204$4@%72@%74@%76@%78@3|@|@|@|@|@|@"])
+  fun op omniCommand_nchotomy x = x
+    val op omniCommand_nchotomy =
+    ThmBind.DT(((("ConductORPType",69),
+                [("ConductORPType",[54,56,57,58,59]),
+                 ("arithmetic",
+                 [24,25,27,41,46,59,73,95,178,179,183,186,275]),
+                 ("bool",
+                 [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
+                  106]),("numeral",[3,5,6,7,8,15,16,17]),
+                 ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
+               [ThmBind.read"%111%22%193%128$0@%224@2%193%128$0@%223@2%193%128$0@%225@2%128$0@%196@4|@"])
+  fun op omniCommand_Axiom x = x
+    val op omniCommand_Axiom =
+    ThmBind.DT(((("ConductORPType",70),
+                [("ConductORPType",[61]),("bool",[8,14,25,53,55,63]),
+                 ("numeral",[3,8])]),["DISK_THM"]),
+               [ThmBind.read"%98%91%98%92%98%93%98%94%137%35%122%125$0%224@2$4@2%122%125$0%223@2$3@2%122%125$0%225@2$2@2%125$0%196@2$1@4|@|@|@|@|@"])
+  fun op omniCommand_induction x = x
+    val op omniCommand_induction =
+    ThmBind.DT(((("ConductORPType",71),
+                [("ConductORPType",[54,56,57,58,59]),
+                 ("arithmetic",
+                 [24,25,27,41,46,59,73,95,178,179,183,186,275]),
+                 ("bool",
+                 [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
+                  106]),("numeral",[3,5,6,7,8,15,16,17]),
+                 ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
+               [ThmBind.read"%100%15%136%122$0%196@2%122$0%223@2%122$0%224@2$0%225@5%111%22$1$0@|@2|@"])
+  fun op omniCommand_distinct_clauses x = x
+    val op omniCommand_distinct_clauses =
+    ThmBind.DT(((("ConductORPType",72),
+                [("ConductORPType",[61,62]),
+                 ("numeral",[3,6])]),["DISK_THM"]),
+               [ThmBind.read"%122%232%128%224@%223@3%122%232%128%224@%225@3%122%232%128%224@%196@3%122%232%128%223@%225@3%122%232%128%223@%196@3%232%128%225@%196@7"])
   fun op datatype_slCommand x = x
     val op datatype_slCommand =
-    ThmBind.DT(((("ConductORPType",56),[("bool",[25,170])]),["DISK_THM"]),
-               [ThmBind.read"%151%55%153@%154@2"])
+    ThmBind.DT(((("ConductORPType",83),[("bool",[25,170])]),["DISK_THM"]),
+               [ThmBind.read"%172%66%176@%177@%174@2"])
   fun op slCommand_11 x = x
     val op slCommand_11 =
-    ThmBind.DT(((("ConductORPType",57),
-                [("ConductORPType",[49,50,51,52,53]),
+    ThmBind.DT(((("ConductORPType",84),
+                [("ConductORPType",[74,75,76,77,78,79,80]),
                  ("bool",[26,55,62,180]),("ind_type",[33,34]),
                  ("pair",[8,9])]),["DISK_THM"]),
-               [ThmBind.read"%106%97%19%97%24%110%115%153$1@2%153$0@3%112$1@$0@2|@|@2%98%20%98%25%110%115%154$1@2%154$0@3%113$1@$0@2|@|@2"])
+               [ThmBind.read"%122%112%23%112%29%126%132%176$1@2%176$0@3%129$1@$0@2|@|@2%122%113%24%113%30%126%132%177$1@2%177$0@3%130$1@$0@2|@|@2%111%22%111%28%126%132%174$1@2%174$0@3%128$1@$0@2|@|@3"])
   fun op slCommand_distinct x = x
     val op slCommand_distinct =
-    ThmBind.DT(((("ConductORPType",58),
-                [("ConductORPType",[49,50,51,52,53]),
-                 ("bool",[25,26,46,53,62,180]),("ind_type",[33,34]),
-                 ("pair",[8,9])]),["DISK_THM"]),
-               [ThmBind.read"%98%25%97%19%200%115%153$0@2%154$1@3|@|@"])
+    ThmBind.DT(((("ConductORPType",85),
+                [("ConductORPType",[74,75,76,77,78,79,80]),
+                 ("bool",[25,26,35,46,50,53,55,62,180]),
+                 ("ind_type",[33,34]),("pair",[8,9])]),["DISK_THM"]),
+               [ThmBind.read"%122%113%30%112%23%232%132%176$0@2%177$1@3|@|@2%122%111%28%112%23%232%132%176$0@2%174$1@3|@|@2%111%28%113%24%232%132%177$0@2%174$1@3|@|@3"])
   fun op slCommand_case_cong x = x
     val op slCommand_case_cong =
-    ThmBind.DT(((("ConductORPType",59),
-                [("ConductORPType",[49,50,51,52,53,54]),
+    ThmBind.DT(((("ConductORPType",86),
+                [("ConductORPType",[74,75,76,77,78,79,80,81]),
                  ("bool",[26,180])]),["DISK_THM"]),
-               [ThmBind.read"%100%3%100%9%87%30%89%37%119%106%115$3@$2@2%106%97%19%119%115$3@%153$0@3%109$2$0@2%35$0@3|@2%98%20%119%115$3@%154$0@3%109$1$0@2%38$0@3|@4%109%186$3@$1@$0@2%186$2@%35@%38@3|@|@|@|@"])
+               [ThmBind.read"%115%4%115%11%101%36%103%43%99%45%136%122%132$4@$3@2%122%112%23%136%132$4@%176$0@3%125$3$0@2%41$0@3|@2%122%113%24%136%132$4@%177$0@3%125$2$0@2%44$0@3|@2%111%22%136%132$4@%174$0@3%125$1$0@2%46$0@3|@5%125%215$4@$2@$1@$0@2%215$3@%41@%44@%46@3|@|@|@|@|@"])
   fun op slCommand_nchotomy x = x
     val op slCommand_nchotomy =
-    ThmBind.DT(((("ConductORPType",60),
-                [("ConductORPType",[49,50,51,52,53]),
+    ThmBind.DT(((("ConductORPType",87),
+                [("ConductORPType",[74,75,76,77,78,79,80]),
                  ("bool",[26,180])]),["DISK_THM"]),
-               [ThmBind.read"%100%58%169%133%42%115$1@%153$0@2|@2%134%43%115$1@%154$0@2|@2|@"])
+               [ThmBind.read"%115%69%193%153%52%132$1@%176$0@2|@2%193%154%53%132$1@%177$0@2|@2%152%50%132$1@%174$0@2|@3|@"])
   fun op slCommand_Axiom x = x
     val op slCommand_Axiom =
-    ThmBind.DT(((("ConductORPType",61),
-                [("ConductORPType",[49,50,51,52,53]),("bool",[26,180]),
-                 ("ind_type",[33,34]),("pair",[8,9])]),["DISK_THM"]),
-               [ThmBind.read"%87%36%89%37%124%39%106%97%19%109$1%153$0@3$3$0@2|@2%98%20%109$1%154$0@3$2$0@2|@2|@|@|@"])
+    ThmBind.DT(((("ConductORPType",88),
+                [("ConductORPType",[74,75,76,77,78,79,80]),
+                 ("bool",[26,180]),("ind_type",[33,34]),
+                 ("pair",[8,9])]),["DISK_THM"]),
+               [ThmBind.read"%101%42%103%43%99%45%143%47%122%112%23%125$1%176$0@3$4$0@2|@2%122%113%24%125$1%177$0@3$3$0@2|@2%111%22%125$1%174$0@3$2$0@2|@3|@|@|@|@"])
   fun op slCommand_induction x = x
     val op slCommand_induction =
-    ThmBind.DT(((("ConductORPType",62),
-                [("ConductORPType",[49,50,51,52,53]),
+    ThmBind.DT(((("ConductORPType",89),
+                [("ConductORPType",[74,75,76,77,78,79,80]),
                  ("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%92%15%119%106%97%42$1%153$0@2|@2%98%43$1%154$0@2|@3%100%54$1$0@|@2|@"])
+               [ThmBind.read"%106%18%136%122%112%52$1%176$0@2|@2%122%113%53$1%177$0@2|@2%111%50$1%174$0@2|@4%115%65$1$0@|@2|@"])
   fun op slCommand_distinct_clauses x = x
     val op slCommand_distinct_clauses =
-    ThmBind.DT(((("ConductORPType",63),
-                [("ConductORPType",[49,50,51,52,53]),
-                 ("bool",[25,26,46,53,62,180]),("ind_type",[33,34]),
-                 ("pair",[8,9])]),["DISK_THM"]),
-               [ThmBind.read"%98%25%97%19%200%115%153$0@2%154$1@3|@|@"])
+    ThmBind.DT(((("ConductORPType",90),
+                [("ConductORPType",[74,75,76,77,78,79,80]),
+                 ("bool",[25,26,35,46,50,53,55,62,180]),
+                 ("ind_type",[33,34]),("pair",[8,9])]),["DISK_THM"]),
+               [ThmBind.read"%122%113%30%112%23%232%132%176$0@2%177$1@3|@|@2%122%111%28%112%23%232%132%176$0@2%174$1@3|@|@2%111%28%113%24%232%132%177$0@2%174$1@3|@|@3"])
   fun op slCommand_one_one x = x
     val op slCommand_one_one =
-    ThmBind.DT(((("ConductORPType",64),
-                [("ConductORPType",[49,50,51,52,53]),
+    ThmBind.DT(((("ConductORPType",91),
+                [("ConductORPType",[74,75,76,77,78,79,80]),
                  ("bool",[26,55,62,180]),("ind_type",[33,34]),
                  ("pair",[8,9])]),["DISK_THM"]),
-               [ThmBind.read"%106%97%19%97%24%110%115%153$1@2%153$0@3%112$1@$0@2|@|@2%98%20%98%25%110%115%154$1@2%154$0@3%113$1@$0@2|@|@2"])
+               [ThmBind.read"%122%112%23%112%29%126%132%176$1@2%176$0@3%129$1@$0@2|@|@2%122%113%24%113%30%126%132%177$1@2%177$0@3%130$1@$0@2|@|@2%111%22%111%28%126%132%174$1@2%174$0@3%128$1@$0@2|@|@3"])
   fun op num2slState_slState2num x = x
     val op num2slState_slState2num =
-    ThmBind.DT(((("ConductORPType",67),
-                [("ConductORPType",[66])]),["DISK_THM"]),
-               [ThmBind.read"%102%22%117%175%191$0@3$0@|@"])
+    ThmBind.DT(((("ConductORPType",94),
+                [("ConductORPType",[93])]),["DISK_THM"]),
+               [ThmBind.read"%117%26%134%201%220$0@3$0@|@"])
   fun op slState2num_num2slState x = x
     val op slState2num_num2slState =
-    ThmBind.DT(((("ConductORPType",68),
-                [("ConductORPType",[66])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%110%108$0@%152%142%143%168@5%111%191%175$0@3$0@2|@"])
+    ThmBind.DT(((("ConductORPType",95),
+                [("ConductORPType",[93])]),["DISK_THM"]),
+               [ThmBind.read"%110%56%126%124$0@%173%163%164%192@5%127%220%201$0@3$0@2|@"])
   fun op num2slState_11 x = x
     val op num2slState_11 =
-    ThmBind.DT(((("ConductORPType",69),
-                [("ConductORPType",[66]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%96%47%119%108$1@%152%142%143%168@5%119%108$0@%152%142%143%168@5%110%117%175$1@2%175$0@3%111$1@$0@4|@|@"])
+    ThmBind.DT(((("ConductORPType",96),
+                [("ConductORPType",[93]),("bool",[26])]),["DISK_THM"]),
+               [ThmBind.read"%110%56%110%57%136%124$1@%173%163%164%192@5%136%124$0@%173%163%164%192@5%126%134%201$1@2%201$0@3%127$1@$0@4|@|@"])
   fun op slState2num_11 x = x
     val op slState2num_11 =
-    ThmBind.DT(((("ConductORPType",70),
-                [("ConductORPType",[66]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%102%22%102%27%110%111%191$1@2%191$0@3%117$1@$0@2|@|@"])
+    ThmBind.DT(((("ConductORPType",97),
+                [("ConductORPType",[93]),("bool",[26])]),["DISK_THM"]),
+               [ThmBind.read"%117%26%117%32%126%127%220$1@2%220$0@3%134$1@$0@2|@|@"])
   fun op num2slState_ONTO x = x
     val op num2slState_ONTO =
-    ThmBind.DT(((("ConductORPType",71),
-                [("ConductORPType",[66]),("bool",[25,62])]),["DISK_THM"]),
-               [ThmBind.read"%102%22%132%46%106%117$1@%175$0@3%108$0@%152%142%143%168@5|@|@"])
+    ThmBind.DT(((("ConductORPType",98),
+                [("ConductORPType",[93]),("bool",[25,62])]),["DISK_THM"]),
+               [ThmBind.read"%117%26%151%56%122%134$1@%201$0@3%124$0@%173%163%164%192@5|@|@"])
   fun op slState2num_ONTO x = x
     val op slState2num_ONTO =
-    ThmBind.DT(((("ConductORPType",72),
-                [("ConductORPType",[66]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%110%108$0@%152%142%143%168@5%136%22%111$1@%191$0@2|@2|@"])
+    ThmBind.DT(((("ConductORPType",99),
+                [("ConductORPType",[93]),("bool",[26])]),["DISK_THM"]),
+               [ThmBind.read"%110%56%126%124$0@%173%163%164%192@5%156%26%127$1@%220$0@2|@2|@"])
   fun op num2slState_thm x = x
     val op num2slState_thm =
-    ThmBind.DT(((("ConductORPType",78),
-                [("ConductORPType",[73,74,75,76,77])]),[]),
-               [ThmBind.read"%106%117%175%107@2%147@2%106%117%175%152%142%168@4%157@2%106%117%175%152%143%168@4%138@2%106%117%175%152%142%142%168@5%166@2%117%175%152%143%142%168@5%145@5"])
+    ThmBind.DT(((("ConductORPType",105),
+                [("ConductORPType",[100,101,102,103,104])]),[]),
+               [ThmBind.read"%122%134%201%123@2%168@2%122%134%201%173%163%192@4%180@2%122%134%201%173%164%192@4%158@2%122%134%201%173%163%163%192@5%190@2%134%201%173%164%163%192@5%166@5"])
   fun op slState2num_thm x = x
     val op slState2num_thm =
-    ThmBind.DT(((("ConductORPType",79),
-                [("ConductORPType",[68,73,74,75,76,77]),("bool",[25,53]),
-                 ("numeral",[3,7])]),["DISK_THM"]),
-               [ThmBind.read"%106%111%191%147@2%107@2%106%111%191%157@2%152%142%168@4%106%111%191%138@2%152%143%168@4%106%111%191%166@2%152%142%142%168@5%111%191%145@2%152%143%142%168@8"])
+    ThmBind.DT(((("ConductORPType",106),
+                [("ConductORPType",[95,100,101,102,103,104]),
+                 ("bool",[25,53]),("numeral",[3,7])]),["DISK_THM"]),
+               [ThmBind.read"%122%127%220%168@2%123@2%122%127%220%180@2%173%163%192@4%122%127%220%158@2%173%164%192@4%122%127%220%190@2%173%163%163%192@5%127%220%166@2%173%164%163%192@8"])
   fun op slState_EQ_slState x = x
     val op slState_EQ_slState =
-    ThmBind.DT(((("ConductORPType",80),
-                [("ConductORPType",[70]),("bool",[57])]),["DISK_THM"]),
-               [ThmBind.read"%102%22%102%27%110%117$1@$0@2%111%191$1@2%191$0@3|@|@"])
+    ThmBind.DT(((("ConductORPType",107),
+                [("ConductORPType",[97]),("bool",[57])]),["DISK_THM"]),
+               [ThmBind.read"%117%26%117%32%126%134$1@$0@2%127%220$1@2%220$0@3|@|@"])
   fun op slState_case_def x = x
     val op slState_case_def =
-    ThmBind.DT(((("ConductORPType",83),
-                [("ConductORPType",[79,82]),("bool",[53,55,63]),
+    ThmBind.DT(((("ConductORPType",110),
+                [("ConductORPType",[106,109]),("bool",[53,55,63]),
                  ("numeral",[3,6,7])]),["DISK_THM"]),
-               [ThmBind.read"%106%86%60%86%62%86%64%86%66%86%68%109%192%147@$4@$3@$2@$1@$0@2$4@|@|@|@|@|@2%106%86%60%86%62%86%64%86%66%86%68%109%192%157@$4@$3@$2@$1@$0@2$3@|@|@|@|@|@2%106%86%60%86%62%86%64%86%66%86%68%109%192%138@$4@$3@$2@$1@$0@2$2@|@|@|@|@|@2%106%86%60%86%62%86%64%86%66%86%68%109%192%166@$4@$3@$2@$1@$0@2$1@|@|@|@|@|@2%86%60%86%62%86%64%86%66%86%68%109%192%145@$4@$3@$2@$1@$0@2$0@|@|@|@|@|@5"])
+               [ThmBind.read"%122%98%71%98%73%98%75%98%77%98%79%125%221%168@$4@$3@$2@$1@$0@2$4@|@|@|@|@|@2%122%98%71%98%73%98%75%98%77%98%79%125%221%180@$4@$3@$2@$1@$0@2$3@|@|@|@|@|@2%122%98%71%98%73%98%75%98%77%98%79%125%221%158@$4@$3@$2@$1@$0@2$2@|@|@|@|@|@2%122%98%71%98%73%98%75%98%77%98%79%125%221%190@$4@$3@$2@$1@$0@2$1@|@|@|@|@|@2%98%71%98%73%98%75%98%77%98%79%125%221%166@$4@$3@$2@$1@$0@2$0@|@|@|@|@|@5"])
   fun op datatype_slState x = x
     val op datatype_slState =
-    ThmBind.DT(((("ConductORPType",84),[("bool",[25,170])]),["DISK_THM"]),
-               [ThmBind.read"%151%57%147@%157@%138@%166@%145@2"])
+    ThmBind.DT(((("ConductORPType",111),[("bool",[25,170])]),["DISK_THM"]),
+               [ThmBind.read"%172%68%168@%180@%158@%190@%166@2"])
   fun op slState_distinct x = x
     val op slState_distinct =
-    ThmBind.DT(((("ConductORPType",85),
-                [("ConductORPType",[79,80]),
+    ThmBind.DT(((("ConductORPType",112),
+                [("ConductORPType",[106,107]),
                  ("numeral",[3,6])]),["DISK_THM"]),
-               [ThmBind.read"%106%200%117%147@%157@3%106%200%117%147@%138@3%106%200%117%147@%166@3%106%200%117%147@%145@3%106%200%117%157@%138@3%106%200%117%157@%166@3%106%200%117%157@%145@3%106%200%117%138@%166@3%106%200%117%138@%145@3%200%117%166@%145@11"])
+               [ThmBind.read"%122%232%134%168@%180@3%122%232%134%168@%158@3%122%232%134%168@%190@3%122%232%134%168@%166@3%122%232%134%180@%158@3%122%232%134%180@%190@3%122%232%134%180@%166@3%122%232%134%158@%190@3%122%232%134%158@%166@3%232%134%190@%166@11"])
   fun op slState_case_cong x = x
     val op slState_case_cong =
-    ThmBind.DT(((("ConductORPType",86),
-                [("ConductORPType",[71,73,74,75,76,77,83]),
+    ThmBind.DT(((("ConductORPType",113),
+                [("ConductORPType",[98,100,101,102,103,104,110]),
                  ("arithmetic",
                  [24,25,27,41,46,59,73,95,178,179,183,186,275]),
                  ("bool",
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
                   106]),("numeral",[3,5,6,7,8,15,16,17]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%102%5%102%11%86%60%86%62%86%64%86%66%86%68%119%106%117$6@$5@2%106%119%117$5@%147@2%109$4@%61@3%106%119%117$5@%157@2%109$3@%63@3%106%119%117$5@%138@2%109$2@%65@3%106%119%117$5@%166@2%109$1@%67@3%119%117$5@%145@2%109$0@%69@8%109%192$6@$4@$3@$2@$1@$0@2%192$5@%61@%63@%65@%67@%69@3|@|@|@|@|@|@|@"])
+               [ThmBind.read"%117%6%117%13%98%71%98%73%98%75%98%77%98%79%136%122%134$6@$5@2%122%136%134$5@%168@2%125$4@%72@3%122%136%134$5@%180@2%125$3@%74@3%122%136%134$5@%158@2%125$2@%76@3%122%136%134$5@%190@2%125$1@%78@3%136%134$5@%166@2%125$0@%80@8%125%221$6@$4@$3@$2@$1@$0@2%221$5@%72@%74@%76@%78@%80@3|@|@|@|@|@|@|@"])
   fun op slState_nchotomy x = x
     val op slState_nchotomy =
-    ThmBind.DT(((("ConductORPType",87),
-                [("ConductORPType",[71,73,74,75,76,77]),
+    ThmBind.DT(((("ConductORPType",114),
+                [("ConductORPType",[98,100,101,102,103,104]),
                  ("arithmetic",
                  [24,25,27,41,46,59,73,95,178,179,183,186,275]),
                  ("bool",
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
                   106]),("numeral",[3,5,6,7,8,15,16,17]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%102%22%169%117$0@%147@2%169%117$0@%157@2%169%117$0@%138@2%169%117$0@%166@2%117$0@%145@5|@"])
+               [ThmBind.read"%117%26%193%134$0@%168@2%193%134$0@%180@2%193%134$0@%158@2%193%134$0@%190@2%134$0@%166@5|@"])
   fun op slState_Axiom x = x
     val op slState_Axiom =
-    ThmBind.DT(((("ConductORPType",88),
-                [("ConductORPType",[79]),("bool",[8,14,25,53,55,63]),
+    ThmBind.DT(((("ConductORPType",115),
+                [("ConductORPType",[106]),("bool",[8,14,25,53,55,63]),
                  ("numeral",[3,8])]),["DISK_THM"]),
-               [ThmBind.read"%86%79%86%80%86%81%86%82%86%83%128%33%106%109$0%147@2$5@2%106%109$0%157@2$4@2%106%109$0%138@2$3@2%106%109$0%166@2$2@2%109$0%145@2$1@5|@|@|@|@|@|@"])
+               [ThmBind.read"%98%91%98%92%98%93%98%94%98%95%147%39%122%125$0%168@2$5@2%122%125$0%180@2$4@2%122%125$0%158@2$3@2%122%125$0%190@2$2@2%125$0%166@2$1@5|@|@|@|@|@|@"])
   fun op slState_induction x = x
     val op slState_induction =
-    ThmBind.DT(((("ConductORPType",89),
-                [("ConductORPType",[71,73,74,75,76,77]),
+    ThmBind.DT(((("ConductORPType",116),
+                [("ConductORPType",[98,100,101,102,103,104]),
                  ("arithmetic",
                  [24,25,27,41,46,59,73,95,178,179,183,186,275]),
                  ("bool",
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
                   106]),("numeral",[3,5,6,7,8,15,16,17]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%94%17%119%106$0%138@2%106$0%145@2%106$0%147@2%106$0%157@2$0%166@6%102%22$1$0@|@2|@"])
+               [ThmBind.read"%108%20%136%122$0%158@2%122$0%166@2%122$0%168@2%122$0%180@2$0%190@6%117%26$1$0@|@2|@"])
   fun op slState_distinct_clauses x = x
     val op slState_distinct_clauses =
-    ThmBind.DT(((("ConductORPType",90),
-                [("ConductORPType",[79,80]),
+    ThmBind.DT(((("ConductORPType",117),
+                [("ConductORPType",[106,107]),
                  ("numeral",[3,6])]),["DISK_THM"]),
-               [ThmBind.read"%106%200%117%147@%157@3%106%200%117%147@%138@3%106%200%117%147@%166@3%106%200%117%147@%145@3%106%200%117%157@%138@3%106%200%117%157@%166@3%106%200%117%157@%145@3%106%200%117%138@%166@3%106%200%117%138@%145@3%200%117%166@%145@11"])
+               [ThmBind.read"%122%232%134%168@%180@3%122%232%134%168@%158@3%122%232%134%168@%190@3%122%232%134%168@%166@3%122%232%134%180@%158@3%122%232%134%180@%190@3%122%232%134%180@%166@3%122%232%134%158@%190@3%122%232%134%158@%166@3%232%134%190@%166@11"])
   fun op num2slOutput_slOutput2num x = x
     val op num2slOutput_slOutput2num =
-    ThmBind.DT(((("ConductORPType",93),
-                [("ConductORPType",[92])]),["DISK_THM"]),
-               [ThmBind.read"%101%21%116%174%188$0@3$0@|@"])
+    ThmBind.DT(((("ConductORPType",120),
+                [("ConductORPType",[119])]),["DISK_THM"]),
+               [ThmBind.read"%116%25%133%200%217$0@3$0@|@"])
   fun op slOutput2num_num2slOutput x = x
     val op slOutput2num_num2slOutput =
-    ThmBind.DT(((("ConductORPType",94),
-                [("ConductORPType",[92])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%110%108$0@%152%142%142%142%168@6%111%188%174$0@3$0@2|@"])
+    ThmBind.DT(((("ConductORPType",121),
+                [("ConductORPType",[119])]),["DISK_THM"]),
+               [ThmBind.read"%110%56%126%124$0@%173%163%163%163%192@6%127%217%200$0@3$0@2|@"])
   fun op num2slOutput_11 x = x
     val op num2slOutput_11 =
-    ThmBind.DT(((("ConductORPType",95),
-                [("ConductORPType",[92]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%96%47%119%108$1@%152%142%142%142%168@6%119%108$0@%152%142%142%142%168@6%110%116%174$1@2%174$0@3%111$1@$0@4|@|@"])
+    ThmBind.DT(((("ConductORPType",122),
+                [("ConductORPType",[119]),("bool",[26])]),["DISK_THM"]),
+               [ThmBind.read"%110%56%110%57%136%124$1@%173%163%163%163%192@6%136%124$0@%173%163%163%163%192@6%126%133%200$1@2%200$0@3%127$1@$0@4|@|@"])
   fun op slOutput2num_11 x = x
     val op slOutput2num_11 =
-    ThmBind.DT(((("ConductORPType",96),
-                [("ConductORPType",[92]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%101%21%101%26%110%111%188$1@2%188$0@3%116$1@$0@2|@|@"])
+    ThmBind.DT(((("ConductORPType",123),
+                [("ConductORPType",[119]),("bool",[26])]),["DISK_THM"]),
+               [ThmBind.read"%116%25%116%31%126%127%217$1@2%217$0@3%133$1@$0@2|@|@"])
   fun op num2slOutput_ONTO x = x
     val op num2slOutput_ONTO =
-    ThmBind.DT(((("ConductORPType",97),
-                [("ConductORPType",[92]),("bool",[25,62])]),["DISK_THM"]),
-               [ThmBind.read"%101%21%132%46%106%116$1@%174$0@3%108$0@%152%142%142%142%168@6|@|@"])
+    ThmBind.DT(((("ConductORPType",124),
+                [("ConductORPType",[119]),("bool",[25,62])]),["DISK_THM"]),
+               [ThmBind.read"%116%25%151%56%122%133$1@%200$0@3%124$0@%173%163%163%163%192@6|@|@"])
   fun op slOutput2num_ONTO x = x
     val op slOutput2num_ONTO =
-    ThmBind.DT(((("ConductORPType",98),
-                [("ConductORPType",[92]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%110%108$0@%152%142%142%142%168@6%135%21%111$1@%188$0@2|@2|@"])
+    ThmBind.DT(((("ConductORPType",125),
+                [("ConductORPType",[119]),("bool",[26])]),["DISK_THM"]),
+               [ThmBind.read"%110%56%126%124$0@%173%163%163%163%192@6%155%25%127$1@%217$0@2|@2|@"])
   fun op num2slOutput_thm x = x
     val op num2slOutput_thm =
-    ThmBind.DT(((("ConductORPType",106),
-                [("ConductORPType",[99,100,101,102,103,104,105])]),[]),
-               [ThmBind.read"%106%116%174%107@2%150@2%106%116%174%152%142%168@4%159@2%106%116%174%152%143%168@4%141@2%106%116%174%152%142%142%168@5%167@2%106%116%174%152%143%142%168@5%149@2%106%116%174%152%142%143%168@5%197@2%116%174%152%143%143%168@5%198@7"])
+    ThmBind.DT(((("ConductORPType",133),
+                [("ConductORPType",[126,127,128,129,130,131,132])]),[]),
+               [ThmBind.read"%122%133%200%123@2%171@2%122%133%200%173%163%192@4%182@2%122%133%200%173%164%192@4%162@2%122%133%200%173%163%163%192@5%191@2%122%133%200%173%164%163%192@5%170@2%122%133%200%173%163%164%192@5%229@2%133%200%173%164%164%192@5%230@7"])
   fun op slOutput2num_thm x = x
     val op slOutput2num_thm =
-    ThmBind.DT(((("ConductORPType",107),
-                [("ConductORPType",[94,99,100,101,102,103,104,105]),
+    ThmBind.DT(((("ConductORPType",134),
+                [("ConductORPType",[121,126,127,128,129,130,131,132]),
                  ("bool",[25]),("numeral",[3,7])]),["DISK_THM"]),
-               [ThmBind.read"%106%111%188%150@2%107@2%106%111%188%159@2%152%142%168@4%106%111%188%141@2%152%143%168@4%106%111%188%167@2%152%142%142%168@5%106%111%188%149@2%152%143%142%168@5%106%111%188%197@2%152%142%143%168@5%111%188%198@2%152%143%143%168@10"])
+               [ThmBind.read"%122%127%217%171@2%123@2%122%127%217%182@2%173%163%192@4%122%127%217%162@2%173%164%192@4%122%127%217%191@2%173%163%163%192@5%122%127%217%170@2%173%164%163%192@5%122%127%217%229@2%173%163%164%192@5%127%217%230@2%173%164%164%192@10"])
   fun op slOutput_EQ_slOutput x = x
     val op slOutput_EQ_slOutput =
-    ThmBind.DT(((("ConductORPType",108),
-                [("ConductORPType",[96]),("bool",[57])]),["DISK_THM"]),
-               [ThmBind.read"%101%21%101%26%110%116$1@$0@2%111%188$1@2%188$0@3|@|@"])
+    ThmBind.DT(((("ConductORPType",135),
+                [("ConductORPType",[123]),("bool",[57])]),["DISK_THM"]),
+               [ThmBind.read"%116%25%116%31%126%133$1@$0@2%127%217$1@2%217$0@3|@|@"])
   fun op slOutput_case_def x = x
     val op slOutput_case_def =
-    ThmBind.DT(((("ConductORPType",111),
-                [("ConductORPType",[107,110]),("bool",[53,55,63]),
+    ThmBind.DT(((("ConductORPType",138),
+                [("ConductORPType",[134,137]),("bool",[53,55,63]),
                  ("numeral",[3,6,7])]),["DISK_THM"]),
-               [ThmBind.read"%106%86%60%86%62%86%64%86%66%86%68%86%70%86%72%109%189%150@$6@$5@$4@$3@$2@$1@$0@2$6@|@|@|@|@|@|@|@2%106%86%60%86%62%86%64%86%66%86%68%86%70%86%72%109%189%159@$6@$5@$4@$3@$2@$1@$0@2$5@|@|@|@|@|@|@|@2%106%86%60%86%62%86%64%86%66%86%68%86%70%86%72%109%189%141@$6@$5@$4@$3@$2@$1@$0@2$4@|@|@|@|@|@|@|@2%106%86%60%86%62%86%64%86%66%86%68%86%70%86%72%109%189%167@$6@$5@$4@$3@$2@$1@$0@2$3@|@|@|@|@|@|@|@2%106%86%60%86%62%86%64%86%66%86%68%86%70%86%72%109%189%149@$6@$5@$4@$3@$2@$1@$0@2$2@|@|@|@|@|@|@|@2%106%86%60%86%62%86%64%86%66%86%68%86%70%86%72%109%189%197@$6@$5@$4@$3@$2@$1@$0@2$1@|@|@|@|@|@|@|@2%86%60%86%62%86%64%86%66%86%68%86%70%86%72%109%189%198@$6@$5@$4@$3@$2@$1@$0@2$0@|@|@|@|@|@|@|@7"])
+               [ThmBind.read"%122%98%71%98%73%98%75%98%77%98%79%98%81%98%83%125%218%171@$6@$5@$4@$3@$2@$1@$0@2$6@|@|@|@|@|@|@|@2%122%98%71%98%73%98%75%98%77%98%79%98%81%98%83%125%218%182@$6@$5@$4@$3@$2@$1@$0@2$5@|@|@|@|@|@|@|@2%122%98%71%98%73%98%75%98%77%98%79%98%81%98%83%125%218%162@$6@$5@$4@$3@$2@$1@$0@2$4@|@|@|@|@|@|@|@2%122%98%71%98%73%98%75%98%77%98%79%98%81%98%83%125%218%191@$6@$5@$4@$3@$2@$1@$0@2$3@|@|@|@|@|@|@|@2%122%98%71%98%73%98%75%98%77%98%79%98%81%98%83%125%218%170@$6@$5@$4@$3@$2@$1@$0@2$2@|@|@|@|@|@|@|@2%122%98%71%98%73%98%75%98%77%98%79%98%81%98%83%125%218%229@$6@$5@$4@$3@$2@$1@$0@2$1@|@|@|@|@|@|@|@2%98%71%98%73%98%75%98%77%98%79%98%81%98%83%125%218%230@$6@$5@$4@$3@$2@$1@$0@2$0@|@|@|@|@|@|@|@7"])
   fun op datatype_slOutput x = x
     val op datatype_slOutput =
-    ThmBind.DT(((("ConductORPType",112),[("bool",[25,170])]),["DISK_THM"]),
-               [ThmBind.read"%151%56%150@%159@%141@%167@%149@%197@%198@2"])
+    ThmBind.DT(((("ConductORPType",139),[("bool",[25,170])]),["DISK_THM"]),
+               [ThmBind.read"%172%67%171@%182@%162@%191@%170@%229@%230@2"])
   fun op slOutput_distinct x = x
     val op slOutput_distinct =
-    ThmBind.DT(((("ConductORPType",113),
-                [("ConductORPType",[107,108]),
+    ThmBind.DT(((("ConductORPType",140),
+                [("ConductORPType",[134,135]),
                  ("numeral",[3,6])]),["DISK_THM"]),
-               [ThmBind.read"%106%200%116%150@%159@3%106%200%116%150@%141@3%106%200%116%150@%167@3%106%200%116%150@%149@3%106%200%116%150@%197@3%106%200%116%150@%198@3%106%200%116%159@%141@3%106%200%116%159@%167@3%106%200%116%159@%149@3%106%200%116%159@%197@3%106%200%116%159@%198@3%106%200%116%141@%167@3%106%200%116%141@%149@3%106%200%116%141@%197@3%106%200%116%141@%198@3%106%200%116%167@%149@3%106%200%116%167@%197@3%106%200%116%167@%198@3%106%200%116%149@%197@3%106%200%116%149@%198@3%200%116%197@%198@22"])
+               [ThmBind.read"%122%232%133%171@%182@3%122%232%133%171@%162@3%122%232%133%171@%191@3%122%232%133%171@%170@3%122%232%133%171@%229@3%122%232%133%171@%230@3%122%232%133%182@%162@3%122%232%133%182@%191@3%122%232%133%182@%170@3%122%232%133%182@%229@3%122%232%133%182@%230@3%122%232%133%162@%191@3%122%232%133%162@%170@3%122%232%133%162@%229@3%122%232%133%162@%230@3%122%232%133%191@%170@3%122%232%133%191@%229@3%122%232%133%191@%230@3%122%232%133%170@%229@3%122%232%133%170@%230@3%232%133%229@%230@22"])
   fun op slOutput_case_cong x = x
     val op slOutput_case_cong =
-    ThmBind.DT(((("ConductORPType",114),
-                [("ConductORPType",[97,99,100,101,102,103,104,105,111]),
+    ThmBind.DT(((("ConductORPType",141),
+                [("ConductORPType",[124,126,127,128,129,130,131,132,138]),
                  ("arithmetic",
                  [24,25,27,41,46,59,73,95,178,179,183,186,275]),
                  ("bool",
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
                   106]),("numeral",[3,5,6,7,8,15,16,17]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%101%4%101%10%86%60%86%62%86%64%86%66%86%68%86%70%86%72%119%106%116$8@$7@2%106%119%116$7@%150@2%109$6@%61@3%106%119%116$7@%159@2%109$5@%63@3%106%119%116$7@%141@2%109$4@%65@3%106%119%116$7@%167@2%109$3@%67@3%106%119%116$7@%149@2%109$2@%69@3%106%119%116$7@%197@2%109$1@%71@3%119%116$7@%198@2%109$0@%73@10%109%189$8@$6@$5@$4@$3@$2@$1@$0@2%189$7@%61@%63@%65@%67@%69@%71@%73@3|@|@|@|@|@|@|@|@|@"])
+               [ThmBind.read"%116%5%116%12%98%71%98%73%98%75%98%77%98%79%98%81%98%83%136%122%133$8@$7@2%122%136%133$7@%171@2%125$6@%72@3%122%136%133$7@%182@2%125$5@%74@3%122%136%133$7@%162@2%125$4@%76@3%122%136%133$7@%191@2%125$3@%78@3%122%136%133$7@%170@2%125$2@%80@3%122%136%133$7@%229@2%125$1@%82@3%136%133$7@%230@2%125$0@%84@10%125%218$8@$6@$5@$4@$3@$2@$1@$0@2%218$7@%72@%74@%76@%78@%80@%82@%84@3|@|@|@|@|@|@|@|@|@"])
   fun op slOutput_nchotomy x = x
     val op slOutput_nchotomy =
-    ThmBind.DT(((("ConductORPType",115),
-                [("ConductORPType",[97,99,100,101,102,103,104,105]),
+    ThmBind.DT(((("ConductORPType",142),
+                [("ConductORPType",[124,126,127,128,129,130,131,132]),
                  ("arithmetic",
                  [24,25,27,41,46,59,73,95,178,179,183,186,275]),
                  ("bool",
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
                   106]),("numeral",[3,5,6,7,8,15,16,17]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%101%21%169%116$0@%150@2%169%116$0@%159@2%169%116$0@%141@2%169%116$0@%167@2%169%116$0@%149@2%169%116$0@%197@2%116$0@%198@7|@"])
+               [ThmBind.read"%116%25%193%133$0@%171@2%193%133$0@%182@2%193%133$0@%162@2%193%133$0@%191@2%193%133$0@%170@2%193%133$0@%229@2%133$0@%230@7|@"])
   fun op slOutput_Axiom x = x
     val op slOutput_Axiom =
-    ThmBind.DT(((("ConductORPType",116),
-                [("ConductORPType",[107]),("bool",[8,14,25,53,55,63]),
+    ThmBind.DT(((("ConductORPType",143),
+                [("ConductORPType",[134]),("bool",[8,14,25,53,55,63]),
                  ("numeral",[3,8])]),["DISK_THM"]),
-               [ThmBind.read"%86%79%86%80%86%81%86%82%86%83%86%84%86%85%126%32%106%109$0%150@2$7@2%106%109$0%159@2$6@2%106%109$0%141@2$5@2%106%109$0%167@2$4@2%106%109$0%149@2$3@2%106%109$0%197@2$2@2%109$0%198@2$1@7|@|@|@|@|@|@|@|@"])
+               [ThmBind.read"%98%91%98%92%98%93%98%94%98%95%98%96%98%97%145%38%122%125$0%171@2$7@2%122%125$0%182@2$6@2%122%125$0%162@2$5@2%122%125$0%191@2$4@2%122%125$0%170@2$3@2%122%125$0%229@2$2@2%125$0%230@2$1@7|@|@|@|@|@|@|@|@"])
   fun op slOutput_induction x = x
     val op slOutput_induction =
-    ThmBind.DT(((("ConductORPType",117),
-                [("ConductORPType",[97,99,100,101,102,103,104,105]),
+    ThmBind.DT(((("ConductORPType",144),
+                [("ConductORPType",[124,126,127,128,129,130,131,132]),
                  ("arithmetic",
                  [24,25,27,41,46,59,73,95,178,179,183,186,275]),
                  ("bool",
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
                   106]),("numeral",[3,5,6,7,8,15,16,17]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%93%16%119%106$0%141@2%106$0%149@2%106$0%150@2%106$0%159@2%106$0%167@2%106$0%197@2$0%198@8%101%21$1$0@|@2|@"])
+               [ThmBind.read"%107%19%136%122$0%162@2%122$0%170@2%122$0%171@2%122$0%182@2%122$0%191@2%122$0%229@2$0%230@8%116%25$1$0@|@2|@"])
   fun op slOutput_distinct_clauses x = x
     val op slOutput_distinct_clauses =
-    ThmBind.DT(((("ConductORPType",118),
-                [("ConductORPType",[107,108]),
+    ThmBind.DT(((("ConductORPType",145),
+                [("ConductORPType",[134,135]),
                  ("numeral",[3,6])]),["DISK_THM"]),
-               [ThmBind.read"%106%200%116%150@%159@3%106%200%116%150@%141@3%106%200%116%150@%167@3%106%200%116%150@%149@3%106%200%116%150@%197@3%106%200%116%150@%198@3%106%200%116%159@%141@3%106%200%116%159@%167@3%106%200%116%159@%149@3%106%200%116%159@%197@3%106%200%116%159@%198@3%106%200%116%141@%167@3%106%200%116%141@%149@3%106%200%116%141@%197@3%106%200%116%141@%198@3%106%200%116%167@%149@3%106%200%116%167@%197@3%106%200%116%167@%198@3%106%200%116%149@%197@3%106%200%116%149@%198@3%200%116%197@%198@22"])
+               [ThmBind.read"%122%232%133%171@%182@3%122%232%133%171@%162@3%122%232%133%171@%191@3%122%232%133%171@%170@3%122%232%133%171@%229@3%122%232%133%171@%230@3%122%232%133%182@%162@3%122%232%133%182@%191@3%122%232%133%182@%170@3%122%232%133%182@%229@3%122%232%133%182@%230@3%122%232%133%162@%191@3%122%232%133%162@%170@3%122%232%133%162@%229@3%122%232%133%162@%230@3%122%232%133%191@%170@3%122%232%133%191@%229@3%122%232%133%191@%230@3%122%232%133%170@%229@3%122%232%133%170@%230@3%232%133%229@%230@22"])
   fun op num2stateRole_stateRole2num x = x
     val op num2stateRole_stateRole2num =
-    ThmBind.DT(((("ConductORPType",121),
-                [("ConductORPType",[120])]),["DISK_THM"]),
-               [ThmBind.read"%103%23%118%176%194$0@3$0@|@"])
+    ThmBind.DT(((("ConductORPType",148),
+                [("ConductORPType",[147])]),["DISK_THM"]),
+               [ThmBind.read"%118%27%135%202%226$0@3$0@|@"])
   fun op stateRole2num_num2stateRole x = x
     val op stateRole2num_num2stateRole =
-    ThmBind.DT(((("ConductORPType",122),
-                [("ConductORPType",[120])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%110%108$0@%152%143%168@4%111%194%176$0@3$0@2|@"])
+    ThmBind.DT(((("ConductORPType",149),
+                [("ConductORPType",[147])]),["DISK_THM"]),
+               [ThmBind.read"%110%56%126%124$0@%173%163%163%192@5%127%226%202$0@3$0@2|@"])
   fun op num2stateRole_11 x = x
     val op num2stateRole_11 =
-    ThmBind.DT(((("ConductORPType",123),
-                [("ConductORPType",[120]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%96%47%119%108$1@%152%143%168@4%119%108$0@%152%143%168@4%110%118%176$1@2%176$0@3%111$1@$0@4|@|@"])
+    ThmBind.DT(((("ConductORPType",150),
+                [("ConductORPType",[147]),("bool",[26])]),["DISK_THM"]),
+               [ThmBind.read"%110%56%110%57%136%124$1@%173%163%163%192@5%136%124$0@%173%163%163%192@5%126%135%202$1@2%202$0@3%127$1@$0@4|@|@"])
   fun op stateRole2num_11 x = x
     val op stateRole2num_11 =
-    ThmBind.DT(((("ConductORPType",124),
-                [("ConductORPType",[120]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%103%23%103%28%110%111%194$1@2%194$0@3%118$1@$0@2|@|@"])
+    ThmBind.DT(((("ConductORPType",151),
+                [("ConductORPType",[147]),("bool",[26])]),["DISK_THM"]),
+               [ThmBind.read"%118%27%118%33%126%127%226$1@2%226$0@3%135$1@$0@2|@|@"])
   fun op num2stateRole_ONTO x = x
     val op num2stateRole_ONTO =
-    ThmBind.DT(((("ConductORPType",125),
-                [("ConductORPType",[120]),("bool",[25,62])]),["DISK_THM"]),
-               [ThmBind.read"%103%23%132%46%106%118$1@%176$0@3%108$0@%152%143%168@4|@|@"])
+    ThmBind.DT(((("ConductORPType",152),
+                [("ConductORPType",[147]),("bool",[25,62])]),["DISK_THM"]),
+               [ThmBind.read"%118%27%151%56%122%135$1@%202$0@3%124$0@%173%163%163%192@5|@|@"])
   fun op stateRole2num_ONTO x = x
     val op stateRole2num_ONTO =
-    ThmBind.DT(((("ConductORPType",126),
-                [("ConductORPType",[120]),("bool",[26])]),["DISK_THM"]),
-               [ThmBind.read"%96%46%110%108$0@%152%143%168@4%137%23%111$1@%194$0@2|@2|@"])
+    ThmBind.DT(((("ConductORPType",153),
+                [("ConductORPType",[147]),("bool",[26])]),["DISK_THM"]),
+               [ThmBind.read"%110%56%126%124$0@%173%163%163%192@5%157%27%127$1@%226$0@2|@2|@"])
   fun op num2stateRole_thm x = x
     val op num2stateRole_thm =
-    ThmBind.DT(((("ConductORPType",129),
-                [("ConductORPType",[127,128])]),[]),
-               [ThmBind.read"%106%118%176%107@2%155@2%118%176%152%142%168@4%156@2"])
+    ThmBind.DT(((("ConductORPType",157),
+                [("ConductORPType",[154,155,156])]),[]),
+               [ThmBind.read"%122%135%202%123@2%178@2%122%135%202%173%163%192@4%179@2%135%202%173%164%192@4%175@3"])
   fun op stateRole2num_thm x = x
     val op stateRole2num_thm =
-    ThmBind.DT(((("ConductORPType",130),
-                [("ConductORPType",[122,127,128]),("bool",[25,53]),
+    ThmBind.DT(((("ConductORPType",158),
+                [("ConductORPType",[149,154,155,156]),("bool",[25]),
                  ("numeral",[3,7])]),["DISK_THM"]),
-               [ThmBind.read"%106%111%194%155@2%107@2%111%194%156@2%152%142%168@4"])
+               [ThmBind.read"%122%127%226%178@2%123@2%122%127%226%179@2%173%163%192@4%127%226%175@2%173%164%192@5"])
   fun op stateRole_EQ_stateRole x = x
     val op stateRole_EQ_stateRole =
-    ThmBind.DT(((("ConductORPType",131),
-                [("ConductORPType",[124]),("bool",[57])]),["DISK_THM"]),
-               [ThmBind.read"%103%23%103%28%110%118$1@$0@2%111%194$1@2%194$0@3|@|@"])
+    ThmBind.DT(((("ConductORPType",159),
+                [("ConductORPType",[151]),("bool",[57])]),["DISK_THM"]),
+               [ThmBind.read"%118%27%118%33%126%135$1@$0@2%127%226$1@2%226$0@3|@|@"])
   fun op stateRole_case_def x = x
     val op stateRole_case_def =
-    ThmBind.DT(((("ConductORPType",134),
-                [("ConductORPType",[130,133]),("bool",[55,63]),
-                 ("numeral",[3,6])]),["DISK_THM"]),
-               [ThmBind.read"%106%86%60%86%62%109%195%155@$1@$0@2$1@|@|@2%86%60%86%62%109%195%156@$1@$0@2$0@|@|@2"])
+    ThmBind.DT(((("ConductORPType",162),
+                [("ConductORPType",[158,161]),("bool",[55,63]),
+                 ("numeral",[3,6,7])]),["DISK_THM"]),
+               [ThmBind.read"%122%98%71%98%73%98%75%125%227%178@$2@$1@$0@2$2@|@|@|@2%122%98%71%98%73%98%75%125%227%179@$2@$1@$0@2$1@|@|@|@2%98%71%98%73%98%75%125%227%175@$2@$1@$0@2$0@|@|@|@3"])
   fun op datatype_stateRole x = x
     val op datatype_stateRole =
-    ThmBind.DT(((("ConductORPType",135),[("bool",[25,170])]),["DISK_THM"]),
-               [ThmBind.read"%151%59%155@%156@2"])
+    ThmBind.DT(((("ConductORPType",163),[("bool",[25,170])]),["DISK_THM"]),
+               [ThmBind.read"%172%70%178@%179@%175@2"])
   fun op stateRole_distinct x = x
     val op stateRole_distinct =
-    ThmBind.DT(((("ConductORPType",136),
-                [("ConductORPType",[130,131]),
+    ThmBind.DT(((("ConductORPType",164),
+                [("ConductORPType",[158,159]),
                  ("numeral",[3,6])]),["DISK_THM"]),
-               [ThmBind.read"%200%118%155@%156@2"])
+               [ThmBind.read"%122%232%135%178@%179@3%122%232%135%178@%175@3%232%135%179@%175@4"])
   fun op stateRole_case_cong x = x
     val op stateRole_case_cong =
-    ThmBind.DT(((("ConductORPType",137),
-                [("ConductORPType",[125,127,128,134]),
+    ThmBind.DT(((("ConductORPType",165),
+                [("ConductORPType",[152,154,155,156,162]),
                  ("arithmetic",
                  [24,25,27,41,46,59,73,95,178,179,183,186,275]),
                  ("bool",
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
-                  106]),("numeral",[3,5,6,7,8,15,16]),
+                  106]),("numeral",[3,5,6,7,8,15,16,17]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%103%6%103%12%86%60%86%62%119%106%118$3@$2@2%106%119%118$2@%155@2%109$1@%61@3%119%118$2@%156@2%109$0@%63@5%109%195$3@$1@$0@2%195$2@%61@%63@3|@|@|@|@"])
+               [ThmBind.read"%118%7%118%14%98%71%98%73%98%75%136%122%135$4@$3@2%122%136%135$3@%178@2%125$2@%72@3%122%136%135$3@%179@2%125$1@%74@3%136%135$3@%175@2%125$0@%76@6%125%227$4@$2@$1@$0@2%227$3@%72@%74@%76@3|@|@|@|@|@"])
   fun op stateRole_nchotomy x = x
     val op stateRole_nchotomy =
-    ThmBind.DT(((("ConductORPType",138),
-                [("ConductORPType",[125,127,128]),
+    ThmBind.DT(((("ConductORPType",166),
+                [("ConductORPType",[152,154,155,156]),
                  ("arithmetic",
                  [24,25,27,41,46,59,73,95,178,179,183,186,275]),
                  ("bool",
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
-                  106]),("numeral",[3,5,6,7,8,15,16]),
+                  106]),("numeral",[3,5,6,7,8,15,16,17]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%103%23%169%118$0@%155@2%118$0@%156@2|@"])
+               [ThmBind.read"%118%27%193%135$0@%178@2%193%135$0@%179@2%135$0@%175@3|@"])
   fun op stateRole_Axiom x = x
     val op stateRole_Axiom =
-    ThmBind.DT(((("ConductORPType",139),
-                [("ConductORPType",[130]),("bool",[8,14,25,55,63]),
+    ThmBind.DT(((("ConductORPType",167),
+                [("ConductORPType",[158]),("bool",[8,14,25,53,55,63]),
                  ("numeral",[3,8])]),["DISK_THM"]),
-               [ThmBind.read"%86%79%86%80%130%34%106%109$0%155@2$2@2%109$0%156@2$1@2|@|@|@"])
+               [ThmBind.read"%98%91%98%92%98%93%149%40%122%125$0%178@2$3@2%122%125$0%179@2$2@2%125$0%175@2$1@3|@|@|@|@"])
   fun op stateRole_induction x = x
     val op stateRole_induction =
-    ThmBind.DT(((("ConductORPType",140),
-                [("ConductORPType",[125,127,128]),
+    ThmBind.DT(((("ConductORPType",168),
+                [("ConductORPType",[152,154,155,156]),
                  ("arithmetic",
                  [24,25,27,41,46,59,73,95,178,179,183,186,275]),
                  ("bool",
                  [8,14,25,31,35,42,50,51,53,57,62,63,92,95,100,103,104,
-                  106]),("numeral",[3,5,6,7,8,15,16]),
+                  106]),("numeral",[3,5,6,7,8,15,16,17]),
                  ("sat",[1,3,5,6,7,11,12,13,15])]),["DISK_THM"]),
-               [ThmBind.read"%95%18%119%106$0%155@2$0%156@3%103%23$1$0@|@2|@"])
+               [ThmBind.read"%109%21%136%122$0%175@2%122$0%178@2$0%179@4%118%27$1$0@|@2|@"])
   fun op slRole_distinct_clauses x = x
     val op slRole_distinct_clauses =
-    ThmBind.DT(((("ConductORPType",141),
-                [("ConductORPType",[130,131]),
+    ThmBind.DT(((("ConductORPType",169),
+                [("ConductORPType",[158,159]),
                  ("numeral",[3,6])]),["DISK_THM"]),
-               [ThmBind.read"%200%118%155@%156@2"])
+               [ThmBind.read"%122%232%135%178@%179@3%122%232%135%178@%175@3%232%135%179@%175@4"])
 
   val _ = DB.bindl "ConductORPType"
   [("plCommand_TY_DEF",plCommand_TY_DEF,DB.Def),
@@ -909,6 +1070,10 @@ struct
    ("psgCommand_BIJ",psgCommand_BIJ,DB.Def),
    ("psgCommand_size_def",psgCommand_size_def,DB.Def),
    ("psgCommand_CASE",psgCommand_CASE,DB.Def),
+   ("omniCommand_TY_DEF",omniCommand_TY_DEF,DB.Def),
+   ("omniCommand_BIJ",omniCommand_BIJ,DB.Def),
+   ("omniCommand_size_def",omniCommand_size_def,DB.Def),
+   ("omniCommand_CASE",omniCommand_CASE,DB.Def),
    ("slCommand_TY_DEF",slCommand_TY_DEF,DB.Def),
    ("slCommand_case_def",slCommand_case_def,DB.Def),
    ("slCommand_size_def",slCommand_size_def,DB.Def),
@@ -958,6 +1123,26 @@ struct
    ("psgCommand_Axiom",psgCommand_Axiom,DB.Thm),
    ("psgCommand_induction",psgCommand_induction,DB.Thm),
    ("psgCommand_distinct_clauses",psgCommand_distinct_clauses,DB.Thm),
+   ("num2omniCommand_omniCommand2num",
+    num2omniCommand_omniCommand2num,
+    DB.Thm),
+   ("omniCommand2num_num2omniCommand",
+    omniCommand2num_num2omniCommand,
+    DB.Thm), ("num2omniCommand_11",num2omniCommand_11,DB.Thm),
+   ("omniCommand2num_11",omniCommand2num_11,DB.Thm),
+   ("num2omniCommand_ONTO",num2omniCommand_ONTO,DB.Thm),
+   ("omniCommand2num_ONTO",omniCommand2num_ONTO,DB.Thm),
+   ("num2omniCommand_thm",num2omniCommand_thm,DB.Thm),
+   ("omniCommand2num_thm",omniCommand2num_thm,DB.Thm),
+   ("omniCommand_EQ_omniCommand",omniCommand_EQ_omniCommand,DB.Thm),
+   ("omniCommand_case_def",omniCommand_case_def,DB.Thm),
+   ("datatype_omniCommand",datatype_omniCommand,DB.Thm),
+   ("omniCommand_distinct",omniCommand_distinct,DB.Thm),
+   ("omniCommand_case_cong",omniCommand_case_cong,DB.Thm),
+   ("omniCommand_nchotomy",omniCommand_nchotomy,DB.Thm),
+   ("omniCommand_Axiom",omniCommand_Axiom,DB.Thm),
+   ("omniCommand_induction",omniCommand_induction,DB.Thm),
+   ("omniCommand_distinct_clauses",omniCommand_distinct_clauses,DB.Thm),
    ("datatype_slCommand",datatype_slCommand,DB.Thm),
    ("slCommand_11",slCommand_11,DB.Thm),
    ("slCommand_distinct",slCommand_distinct,DB.Thm),
@@ -1024,14 +1209,14 @@ struct
     thydataty = "TypeGrammarDeltas",
     read = ThmBind.read,
     data =
-        "NTY14.ConductORPType,9.plCommandNTY14.ConductORPType,10.psgCommandNTY14.ConductORPType,9.slCommandNTY14.ConductORPType,7.slStateNTY14.ConductORPType,8.slOutputNTY14.ConductORPType,9.stateRole"
+        "NTY14.ConductORPType,9.plCommandNTY14.ConductORPType,10.psgCommandNTY14.ConductORPType,11.omniCommandNTY14.ConductORPType,9.slCommandNTY14.ConductORPType,7.slStateNTY14.ConductORPType,8.slOutputNTY14.ConductORPType,9.stateRole"
   }
   val _ = Theory.LoadableThyData.temp_encoded_update {
     thy = "ConductORPType",
     thydataty = "TermGrammarDeltas",
     read = ThmBind.read,
     data =
-        "OO13.plCommand2num4.%177OO13.num2plCommand4.%172OO6.secure4.%185OO8.withdraw4.%199OO8.complete4.%171OO12.plIncomplete4.%180OO14.plCommand_size4.%179OO14.plCommand_CASE4.%178OO4.case4.%178OO14.psgCommand2num4.%181OO14.num2psgCommand4.%173OO9.actionsIn4.%170OO13.psgIncomplete4.%184OO15.psgCommand_size4.%183OO15.psgCommand_CASE4.%182OO4.case4.%182OO2.PL4.%153OO3.PSG4.%154OO14.slCommand_CASE4.%186OO14.slCommand_size4.%187OO4.case4.%186OO11.slState2num4.%191OO11.num2slState4.%175OO11.CONDUCT_ORP4.%147OO6.SECURE4.%157OO10.ACTIONS_IN4.%138OO8.WITHDRAW4.%166OO8.COMPLETE4.%145OO12.slState_size4.%193OO12.slState_CASE4.%192OO4.case4.%192OO12.slOutput2num4.%188OO12.num2slOutput4.%174OO10.ConductORP4.%150OO6.Secure4.%159OO9.ActionsIn4.%141OO8.Withdraw4.%167OO8.Complete4.%149OO15.unAuthenticated4.%197OO12.unAuthorized4.%198OO13.slOutput_size4.%190OO13.slOutput_CASE4.%189OO4.case4.%189OO13.stateRole2num4.%194OO13.num2stateRole4.%176OO13.PlatoonLeader4.%155OO15.PlatoonSergeant4.%156OO14.stateRole_size4.%196OO14.stateRole_CASE4.%195OO4.case4.%195"
+        "OO13.plCommand2num4.%206OO13.num2plCommand4.%198OO6.secure4.%214OO8.withdraw4.%231OO8.complete4.%195OO12.plIncomplete4.%209OO14.plCommand_size4.%208OO14.plCommand_CASE4.%207OO4.case4.%207OO14.psgCommand2num4.%210OO14.num2psgCommand4.%199OO9.actionsIn4.%194OO13.psgIncomplete4.%213OO15.psgCommand_size4.%212OO15.psgCommand_CASE4.%211OO4.case4.%211OO15.omniCommand2num4.%203OO15.num2omniCommand4.%197OO17.ssmSecureComplete4.%224OO20.ssmActionsInComplete4.%223OO19.ssmWithdrawComplete4.%225OO18.invalidOmniCommand4.%196OO16.omniCommand_size4.%205OO16.omniCommand_CASE4.%204OO4.case4.%204OO2.PL4.%176OO3.PSG4.%177OO4.OMNI4.%174OO14.slCommand_CASE4.%215OO14.slCommand_size4.%216OO4.case4.%215OO11.slState2num4.%220OO11.num2slState4.%201OO11.CONDUCT_ORP4.%168OO6.SECURE4.%180OO10.ACTIONS_IN4.%158OO8.WITHDRAW4.%190OO8.COMPLETE4.%166OO12.slState_size4.%222OO12.slState_CASE4.%221OO4.case4.%221OO12.slOutput2num4.%217OO12.num2slOutput4.%200OO10.ConductORP4.%171OO6.Secure4.%182OO9.ActionsIn4.%162OO8.Withdraw4.%191OO8.Complete4.%170OO15.unAuthenticated4.%229OO12.unAuthorized4.%230OO13.slOutput_size4.%219OO13.slOutput_CASE4.%218OO4.case4.%218OO13.stateRole2num4.%226OO13.num2stateRole4.%202OO13.PlatoonLeader4.%178OO15.PlatoonSergeant4.%179OO4.Omni4.%175OO14.stateRole_size4.%228OO14.stateRole_CASE4.%227OO4.case4.%227"
   }
   local open GrammarSpecials Parse
     fun UTOFF f = Feedback.trace("Parse.unicode_trace_off_complaints",0)f
@@ -1108,6 +1293,38 @@ in
            recognizers=[],
            destructors=[]}
         val tyinfo0 = EnumType.update_tyinfo num2psgCommand_thm psgCommand2num_thm NONE tyinfo0
+        val () = computeLib.write_datatype_info tyinfo0
+      in
+        tyinfo0
+      end
+    ];
+
+
+  val _ =
+    TypeBase.write [
+      let
+        open TypeBasePure
+        val tyinfo0 = mk_datatype_info
+          {ax=ORIG omniCommand_Axiom,
+           case_def=omniCommand_case_def,
+           case_cong=omniCommand_case_cong,
+           induction=ORIG omniCommand_induction,
+           nchotomy=omniCommand_nchotomy,
+           size=SOME(Parse.Term`(ConductORPType$omniCommand_size) :ConductORPType$omniCommand -> num$num`,
+                     ORIG omniCommand_size_def),
+           encode = NONE,
+           lift=NONE,
+           one_one=NONE,
+           distinct=SOME omniCommand_distinct,
+           fields=let fun T t s A = mk_thy_type{Thy=t,Tyop=s,Args=A}
+    val U = mk_vartype
+in
+[] end,
+           accessors=[],
+           updates=[],
+           recognizers=[],
+           destructors=[]}
+        val tyinfo0 = EnumType.update_tyinfo num2omniCommand_thm omniCommand2num_thm NONE tyinfo0
         val () = computeLib.write_datatype_info tyinfo0
       in
         tyinfo0

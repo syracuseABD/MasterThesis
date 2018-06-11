@@ -1,5 +1,5 @@
 \newcommand{\HOLPBTypeIntegratedDate}{11 June 2018}
-\newcommand{\HOLPBTypeIntegratedTime}{01:51}
+\newcommand{\HOLPBTypeIntegratedTime}{16:27}
 \begin{SaveVerbatim}{HOLPBTypeIntegratedDatatypesomniCommand}
 \HOLFreeVar{omniCommand} = \HOLConst{ssmPlanPBComplete} \HOLTokenBar{} \HOLConst{ssmMoveToORPComplete}
             \HOLTokenBar{} \HOLConst{ssmConductORPComplete} \HOLTokenBar{} \HOLConst{ssmMoveToPBComplete}
@@ -12,7 +12,9 @@
 \end{SaveVerbatim}
 \newcommand{\HOLPBTypeIntegratedDatatypesplCommand}{\UseVerbatim{HOLPBTypeIntegratedDatatypesplCommand}}
 \begin{SaveVerbatim}{HOLPBTypeIntegratedDatatypesslCommand}
-\HOLFreeVar{slCommand} = \HOLConst{PL} \HOLTyOp{PBTypeIntegrated\$plCommand} \HOLTokenBar{} \HOLConst{OMNI} \HOLTyOp{omniCommand}
+\HOLFreeVar{slCommand} =
+    \HOLConst{PL} \HOLTyOp{PBTypeIntegrated\$plCommand}
+  \HOLTokenBar{} \HOLConst{OMNI} \HOLTyOp{PBTypeIntegrated\$omniCommand}
 \end{SaveVerbatim}
 \newcommand{\HOLPBTypeIntegratedDatatypesslCommand}{\UseVerbatim{HOLPBTypeIntegratedDatatypesslCommand}}
 \begin{SaveVerbatim}{HOLPBTypeIntegratedDatatypesslOutput}

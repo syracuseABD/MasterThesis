@@ -25,6 +25,19 @@ open  uavUtilities
 open OMNITypeTheory  PBTypeIntegratedTheory
 
 val _ = new_theory "PBIntegratedDef";
+
+(******************************************************************************)
+(* Helper functions for extracting commands                                   *)
+(******************************************************************************)
+val getPlCom_def =
+Define`
+  (getPlCom ([]:((slCommand command)option)list)
+  		      = incomplete:plCommand) /\
+  (getPlCom (SOME (SLc (PL cmd)):(slCommand command)option::xs)
+  		      = cmd:plCommand) /\
+  (getPlCom (_::(xs :(slCommand command)option list))
+  		      =  (getPlCom xs))`
+
 (* -------------------------------------------------------------------------- *)
 (* state Interpretation function                                              *)
 (* -------------------------------------------------------------------------- *)

@@ -13,8 +13,8 @@ struct
   in end;
   val _ = Theory.link_parents
           ("PBTypeIntegrated",
-          Arbnum.fromString "1528688712",
-          Arbnum.fromString "394032")
+          Arbnum.fromString "1528748848",
+          Arbnum.fromString "121309")
           [("OMNIType",
            Arbnum.fromString "1528688707",
            Arbnum.fromString "689204")];
