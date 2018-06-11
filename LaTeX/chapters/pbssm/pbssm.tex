@@ -24,33 +24,58 @@ There are two principals for this \glsentryshort{ssm}: Omni and PlatoonLeader.
 \subsection{States}
 The states are those shown in figure \ref{}.
 
-\HOLFreeVar{slState} = \HOLConst{PLAN_PB} \HOLTokenBar{} \HOLConst{MOVE_TO_ORP} \HOLTokenBar{} \HOLConst{CONDUCT_ORP} \HOLTokenBar{} \HOLConst{MOVE_TO_PB}
-        \HOLTokenBar{} \HOLConst{CONDUCT_PB} \HOLTokenBar{} \HOLConst{COMPLETE_PB}
+\begin{tabbing}
+\HOLFreeVar{slState} = \=\HOLConst{PLAN_PB} \\
+					\>\HOLTokenBar{} \HOLConst{MOVE_TO_ORP} \\
+					\>\HOLTokenBar{} \HOLConst{CONDUCT_ORP} \\
+					\>\HOLTokenBar{} \HOLConst{MOVE_TO_PB}\\
+        					\>\HOLTokenBar{} \HOLConst{CONDUCT_PB} \\
+					\>\HOLTokenBar{} \HOLConst{COMPLETE_PB}
+\end{tabbing}
 
 \subsection{Outputs}
 The outputs are straight forward.  The unAuthorized and unAuthenticated are returned for \textit{trap} and \textit{discard} transition types, respectively.
 
-\HOLFreeVar{slOutput} = \HOLConst{PlanPB} \HOLTokenBar{} \HOLConst{MoveToORP} \HOLTokenBar{} \HOLConst{ConductORP} \HOLTokenBar{} \HOLConst{MoveToPB}
-         \HOLTokenBar{} \HOLConst{ConductPB} \HOLTokenBar{} \HOLConst{CompletePB} \HOLTokenBar{} \HOLConst{unAuthenticated}
-         \HOLTokenBar{} \HOLConst{unAuthorized}
+\begin{tabbing}
+\HOLFreeVar{slOutput} = \=\HOLConst{PlanPB} \\
+					\>\HOLTokenBar{} \HOLConst{MoveToORP} \\
+					\>\HOLTokenBar{} \HOLConst{ConductORP} \\
+					\>\HOLTokenBar{} \HOLConst{MoveToPB}\\
+         				\>\HOLTokenBar{} \HOLConst{ConductPB} \\
+					\>\HOLTokenBar{} \HOLConst{CompletePB} \\
+					\>\HOLTokenBar{} \HOLConst{unAuthenticated}\\
+         				\>\HOLTokenBar{} \HOLConst{unAuthorized}
+\end{tabbing}
 
 
 \subsection{Commands}
 The state-level commands are defined below.
-\HOLFreeVar{slCommand} = \HOLConst{PL} \HOLTyOp{PBTypeIntegrated\$plCommand} \HOLTokenBar{} \HOLConst{OMNI} \HOLTyOp{omniCommand}
+
+\HOLFreeVar{slCommand} = \HOLConst{PL} \HOLTyOp{plCommand} \HOLTokenBar{} \HOLConst{OMNI} \HOLTyOp{omniCommand}
 
 Omni and PlatoonLeader both have distinct sets of commands on which they are authorized, omniCommand and plCommand, respectively.  Omni commands indicate when lower-level states are complete.  PlatoonLeader commands are issued to transition among states in this \glsentryshort{ssm}
 
 Omni commands indicate when lower-level states are complete.  
 
-\HOLFreeVar{omniCommand} = \HOLConst{ssmPlanPBComplete} \HOLTokenBar{} \HOLConst{ssmMoveToORPComplete}
-            \HOLTokenBar{} \HOLConst{ssmConductORPComplete} \HOLTokenBar{} \HOLConst{ssmMoveToPBComplete}
-            \HOLTokenBar{} \HOLConst{ssmConductPBComplete} \HOLTokenBar{} \HOLConst{invalidOmniCommand}
+\begin{tabbing}
+\HOLFreeVar{omniCommand} = \=\HOLConst{ssmPlanPBComplete} \\
+						\>\HOLTokenBar{} \HOLConst{ssmMoveToORPComplete}\\
+            					\>\HOLTokenBar{} \HOLConst{ssmConductORPComplete} \\
+						\>\HOLTokenBar{} \HOLConst{ssmMoveToPBComplete}\\
+            					\>\HOLTokenBar{} \HOLConst{ssmConductPBComplete} \\
+						\>\HOLTokenBar{} \HOLConst{invalidOmniCommand}
+\end{tabbing}
 
 PlatoonLeader commands are issued to transition among states in this \glsentryshort{ssm}
 
-\HOLFreeVar{plCommand} = \HOLConst{crossLD} \HOLTokenBar{} \HOLConst{conductORP} \HOLTokenBar{} \HOLConst{moveToPB} \HOLTokenBar{} \HOLConst{conductPB}
-          \HOLTokenBar{} \HOLConst{completePB} \HOLTokenBar{} \HOLConst{incomplete}
+\begin{tabbing}
+\HOLFreeVar{plCommand} = \=\HOLConst{crossLD} \\
+						\>\HOLTokenBar{} \HOLConst{conductORP} \\
+						\>\HOLTokenBar{} \HOLConst{moveToPB} \\
+						\>\HOLTokenBar{} \HOLConst{conductPB}\\
+          					\>\HOLTokenBar{} \HOLConst{completePB} \\
+						\>\HOLTokenBar{} \HOLConst{incomplete}
+\end{tabbing}
 
 \subsection{Next-State Function}
 
@@ -59,6 +84,9 @@ PlatoonLeader commands are issued to transition among states in this \glsentrysh
 
 \subsection{Authentication}
 \subsection{Authorization}
+
+\HOLThmTag{PBIntegratedDef}{secContext_def}\HOLPBIntegratedDefTheoremssecContextXXdef
+
 \subsection{Proved Theorems}
 \subsubsection{Platoon Leader Is Trusted on plCommands}
 
@@ -75,6 +103,9 @@ ssmConductORP is an example of a \glsentryshort{ssm} with more than one principa
 \subsection{Next-Output Function}
 \subsection{Authentication}
 \HOLThmTag{ssmPlanPB}{inputOK_def}\HOLssmPlanPBTheoremsinputOKXXdef
+
+
+\HOLThmTag{PBIntegratedDef}{getOmniCommand_def}\HOLPBIntegratedDefTheoremsgetOmniCommandXXdef
 
 
 \subsection{Authorization}
