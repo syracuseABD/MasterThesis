@@ -233,41 +233,44 @@ ssmConductORP is an example of a \glsentryshort{ssm} with more than one principa
 \end{figure}
 
 
-Other than the number of principals, ssmMoveToORP follows the same structure as ssmPB described in the previous section.  
+Other than the number of principals, ssmConductToORP follows the same structure as ssmPB described in the previous section.  
 
 \subsection{Principals}
-The principals are defined in the datatype stateRole.  
+The principals are defined in the datatype stateRole.  There are three principals including Omni.
 
-
+\HOLFreeVar{stateRole} = \HOLConst{PlatoonLeader} \HOLTokenBar{} \HOLConst{PlatoonSergeant} \HOLTokenBar{} \HOLConst{Omni}
 
 \subsection{States}
+States are defined as slState.  The names differ only slightly from the digram but are straight forward.  
 \begin{tabbing}
-\HOLFreeVar{slState} = \=\HOLConst{MOVE_TO_ORP} \\
-				   	\>\HOLTokenBar{} \HOLConst{PLT_FORM} \\
-					\>\HOLTokenBar{} \HOLConst{PLT_MOVE} \\
-					\>\HOLTokenBar{} \HOLConst{PLT_SECURE_HALT}\\
+\HOLFreeVar{slState} = \=\HOLConst{CONDUCT_ORP} \\
+					\>\HOLTokenBar{} \HOLConst{SECURE} \\
+					\>\HOLTokenBar{} \HOLConst{ACTIONS_IN} \\
+					\>\HOLTokenBar{} \HOLConst{WITHDRAW}\\
         					\>\HOLTokenBar{} \HOLConst{COMPLETE}
 \end{tabbing}
 
 \subsection{Outputs}
+Outputs are named similarly to ssmPB outputs.
+
 \begin{tabbing}
-\HOLFreeVar{slOutput} = \=\HOLConst{MoveToORP} \\
-					\>\HOLTokenBar{} \HOLConst{PLTForm} \\
-					\>\HOLTokenBar{} \HOLConst{PLTMove} \\
-					\>\HOLTokenBar{} \HOLConst{PLTSecureHalt}\\
-         				\>\HOLTokenBar{} \HOLConst{Complete} \\
-					\>\HOLTokenBar{} \HOLConst{unAuthorized} \\
-					\>\HOLTokenBar{} \HOLConst{unAuthenticated}
-\end{tabbing}
+\HOLFreeVar{slOutput} = \=\HOLConst{ConductORP} \\
+					\>\HOLTokenBar{} \HOLConst{Secure} \\
+					\>\HOLTokenBar{} \HOLConst{ActionsIn} \\
+					\>\HOLTokenBar{} \HOLConst{Withdraw} \\
+					\>\HOLTokenBar{} \HOLConst{Complete}\\
+         				\>\HOLTokenBar{} \HOLConst{unAuthenticated} \\
+					\>\HOLTokenBar{} \HOLConst{unAuthorized}\end{tabbing}
 
 \subsection{Commands}
-
+The slCommand datatype defines three datatype variables, one for each principal.  Each are further defined.
 \begin{tabbing}
 \HOLFreeVar{slCommand} =\=\HOLConst{PL} \HOLTyOp{plCommand}\\
   						\>\HOLTokenBar{} \HOLConst{PSG} \HOLTyOp{psgCommand}\\
   						\>\HOLTokenBar{} \HOLConst{OMNI} \HOLTyOp{omniCommand}
 \end{tabbing}
 
+plCommand defines the PlatoonLeader commands.
 \begin{tabbing}
 \HOLFreeVar{plCommand} = \=\HOLConst{secure} \\
 						\>\HOLTokenBar{} \HOLConst{withdraw} \\
@@ -275,8 +278,10 @@ The principals are defined in the datatype stateRole.
 						\>\HOLTokenBar{} \HOLConst{plIncomplete}
 \end{tabbing}
 
+psgCommand defines the PlatoonSergeant commands.
 \HOLFreeVar{psgCommand} = \HOLConst{actionsIn} \HOLTokenBar{} \HOLConst{psgIncomplete}
 
+omniCommand defines the Omni commands.
 \begin{tabbing}
 \HOLFreeVar{omniCommand} = \=\HOLConst{ssmSecureComplete} \\
 						\>\HOLTokenBar{} \HOLConst{ssmActionsInComplete}\\
@@ -291,6 +296,7 @@ The next-state function follows the same pattern as for ssmPB.  The only differe
 
 \HOLThmTag{ssmConductORP}{conductORPNS_def}\HOLssmConductORPTheoremsconductORPNSXXdef
 
+The next-state function requires two helper functions just as the next-state function for ssmPB.  These are \textit{getPlCom} and \textit{getPsgCom}.  The former extracts PlatoonLeader commands and the later extracts PlatoonSergeant commands.  They both use the underscore as a wild card.  The \glsentryshort{hol} definition bot both functions is shown below.
 \begin{lstlisting}
 val getPlCom_def =
 Define`
@@ -313,23 +319,11 @@ Define`
 
 
 \subsection{Next-Output Function}
+The next-output function follows the same pattern as the next-state function.  It returns outputs instead of states.
 \HOLThmTag{ssmConductORP}{conductORPOut_def}\HOLssmConductORPTheoremsconductORPOutXXdef
 
 \subsection{Authentication}
-
-\begin{lstlisting}
-val getOmniCommand_def =
-Define`
-  (getOmniCommand ([]:((slCommand command)option, stateRole, 'd,'e)Form list)
-  		      = invalidOmniCommand:omniCommand) /\
-  (getOmniCommand (((Name Omni) says prop (SOME (SLc (OMNI cmd))))::xs)
-  		      = (cmd:omniCommand)) /\
-  (getOmniCommand ((x:((slCommand command)option, stateRole, 'd,'e)Form)::xs)
-  		      =  (getOmniCommand xs))`
- \end{lstlisting}
-
-\paragraph*{HOL Definition for inputOK}
-The \glsentryshort{hol} definition for inputOK uses pattern matching.  This follows the same logic as \textit{inputOK} for ssmPB.  It adds one additional pattern for the PlatoonSergeant.
+Authentication uses the \textit{inputOK} function.  It is the same function as the ssmPB \textit{inputOK} except that it adds and additional pattern matching to authenticate the PlatoonSergeant.
 
 \begin{lstlisting}
 val inputOK_def =
@@ -346,14 +340,42 @@ Define
  (inputOK _= F)`
  \end{lstlisting}
 
-This follows the same logic as \textit{inputOK} for ssmPB.  It adds one additional pattern for the PlatoonSergeant.
-
 It is straight forward to prove that any command that is not issued by a principal is rejected.  This should follow directly from the definition of \textit{inputOK}.
 
 \HOLThmTag{ssmConductORP}{inputOK_cmd_reject_lemma}\HOLssmConductORPTheoremsinputOKXXcmdXXrejectXXlemma
 
 
 \subsection{Authorization}
+As in ssmPB and all \glsentryshortpl{ssm}, there is a state-dependent and state-independent authorization function.
+
+\paragraph*{State-dependent Authorization}
+Like ssmPB, the state-dependent authorization function is named \textit{secContext}.  It takes a state and an input list as parameters.  It returns an authorization statement.  It follows the same logic as \textit{secContext} in ssmPB.
+
+\HOLDfnTag{ConductORPDef}{secContext_def}\HOLConductORPDefDefinitionssecContextXXdef
+
+\textit{secContext} in ssmConductORP uses the exact same \textit{getOmniCommand} function. It is repeated here as a reference.
+
+
+
+\begin{lstlisting}
+val getOmniCommand_def =
+Define`
+  (getOmniCommand ([]:((slCommand command)option, stateRole, 'd,'e)Form list)
+  		      = invalidOmniCommand:omniCommand) /\
+  (getOmniCommand (((Name Omni) says prop (SOME (SLc (OMNI cmd))))::xs)
+  		      = (cmd:omniCommand)) /\
+  (getOmniCommand ((x:((slCommand command)option, stateRole, 'd,'e)Form)::xs)
+  		      =  (getOmniCommand xs))`
+\end{lstlisting}
+
+\paragraph*{State-independent Authorization}
+Like ssmPB, the state-independent authorization function is named \textit{secAuthorization}.  It takes only an input list as a parameter.  This is the exact same \textit{secAuthorization} as in ssmPB. It also uses the exact same \textit{secHelper} function as ssmPB.  There are repeated here as a reference. 
+
+\HOLDfnTag{ConductORPDef}{secAuthorization_def}\HOLConductORPDefDefinitionssecAuthorizationXXdef
+
+\HOLDfnTag{ConductORPDef}{secHelper_def}\HOLConductORPDefDefinitionssecHelperXXdef
+
+
 \subsection{Proved Theorems}
 \HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_justified_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXlemma
 \HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXthm
