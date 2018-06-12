@@ -766,11 +766,10 @@ val PL_notWARNO_Auth_def = Define `
 \end{lstlisting}
 
 \subsection{Proved Theorems}
-The following theorems prove various properties about the \glsentryshort{ssm}.  Descriptions are similar to those of previously described \glsentryshortpl{ssm}.  
-
+As with ssmConductORP, theorems for ssmPlanPB are similar.  Although, this \glsentryshort{ssm} contains no Omni principal, it contains conditional transitions. These theorems differ slightly in their set-up, but then follow the same proof process as \textit{PlatoonLeader_ACTIONS_IN_trap_lemma}.  
 
 \paragraph*{PlatoonLeader_notWARNO_notreport1_exec_plCommand_justified_thm}
-This theorem proves that if the state is NOT WARNO and the PlatoonLeader issues any plCommand other than \textit{report1}, then that command should be executed.  Two lemmas are required first.
+This theorem proves that if the state is not WARNO and the plCommand is not \textit{report1} then execution of any plCommand is justified.  It uses two theorems and follow the same pattern as the other three-part proofs.  The \glsentryshort{hol} generated output is shown below.
 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_notWARNO_notreport1_exec_plCommand_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXnotWARNOXXnotreportOneXXexecXXplCommandXXlemma
 
@@ -779,13 +778,13 @@ This theorem proves that if the state is NOT WARNO and the PlatoonLeader issues 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_notWARNO_notreport1_exec_plCommand_justified_thm}\HOLssmPlanPBTheoremsPlatoonLeaderXXnotWARNOXXnotreportOneXXexecXXplCommandXXjustifiedXXthm
 
 \paragraph*{PlatoonLeader_psgCommand_notDiscard_thm}
-This next theorem proves that if the PlatoonLeader issues a psgCommand then that command is not discarded.  The reason for this is that the psgCommand is an slCommand.  In inputOK, the PlatoonLeader is authenticated on all psgCommand.  Therefore, this command should be trapped an not discarded.
+This next theorem proves that if the PlatoonLeader issues a psgCommand then that command is not discarded.  The reason for this is that the psgCommand is an slCommand.  In inputOK, the PlatoonLeader is authenticated on all psgCommand.  Therefore, this command should be trapped an not discarded.  It follows the same proof as the ssmPlanPB theorem \textit{PlatoonLeader_Omni_notDiscard_slCommand_thm}.  There are no lemmas.
 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_psgCommand_notDiscard_thm}\HOLssmPlanPBTheoremsPlatoonLeaderXXpsgCommandXXnotDiscardXXthm
 
 
 \paragraph*{PlatoonSergeant_trap_plCommand_justified_thm}
-This next theorem proves that if the PlatoonLeader issues a psgCommand then that command is trapped.  It requires two lemmas.
+This next theorem proves that if the PlatoonLeader issues a psgCommand then that command is trapped.  It specializes the \textit{TR_trap_cmd_rule} with two lemmas to help out.
 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_trap_psgCommand_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXtrapXXpsgCommandXXlemma
 
@@ -793,10 +792,17 @@ This next theorem proves that if the PlatoonLeader issues a psgCommand then that
 
 \HOLThmTag{ssmPlanPB}{PlatoonSergeant_trap_plCommand_justified_thm}\HOLssmPlanPBTheoremsPlatoonSergeantXXtrapXXplCommandXXjustifiedXXthm
 
-\paragraph*{PlatoonLeader_WARNO_exec_report1_justified_thm}
-This theorem proves that if the state IS WARNO and the PlatoonLeader issues the plCommand \textit{report1}, then that command should be executed.  Two lemmas are required first.  
 
-Notice that the 
+\paragraph*{PlatoonLeader_WARNO_exec_report1_justified_thm}
+This theorem proves that transition from the WARNO to the REPORT1 is justified if the following four statements are supplied.
+\begin{itemize}
+\item PlatoonLeader says tentativePlan
+\item PlatoonSergeant says initiateMovement
+\item PlatoonLeader says recon
+\item PlatoonLeader says report1
+\end{itemize}
+
+It specializes the \textit{TR_exex_cmd_rule} and requires the standard two lemmas. They are shown below.
 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_WARNO_exec_report1_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXWARNOXXexecXXreportOneXXlemma
 
@@ -806,7 +812,7 @@ Notice that the
 
 
 \paragraph*{PlatoonSergeant_trap_plCommand_justified_thm}
-This theorem proves that the PlatoonSergeant is trapped on all plCommands.  It requires two lemmas.
+This final theorem proves that the PlatoonSergeant is trapped on all plCommands.  The reason should be obvious.
 
 \HOLThmTag{ssmPlanPB}{PlatoonSergeant_trap_plCommand_lemma}\HOLssmPlanPBTheoremsPlatoonSergeantXXtrapXXplCommandXXlemma
 
