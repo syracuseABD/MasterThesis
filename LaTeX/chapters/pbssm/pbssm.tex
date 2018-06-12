@@ -204,23 +204,139 @@ The state-independent authorization function takes an input list as a parameter.
 \HOLDfnTag{PBIntegratedDef}{secHelper_def}\HOLPBIntegratedDefDefinitionssecHelperXXdef
 
 
-\subsection{Proved Theorems}
+\subsection{Proved Theorems}\label{ssec:ssmpbproved}
 
 \paragraph*{PlatoonLeader_PLAN_PB_exec_justified_thm}
-\HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_exec_justified_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXjustifiedXXthm
+This threorem proves that transition from the PLAN_PB state to the MOVE_TO_ORP state is justified for the following assumptions:
+\begin{itemize}
+\item The current state is PLAN_PB
+\item Omni says ssmPlanPBComplete
+\item PlatoonLeader says crossLD
+\end{itemize}
+
+Most proofs are similar to this.  Therefore, this one will be discussed in detail and used as a reference.
+
+\textit{PlatoonLeader_PLAN_PB_exec_justified_thm} begins by specializing \textit{TR_exec_cmd_rule} described in section \ref{ssec:trrules} of chapter \ref{chp:ssmmodel}.  That rule is repeated here for reference.
+
+\HOLThmTag{ssm}{TR_exec_cmd_rule}\HOLssmTheoremsTRXXexecXXcmdXXrule
+
+Specializing requires use of the ISPECL rule.  This rule takes a list of parameters (lists are enclosed in square brackets) and a theorem (the theorem to be specialized).  
+
+\begin{lstlisting}
+val thPlanPB =
+  ISPECL
+  [``inputOK:((slCommand command)option, stateRole, 'd,'e)Form -> bool``,
+  ``secAuthorization :((slCommand command)option, stateRole, 'd,'e)Form list ->
+                    ((slCommand command)option, stateRole, 'd,'e)Form list``,
+  ``secContext: (slState) ->
+       ((slCommand command)option, stateRole, 'd,'e)Form list ->
+       ((slCommand command)option, stateRole, 'd,'e)Form list``,
+  ``[(Name Omni) says (prop (SOME (SLc (OMNI ssmPlanPBComplete))))
+      :((slCommand command)option, stateRole, 'd,'e)Form;
+     (Name PlatoonLeader) says (prop (SOME (SLc (PL crossLD))))
+      :((slCommand command)option, stateRole, 'd,'e)Form]``,
+  ``ins:((slCommand command)option, stateRole, 'd,'e)Form list list``,
+  ``(PLAN_PB)``,
+  ``outs:slOutput output list trType list``] TR_exec_cmd_rule
+\end{lstlisting}
+
+TthPlanPB is a temporary function used to store an intermediate value. In it, the following values are substituted into the \textit{TR_exec_cmd_rule}.  
+
+\begin{itemize}
+\item \textit{inputOK}: substitutes for \textit{elementTest}
+\item \textit{secAuthorization}: substitutes for \textit{context}
+\item \textit{secContext}: substitutes for \textit{stateInterp}
+\item an input list: substitutes for \textit{s}
+\item the current state: substitutes for \textit{s}
+\item an output list: substitutes for \textit{out}
+\end{itemize}
+
+The \textit{TR_exec_cmd_rule} is already proved in the parametrizable ssm. It is an implication with a hypothesis and a conclusion.  But, with the specialization, it is necessary to prove that the theorem is valid after the authentication and authorization are applied to the input list. To do this, the \textit{thPlanPB} is destructed into a hypothesis and conclusion.  Each of these form the basis for a lemma.  The lemmas are then used to prove the overall theorem.
+
+The first lemma begins with the hypothesis of \textit{thPlanPB}. It extracts the hypothesis using the \textit{dest_imp} to destroy the implication and the \textit{fst} function to retain the first part of the result.  
+
+\begin{lstlisting}
+fst(dest_imp(concl thPlanPB)))
+\end{lstlisting}
+
+The result is a \glsentryshort{hol} term which is used in a tactical proof (backwards proof).
+\begin{lstlisting}
+val PlatoonLeader_PLAN_PB_exec_lemma =
+TAC_PROOF(
+  ([],fst(dest_imp(concl thPlanPB))),
+REWRITE_TAC[CFGInterpret_def, secContext_def, secAuthorization_def, secHelper_def,
+            propCommandList_def,extractPropCommand_def, inputList_def,
+	    getOmniCommand_def,
+	    MAP,extractInput_def, satList_CONS, satList_nil, GSYM satList_conj]  THEN
+PROVE_TAC[Controls,Modus_Ponens])
+\end{lstlisting}
+
+The proof consists of a call to the \textit{REWRITE_TAC} with several definitions passed as parameters.  The reader should recognize most of these commands which are described elsewhere in this master thesis\footnote{Those that aren't can be found at \glsentryshortpl{hol} extensive documentation \url{https://hol-theorem-prover.org/kananaskis-11-helpdocs/help/HOLindex.html}}.  The last line of the proof uses \textit{PROVE_TAC}, an automatic prover, with the Controls and Modus_Ponens rules.  These rules are described in the \glsentryshort{hol} reprsentation of the \glsentryshort{acl}.
+
+This lemma is saved as \textit{PlatoonLeader_PLAN_PB_exec_lemma}.  The \glsentryshort{hol} generated output is shown below.
+
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_exec_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXlemma
 
+The next lemma works on the conclusion of \textit{thPlanPB}.  It extracts the conclusion using the \textit{dest_imp} and \textit{snd} rules. 
+
+\begin{lstlisting}
+snd(dest_imp(concl thPlanPB)))
+\end{lstlisting}
+
+ It is also a tactical proof that uses \textit{PROVE_TAC}.  \textit{PROVE_TAC} takes two parameters. The first is the previous lemma and the second is \textit{TR_exec_cmd_rule}.  It is named 
+
+\begin{lstlisting}
+val PlatoonLeader_PLAN_PB_exec_justified_lemma =
+TAC_PROOF(
+  ([],snd(dest_imp(concl thPlanPB))),
+PROVE_TAC[PlatoonLeader_PLAN_PB_exec_lemma, TR_exec_cmd_rule])
+\end{lstlisting}
+
+This lemma is saved as \textit{PlatoonLeader_PLAN_PB_exec_justified_lemma}.  The \glsentryshort{hol} generated output is shown below.
+
+\HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_exec_justified_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXjustifiedXXlemma
+
+
+With this last lemma, the main theorem is proved using a simple forward proof.  The proof uses the \textit{REWRITE_RULE} with several theorems including the previous lemma. 
+
+\begin{lstlisting}
+val PlatoonLeader_PLAN_PB_exec_justified_thm =
+REWRITE_RULE[inputList_def, extractInput_def, MAP, propCommandList_def,
+  extractPropCommand_def, PlatoonLeader_PLAN_PB_exec_lemma]
+  PlatoonLeader_PLAN_PB_exec_justified_lemma
+\end{lstlisting}
+
+The \glsentryshort{hol} generated output is shown below.
+\HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_exec_justified_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXjustifiedXXthm
+
+With few exceptions, the remaining proofs in all \glsentryshortpl{ssm} follow the same format.
+
 \paragraph*{PlatoonLeader_PLAN_PB_trap_justified_thm}
+\textit{PlatoonLeader_PLAN_PB_trap_justified_thm} proves the \textit{trap} transition is justified in the following case
+\begin{itemize}
+\item current state is PLAN_PB
+\item Omni says someOmniCommand and someOmniCommand $\neq$ ssmPlanPBComplete
+\item PlatoonLeader says crossLD
+\end{itemize}
+
+This is a \textit{trap} because both Omni and PlatoonLeader are authenticated.  But, PlatoonLeader is not authorized to transition to the next state unless Omni says \textit{ssmPlanPBComplete}.
+
+
+
+\textit{PlatoonLeader_PLAN_PB_trap_justified_thm} follows the same pattern of implications destruction and lemma proofs.  The difference is that the \textit{TR_trap_cmd_rule} is specialized instead of the \textit{TR_exec_cmd_rule}.  The two lemmas and theorem are shown below.  
+
+\HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXlemma
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_justified_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXjustifiedXXlemma
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_justified_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXjustifiedXXthm
-\HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXlemma
 
 \paragraph*{PlatoonLeader_Omni_notDiscard_slCommand_thm}
-This theorem proves that if the PlatoonLeader issues an omniCommand and Omni issues a plCommand, the command is not discarded.  The reason for this is that plCommand and omniCommand are both slCommand.  inputOK authenticates both principals for slCommand.  This is a forward proof without any lemmas.
+This theorem proves that if the PlatoonLeader issues an omniCommand and Omni issues a plCommand, the command is not discarded.  The reason for this is that plCommand and omniCommand are both slCommand and  inputOK authenticates both principals for slCommand.  
+
+This proof specializes the \textit{TR_discard_cmd_rule}.  This follows a different pattern with no lemmas.  The \glsentryshort{hol} generated output is shown below.
 
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_Omni_notDiscard_slCommand_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXOmniXXnotDiscardXXslCommandXXthm
 
-     
+Theorems for each transition are possible. For the most part, they are a cut-n-paste of the theorems above with a few keywords changed.  But, they become repetitive and no new information is gained be generating them. 
       %%%%%%%%%%%%%%%%%%% Multiple Principles %%%%%%%%%%%%%
 \section{ssmConductORP: Multiple Principals}
 ssmConductORP is an example of a \glsentryshort{ssm} with more than one principal authorized to execute transitions among states. The diagram is shown in figure \ref{ssmConductORPDiagram2}.
@@ -377,19 +493,34 @@ Like ssmPB, the state-independent authorization function is named \textit{secAut
 
 
 \subsection{Proved Theorems}
-\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_justified_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXlemma
-\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXthm
-\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXlemma
-\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_justified_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXlemma
-\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXthm
-\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXlemma
-\HOLThmTag{ssmConductORP}{PlatoonLeader_CONDUCT_ORP_exec_secure_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXCONDUCTXXORPXXexecXXsecureXXjustifiedXXthm
-\HOLThmTag{ssmConductORP}{PlatoonLeader_CONDUCT_ORP_exec_secure_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXCONDUCTXXORPXXexecXXsecureXXlemma
+These theorems follow those in section \ref{ssec:ssmpbproved} for ssmPB.  There are few changes and thus detailed explanation with provide no new or insightful information.  They are presented here for completeness of this section.
+
+\paragraph*{PlatoonSergeant_SECURE_exec_justified_thm}
+This theorem justifies transition from the SECURE state to the ACTIONS_IN  state.  The authenticated principal is the PlatoonSergeant.  This theorem specializes the \textit{TR_exec_cmd_rule}.  The two lemmas and theorem are shown below.
+
+\HOLThmTag{ssmConductORP}{PlatoonSergeant_SECURE_exec_lemma}\HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXlemma
 \HOLThmTag{ssmConductORP}{PlatoonSergeant_SECURE_exec_justified_lemma}\HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXjustifiedXXlemma
 \HOLThmTag{ssmConductORP}{PlatoonSergeant_SECURE_exec_justified_thm}\HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXjustifiedXXthm
-\HOLThmTag{ssmConductORP}{PlatoonSergeant_SECURE_exec_lemma}\HOLssmConductORPTheoremsPlatoonSergeantXXSECUREXXexecXXlemma
+
+\paragraph*{PlatoonLeader_ACTIONS_IN_exec_justified_thm}
+This theorem justifies transition from the ACTIONS_IN state to the WITHDRAW state.  The authenticated principal is the PlatoonLeader.  This theorem specializes the \textit{TR_exec_cmd_rule}.  The two lemmas and theorem are shown below.
+
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_justified_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXthm
+
+\paragraph*{PlatoonLeader_ACTIONS_IN_trap_justified_thm}
+This theorem justifies trapping the transition from the ACTIONS_IN state to the WITHDRAW state.  The authenticated principal is the PlatoonLeader.  But, in this case, Omni does not issue the command \textit{ssmActionsInComplete}.  Therefore, the transition is not authorized.  This theorem specializes the \textit{TR_exec_cmd_rule}.  The two lemmas and theorem are shown below.
+
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_justified_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXlemma
+\HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXthm
 
 
+\paragraph*{PlatoonSergeant_SECURE_exec_justified_thm}
+This theorem justifies transition from the SECURE state to the ACTIONS_IN  state.  The authenticated principal is the PlatoonSergeant.  This theorem specializes the \textit{TR_exec_cmd_rule}.  The two lemmas and theorem are shown below.
+
+As with ssmPlanPB, other theorems could be proved.  But, no new information would be gained.
 
       %%%%%%%%%%%%%%%%%%% ssmPlanPB %%%%%%%%%%%%%%%%
 \section{ssmPlanPB: Non-sequential Transitions}
