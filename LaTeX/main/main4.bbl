@@ -23,6 +23,27 @@ Shiu-Kai Chin and Susan Older.
 \newblock Department of Electrical Engineering and Computer Science Syracuse
   University, Syracuse University, Syracuse, New York 13244, November 2017.
 
+\bibitem{kingdom}
+Director~Peter Berg and Writer Matthew~Michael Carnahan.
+\newblock The kingdom.
+\newblock Motion Picture Movie, September 2007.
+
+\bibitem{iso15288}
+{ISO/IEC/IEEE 15288} international standard - systems and software engineering
+  -- system life cycle processes.
+\newblock Technical Report {ISO/IEC/IEEE 15288:2015(E)}, International
+  Organization for Standardization (ISO) {\&} International Electrotechnical
+  Commission (IEC) {\&} Institute of Electrical and Electronics Engineers
+  (IEEE), 3 Park Avenue, New York, NY 10016-5997, USA, May 2015.
+
+\bibitem{NIST800160}
+Ron Ross, Michael McEvilley, and Janet~Carrier Oren.
+\newblock Systems security engineering considerations for a multidisciplinary
+  approach in the engineering of trustworthy secure systems.
+\newblock Special Publication 800-160, National Institute of Standards and
+  Technology (NIST), 100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD
+  20899-8930, May 2016.
+
 \bibitem{saltzer}
 Jerome~H. Saltzer and Michael~D. Schroeder.
 \newblock The protection of information in computer systems, April 1975.
@@ -83,14 +104,6 @@ Hol interactive theorem prover.
 
 \bibitem{HOLwiki}
 Hol (proof assistant), April 2016.
-
-\bibitem{iso15288}
-{ISO/IEC/IEEE 15288} international standard - systems and software engineering
-  -- system life cycle processes.
-\newblock Technical Report {ISO/IEC/IEEE 15288:2015(E)}, International
-  Organization for Standardization (ISO) {\&} International Electrotechnical
-  Commission (IEC) {\&} Institute of Electrical and Electronics Engineers
-  (IEEE), 3 Park Avenue, New York, NY 10016-5997, USA, May 2015.
 
 \bibitem{iso24748}
 ISO.
