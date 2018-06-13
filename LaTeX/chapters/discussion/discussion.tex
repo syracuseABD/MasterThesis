@@ -7,12 +7,17 @@
 %%%%%%%%%%%%%%%%%%%%% Chapter Discussion %%%%%%%%%%%%%%%
 \chapter{Discussion}\label{chp:discussion}
 
+The previous chapters describe and discuss the work of this master thesis. This chapter summarizes the previous chapters and adds a few insights discovered along the way.  It also discusses the scope of this work and any limitations or issues.  
+
       %%%%%%%%%%%%%%%%%%% Section Recap %%%%%%%%%%%%%%%%%%
 \section{Summary}\label{recap}
+This master thesis begins with the systems security engineering framework not only because it presents the context for this work but also because it is helpful in guiding the work flow.  This work begins with no assumptions regarding how to apply \glsentryshort{csbd} to the patrol base operations.  The systems security engineering framework guides us to focus on unacceptable losses and security-sensitive objects.  The former would become the escape level secure state machine.  The later would become the phases of the operations.  
+
+The next chapter describes the Certified Security by Design with the access-control logic and its implementation in \glsentryshort{hol}.  \glsentryshort{csbd} focuses the work on modeling the patrol base operations such that complete mediation can be verified and documented.  Verification is built into the secure state machine model.  This model is taught in the "Assurance Foundations" course at Syracuse University.  It has already been tested and implemented in \glsentryshort{hol}.  To capitalize on this, the patrol base operations are modeled as secure state machines.   
 
       %%%%%%%%%%%%%%%%%%% Section Mission Accomplished %%%%%%%%%%
 \section{Lessons Learned}\label{missionaccomplished}
-This master thesis demonstrates that \glsentryshort{csbd} is effective for verifying complete mediation on non-automated, human-centered systems.  The \glsentryshort{csbd} approach is effective, but it is not unique.  Therefore, the implication of this work is that complete mediation can be verified on non-automated, human-centered systems. 
+This master thesis demonstrates that \glsentryshort{csbd} is effective for verifying complete mediation on non-automated, human-centered systems.  The \glsentryshort{csbd} approach is effective, but it is not unique.  Therefore, the implication of this work is that complete mediation can be verified on non-automated, human-centered systems.  
 
 
       %%%%%%%%%%%%%%%%%%% Section Mission Accomplished %%%%%%%%%%
