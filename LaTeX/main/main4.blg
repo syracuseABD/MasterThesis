@@ -4,74 +4,74 @@ The top-level auxiliary file: main4.aux
 The style file: unsrt.bst
 Database file #1: mtref.bib
 Warning--entry type for "constructor" isn't style-file defined
---line 20 of file mtref.bib
+--line 30 of file mtref.bib
 Warning--entry type for "saulk" isn't style-file defined
---line 74 of file mtref.bib
-Warning--entry type for "HOLwiki" isn't style-file defined
 --line 84 of file mtref.bib
-Warning--entry type for "BSDlicenses" isn't style-file defined
+Warning--entry type for "HOLwiki" isn't style-file defined
 --line 94 of file mtref.bib
-Warning--entry type for "saltzer" isn't style-file defined
+Warning--entry type for "BSDlicenses" isn't style-file defined
 --line 104 of file mtref.bib
+Warning--entry type for "saltzer" isn't style-file defined
+--line 114 of file mtref.bib
 Warning--entry type for "availability" isn't style-file defined
---line 115 of file mtref.bib
+--line 125 of file mtref.bib
 Warning--entry type for "elasticsearch" isn't style-file defined
---line 149 of file mtref.bib
+--line 159 of file mtref.bib
 Warning--entry type for "wikiconops" isn't style-file defined
---line 158 of file mtref.bib
+--line 168 of file mtref.bib
 Warning--entry type for "nistmission" isn't style-file defined
---line 203 of file mtref.bib
+--line 213 of file mtref.bib
 Warning--entry type for "HOL" isn't style-file defined
---line 236 of file mtref.bib
+--line 246 of file mtref.bib
 Warning--entry type for "functionalprogramming" isn't style-file defined
---line 244 of file mtref.bib
+--line 254 of file mtref.bib
 Warning--entry type for "formalmethodslcarke" isn't style-file defined
---line 302 of file mtref.bib
+--line 312 of file mtref.bib
 Warning--empty author and editor in types
 Warning--empty author in iso15288
 Warning--empty note in VARVEL
 Warning--there's a number but no series in stateexplosion
 Warning--empty author in wikiformalmethods
 Warning--empty year in Tantooine
-You've used 28 entries,
+You've used 29 entries,
             1791 wiz_defined-function locations,
-            580 strings with 7428 characters,
-and the built_in function-call counts, 4061 in all, are:
-= -- 322
-> -- 153
+            587 strings with 7642 characters,
+and the built_in function-call counts, 4325 in all, are:
+= -- 343
+> -- 170
 < -- 8
-+ -- 66
-- -- 38
-* -- 195
-:= -- 590
-add.period$ -- 63
-call.type$ -- 28
-change.case$ -- 26
++ -- 72
+- -- 43
+* -- 217
+:= -- 635
+add.period$ -- 66
+call.type$ -- 29
+change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 204
-empty$ -- 489
-format.name$ -- 38
-if$ -- 949
+cite$ -- 35
+duplicate$ -- 213
+empty$ -- 512
+format.name$ -- 43
+if$ -- 1006
 int.to.chr$ -- 0
-int.to.str$ -- 28
-missing$ -- 9
-newline$ -- 120
-num.names$ -- 18
-pop$ -- 138
+int.to.str$ -- 29
+missing$ -- 10
+newline$ -- 125
+num.names$ -- 19
+pop$ -- 139
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 127
+skip$ -- 130
 stack$ -- 0
-substring$ -- 56
-swap$ -- 47
+substring$ -- 77
+swap$ -- 48
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 6
-while$ -- 22
-width$ -- 30
-write$ -- 248
+while$ -- 24
+width$ -- 31
+write$ -- 259
 (There were 18 warnings)

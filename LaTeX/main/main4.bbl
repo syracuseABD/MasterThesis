@@ -44,6 +44,13 @@ Ron Ross, Michael McEvilley, and Janet~Carrier Oren.
   Technology (NIST), 100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD
   20899-8930, May 2016.
 
+\bibitem{pkm}
+JPMC's~SWIFT protocols Glenn~Benson, Shiu-Kai Chin, Sean Croston, Karthick
+  Jayaraman, and Susan Older.
+\newblock Banking on interoperability: Secure, interoperable credential
+  management.
+\newblock {\em Computer Networks}, 67:235--251, 2014.
+
 \bibitem{saltzer}
 Jerome~H. Saltzer and Michael~D. Schroeder.
 \newblock The protection of information in computer systems, April 1975.
