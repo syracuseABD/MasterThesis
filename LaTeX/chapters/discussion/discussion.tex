@@ -15,12 +15,26 @@ This master thesis begins with the systems security engineering framework not on
 
 The next chapter describes the Certified Security by Design with the access-control logic and its implementation in \glsentryshort{hol}.  \glsentryshort{csbd} focuses the work on modeling the patrol base operations such that complete mediation can be verified and documented.  Verification is built into the secure state machine model.  This model is taught in the "Assurance Foundations" course at Syracuse University.  It has already been tested and implemented in \glsentryshort{hol}.  To capitalize on this, the patrol base operations are modeled as secure state machines.   
 
+The next chapter describes the model of the patrol base operations.  The patrol base operations are large.  Thus, the model begins with a  single, abstract, six-phase secure state machine that sequentially runs from the initial planning phase through to the completion phase of the operations.  This becomes the top level of a hierarchy of secure state machines.  Each level of the hierarchy descends into less abstract description of  phases in the level above it.  This approach has a couple of benefits.  First, it is easier to model a large system if it is abstracted into levels and modularized.  Second, it is more efficient to delegate work.  Once the initial secure state machine is modeled, the \glsentryshort{csbd} expert focus on verification and documentation while the subject matter expert designs the next level of the model.
+
+The next chapter, describes the secure state machine model and it's implementation in \glsentryshort{hol}.  It discusses the concept of a monitor in terms of access-control.  It also describes the parametrizable secure state machine (ssm)  \glsentryshort{hol} implementation. All patrol base operations secure state machines use this ssm to verify and document properties of complete mediation.
+
+The next chapter is the culmination of all the previous chapters. It describes several implementations of the patrol base operations in \glsentryshort{hol}.  These implementation are examples that demonstrate the patterns of verification and documentation by way of formal proofs.  These patterns are repeated throughout all the patrol base operations implementations.
+
+The next chapter discusses ideas and models that are considered during the project but not implemented in \glsentryshort{hol}.  These are worthy of implementation, but not implemented because of the size of the system and finite amount of time.  
+
+The chapter following this one, discusses ideas on future work.  
+
       %%%%%%%%%%%%%%%%%%% Section Mission Accomplished %%%%%%%%%%
-\section{Lessons Learned}\label{missionaccomplished}
-This master thesis demonstrates that \glsentryshort{csbd} is effective for verifying complete mediation on non-automated, human-centered systems.  The \glsentryshort{csbd} approach is effective, but it is not unique.  Therefore, the implication of this work is that complete mediation can be verified on non-automated, human-centered systems.  
+\section{Challenges And Limitations of The Approach}\label{missionaccomplished}
+The goal of this project is to determine if non-automated, human-centered systems are a limitation to the applicability of the \glsentryshort{csbd} approach.  No limitations are found in this respect.  
+
+One challenge is to model a large system.  This is solved using levels of abstraction and modularization described above.  Once this is tackled, everything is straight forward \footnote{The only exception was that the parametrizable secure state machine (ssm) needed to be remodeled half-way through the project.  This meant that all the secure state machines had to be redone with the new model.} .
+
+The main difficulty of \glsentryshort{csbd} is the learning curve in the mathematical application of formal methods to systems engineering.  But, this is a general problem and not specific to this approach. In all areas of systems engineering, theorem proving remains a mostly interactive and not automated endeavor.  While most mathematicians will appreciate the job security, most computer scientists would prefer to let the computer do the grunt work.  \glsentryshort{hol}, as with most theorem provers,  can be difficult to work with.  However, it is a highly reliable theorem prover.  Thus, when reliability is required, \glsentryshort{hol} shows promise. 
 
 
-      %%%%%%%%%%%%%%%%%%% Section Mission Accomplished %%%%%%%%%%
-\section{Difficulties And Limitations of The Approach}\label{missionaccomplished}
+The learning curve problem is partially solved by the use of pre-implemented and parametrizable models such as the secure state machine model.  This combined with ample examples, eases the burden of reinventing \glsentryshort{hol} code. It is also likely, as theorem proving with \glsentryshort{acl} becomes more popular, more reusable and parametrizable code will be available to further ease the burden of proof.  
+
 
 \end{document}
