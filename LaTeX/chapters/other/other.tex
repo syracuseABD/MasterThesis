@@ -4,21 +4,29 @@
 
 
 \begin{document}
-\chapter{Other Theories}\label{chp:other}
-This section discusses other theories that are not verified in \glsentryshort{hol}.  These theories highlight the potential for a greater variety of representations of the patrol base operations.  
+\chapter{Non-implemented modules}\label{chp:other}
+The previous chapter discusses the implementation of several patrol base operations implementations in \glsentryshort{hol}.  But, there are numerous ways to describe the patrol base operations.  This chapter briefly discusses ideas that are not implemented in this project.
 
 \section{Authentication \& Roles}
-This master thesis discussed authentication as a visual confirmation among the soldiers. For example, most often, most soldiers in a platoon know who their platoon leader is and do not require a password.  But, this is not always the case.  One example where it may not be readily obvious is when the platoon leader has been incapacitated and can no longer function in that role.  The military has a clearly defined succession hierarchy and soldier are (or should be) aware of this.  But, computers aren't as smart as soldiers...unless they are designed to be so.  In this case, two concepts come to mind, that of more stringent authentication and of soldiers acting in roles is useful.
+This master thesis discussed authentication as a visual confirmation among the soldiers. For example, most soldiers in a platoon know who their platoon leader is and do not require a password.  But, there are scenarios where this is not true.   In some cases, more stringent authentication is warranted.  Such authentication may include the use of identification cards, password, biometric, implanted computer chips.  The parametrizable secure state machine model used in this master thesis is also implemented as a crypto version.  This version enforces the access-control logic using more stringent checks on authentication.  
 
-More stringent authentication means using means using things such as identification cards, password, or any variety of authentication techniques.  These are all readily modeled in the \glsentryshort{acl}.  A secure state machines that accounts for more stringent authentication is already implemented in \glsentryshort{hol}.  
+This master thesis also focuses on authentication and verification of roles.  For example, the PlatoonLeader and PlatoonSergeant issue commands.  But, there is an alternative representation that considers soldiers acting in roles.  For example, G.I. Jane acting in the role of Platoon Leader becomes the authenticated and authorized principal.  Just as there is a parametrizable secure state machine model for crypto, there is one for principals acting in roles.  
 
-The idea behind defining the platoon leader as the authorized principal in, for example, the top level \glsentryshort{ssm} allows for the system to work regardless of who the platoon leader is.  Nevertheless, it is the soldier acting in the role of the platoon leader who is actually authorized.  This can also be represented in the \glsentryshort{acl} and \glsentryshort{ssm} model.  A parametrizable \glsentryshort{ssm} is also already implemented in \glsentryshort{hol} to do this.
+Both crypto and role versions of the parametrizable secure state machine add another level of complexity and flexibility to the model of the patrol base operations.  They are not implemented in this master thesis because the used model seemed most relevant.  Additionally, there were time constraints on this project.  However, these versions of the ssms have been demonstrated in the "Assured Foundations" course at Syracuse University.  
 
 
 \section{Soldier, Squad, and Platoon Theories}
+The patrol base operations model discussed in the previous chapters described transitions among phases of the operations.  Additional models consider modules of soldiers, squads, and platoons.  These are not implemented because of time constraints.  
+
+The soldier module would describe a soldier datatype.  This would have various values such as name, ID, weapons, health, water, battleReadiness, assignment, etc.   This could then proves various properties of a soldier.  For example,  \textit{SoldiierGIJane  says battleReady}, then the policy may state that
 
 
+ \[ \text{\textit{soldierHealthy andf }} \] 
+  \[ \text{\textit{weaponsReady andf }} \] 
+ \[ \text{\textit{waterReady andf }} \] 
+\[ \text{\textit{SoldierGIJane controls battleReady }} \]
 
+From this, the \glsentryshort{acl} could prove that the soldier is battle ready if and only if the soldier is healthy and has her weapons and water.  Similar modules could describe properties of a squad and platoon.  These could be described with a secure state machine.  However, they are simple enough to be described without it.
 
 
 
