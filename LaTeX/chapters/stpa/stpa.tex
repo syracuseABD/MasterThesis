@@ -10,22 +10,45 @@
 \chapter{System-Theoretic Process Analysis}
 \section{Systems Engineering}
 \section{Systems Security Engineering}
-\section{System-Theoretic Process Analysis}
-The primary source for this section is the \glsentryshort{stpa} Handbook \cite{stpa}. It is referred to as the "handbook" in the remainder of this chapter.
+\section{System-Theoretic Process Analysis} The primary source for this section is the \glsentryshort{stpa} Handbook \cite{stpa}. It is referred to as the "handbook" in the remainder of this chapter.
+
+System-Theoretic Process Analysis is a systems engineering process that helps the engineer identify and mitigate stakeholder losses. It does this using a four step process that is founded on the System-Theoretic Accident Model and Processes (STAMP).  
+
+STAMP is a way of thinking about how accidents occur.  It assumes both a traditional and a system theoretic view.  In the traditional view, accidents are caused by unsafe chains of events.  In the system theoretic view, accidents are also caused by dynamic and complex interactions. System theory focuses on the system as a whole rather than as a collection of subcomponents.  The need for a system theory approach is epitomized in the notion that the whole is greater than the sum of its parts.  From the complex interactions of individual components arise emergent properties. These properties can be thought of as a higher order that is not predictable from the behavior of the individual components.
+
+Whereas STAMP is a way of thinking about the causes of accidents, STPA is a method to analyze systems in order to prevent or mitigate losses caused by these accidents.  
+
 \section{STPA Overview: Four Steps}
-The four steps to the STPA process are briefly described below and then applied to the patrol base operations model in the next section.
+STPA is a four step process.  Figure \ref{4step} diagrams these four steps.  The four steps are briefly described below and then applied to the patrol base operations in the next section.
+
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{../figures/4step}
+\caption{\label{4step} Four step process of STPA. (Image captured from the \glsentryshort{stpa} Handbook \cite{stpa}.)}
+\end{figure}
+
+
 \paragraph*{Step 1: Define The Purpose of The Analysis}
+The first step defines the purpose of the analysis.  It defines the stakeholders and losses from the their perspective.  It also defines the system boundaries, subsystems, environment, inputs, and outputs.  
+
 \paragraph*{Step 2: Model The Control Structure}
+The second step models the system.  The model is called a control structure.  It defines the relationships and interactions within the system.
+
 \paragraph*{Step 3: Identify Unsafe Control Actions}
+The next step looks links the control actions in the model to the losses described in step 1.
+
 \paragraph*{Step 4: Identify Loss Scenarios}
+The last step identifies scenarios that could cause the loss-linked control actions described in step 3.  This analysis should be used to guide system security engineering decisions.
+
 
 \section{STPA on Patrol Base Operations}
+The previous section describes the basic four-step process for STPA.  This section applies that process to the patrol base operations.
+
 \subsection{Step 1: Define The Purpose of The Analysis}
 \paragraph*{Define The Purpose of The Analysis}
 The purpose of this analysis is to demonstrate the systems security engineering objective (as described by NIST Special Publication 800-160) of designing trustworthy systems with regards to complete mediation.  Complete mediation is the demonstrated outcome of applying the \glsentryshort{csbd} methodology to automated systems.  In this particular analysis, \glsentryshort{csbd} is applied to a non-automated, human-centered system exemplified by the U.S. Ranger Handbook's patrol base operations.  Thus, the more immediate goal is to demonstrate complete mediation in the patrol base operations.  A side-effect is a more thorough understanding of how access-control principals function in non-automated, human-centered military systems.  
 
 \paragraph*{Identify Losses  with Regards to The Stakeholders}
-Losses are defined with regards to stakeholders.  The stakeholders and identifiable losses are described below.
+Losses are defined with regards to stakeholders.  These are described below.
 
 \begin{itemize}
 \item U.S. Government\\
@@ -45,32 +68,64 @@ The military industrial complex is a vital asset to national security and plays 
 \item The enemy\\
 The enemy has a stake in mission failure.  Their loss is considered a gain.  Therefore, mission failure is a loss.  
 \item Regional peoples\\
-Regardless of whether the patrol base operations are conducted in a foreign land or at home, preservation of culture, civilian lives, and resources are a concern.  Thus, disruption of the local culture and damage to resources is a loss. 
+Regardless of whether the patrol base operations are conducted in a foreign land or at home, preservation of culture, civilian lives, and resources are a concern.  Therefore, disruption of the local culture and damage to resources is a loss. 
 \end{itemize}
 
+Thus, from the stakeholders perspective, identified losses are: mission failure; mission discovery; capture, morbidity, and mortality; equipment loss and damage; negative publicity; disruption of local culture and damage to resources.
 
-\subsection{Step 2: Model The Control Structure}
-Defining the system boundaries: (reference Ranger Handbook)
-One of the challenges in modeling the patrol base operations is generality.  Patrol base operations may consist of a fire team comprised of ? soldiers, a platoon comprised of ? soldiers, or something in-between.  The mission\footnote{Note that the Ranger Handbook specifically states that "because a patrol is an organization, not a mission, it is not correct to speak of giving a unit a mission to "patrol.""  The term "mission" used in this master thesis refers generally to the mission (or objectives) of the patrol base operations, and does not refer to the patrol as being a mission.}
- may be to engage with the enemy, to acquire intelligence for the main body, or some else.
+\paragraph*{Define The System Boundaries}
+The primary reference for this section is the U.S. Ranger Handbook \cite{rangermanual}.
 
+One way to describe the patrol base operations is with the mission activity specification.  This describes the \textit{what}, \textit{how}, and \textit{why} of the operations. The mission activity specification for the patrol base operations are shown in table \ref{pbtab}
 
-Figure \ref{system} shows a diagram relating a system to its boundaries, subsystems, and inputs and outputs.  These each described below.
+\parskip=8pt
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{ | m{3.3em} | m{3.8cm}| m{9cm} | } 
+\hline
+\multicolumn{3}{|c|}{Patrol Base Operations: Mission Activity Specification} \\
+\hline \hline
+Purpose & A system to & establish a security perimeter when a squad or platoon halts for an extended period of time \\ 
+\hline
+Method & by means of  & planning, reconnaissance, security, control, and common sense  \\ 
+\hline
+Goal & in order to & 
+\begin{itemize}
+\item avoid detection
+\item hide a unit during a long, detailed reconnaissance
+\item perform maintenance on weapons, equipment, eat, and rest
+\item plan and issue orders
+\item reorganize after infiltrating an enemy area
+\item establish a base from which to execute several consecutive or concurrent operations
+\end{itemize}
+\\ 
+\hline
+\end{tabular}
+\end{center}
+\caption{Mission Activity Specification for Patrol Base Operations.  Adapted from the U.S. Army Ranger Handbook 2017 (7-46) \cite{rangermanual}.}
+\label{pbtab}
+\end{table}
+\parskip=18pt
+
+The mission activity specificity highlights one of the challenges in modeling the patrol base operations: it's generality.  To put this into perspective, the patrol base may execute operations such as engaging the enemy or conducting reconnaissance.  Or, it may be a temporary rest and recovery position.  A patrol engaged in patrol base operations may consist of a fire team comprised of ? soldiers, a platoon comprised of ? soldiers, or something in-between. 
+
+Without loss of generality, the patrol base operations are defined in terms of the system, system boundaries, subsystems, environment, input, and outputs.  Figure \ref{system} shows a diagram relating a system to its boundaries, subsystems, and inputs and outputs.  These are described below.
 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{../figures/system}
-\caption{\label{system}Relationship of system to system boundaries, subsystems, inputs, and outputs. (Image captured from the \glsentryshort{stpa} Handbook \cite{stpa}.)}
+\caption{\label{system} Relationship of system to system boundaries, subsystems, inputs, and outputs. (Image captured from the \glsentryshort{stpa} Handbook \cite{stpa}.)}
 \end{figure}
 \paragraph*{System}
 In this master thesis, the "system" refers to a platoon-sized patrol base operation.  This is the best choice because a platoon-sized operation may be scaled-down to accommodate a squad-sized or fire team-sized detachment, but not the other way around. 
 
-The mission details are intentionally kept vague to accommodate as many types of missions as possible.  The system boundaries for the model are the start and end of the mission. In this master thesis, the patrol base operations begin in the planning phase when the patrol leader receives the mission.  The patrol base operations end after the patrol withdraws from the operations and returns to the main body\footnote{Completion should include reporting to the commander.  However, for the purposes of this master thesis, it was sufficient to conclude a withdraw.  Nevertheless, with our model of the patrol base operations, it is easy to add a phase for reporting to the commander.}
+\paragraph*{System Boundaries}
+The mission details are intentionally kept vague to accommodate as many types of missions as possible.  The system boundaries for the model are the start and end of the mission\footnote{Note that the Ranger Handbook specifically states that "because a patrol is an organization, not a mission, it is not correct to speak of giving a unit a mission to "patrol.""  The term "mission" used in this master thesis refers generally to the mission (or objectives) of the patrol base operations, and does not refer to the patrol as being a mission.}. In this master thesis, the patrol base operations begin in the planning phase when the patrol leader receives the mission.  The patrol base operations end after the patrol withdraws from the operations and returns to the main body\footnote{Completion should include reporting to the commander.  However, for the purposes of this master thesis, it was sufficient to conclude a withdraw.  Nevertheless, with our model of the patrol base operations, it is easy to add a phase for reporting to the commander.}
 
 \paragraph*{Subsystem}
 A subsystem in the patrol base operations is any smaller group of soldier assigned to a specific task such as security or reconnaissance.  This may include a squad or fire team.  
 
 \paragraph*{Environment}
-The mission is determined by the greater-wisdom of the U.S. Army leadership at the time of need.  This means that environmental boundaries, mission boundaries, and other system requirements must be determined by the patrol leader  (referred to as the platoon leader in other chapters) after the mission is received and during the planning phase.  For this reason, STPA analysis should be performed on a mission before it is referred to the patrol.  But also, patrol leaders should be trained in STPA to make a quick and accurate analysis of mission-specific system boundaries.  
+The mission is determined by the greater-wisdom of the U.S. Army leadership at the time of need.  This means that environmental boundaries, mission boundaries, and other system requirements must be determined by the patrol leader  (referred to as the platoon leader in subsequent chapters) after the mission is received and during the planning phase.  For this reason, STPA analysis should be performed on a mission before it is referred to the patrol.  But also, patrol leaders should be trained in STPA to make a quick and accurate analysis of mission-specific system boundaries.  
 
 
 \paragraph*{System Inputs and Outputs}
@@ -79,6 +134,8 @@ The system input is the mission handed down by the U.S. Army leadership.  Additi
 System outputs are mission dependent.  They may be successful engagement with the enemy, the capture of an enemy combatant, acquisition of specific intelligence, or anything else defined by the mission objectives.
 
 
+
+\subsection{Step 2: Model The Control Structure}
 
 
 \subsection{Step 3: Identify Unsafe Control Actions}
