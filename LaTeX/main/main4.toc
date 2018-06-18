@@ -37,9 +37,13 @@
 \contentsline {section}{\numberline {4.4}STPA Overview: Four Steps}{28}{section.4.4}
 \contentsline {section}{\numberline {4.5}STPA on Patrol Base Operations}{29}{section.4.5}
 \contentsline {subsection}{\numberline {4.5.1}Step 1: Define The Purpose of The Analysis}{29}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Step 2: Model The Control Structure}{35}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Step 3: Identify Unsafe Control Actions}{35}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Step 4: Identify Loss Scenarios}{35}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.2}Define The Purpose of The Analysis}{29}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Identify Losses with Regards to The Stakeholders}{30}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Define The System Boundaries}{32}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.5}Identify System-level Hazards}{35}{subsection.4.5.5}
+\contentsline {subsection}{\numberline {4.5.6}Step 2: Model The Control Structure}{35}{subsection.4.5.6}
+\contentsline {subsection}{\numberline {4.5.7}Step 3: Identify Unsafe Control Actions}{35}{subsection.4.5.7}
+\contentsline {subsection}{\numberline {4.5.8}Step 4: Identify Loss Scenarios}{35}{subsection.4.5.8}
 \contentsline {chapter}{\numberline {5}Certified Security by Design (CSBD) \& Access-Control Logic (ACL)}{36}{chapter.5}
 \contentsline {section}{\numberline {5.1}Certified Security by Design (CSBD)}{36}{section.5.1}
 \contentsline {section}{\numberline {5.2}Access-Control Logic (ACL)}{37}{section.5.2}
@@ -157,7 +161,7 @@
 \contentsline {chapter}{\numberline {11}Future Work}{184}{chapter.11}
 \contentsline {section}{\numberline {11.1}Applicability}{184}{section.11.1}
 \contentsline {subsection}{\numberline {11.1.1}Accountability Systems}{185}{subsection.11.1.1}
-\contentsline {chapter}{Appendices}{187}{section*.74}
+\contentsline {chapter}{Appendices}{187}{section*.71}
 \contentsline {chapter}{\numberline {A}Access Control Logic Theories: Pretty-Printed Theories}{188}{Appendix.a.A}
 \contentsline {chapter}{\numberline {B}Secure State Machine \& Patrol Base Operations: Pretty-Printed Theories }{211}{Appendix.a.B}
 \contentsline {chapter}{\numberline {C}Secure State Machine Theories: HOL Script Files}{326}{Appendix.a.C}
@@ -209,4 +213,4 @@
 \contentsline {subsubsection}{\numberline {D.5.4.2}FormRTDef Theory: Authentication \& Authorization Definitions}{343}{subsubsection.a.D.5.4.2}
 \contentsline {subsubsection}{\numberline {D.5.4.3}ssmFormRT Theory: Theorems}{343}{subsubsection.a.D.5.4.3}
 \contentsline {chapter}{\numberline {E}Map of The File Folder Structure}{344}{Appendix.a.E}
-\contentsline {chapter}{References}{345}{chapter*.75}
+\contentsline {chapter}{References}{345}{chapter*.72}

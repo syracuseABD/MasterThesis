@@ -41,13 +41,13 @@ The last step identifies scenarios that could cause the loss-linked control acti
 
 
 \section{STPA on Patrol Base Operations}
-The previous section describes the basic four-step process for STPA.  This section applies that process to the patrol base operations.
+The previous section briefly describes the basic four-step process for STPA.  This section applies that process to the patrol base operations.
 
 \subsection{Step 1: Define The Purpose of The Analysis}
-\paragraph*{Define The Purpose of The Analysis}
+\subsection{Define The Purpose of The Analysis}
 The purpose of this analysis is to demonstrate the systems security engineering objective (as described by NIST Special Publication 800-160) of designing trustworthy systems with regards to complete mediation.  Complete mediation is the demonstrated outcome of applying the \glsentryshort{csbd} methodology to automated systems.  In this particular analysis, \glsentryshort{csbd} is applied to a non-automated, human-centered system exemplified by the U.S. Ranger Handbook's patrol base operations.  Thus, the more immediate goal is to demonstrate complete mediation in the patrol base operations.  A side-effect is a more thorough understanding of how access-control principals function in non-automated, human-centered military systems.  
 
-\paragraph*{Identify Losses  with Regards to The Stakeholders}
+\subsection{Identify Losses  with Regards to The Stakeholders}
 Losses are defined with regards to stakeholders.  These are described below.
 
 \begin{itemize}
@@ -71,9 +71,18 @@ The enemy has a stake in mission failure.  Their loss is considered a gain.  The
 Regardless of whether the patrol base operations are conducted in a foreign land or at home, preservation of culture, civilian lives, and resources are a concern.  Therefore, disruption of the local culture and damage to resources is a loss. 
 \end{itemize}
 
-Thus, from the stakeholders perspective, identified losses are: mission failure; mission discovery; capture, morbidity, and mortality; equipment loss and damage; negative publicity; disruption of local culture and damage to resources.
+Thus, from the stakeholders perspective, identified losses are: mission failure; mission discovery; capture, morbidity, and mortality; equipment loss and damage; negative publicity; disruption of local culture and damage to resources.  The labels for these losses are 
 
-\paragraph*{Define The System Boundaries}
+\begin{itemize}
+\item L-1: Mission failure
+\item L-2: Capture, morbidity, and mortality
+\item L-3: Mission discovery
+\item L-4: Equipment loss or damage
+\item L-5: Negative publicity
+\item L-6: Disruption of local culture and damage to resources
+\end{itemize}
+
+\subsection{Define The System Boundaries}
 The primary reference for this section is the U.S. Ranger Handbook \cite{rangermanual}.
 
 One way to describe the patrol base operations is with the mission activity specification.  This describes the \textit{what}, \textit{how}, and \textit{why} of the operations. The mission activity specification for the patrol base operations are shown in table \ref{pbtab}
@@ -132,6 +141,17 @@ The mission is determined by the greater-wisdom of the U.S. Army leadership at t
 The system input is the mission handed down by the U.S. Army leadership.  Additional inputs such as equipment, weapons, and additional personnel are determined when the mission is received. 
 
 System outputs are mission dependent.  They may be successful engagement with the enemy, the capture of an enemy combatant, acquisition of specific intelligence, or anything else defined by the mission objectives.
+
+\subsection{Identify System-level Hazards}
+System-level hazards are unsafe states of the system that could lead to loss in a worst-case scenario. These hazards are linked to one or more losses.
+
+\begin{itemize}
+\item H-1: Soldier is captured, injured, or killed [L-1, L-2, L-5].\\
+\item H-2: Patrol base attracts unwanted attention [L-1, L-3, L5].\\
+\item H-3: Mission is not properly communicated and understood [L-1, L-2].\\
+\item H-4: 
+
+\end{itemize}
 
 
 
