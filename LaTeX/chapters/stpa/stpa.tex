@@ -62,7 +62,7 @@ The safety and well-being of military personnel is a concern for all stakeholder
 \item U.S. Taxpayers\\
 The most immediate concern for U.S. taxpayers is the cost war.  Therefore, equipment loss and damage are losses.  
 \item U.S. Politicians\\
-The immediate concern for all politicians is national security.  Therefore, mission failure is a loss.   In addition, politicians are often held accountable by the public for any actions taken by the U.S. military.  This means that negative publicity is a loss.  
+A concern for all politicians is national security.  Therefore, mission failure is a loss.   But, politicians are elected officials and held accountable by the public for actions taken by the U.S. government.  This means that negative publicity is a loss.  
 \item Military Industrial Complex\\
 The military industrial complex is a vital asset to national security and plays a critical role in the lives and safety of military personnel as well as United State's military superiority.  They have a stake in demonstrating the superiority of their equipment.  Therefore, equipment failure is a loss.  They also have a stake in demonstrating that their equipment provides U.S. war fighters with an edge in the battlefield.  Therefore, mission failure is a loss.
 \item The enemy\\
@@ -143,11 +143,13 @@ The system input is the mission handed down by the U.S. Army leadership.  Additi
 System outputs are mission dependent.  They may be successful engagement with the enemy, the capture of an enemy combatant, acquisition of specific intelligence, or anything else defined by the mission objectives.
 
 \subsection{Identify System-level Hazards}
-System-level hazards are unsafe states of the system that could lead to loss in a worst-case scenario. These hazards are linked to one or more losses.  An list of system-level hazards with explanations is described below.
+System-level hazards are unsafe states of the system that will lead to loss in a worst-case scenario.  System-level hazards are either preventable or mitigable.
+
+STPA links these hazards to one or more losses.  A list of system-level hazards with explanations for the patrol base operations is described below.
 
 \begin{itemize}
 \item H-1: Soldier is captured, injured, and killed [L-1, L-2, L-3, L-5].\\
-For most missions, capture, injury, and loss of life could cause mission failure.  A captured soldier draws unwanted attention to the patrol base operations and poses a security threat.  An injured soldier or casualty must be cared for.  These scenarios all require a reprioritization of the mission to mitigate the loss.  Capture and loss of life, in particular, can generate negative publicity for the war fighting effort. 
+Capture, injury, and loss of life could cause mission failure.  A captured soldier draws unwanted attention to the patrol base operations and poses a security threat.  An injured soldier or casualty must be cared for.  These scenarios all require a reprioritization of the mission to mitigate the loss.  Capture and loss of life, in particular, can generate negative publicity for the war fighting effort. 
 
 \item H-2: Patrol base attracts unwanted attention [L-1, L-3, L5].\\
 If the patrol base is conducted in secret, then any contact with the enemy or locals is unwanted.  This means that the mission has been compromised.  Furthermore, it is more-and-more likely in the age of Facebook and Twitter that contact with locals will be reported.  This could cause negative publicity for the war effort. 
@@ -159,16 +161,31 @@ The objectives of the mission must be clearly communicated in oder to be carried
 A change of mission effectively cancels the current mission. This could be perceived as failure depending on the reason for the cancellation.
 
 \item H-5: Operational protocols not followed properly [L-1, L-2, L-3, L-4, L-5, L-6].\\
-The patrol base operations are described in sufficient detail because they have been refined over many years to provide U.S. Army Rangers with the best chances of success.  They should be followed.  In worst case scenario, not following protocols could cause the mission to fail, capture, injury, and death, mission discovery, equipment loss or damage, and disruption of the local population and resources.  All of these cases could cause bad publicity.
+The patrol base operations are described in sufficient detail because they have been refined over many years to provide U.S. Army Rangers with the best chances of success.  They should be followed.  In worst-case scenario, not following protocols could cause the mission to fail, capture, injury, and death, mission discovery, equipment loss or damage, and disruption of the local population and resources.  All of these cases could cause bad publicity.
 
 \item H-6: Team not trained or properly equipped [L-1, L-2].\\
 In the worst case scenario, lack of training or improper equipment could cause capture, injury, or death.  It could also cause the mission to fail or be discovered.  In addition, equipment could be lost or damaged and the local population and resources could be disturbed.  All of these could cause negative publicity.
 
 \item H-7: Equipment left behind [L-1,L-3, L-4, L-5, L-6].\\
 If equipment is left behind, it could reveal the presence and/or purpose of the patrol base operations.  Sensitive equipment in the wrong hands could weaken the technological superiority of the U.S.. If the lost equipment becomes a feature on social media, this could cause bad publicity for the war fighting effort.  Land mines and other dangerous equipment could affect local people and make resources (such as land) unusable.
-
 \end{itemize}
 
+One way to defined
+
+\subsection{Define System-level Constraints}
+System-level constraints are designed to prevent or mitigate hazards.  These are defined below for each hazard.
+
+\begin{itemize}
+\item SC-1: Soldiers should avoid being captured, injured, or killed [H-1].
+\item SC-2: If not engaging the enemy, patrol base operations must avoid contact with enemy or locals [H-2].
+\item SC-3: If engaging the enemy, patrol base operations must be kept secret until contact with enemy [H-1, H-2].
+\item SC-4: Patrol base operations must not leave any equipment, trash, personal belongs, or other indicators of their presence [H-2, H-7].
+\item SC-5: Patrol base must receive mission, verify mission receipt, and restate mission [H-3].
+\item SC-6: Unless otherwise ordered, patrol base must maintain communication with main body to listen for a change of mission [H-3, H-4].
+\item SC-7 Soldiers must follow proper protocols [H-6].
+\item SC-8: Soldiers must be trained on all procedures and equipment required to successful accomplish objectives [H-6].
+\item SC-9: Soldiers must be informed of their responsibilities within the patrol base and of the chain of command [H-6].
+\end{itemize}
 
 
 \subsection{Step 2: Model The Control Structure}
