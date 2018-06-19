@@ -11,11 +11,11 @@ The previous chapters describe and discuss the work of this master thesis. This 
 
       %%%%%%%%%%%%%%%%%%% Section Recap %%%%%%%%%%%%%%%%%%
 \section{Summary}\label{recap}
-This master thesis begins with the systems security engineering framework not only because it presents the context for this work but also because it is helpful in guiding the work flow.  This work begins with no assumptions regarding how to apply \glsentryshort{csbd} to the patrol base operations.  The systems security engineering framework guides us to focus on unacceptable losses and security-sensitive objects.  The former would become the escape level secure state machine.  The later would become the phases of the operations.  
+After the Introduction and some Background, this master thesis discusses the systems security engineering framework because it broadly presents the context for this work.  Within this work, STPA guides the analysis of the patrol base operations.
 
 The next chapter describes the Certified Security by Design with the access-control logic and its implementation in \glsentryshort{hol}.  \glsentryshort{csbd} focuses the work on modeling the patrol base operations such that complete mediation can be verified and documented.  Verification is built into the secure state machine model.  This model is taught in the "Assurance Foundations" course at Syracuse University.  It has already been tested and implemented in \glsentryshort{hol}.  To capitalize on this, the patrol base operations are modeled as secure state machines.   
 
-The next chapter describes the model of the patrol base operations.  The patrol base operations are large.  Thus, the model begins with a  single, abstract, six-phase secure state machine that sequentially runs from the initial planning phase through to the completion phase of the operations.  This becomes the top level of a hierarchy of secure state machines.  Each level of the hierarchy descends into less abstract description of  phases in the level above it.  This approach has a couple of benefits.  First, it is easier to model a large system if it is abstracted into levels and modularized.  Second, it is more efficient to delegate work.  Once the initial secure state machine is modeled, the \glsentryshort{csbd} expert focus on verification and documentation while the subject matter expert designs the next level of the model.
+The next chapter describes the model of the patrol base operations.  The patrol base operations are large.  Thus, the model begins with a single, abstract, six-phase secure state machine that sequentially runs from the initial planning phase through to the completion phase of the operations.  This becomes the top level of a hierarchy of secure state machines.  Each level of the hierarchy descends into less abstract description of  phases in the level above it.  This approach has a couple of benefits.  First, it is easier to model a large system if it is abstracted into levels and modularized.  Second, it is more efficient to delegate work.  Once the initial secure state machine is modeled, the \glsentryshort{csbd} expert focus on verification and documentation while the subject matter expert designs the next level of the model.
 
 The next chapter, describes the secure state machine model and it's implementation in \glsentryshort{hol}.  It discusses the concept of a monitor in terms of access-control.  It also describes the parametrizable secure state machine (ssm)  \glsentryshort{hol} implementation. All patrol base operations secure state machines use this ssm to verify and document properties of complete mediation.
 
@@ -24,6 +24,12 @@ The next chapter is the culmination of all the previous chapters. It describes s
 The next chapter discusses ideas and models that are considered during the project but not implemented in \glsentryshort{hol}.  These are worthy of implementation, but not implemented because of the size of the system and finite amount of time.  
 
 The chapter following this one, discusses ideas on future work.  
+
+      %%%%%%%%%%%%%%%%%%% Section Discussion %%%%%%%%%%
+\section{Discussion}\label{sec:discussion}
+Doing STPA last.
+
+This project began with a subject-matter expert from the U.S. Army and a \glsentryshort{csbd}-expert.  Other than applying \glsentryshort{csbd}, there were no directions on how to do this.  We began with some of the STPA ideas in mind, i.e., defining losses and unacceptable losses.  It wasn't until after the secure state machines were complete and the master thesis was nearly complete, that STPA analysis was systematically applied.  STPA analysis is an awesome tool.  Had we begun with it, the model of the patrol base operations may have been different.
 
       %%%%%%%%%%%%%%%%%%% Section Mission Accomplished %%%%%%%%%%
 \section{Challenges And Limitations of The Approach}\label{missionaccomplished}
