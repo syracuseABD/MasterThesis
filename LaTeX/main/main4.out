@@ -37,16 +37,16 @@
 \BOOKMARK [1][-]{section.4.4}{STPA Overview: Four Steps}{chapter.4}% 37
 \BOOKMARK [1][-]{section.4.5}{STPA on Patrol Base Operations}{chapter.4}% 38
 \BOOKMARK [2][-]{subsection.4.5.1}{Step 1: Define The Purpose of The Analysis}{section.4.5}% 39
-\BOOKMARK [2][-]{subsection.4.5.2}{Define The Purpose of The Analysis}{section.4.5}% 40
-\BOOKMARK [2][-]{subsection.4.5.3}{Identify Losses with Regards to The Stakeholders}{section.4.5}% 41
-\BOOKMARK [2][-]{subsection.4.5.4}{Define The System Boundaries}{section.4.5}% 42
-\BOOKMARK [2][-]{subsection.4.5.5}{Identify System-level Hazards}{section.4.5}% 43
-\BOOKMARK [2][-]{subsection.4.5.6}{Define System-level Constraints}{section.4.5}% 44
-\BOOKMARK [2][-]{subsection.4.5.7}{Refine System-level Hazards}{section.4.5}% 45
-\BOOKMARK [2][-]{subsection.4.5.8}{Refine System-level Constraints}{section.4.5}% 46
-\BOOKMARK [2][-]{subsection.4.5.9}{Step 2: Model The Control Structure}{section.4.5}% 47
-\BOOKMARK [2][-]{subsection.4.5.10}{Step 3: Identify Unsafe Control Actions}{section.4.5}% 48
-\BOOKMARK [2][-]{subsection.4.5.11}{Step 4: Identify Loss Scenarios}{section.4.5}% 49
+\BOOKMARK [3][-]{subsubsection.4.5.1.1}{Define The Purpose of The Analysis}{subsection.4.5.1}% 40
+\BOOKMARK [3][-]{subsubsection.4.5.1.2}{Identify Losses with Regards to The Stakeholders}{subsection.4.5.1}% 41
+\BOOKMARK [3][-]{subsubsection.4.5.1.3}{Define The System Boundaries}{subsection.4.5.1}% 42
+\BOOKMARK [3][-]{subsubsection.4.5.1.4}{Identify System-level Hazards}{subsection.4.5.1}% 43
+\BOOKMARK [3][-]{subsubsection.4.5.1.5}{Define System-level Constraints}{subsection.4.5.1}% 44
+\BOOKMARK [3][-]{subsubsection.4.5.1.6}{Refine System-level Hazards}{subsection.4.5.1}% 45
+\BOOKMARK [3][-]{subsubsection.4.5.1.7}{Refine System-level Constraints}{subsection.4.5.1}% 46
+\BOOKMARK [2][-]{subsection.4.5.2}{Step 2: Model The Control Structure}{section.4.5}% 47
+\BOOKMARK [2][-]{subsection.4.5.3}{Step 3: Identify Unsafe Control Actions}{section.4.5}% 48
+\BOOKMARK [2][-]{subsection.4.5.4}{Step 4: Identify Loss Scenarios}{section.4.5}% 49
 \BOOKMARK [0][-]{chapter.5}{Certified Security by Design \(CSBD\) \046 Access-Control Logic \(ACL\)}{}% 50
 \BOOKMARK [1][-]{section.5.1}{Certified Security by Design \(CSBD\)}{chapter.5}% 51
 \BOOKMARK [1][-]{section.5.2}{Access-Control Logic \(ACL\)}{chapter.5}% 52

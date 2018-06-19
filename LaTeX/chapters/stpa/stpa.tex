@@ -44,10 +44,10 @@ The last step identifies scenarios that could cause the loss-linked control acti
 The previous section briefly describes the basic four-step process for STPA.  This section applies that process to the patrol base operations.
 
 \subsection{Step 1: Define The Purpose of The Analysis}
-\subsection{Define The Purpose of The Analysis}
+\subsubsection{Define The Purpose of The Analysis}
 The purpose of this analysis is to demonstrate the systems security engineering objective (as described by NIST Special Publication 800-160) of designing trustworthy systems with regards to complete mediation.  Complete mediation is the demonstrated outcome of applying the \glsentryshort{csbd} methodology to automated systems.  In this particular analysis, \glsentryshort{csbd} is applied to a non-automated, human-centered system exemplified by the U.S. Ranger Handbook's patrol base operations.  Thus, the more immediate goal is to demonstrate complete mediation in the patrol base operations.  A side-effect is a more thorough understanding of how access-control principals function in non-automated, human-centered military systems.  
 
-\subsection{Identify Losses  with Regards to The Stakeholders}
+\subsubsection{Identify Losses  with Regards to The Stakeholders}
 Losses are defined with regards to stakeholders.  These are described below.
 
 \begin{itemize}
@@ -82,7 +82,7 @@ Thus, from the stakeholders perspective, identified losses are: mission failure;
 \item L-6: Disruption of local culture and damage to resources
 \end{itemize}
 
-\subsection{Define The System Boundaries}
+\subsubsection{Define The System Boundaries}
 The primary reference for this section is the U.S. Ranger Handbook \cite{rangermanual}.
 
 One way to describe the patrol base operations is with the mission activity specification.  This describes the \textit{what}, \textit{how}, and \textit{why} of the operations. The mission activity specification for the patrol base operations are shown in table \ref{pbtab}
@@ -142,7 +142,7 @@ The system input is the mission handed down by the U.S. Army leadership.  Additi
 
 System outputs are mission dependent.  They may be successful engagement with the enemy, the capture of an enemy combatant, acquisition of specific intelligence, or anything else defined by the mission objectives.
 
-\subsection{Identify System-level Hazards}
+\subsubsection{Identify System-level Hazards}
 System-level hazards are unsafe states of the system that will lead to loss in a worst-case scenario.  System-level hazards are either preventable or mitigable.
 
 STPA links these hazards to one or more losses.  A list of system-level hazards with explanations for the patrol base operations is described below.
@@ -172,7 +172,7 @@ If equipment is left behind, it could reveal the presence and/or purpose of the 
 \item H-8: Equipment malfunction, not used properly, or properly maintained [L-4].\\
 \end{itemize}
 
-\subsection{Define System-level Constraints}
+\subsubsection{Define System-level Constraints}
 System-level constraints are designed to prevent or mitigate hazards.  These are defined below for each hazard.
 
 \begin{itemize}
@@ -188,7 +188,7 @@ System-level constraints are designed to prevent or mitigate hazards.  These are
 \item SC-10: Soldiers should properly use and maintain equipment [H-6, H-8].
 \end{itemize}
 
-\subsection{Refine System-level Hazards}
+\subsubsection{Refine System-level Hazards}
 It is optional to refine system-level hazards.  
 
 \begin{itemize}
@@ -269,7 +269,7 @@ It is optional to refine system-level hazards.
 
 \end{itemize}
 
-\subsection{Refine System-level Constraints}
+\subsubsection{Refine System-level Constraints}
 System-level constraints can be redefined as well.  These are included with their associated hazards in table
 
 \parskip=8pt
@@ -292,10 +292,11 @@ Refined Hazard & Refined Constraint\\
 \endhead
 
 \hline
+\multicolumn{2}{|c|}{H-1: Soldier is captured, injured, and killed [L-1, L-2, L-3, L-5]}\\
+\hline
 H-1.1: Soldier with intelligence specific to mission is captured. 
 & 
 SC-1.1 All soldiers should avoid being captured.  \\ 
-\hline
 \hline
 H-1.2: Soldier with intelligence specific to other missions is captured.
 & 
@@ -305,7 +306,7 @@ H-1.3: Soldier with intelligence critical to national security is captured.
 & 
 SC-1.3  \\ 
 \hline
-H-1.4: Soldier is captured by terrorist.
+H-1.4: Soldier is captured will be killed.
 & 
 SC-1.4  \\ 
 \hline
@@ -336,6 +337,9 @@ SC-1.10  \\
 H-1.11: Soldier is missing in action and presume killed.
 & 
 SC-1.11  \\ 
+
+\hline
+\multicolumn{2}{|c|}{H-2: Patrol base attracts unwanted attention [L-1, L-3, L5].}\\
 \hline
 H-2: Patrol base attracts unwanted attention [L-1, L-3, L5].
 & 
@@ -348,6 +352,10 @@ SC-2.1  \\
 H-2.2: Patrol base attracts unwanted attention from enemy.
 & 
 SC-2.2  \\ 
+
+
+\hline
+\multicolumn{2}{|c|}{H-3: Mission is not properly communicated and understood [L-1, L-2, L-3, L-5, L-6].}\\
 \hline
 H-3.1: Mission not received.
 & 
@@ -356,10 +364,16 @@ SC-3.1 \\
 H-3.2: Mission not understood.
 & 
 SC-3.2 \\
+
+\hline
+\multicolumn{2}{|c|}{H-4: Mission is changed [L-1].}\\
 \hline
 H-4: Mission is changed [L-1].
 & 
 SC-4\\
+
+\hline
+\multicolumn{2}{|c|}{H-5: Operational protocols not followed properly [L-1, L-2, L-3, L-4, L-5, L-6].}\\
 \hline
  H-5.1: Chain of command not followed.
  & 
@@ -377,6 +391,13 @@ H-5.4: Geneva Convention not followed.
  & 
 SC-5.4\\
 \hline
+H-5.5: Intra-patrol miscommunication.
+ & 
+SC-5.4\\
+
+\hline
+\multicolumn{2}{|c|}{H-6: Team not trained or properly equipped [L-1, L-2].}\\
+\hline
 H-6.1: Team not properly trained on military procedures.
  & 
 SC-6.1\\
@@ -392,6 +413,9 @@ SC-6.3\\
 H-6.4: Team not trained on order of succession within patrol base.
  & 
 SC-6.4\\
+
+\hline
+\multicolumn{2}{|c|}{H-7: Equipment left behind [L-1,L-3, L-4, L-5, L-6].}\\
 \hline
 H-7.1: Trash and other items left behind.
  & 
@@ -404,8 +428,10 @@ SC-7.2\\
 H-7.3: Sensitive technologies left behind.
  & 
 SC-7.3\\
-\hline
 
+\hline
+\multicolumn{2}{|c|}{H-8: Equipment malfunction, not used properly, or properly maintained [L-4].}\\
+\hline
 H-8.1: Equipment malfunction.
  & 
 SC-8.1\\

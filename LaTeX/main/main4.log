@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  18 JUN 2018 20:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  19 JUN 2018 13:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1129,10 +1129,10 @@ Package pdftex.def Info: ../figures/system.png used on input line 124.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [33] [34 <../figures/system.png>] [35] [36] [37] [38] [39]
-Underfull \vbox (badness 10000) detected at line 375
+Underfull \vbox (badness 10000) detected at line 370
  []
 
-[40] [41]) [42] [43] (../chapters/csbdacl/csbdacl.tex
+[40] [41] [42]) [43] (../chapters/csbdacl/csbdacl.tex
 Chapter 5.
 [44
 
@@ -4405,7 +4405,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 254.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 254.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 254.
 Package rerunfilecheck Info: File `main4.out' has not changed.
-(rerunfilecheck)             Checksum: 333C189559748B1696C90ECDF98DD450;17254.
+(rerunfilecheck)             Checksum: 77CFA23149813D26FC7C61452ABD0B32;17322.
 
 
 LaTeX Warning: There were undefined references.
@@ -4417,8 +4417,8 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 254.
  ) 
 Here is how much of TeX's memory you used:
  20461 strings out of 492995
- 334660 string characters out of 6132704
- 863755 words of memory out of 5000000
+ 334726 string characters out of 6132704
+ 863757 words of memory out of 5000000
  21483 multiletter control sequences out of 15000+600000
  40356 words of font info for 103 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -4587,7 +4587,7 @@ sfti0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sf
 ti1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti
 1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on main4.pdf (376 pages, 4984425 bytes).
+Output written on main4.pdf (376 pages, 4985241 bytes).
 PDF statistics:
  5333 PDF objects out of 6186 (max. 8388607)
  4635 compressed objects within 47 object streams
