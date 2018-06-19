@@ -270,7 +270,12 @@ It is optional to refine system-level hazards.
 \end{itemize}
 
 \subsubsection{Refine System-level Constraints}
-System-level constraints can be redefined as well.  These are included with their associated hazards in table
+System-level constraints can be redefined as well.  For this particular project, too much detail is not helpful because the master thesis is designed to test the feasibility of applying the \glsentryshort{csbd}.  This means that a detailed STPA of the patrol base operations is beyond scope.  Nevertheless, it is possible to demonstrate this part of the STPA to get a feel for it.
+
+
+Patrol base operations cover a variety of operational objectives.  The U.S. Army Ranger Handbook describes : Reconnaissance, Combat, Ambush, Raid, Supporting, Movement To Contact, already has a description of the types of mission (i.e., rest and resupply, reconnaissance, engage enemy) and specific plans for these mission.  Consideration of all these types of missions is beyond the scope of this master thesis. A complete STPA on the patrol base operations would involve consideration of each type of mission.  It would also include how the input is handled by the higher-up leadership.  Within scope, it is sufficient to note that many details of how the operations will be worked out by the leadership in advance of the mission.  This includes standard and specialized training.  
+
+The mission is handed down to the patrol leader at the start of the mission the patrol base operations. This is the input to this system.  The patrol leaders must plan according to this input. Within the system, system-level constraints are mission-specific. Nevertheless, it is possible to refine the system-level constraints broadly or to at least recognize that these are considerations made after receipt of the mission. Some system-level constraints are shown in table \ref{slconstraints} and categorized based on hazards.
 
 \parskip=8pt
 
@@ -296,39 +301,39 @@ Refined Hazard & Refined Constraint\\
 \hline
 H-1.1: Soldier with intelligence specific to mission is captured. 
 & 
-SC-1.1 All soldiers should avoid being captured.  \\ 
+SC-1.1: Upon receiving the mission, patrol leaders should assess likelihood of capture and how to respond.\\ 
 \hline
 H-1.2: Soldier with intelligence specific to other missions is captured.
 & 
-SC-1.2  \\ 
+SC-1.2: Considerations should be made prior to the mission as the whether these soldiers should be assigned to the patrol.Upon receiving the mission, patrol leaders should assess likelihood of capture and how to respond.   \\ 
 \hline
 H-1.3: Soldier with intelligence critical to national security is captured.
 & 
-SC-1.3  \\ 
+SC-1.3: Considerations should be made prior to the mission as the whether these soldiers should be assigned to the patrol. Upon receiving the mission, patrol leaders should assess likelihood of capture and how to respond.  \\ 
 \hline
-H-1.4: Soldier is captured will be killed.
+H-1.4: Soldier is captured and will probably be killed.  
 & 
-SC-1.4  \\ 
+SC-1.4: Upon receiving the mission, patrol leaders should assess how to respond (i.e., halt mission and rescue soldier?  Halt mission? Etc.).  \\ 
 \hline
 H-1.5: Soldier is captured by enemy who will observe Geneva Conventions.
 & 
-SC-1.5  \\ 
+SC-1.5: Upon receiving the mission, patrol leaders should assess how to respond (i.e., halt mission and rescue soldier?  Halt mission? Etc.).  \\ 
 \hline
-H-1.6: Soldier has mild injured that must be treated after mission, but can continue with mission.
+H-1.6: Soldier has mild injury that must be treated after mission, but can continue with mission.
 & 
-SC-1.6  \\ 
+SC-1.6: But, in most situations, Soldier/Medic renders medical aid and Soldier can tough-it-out.  Mission continues.  \\ 
 \hline
 H-1.7: Soldier is injured, cannot participate in mission, but can wait for mission to complete.
 & 
-SC-1.7  \\ 
+SC-1.7: Soldier should be treated and leaders should assess if mission can continue without soldier.  \\ 
 \hline
-H-1.8: Soldier is injured, requires immediate medical attention, must return to base, and requires assistance.
+H-1.8: Soldier is injured, requires immediate medical attention, must return to main body, and requires assistance.
 & 
-SC-1.8  \\ 
+SC-1.8: Depending on the mission, Leader assess if mission can continue.  Injured soldier is brought to main body.  \\ 
 \hline
 H-1.9: Soldier is killed by enemy contact.
 & 
-SC-1.9  \\ 
+SC-1.9: Depending on the mission, Leader assess if mission can continue.  For example, is engagement with enemy part of the mission?  If so, continue mission?  If mission does not include contact with enemyIf mission continues, Leader should asses how to handle body until mission completion.    \\ 
 \hline
 H-1.10: Soldier is killed by some other hazard.
 & 
