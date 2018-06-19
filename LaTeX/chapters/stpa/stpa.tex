@@ -270,15 +270,27 @@ It is optional to refine system-level hazards.
 \end{itemize}
 
 \subsection{Refine System-level Constraints}
-System-level constraints can be redefined as well.  These are included with their associated hazards in table \ref{slconstraints}.
+System-level constraints can be redefined as well.  These are included with their associated hazards in table
 
 \parskip=8pt
-\begin{table}[h!]
-\begin{center}
-\begin{tabular}{ | m{7.5cm} | m{7.5cm} | } 
-\hline
+
+\begin{longtable}[h]{ | m{7.5cm} |  m{7.5cm} | } 
+
+\hline \hline
+ \multicolumn{2}{| c |}{System-level Hazards and Constraints}\\
+\hline \hline
 Refined Hazard & Refined Constraint\\
 \hline \hline
+ \endfirsthead
+
+
+\hline \hline
+ \multicolumn{2}{| c |}{System-level Hazards and Constraints}\\
+\hline \hline
+Refined Hazard & Refined Constraint\\
+\hline \hline
+\endhead
+
 \hline
 H-1.1: Soldier with intelligence specific to mission is captured. 
 & 
@@ -407,11 +419,9 @@ H-8.3: Equipment not maintained properly causing malfunction.
 SC-8.3\\
 \hline
 
-\end{tabular}
-\end{center}
-\caption{Refined system-level hazards and derived system-level constraints.  Adapted from the U.S. Army Ranger Handbook 2017 (7-46) \cite{rangermanual}.}
-\label{slconstraints}
-\end{table}
+\caption{Refined system-level hazards and derived system-level constraints.  Adapted from the U.S. Army Ranger Handbook 2017 (7-46) \cite{rangermanual}\label{slconstraints}.}\\
+
+\end{longtable}
 \parskip=18pt
 
 
