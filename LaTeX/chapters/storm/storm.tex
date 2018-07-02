@@ -68,9 +68,11 @@ Once the solution is generated, the trustworthiness context provides evidence th
 The other trustworthiness activity is to demonstrate that the assurance case is satisfied.  As subject-matter expert should evaluate the assurance case to determine if the evidence supports the security claims.
 
 \subsubsection{Conforming to The SSE Framework}
-STORM conforms to the SSE Framework.  The two components of STORM (described next) are STPA and CSBD.  STPA focuses on the problem and solution contexts of the framework.  The problem is defined in step 1 of STPA.  The solutions is defined in steps 2, 3, and 4. CSBD focuses on demonstrating trustworthiness through formal methods and computer-aided reasoning.  It uses a rigorous mathematical logic to verify claims of security with regards to confidentiality, integrity, and accessibility.  
+STORM is intended to conform to the SSE Framework.  It is up to the STORM user to verify in detail that \textit{all} nine sub-contexts of the SSE Framework are addressed.  Proper application of STORM and system engineering thinking is sufficient for this.
 
-The work in this master thesis applies the STORM methodology to patrol base operations.  Therefore, this work also conforms to the SSE Framework.
+STORM is composed of two components (described next), STPA and CSBD.  STPA focuses on the problem and solution contexts of the framework.  The problem is defined by the STPA analysis.  The solutions should evolve from implementing the constraints derived from this analyisis. CSBD focuses on demonstrating trustworthiness through formal methods and computer-aided reasoning.  It uses a rigorous mathematical logic to verify claims of security with regards to confidentiality, integrity, and accessibility.  It produces an auditable and reproducible document that should be included with the system documentation.
+
+The work in this master thesis applies the STORM methodology to patrol base operations. 
 
 
 %%%%%%%%%%%%%%%%%%%%% Section STORM %%%%%%%%%%%%%%%
@@ -199,10 +201,26 @@ XSTAMPP is an extensible application of STAMP that helps the user organize the S
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsubsection{Confidentiality, Integrity, and Availability (CIA) }\label{sssect:ssmts}
+At the core of security are the concepts of confidentiality, integrity, and availability.  Confidentiality refers to limiting access to objects (including information) by ensuring that only the right people (etc.\footnote{or any other "entity" that can request access to an object.}) have access to these things.  Confidentiality is the realm of things such as authentication and authorization.  Authentication means verifying a person's identity.  Authorization means describing a person's access rights. 
+
+Integrity, on the other hand, refers to the whole of the object (or information, etc.).  It means controlling who or what can modify the object.   Integrity is the realm of things such as authorization.  In this case, authorization means describing a person's right to modify an object.  
+
+Availability refers to accessibility.  Wikipedia describes availability as a measure of operability or degree to which the system is mission capable \cite {availability}. 
+
+Confidentiality, integrity, and Availability are guarded by the principle of complete mediation.  
 
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsubsection{Complete Mediation}\label{sssec:strommediate}
+The seminal paper quoted on the principle of complete mediation is "The Protection of Information in Computer Systems" by Saltzer and Schroeder.  
+\begin{quote}
+\textit{
+Complete mediation: Every access to every object must be checked for authority. This principle, when systematically applied, is the primary underpinning of the protection system. It forces a system-wide view of access control, which in addition to normal operation includes initialization, recovery, shutdown, and maintenance. It implies that a foolproof method of identifying the source of every request must be devised. It also requires that proposals to gain performance by remembering the result of an authority check be examined skeptically. If a change in authority occurs, such remembered results must be systematically updated.} \cite{saltzer}
+\end{quote}
+
+In summary, what this means is that any accessor attempting to access or modify a protected object must satisfy two conditions: (1) the accessor must be authenticated, and (2) the accessor must be authorized to access or modify that object.  This involves a three-step process: (1) defining the protected objects, (2) declaring who has what rights on these objects, and (3) defining how to verify the identity of the individual(s) accessing or modifying the objects.  
+
+CSBD focuses on using formal methods to prove that a system satisfies the principle of complete mediation.
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsubsection{Secure State Machines as Transition Systems }\label{sssect:ssmts}
