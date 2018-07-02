@@ -75,12 +75,57 @@ The work in this master thesis applies the STORM methodology to patrol base oper
 
 %%%%%%%%%%%%%%%%%%%%% Section STORM %%%%%%%%%%%%%%%
 \section{STORM}\label{sec:storm}
+A Framework is only as useful as it frames some sort of work
+
+STORM is an approach to engineering trustworthy systems that satisfy stakeholder demands and conform to the Systems Security Engineering Framework (NIST SP 800-160 \cite{}).  It applies state-of-the-field analysis techniques to design products that are safe, secure, and integral.  It applies formal methods to produce reproducible and auditable verification demonstrating that stakeholder claims are satisfied.
+
+
+STORM is a new approach to implementing the Systems Security Framework.  It the result of the collaborative effort of Professor Shiu-Kai Chin of the College of Engineering and Computer Science at Syracuse University, Erich Devendorf, PhD of the U.S. Air Force Research Laboratory, and William Young, PhD of the U.S. Air Force 53rd Electronic Warfare Group.  STPA-Sec is the work of Dr. Young, who presented it as his PhD thesis in 2014 at MIT.  CSBD is derived from the work of Professor Shiu-kai Chin and Professor Susan Older (also of the College of Engineering and Computer Science at Syracuse University).  They wrote the text on \textit{Access Control, Security, and Trust: A Logical Approach} \cite{csbd} from which CSBD is derived.  Professor Shiu-Kai Chin teaches components of CSBD at Syracuse University in the College of Engineering and Computer Science.  
+
+
+All elements of STORM are currently employed by the U.S. Air Force.  Components of STORM are taught at Syracuse University, in particular CSBD.  STPA-Sec is part of the U.S. Air Force doctrine.  CSBD has been used in the design of JP Morgan Company's SWIFT protocols \cite{} and the F-16 Viper payload controller and secure memory loader verifier (not published). As this master thesis is being written, STORM is being presented to the National Security Agency (NSA) for inclusion into their ? program.
+
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsection{STAMP}\label{ssec:stamp}
+System-Theoretic Accident Model and Processes (STAMP) underlies the STPA approach.  Figure \ref{stampstpa} shows the relationship between STPA-Sec, STPA, and STAMP.
+
+STAMP is an accident-causality model.  It incorporates a system-theoretic perspective that views accidents as dynamic control problems by thinking about safety constraints, hierarchical control structures, and process models \cite{saferworld}. STAMP is not an approach to accident analysis, it is a way of thinking about safety engineering that should be included in accident analysis and safety and security design techniques.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.3\linewidth]{../figures/stampstpa}
+\caption{\label{stampstpa}Relationship between STPA-Sec, STPA, and STAMP.  Image from Dr. William Young and Reed Prada 2017 STAMP Conference presentation in Boston, MA on March 27, 2017 \cite{youngPorada} }
+\end{figure}
+
+STAMP had its inception in the mind of Massachusetts Institute of Technology Professor Nancy Leveson near the turn of the twenty-first century. It grew out of a frustration with the state-of-the-art in safety analysis tools.  These tools, at one time effective, were proving ineffective on the complexities associated with technologies of the modern era.  Modern technologies exhibited emergent properties arising from complex interactions among multiple components.  The practice of analyzing individual component reliability and chain-of-causality failures did not capture the hazards associated with these more complex systems.  A new systems-theoretic way of thinking was needed.  
+
+STAMP forms the foundation of modern era safety analysis techniques.  Several approaches to safety engineering are built upon the STAMP foundation.  System-Theoretic Process Analysis (STPA) is one these analysis techniques.  In addition to STPA (the topic of the next section), several other analysis techniques are built on top of the STAMP foundation.  These include Causal Analysis based on Systems Theory (CAST), STPA for security (STPA-Sec), STPA for privacy (STPA-Pric), STPA-SafeSec \cite{safe}, and SAFE (a refinement focused on hardware and software subsystems \cite{safe}.
+
+STAMP is a relatively new model that is rapidly growing in popularity.  It is the subject of yearly conferences world wide promoted by the Partnership for Systems Approaches to Safety and Security (PSASS)\footnote{See \url{https://psas.scripts.mit.edu/home/other-stamp-meetings/}.}.  When compared to other accident models, STAMP is more effective \footnote{See, for example, Paul Stukus' thesis dissertation on how STAMP outdid other techniques when analyzing a U.S. Coast Guard Buoy Tender Integrated Control System \cite{buoy}}.  It also cost less to implement \cite{stpa}.
+
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsection{STPA \& STPA-Sec}\label{ssec:stpa}
+System-theoretic Process Analysis (STPA) implements the STAMP model. 
+
+
+
+Why STPA?
+
+Functional mission analysis
+It is a methodology for a applying systems-level thinking to safety engineering.  I
+
+
+Background on STPA
+
+How it developed
+
+Has it evolved?
+
+Who developed it and why?
+
+Who uses it and why?
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsubsection{XSTAMPP}\label{sssec:xstamp}

@@ -3,75 +3,80 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main4.aux
 The style file: unsrt.bst
 Database file #1: mtref.bib
+Warning--entry type for "buoy" isn't style-file defined
+--line 11 of file mtref.bib
+Warning--entry type for "youngPorada" isn't style-file defined
+--line 28 of file mtref.bib
 Warning--entry type for "constructor" isn't style-file defined
---line 38 of file mtref.bib
+--line 66 of file mtref.bib
 Warning--entry type for "saulk" isn't style-file defined
---line 92 of file mtref.bib
+--line 120 of file mtref.bib
 Warning--entry type for "HOLwiki" isn't style-file defined
---line 102 of file mtref.bib
+--line 130 of file mtref.bib
 Warning--entry type for "BSDlicenses" isn't style-file defined
---line 112 of file mtref.bib
+--line 140 of file mtref.bib
 Warning--entry type for "saltzer" isn't style-file defined
---line 122 of file mtref.bib
+--line 150 of file mtref.bib
 Warning--entry type for "availability" isn't style-file defined
---line 133 of file mtref.bib
+--line 161 of file mtref.bib
 Warning--entry type for "elasticsearch" isn't style-file defined
---line 167 of file mtref.bib
+--line 195 of file mtref.bib
 Warning--entry type for "wikiconops" isn't style-file defined
---line 176 of file mtref.bib
+--line 204 of file mtref.bib
 Warning--entry type for "nistmission" isn't style-file defined
---line 221 of file mtref.bib
+--line 249 of file mtref.bib
 Warning--entry type for "HOL" isn't style-file defined
---line 254 of file mtref.bib
+--line 282 of file mtref.bib
 Warning--entry type for "functionalprogramming" isn't style-file defined
---line 262 of file mtref.bib
+--line 290 of file mtref.bib
 Warning--entry type for "formalmethodslcarke" isn't style-file defined
---line 320 of file mtref.bib
+--line 348 of file mtref.bib
+Warning--I didn't find a database entry for "csbd"
 Warning--empty author and editor in types
 Warning--empty author in iso15288
+Warning--empty year in Tantooine
 Warning--empty note in VARVEL
 Warning--there's a number but no series in stateexplosion
 Warning--empty author in wikiformalmethods
-Warning--empty year in Tantooine
-You've used 30 entries,
+You've used 33 entries,
             1791 wiz_defined-function locations,
-            590 strings with 7694 characters,
-and the built_in function-call counts, 4458 in all, are:
-= -- 352
-> -- 178
+            606 strings with 8264 characters,
+and the built_in function-call counts, 4860 in all, are:
+= -- 381
+> -- 194
 < -- 8
-+ -- 75
-- -- 45
-* -- 224
-:= -- 656
-add.period$ -- 68
-call.type$ -- 30
-change.case$ -- 27
++ -- 82
+- -- 49
+* -- 233
+:= -- 716
+add.period$ -- 75
+call.type$ -- 33
+change.case$ -- 29
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 220
-empty$ -- 527
-format.name$ -- 45
-if$ -- 1035
+cite$ -- 39
+duplicate$ -- 240
+empty$ -- 582
+format.name$ -- 49
+if$ -- 1130
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 10
-newline$ -- 129
-num.names$ -- 20
-pop$ -- 143
+int.to.str$ -- 33
+missing$ -- 12
+newline$ -- 142
+num.names$ -- 23
+pop$ -- 164
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 134
+skip$ -- 145
 stack$ -- 0
 substring$ -- 77
-swap$ -- 50
+swap$ -- 53
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 6
-while$ -- 25
-width$ -- 32
-write$ -- 267
-(There were 18 warnings)
+while$ -- 28
+width$ -- 35
+write$ -- 293
+(There were 21 warnings)
