@@ -75,7 +75,9 @@ The work in this master thesis applies the STORM methodology to patrol base oper
 
 %%%%%%%%%%%%%%%%%%%%% Section STORM %%%%%%%%%%%%%%%
 \section{STORM}\label{sec:storm}
-A Framework is only as useful as it frames some sort of work
+"A Framework is only as useful as it frames some sort of work."
+
+anonymous
 
 STORM is an approach to engineering trustworthy systems that satisfy stakeholder demands and conform to the Systems Security Engineering Framework (NIST SP 800-160 \cite{}).  It applies state-of-the-field analysis techniques to design products that are safe, secure, and integral.  It applies formal methods to produce reproducible and auditable verification demonstrating that stakeholder claims are satisfied.
 
@@ -90,7 +92,12 @@ All elements of STORM are currently employed by the U.S. Air Force.  Components 
 \subsection{STAMP}\label{ssec:stamp}
 System-Theoretic Accident Model and Processes (STAMP) underlies the STPA approach.  Figure \ref{stampstpa} shows the relationship between STPA-Sec, STPA, and STAMP.
 
-STAMP is an accident-causality model.  It incorporates a system-theoretic perspective that views accidents as dynamic control problems by thinking about safety constraints, hierarchical control structures, and process models \cite{saferworld}. STAMP is not an approach to accident analysis, it is a way of thinking about safety engineering that should be included in accident analysis and safety and security design techniques.
+
+STAMP is a way of thinking about how accidents occur.  It assumes both a traditional and a system-theoretic view.  In the traditional view, accidents are caused by unsafe chains of events.  In the system theoretic view, accidents are also caused by dynamic and complex interactions. System theory focuses on the system as a whole rather than as a collection of subcomponents.  The need for a system theory approach is epitomized in the notion that the whole is greater than the sum of its parts.  From the complex interactions of individual components arise emergent properties. These properties can be thought of as a higher order that is not predictable from the behavior of the individual components.
+
+
+
+
 
 \begin{figure}[h!]
 \centering
@@ -105,30 +112,85 @@ STAMP forms the foundation of modern era safety analysis techniques.  Several ap
 STAMP is a relatively new model that is rapidly growing in popularity.  It is the subject of yearly conferences world wide promoted by the Partnership for Systems Approaches to Safety and Security (PSASS)\footnote{See \url{https://psas.scripts.mit.edu/home/other-stamp-meetings/}.}.  When compared to other accident models, STAMP is more effective \footnote{See, for example, Paul Stukus' thesis dissertation on how STAMP outdid other techniques when analyzing a U.S. Coast Guard Buoy Tender Integrated Control System \cite{buoy}}.  It also cost less to implement \cite{stpa}.
 
 
+STAMP takes a top-down view of accidents as dynamic control problems that arise out of complexity.  It focuses on safety constraints, hierarchical control structures, and process models \cite{saferworld}. 
+
+\paragraph*{safety constraints}
+STAMP views constraints, rather than events, as the safety-critical processes.  A lack of constraints can lead to a hazardous system state which will lead to an accident in the worst-case scenario.  
+
+There are two types of constraints (or controls), passive and active.  Passive controls prevent unsafe conditions by their presence.  For example, lead shielding surrounding radioactive material minimizes radioactive exposure merely by its presence.  
+
+Active controls, on the other hand, are more complicated.  They require some form of interaction to prevent unsafe conditions.  For example, a Geiger counter signaling a computer that radioactive levels are unsafe minimizes exposure by sounding an alarm which causes personnel to evacuate.  
+
+\paragraph*{hierarchical control structures}
+Figure \ref{controlmodel} is an example of a hierarchical control model.  The level of control funs from top to bottom.  Downward pointing arrows indicate instructions to lower level controllers or controlled processes.  Upward pointing arrows indicate feedback from lower components.   
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\linewidth]{../figures/controlmodel}
+\caption{\label{controlmodel} Example of a control model. (Image captured from the \glsentryshort{stpa} Handbook \cite{stpa}.)}
+\end{figure}
+Higher-level control structures control lower-level control structures.  Inadequate control at higher levels trickle down to lower levels causing hazardous conditions.  STAMP considers four types of inadequate control on constraints: insufficient or missing constraints, wrong constraints, out-of-order or under-timed constraints, and constraints that are imposed for too long. 
+
+\paragraph*{process models}
+Figure \ref{processmodel} shows a controller with a process model.  Each controller has its own process model.  The process model describes the controller's model of the system.  If the controller's process model is not consistent with systems state, then unsafe control states may occur.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\linewidth]{../figures/processmodel}
+\caption{\label{processmodel} Controller with process model. (Image captured from the \textit{Engineering a Safer World} Handbook \cite{safe}.)}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
-\subsection{STPA \& STPA-Sec}\label{ssec:stpa}
-System-theoretic Process Analysis (STPA) implements the STAMP model. 
+\subsection{STPA/STPA-Sec}\label{ssec:stpa}
+System-Theoretic Process Analysis (STPA) is a systems engineering methodology that helps the engineer identify and mitigate stakeholder losses. It does this using a four step process that is founded on the System-Theoretic Accident Model and Processes (STAMP).  Whereas STAMP is a way of thinking about the causes of accidents, STPA is a method to analyze systems in order to prevent or mitigate losses caused by these accidents.  
+
+STPA follows the guidelines described in ISO/IEC/IEEE 15288 for System Life-Cycle Processes.  It's focus is on the Technical Processes (ISO/IEC/IEEE 15288), the concept and development stage of the system life cycle (defined in ISO/IEC/IEEE 24748), and the problem and solution contexts of the Systems Security Engineering Framework (NIST SP 800-160).
 
 
+STPA, like STAMP, is the work of Professor Nancy Leveson from MIT.  STPA-Sec is William Young's (PhD and Col. in USAF) PhD thesis dissertation.  It is a modification of STPA that analyzes system security rather than just system safety.  In a 2013 paper, Professor Nancy Leveson and Dr. William Young define safety and security as
+\begin{description}
+\item[ Safety ] protecting a system against \textit{unintentional} disruptions.
+\item[ Security ] protecting a system against \textit{intentional} disruptions.
+\end{description}
+The primary difference between STPA and STPA-Sec is that STPA thinks about how \textit{accidents} arise from system-level \textit{hazards} whereas STPA-Sec thinks about how \textit{losses} arise from system-level \textit{vulnerabilities}.  However, the application of the four STPA steps is the same.
 
-Why STPA?
 
-Functional mission analysis
-It is a methodology for a applying systems-level thinking to safety engineering.  I
+\section{STPA/STPA-Sec Overview: Four Steps}
+STPA is a four step process.  Figure \ref{4step} diagrams these four steps.  The four steps are briefly described below.  They are applied to the patrol base operations in the next chapter. 
 
 
-Background on STPA
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{../figures/4step}
+\caption{\label{4step} Four step process of STPA. (Image captured from the \textit{Engineering a Safer World} Handbook \cite{safe}.)}
+\end{figure}
 
-How it developed
+\paragraph*{Step 1: Define The Purpose of The Analysis}
+The first step defines the purpose of the analysis, the system to be produced, and losses/accidents as defined by the stakeholders.  Vulnerabilities/hazards cause losses/accidents in worst-case scenarios.  In this step, losses/accidents are linked to vulnerabilities/hazards.  
 
-Has it evolved?
+System-level constraints are then defined and linked to vulnerabilities/hazards.  
 
-Who developed it and why?
 
-Who uses it and why?
+\paragraph*{Step 2: Model The Control Structure}
+The second step models the system.  The model is a functional control model that describes the flow in information in the system.  Figure \ref{controlmodel} shows an example of a control model.
+
+
+\paragraph*{Step 3: Identify Unsafe Control Actions}
+The next step identifies unsafe control actions (UCAs) for each control action described in step 2.  There are four types of UCAs.
+\begin{itemize}
+\item Not applying the control action
+\item Applying the wrong control action
+\item Applying the control action in the wrong order
+\item Applying the control action for two long.
+\end{itemize}
+
+
+\paragraph*{Step 4: Identify Loss Scenarios}
+The last step identifies scenarios that could cause the loss-linked control actions described in step 3.  This analysis should be used to guide system security engineering decisions.
+
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsubsection{XSTAMPP}\label{sssec:xstamp}
+XSTAMPP is an extensible application of STAMP that helps the user organize the STPA process.  XSTAMPP is built on the Eclipse IDE.  Eclipse allows users to write their own plug-ins for XSTAMPP.  Current plug-ins are STPA, STPA-Sec, STPA-Priv, STPA Verifier, and CAST.  
+
 
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
@@ -136,7 +198,7 @@ Who uses it and why?
 
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
-\subsubsection{Confidentiality, Integrity, and Accessibility (CIA) }\label{sssect:ssmts}
+\subsubsection{Confidentiality, Integrity, and Availability (CIA) }\label{sssect:ssmts}
 
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
