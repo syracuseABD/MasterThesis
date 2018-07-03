@@ -8,6 +8,7 @@
 
 %%%%%%%%%%%%%%%%%%%%% Chapter STORM %%%%%%%%%%%%%%%
 \chapter{STORM}\label{chp:srorm}
+This chapter provides an introduction to the System-Theoretic Operational Risk Management (STORM) methodology.  It begins with a description of systems engineering and then systems security engineering, the field in which STORM is applicable. It describes how STORM fits into the System Security Engineering Framework.  Next, the components of STORM are described.  The chapter concludes with the motivation for applying STORM to the patrol base operations.
 
 %%%%%%%%%%%%%%%%%%%%% Section SE %%%%%%%%%%%%%%%
 \section{Systems Engineering}\label{sec:stormse}
@@ -68,7 +69,7 @@ Once the solution is generated, the trustworthiness context provides evidence th
 The other trustworthiness activity is to demonstrate that the assurance case is satisfied.  As subject-matter expert should evaluate the assurance case to determine if the evidence supports the security claims.
 
 \subsubsection{Conforming to The SSE Framework}
-STORM is intended to conform to the SSE Framework.  It is up to the STORM user to verify in detail that \textit{all} nine sub-contexts of the SSE Framework are addressed.  Proper application of STORM and system engineering thinking is sufficient for this.
+The STORM methodology is intended to conform to the SSE Framework.  It is up to the STORM user to verify in detail that \textit{all} nine sub-contexts of the SSE Framework are addressed.  Proper application of STORM and system engineering thinking is sufficient for this.
 
 STORM is composed of two components (described next), STPA and CSBD.  STPA focuses on the problem and solution contexts of the framework.  The problem is defined by the STPA analysis.  The solutions should evolve from implementing the constraints derived from this analyisis. CSBD focuses on demonstrating trustworthiness through formal methods and computer-aided reasoning.  It uses a rigorous mathematical logic to verify claims of security with regards to confidentiality, integrity, and accessibility.  It produces an auditable and reproducible document that should be included with the system documentation.
 
@@ -197,7 +198,9 @@ XSTAMPP is an extensible application of STAMP that helps the user organize the S
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsection{CSBD}\label{ssec:csbd}
+CSBD is a method for formally verifying and documenting the security properties of a systems.  It focuses on designing systems that satisfy the principle of complete mediation.  It uses an access-control logic (ACL) to reason about access to security sensitive objects.  It uses computer-aided reasoning such as the Higher Order Logic (HOL) Interactive theorem prover to formally verify and document these security properties.  The outcomes of CSBD applied to a system conform to the guidelines set fourth in System Security Engineering Framework, in particular by demonstrating that the assurance case is satisfied.
 
+CSBD is described in more detail in chapter \ref{chp:csbdacl}.
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsubsection{Confidentiality, Integrity, and Availability (CIA) }\label{sssect:ssmts}
@@ -220,12 +223,20 @@ Complete mediation: Every access to every object must be checked for authority. 
 
 In summary, what this means is that any accessor attempting to access or modify a protected object must satisfy two conditions: (1) the accessor must be authenticated, and (2) the accessor must be authorized to access or modify that object.  This involves a three-step process: (1) defining the protected objects, (2) declaring who has what rights on these objects, and (3) defining how to verify the identity of the individual(s) accessing or modifying the objects.  
 
-CSBD focuses on using formal methods to prove that a system satisfies the principle of complete mediation.
+CSBD focuses on using an access-control logic and computer-aided reasoning to prove that a system satisfies the principle of complete mediation.
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsubsection{Secure State Machines as Transition Systems }\label{sssect:ssmts}
 
+Secure state machines are transition systems that enforce both constraints on the system and complete mediation.  They define allowable system states and allowable transitions among states. Transitions are overseen by a monitor which enforces complete mediation by only allowing transitions which are requested by an authenticated and authorized principal. 
+
+Secure state machines are used by the CSBD method to enforce constraints on complete mediation.  (However, CSBD can also verify complete mediation without secure state machines.)
 %%%%%%%%%%%%%%%%%%%%% Section PB %%%%%%%%%%%%%%%
 \section{Patrol Base Operations}\label{sec:stormpb}
+For the purpose of this master thesis, patrol base operations are an example of a non-automated, human-centered system wherein security is critical for mission success.  The operations are described in the U.S. Army Ranger Handbook.
 
+
+Patrol base operations have a clear mission.  The activities are well-defined and mission-specific.  There is also a well-defined chain-of-command hierarchy.  Therefore, the patrol base operations are a great first example for testing the STORM methodology on a non-automated, human-centered system.  
+
+But, the operations are also detailed and thus require some ingenuity in managing the level of detail.  This master thesis manages the detail by modeling the patrol base operations as a modularized hierarchy of secure state machines.  Each decreasing level of the hierarchy describes the operations in more detail (less abstraction).  As the level of detail increases, groups of details become modularized.  Patrol base operations are described in the next chapter and chapter \ref{chp:pb}.  
 \end{document}
