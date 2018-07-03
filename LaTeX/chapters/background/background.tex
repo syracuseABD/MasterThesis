@@ -6,28 +6,7 @@
 \title{Background Information}
 
 \chapter{Background}\label{chp:background}
-This section aims to provide some background on subjects discussed in this master thesis.  These subjects are not directly addressed in other areas of this master thesis.  Nevertheless, knowledge of them is either necessary or useful to understanding what follows.  
-
-\section{Complete Mediation}
-The seminal paper quoted on the principle of complete mediation is "The Protection of Information in Computer Systems" by Saltzer and Schroeder.  
-\begin{quote}
-\textit{
-Complete mediation: Every access to every object must be checked for authority. This principle, when systematically applied, is the primary underpinning of the protection system. It forces a system-wide view of access control, which in addition to normal operation includes initialization, recovery, shutdown, and maintenance. It implies that a foolproof method of identifying the source of every request must be devised. It also requires that proposals to gain performance by remembering the result of an authority check be examined skeptically. If a change in authority occurs, such remembered results must be systematically updated.} \cite{saltzer}
-\end{quote}
-
-In summary, what this means is that any accessor attempting to access or modify a protected object must satisfy two conditions: (1) the accessor must be authenticated, and (2) the accessor must be authorized to access or modify that object.  This involves a three-step process: (1) defining the protected objects, (2) declaring who has what rights on these objects, and (3) defining how to verify the identity of the individual(s) accessing or modifying the objects.  
-
-
-Complete mediation is the underpinning of systems requiring access control.  From access to bank accounts to whose text messages get blocked, complete mediation is a critical component of security.  Complete mediation is also the subject of the access-control logic discussed in this master thesis. 
-
-\section{Confidentiality, Integrity, and Availability}
-At the core of security are the concepts of confidentiality, integrity, and availability.  Confidentiality refers to limiting access to objects (including information) by ensuring that only the right people (etc.\footnote{or any other "entity" that can request access to an object.}) have access to these things.  Confidentiality is the realm of things such as authentication and authorization.  Authentication means verifying a person's identity.  Authorization means describing a person's access rights. 
-
-Integrity, on the other hand, refers to the whole of the object (or information, etc.).  It means controlling who or what can modify the object.   Integrity is the realm of things such as authorization.  In this case, authorization means describing a person's right to modify an object.  
-
-Availability refers to accessibility.  Wikipedia describes availability as a measure of operability or degree to which the system is mission capable \cite {availability}. 
-
-Both confidentiality and integrity are guarded by the principle of complete mediation.  This master thesis focuses on this, the realm of confidentiality and integrity.
+This section aims to provide some background on subjects discussed in this master thesis.  
 
 \section{Formal Methods}
 (Primary source for this section is \cite{formalCarnegie})

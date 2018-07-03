@@ -52,11 +52,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces An implementation of the boolean datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{211}{figure.a.A.1}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces An implementation of a tree datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{211}{figure.a.A.2}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces An implementation of the weekday datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{211}{figure.a.A.3}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces An implementation of the function is_weekend in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{212}{figure.a.A.4}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces A parameterized implementation of a tree datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{212}{figure.a.A.5}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces An implementation of the boolean datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{209}{figure.a.A.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces An implementation of a tree datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{210}{figure.a.A.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces An implementation of the weekday datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{210}{figure.a.A.3}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces An implementation of the function is_weekend in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{210}{figure.a.A.4}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces A parameterized implementation of a tree datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{211}{figure.a.A.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
