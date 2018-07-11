@@ -7,27 +7,33 @@
 
 
 %%%%%%%%%%%%%%%%%%%%% Chapter STORM %%%%%%%%%%%%%%%
-\chapter{STORM}\label{chp:srorm}
-This chapter provides an introduction to the System-Theoretic Operational Risk Management (STORM) methodology.  It begins with a description of systems engineering and then systems security engineering, the field in which STORM is applicable. It describes how STORM fits into the System Security Engineering Framework.  Next, the components of STORM are described.  The chapter concludes with the motivation for applying STORM to the patrol base operations.
+\chapter{Background And Introduction to STORM}\label{chp:srorm}
+This chapter provides an introduction to \Gls{storm}.  STORM falls within the field of \Gls{se} and the sub-discipline of \Gls{sse}. To familiarize (or refresh) the reader, this chapter begins with some background on \Gls{se} and \Gls{sse}.  The SE concept of system life-cycle phases and the SSE Framework are introduced.  Following this, STORM and it's components (STPA-Sec and CSBD) are introduced.  The chapter concludes with a discussion of the patrol base operations as a sample systems to which STORM is applied.
 
 %%%%%%%%%%%%%%%%%%%%% Section SE %%%%%%%%%%%%%%%
 \section{Systems Engineering}\label{sec:stormse}
-"Systems Engineering is an interdisciplinary approach and means to enable the realization of successful systems. It focuses on defining customer needs and required functionality early in the development cycle, documenting requirements, then proceeding with design synthesis and system validation while considering the complete problem: Operations, Performance, Test, Manufacturing, Cost \& Schedule, Training \& Support, Disposal."
-
+\begin{quote}
+\textit{"Systems Engineering is an interdisciplinary approach and means to enable the realization of successful systems. It focuses on defining customer needs and required functionality early in the development cycle, documenting requirements, then proceeding with design synthesis and system validation while considering the complete problem..."
+}\end{quote}
 International Council on Systems Engineering 
 
 A system is a set of interacting and interdependent components that act as a whole,  through various mechanisms, to perform some function. Systems engineering is a multidisciplinary approach to solving problems related to large and complex man-made systems.  It focuses on stakeholder needs and assets while minimizing asset losses.  It focuses on building the right product.  It avoids building the wrong product or building the right product incorrectly.  
 
 According to Holstein and Bode's, who summarized systems engineering for the Encyclopedia Britannica, systems engineering probably developed from the overlapping of engineering concepts from different fields. They note that, for example, both chemical and mechanical engineering focus on heat transfer, and cybernetics and computer theory are both subdisciplines of electrical and electronics engineering.   But, at its core is the scientific methodology and the use of mathematical modeling.  Holstein and Bode link the more recent emergence of systems engineering to the communications industry (telephony, in particular) and Britain's post-World War II operations research.
 
-The emergence of systems engineering and its growing popularity is linked to the growing complexity of systems.  Systems are composed more and more of numerous interacting parts.  These interacting parts often exhibit emergent properties.  These are properties that arise from the interactions of many components.  These properties are not attributable to any one component and thus require a systems-thinking perspective. Holstein and Bode site the Nike Ajax U.S. Air Defense System as one of the earlier examples of these system-level emergent properties. Tactical range of the Ajax requires consideration of multiple factors including aerodynamic design, maneuverability provided by the control systems, warhead size and weight, etc.  Other factors include feedback from radar and the autopilot.
+The emergence of systems engineering and its growing popularity is linked to the growing complexity of systems.  Systems are composed more and more of numerous interacting parts.  These interacting parts often exhibit emergent properties.  These are properties that arise from the interactions of many components.  These properties are not attributable to any one component and thus require a systems-thinking perspective. Holstein and Bode site the Nike Ajax U.S. Air Defense System as one of the earlier examples of these system-level emergent properties. Tactical range of the Ajax requires consideration of multiple factors including aerodynamic design, maneuverability provided by the control systems, warhead size and weight, etc.  Other factors include feedback from radar and the autopilot.  Achieving tactical range emerges from analysis of the many interacting components.  
 
 Systems engineering is often employed in the communications and computing industries. But, it works in any field that works with large complex systems.  The applicability of systems engineering to other fields is promoted, in part, by the increased capacity to manage complex systems that arise from the increased computational power available.  Systems engineering is a growing field and demands for systems engineers will continue to grow as systems become more and more complex.
 
-Authoritative guidelines and standards on systems engineering can be found in ISO/IEC/IEEE 24748-1 and ISO/IEC/IEEE 25288.  These works describe six distinct phases of a system's life cycle: concept, development, production, utilization, support, and retirement.  Typically, the STROM methodology demonstrated in this master thesis focuses on the concept and development phase systems engineering. This is because it is intended to be used to inform a safe and secure system design.  However, for this particular master thesis, this work could be viewed as a support phase activity. This is because the system to which we are applying STORM has already been designed and employed in the field.   Support, in this aspect, entails re-envisioning the system from a safety and security perspective with the use of more modern tools that tackle the problems that arise from complexity.
+The relevant authoritative \gls{se} standards are defined in ISO/IEC/IEEE 24748-1 \cite{}and ISO/IEC/IEEE 25288\footnore{These standards reference other relevant standards.}.  These standards define the concept of system life-cycle phases: concept, development, production, utilization, support, and retirement.  The concept and development phases are the focus of \gls{storm} because safety and security should be considered during the design phase.  However, the support phase is also relevant for re-envisioning and updating the system.  
+
+
+Authoritative guidelines and standards on systems engineering can be found in ISO/IEC/IEEE 24748-1 and ISO/IEC/IEEE 25288.  These works describe six distinct phases of a system's life cycle: 
 %%%%%%%%%%%%%%%%%%%%% Section SSE %%%%%%%%%%%%%%%
 \section{Systems Security Engineering}\label{sesc:sse}
-"The ultimate objective is to obtain trustworthy secure systems that are fully capable of supporting critical missions and business operations while protecting stakeholder assets, and to do so with a level of assurance that is consistent with the risk tolerance of those stakeholders."
+\begin{quote}
+\textit{"The ultimate objective is to obtain trustworthy secure systems that are fully capable of supporting critical missions and business operations while protecting stakeholder assets, and to do so with a level of assurance that is consistent with the risk tolerance of those stakeholders."}
+\end{quote}
 Ron Ross (NIST) (Quoted from NIST SP 800-160)
 
 Systems Security Engineering \glsentryshort{sse} is a subdiscipline of Systems Engineering.  It applies scientific, mathematical, and related technical concepts and procedures to engineer trustworthy systems that meet stakeholder needs. 
@@ -78,11 +84,8 @@ The work in this master thesis applies the STORM methodology to patrol base oper
 
 %%%%%%%%%%%%%%%%%%%%% Section STORM %%%%%%%%%%%%%%%
 \section{STORM}\label{sec:storm}
-"A Framework is only as useful as it frames some sort of work."
 
-anonymous
-
-STORM is an approach to engineering trustworthy systems that satisfy stakeholder demands and conform to the Systems Security Engineering Framework (NIST SP 800-160 \cite{}).  It applies state-of-the-field analysis techniques to design products that are safe, secure, and integral.  It applies formal methods to produce reproducible and auditable verification demonstrating that stakeholder claims are satisfied.
+STORM is an approach to engineering trustworthy systems that satisfy stakeholder and conform to the SSE framework.  It applies state-of-the-field analysis techniques to design products that are safe, secure, and integral.  It applies formal methods to produce reproducible and auditable verification demonstrating that stakeholder claims are satisfied.
 
 
 STORM is a new approach to implementing the Systems Security Framework.  It the result of the collaborative effort of Professor Shiu-Kai Chin of the College of Engineering and Computer Science at Syracuse University, Erich Devendorf, PhD of the U.S. Air Force Research Laboratory, and William Young, PhD of the U.S. Air Force 53rd Electronic Warfare Group.  STPA-Sec is the work of Dr. Young, who presented it as his PhD thesis in 2014 at MIT.  CSBD is derived from the work of Professor Shiu-kai Chin and Professor Susan Older (also of the College of Engineering and Computer Science at Syracuse University).  They wrote the text on \textit{Access Control, Security, and Trust: A Logical Approach} \cite{csbd} from which CSBD is derived.  Professor Shiu-Kai Chin teaches components of CSBD at Syracuse University in the College of Engineering and Computer Science.  
@@ -195,7 +198,7 @@ The last step identifies scenarios that could cause the loss-linked control acti
 XSTAMPP is an extensible application of STAMP that helps the user organize the STPA process.  XSTAMPP is built on the Eclipse IDE.  Eclipse allows users to write their own plug-ins for XSTAMPP.  Current plug-ins are STPA, STPA-Sec, STPA-Priv, STPA Verifier, and CAST.  
 
 
-
+XSTAMPP was used for the STPA and STPA-Sec analysis.  However, at the time of this writing the program (and the data) were non-functional.
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsection{CSBD}\label{ssec:csbd}
 CSBD is a method for formally verifying and documenting the security properties of a systems.  It focuses on designing systems that satisfy the principle of complete mediation.  It uses an access-control logic (ACL) to reason about access to security sensitive objects.  It uses computer-aided reasoning such as the Higher Order Logic (HOL) Interactive theorem prover to formally verify and document these security properties.  The outcomes of CSBD applied to a system conform to the guidelines set fourth in System Security Engineering Framework, in particular by demonstrating that the assurance case is satisfied.

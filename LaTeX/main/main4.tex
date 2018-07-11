@@ -27,10 +27,11 @@
 \usepackage{listings}
 \usepackage{pdfpages}
 
-%% Acronyms
-\usepackage[acronym,toc]{glossaries}
+%% Acronyms [acronym,toc]
+\usepackage[toc]{glossaries}
 \loadglsentries{acronyms}
 \makenoidxglossaries
+%\makeglossaries
 \usepackage[nolist,nohyperlinks,printonlyused,nonumberlist]{acronym}
 
 %%Section numbering
@@ -39,9 +40,10 @@
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 
-%% References
-\usepackage[nottoc]{tocbibind}
+%% References, TOC
+\usepackage{tocbibind}
 \renewcommand{\bibname}{References}
+\renewcommand{\contentsname}{Table Of Contents}
 
 %% Graphics
 \usepackage{graphicx}
@@ -51,7 +53,7 @@
 
 
 %%%%%%%% Style
-\renewcommand{\contentsname}{Table Of Contents}
+
 \pagenumbering{roman}
 \usepackage{geometry}
 \geometry{
@@ -81,6 +83,8 @@ marginparwidth=0in
 \lstset{language=ML, basicstyle=\scriptsize}
 \title{Certified Security by Design (CSBD) Applied to United States Army Ranger Patrol Base Operations: An Example of Formal Verification of Complete Mediation Applied to A Non-automated, Human-Centered System}
 \author{Lori Pickering}
+
+
 
 %\frontmatter
 %% Testing figure placement and inclusion in List of Figures
@@ -120,6 +124,7 @@ marginparwidth=0in
 \cleardoublepage
 %\addcontentsline{toc}{chapter}{List of Acronyms}
 %\subfile{../frontMatter/listOfAcronyms/listOfAcronyms}
+%\printglossary
 \printnoidxglossary[type=\acronymtype, title={List of Acronyms}]
 \cleardoublepage
 
