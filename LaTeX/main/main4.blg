@@ -3,80 +3,84 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main4.aux
 The style file: unsrt.bst
 Database file #1: mtref.bib
+Warning--entry type for "safe" isn't style-file defined
+--line 22 of file mtref.bib
 Warning--entry type for "buoy" isn't style-file defined
---line 11 of file mtref.bib
+--line 34 of file mtref.bib
 Warning--entry type for "youngPorada" isn't style-file defined
---line 28 of file mtref.bib
+--line 51 of file mtref.bib
 Warning--entry type for "constructor" isn't style-file defined
---line 66 of file mtref.bib
+--line 90 of file mtref.bib
 Warning--entry type for "saulk" isn't style-file defined
---line 120 of file mtref.bib
+--line 144 of file mtref.bib
 Warning--entry type for "HOLwiki" isn't style-file defined
---line 130 of file mtref.bib
+--line 154 of file mtref.bib
 Warning--entry type for "BSDlicenses" isn't style-file defined
---line 140 of file mtref.bib
+--line 164 of file mtref.bib
 Warning--entry type for "saltzer" isn't style-file defined
---line 150 of file mtref.bib
+--line 174 of file mtref.bib
 Warning--entry type for "availability" isn't style-file defined
---line 161 of file mtref.bib
+--line 185 of file mtref.bib
 Warning--entry type for "elasticsearch" isn't style-file defined
---line 195 of file mtref.bib
+--line 219 of file mtref.bib
 Warning--entry type for "wikiconops" isn't style-file defined
---line 204 of file mtref.bib
+--line 228 of file mtref.bib
 Warning--entry type for "nistmission" isn't style-file defined
---line 249 of file mtref.bib
+--line 273 of file mtref.bib
 Warning--entry type for "HOL" isn't style-file defined
---line 282 of file mtref.bib
+--line 306 of file mtref.bib
 Warning--entry type for "functionalprogramming" isn't style-file defined
---line 290 of file mtref.bib
+--line 314 of file mtref.bib
 Warning--entry type for "formalmethodslcarke" isn't style-file defined
---line 348 of file mtref.bib
+--line 372 of file mtref.bib
 Warning--I didn't find a database entry for "csbd"
+Warning--I didn't find a database entry for "iso24748"
 Warning--empty author and editor in types
 Warning--empty author in iso15288
+Warning--empty author in iso247482017
 Warning--empty year in Tantooine
 Warning--empty note in VARVEL
 Warning--there's a number but no series in stateexplosion
 Warning--empty author in wikiformalmethods
-You've used 33 entries,
+You've used 34 entries,
             1791 wiz_defined-function locations,
-            606 strings with 8264 characters,
-and the built_in function-call counts, 4860 in all, are:
-= -- 381
-> -- 194
+            609 strings with 8368 characters,
+and the built_in function-call counts, 4964 in all, are:
+= -- 388
+> -- 195
 < -- 8
-+ -- 82
++ -- 83
 - -- 49
-* -- 233
-:= -- 716
-add.period$ -- 75
-call.type$ -- 33
-change.case$ -- 29
+* -- 240
+:= -- 724
+add.period$ -- 76
+call.type$ -- 34
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 240
-empty$ -- 582
+cite$ -- 41
+duplicate$ -- 245
+empty$ -- 600
 format.name$ -- 49
-if$ -- 1130
+if$ -- 1156
 int.to.chr$ -- 0
-int.to.str$ -- 33
+int.to.str$ -- 34
 missing$ -- 12
-newline$ -- 142
+newline$ -- 145
 num.names$ -- 23
-pop$ -- 164
+pop$ -- 171
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 145
+skip$ -- 150
 stack$ -- 0
 substring$ -- 77
-swap$ -- 53
+swap$ -- 54
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 6
+warning$ -- 7
 while$ -- 28
-width$ -- 35
-write$ -- 293
-(There were 21 warnings)
+width$ -- 36
+write$ -- 300
+(There were 24 warnings)

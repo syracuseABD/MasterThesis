@@ -8,12 +8,17 @@ United States Army Ranger School, ATTN: ATSH-RB, 10850 Schneider Rd, Bldg 5024,
 \bibitem{youngPorada}
 Willam~Young Jr and Reed Porada.
 \newblock System-theoretic process analysis for security (stpa-sec):
-  System-theoretic process analysis for security (stpa-sec): Syber security and
+  System-theoretic process analysis for security (stpa-sec): Cyber security and
   stpa, March 2017.
 
 \bibitem{stpa}
 Nancy~G. Leveson and John~P. Thomas.
 \newblock {\em STPA Handbook}, March 2018.
+
+\bibitem{safe}
+Sam Procter.
+\newblock Simultaneous analysis of safety and security of a critical system,
+  September 2017.
 
 \bibitem{ChinOlder}
 Shiu-Kai Chin and Susan~Beth Older.
@@ -61,22 +66,30 @@ JPMC's~SWIFT protocols Glenn~Benson, Shiu-Kai Chin, Sean Croston, Karthick
   management.
 \newblock {\em Computer Networks}, 67:235--251, 2014.
 
-\bibitem{saferworld}
-Nacy~G. Leveson.
-\newblock {\em Engineering a Safer World: Systems Thinking Applied to Safety}.
-\newblock MIT Press, 2012.
+\bibitem{iso247482017}
+{ISO/IEC/IEEE 24748-5} international standard - systems and software
+  engineering--life cycle managment--part 5: Software development planning.
+\newblock Technical Report ISO/IEC/IEEE 24748-5:2017(E), International
+  Organization for Standardization (ISO) {\&} International Electrotechnical
+  Commission (IEC) {\&} Institute of Electrical and Electronics Engineers
+  (IEEE), 3 Park Avenue, New York, NY 10016-5997, USA, May 2017.
 
 \bibitem{buoy}
 Paul Stukus.
 \newblock Systems-theoretic accident model and processes (stamp) applied to a
   u.s. coast guard buoy tender integrated control system, 2017.
 
-\bibitem{iso24748}
-ISO.
-\newblock Systems and software engineering--life cycle management--part 1{:}
-  guide for life cycle management.
-\newblock Technical Report ISO/IEC TR 24748-1:2010(E), International
-  Organization for Standardization (ISO), September 2010.
+\bibitem{saferworld}
+Nacy~G. Leveson.
+\newblock {\em Engineering a Safer World: Systems Thinking Applied to Safety}.
+\newblock MIT Press, 2012.
+
+\bibitem{availability}
+Availability, January 2018.
+
+\bibitem{saltzer}
+Jerome~H. Saltzer and Michael~D. Schroeder.
+\newblock The protection of information in computer systems, April 1975.
 
 \bibitem{wikiconops}
 Concepts of operations, May 2018.
@@ -104,13 +117,6 @@ Saul kripke, May 2018.
 Charles~Q. Choi.
 \newblock Alien planets with extra suns can have strange orbits.
 \newblock {\em Space.com}.
-
-\bibitem{saltzer}
-Jerome~H. Saltzer and Michael~D. Schroeder.
-\newblock The protection of information in computer systems, April 1975.
-
-\bibitem{availability}
-Availability, January 2018.
 
 \bibitem{formalCarnegie}
 Michael Collins.

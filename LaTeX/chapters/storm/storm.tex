@@ -19,30 +19,33 @@ International Council on Systems Engineering
 
 A system is a set of interacting and interdependent components that act as a whole,  through various mechanisms, to perform some function. Systems engineering is a multidisciplinary approach to solving problems related to large and complex man-made systems.  It focuses on stakeholder needs and assets while minimizing asset losses.  It focuses on building the right product.  It avoids building the wrong product or building the right product incorrectly.  
 
-According to Holstein and Bode's, who summarized systems engineering for the Encyclopedia Britannica, systems engineering probably developed from the overlapping of engineering concepts from different fields. They note that, for example, both chemical and mechanical engineering focus on heat transfer, and cybernetics and computer theory are both subdisciplines of electrical and electronics engineering.   But, at its core is the scientific methodology and the use of mathematical modeling.  Holstein and Bode link the more recent emergence of systems engineering to the communications industry (telephony, in particular) and Britain's post-World War II operations research.
+According to Holstein and Bode's, who summarized systems engineering for the Encyclopedia Britannica, systems engineering probably developed from the overlapping of engineering concepts from different fields. They note that, for example, both chemical and mechanical engineering focus on heat transfer, and cybernetics and computer theory are both sub-disciplines of electrical and electronics engineering.   But, at its core is the scientific methodology and the use of mathematical modeling.  Holstein and Bode link the more recent emergence of systems engineering to the communications industry (telephony, in particular) and Britain's post-World War II operations research.
 
 The emergence of systems engineering and its growing popularity is linked to the growing complexity of systems.  Systems are composed more and more of numerous interacting parts.  These interacting parts often exhibit emergent properties.  These are properties that arise from the interactions of many components.  These properties are not attributable to any one component and thus require a systems-thinking perspective. Holstein and Bode site the Nike Ajax U.S. Air Defense System as one of the earlier examples of these system-level emergent properties. Tactical range of the Ajax requires consideration of multiple factors including aerodynamic design, maneuverability provided by the control systems, warhead size and weight, etc.  Other factors include feedback from radar and the autopilot.  Achieving tactical range emerges from analysis of the many interacting components.  
 
 Systems engineering is often employed in the communications and computing industries. But, it works in any field that works with large complex systems.  The applicability of systems engineering to other fields is promoted, in part, by the increased capacity to manage complex systems that arise from the increased computational power available.  Systems engineering is a growing field and demands for systems engineers will continue to grow as systems become more and more complex.
 
-The relevant authoritative \gls{se} standards are defined in ISO/IEC/IEEE 24748-1 \cite{}and ISO/IEC/IEEE 25288\footnore{These standards reference other relevant standards.}.  These standards define the concept of system life-cycle phases: concept, development, production, utilization, support, and retirement.  The concept and development phases are the focus of \gls{storm} because safety and security should be considered during the design phase.  However, the support phase is also relevant for re-envisioning and updating the system.  
+The relevant \gls{se} standards are defined in ISO/IEC/IEEE\footnote{ISO = \Gls{iso}; IEC = \Gls{iec}; and IEEE = \Gls{ieee}} 24748-5 \cite{iso247482017} and ISO/IEC/IEEE 25288\footnote{These standards reference other relevant standards.} \cite{iso15288}.  These standards define the concept of system life-cycle phases: concept, development, production, utilization, support, and retirement.  The concept and development phases are the focus of \gls{storm} because safety and security should be considered during the design phase.  However, the support phase is also relevant for re-envisioning and updating the system.  
 
-
-Authoritative guidelines and standards on systems engineering can be found in ISO/IEC/IEEE 24748-1 and ISO/IEC/IEEE 25288.  These works describe six distinct phases of a system's life cycle: 
 %%%%%%%%%%%%%%%%%%%%% Section SSE %%%%%%%%%%%%%%%
 \section{Systems Security Engineering}\label{sesc:sse}
 \begin{quote}
 \textit{"The ultimate objective is to obtain trustworthy secure systems that are fully capable of supporting critical missions and business operations while protecting stakeholder assets, and to do so with a level of assurance that is consistent with the risk tolerance of those stakeholders."}
 \end{quote}
-Ron Ross (NIST) (Quoted from NIST SP 800-160)
+Ron Ross (NIST) (Quoted from NIST SP 800-160 \cite{NIST800160})
 
-Systems Security Engineering \glsentryshort{sse} is a subdiscipline of Systems Engineering.  It applies scientific, mathematical, and related technical concepts and procedures to engineer trustworthy systems that meet stakeholder needs. 
+Systems Security Engineering (\glsentryshort{sse}) is a sub-discipline of Systems Engineering (SE).  It applies scientific, mathematical, and related technical concepts and procedures to engineer trustworthy systems that meet stakeholder needs. 
 
-Systems Security Engineering probably developed alongside systems engineering.  But, the need for security in all systems is becoming more and more evident in today's technology-dependent society.  In the authoritative document on SSE (National institute for Standardization and Technology (NIST) Special Publication 800-160 vol 1), the abstract states
+Systems Security Engineering probably developed alongside systems engineering.  But, the need for security engineering is becoming more and more on the forefront of everyone's minds in today's technology-dependent society.  With recent high-profile security breaches such as the Target and intel...companies can no longer afford to take a relaxed posture on security.  This need for security is stated no better than by experts in the field
 
-"With the continuing frequency, intensity, and adverse consequences of cyber-attacks, disruptions, hazards, and other threats to federal, state, and local governments, the military, businesses, and the critical infrastructure, the need for trustworthy secure systems has never been more important to the long-term economic and national security interests of the United States. Engineering-based solutions are essential to managing the growing complexity, dynamicity, and interconnectedness of today?s systems, as exemplified by cyber-physical systems and systems-of-systems, including the Internet of Things."
+\begin{quote}
+\textit{"With the continuing frequency, intensity, and adverse consequences of cyber-attacks, disruptions, hazards, and other threats to federal, state, and local governments, the military, businesses, and the critical infrastructure, the need for trustworthy secure systems has never been more important to the long-term economic and national security interests of the United States. Engineering-based solutions are essential to managing the growing complexity, dynamically, and interconnectedness of today?s systems, as exemplified by cyber-physical systems and systems-of-systems, including the Internet of Things."}  \cite{NIST800160}
+\end{quote}
+ This quote is from experts in the field of \gls{sse} who developed the authoritative guidelines in the \Gls{nist} Special Publication 800-160 vol 1 \cite{NIST800160}.  
 
-Systems Security Engineering is practiced whenever security is a component of systems engineering.  As a subspecialty of systems engineering, SSE focuses on stakeholder assets and loss avoidance or mitigation.  It is a multidisciplinary approach that considers emergent properties which arise from the complexity of large systems.
+
+
+Systems Security Engineering is applied whenever security is a component of systems engineering.  As a multi-disciplinary, subspecialty of systems engineering, SSE focuses on stakeholder assets and loss avoidance or mitigation.  The Systems Security Engineering Framework defines the context in which STORM applies.
    
 
 \subsection{Systems Security Engineering Framework}
@@ -53,45 +56,44 @@ The authoritative document on SSE is the National Institute of Standardization a
 \caption{\label{sseframework}Systems security engineering Framework. (Image from \glsentryshort{nist} Special Publication 800-160 Vol 1: Systems Security Engineering Considerations for a Multidisciplinary Approach in the Engineering of Trustworthy Secure Systems.)}
 \end{figure}
 
+The framework describes the problem, solution, and trustworthiness activity contexts.  These three contexts are further refined. 
 \paragraph*{Problem}
-The framework describes the problem, solution, and trustworthiness activity contexts.  These three contexts are further broken down.  The problem phase focuses on defining security from the stakeholder's needs, purpose, and mission.  It is divided into four subcategories.  The first category defines the security objective. What does it means to be "\textit{adequately secure}"?   What are the assets and asset losses?  Which losses are unacceptable?
+The problem phase focuses on defining security from the stakeholder's needs, purpose, and mission.  It is divided into four sub-contexts (activities).  The first activity defines the security objective. What does it means to be "\textit{adequately secure}"?   What are the assets and asset losses?  Which losses are unacceptable?
  
-The second category in the problem context is to define measures of success.  What level of asset protection is required?  What level of assurance or protection is required?  
+The second activity defines measures of success.  What level of asset protection is required?  What level of assurance or protection is required?  
 
-The third subcategory is to define the system life-cycle security concepts.  What is the system security context throughout the life-cycle of the system?  What processes, methods, and procedures throughout the system's life cycle need security?  
+The third activity defines the system life-cycle security concepts.  What is the system security context throughout the life-cycle of the system?  What processes, methods, and procedures throughout the system's life cycle need security?  
 
-The fourth subcategory is to define the security requirements.  The stakeholder security requirements are determined from the previous three subcategories.
+The fourth activity defines the security requirements.  The stakeholder security requirements are determined from the previous three subcategories.
 
 \paragraph*{Solution}
-With the problem defined, the solution activity transforms the problem into security design requirements.  This a three part process.  The first subcategory in the solution context is to define the security aspects of the solution. NIST SP 800-160 lists six aspects to focus on: protection strategy; security design requirements; security architecture view and viewpoints; security design; security procedural aspects, capabilities, and limitations in the system life-cycle; and how to verify and measure security performance. 
+With the problem defined, the solution activity transforms the problem into security design requirements.  This has three activities.  The first activity defines the security aspects of the solution. Six aspects are listed in NIST SP 800-160: protection strategy; security design requirements; security architecture view and viewpoints; security design; security procedural aspects, capabilities, and limitations in the system life-cycle; and how to verify and measure security performance. 
 
-The next subcategory is to realize the security aspects.  This is the security implementation phase.
+The next activity realizes the security aspects.  This is the security implementation phase.
 
-The last subcategory in the solution context is to produce evidence for the security aspects of the solution. This assurance evidence can be obtained from a variety of SSE verification methods.  Assurance claims are measured against the stakeholder's requirements.
+The last activity produces evidence for the security aspects of the solution. This can be obtained from a variety of SSE verification methods.  This evidence is compared with claims measured against the stakeholder's requirements.
 
 \paragraph*{Trustworthiness}
-Once the solution is generated, the trustworthiness context provides evidence that the system is trustworthy.  The evidence supports the security objective claims.  There are two subcategories of activities in this context.  The first is to develop and maintain that assurance case for acceptable security.  NIST SP 800-160 defines assurance case as \textit{"a well-defined and structured set of arguments and a body of evidence showing that a system satisfies specific claims with respect to a given quality attribute."}  Assurance cases also provide auditable artifacts supporting the system security claims.
+Once the solution is generated, the trustworthiness context develops assurance cases and demonstrates that they are satisfied.  The first activity develops and maintains assurance cases for acceptable security.  NIST SP 800-160 defines assurance case as \textit{"a well-defined and structured set of arguments and a body of evidence showing that a system satisfies specific claims with respect to a given quality attribute."}  Assurance cases also provide auditable artifacts supporting the system security claims.
 
-The other trustworthiness activity is to demonstrate that the assurance case is satisfied.  As subject-matter expert should evaluate the assurance case to determine if the evidence supports the security claims.
+The second trustworthiness activity demonstrates that the assurance case is satisfied.  A subject-matter expert should evaluate the assurance case to determine if the evidence supports the security claims.
 
 \subsubsection{Conforming to The SSE Framework}
-The STORM methodology is intended to conform to the SSE Framework.  It is up to the STORM user to verify in detail that \textit{all} nine sub-contexts of the SSE Framework are addressed.  Proper application of STORM and system engineering thinking is sufficient for this.
+STORM is consistent with the SSE Framework.  It is up to the STORM user to verify in detail that \textit{all} nine sub-contexts of the SSE Framework are addressed.  
 
-STORM is composed of two components (described next), STPA and CSBD.  STPA focuses on the problem and solution contexts of the framework.  The problem is defined by the STPA analysis.  The solutions should evolve from implementing the constraints derived from this analyisis. CSBD focuses on demonstrating trustworthiness through formal methods and computer-aided reasoning.  It uses a rigorous mathematical logic to verify claims of security with regards to confidentiality, integrity, and accessibility.  It produces an auditable and reproducible document that should be included with the system documentation.
-
-The work in this master thesis applies the STORM methodology to patrol base operations. 
+STORM's two components in combination satisfy all three SSE Framework contexts.  The problem and solution contexts are covered by STPA/STPA-Sec.  The trustworthy context is covered by CSBD.  Both STPA/STPA-Sec and CSBD are described in the following sections.
 
 
 %%%%%%%%%%%%%%%%%%%%% Section STORM %%%%%%%%%%%%%%%
 \section{STORM}\label{sec:storm}
 
-STORM is an approach to engineering trustworthy systems that satisfy stakeholder and conform to the SSE framework.  It applies state-of-the-field analysis techniques to design products that are safe, secure, and integral.  It applies formal methods to produce reproducible and auditable verification demonstrating that stakeholder claims are satisfied.
+\Gls{storm} is an approach to managing risk and engineering trustworthy systems that satisfy stakeholder requirements and conform to industry standards.  It applies state-of-the-field analysis techniques to design products that are safe, secure, and integral.  It applies formal methods to produce reproducible and auditable verification demonstrating that stakeholder claims are satisfied.  
 
 
-STORM is a new approach to implementing the Systems Security Framework.  It the result of the collaborative effort of Professor Shiu-Kai Chin of the College of Engineering and Computer Science at Syracuse University, Erich Devendorf, PhD of the U.S. Air Force Research Laboratory, and William Young, PhD of the U.S. Air Force 53rd Electronic Warfare Group.  STPA-Sec is the work of Dr. Young, who presented it as his PhD thesis in 2014 at MIT.  CSBD is derived from the work of Professor Shiu-kai Chin and Professor Susan Older (also of the College of Engineering and Computer Science at Syracuse University).  They wrote the text on \textit{Access Control, Security, and Trust: A Logical Approach} \cite{csbd} from which CSBD is derived.  Professor Shiu-Kai Chin teaches components of CSBD at Syracuse University in the College of Engineering and Computer Science.  
+STORM is a new approach to implementing the Systems Security Framework.  It can also be used in conformance to the ISO/IEC/IEEE 15288 and 24748 standards.  It is the result of the collaborative effort of Professor Shiu-Kai Chin of the College of Engineering and Computer Science at Syracuse University, Erich Devendorf, PhD of the U.S. Air Force Research Laboratory, and William Young, PhD of the U.S. Air Force 53rd Electronic Warfare Group.  STPA is the culmination of years of research in safety engineering by \Gls{mit} professor Nancy Leveson.  Whereas STPA focuses on safety engineering, STPA-Sec focuses on security engineering.  STPA-Sec is the work of Dr. Young, who presented it as his PhD thesis in 2014 at MIT.  CSBD is derived from the work of Professor Shiu-kai Chin and Professor Susan Older (also of the College of Engineering and Computer Science at Syracuse University).  They wrote the text on \textit{Access Control, Security, and Trust: A Logical Approach} \cite{ChinOlder} from which CSBD is derived.  Professor Shiu-Kai Chin teaches components of CSBD at Syracuse University in the College of Engineering and Computer Science.  
 
 
-All elements of STORM are currently employed by the U.S. Air Force.  Components of STORM are taught at Syracuse University, in particular CSBD.  STPA-Sec is part of the U.S. Air Force doctrine.  CSBD has been used in the design of JP Morgan Company's SWIFT protocols \cite{} and the F-16 Viper payload controller and secure memory loader verifier (not published). As this master thesis is being written, STORM is being presented to the National Security Agency (NSA) for inclusion into their ? program.
+All elements of STORM are currently employed by the U.S. Air Force.  Components of STORM are taught at Syracuse University, in particular CSBD.  STPA-Sec is part of the U.S. Air Force doctrine.  CSBD has been used in the design of JP Morgan Company's SWIFT protocols \cite{pkm} and the F-16 Viper payload controller and secure memory loader verifier (not published). As this master thesis is being written, STORM is being presented to the National Security Agency (NSA) for inclusion into their ? program.
 
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
