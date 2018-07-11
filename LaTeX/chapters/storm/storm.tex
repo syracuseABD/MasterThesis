@@ -120,7 +120,7 @@ The need for a new hazard analysis paradigm arises near the turn of the century 
 
 System theory focuses on the system as a whole rather than as a collection of subcomponents.  The need for a system theory approach is epitomized in the notion that the whole is greater than the sum of its parts.  From the complex interactions of individual components arise emergent properties. These properties can be thought of as a higher order that is not predictable from the behavior of the individual components.
 
-\gls{stamp} forms the foundation of the new, modern era systems-theoretic safety analysis techniques.  Several approaches to safety engineering are built upon the STAMP foundation.  System-Theoretic Process Analysis (STPA) is one these analysis techniques.  In addition to STPA (the topic of the next section), several other analysis techniques are built on top of the \gls{stamp} foundation.  These include Causal Analysis based on Systems Theory (CAST), STPA for security (STPA-Sec), STPA for privacy (STPA-Pric), STPA-SafeSec \cite{safe}, and SAFE (a refinement focused on hardware and software subsystems \cite{safe}.
+\gls{stamp} forms the foundation of the new, modern era systems-theoretic safety analysis techniques.  Several approaches to safety engineering are built upon the STAMP foundation.  System-Theoretic Process Analysis (STPA) is one these analysis techniques.  In addition to STPA (the topic of the next section), several other analysis techniques are built on top of the \gls{stamp} foundation.  These include Causal Analysis based on Systems Theory (CAST), STPA for security (STPA-Sec), STPA for privacy (STPA-Pric), STPA-SafeSec \cite{safe}, and SAFE (a refinement focused on hardware and software subsystems \cite{safe)}.
 
  At \gls{stamp}'s core is a top-down model that views accidents as dynamic control problems.  It focuses on safety constraints, hierarchical control structures, and process models \cite{saferworld}. 
 
@@ -151,7 +151,7 @@ If the controller's process model is somehow flawed or not consistent with the s
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.5\linewidth]{../figures/processmodel}
-\caption{\label{processmodel} Controller with process model. (Image captured from the \textit{Engineering a Safer World} Handbook \cite{safe}.)}
+\caption{\label{processmodel} Controller with process model. (Image captured from the \textit{Engineering a Safer World} Handbook \cite{saferworld}.)}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsection{STPA/STPA-Sec}\label{ssec:stpa}
@@ -159,13 +159,14 @@ System-Theoretic Process Analysis (STPA) is a systems engineering methodology th
 
 STPA follows the guidelines described in ISO/IEC/IEEE 15288 for System Life-Cycle Processes.  It's focus is on the Technical Processes (ISO/IEC/IEEE 15288), the concept and development stage of the system life cycle (defined in ISO/IEC/IEEE 24748), and the problem and solution contexts of the Systems Security Engineering Framework (NIST SP 800-160).
 
+STPA, like STAMP, is the work of Professor Nancy Leveson from MIT.  STPA-Sec is William Young's (PhD and Col. in USAF) PhD thesis dissertation.  It is a modification of STPA that adds on a security component.  
 
-STPA, like STAMP, is the work of Professor Nancy Leveson from MIT.  STPA-Sec is William Young's (PhD and Col. in USAF) PhD thesis dissertation.  It is a modification of STPA that analyzes system security rather than just system safety.  In a 2013 paper, Professor Nancy Leveson and Dr. William Young define safety and security as
+In a 2013 paper, Professor Nancy Leveson and Dr. William Young define safety and security as
 \begin{description}
 \item[ Safety ] protecting a system against \textit{unintentional} disruptions.
 \item[ Security ] protecting a system against \textit{intentional} disruptions.
 \end{description}
-The primary difference between STPA and STPA-Sec is that STPA thinks about how \textit{accidents} arise from system-level \textit{hazards} whereas STPA-Sec thinks about how \textit{losses} arise from system-level \textit{vulnerabilities}.  However, the application of the four STPA steps is the same.
+The primary difference between STPA and STPA-Sec is that STPA thinks about how \textit{accidents} arise from system-level \textit{hazards} whereas STPA-Sec thinks about how \textit{losses} arise from system-level \textit{vulnerabilities}.  Application of the four steps is similar for both STPA and STPA-Sec.
 
 
 \section{STPA/STPA-Sec Overview: Four Steps}
@@ -178,76 +179,91 @@ STPA is a four step process.  Figure \ref{4step} diagrams these four steps.  The
 \end{figure}
 
 \paragraph*{Step 1: Define The Purpose of The Analysis}
-The first step defines the purpose of the analysis, the system to be produced, and losses/accidents as defined by the stakeholders.  Vulnerabilities/hazards cause losses/accidents in worst-case scenarios.  In this step, losses/accidents are linked to vulnerabilities/hazards.  
-
-System-level constraints are then defined and linked to vulnerabilities/hazards.  
-
+The first step defines the purpose of the analysis and the system to be produced.  Unacceptable losses/accidents are defined by the stakeholders.  Then, system-level vulnerabilities/hazards are defined and linked to the losses/accidents they would cause in the worse-case scenario.  Next, system-level constraints are defined and linked to vulnerabilities/hazards. 
 
 \paragraph*{Step 2: Model The Control Structure}
-The second step models the system.  The model is a functional control model that describes the flow in information in the system.  Figure \ref{controlmodel} shows an example of a control model.
+The second step models the system's functional control structure.  This describes the flow of control (or information) in the system.  Figure \ref{controlmodel} shows an example of a control model.  
 
+The control structure shines light on system-level hazards.  Figure \ref{stpasecControlStructure} shows a control structure with the potential vulnerabilities/hazards labeled.
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{../figures/stpasecControlStructure}
+\caption{\label{stpasecControlStructure} Control structure with potential system-level vulnerabilities/hazards and security considerations. (Image captured from  \textit{Systems thinking for safety and security} \cite{sys4sec}.)}
+\end{figure}
+
+1 and 3 type vulnerabilities/hazards are caused by representation flaws.  These nclude missing or incorrect information or feedback and flaws involving the controller's model of the system.  2 type vulnerabilities/hazards are caused by algorithm flaws (algorithms implement the controller's process model).  4 type vulnerabilities/hazards are caused by component failures.
+
+The control structure consists of two controllers, one at the top and one near the bottom and to the left.  The lower control structure could represent an adversary sending conflicting instructions to the controlled process (bottom of diagram).  
 
 \paragraph*{Step 3: Identify Unsafe Control Actions}
-The next step identifies unsafe control actions (UCAs) for each control action described in step 2.  There are four types of UCAs.
+The next step identifies unsafe control actions (UCAs) for each control action described in step 2. Control actions are instructions (commands, etc.) output by one control structure and input to another, typically from a higher to a lower control structure.   There are four types of UCAs.
+
 \begin{itemize}
 \item Not applying the control action
 \item Applying the wrong control action
 \item Applying the control action in the wrong order
-\item Applying the control action for two long.
+\item Applying the control action for two long or not long enough.
 \end{itemize}
+
+In this step, each control action is analyzed for all four types of UCAs to check for vulnerabilities/hazards.  UCA's are further analyzed in step 4.
 
 
 \paragraph*{Step 4: Identify Loss Scenarios}
-The last step identifies scenarios that could cause the loss-linked control actions described in step 3.  This analysis should be used to guide system security engineering decisions.
+The last step identifies scenarios that could cause the UCAs discovered in step 3.  Each scenario describes how a UCA could cause a system-level vulnerability/loss in the worst-case scenario.  In addition, associated causal factors are analyzed for each scenario.  This analysis guides system security engineering decisions.
 
 
-%%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
-\subsubsection{XSTAMPP}\label{sssec:xstamp}
-XSTAMPP is an extensible application of STAMP that helps the user organize the STPA process.  XSTAMPP is built on the Eclipse IDE.  Eclipse allows users to write their own plug-ins for XSTAMPP.  Current plug-ins are STPA, STPA-Sec, STPA-Priv, STPA Verifier, and CAST.  
-
-
-XSTAMPP was used for the STPA and STPA-Sec analysis.  However, at the time of this writing the program (and the data) were non-functional.
+%%%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
+%\subsubsection{XSTAMPP}\label{sssec:xstamp}
+%STPA is automatable.  Several applications have been developed to automated some of the processes.  One of these application is XSTAMPP.
+%
+%XSTAMPP is an extensible application of STAMP that helps the user organize the STPA process.  XSTAMPP is built on the Eclipse IDE.  Eclipse allows users to write their own plug-ins for XSTAMPP.  Current plug-ins are STPA, STPA-Sec, STPA-Priv, STPA Verifier, and CAST.  
+%
+%
+%XSTAMPP is used for the STPA and STPA-Sec analysis.  However, at the time of this writing the program (and the data) are non-functional.
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsection{CSBD}\label{ssec:csbd}
-CSBD is a method for formally verifying and documenting the security properties of a systems.  It focuses on designing systems that satisfy the principle of complete mediation.  It uses an access-control logic (ACL) to reason about access to security sensitive objects.  It uses computer-aided reasoning such as the Higher Order Logic (HOL) Interactive theorem prover to formally verify and document these security properties.  The outcomes of CSBD applied to a system conform to the guidelines set fourth in System Security Engineering Framework, in particular by demonstrating that the assurance case is satisfied.
 
-CSBD is described in more detail in chapter \ref{chp:csbdacl}.
+CSBD can be used to demonstrate trustworthiness of a system within the System Security Engineering Framework.  CSBD is the second major component of STORM.
+
+CSBD is a method for formally verifying and documenting the security properties of a systems.  It focuses on designing systems that satisfy the principle of complete mediation.  It uses an access-control logic (ACL) to reason about access to security sensitive objects.  It uses computer-aided reasoning such as the Higher Order Logic (HOL) Interactive theorem prover to formally verify and document these security properties.  .
+
+CSBD has its own chapter (chapter \ref{chp:csbdacl}) and is noted here to show how it fits into STORM.
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsubsection{Confidentiality, Integrity, and Availability (CIA) }\label{sssect:ssmts}
-At the core of security are the concepts of confidentiality, integrity, and availability.  Confidentiality refers to limiting access to objects (including information) by ensuring that only the right people (etc.\footnote{or any other "entity" that can request access to an object.}) have access to these things.  Confidentiality is the realm of things such as authentication and authorization.  Authentication means verifying a person's identity.  Authorization means describing a person's access rights. 
+At the core of security are the concepts of confidentiality, integrity, and availability (CIA).  Confidentiality refers to limiting access to objects (including information) by ensuring that only the right individuals (etc.\footnote{or any other "entity" that can request access to an object.}) have access.  Confidentiality is the realm of authentication and authorization.  Authentication verifies an individual's identity.  Authorization describes a individual's access rights. 
 
-Integrity, on the other hand, refers to the whole of the object (or information, etc.).  It means controlling who or what can modify the object.   Integrity is the realm of things such as authorization.  In this case, authorization means describing a person's right to modify an object.  
+Integrity, on the other hand, refers to the whole of the object (or information, etc.). Integrity controls who or what can modify the object. This also describes an individual's authority over an object.
 
-Availability refers to accessibility.  Wikipedia describes availability as a measure of operability or degree to which the system is mission capable \cite {availability}. 
+Availability is as a measure of operability or degree to which the system is mission capable \cite {availability}. 
 
 Confidentiality, integrity, and Availability are guarded by the principle of complete mediation.  
 
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsubsection{Complete Mediation}\label{sssec:strommediate}
-The seminal paper quoted on the principle of complete mediation is "The Protection of Information in Computer Systems" by Saltzer and Schroeder.  
+The seminal paper on the principle of complete mediation is "The Protection of Information in Computer Systems" by Saltzer and Schroeder \cite{saltzer}.  Complete mediation means:
 \begin{quote}
 \textit{
-Complete mediation: Every access to every object must be checked for authority. This principle, when systematically applied, is the primary underpinning of the protection system. It forces a system-wide view of access control, which in addition to normal operation includes initialization, recovery, shutdown, and maintenance. It implies that a foolproof method of identifying the source of every request must be devised. It also requires that proposals to gain performance by remembering the result of an authority check be examined skeptically. If a change in authority occurs, such remembered results must be systematically updated.} \cite{saltzer}
+Every access to every object must be checked for authority... It forces a system-wide view of access control... It implies that a foolproof method of identifying the source of every request must be devised... If a change in authority occurs, such remembered results must be systematically updated.} 
 \end{quote}
 
-In summary, what this means is that any accessor attempting to access or modify a protected object must satisfy two conditions: (1) the accessor must be authenticated, and (2) the accessor must be authorized to access or modify that object.  This involves a three-step process: (1) defining the protected objects, (2) declaring who has what rights on these objects, and (3) defining how to verify the identity of the individual(s) accessing or modifying the objects.  
+In summary, this means that any accessor attempting to access or modify a protected object must satisfy two conditions: (1) the accessor must be authenticated, and (2) the accessor must be authorized to access or modify that object.  This involves a three-step process: (1) defining the protected objects, (2) declaring who has what rights on these objects, and (3) defining how to verify the identity of the individual(s).  
 
-CSBD focuses on using an access-control logic and computer-aided reasoning to prove that a system satisfies the principle of complete mediation.
+CSBD uses an access-control logic and computer-aided reasoning to demonstrate that a system satisfies the principle of complete mediation.
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsubsection{Secure State Machines as Transition Systems }\label{sssect:ssmts}
+Secure state machines are used by the CSBD method to enforce constraints on the system.  (However, CSBD can also verify complete mediation without secure state machines.)
 
-Secure state machines are transition systems that enforce both constraints on the system and complete mediation.  They define allowable system states and allowable transitions among states. Transitions are overseen by a monitor which enforces complete mediation by only allowing transitions which are requested by an authenticated and authorized principal. 
+Secure state machines are transition systems that constrain system behavior and enforce complete mediation.  They define allowable system states and allowable transitions among states. Transitions are overseen by a monitor which enforces complete mediation by only allowing transitions if they are requested by an authenticated and authorized principal. 
 
-Secure state machines are used by the CSBD method to enforce constraints on complete mediation.  (However, CSBD can also verify complete mediation without secure state machines.)
+Secure state machines have their own chapter (chapter \ref{chp:ssmmodel}).
 %%%%%%%%%%%%%%%%%%%%% Section PB %%%%%%%%%%%%%%%
 \section{Patrol Base Operations}\label{sec:stormpb}
-For the purpose of this master thesis, patrol base operations are an example of a non-automated, human-centered system wherein security is critical for mission success.  The operations are described in the U.S. Army Ranger Handbook.
+For the purpose of this master thesis, patrol base operations are an example of a non-automated, human-centered system wherein security is critical for mission success.  The operations are described in the U.S. Army Ranger Handbook \cite{rangermanual}.
 
+The patrol base operations are described throughout this master thesis within the appropriate context.  They are first described in the next chapter in the context of the STPA/STPA-Sec analysis.  They are described once again in chapter \ref{chp:pb} where they are modeled as secure state machines.  They are also described in chapter \ref{chp:pbssm} as HOL-implemented secure state machines.
 
-Patrol base operations have a clear mission.  The activities are well-defined and mission-specific.  There is also a well-defined chain-of-command hierarchy.  Therefore, the patrol base operations are a great first example for testing the STORM methodology on a non-automated, human-centered system.  
+This chapter provides sufficient background for the reader to understand the systems engineering and systems security engineering bases of STORM.  It also describes STORM and its components.  The next chapter applies STPA/STPA-Sec on the patrol base operations.
 
-But, the operations are also detailed and thus require some ingenuity in managing the level of detail.  This master thesis manages the detail by modeling the patrol base operations as a modularized hierarchy of secure state machines.  Each decreasing level of the hierarchy describes the operations in more detail (less abstraction).  As the level of detail increases, groups of details become modularized.  Patrol base operations are described in the next chapter and chapter \ref{chp:pb}.  
 \end{document}

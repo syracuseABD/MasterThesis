@@ -17,220 +17,219 @@
 \BOOKMARK [2][-]{subsection.2.3.1}{STAMP}{section.2.3}% 17
 \BOOKMARK [2][-]{subsection.2.3.2}{STPA/STPA-Sec}{section.2.3}% 18
 \BOOKMARK [1][-]{section.2.4}{STPA/STPA-Sec Overview: Four Steps}{chapter.2}% 19
-\BOOKMARK [2][-]{subsubsection.2.4.0.1}{XSTAMPP}{section.2.4}% 20
-\BOOKMARK [2][-]{subsection.2.4.1}{CSBD}{section.2.4}% 21
-\BOOKMARK [3][-]{subsubsection.2.4.1.1}{Confidentiality, Integrity, and Availability \(CIA\) }{subsection.2.4.1}% 22
-\BOOKMARK [3][-]{subsubsection.2.4.1.2}{Complete Mediation}{subsection.2.4.1}% 23
-\BOOKMARK [3][-]{subsubsection.2.4.1.3}{Secure State Machines as Transition Systems }{subsection.2.4.1}% 24
-\BOOKMARK [1][-]{section.2.5}{Patrol Base Operations}{chapter.2}% 25
-\BOOKMARK [0][-]{chapter.3}{Systems Security Engineering \046 Patrol Base Operations}{}% 26
-\BOOKMARK [1][-]{section.3.1}{The Systems Perspective}{chapter.3}% 27
-\BOOKMARK [1][-]{section.3.2}{Systems Engineering}{chapter.3}% 28
-\BOOKMARK [1][-]{section.3.3}{NIST Special Publication 800-160}{chapter.3}% 29
-\BOOKMARK [1][-]{section.3.4}{Systems Security Engineering}{chapter.3}% 30
-\BOOKMARK [1][-]{section.3.5}{Systems Security Engineering Framework}{chapter.3}% 31
-\BOOKMARK [2][-]{subsection.3.5.1}{Problem}{section.3.5}% 32
-\BOOKMARK [2][-]{subsection.3.5.2}{Solution}{section.3.5}% 33
-\BOOKMARK [2][-]{subsection.3.5.3}{Trustworthiness}{section.3.5}% 34
-\BOOKMARK [1][-]{section.3.6}{Verification \046 Documentation}{chapter.3}% 35
-\BOOKMARK [2][-]{subsection.3.6.1}{Verification}{section.3.6}% 36
-\BOOKMARK [2][-]{subsection.3.6.2}{Documentation}{section.3.6}% 37
-\BOOKMARK [3][-]{subsubsection.3.6.2.1}{Accountability}{subsection.3.6.2}% 38
-\BOOKMARK [3][-]{subsubsection.3.6.2.2}{Reproducibility}{subsection.3.6.2}% 39
-\BOOKMARK [0][-]{chapter.4}{System-Theoretic Process Analysis}{}% 40
-\BOOKMARK [1][-]{section.4.1}{Systems Engineering}{chapter.4}% 41
-\BOOKMARK [1][-]{section.4.2}{Systems Security Engineering}{chapter.4}% 42
-\BOOKMARK [1][-]{section.4.3}{System-Theoretic Process Analysis}{chapter.4}% 43
-\BOOKMARK [1][-]{section.4.4}{STPA Overview: Four Steps}{chapter.4}% 44
-\BOOKMARK [1][-]{section.4.5}{STPA on Patrol Base Operations}{chapter.4}% 45
-\BOOKMARK [2][-]{subsection.4.5.1}{Step 1: Define The Purpose of The Analysis}{section.4.5}% 46
-\BOOKMARK [3][-]{subsubsection.4.5.1.1}{Define The Purpose of The Analysis}{subsection.4.5.1}% 47
-\BOOKMARK [3][-]{subsubsection.4.5.1.2}{Identify Losses with Regards to The Stakeholders}{subsection.4.5.1}% 48
-\BOOKMARK [3][-]{subsubsection.4.5.1.3}{Define The System Boundaries}{subsection.4.5.1}% 49
-\BOOKMARK [3][-]{subsubsection.4.5.1.4}{Identify System-level Hazards}{subsection.4.5.1}% 50
-\BOOKMARK [3][-]{subsubsection.4.5.1.5}{Define System-level Constraints}{subsection.4.5.1}% 51
-\BOOKMARK [3][-]{subsubsection.4.5.1.6}{Refine System-level Hazards}{subsection.4.5.1}% 52
-\BOOKMARK [3][-]{subsubsection.4.5.1.7}{Refine System-level Constraints}{subsection.4.5.1}% 53
-\BOOKMARK [2][-]{subsection.4.5.2}{Step 2: Model The Control Structure}{section.4.5}% 54
-\BOOKMARK [2][-]{subsection.4.5.3}{Step 3: Identify Unsafe Control Actions}{section.4.5}% 55
-\BOOKMARK [2][-]{subsection.4.5.4}{Step 4: Identify Loss Scenarios}{section.4.5}% 56
-\BOOKMARK [1][-]{section.4.6}{Discussion of The Analysis}{chapter.4}% 57
-\BOOKMARK [2][-]{subsection.4.6.1}{Recommendations for STPA on Other Military Activities}{section.4.6}% 58
-\BOOKMARK [0][-]{chapter.5}{Certified Security by Design \(CSBD\) \046 Access-Control Logic \(ACL\)}{}% 59
-\BOOKMARK [1][-]{section.5.1}{Certified Security by Design \(CSBD\)}{chapter.5}% 60
-\BOOKMARK [1][-]{section.5.2}{Access-Control Logic \(ACL\)}{chapter.5}% 61
-\BOOKMARK [2][-]{subsection.5.2.1}{ACL: A Command and Control \(C2\) Calculus}{section.5.2}% 62
-\BOOKMARK [2][-]{subsection.5.2.2}{Principals}{section.5.2}% 63
-\BOOKMARK [2][-]{subsection.5.2.3}{Propositional Variables, Requests, Authority, and Jurisdiction}{section.5.2}% 64
-\BOOKMARK [2][-]{subsection.5.2.4}{Well-formed Formulas}{section.5.2}% 65
-\BOOKMARK [2][-]{subsection.5.2.5}{Kripke Structures \046 Semantics}{section.5.2}% 66
-\BOOKMARK [3][-]{subsubsection.5.2.5.1}{Kripke Structures}{subsection.5.2.5}% 67
-\BOOKMARK [3][-]{subsubsection.5.2.5.2}{Kripke Semantics}{subsection.5.2.5}% 68
-\BOOKMARK [3][-]{subsubsection.5.2.5.3}{Satisfies}{subsection.5.2.5}% 69
-\BOOKMARK [3][-]{subsubsection.5.2.5.4}{Soundness}{subsection.5.2.5}% 70
-\BOOKMARK [2][-]{subsection.5.2.6}{Inference Rules}{section.5.2}% 71
-\BOOKMARK [2][-]{subsection.5.2.7}{Complete mediation}{section.5.2}% 72
-\BOOKMARK [1][-]{section.5.3}{ACL in HOL}{chapter.5}% 73
-\BOOKMARK [2][-]{subsection.5.3.1}{Principals}{section.5.3}% 74
-\BOOKMARK [2][-]{subsection.5.3.2}{Well-Formed Formulas}{section.5.3}% 75
-\BOOKMARK [2][-]{subsection.5.3.3}{Kripke structures}{section.5.3}% 76
-\BOOKMARK [2][-]{subsection.5.3.4}{ACL Formulas}{section.5.3}% 77
-\BOOKMARK [2][-]{subsection.5.3.5}{Kripke Semantics: The Evaluation Function}{section.5.3}% 78
-\BOOKMARK [2][-]{subsection.5.3.6}{Satisfies}{section.5.3}% 79
-\BOOKMARK [2][-]{subsection.5.3.7}{Soundness}{section.5.3}% 80
-\BOOKMARK [0][-]{chapter.6}{Patrol Base Operations}{}% 81
-\BOOKMARK [1][-]{section.6.1}{Motivation}{chapter.6}% 82
-\BOOKMARK [1][-]{section.6.2}{Patrol Base Operations}{chapter.6}% 83
-\BOOKMARK [1][-]{section.6.3}{Modeling the Patrol Base Operations from the Ranger Handbook}{chapter.6}% 84
-\BOOKMARK [1][-]{section.6.4}{Overview of The Hierarchy of Secure State Machines}{chapter.6}% 85
-\BOOKMARK [1][-]{section.6.5}{Hierarchy of Secure State Machines}{chapter.6}% 86
-\BOOKMARK [2][-]{subsection.6.5.1}{Diagrammatic Description in Visio}{section.6.5}% 87
-\BOOKMARK [2][-]{subsection.6.5.2}{Descriptions of Individual Modules}{section.6.5}% 88
-\BOOKMARK [2][-]{subsection.6.5.3}{OMNI-Level}{section.6.5}% 89
-\BOOKMARK [2][-]{subsection.6.5.4}{Escape}{section.6.5}% 90
-\BOOKMARK [2][-]{subsection.6.5.5}{Top Level}{section.6.5}% 91
-\BOOKMARK [2][-]{subsection.6.5.6}{Horizontal Slice}{section.6.5}% 92
-\BOOKMARK [3][-]{subsubsection.6.5.6.1}{ssmPlanPB}{subsection.6.5.6}% 93
-\BOOKMARK [3][-]{subsubsection.6.5.6.2}{ssmMoveToORP}{subsection.6.5.6}% 94
-\BOOKMARK [3][-]{subsubsection.6.5.6.3}{ssmConductORP}{subsection.6.5.6}% 95
-\BOOKMARK [3][-]{subsubsection.6.5.6.4}{ssmMoveToPB}{subsection.6.5.6}% 96
-\BOOKMARK [3][-]{subsubsection.6.5.6.5}{ssmConductPB}{subsection.6.5.6}% 97
-\BOOKMARK [2][-]{subsection.6.5.7}{Vertical Slice}{section.6.5}% 98
-\BOOKMARK [3][-]{subsubsection.6.5.7.1}{ssmSecureHalt}{subsection.6.5.7}% 99
-\BOOKMARK [3][-]{subsubsection.6.5.7.2}{ssmORPRecon}{subsection.6.5.7}% 100
-\BOOKMARK [3][-]{subsubsection.6.5.7.3}{ssmMoveToORP4L}{subsection.6.5.7}% 101
-\BOOKMARK [3][-]{subsubsection.6.5.7.4}{ssmFormRT}{subsection.6.5.7}% 102
-\BOOKMARK [0][-]{chapter.7}{Secure State Machine Model}{}% 103
-\BOOKMARK [1][-]{section.7.1}{State Machines}{chapter.7}% 104
-\BOOKMARK [2][-]{subsection.7.1.1}{States}{section.7.1}% 105
-\BOOKMARK [2][-]{subsection.7.1.2}{Transition Commands}{section.7.1}% 106
-\BOOKMARK [2][-]{subsection.7.1.3}{Next-state Function}{section.7.1}% 107
-\BOOKMARK [2][-]{subsection.7.1.4}{Next-output Function}{section.7.1}% 108
-\BOOKMARK [2][-]{subsection.7.1.5}{Configuration}{section.7.1}% 109
-\BOOKMARK [2][-]{subsection.7.1.6}{TR Relations}{section.7.1}% 110
-\BOOKMARK [1][-]{section.7.2}{Secure State Machines}{chapter.7}% 111
-\BOOKMARK [2][-]{subsection.7.2.1}{State Machine Versus Secure State Machine}{section.7.2}% 112
-\BOOKMARK [2][-]{subsection.7.2.2}{Monitors}{section.7.2}% 113
-\BOOKMARK [2][-]{subsection.7.2.3}{Transition Types}{section.7.2}% 114
-\BOOKMARK [3][-]{subsubsection.7.2.3.1}{exec}{subsection.7.2.3}% 115
-\BOOKMARK [3][-]{subsubsection.7.2.3.2}{trap}{subsection.7.2.3}% 116
-\BOOKMARK [3][-]{subsubsection.7.2.3.3}{discard}{subsection.7.2.3}% 117
-\BOOKMARK [2][-]{subsection.7.2.4}{Commands}{section.7.2}% 118
-\BOOKMARK [2][-]{subsection.7.2.5}{Authentication}{section.7.2}% 119
-\BOOKMARK [2][-]{subsection.7.2.6}{Authorization}{section.7.2}% 120
-\BOOKMARK [2][-]{subsection.7.2.7}{Next-state And Next-output Functions}{section.7.2}% 121
-\BOOKMARK [2][-]{subsection.7.2.8}{Configurations}{section.7.2}% 122
-\BOOKMARK [2][-]{subsection.7.2.9}{TR Relations}{section.7.2}% 123
-\BOOKMARK [2][-]{subsection.7.2.10}{Configuration Interpretation}{section.7.2}% 124
-\BOOKMARK [1][-]{section.7.3}{Secure State Machines in HOL}{chapter.7}% 125
-\BOOKMARK [2][-]{subsection.7.3.1}{Parameterizable Secure State Machine}{section.7.3}% 126
-\BOOKMARK [2][-]{subsection.7.3.2}{Input Stream}{section.7.3}% 127
-\BOOKMARK [2][-]{subsection.7.3.3}{Commands}{section.7.3}% 128
-\BOOKMARK [3][-]{subsubsection.7.3.3.1}{Transition Types}{subsection.7.3.3}% 129
-\BOOKMARK [2][-]{subsection.7.3.4}{Authentication}{section.7.3}% 130
-\BOOKMARK [2][-]{subsection.7.3.5}{Authorization}{section.7.3}% 131
-\BOOKMARK [2][-]{subsection.7.3.6}{Next-state And Next-output Functions}{section.7.3}% 132
-\BOOKMARK [2][-]{subsection.7.3.7}{Configurations}{section.7.3}% 133
-\BOOKMARK [2][-]{subsection.7.3.8}{Configuration Interpretation}{section.7.3}% 134
-\BOOKMARK [2][-]{subsection.7.3.9}{TR Rules}{section.7.3}% 135
-\BOOKMARK [0][-]{chapter.8}{Patrol Base Operations as Secure State Machines}{}% 136
-\BOOKMARK [1][-]{section.8.1}{ssmPB: A Typical Example from the Hierarchy}{chapter.8}% 137
-\BOOKMARK [2][-]{subsection.8.1.1}{Principals}{section.8.1}% 138
-\BOOKMARK [2][-]{subsection.8.1.2}{States}{section.8.1}% 139
-\BOOKMARK [2][-]{subsection.8.1.3}{Outputs}{section.8.1}% 140
-\BOOKMARK [2][-]{subsection.8.1.4}{Commands}{section.8.1}% 141
-\BOOKMARK [2][-]{subsection.8.1.5}{Next-State Function}{section.8.1}% 142
-\BOOKMARK [2][-]{subsection.8.1.6}{Next-Output Function}{section.8.1}% 143
-\BOOKMARK [2][-]{subsection.8.1.7}{Authentication}{section.8.1}% 144
-\BOOKMARK [2][-]{subsection.8.1.8}{Authorization}{section.8.1}% 145
-\BOOKMARK [2][-]{subsection.8.1.9}{Proved Theorems}{section.8.1}% 146
-\BOOKMARK [1][-]{section.8.2}{ssmConductORP: Multiple Principals}{chapter.8}% 147
-\BOOKMARK [2][-]{subsection.8.2.1}{Principals}{section.8.2}% 148
-\BOOKMARK [2][-]{subsection.8.2.2}{States}{section.8.2}% 149
-\BOOKMARK [2][-]{subsection.8.2.3}{Outputs}{section.8.2}% 150
-\BOOKMARK [2][-]{subsection.8.2.4}{Commands}{section.8.2}% 151
-\BOOKMARK [2][-]{subsection.8.2.5}{Next-State Function}{section.8.2}% 152
-\BOOKMARK [2][-]{subsection.8.2.6}{Next-Output Function}{section.8.2}% 153
-\BOOKMARK [2][-]{subsection.8.2.7}{Authentication}{section.8.2}% 154
-\BOOKMARK [2][-]{subsection.8.2.8}{Authorization}{section.8.2}% 155
-\BOOKMARK [2][-]{subsection.8.2.9}{Proved Theorems}{section.8.2}% 156
-\BOOKMARK [1][-]{section.8.3}{ssmPlanPB: Non-sequential Transitions}{chapter.8}% 157
-\BOOKMARK [2][-]{subsection.8.3.1}{Principals}{section.8.3}% 158
-\BOOKMARK [2][-]{subsection.8.3.2}{States}{section.8.3}% 159
-\BOOKMARK [2][-]{subsection.8.3.3}{Commands}{section.8.3}% 160
-\BOOKMARK [2][-]{subsection.8.3.4}{Output}{section.8.3}% 161
-\BOOKMARK [2][-]{subsection.8.3.5}{Next-State Function}{section.8.3}% 162
-\BOOKMARK [2][-]{subsection.8.3.6}{Next-Output Function}{section.8.3}% 163
-\BOOKMARK [2][-]{subsection.8.3.7}{Authentication}{section.8.3}% 164
-\BOOKMARK [2][-]{subsection.8.3.8}{Authorization}{section.8.3}% 165
-\BOOKMARK [2][-]{subsection.8.3.9}{Proved Theorems}{section.8.3}% 166
-\BOOKMARK [0][-]{chapter.9}{Non-implemented modules}{}% 167
-\BOOKMARK [1][-]{section.9.1}{Authentication \046 Roles}{chapter.9}% 168
-\BOOKMARK [1][-]{section.9.2}{Soldier, Squad, and Platoon Theories}{chapter.9}% 169
-\BOOKMARK [0][-]{chapter.10}{Discussion}{}% 170
-\BOOKMARK [1][-]{section.10.1}{Summary}{chapter.10}% 171
-\BOOKMARK [1][-]{section.10.2}{Discussion}{chapter.10}% 172
-\BOOKMARK [1][-]{section.10.3}{Challenges And Limitations of The Approach}{chapter.10}% 173
-\BOOKMARK [0][-]{chapter.11}{Future Work}{}% 174
-\BOOKMARK [1][-]{section.11.1}{Applicability}{chapter.11}% 175
-\BOOKMARK [2][-]{subsection.11.1.1}{Accountability Systems}{section.11.1}% 176
-\BOOKMARK [0][-]{section*.81}{Appendices}{}% 177
-\BOOKMARK [0][-]{Appendix.a.A}{Background}{}% 178
-\BOOKMARK [1][-]{section.a.A.1}{Formal Methods}{Appendix.a.A}% 179
-\BOOKMARK [1][-]{section.a.A.2}{Functional Programming}{Appendix.a.A}% 180
-\BOOKMARK [1][-]{section.a.A.3}{Algebraic Data Types in ML}{Appendix.a.A}% 181
-\BOOKMARK [1][-]{section.a.A.4}{Higher Order Logic \(HOL\) Interactive Theorem Prover}{Appendix.a.A}% 182
-\BOOKMARK [1][-]{section.a.A.5}{Other Interactive Theorem Provers}{Appendix.a.A}% 183
-\BOOKMARK [1][-]{section.a.A.6}{How to Compile The Included Files}{Appendix.a.A}% 184
-\BOOKMARK [0][-]{Appendix.a.B}{Access Control Logic Theories: Pretty-Printed Theories}{}% 185
-\BOOKMARK [0][-]{Appendix.a.C}{Secure State Machine \046 Patrol Base Operations: Pretty-Printed Theories }{}% 186
-\BOOKMARK [0][-]{Appendix.a.D}{Secure State Machine Theories: HOL Script Files}{}% 187
-\BOOKMARK [1][-]{section.a.D.1}{ssm}{Appendix.a.D}% 188
-\BOOKMARK [1][-]{section.a.D.2}{satList}{Appendix.a.D}% 189
-\BOOKMARK [0][-]{Appendix.a.E}{Secure State Machine Theories Applied to Patrol Base Operations: HOL Script Files}{}% 190
-\BOOKMARK [1][-]{section.a.E.1}{OMNILevel}{Appendix.a.E}% 191
-\BOOKMARK [1][-]{section.a.E.2}{escapeLevel}{Appendix.a.E}% 192
-\BOOKMARK [1][-]{section.a.E.3}{TopLevel}{Appendix.a.E}% 193
-\BOOKMARK [2][-]{subsection.a.E.3.1}{PBTypeIntegrated Theory: Type Definitions}{section.a.E.3}% 194
-\BOOKMARK [2][-]{subsection.a.E.3.2}{PBIntegratedDef Theory: Authentication \046 Authorization Definitions}{section.a.E.3}% 195
-\BOOKMARK [2][-]{subsection.a.E.3.3}{ssmPlanPBIntegrated Theory: Theorems}{section.a.E.3}% 196
-\BOOKMARK [1][-]{section.a.E.4}{Horizontal Slice}{Appendix.a.E}% 197
-\BOOKMARK [2][-]{subsection.a.E.4.1}{ssmPlanPB}{section.a.E.4}% 198
-\BOOKMARK [3][-]{subsubsection.a.E.4.1.1}{PlanPBType Theory: Type Definitions}{subsection.a.E.4.1}% 199
-\BOOKMARK [3][-]{subsubsection.a.E.4.1.2}{PlanPBDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.4.1}% 200
-\BOOKMARK [3][-]{subsubsection.a.E.4.1.3}{ssmPlanPB Theory: Theorems}{subsection.a.E.4.1}% 201
-\BOOKMARK [2][-]{subsection.a.E.4.2}{ssmMoveToORP}{section.a.E.4}% 202
-\BOOKMARK [3][-]{subsubsection.a.E.4.2.1}{MoveToORPType Theory: Type Definitions}{subsection.a.E.4.2}% 203
-\BOOKMARK [3][-]{subsubsection.a.E.4.2.2}{MoveToORPDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.4.2}% 204
-\BOOKMARK [3][-]{subsubsection.a.E.4.2.3}{ssmMoveToORP Theory: Theorems}{subsection.a.E.4.2}% 205
-\BOOKMARK [2][-]{subsection.a.E.4.3}{ssmConductORP}{section.a.E.4}% 206
-\BOOKMARK [3][-]{subsubsection.a.E.4.3.1}{ConductORPType Theory: Type Definitions}{subsection.a.E.4.3}% 207
-\BOOKMARK [3][-]{subsubsection.a.E.4.3.2}{ConductORPDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.4.3}% 208
-\BOOKMARK [3][-]{subsubsection.a.E.4.3.3}{ssmConductORP Theory: Theorems}{subsection.a.E.4.3}% 209
-\BOOKMARK [2][-]{subsection.a.E.4.4}{ssmMoveToPB}{section.a.E.4}% 210
-\BOOKMARK [3][-]{subsubsection.a.E.4.4.1}{MoveToPBType Theory: Type Definitions}{subsection.a.E.4.4}% 211
-\BOOKMARK [3][-]{subsubsection.a.E.4.4.2}{MoveToPBDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.4.4}% 212
-\BOOKMARK [3][-]{subsubsection.a.E.4.4.3}{ssmMoveToPB Theory: Theorems}{subsection.a.E.4.4}% 213
-\BOOKMARK [2][-]{subsection.a.E.4.5}{ssmConductPB}{section.a.E.4}% 214
-\BOOKMARK [3][-]{subsubsection.a.E.4.5.1}{ConductPBType Theory: Type Definitions}{subsection.a.E.4.5}% 215
-\BOOKMARK [3][-]{subsubsection.a.E.4.5.2}{ConductPBDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.4.5}% 216
-\BOOKMARK [3][-]{subsubsection.a.E.4.5.3}{ssmConductPB Theory: Theorems}{subsection.a.E.4.5}% 217
-\BOOKMARK [1][-]{section.a.E.5}{Vertical Slice}{Appendix.a.E}% 218
-\BOOKMARK [2][-]{subsection.a.E.5.1}{ssmSecureHalt}{section.a.E.5}% 219
-\BOOKMARK [3][-]{subsubsection.a.E.5.1.1}{SecureHaltType Theory: Type Definitions}{subsection.a.E.5.1}% 220
-\BOOKMARK [3][-]{subsubsection.a.E.5.1.2}{SecureHaltDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.5.1}% 221
-\BOOKMARK [3][-]{subsubsection.a.E.5.1.3}{ssmSecureHalt Theory: Theorems}{subsection.a.E.5.1}% 222
-\BOOKMARK [2][-]{subsection.a.E.5.2}{ssmORPRecon}{section.a.E.5}% 223
-\BOOKMARK [3][-]{subsubsection.a.E.5.2.1}{ORPReconType Theory: Type Definitions}{subsection.a.E.5.2}% 224
-\BOOKMARK [3][-]{subsubsection.a.E.5.2.2}{ORPReconDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.5.2}% 225
-\BOOKMARK [3][-]{subsubsection.a.E.5.2.3}{ssmORPRecon Theory: Theorems}{subsection.a.E.5.2}% 226
-\BOOKMARK [2][-]{subsection.a.E.5.3}{ssmMoveToORP4L}{section.a.E.5}% 227
-\BOOKMARK [3][-]{subsubsection.a.E.5.3.1}{MoveToORP4LType Theory: Type Definitions}{subsection.a.E.5.3}% 228
-\BOOKMARK [3][-]{subsubsection.a.E.5.3.2}{MoveToORP4LDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.5.3}% 229
-\BOOKMARK [3][-]{subsubsection.a.E.5.3.3}{ssmMoveToORP4L Theory: Theorems}{subsection.a.E.5.3}% 230
-\BOOKMARK [2][-]{subsection.a.E.5.4}{ssmFormRT}{section.a.E.5}% 231
-\BOOKMARK [3][-]{subsubsection.a.E.5.4.1}{FormRTType Theory: Type Definitions}{subsection.a.E.5.4}% 232
-\BOOKMARK [3][-]{subsubsection.a.E.5.4.2}{FormRTDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.5.4}% 233
-\BOOKMARK [3][-]{subsubsection.a.E.5.4.3}{ssmFormRT Theory: Theorems}{subsection.a.E.5.4}% 234
-\BOOKMARK [0][-]{Appendix.a.F}{Map of The File Folder Structure}{}% 235
-\BOOKMARK [0][-]{chapter*.82}{References}{}% 236
+\BOOKMARK [2][-]{subsection.2.4.1}{CSBD}{section.2.4}% 20
+\BOOKMARK [3][-]{subsubsection.2.4.1.1}{Confidentiality, Integrity, and Availability \(CIA\) }{subsection.2.4.1}% 21
+\BOOKMARK [3][-]{subsubsection.2.4.1.2}{Complete Mediation}{subsection.2.4.1}% 22
+\BOOKMARK [3][-]{subsubsection.2.4.1.3}{Secure State Machines as Transition Systems }{subsection.2.4.1}% 23
+\BOOKMARK [1][-]{section.2.5}{Patrol Base Operations}{chapter.2}% 24
+\BOOKMARK [0][-]{chapter.3}{Systems Security Engineering \046 Patrol Base Operations}{}% 25
+\BOOKMARK [1][-]{section.3.1}{The Systems Perspective}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.2}{Systems Engineering}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.3}{NIST Special Publication 800-160}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.4}{Systems Security Engineering}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.5}{Systems Security Engineering Framework}{chapter.3}% 30
+\BOOKMARK [2][-]{subsection.3.5.1}{Problem}{section.3.5}% 31
+\BOOKMARK [2][-]{subsection.3.5.2}{Solution}{section.3.5}% 32
+\BOOKMARK [2][-]{subsection.3.5.3}{Trustworthiness}{section.3.5}% 33
+\BOOKMARK [1][-]{section.3.6}{Verification \046 Documentation}{chapter.3}% 34
+\BOOKMARK [2][-]{subsection.3.6.1}{Verification}{section.3.6}% 35
+\BOOKMARK [2][-]{subsection.3.6.2}{Documentation}{section.3.6}% 36
+\BOOKMARK [3][-]{subsubsection.3.6.2.1}{Accountability}{subsection.3.6.2}% 37
+\BOOKMARK [3][-]{subsubsection.3.6.2.2}{Reproducibility}{subsection.3.6.2}% 38
+\BOOKMARK [0][-]{chapter.4}{System-Theoretic Process Analysis}{}% 39
+\BOOKMARK [1][-]{section.4.1}{Systems Engineering}{chapter.4}% 40
+\BOOKMARK [1][-]{section.4.2}{Systems Security Engineering}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.3}{System-Theoretic Process Analysis}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.4}{STPA Overview: Four Steps}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.5}{STPA on Patrol Base Operations}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.5.1}{Step 1: Define The Purpose of The Analysis}{section.4.5}% 45
+\BOOKMARK [3][-]{subsubsection.4.5.1.1}{Define The Purpose of The Analysis}{subsection.4.5.1}% 46
+\BOOKMARK [3][-]{subsubsection.4.5.1.2}{Identify Losses with Regards to The Stakeholders}{subsection.4.5.1}% 47
+\BOOKMARK [3][-]{subsubsection.4.5.1.3}{Define The System Boundaries}{subsection.4.5.1}% 48
+\BOOKMARK [3][-]{subsubsection.4.5.1.4}{Identify System-level Hazards}{subsection.4.5.1}% 49
+\BOOKMARK [3][-]{subsubsection.4.5.1.5}{Define System-level Constraints}{subsection.4.5.1}% 50
+\BOOKMARK [3][-]{subsubsection.4.5.1.6}{Refine System-level Hazards}{subsection.4.5.1}% 51
+\BOOKMARK [3][-]{subsubsection.4.5.1.7}{Refine System-level Constraints}{subsection.4.5.1}% 52
+\BOOKMARK [2][-]{subsection.4.5.2}{Step 2: Model The Control Structure}{section.4.5}% 53
+\BOOKMARK [2][-]{subsection.4.5.3}{Step 3: Identify Unsafe Control Actions}{section.4.5}% 54
+\BOOKMARK [2][-]{subsection.4.5.4}{Step 4: Identify Loss Scenarios}{section.4.5}% 55
+\BOOKMARK [1][-]{section.4.6}{Discussion of The Analysis}{chapter.4}% 56
+\BOOKMARK [2][-]{subsection.4.6.1}{Recommendations for STPA on Other Military Activities}{section.4.6}% 57
+\BOOKMARK [0][-]{chapter.5}{Certified Security by Design \(CSBD\) \046 Access-Control Logic \(ACL\)}{}% 58
+\BOOKMARK [1][-]{section.5.1}{Certified Security by Design \(CSBD\)}{chapter.5}% 59
+\BOOKMARK [1][-]{section.5.2}{Access-Control Logic \(ACL\)}{chapter.5}% 60
+\BOOKMARK [2][-]{subsection.5.2.1}{ACL: A Command and Control \(C2\) Calculus}{section.5.2}% 61
+\BOOKMARK [2][-]{subsection.5.2.2}{Principals}{section.5.2}% 62
+\BOOKMARK [2][-]{subsection.5.2.3}{Propositional Variables, Requests, Authority, and Jurisdiction}{section.5.2}% 63
+\BOOKMARK [2][-]{subsection.5.2.4}{Well-formed Formulas}{section.5.2}% 64
+\BOOKMARK [2][-]{subsection.5.2.5}{Kripke Structures \046 Semantics}{section.5.2}% 65
+\BOOKMARK [3][-]{subsubsection.5.2.5.1}{Kripke Structures}{subsection.5.2.5}% 66
+\BOOKMARK [3][-]{subsubsection.5.2.5.2}{Kripke Semantics}{subsection.5.2.5}% 67
+\BOOKMARK [3][-]{subsubsection.5.2.5.3}{Satisfies}{subsection.5.2.5}% 68
+\BOOKMARK [3][-]{subsubsection.5.2.5.4}{Soundness}{subsection.5.2.5}% 69
+\BOOKMARK [2][-]{subsection.5.2.6}{Inference Rules}{section.5.2}% 70
+\BOOKMARK [2][-]{subsection.5.2.7}{Complete mediation}{section.5.2}% 71
+\BOOKMARK [1][-]{section.5.3}{ACL in HOL}{chapter.5}% 72
+\BOOKMARK [2][-]{subsection.5.3.1}{Principals}{section.5.3}% 73
+\BOOKMARK [2][-]{subsection.5.3.2}{Well-Formed Formulas}{section.5.3}% 74
+\BOOKMARK [2][-]{subsection.5.3.3}{Kripke structures}{section.5.3}% 75
+\BOOKMARK [2][-]{subsection.5.3.4}{ACL Formulas}{section.5.3}% 76
+\BOOKMARK [2][-]{subsection.5.3.5}{Kripke Semantics: The Evaluation Function}{section.5.3}% 77
+\BOOKMARK [2][-]{subsection.5.3.6}{Satisfies}{section.5.3}% 78
+\BOOKMARK [2][-]{subsection.5.3.7}{Soundness}{section.5.3}% 79
+\BOOKMARK [0][-]{chapter.6}{Patrol Base Operations}{}% 80
+\BOOKMARK [1][-]{section.6.1}{Motivation}{chapter.6}% 81
+\BOOKMARK [1][-]{section.6.2}{Patrol Base Operations}{chapter.6}% 82
+\BOOKMARK [1][-]{section.6.3}{Modeling the Patrol Base Operations from the Ranger Handbook}{chapter.6}% 83
+\BOOKMARK [1][-]{section.6.4}{Overview of The Hierarchy of Secure State Machines}{chapter.6}% 84
+\BOOKMARK [1][-]{section.6.5}{Hierarchy of Secure State Machines}{chapter.6}% 85
+\BOOKMARK [2][-]{subsection.6.5.1}{Diagrammatic Description in Visio}{section.6.5}% 86
+\BOOKMARK [2][-]{subsection.6.5.2}{Descriptions of Individual Modules}{section.6.5}% 87
+\BOOKMARK [2][-]{subsection.6.5.3}{OMNI-Level}{section.6.5}% 88
+\BOOKMARK [2][-]{subsection.6.5.4}{Escape}{section.6.5}% 89
+\BOOKMARK [2][-]{subsection.6.5.5}{Top Level}{section.6.5}% 90
+\BOOKMARK [2][-]{subsection.6.5.6}{Horizontal Slice}{section.6.5}% 91
+\BOOKMARK [3][-]{subsubsection.6.5.6.1}{ssmPlanPB}{subsection.6.5.6}% 92
+\BOOKMARK [3][-]{subsubsection.6.5.6.2}{ssmMoveToORP}{subsection.6.5.6}% 93
+\BOOKMARK [3][-]{subsubsection.6.5.6.3}{ssmConductORP}{subsection.6.5.6}% 94
+\BOOKMARK [3][-]{subsubsection.6.5.6.4}{ssmMoveToPB}{subsection.6.5.6}% 95
+\BOOKMARK [3][-]{subsubsection.6.5.6.5}{ssmConductPB}{subsection.6.5.6}% 96
+\BOOKMARK [2][-]{subsection.6.5.7}{Vertical Slice}{section.6.5}% 97
+\BOOKMARK [3][-]{subsubsection.6.5.7.1}{ssmSecureHalt}{subsection.6.5.7}% 98
+\BOOKMARK [3][-]{subsubsection.6.5.7.2}{ssmORPRecon}{subsection.6.5.7}% 99
+\BOOKMARK [3][-]{subsubsection.6.5.7.3}{ssmMoveToORP4L}{subsection.6.5.7}% 100
+\BOOKMARK [3][-]{subsubsection.6.5.7.4}{ssmFormRT}{subsection.6.5.7}% 101
+\BOOKMARK [0][-]{chapter.7}{Secure State Machine Model}{}% 102
+\BOOKMARK [1][-]{section.7.1}{State Machines}{chapter.7}% 103
+\BOOKMARK [2][-]{subsection.7.1.1}{States}{section.7.1}% 104
+\BOOKMARK [2][-]{subsection.7.1.2}{Transition Commands}{section.7.1}% 105
+\BOOKMARK [2][-]{subsection.7.1.3}{Next-state Function}{section.7.1}% 106
+\BOOKMARK [2][-]{subsection.7.1.4}{Next-output Function}{section.7.1}% 107
+\BOOKMARK [2][-]{subsection.7.1.5}{Configuration}{section.7.1}% 108
+\BOOKMARK [2][-]{subsection.7.1.6}{TR Relations}{section.7.1}% 109
+\BOOKMARK [1][-]{section.7.2}{Secure State Machines}{chapter.7}% 110
+\BOOKMARK [2][-]{subsection.7.2.1}{State Machine Versus Secure State Machine}{section.7.2}% 111
+\BOOKMARK [2][-]{subsection.7.2.2}{Monitors}{section.7.2}% 112
+\BOOKMARK [2][-]{subsection.7.2.3}{Transition Types}{section.7.2}% 113
+\BOOKMARK [3][-]{subsubsection.7.2.3.1}{exec}{subsection.7.2.3}% 114
+\BOOKMARK [3][-]{subsubsection.7.2.3.2}{trap}{subsection.7.2.3}% 115
+\BOOKMARK [3][-]{subsubsection.7.2.3.3}{discard}{subsection.7.2.3}% 116
+\BOOKMARK [2][-]{subsection.7.2.4}{Commands}{section.7.2}% 117
+\BOOKMARK [2][-]{subsection.7.2.5}{Authentication}{section.7.2}% 118
+\BOOKMARK [2][-]{subsection.7.2.6}{Authorization}{section.7.2}% 119
+\BOOKMARK [2][-]{subsection.7.2.7}{Next-state And Next-output Functions}{section.7.2}% 120
+\BOOKMARK [2][-]{subsection.7.2.8}{Configurations}{section.7.2}% 121
+\BOOKMARK [2][-]{subsection.7.2.9}{TR Relations}{section.7.2}% 122
+\BOOKMARK [2][-]{subsection.7.2.10}{Configuration Interpretation}{section.7.2}% 123
+\BOOKMARK [1][-]{section.7.3}{Secure State Machines in HOL}{chapter.7}% 124
+\BOOKMARK [2][-]{subsection.7.3.1}{Parameterizable Secure State Machine}{section.7.3}% 125
+\BOOKMARK [2][-]{subsection.7.3.2}{Input Stream}{section.7.3}% 126
+\BOOKMARK [2][-]{subsection.7.3.3}{Commands}{section.7.3}% 127
+\BOOKMARK [3][-]{subsubsection.7.3.3.1}{Transition Types}{subsection.7.3.3}% 128
+\BOOKMARK [2][-]{subsection.7.3.4}{Authentication}{section.7.3}% 129
+\BOOKMARK [2][-]{subsection.7.3.5}{Authorization}{section.7.3}% 130
+\BOOKMARK [2][-]{subsection.7.3.6}{Next-state And Next-output Functions}{section.7.3}% 131
+\BOOKMARK [2][-]{subsection.7.3.7}{Configurations}{section.7.3}% 132
+\BOOKMARK [2][-]{subsection.7.3.8}{Configuration Interpretation}{section.7.3}% 133
+\BOOKMARK [2][-]{subsection.7.3.9}{TR Rules}{section.7.3}% 134
+\BOOKMARK [0][-]{chapter.8}{Patrol Base Operations as Secure State Machines}{}% 135
+\BOOKMARK [1][-]{section.8.1}{ssmPB: A Typical Example from the Hierarchy}{chapter.8}% 136
+\BOOKMARK [2][-]{subsection.8.1.1}{Principals}{section.8.1}% 137
+\BOOKMARK [2][-]{subsection.8.1.2}{States}{section.8.1}% 138
+\BOOKMARK [2][-]{subsection.8.1.3}{Outputs}{section.8.1}% 139
+\BOOKMARK [2][-]{subsection.8.1.4}{Commands}{section.8.1}% 140
+\BOOKMARK [2][-]{subsection.8.1.5}{Next-State Function}{section.8.1}% 141
+\BOOKMARK [2][-]{subsection.8.1.6}{Next-Output Function}{section.8.1}% 142
+\BOOKMARK [2][-]{subsection.8.1.7}{Authentication}{section.8.1}% 143
+\BOOKMARK [2][-]{subsection.8.1.8}{Authorization}{section.8.1}% 144
+\BOOKMARK [2][-]{subsection.8.1.9}{Proved Theorems}{section.8.1}% 145
+\BOOKMARK [1][-]{section.8.2}{ssmConductORP: Multiple Principals}{chapter.8}% 146
+\BOOKMARK [2][-]{subsection.8.2.1}{Principals}{section.8.2}% 147
+\BOOKMARK [2][-]{subsection.8.2.2}{States}{section.8.2}% 148
+\BOOKMARK [2][-]{subsection.8.2.3}{Outputs}{section.8.2}% 149
+\BOOKMARK [2][-]{subsection.8.2.4}{Commands}{section.8.2}% 150
+\BOOKMARK [2][-]{subsection.8.2.5}{Next-State Function}{section.8.2}% 151
+\BOOKMARK [2][-]{subsection.8.2.6}{Next-Output Function}{section.8.2}% 152
+\BOOKMARK [2][-]{subsection.8.2.7}{Authentication}{section.8.2}% 153
+\BOOKMARK [2][-]{subsection.8.2.8}{Authorization}{section.8.2}% 154
+\BOOKMARK [2][-]{subsection.8.2.9}{Proved Theorems}{section.8.2}% 155
+\BOOKMARK [1][-]{section.8.3}{ssmPlanPB: Non-sequential Transitions}{chapter.8}% 156
+\BOOKMARK [2][-]{subsection.8.3.1}{Principals}{section.8.3}% 157
+\BOOKMARK [2][-]{subsection.8.3.2}{States}{section.8.3}% 158
+\BOOKMARK [2][-]{subsection.8.3.3}{Commands}{section.8.3}% 159
+\BOOKMARK [2][-]{subsection.8.3.4}{Output}{section.8.3}% 160
+\BOOKMARK [2][-]{subsection.8.3.5}{Next-State Function}{section.8.3}% 161
+\BOOKMARK [2][-]{subsection.8.3.6}{Next-Output Function}{section.8.3}% 162
+\BOOKMARK [2][-]{subsection.8.3.7}{Authentication}{section.8.3}% 163
+\BOOKMARK [2][-]{subsection.8.3.8}{Authorization}{section.8.3}% 164
+\BOOKMARK [2][-]{subsection.8.3.9}{Proved Theorems}{section.8.3}% 165
+\BOOKMARK [0][-]{chapter.9}{Non-implemented modules}{}% 166
+\BOOKMARK [1][-]{section.9.1}{Authentication \046 Roles}{chapter.9}% 167
+\BOOKMARK [1][-]{section.9.2}{Soldier, Squad, and Platoon Theories}{chapter.9}% 168
+\BOOKMARK [0][-]{chapter.10}{Discussion}{}% 169
+\BOOKMARK [1][-]{section.10.1}{Summary}{chapter.10}% 170
+\BOOKMARK [1][-]{section.10.2}{Discussion}{chapter.10}% 171
+\BOOKMARK [1][-]{section.10.3}{Challenges And Limitations of The Approach}{chapter.10}% 172
+\BOOKMARK [0][-]{chapter.11}{Future Work}{}% 173
+\BOOKMARK [1][-]{section.11.1}{Applicability}{chapter.11}% 174
+\BOOKMARK [2][-]{subsection.11.1.1}{Accountability Systems}{section.11.1}% 175
+\BOOKMARK [0][-]{section*.81}{Appendices}{}% 176
+\BOOKMARK [0][-]{Appendix.a.A}{Background}{}% 177
+\BOOKMARK [1][-]{section.a.A.1}{Formal Methods}{Appendix.a.A}% 178
+\BOOKMARK [1][-]{section.a.A.2}{Functional Programming}{Appendix.a.A}% 179
+\BOOKMARK [1][-]{section.a.A.3}{Algebraic Data Types in ML}{Appendix.a.A}% 180
+\BOOKMARK [1][-]{section.a.A.4}{Higher Order Logic \(HOL\) Interactive Theorem Prover}{Appendix.a.A}% 181
+\BOOKMARK [1][-]{section.a.A.5}{Other Interactive Theorem Provers}{Appendix.a.A}% 182
+\BOOKMARK [1][-]{section.a.A.6}{How to Compile The Included Files}{Appendix.a.A}% 183
+\BOOKMARK [0][-]{Appendix.a.B}{Access Control Logic Theories: Pretty-Printed Theories}{}% 184
+\BOOKMARK [0][-]{Appendix.a.C}{Secure State Machine \046 Patrol Base Operations: Pretty-Printed Theories }{}% 185
+\BOOKMARK [0][-]{Appendix.a.D}{Secure State Machine Theories: HOL Script Files}{}% 186
+\BOOKMARK [1][-]{section.a.D.1}{ssm}{Appendix.a.D}% 187
+\BOOKMARK [1][-]{section.a.D.2}{satList}{Appendix.a.D}% 188
+\BOOKMARK [0][-]{Appendix.a.E}{Secure State Machine Theories Applied to Patrol Base Operations: HOL Script Files}{}% 189
+\BOOKMARK [1][-]{section.a.E.1}{OMNILevel}{Appendix.a.E}% 190
+\BOOKMARK [1][-]{section.a.E.2}{escapeLevel}{Appendix.a.E}% 191
+\BOOKMARK [1][-]{section.a.E.3}{TopLevel}{Appendix.a.E}% 192
+\BOOKMARK [2][-]{subsection.a.E.3.1}{PBTypeIntegrated Theory: Type Definitions}{section.a.E.3}% 193
+\BOOKMARK [2][-]{subsection.a.E.3.2}{PBIntegratedDef Theory: Authentication \046 Authorization Definitions}{section.a.E.3}% 194
+\BOOKMARK [2][-]{subsection.a.E.3.3}{ssmPlanPBIntegrated Theory: Theorems}{section.a.E.3}% 195
+\BOOKMARK [1][-]{section.a.E.4}{Horizontal Slice}{Appendix.a.E}% 196
+\BOOKMARK [2][-]{subsection.a.E.4.1}{ssmPlanPB}{section.a.E.4}% 197
+\BOOKMARK [3][-]{subsubsection.a.E.4.1.1}{PlanPBType Theory: Type Definitions}{subsection.a.E.4.1}% 198
+\BOOKMARK [3][-]{subsubsection.a.E.4.1.2}{PlanPBDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.4.1}% 199
+\BOOKMARK [3][-]{subsubsection.a.E.4.1.3}{ssmPlanPB Theory: Theorems}{subsection.a.E.4.1}% 200
+\BOOKMARK [2][-]{subsection.a.E.4.2}{ssmMoveToORP}{section.a.E.4}% 201
+\BOOKMARK [3][-]{subsubsection.a.E.4.2.1}{MoveToORPType Theory: Type Definitions}{subsection.a.E.4.2}% 202
+\BOOKMARK [3][-]{subsubsection.a.E.4.2.2}{MoveToORPDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.4.2}% 203
+\BOOKMARK [3][-]{subsubsection.a.E.4.2.3}{ssmMoveToORP Theory: Theorems}{subsection.a.E.4.2}% 204
+\BOOKMARK [2][-]{subsection.a.E.4.3}{ssmConductORP}{section.a.E.4}% 205
+\BOOKMARK [3][-]{subsubsection.a.E.4.3.1}{ConductORPType Theory: Type Definitions}{subsection.a.E.4.3}% 206
+\BOOKMARK [3][-]{subsubsection.a.E.4.3.2}{ConductORPDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.4.3}% 207
+\BOOKMARK [3][-]{subsubsection.a.E.4.3.3}{ssmConductORP Theory: Theorems}{subsection.a.E.4.3}% 208
+\BOOKMARK [2][-]{subsection.a.E.4.4}{ssmMoveToPB}{section.a.E.4}% 209
+\BOOKMARK [3][-]{subsubsection.a.E.4.4.1}{MoveToPBType Theory: Type Definitions}{subsection.a.E.4.4}% 210
+\BOOKMARK [3][-]{subsubsection.a.E.4.4.2}{MoveToPBDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.4.4}% 211
+\BOOKMARK [3][-]{subsubsection.a.E.4.4.3}{ssmMoveToPB Theory: Theorems}{subsection.a.E.4.4}% 212
+\BOOKMARK [2][-]{subsection.a.E.4.5}{ssmConductPB}{section.a.E.4}% 213
+\BOOKMARK [3][-]{subsubsection.a.E.4.5.1}{ConductPBType Theory: Type Definitions}{subsection.a.E.4.5}% 214
+\BOOKMARK [3][-]{subsubsection.a.E.4.5.2}{ConductPBDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.4.5}% 215
+\BOOKMARK [3][-]{subsubsection.a.E.4.5.3}{ssmConductPB Theory: Theorems}{subsection.a.E.4.5}% 216
+\BOOKMARK [1][-]{section.a.E.5}{Vertical Slice}{Appendix.a.E}% 217
+\BOOKMARK [2][-]{subsection.a.E.5.1}{ssmSecureHalt}{section.a.E.5}% 218
+\BOOKMARK [3][-]{subsubsection.a.E.5.1.1}{SecureHaltType Theory: Type Definitions}{subsection.a.E.5.1}% 219
+\BOOKMARK [3][-]{subsubsection.a.E.5.1.2}{SecureHaltDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.5.1}% 220
+\BOOKMARK [3][-]{subsubsection.a.E.5.1.3}{ssmSecureHalt Theory: Theorems}{subsection.a.E.5.1}% 221
+\BOOKMARK [2][-]{subsection.a.E.5.2}{ssmORPRecon}{section.a.E.5}% 222
+\BOOKMARK [3][-]{subsubsection.a.E.5.2.1}{ORPReconType Theory: Type Definitions}{subsection.a.E.5.2}% 223
+\BOOKMARK [3][-]{subsubsection.a.E.5.2.2}{ORPReconDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.5.2}% 224
+\BOOKMARK [3][-]{subsubsection.a.E.5.2.3}{ssmORPRecon Theory: Theorems}{subsection.a.E.5.2}% 225
+\BOOKMARK [2][-]{subsection.a.E.5.3}{ssmMoveToORP4L}{section.a.E.5}% 226
+\BOOKMARK [3][-]{subsubsection.a.E.5.3.1}{MoveToORP4LType Theory: Type Definitions}{subsection.a.E.5.3}% 227
+\BOOKMARK [3][-]{subsubsection.a.E.5.3.2}{MoveToORP4LDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.5.3}% 228
+\BOOKMARK [3][-]{subsubsection.a.E.5.3.3}{ssmMoveToORP4L Theory: Theorems}{subsection.a.E.5.3}% 229
+\BOOKMARK [2][-]{subsection.a.E.5.4}{ssmFormRT}{section.a.E.5}% 230
+\BOOKMARK [3][-]{subsubsection.a.E.5.4.1}{FormRTType Theory: Type Definitions}{subsection.a.E.5.4}% 231
+\BOOKMARK [3][-]{subsubsection.a.E.5.4.2}{FormRTDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.5.4}% 232
+\BOOKMARK [3][-]{subsubsection.a.E.5.4.3}{ssmFormRT Theory: Theorems}{subsection.a.E.5.4}% 233
+\BOOKMARK [0][-]{Appendix.a.F}{Map of The File Folder Structure}{}% 234
+\BOOKMARK [0][-]{chapter*.82}{References}{}% 235

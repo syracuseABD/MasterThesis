@@ -15,10 +15,20 @@ Willam~Young Jr and Reed Porada.
 Nancy~G. Leveson and John~P. Thomas.
 \newblock {\em STPA Handbook}, March 2018.
 
+\bibitem{saferworld}
+Nacy~G. Leveson.
+\newblock {\em Engineering a Safer World: Systems Thinking Applied to Safety}.
+\newblock MIT Press, 2012.
+
 \bibitem{safe}
 Sam Procter.
 \newblock Simultaneous analysis of safety and security of a critical system,
   September 2017.
+
+\bibitem{sys4sec}
+{\em Systems thinking for safety and security}, New Orleans, December 2013.
+  Proceedings of the 2013 Annual Computer Security Applications Conference
+  (ACSAC 2013).
 
 \bibitem{ChinOlder}
 Shiu-Kai Chin and Susan~Beth Older.
@@ -78,11 +88,6 @@ JPMC's~SWIFT protocols Glenn~Benson, Shiu-Kai Chin, Sean Croston, Karthick
 Paul Stukus.
 \newblock Systems-theoretic accident model and processes (stamp) applied to a
   u.s. coast guard buoy tender integrated control system, 2017.
-
-\bibitem{saferworld}
-Nacy~G. Leveson.
-\newblock {\em Engineering a Safer World: Systems Thinking Applied to Safety}.
-\newblock MIT Press, 2012.
 
 \bibitem{availability}
 Availability, January 2018.
