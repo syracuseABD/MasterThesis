@@ -23,64 +23,58 @@ Warning--entry type for "availability" isn't style-file defined
 --line 195 of file mtref.bib
 Warning--entry type for "elasticsearch" isn't style-file defined
 --line 229 of file mtref.bib
-Warning--entry type for "wikiconops" isn't style-file defined
---line 238 of file mtref.bib
-Warning--entry type for "nistmission" isn't style-file defined
---line 283 of file mtref.bib
 Warning--entry type for "HOL" isn't style-file defined
 --line 316 of file mtref.bib
 Warning--entry type for "functionalprogramming" isn't style-file defined
 --line 324 of file mtref.bib
 Warning--entry type for "formalmethodslcarke" isn't style-file defined
 --line 382 of file mtref.bib
-Warning--I didn't find a database entry for "safe)"
-Warning--I didn't find a database entry for "iso24748"
-Warning--empty author and editor in types
 Warning--empty author in iso15288
 Warning--empty author in iso247482017
 Warning--empty year in Tantooine
 Warning--empty note in VARVEL
 Warning--there's a number but no series in stateexplosion
 Warning--empty author in wikiformalmethods
-You've used 35 entries,
+Warning--empty author and editor in types
+You've used 32 entries,
             1791 wiz_defined-function locations,
-            615 strings with 8547 characters,
-and the built_in function-call counts, 5080 in all, are:
-= -- 400
-> -- 196
-< -- 8
-+ -- 84
-- -- 49
-* -- 247
-:= -- 737
-add.period$ -- 78
-call.type$ -- 35
-change.case$ -- 30
+            601 strings with 8289 characters,
+and the built_in function-call counts, 4742 in all, are:
+= -- 375
+> -- 187
+< -- 7
++ -- 79
+- -- 47
+* -- 238
+:= -- 689
+add.period$ -- 72
+call.type$ -- 32
+change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 42
-duplicate$ -- 254
-empty$ -- 617
-format.name$ -- 49
-if$ -- 1186
+cite$ -- 39
+duplicate$ -- 237
+empty$ -- 569
+format.name$ -- 47
+if$ -- 1107
 int.to.chr$ -- 0
-int.to.str$ -- 35
+int.to.str$ -- 32
 missing$ -- 12
-newline$ -- 148
-num.names$ -- 23
-pop$ -- 176
+newline$ -- 136
+num.names$ -- 21
+pop$ -- 161
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 153
+skip$ -- 140
 stack$ -- 0
 substring$ -- 77
-swap$ -- 55
-text.length$ -- 8
+swap$ -- 52
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 7
-while$ -- 28
-width$ -- 37
-write$ -- 308
-(There were 24 warnings)
+while$ -- 26
+width$ -- 34
+write$ -- 284
+(There were 20 warnings)
