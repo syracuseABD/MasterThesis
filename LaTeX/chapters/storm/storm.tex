@@ -15,7 +15,7 @@ This chapter provides an introduction to \Gls{storm}.  STORM falls within the fi
 \begin{quote}
 \textit{"Systems Engineering is an interdisciplinary approach and means to enable the realization of successful systems. It focuses on defining customer needs and required functionality early in the development cycle, documenting requirements, then proceeding with design synthesis and system validation while considering the complete problem..."
 }\end{quote}
-International Council on Systems Engineering 
+\begin{flushright} International Council on Systems Engineering \end{flushright} 
 
 A system is a set of interacting and interdependent components that act as a whole,  through various mechanisms, to perform some function. Systems engineering is a multidisciplinary approach to solving problems related to large and complex man-made systems.  It focuses on stakeholder needs and assets while minimizing asset losses.  It focuses on building the right product.  It avoids building the wrong product or building the right product incorrectly.  
 
@@ -32,7 +32,7 @@ The relevant \gls{se} standards are defined in ISO/IEC/IEEE\footnote{ISO = \Gls{
 \begin{quote}
 \textit{"The ultimate objective is to obtain trustworthy secure systems that are fully capable of supporting critical missions and business operations while protecting stakeholder assets, and to do so with a level of assurance that is consistent with the risk tolerance of those stakeholders."}
 \end{quote}
-Ron Ross (NIST) (Quoted from NIST SP 800-160 \cite{NIST800160})
+\begin{flushright} Ron Ross (NIST) (Quoted from NIST SP 800-160 \cite{NIST800160}) \end{flushright} 
 
 Systems Security Engineering (\glsentryshort{sse}) is a sub-discipline of Systems Engineering (SE).  It applies scientific, mathematical, and related technical concepts and procedures to engineer trustworthy systems that meet stakeholder needs. 
 
@@ -53,7 +53,7 @@ The authoritative document on SSE is the National Institute of Standardization a
 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{../figures/sseframework}
-\caption{\label{sseframework}Systems security engineering Framework. (Image from \glsentryshort{nist} Special Publication 800-160 Vol 1: Systems Security Engineering Considerations for a Multidisciplinary Approach in the Engineering of Trustworthy Secure Systems.)}
+\caption{\label{sseframework}Systems security engineering Framework. (Image from \glsentryshort{nist} Special Publication 800-160 Vol 1: Systems Security Engineering Considerations for a Multidisciplinary Approach in the Engineering of Trustworthy Secure Systems.\cite{NIST800160})}
 \end{figure}
 
 The framework describes the problem, solution, and trustworthiness activity contexts.  These three contexts are further refined. 
@@ -111,16 +111,16 @@ All elements of STORM are currently employed by the U.S. Air Force. STPA-Sec is 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.3\linewidth]{../figures/stampstpa}
-\caption{\label{stampstpa}Relationship between STPA-Sec, STPA, and \gls{stamp}.  Image from Dr. William Young and Reed Prada 2017 STAMP Conference presentation in Boston, MA on March 27, 2017 \cite{youngPorada} }
+\caption{\label{stampstpa}Relationship between STPA-Sec, STPA, and \gls{stamp}. (Image from Dr. William Young and Reed Prada 2017 STAMP Conference presentation in Boston, MA on March 27, 2017 \cite{youngPorada})}
 \end{figure}
 
-\gls{stamp} is the subject of yearly conferences world wide promoted by the Partnership for Systems Approaches to Safety and Security (PSASS)\footnote{See \url{https://psas.scripts.mit.edu/home/other-stamp-meetings/}.}.  When compared to other accident models, STAMP is more effective \footnote{See, for example, Paul Stukus' thesis dissertation on how STAMP outdid other techniques when analyzing a U.S. Coast Guard Buoy Tender Integrated Control System \cite{buoy}}.  It also cost less to implement \cite{stpa}.
+\gls{stamp} is the subject of yearly conferences world wide promoted by the Partnership for Systems Approaches to Safety and Security (PSASS)\footnote{See \url{https://psas.scripts.mit.edu/home/other-stamp-meetings/}.}.  When compared to other accident models, STAMP is more effective.\footnote{See, for example, Paul Stukus' thesis dissertation on how STAMP outdid other techniques when analyzing a U.S. Coast Guard Buoy Tender Integrated Control System \cite{buoy}} It also cost less to implement \cite{stpa}.
 
 The need for a new hazard analysis paradigm arises near the turn of the century from the culmination of years of research into safety engineering by \gls{mit} professor Nancy Leveson.  This research reveals a need for new tools in safety analysis.  Current tools, at one time effective, are proving ineffective in managing the complexities associated with technologies of the modern era.  The current practice of analyzing individual component reliability and chain-of-causality failures does not capture the hazards associated with today's complex systems.  These systems require a system-theoretic approach to hazard analysis. 
 
 System theory focuses on the system as a whole rather than as a collection of subcomponents.  The need for a system theory approach is epitomized in the notion that the whole is greater than the sum of its parts.  From the complex interactions of individual components arise emergent properties. These properties can be thought of as a higher order that is not predictable from the behavior of the individual components.
 
-\gls{stamp} forms the foundation of the new, modern era systems-theoretic safety analysis techniques.  Several approaches to safety engineering are built upon the STAMP foundation.  System-Theoretic Process Analysis (STPA) is one these analysis techniques.  In addition to STPA (the topic of the next section), several other analysis techniques are built on top of the \gls{stamp} foundation.  These include Causal Analysis based on Systems Theory (CAST), STPA for security (STPA-Sec), STPA for privacy (STPA-Pric), STPA-SafeSec \cite{safe}, and SAFE (a refinement focused on hardware and software subsystems \cite{safe)}.
+\gls{stamp} forms the foundation of the new, modern era systems-theoretic safety analysis techniques.  Several approaches to safety engineering are built upon the STAMP foundation.  System-Theoretic Process Analysis (STPA) is one these analysis techniques.  In addition to STPA (the topic of the next section), several other analysis techniques are built on top of the \gls{stamp} foundation.  These include Causal Analysis based on Systems Theory (CAST), STPA for security (STPA-Sec), STPA for privacy (STPA-Pric), STPA-SafeSec \cite{safe}, and SAFE (a refinement focused on hardware and software subsystems \cite{safe}).
 
  At \gls{stamp}'s core is a top-down model that views accidents as dynamic control problems.  It focuses on safety constraints, hierarchical control structures, and process models \cite{saferworld}. 
 

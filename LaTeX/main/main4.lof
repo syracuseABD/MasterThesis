@@ -1,63 +1,57 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces This is a caption for this figure.}}{i}{figure.0.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Systems security engineering Framework. (Image from NIST Special Publication 800-160 Vol 1: Systems Security Engineering Considerations for a Multidisciplinary Approach in the Engineering of Trustworthy Secure Systems.)}}{6}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Relationship between STPA-Sec, STPA, and \gls {stamp}. Image from Dr. William Young and Reed Prada 2017 STAMP Conference presentation in Boston, MA on March 27, 2017 \cite {youngPorada} }}{10}{figure.2.2}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Systems security engineering Framework. (Image from NIST Special Publication 800-160 Vol 1: Systems Security Engineering Considerations for a Multidisciplinary Approach in the Engineering of Trustworthy Secure Systems.\cite {NIST800160})}}{6}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Relationship between STPA-Sec, STPA, and \gls {stamp}. (Image from Dr. William Young and Reed Prada 2017 STAMP Conference presentation in Boston, MA on March 27, 2017 \cite {youngPorada})}}{10}{figure.2.2}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Example of a control model. (Image captured from the STPA Handbook \cite {stpa}.)}}{12}{figure.2.3}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Controller with process model. (Image captured from the \textit {Engineering a Safer World} Handbook \cite {saferworld}.)}}{13}{figure.2.4}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Four step process of STPA. (Image captured from the \textit {Engineering a Safer World} Handbook \cite {safe}.)}}{15}{figure.2.5}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Control structure with potential system-level vulnerabilities/hazards and security considerations. (Image captured from \textit {Systems thinking for safety and security} \cite {sys4sec}.)}}{16}{figure.2.6}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Systems security engineering in relation to systems engineering. (Image from NIST Special Publication 800-160: Systems Security Engineering Considerations for a Multidisciplinary Approach in the Engineering of Trustworthy Secure Systems.)}}{26}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Systems security engineering Framework. (Image from NIST Special Publication 800-160: Systems Security Engineering Considerations for a Multidisciplinary Approach in the Engineering of Trustworthy Secure Systems.)}}{29}{figure.3.2}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Kripke semantics. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{27}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces The \gls {acl} inference rules. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{29}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces The \textit {Controls} inference rule. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{29}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces The \textit {Reps} inference rule. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{30}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces The \textit {Derived Speaks For} inference rule. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{30}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces The HOL implementation of principle (\textbf {\textit {Princ}}). Image from \textit {Certified Security by Design Using Higher Order Logic}\cite {certmanual}}}{32}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces The definition for \textbf {Form} in HOL. \textit {Certified Security by Design Using Higher Order Logic}\cite {certmanual}}}{33}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces The HOL implementation of a Kripke structure (\textbf {\textit {Princ}}). Image from \textit {Certified Security by Design Using Higher Order Logic}\cite {certmanual}}}{35}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces The \gls {acl} formulas in HOL. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{36}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces The HOL implementation of the Kripke semantics (evaluation function). Image from \textit {Certified Security by Design Using Higher Order Logic}\cite {certmanual}}}{37}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces The HOL implementation of the "satisfies" property. Image from \textit {Certified Security by Design Using Higher Order Logic}\cite {certmanual}}}{38}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces The HOL representation of the ``soundness" property. Image from \textit {Certified Security by Design Using Higher Order Logic}\cite {certmanual}}}{38}{figure.3.12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Four step process of STPA. (Image captured from the STPA Handbook \cite {stpa}.)}}{37}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Relationship of system to system boundaries, subsystems, inputs, and outputs. (Image captured from the STPA Handbook \cite {stpa}.)}}{43}{figure.4.2}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces A diagram of the most abstract level in the hierarchy of secure state machines. Image generated by Jesse Nathaniel as part of the research involved in this master thesis.}}{41}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrammatic description of patrol base operations as a hierarchy of secure state machines. (Generated by Jesse Nathaniel Hall.)}}{44}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Escape level diagram.}}{49}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Top level diagram.}}{50}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Horizontal slice: PlanPB diagram.}}{51}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Horizontal slice: MoveToORP diagram.}}{53}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Horizontal slice: ConductORP diagram.}}{54}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Horizontal slice: MoveToPB diagram.}}{55}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Horizontal slice: ConductPB diagram.}}{56}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Vertical slice: SecureHalt diagram.}}{58}{figure.4.10}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Vertical slice: ORPRecon diagram.}}{59}{figure.4.11}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Vertical slice: MoveToORP4L diagram.}}{60}{figure.4.12}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Vertical slice: FormRT diagram.}}{61}{figure.4.13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Kripke semantics. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{61}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces The \gls {acl} inference rules. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{63}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces The \textit {Controls} inference rule. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{63}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces The \textit {Reps} inference rule. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{64}{figure.5.4}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces The \textit {Derived Speaks For} inference rule. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{64}{figure.5.5}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces The HOL implementation of principle (\textbf {\textit {Princ}}). Image from \textit {Certified Security by Design Using Higher Order Logic}\cite {certmanual}}}{66}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces The definition for \textbf {Form} in HOL. \textit {Certified Security by Design Using Higher Order Logic}\cite {certmanual}}}{67}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces The HOL implementation of a Kripke structure (\textbf {\textit {Princ}}). Image from \textit {Certified Security by Design Using Higher Order Logic}\cite {certmanual}}}{69}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces The \gls {acl} formulas in HOL. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{70}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces The HOL implementation of the Kripke semantics (evaluation function). Image from \textit {Certified Security by Design Using Higher Order Logic}\cite {certmanual}}}{71}{figure.5.10}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces The HOL implementation of the "satisfies" property. Image from \textit {Certified Security by Design Using Higher Order Logic}\cite {certmanual}}}{72}{figure.5.11}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces The HOL representation of the ``soundness" property. Image from \textit {Certified Security by Design Using Higher Order Logic}\cite {certmanual}}}{72}{figure.5.12}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces A diagram of the most abstract level in the hierarchy of secure state machines. Image generated by Jesse Nathaniel as part of the research involved in this master thesis.}}{63}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces State machine versus secure state machine with a monitor. Image taken from Certified Security by Design Using Higher Order Logic \cite {certmanual}.}}{67}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Top level diagram.}}{70}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Transition rules in HOL. Image taken from Certified Security by Design Using Higher Order Logic \cite {certmanual}}}{87}{figure.5.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces A diagram of the most abstract level in the hierarchy of secure state machines. Image generated by Jesse Nathaniel as part of the research involved in this master thesis.}}{75}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Diagrammatic description of patrol base operations as a hierarchy of secure state machines. (Generated by Jesse Nathaniel Hall.)}}{78}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Escape level diagram.}}{83}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Top level diagram.}}{84}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Horizontal slice: PlanPB diagram.}}{85}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Horizontal slice: MoveToORP diagram.}}{87}{figure.6.6}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Horizontal slice: ConductORP diagram.}}{88}{figure.6.7}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Horizontal slice: MoveToPB diagram.}}{89}{figure.6.8}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Horizontal slice: ConductPB diagram.}}{90}{figure.6.9}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Vertical slice: SecureHalt diagram.}}{92}{figure.6.10}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Vertical slice: ORPRecon diagram.}}{93}{figure.6.11}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Vertical slice: MoveToORP4L diagram.}}{94}{figure.6.12}
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Vertical slice: FormRT diagram.}}{95}{figure.6.13}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces A diagram of the most abstract level in the hierarchy of secure state machines. Image generated by Jesse Nathaniel as part of the research involved in this master thesis.}}{97}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces State machine versus secure state machine with a monitor. Image taken from Certified Security by Design Using Higher Order Logic \cite {certmanual}.}}{101}{figure.7.2}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Top level diagram.}}{104}{figure.7.3}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Transition rules in HOL. Image taken from Certified Security by Design Using Higher Order Logic \cite {certmanual}}}{121}{figure.7.4}
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Top level diagram.}}{127}{figure.8.1}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Horizontal slice: ConductORP diagram.}}{149}{figure.8.2}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Horizontal slice: PlanPB diagram.}}{167}{figure.8.3}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Top level diagram.}}{93}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Horizontal slice: ConductORP diagram.}}{115}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Horizontal slice: PlanPB diagram.}}{133}{figure.6.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces An implementation of the boolean datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{210}{figure.a.A.1}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces An implementation of a tree datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{211}{figure.a.A.2}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces An implementation of the weekday datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{211}{figure.a.A.3}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces An implementation of the function is_weekend in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{211}{figure.a.A.4}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces A parameterized implementation of a tree datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{212}{figure.a.A.5}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces An implementation of the boolean datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{176}{figure.a.A.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces An implementation of a tree datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{177}{figure.a.A.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces An implementation of the weekday datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{177}{figure.a.A.3}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces An implementation of the function is_weekend in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{177}{figure.a.A.4}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces A parameterized implementation of a tree datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{178}{figure.a.A.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
