@@ -1,7 +1,8 @@
 \contentsline {chapter}{Abstract}{i}{section*.1}
 \contentsline {chapter}{Table Of Contents}{iv}{chapter*.6}
-\contentsline {chapter}{List of Figures}{v}{chapter*.8}
-\contentsline {chapter}{List of Tables}{vi}{chapter*.10}
+\contentsline {chapter}{List of Figures}{x}{chapter*.8}
+\contentsline {chapter}{List of Tables}{xii}{chapter*.10}
+\contentsline {chapter}{List of Acronyms}{xiii}{section*.11}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}In Context of Systems Security Engineering}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}System-Theoretic Operational Risk Management (STORM)}{3}{section.1.2}
@@ -130,13 +131,15 @@
 \contentsline {section}{\numberline {7.1}Authentication \& Roles}{161}{section.7.1}
 \contentsline {section}{\numberline {7.2}Soldier, Squad, and Platoon Theories}{162}{section.7.2}
 \contentsline {chapter}{\numberline {8}Discussion}{164}{chapter.8}
-\contentsline {section}{\numberline {8.1}Summary}{164}{section.8.1}
-\contentsline {section}{\numberline {8.2}Discussion}{166}{section.8.2}
-\contentsline {section}{\numberline {8.3}Challenges And Limitations of The Approach}{166}{section.8.3}
+\contentsline {section}{\numberline {8.1}STPA Analysis}{164}{section.8.1}
+\contentsline {section}{\numberline {8.2}CSBD Analysis}{164}{section.8.2}
+\contentsline {section}{\numberline {8.3}Summary}{164}{section.8.3}
+\contentsline {section}{\numberline {8.4}Discussion}{166}{section.8.4}
+\contentsline {section}{\numberline {8.5}Challenges And Limitations of The Approach}{166}{section.8.5}
 \contentsline {chapter}{\numberline {9}Future Work}{168}{chapter.9}
 \contentsline {section}{\numberline {9.1}Applicability}{168}{section.9.1}
 \contentsline {subsection}{\numberline {9.1.1}Accountability Systems}{169}{subsection.9.1.1}
-\contentsline {chapter}{Appendices}{171}{section*.66}
+\contentsline {chapter}{Appendices}{171}{section*.68}
 \contentsline {chapter}{\numberline {A}Background}{172}{Appendix.a.A}
 \contentsline {section}{\numberline {A.1}Formal Methods}{172}{section.a.A.1}
 \contentsline {section}{\numberline {A.2}Functional Programming}{173}{section.a.A.2}
@@ -195,4 +198,4 @@
 \contentsline {subsubsection}{\numberline {E.5.4.2}FormRTDef Theory: Authentication \& Authorization Definitions}{333}{subsubsection.a.E.5.4.2}
 \contentsline {subsubsection}{\numberline {E.5.4.3}ssmFormRT Theory: Theorems}{333}{subsubsection.a.E.5.4.3}
 \contentsline {chapter}{\numberline {F}Map of The File Folder Structure}{334}{Appendix.a.F}
-\contentsline {chapter}{References}{335}{chapter*.67}
+\contentsline {chapter}{References}{335}{chapter*.69}

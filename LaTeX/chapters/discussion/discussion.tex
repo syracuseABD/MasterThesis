@@ -6,27 +6,60 @@
 
 %%%%%%%%%%%%%%%%%%%%% Chapter Discussion %%%%%%%%%%%%%%%
 \chapter{Discussion}\label{chp:discussion}
+The previous chapters describe the application of \gls{storm} to the patrol base operations.   This chapter begins with a discussion of the findings from the \gls{stpa} analysis.  It then discusses the findings from the \gls{csbd} analysis.   It also discusses alternative representations of the patrol base operations. 
 
-The previous chapters describe and discuss the work of this master thesis. This chapter summarizes the previous chapters and adds a few insights discovered along the way.  It also discusses the scope of this work and any limitations or issues.  
 
-      %%%%%%%%%%%%%%%%%%% Section Recap %%%%%%%%%%%%%%%%%%
-\section{Summary}\label{recap}
-After the Introduction and some Background, this master thesis discusses the systems security engineering framework because it broadly presents the context for this work.  Within this work, STPA guides the analysis of the patrol base operations.
+      %%%%%%%%%%%%%%%%%%% Section STPA  %%%%%%%%%%%%%%%%%%
+\section{STPA Analysis}\label{sec:stpadiscussion}
 
-The next chapter describes the Certified Security by Design with the access-control logic and its implementation in \glsentryshort{hol}.  \glsentryshort{csbd} focuses the work on modeling the patrol base operations such that complete mediation can be verified and documented.  Verification is built into the secure state machine model.  This model is taught in the "Assurance Foundations" course at Syracuse University.  It has already been tested and implemented in \glsentryshort{hol}.  To capitalize on this, the patrol base operations are modeled as secure state machines.   
+      %%%%%%%%%%%%%%%%%%% Section CSBD  %%%%%%%%%%%%%%%%%%
+\section{CSBD Analysis}\label{sec:csbddiscussion}
 
-The next chapter describes the model of the patrol base operations.  The patrol base operations are large.  Thus, the model begins with a single, abstract, six-phase secure state machine that sequentially runs from the initial planning phase through to the completion phase of the operations.  This becomes the top level of a hierarchy of secure state machines.  Each level of the hierarchy descends into less abstract description of  phases in the level above it.  This approach has a couple of benefits.  First, it is easier to model a large system if it is abstracted into levels and modularized.  Second, it is more efficient to delegate work.  Once the initial secure state machine is modeled, the \glsentryshort{csbd} expert focus on verification and documentation while the subject matter expert designs the next level of the model.
+\subsection{Authentication}
+Authentication for the this model of the patrol base operations was assumed through visual recognition of an authority.  But, in many parts of the patrol base operations, soldiers are challenged and must provide a password.  \gls{csbd} manages passwords (and cryptographic functions for automated systems) using a cryptographic secure state machine structure.  Such a parametrizable secure state machine already exits and it would be straight forward to apply it to future patrol base operations or to other non-automated, human-centered systems.
 
-The next chapter, describes the secure state machine model and it's implementation in \glsentryshort{hol}.  It discusses the concept of a monitor in terms of access-control.  It also describes the parametrizable secure state machine (ssm)  \glsentryshort{hol} implementation. All patrol base operations secure state machines use this ssm to verify and document properties of complete mediation.
+\subsection{Roles}
+Principals in this model are roles (i.e., Platoon Leader, Platoon Sergeant, etc.).  But, a more accurate description would include soldiers acting in the role of a principal.  \gls{csbd} manages principals acting in roles using various \gls{acl} rules and a specific secure state machine.  Like cryptographic functions, such a parametrizable secure state machine already exists.  
 
-The next chapter is the culmination of all the previous chapters. It describes several implementations of the patrol base operations in \glsentryshort{hol}.  These implementation are examples that demonstrate the patterns of verification and documentation by way of formal proofs.  These patterns are repeated throughout all the patrol base operations implementations.
 
-The next chapter discusses ideas and models that are considered during the project but not implemented in \glsentryshort{hol}.  These are worthy of implementation, but not implemented because of the size of the system and finite amount of time.  
+%For example, the PlatoonLeader and PlatoonSergeant issue commands.  But, there is an alternative representation that considers soldiers acting in roles.  For example, G.I. Jane acting in the role of Platoon Leader becomes the authenticated and authorized principal.  Just as there is a parametrizable secure state machine model for crypto, there is one for principals acting in roles.  
+%
+%Both crypto and role versions of the parametrizable secure state machine add another level of complexity and flexibility to the model of the patrol base operations.  They are not implemented in this master thesis because the used model seemed most relevant.  
+%
 
-The chapter following this one, discusses ideas on future work.  
+%The next chapter describes the Certified Security by Design with the access-control logic and its implementation in \glsentryshort{hol}.  \glsentryshort{csbd} focuses the work on modeling the patrol base operations such that complete mediation can be verified and documented.  Verification is built into the secure state machine model.  This model is taught in the "Assurance Foundations" course at Syracuse University.  It has already been tested and implemented in \glsentryshort{hol}.  To capitalize on this, the patrol base operations are modeled as secure state machines.   
+%
+%The next chapter describes the model of the patrol base operations.  The patrol base operations are large.  Thus, the model begins with a single, abstract, six-phase secure state machine that sequentially runs from the initial planning phase through to the completion phase of the operations.  This becomes the top level of a hierarchy of secure state machines.  Each level of the hierarchy descends into less abstract description of  phases in the level above it.  This approach has a couple of benefits.  First, it is easier to model a large system if it is abstracted into levels and modularized.  Second, it is more efficient to delegate work.  Once the initial secure state machine is modeled, the \glsentryshort{csbd} expert focus on verification and documentation while the subject matter expert designs the next level of the model.
+%
+%The next chapter, describes the secure state machine model and it's implementation in \glsentryshort{hol}.  It discusses the concept of a monitor in terms of access-control.  It also describes the parametrizable secure state machine (ssm)  \glsentryshort{hol} implementation. All patrol base operations secure state machines use this ssm to verify and document properties of complete mediation.
+%
+%The next chapter is the culmination of all the previous chapters. It describes several implementations of the patrol base operations in \glsentryshort{hol}.  These implementation are examples that demonstrate the patterns of verification and documentation by way of formal proofs.  These patterns are repeated throughout all the patrol base operations implementations.
+%
+%The next chapter discusses ideas and models that are considered during the project but not implemented in \glsentryshort{hol}.  These are worthy of implementation, but not implemented because of the size of the system and finite amount of time.  
+%
+%The chapter following this one, discusses ideas on future work.  
 
-      %%%%%%%%%%%%%%%%%%% Section Discussion %%%%%%%%%%
-\section{Discussion}\label{sec:discussion}
+      %%%%%%%%%%%%%%%%%%% Section Soldiers, etc. %%%%%%%%%%
+ \section{Soldier, Squad, and Platoon Theories}
+The model discusses transitions among phases of the operations.  Additional models could include of soldiers, squads, and platoons modules.  Figure \ref{} is a possible description of a soldier module.  
+
+
+
+
+
+
+The soldier module would describe a soldier datatype.  This would have various values such as name, ID, weapons, health, water, battleReadiness, assignment, etc.   This could then proves various properties of a soldier.  For example,  \textit{SoldiierGIJane  says battleReady}, then the policy may state that
+
+
+ \[ \text{\textit{soldierHealthy andf }} \] 
+  \[ \text{\textit{weaponsReady andf }} \] 
+ \[ \text{\textit{waterReady andf }} \] 
+\[ \text{\textit{SoldierGIJane controls battleReady }} \]
+
+From this, the \glsentryshort{acl} could prove that the soldier is battle ready if and only if the soldier is healthy and has her weapons and water.  Similar modules could describe properties of a squad and platoon.  These could be described with a secure state machine.  However, they are simple enough to be described without it.
+
+
+\section{}\label{sec:discussion}
 Doing STPA last.
 
 This project began with a subject-matter expert from the U.S. Army and a \glsentryshort{csbd}-expert.  Other than applying \glsentryshort{csbd}, there were no directions on how to do this.  We began with some of the STPA ideas in mind, i.e., defining losses and unacceptable losses.  It wasn't until after the secure state machines were complete and the master thesis was nearly complete, that STPA analysis was systematically applied.  STPA analysis is an awesome tool.  Had we begun with it, the model of the patrol base operations may have been different.
