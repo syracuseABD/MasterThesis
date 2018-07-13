@@ -43,7 +43,10 @@
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Horizontal slice: ConductORP diagram.}}{113}{figure.6.2}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Horizontal slice: PlanPB diagram.}}{131}{figure.6.3}
 \addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces An abbreviated concept for a soldier module.}}{163}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Horizontal slice: PlanPB diagram.}}{164}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Alternative path through the three non-sequential states.}}{164}{figure.7.3}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Permutation paths through the three non-sequential states..}}{165}{figure.7.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {A.1}{\ignorespaces An implementation of the boolean datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{174}{figure.a.A.1}

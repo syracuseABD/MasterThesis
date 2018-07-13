@@ -1,8 +1,8 @@
 \contentsline {chapter}{Abstract}{i}{section*.1}
 \contentsline {chapter}{Table Of Contents}{iv}{chapter*.6}
-\contentsline {chapter}{List of Figures}{x}{chapter*.8}
-\contentsline {chapter}{List of Tables}{xii}{chapter*.10}
-\contentsline {chapter}{List of Acronyms}{xiii}{section*.11}
+\contentsline {chapter}{List of Figures}{ix}{chapter*.8}
+\contentsline {chapter}{List of Tables}{xi}{chapter*.10}
+\contentsline {chapter}{List of Acronyms}{xii}{section*.11}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}In Context of Systems Security Engineering}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}System-Theoretic Operational Risk Management (STORM)}{3}{section.1.2}
@@ -127,18 +127,17 @@
 \contentsline {subsection}{\numberline {6.3.7}Authentication}{143}{subsection.6.3.7}
 \contentsline {subsection}{\numberline {6.3.8}Authorization}{146}{subsection.6.3.8}
 \contentsline {subsection}{\numberline {6.3.9}Proved Theorems}{148}{subsection.6.3.9}
-\contentsline {chapter}{\numberline {7}Non-implemented modules}{161}{chapter.7}
-\contentsline {section}{\numberline {7.1}Authentication \& Roles}{161}{section.7.1}
-\contentsline {section}{\numberline {7.2}Soldier, Squad, and Platoon Theories}{162}{section.7.2}
-\contentsline {chapter}{\numberline {8}Discussion}{164}{chapter.8}
-\contentsline {section}{\numberline {8.1}STPA Analysis}{164}{section.8.1}
-\contentsline {section}{\numberline {8.2}CSBD Analysis}{164}{section.8.2}
-\contentsline {section}{\numberline {8.3}Summary}{164}{section.8.3}
-\contentsline {section}{\numberline {8.4}Discussion}{166}{section.8.4}
-\contentsline {section}{\numberline {8.5}Challenges And Limitations of The Approach}{166}{section.8.5}
-\contentsline {chapter}{\numberline {9}Future Work}{168}{chapter.9}
-\contentsline {section}{\numberline {9.1}Applicability}{168}{section.9.1}
-\contentsline {subsection}{\numberline {9.1.1}Accountability Systems}{169}{subsection.9.1.1}
+\contentsline {chapter}{\numberline {7}Discussion}{161}{chapter.7}
+\contentsline {section}{\numberline {7.1}STPA Analysis}{161}{section.7.1}
+\contentsline {section}{\numberline {7.2}CSBD Analysis}{161}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Authentication}{161}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}Roles}{162}{subsection.7.2.2}
+\contentsline {section}{\numberline {7.3}Soldier, Squad, and Platoon Theories}{162}{section.7.3}
+\contentsline {section}{\numberline {7.4}Non-sequential Variations}{163}{section.7.4}
+\contentsline {section}{\numberline {7.5}Concluding Comments}{166}{section.7.5}
+\contentsline {chapter}{\numberline {8}Future Work}{168}{chapter.8}
+\contentsline {section}{\numberline {8.1}Applicability}{168}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Accountability Systems}{169}{subsection.8.1.1}
 \contentsline {chapter}{Appendices}{171}{section*.68}
 \contentsline {chapter}{\numberline {A}Background}{172}{Appendix.a.A}
 \contentsline {section}{\numberline {A.1}Formal Methods}{172}{section.a.A.1}
