@@ -1,8 +1,8 @@
 \contentsline {chapter}{Abstract}{i}{section*.1}
 \contentsline {chapter}{Table Of Contents}{iv}{chapter*.6}
-\contentsline {chapter}{List of Figures}{ix}{chapter*.8}
-\contentsline {chapter}{List of Tables}{xi}{chapter*.10}
-\contentsline {chapter}{List of Acronyms}{xii}{section*.11}
+\contentsline {chapter}{List of Figures}{x}{chapter*.8}
+\contentsline {chapter}{List of Tables}{xii}{chapter*.10}
+\contentsline {chapter}{List of Acronyms}{xiii}{section*.11}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}In Context of Systems Security Engineering}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}System-Theoretic Operational Risk Management (STORM)}{3}{section.1.2}
@@ -136,8 +136,9 @@
 \contentsline {section}{\numberline {7.4}Non-sequential Variations}{163}{section.7.4}
 \contentsline {section}{\numberline {7.5}Concluding Comments}{166}{section.7.5}
 \contentsline {chapter}{\numberline {8}Future Work}{168}{chapter.8}
-\contentsline {section}{\numberline {8.1}Applicability}{168}{section.8.1}
-\contentsline {subsection}{\numberline {8.1.1}Accountability Systems}{169}{subsection.8.1.1}
+\contentsline {section}{\numberline {8.1}Patrol Base Operations}{168}{section.8.1}
+\contentsline {section}{\numberline {8.2}Automation}{169}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}STORM}{169}{subsection.8.2.1}
 \contentsline {chapter}{Appendices}{171}{section*.68}
 \contentsline {chapter}{\numberline {A}Background}{172}{Appendix.a.A}
 \contentsline {section}{\numberline {A.1}Formal Methods}{172}{section.a.A.1}
