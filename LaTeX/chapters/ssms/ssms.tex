@@ -77,7 +77,7 @@ The state in the first configuration is just the current state.  The next state 
 
 The output in the first configuration is the outputList.  It's head should be the output that corresponds to the current state.  The output in the final configuration is the result of the next-output function cons'd onto the front of the outputList.
 
-\glspl{tr} form the basis for the \glsentryshort{hol} representation of state machines, which is a precursor to the secure state machines implemented in this master thesis.  
+\glspl{tr} form the basis for the \gls{hol} representation of state machines, which is a precursor to the secure state machines implemented in this master thesis.  
 
 
       %%%%%%%%%%%%%%%%%%% Section Secure State Machines %%%%%%%%%
@@ -90,7 +90,7 @@ State machines define states, inputs, outputs, next-state functions, and next-ou
 \begin{figure}[!h!]
 \centering
 \includegraphics[width=0.8\textwidth]{../figures/smVSssm}
-\caption{\label{smVSssm} State machine versus secure state machine with a monitor.  Image taken from Certified Security by Design Using Higher Order Logic \cite{certmanual}.}
+\caption{\label{smVSssm} State machine versus secure state machine with a monitor.  Image taken from \textit{Certified Security by Design Using Higher Order Logic} \cite{certmanual}.}
 \end{figure}
 
 For this master thesis, the "Machine Instructions" represent the state machine model of the patrol base operations.
@@ -104,7 +104,7 @@ It is the duty of the monitor to control the behavior of the \gls{ssm} with rega
 The monitor assigns a transition type to each command.  The transition types are: execute (\textit{exec}), trap, (\textit{trap}), and discard (\textit{discard})\footnote{The names are derived from their use in virtual machines.  Commands (inputs) in virtual machines are either executed, trapped, or discarded.  Each has a different behavior in the machine.}.  These correspond to executing a command, trapping a command, or discarding a command, respectively.  For example, \textit{exec accessGranted} indicates that the command to grant access for the foreign civilian to the base should be executed (or allowed).  \textit{trap accessGranted} means that the request to grant access is not authorized.  \textit{discard grantAccess} means that the command to grant access is not authenticated (i.e., the requestor's identify is not confirmed).
 
 \subsection{Commands}
-Commands in the \glsentryshort{ssm} are handled differently than in the state machine.  Principals issue commands (make requests).  The monitor inspects the command (request) for proper authentication and authorization and assigns a transition type to the command (request).  This combination of transition type and command (request) is then passed to the next-state and next-output functions.  These functions define how the \gls{ssm} responds to each transition type and command (request) pair.  
+Commands in the \gls{ssm} are handled differently than in the state machine.  Principals issue commands (make requests).  The monitor inspects the command (request) for proper authentication and authorization and assigns a transition type to the command (request).  This combination of transition type and command (request) is then passed to the next-state and next-output functions.  These functions define how the \gls{ssm} responds to each transition type and command (request) pair.  
 
 \subsection{Principals And Requests}
 Principals are unique to the secure state machine.  The \gls{ssm} monitor checks authentication and authorization for each request.  This means the identify of "who" is making the request must be first verified and then authorized to control actions on the \gls{ssm}.  Therefore, a "who" must be defined.  The "who" in the access-control logic is the principal.  
@@ -175,7 +175,7 @@ CFG\\
 In addition to the three additional components (authenticationTest, stateInterpretation, and securityContext functions), the transition type (trType) is added to the front of the input. 
 
 \subsection{Configuration Interpretation}
-The TR relation is a proposition that returns true or false based on whether the second configuration follows from the first.  But, this is not wholly sufficient to prove complete mediation.  Complete mediation requires that the configuration be interpreted in the context of authentication and authorization.  The configuration interpretation function \emph{ConfigInterp} interprets the authentication and authorization of the request based on the current configuration.  
+The \gls{tr} relation is a proposition that returns true or false based on whether the second configuration follows from the first.  But, this is not wholly sufficient to prove complete mediation.  Complete mediation requires that the configuration be interpreted in the context of authentication and authorization.  The configuration interpretation function \emph{ConfigInterp} interprets the authentication and authorization of the request based on the current configuration.  
 
 \emph{
 ConfigInterp\\
@@ -203,7 +203,7 @@ The second part of the biconditional is the "satisfies list."  This is a conjunc
 This following sections describe the \gls{hol} implementation of the \gls{ssm}.  It focuses on the parametrizable \gls{ssm} that forms the basis for the patrol base operations \glspl{ssm} described in the next chapter.  The parametrizable \gls{ssm} is denoted as "ssm".
 
 \subsection{Parameterizable Secure State Machine}
-ssm is implemented as a parametrizable secure state machine. Parametrization allows for re-use of common definitions and theorems in the \glsentryshort{ssm} model.  The parametrizable components are
+ssm is implemented as a parametrizable secure state machine. Parametrization allows for re-use of common definitions and theorems in the \gls{ssm} model.  The parametrizable components are
 \begin{itemize}
 \item Next-state function
 \item Next-output function
@@ -222,13 +222,13 @@ ssm is implemented as a parametrizable secure state machine. Parametrization all
 The input to the secure state machines is in the form of a list of inputs (an input stream).  Elements in the list are of the form \textit{P says prop (SOME cmd)}\footnote{See next section.}.  It is necessary to extract particular components from the list and list elements.  Several functions are defined to do this.  These are essentially helper functions.
 
 \paragraph*{extractCommand}
-extractCommand takes one input of the form \textit{P says prop (SOME cmd)} and extracts the \textit{cmd} part.
+ takes one input of the form \textit{P says prop (SOME cmd)} and extracts the \textit{cmd} part.
 
 \HOLThmTag{ssm}{extractCommand_def}\HOLssmTheoremsextractCommandXXdef
 
 
 \paragraph*{commandList}
-commandList takes an input list consisting of list elements of the form \textit{P says prop (SOME cmd)}.  It returns a list of all the \textit{cmd} elements.
+ takes an input list consisting of list elements of the form \textit{P says prop (SOME cmd)}.  It returns a list of all the \textit{cmd} elements.
 \begin{tabbing}
 \parskip=8pt
 \HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \\
@@ -237,13 +237,13 @@ commandList takes an input list consisting of list elements of the form \textit{
 \end{tabbing}
 
 \paragraph*{extractPropCommand}
-extractPropCommand takes one input of the form \textit{P says prop (SOME cmd)} and extracts the \textit{prop (SOME cmd)} part.
+ takes one input of the form \textit{P says prop (SOME cmd)} and extracts the \textit{prop (SOME cmd)} part.
 
 \HOLThmTag{ssm}{extractPropCommand_def}\HOLssmTheoremsextractPropCommandXXdef
 
 
 \paragraph*{propCommand}
-propCommand takes an input list consisting of list elements of the form \textit{P says prop (SOME cmd)}.  It returns a list of all the \textit{prop (SOME cmd)} elements.
+ takes an input list consisting of list elements of the form \textit{P says prop (SOME cmd)}.  It returns a list of all the \textit{prop (SOME cmd)} elements.
 \begin{tabbing}
 \parskip=8pt
 \HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{x}. \\
@@ -253,13 +253,13 @@ propCommand takes an input list consisting of list elements of the form \textit{
 
 
 \paragraph*{extractInput}
-extractInput takes one input of the form \textit{P says prop x} and extracts the \textit{x} part. Note that \textit{x} can have two forms: \textit{NONE} or \textit{SOME cmd}.
+ takes one input of the form \textit{P says prop x} and extracts the \textit{x} part. Note that \textit{x} can have two forms: \textit{NONE} or \textit{SOME cmd}.
 
 \HOLThmTag{ssm}{extractInput_def}\HOLssmTheoremsextractInputXXdef
 
 
 \paragraph*{inputList}
-inputList takes an input list consisting of list elements of the form \textit{P says prop x}.  It returns a list of all the \textit{x} elements.
+ takes an input list consisting of list elements of the form \textit{P says prop x}.  It returns a list of all the \textit{x} elements.
 \begin{tabbing}
 \parskip=8pt
 \HOLTokenTurnstile{} \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{xs}. \\
@@ -280,7 +280,7 @@ The definition for the option datatype is
 In the datatype definition above, 'a is replaced with some other datatype.  
 
 \paragraph*{A Closer Look at Commands}
-To see what this looks like in \glsentryshort{hol}, it is necessary to define some other datatypes. The OMNILevel folder in OMNITypesScript.sml contains definitions that are used in all patrol base operations \glsentryshortpl{ssm}. One definition is the \HOLFreeVar{command} datatype definition.
+To see what this looks like in \gls{hol}, it is necessary to define some other datatypes. The OMNILevel folder in OMNITypesScript.sml contains definitions that are used in all patrol base operations \gls{ssm}. One definition is the \HOLFreeVar{command} datatype definition.
 
 \begin{tabbing}
 \HOLFreeVar{command} = \HOLConst{ESCc} \HOLTyOp{escCommand} \HOLTokenBar{} \HOLConst{SLc} 'slCommand
@@ -301,9 +301,9 @@ This datatype definition defines three commands (or datatype values) which repre
 
 The second dataytpe variable 'slCommand refers to the state-level commands.  These are defined further in each \glsentryshort{ssm}.  
 
-Notice that there is a tick mark (apostrophe) before 'slCommand and not before \HOLTyOp{escCommand}.  In general, the tick mark in \glsentryshort{hol} represents an undefined dataytpe.  In this case, 'slCommand is not yet defined (because it is defined elsewhere), whereas the definition for \HOLTyOp{escCommand} is defined in the same file and above the definition for \HOLFreeVar{command}.   
+Notice that there is a tick mark (apostrophe) before 'slCommand and not before \HOLTyOp{escCommand}.  In general, the tick mark in \gls{hol} represents an undefined dataytpe.  In this case, 'slCommand is not yet defined (because it is defined elsewhere), whereas the definition for \HOLTyOp{escCommand} is defined in the same file and above the definition for \HOLFreeVar{command}.   
 
-An example of a definition for 'slCommand can be found in the top level \glsentryshort{ssm}.  It is defined in the folder topLevel and in the file PBIntegratedTypeScript.sml file.
+An example of a definition for 'slCommand can be found in the top level \gls{ssm}.  It is defined in the folder topLevel and in the file PBIntegratedTypeScript.sml file.
 
 \HOLFreeVar{slCommand} = \HOLConst{PL} \HOLTyOp{plCommand} \HOLTokenBar{} \HOLConst{OMNI} \HOLTyOp{omniCommand}
 
@@ -377,15 +377,15 @@ Authentication is context dependent. But, a parametrizable authentication functi
 
 This function takes an \texttt{elementTest} function and an input list as parameters.  The \texttt{elementTest} function is named \texttt{inputOK} in the patrol base operations \glspl{ssm} and it is defined separately for each \gls{ssm}.  \texttt{elementTest} takes a single input of the form \textit{SomePrincipal says someCommand}.  It returns TT (the \gls{acl} representation of True) if the input is authenticated and FF otherwise.  
 
-The authenticationTest function FOLDRs the elementTest function over the input list x with the conjunction function and True as the accumulator\footnote{This means that the elementTest function is applied to each element in the input list x, resulting in a TT or FF value for each element in the input list x.   Then, in essence, the value of the conjunction of all these values is returned.}  Thus, if all the input elements in the input list x pass the elementTest, the authenticationTest function returns true, otherwise it returns false.  
+The \texttt{authenticationTest} function FOLDRs\footnote{This means that the \texttt{elementTest} function is applied to each element in the input list x, resulting in a TT or FF value for each element in the input list x.   Then, in essence, the value of the conjunction of all these values is returned.} the \texttt{elementTest} function over the input list x with the conjunction function and True as the accumulator.  Thus, if all the input elements in the input list x pass the \texttt{elementTest}, the \texttt{authenticationTest} function returns true, otherwise it returns false.  
      
 \subsection{Authorization}
-Authorization is the security context and it is \gls{ssm}-dependent. This means that each \gls{ssm} defines its own security context.  The parametrizable \gls{ssm} allows for two ways to define the security context and pass them as parameters.  The first is the state interpretation function. This function takes a state and an input list as parameters.  It defines the security context based on state.  All state-dependent behavior may also be defined in this function.
+Authorization is context-dependent. This means that each \gls{ssm} defines its own security context.  The parametrizable \gls{ssm} allows for two ways to define the security context and pass them as parameters.  The first is the state interpretation function. This function takes a state and an input list as parameters.  It defines the security context based on state. 
 
 The second function is the security context function.  It takes only the input list as a parameter.  It's definition applies to all states.
 
 \subsection{Next-state And Next-output Functions}
-The next-state and next-output functions are parameters to the parametrizable \gls{ssm}.  They are defined separately in each \gls{ssm}.  In the parametrizable \gls{ssm} they are denoted by NS and Out, respectively.
+The next-state and next-output functions are parameters to the parametrizable \gls{ssm}.  They are defined separately in each \gls{ssm}.  In the parametrizable \gls{ssm} they are denoted by \texttt{NS} and \texttt{NOut}, respectively.
 
 \subsection{Configurations}
 Configurations in the \glspl{ssm} have six components.  Each \gls{ssm} must define all six components to use the parametrizable ssm.  These components are:
@@ -423,7 +423,7 @@ The type signature is
 \hspace{0.5cm} ('output \HOLTyOp{list})
 \end{enumerate}
 
-Note that the authentication test function is defined in the parametrizable ssm as authenticationTest.  This function takes one input (named elementTest in this ssm and inputOK in the \glsentryshortpl{ssm}).
+Note that the authentication test function is defined in the parametrizable ssm as \texttt{authenticationTest}.  This function takes one input (named \texttt{elementTest} in this ssm and \texttt{inputOK} in the \gls{ssm}).
 
 These components comprise the six components of the configuration datatype (with CFG as the datatype constructor)
 
@@ -443,9 +443,9 @@ These components comprise the six components of the configuration datatype (with
 \end{tabbing}
 
 \subsection{Configuration Interpretation}
-The monitor must interpret the configuration.  The CFGInterpret function take as input a Kripke structure and a configuration.  It returns a conjunction of three things: a satList of the security context, a satList of the input stream, and a satList of the stateInterpretation function.  
+The monitor must interpret the configuration.  The \texttt{CFGInterpret} function take as input a Kripke structure and a configuration.  It returns a conjunction of three things: a \texttt{satList} of the security context, a \texttt{satList} of the input stream, and a \texttt{satList} of the stateInterpretation function.  
 
-satList is a list of elements that satisfy the property of soundness as discussed in chapter \ref{chp:csbdacl} section \ref{sssec:soundness}\footnote{Note that in the \glsentryshort{acl} implementation of the "satisfies" and "soundness" properties, "satisfies" serves as "soundness" when it is generalized for all Kripke structures.}.  satList is defined in satListTheory.  
+\texttt{satList} is a list of elements that satisfy the property of soundness as discussed in chapter \ref{chp:csbdacl} section \ref{sssec:soundness}\footnote{Note that in the \glsentryshort{acl} implementation of the "satisfies" and "soundness" properties, "satisfies" serves as "soundness" when it is generalized for all Kripke structures.}.  \texttt{satList} is defined in satListTheory.  
 
 \begin{tabbing}
 \parskip=8pt
@@ -457,9 +457,9 @@ satList is a list of elements that satisfy the property of soundness as discusse
 
 satList MAPs the \textit{sat} operator onto each element in the formList. It then FOLDRs the formList elements with the conjunction function and accumulator True.  This means that satList applied to formList returns true if each element in the list satisfies the \textit{sat} property.
 
-Other properties of satList can be found in appendix \ref{ppacl}.
+Other properties of \texttt{satList} can be found in appendix \ref{ppacl}.
 
-With satList defined, the meaning of CFGInterpret should follow.  
+With \texttt{satList} defined, the meaning of \texttt{CFGInterpret} should follow.  
 
 \begin{tabbing}
 \parskip=8pt
@@ -474,7 +474,7 @@ With satList defined, the meaning of CFGInterpret should follow.
 
 
 \subsection{TR Rules}\label{ssec:trrules}
-The transition rules in \glsentryshort{hol} are defined in figure \ref{trrules}.
+The transition inference rules for execute, trap, and discard are defined in figure \ref{trrules}.
 
 \begin{figure}[h!]
 \centering
@@ -482,16 +482,16 @@ The transition rules in \glsentryshort{hol} are defined in figure \ref{trrules}.
 \caption{\label{trrules} Transition rules in \glsentryshort{hol}.   Image taken from Certified Security by Design Using Higher Order Logic \cite{certmanual}}
 \end{figure}
 
-There are three rules, one for each transition type.  Above each line are the hypotheses and below are the conclusions.  The symbol $\text{\textit{Config}}  \xrightarrow[\text{}]{\text{exec (inputList x)}} \textit{Config}_e$ represents the TR relation for the input \textit{exec inputList x}.  Similarly, the symbols $\text{\textit{Config}}  \xrightarrow[\text{}]{\text{trap (inputList x)}} \textit{Config}_t$ and $\text{\textit{Config}}  \xrightarrow[\text{}]{\text{discard (inputList x)}} \textit{Config}_d$ represent the TR relations for \textit{trap inputList x} and \textit{discard inputList x}, respectively. 
+There are three rules, one for each transition type.  Above each line are the hypotheses and below are the conclusions.  The symbol $\text{\textit{Config}}  \xrightarrow[\text{}]{\text{exec (inputList x)}} \textit{Config}_e$ represents the TR for the input \textit{exec inputList x}.  Similarly, the symbols $\text{\textit{Config}}  \xrightarrow[\text{}]{\text{trap (inputList x)}} \textit{Config}_t$ and $\text{\textit{Config}}  \xrightarrow[\text{}]{\text{discard (inputList x)}} \textit{Config}_d$ represent the TR for \textit{trap inputList x} and \textit{discard inputList x}, respectively. 
 
 
-The \textit{Execute} rule takes the authenticationTest function (with two parameters) and the CFGInterpret function (with two parameters).  If these are true, then \textit{Execute} concludes the TR relation $\text{\textit{Config}}  \xrightarrow[\text{}]{\text{exec (inputList x)}} \textit{Config}_e$.  \textit{Trap} is similar to \textit{Execute}.
+The \textit{Execute} rule takes the \texttt{authenticationTest} function (with two parameters) and the \texttt{CFGInterpret} function (with two parameters).  If these are true, then \textit{Execute} concludes the TR  $\text{\textit{Config}}  \xrightarrow[\text{}]{\text{exec (inputList x)}} \textit{Config}_e$.  \textit{Trap} is similar to \textit{Execute}.
 
-The \textit{Discard} rule takes only the authenticationTest function (with two parameters).  If this is false, then the hypothesis is true.  Thus, the  $\text{\textit{Config}}  \xrightarrow[\text{}]{\text{discard (inputList x)}} \textit{Config}_d$ follows.
+The \textit{Discard} rule takes only the \texttt{authenticationTest }function (with two parameters).  If this is false, then the hypothesis is true.  Thus, the  $\text{\textit{Config}}  \xrightarrow[\text{}]{\text{discard (inputList x)}} \textit{Config}_d$ follows.
 
 The definitions for the \textit{Config}s are defined below the rules. 
 
-These definitions are defined in \glsentryshort{hol} as rule0, rule1, and rule2 (TR_discard_cmd_rule).  Notice that these are biconditionals.  The hypotheses and conclusions are reversed in the definitions below.  
+These definitions are defined in \gls{hol} as rule0, rule1, and rule2 (\texttt{TR_discard_cmd_rule}).  Notice that these are biconditionals.  The hypotheses and conclusions are reversed in the definitions below.  
 
 \paragraph*{rule0}
 \HOLThmTag{ssm}{TRrule0}\HOLssmTheoremsTRruleZero
@@ -508,15 +508,17 @@ These definitions are defined in \glsentryshort{hol} as rule0, rule1, and rule2 
 
 
 \paragraph*{Complete mediation and TR Relations}
-If remains to prove that complete mediation justifies execution, trapping, or discarding of commands. 
+
+It remains to prove that complete mediation justifies execution, trapping, or discarding of commands. 
 
 \paragraph*{TR_exec_cmd_rule}
-The following function demonstrates the property of complete mediation as a condition for execution a command.
+
+The following function demonstrates the property of complete mediation as a condition for execution of a command.
 
 
 \HOLThmTag{ssm}{TR_exec_cmd_rule}\HOLssmTheoremsTRXXexecXXcmdXXrule
 
-This is similar to rule0.  It adds the following as a premise for concluding rule0.
+This is similar to \texttt{rule0}.  It adds the following as a premise for concluding \texttt{rule0}.
 
 \HOLTokenTurnstile{} 
 \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{elementTest} \HOLBoundVar{context} \HOLBoundVar{stateInterp} \HOLBoundVar{x} \HOLBoundVar{ins} \HOLBoundVar{s} \HOLBoundVar{outs}.\\
@@ -529,16 +531,17 @@ This is similar to rule0.  It adds the following as a premise for concluding rul
 (\HOLBoundVar{x}\HOLSymConst{::}\HOLBoundVar{ins}) 
 \HOLBoundVar{s}
 \HOLBoundVar{outs}) \\
-\HOLSymConst{\HOLTokenImp{}}(\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{satList} \HOLConst{propCommandList} \HOLBoundVar{x}) \\
+\HOLSymConst{\HOLTokenImp{}}(\HOLBoundVar{M}\HOLSymConst{,}\HOLBoundVar{Oi}\HOLSymConst{,}\HOLBoundVar{Os}) \HOLConst{satList} \HOLConst{propCommandList} \HOLBoundVar{x}) 
 
-This part requires that the propCommandList applied to the inputList satisfies the Kripke structure.
+This part requires that the \texttt{propCommandList} applied to the \texttt{inputList} satisfies the Kripke structure.
 
 \paragraph*{TR_trap_cmd_rule}
-TR_trap_cmd_rule is similar to TR_exec_cmd_rule. 
+
+ is similar to \texttt{TR_exec_cmd_rule}. 
 
 \HOLThmTag{ssm}{TR_trap_cmd_rule}\HOLssmTheoremsTRXXtrapXXcmdXXrule
 
-The difference is that instead of requiring propCommandList to satisfy the Kripke structure, it must satisfy NONE.  
+The difference is that instead of requiring \texttt{propCommandList} to satisfy the Kripke structure, it must satisfy \texttt{NONE}.  
 
 \HOLTokenTurnstile{} 
 \HOLSymConst{\HOLTokenForall{}}\HOLBoundVar{elementTest} \HOLBoundVar{context} \HOLBoundVar{stateInterp} \HOLBoundVar{x} \HOLBoundVar{ins} \HOLBoundVar{s} \HOLBoundVar{outs}.\\
@@ -556,8 +559,9 @@ The difference is that instead of requiring propCommandList to satisfy the Kripk
 
 
 \paragraph*{TR_discard_cmd_rule}
-This is the same as rule2 because the \textit{discard} transition type does not require configuration interpretation.
+
+This is the same as \texttt{rule2} because the \textit{discard} transition type does not require configuration interpretation.
 
 
-The next chapter demonstrates the parametrizable ssm applied to specific patrol base operations \glsentryshortpl{ssm}.
+The next chapter demonstrates the parametrizable ssm applied to specific patrol base operations \glspl{ssm}.
 \end{document}
