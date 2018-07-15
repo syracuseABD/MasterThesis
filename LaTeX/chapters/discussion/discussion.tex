@@ -16,7 +16,7 @@ The previous chapters describe the application of \gls{storm} to the patrol base
 \section{CSBD Analysis}\label{sec:csbddiscussion}
 
 \subsection{Authentication}
-Authentication for the this model of the patrol base operations is assumed through visual recognition of an authority.  But, in many parts of the patrol base operations, soldiers are challenged and must provide a password.  \gls{csbd} manages passwords (and cryptographic functions for automated systems) using a cryptographic secure state machine.  Such a parametrizable secure state machine already exits and it would be straight forward to apply it to future patrol base operations or to other non-automated, human-centered systems.
+Authentication for this model of the patrol base operations is assumed through visual recognition of an authority.  But, in many parts of the patrol base operations, soldiers are challenged and must provide a password.  \gls{csbd} manages passwords (and cryptographic functions for automated systems) using a cryptographic secure state machine.  Such a parametrizable secure state machine already exits and it would be straight forward to apply it to future patrol base operations or to other non-automated, human-centered systems.
 
 \subsection{Roles}
 Principals in this model are roles (i.e., Platoon Leader, Platoon Sergeant, etc.).  But, a more accurate description would include soldiers acting in the role of a principal.  \gls{csbd} manages principals acting in roles using various \gls{acl} rules and a specific secure state machine.  Like cryptographic functions, such a parametrizable secure state machine already exists.  It would be straight forward to apply it to future patrol base operations or to other non-automated, human-centered systems.
@@ -26,7 +26,7 @@ Principals in this model are roles (i.e., Platoon Leader, Platoon Sergeant, etc.
 
       %%%%%%%%%%%%%%%%%%% Section Soldiers, etc. %%%%%%%%%%
  \section{Soldier, Squad, and Platoon Theories}
-The model describes transitions among phases of the operations.  Additional models could include soldiers, squads, and platoons modules.  Figure \ref{soldierMission} is a possible description of a high level soldier module with one level expanded.  This is a simplified model to demonstrate the idea of a soldier module.  
+The model describes transitions among phases of the operations.  Additional models could include soldiers, squads, and platoon modules.  Figure \ref{soldierMission} is a possible description of a high level soldier module with one level expanded.  This is a simplified model to demonstrate the idea of a soldier module.  
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{../figures/soldierMission}
@@ -48,7 +48,7 @@ The reader could imagine similar secure state machines for the platoon, squad, a
 \caption{\label{ssmPlanPBDiagram2} Horizontal slice: PlanPB diagram.}
 \end{figure}
 
-For this state machine, three of the states could be completed in any order.  But, they ALL must be completed before completing the plan.  These states are TENTATIVE_PLAN, INITIATE_MOVEMENT, and RECON.   The secure state machine in figure \ref{ssmPlanPBDiagram2} describes these as quasi-states and simply requires their completion to be part of the input to the transition request.  
+For this state machine, three of the states could be completed in any order.  But, they ALL must be completed before completing the plan.  These states are TENTATIVE_PLAN, INITIATE_MOVEMENT, and RECON.   The secure state machine in figure \ref{ssmPlanPBDiagram2} describes these as "virtual states"  and simply requires their completion to be part of the input to the transition request.  
 
 
  \begin{figure}[h!]
@@ -76,7 +76,7 @@ Additionally, the planning phase could begin while moving to the objective rally
 
 The biggest challenge is managing the large size of the operations.  The patrol base operations are composed of numerous activities.  This challenge is dealt with using a modularized hierarchy of secure state machines.
 
-The next biggest challenge for the \gls{stpa}/\gls{stpasec} analysis is expertise.  A subject matter expert\footnote{A subject matter expert was available for the modularized hierarchy of secure state machines.  But, he was not available for the \gls{stpa} analysis.  The author learned \gls{stpa} and patrol base operations simultaneously.} is necessary to describe the scenarios and causes of accidents and vulnerabilities.  For the \gls{csbd}, a subject matter expert is necessary to interpret the Ranger Handbook \cite{rangermanual} into secure state machines.
+The next biggest challenge for the \gls{stpa}/\gls{stpasec} analysis is expertise.  A subject matter expert\footnote{A subject matter expert was available for the modularized hierarchy of secure state machines.  But, he was not available for the \gls{stpa} analysis.  The author learned \gls{stpa} and patrol base operations simultaneously.} is necessary to describe the scenarios and causes of accidents and vulnerabilities.  For the \gls{csbd}, a subject matter expert is necessary to interpret the Ranger Handbook \cite{rangermanual} into secure state machines. 
 
 
 Another challenge is managing complexity.  Some activities should be conducted in a sequential, checklist-like fashion.  But, others may be conducted in a variety of orders.  In addition, there is more than one type of patrol bases.  The Ranger Handbook describes the three types of patrol base as combat, security, and reconnaissance.  A complete model of the patrol base operations is beyond the scope of this master thesis.  But, it is doable and not much more involved than the model described in this master thesis.  
@@ -87,21 +87,5 @@ One of the biggest take homes from a design perspective is thinking critically a
 
 The next chapter discusses future work and some ideas about partial automation of the system with regards to accountability applications.
  
-%\section{}\label{sec:discussion}
-%Doing STPA last.
-%
-%This project began with a subject-matter expert from the U.S. Army and a \glsentryshort{csbd}-expert.  Other than applying \glsentryshort{csbd}, there were no directions on how to do this.  We began with some of the STPA ideas in mind, i.e., defining losses and unacceptable losses.  It wasn't until after the secure state machines were complete and the master thesis was nearly complete, that STPA analysis was systematically applied.  STPA analysis is an awesome tool.  Had we begun with it, the model of the patrol base operations may have been different.
-%
-%      %%%%%%%%%%%%%%%%%%% Section Mission Accomplished %%%%%%%%%%
-%\section{Challenges And Limitations of The Approach}\label{missionaccomplished}
-%The goal of this project is to determine if non-automated, human-centered systems are a limitation to the applicability of the \glsentryshort{csbd} approach.  No limitations are found in this respect.  
-%
-%One challenge is to model a large system.  This is solved using levels of abstraction and modularization described above.  Once this is tackled, everything is straight forward \footnote{The only exception was that the parametrizable secure state machine (ssm) needed to be remodeled half-way through the project.  This meant that all the secure state machines had to be redone with the new model.} .
-%
-%The main difficulty of \glsentryshort{csbd} is the learning curve in the mathematical application of formal methods to systems engineering.  But, this is a general problem and not specific to this approach. In all areas of systems engineering, theorem proving remains a mostly interactive and not automated endeavor.  While most mathematicians will appreciate the job security, most computer scientists would prefer to let the computer do the grunt work.  \glsentryshort{hol}, as with most theorem provers,  can be difficult to work with.  However, it is a highly reliable theorem prover.  Thus, when reliability is required, \glsentryshort{hol} shows promise. 
-%
-%
-%The learning curve problem is partially solved by the use of pre-implemented and parametrizable models such as the secure state machine model.  This combined with ample examples, eases the burden of reinventing \glsentryshort{hol} code. It is also likely, as theorem proving with \glsentryshort{acl} becomes more popular, more reusable and parametrizable code will be available to further ease the burden of proof.  
-%
 
 \end{document}

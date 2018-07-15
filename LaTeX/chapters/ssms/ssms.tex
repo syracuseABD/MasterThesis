@@ -17,7 +17,7 @@ This chapter introduces the reader to secure state machines (\gls{ssm}s).  It be
 State machines are models of systems.  They use \textit{states} and \textit{transitions} among states to describe the system's behavior.  The result is a well-defined set of system states and system behaviors that are readily automizable.  
 
 
-There are several models of state machines.  But, a discussion of these models in beyond the scope of this master thesis.  The state machine model described in this master thesis changes states and outputs based on input.  An input will cause the state machine to change states and produce an output.
+There are several models of state machines.\footnote{A discussion of these models is beyond the scope of this master thesis.}  The state machine model described in this master thesis changes states and outputs based on input.  An input will cause the state machine to change states and produce an output.
 
 \subsection{States}
 States can be nearly anything.  For example, the state for a military base could be described by the number of foreign civilians on base.  If a foreign civilian is permitted to enter the base, then the state of the base increases from n foreign civilians to n + 1. Or, the state of that foreign civilian requesting access to a base could be ``not granted" or ``granted."
@@ -31,7 +31,7 @@ States, in this master thesis, are phases of the patrol base operations.  For ex
 
 
 \subsection{Transition Commands}
-Transition commands are inputs to the state machine.  These inputs determine the next-state and next-output of the state machine.  To continue with the examples above, input for the transition from the n \textit{foreign civilians} state to the n + 1 \textit{foreign civilians}state could be ``access granted."  This same input could be used to change a foreign civilian's state from ``not granted" to ``granted."
+Transition commands are inputs to the state machine.  These inputs determine the next-state and next-output of the state machine.  To continue with the examples above, input for the transition from the n \textit{foreign civilians} state to the n + 1 \textit{foreign civilians} state could be ``access granted."  This same input could be used to change a foreign civilian's state from ``not granted" to ``granted."
 
 In this master thesis, inputs are commands to transition from one state to another.  For example, in figure \ref{pbtoplevel2}, transition from the \textit{Move to Objective Rally Point (\gls{orp})} state to the \textit{\gls{orp}} state is indicated by the command ``conductORP."
 
@@ -43,11 +43,11 @@ For example, the next-state function to change from the n \textit{foreign civili
 In this master thesis, to transition from the \textit{MOVE_TO_ORP} state to the \textit{CONDUCT_ORP} state using the command "conductORP" looks like this:  \[\text{\textit{NS MOVE_TO_ORP conductORP = CONDUCT_ORP}}\]
 
 \subsection{Next-output Function}
-The next-output function (\textit{NSOut}) describes the next output of the state machine given the current state and input.  This is defined similarly to the next-state function.  \[\text{\textit{NOut CURRENT_STATE input = NextOutput}}\] 
+The next-output function (\textit{NOut}) describes the next output of the state machine given the current state and input.  This is defined similarly to the next-state function.  \[\text{\textit{NOut CURRENT_STATE input = NextOutput}}\] 
 For example, the next-output function to change from the n \textit{foreign civilians} state to the n + 1 \textit{foreign civilians} state using the "accessGranted" input would look like this: \[\text{\textit{NOut N accessGranted = BasePopulationIncreasedByOne}}\] Similarly, for the foreign civilian to change from the \textit{Not Granted} state to the \textit{Granted} state:: \[\text{\textit{NOut NOT_GRANTED accessGranted = NowOnBase}}\].
 
 In this master thesis, the next output for the transition from the \textit{MOVE_TO_ORP} state to the \textit{CONDUCT_ORP} state using the command "conductORP" looks like this: 
-\[\text{\textit{NS MOVE_TO_ORP conductORP = ConductORP}}\]
+\[\text{\textit{NOut MOVE_TO_ORP conductORP = ConductORP}}\]
 
 \subsection{Configuration}
 A configuration describes the state machine using input and output streams \cite{certmanual}. A configuration has there components: (1) current state, (2) a list of inputs (input stream), and (3) a list of outputs (output stream). The information in the configuration is sufficient to instruct the state machine's behavior.
@@ -67,7 +67,7 @@ TR input\\
 \hspace{1.5cm}(NOut input CURRENT_STATE )::outList
 }
 
-\emph{CFG} is a type constructor\footnote{\see appendix \ref{sec:adtinml} for a description of types in \gls{hol}.} for a configuration.  What follows are the three components of the \emph{CFG} data type.  The first is the input stream, a list of inputs, denoted \emph{input::inputList}.\footnote{In functional programming languages, functions are applied to list elements one element at a time.  The notation headOfList::remainderOfList allows access to the first component of the list.}  The first component of this list is the same as the input to the TR.  The next component of the configuration is the current state, denoted \emph{CURRENT_STATE}.  The third component is the output list, denoted \emph{outList}.\footnote{Note that only the input (not the output) is needed for the \gls{tr} to evaluate to true or false. Therefore, the output is not denoted as headOfList::remainderOfList.}.  
+\emph{CFG} is a type constructor\footnote{\see appendix \ref{sec:adtinml} for a description of types in \gls{hol}.} for a configuration.  What follows are the three components of the \emph{CFG} data type.  The first is the input stream, a list of inputs, denoted \emph{input::inputList}.\footnote{In functional programming languages, functions are applied to list elements one element at a time.  The notation headOfList::remainderOfList allows access to the first component of the list.}  The first component of this list is the same as the input to the TR.  The next component of the configuration is the current state, denoted \emph{CURRENT_STATE}.  The third component is the output list, denoted \emph{outList}.\footnote{Note that only the input (not the output) is needed for the \gls{tr} to evaluate to true or false. Therefore, the output is not denoted as headOfList::remainderOfList.} 
 
 The second \emph{CFG} is also composed of three components.  The first is the input list with the first element removed (because we used this element as input to the \gls{tr}).  The next component is the state which results from applying the \emph{input} and \emph{CURRENT_STATE} to the next-state function.  The third component is the output which results from applying the \emph{input} and \emph{CURRENT_STATE} to the next-state function.  This result is "consed" onto \emph{outList}.\footnote{"Consed" is functional programming language jargon for "appended to the front of the list."}
 
@@ -98,16 +98,16 @@ For this master thesis, the "Machine Instructions" represent the state machine m
 
  
 \subsection{Monitors}\label{monitors}
-It is the duty of the monitor to control the behavior of the \gls{ssm} with regards to complete mediation.  The monitor is a essentially a guard that checks for the proper authentication and authorization for requests to access or change the state of the \glspl{ssm}.  In a real world analogy, the monitor is the sentry at the gate who checks IDs to verify a person's identify and checks with policy or procedures to determine if that person should be granted access.  
+It is the duty of the monitor to control the behavior of the \gls{ssm} with regards to complete mediation.  The monitor is a essentially a guard that checks for the proper authentication and authorization for requests to access or change the state of the \glspl{ssm}.  In a real world analogy, the monitor is the sentry at the gate who checks IDs to verify a person's identity and checks with policy or procedures to determine if that person should be granted access.  
 
 \subsection{Transition Types}
-The monitor assigns a transition type to each command.  The transition types are: execute (\textit{exec}), trap, (\textit{trap}), and discard (\textit{discard})\footnote{The names are derived from their use in virtual machines.  Commands (inputs) in virtual machines are either executed, trapped, or discarded.  Each has a different behavior in the machine.}.  These correspond to executing a command, trapping a command, or discarding a command, respectively.  For example, \textit{exec accessGranted} indicates that the command to grant access for the foreign civilian to the base should be executed (or allowed).  \textit{trap accessGranted} means that the request to grant access is not authorized.  \textit{discard grantAccess} means that the command to grant access is not authenticated (i.e., the requestor's identify is not confirmed).
+The monitor assigns a transition type to each command.  The transition types are: execute (\textit{exec}), trap, (\textit{trap}), and discard (\textit{discard}).\footnote{The names are derived from their use in virtual machines.  Commands (inputs) in virtual machines are either executed, trapped, or discarded.  Each has a different behavior in the machine.}  These correspond to executing a command, trapping a command, or discarding a command, respectively.  For example, \textit{exec accessGranted} indicates that the command to grant access for the foreign civilian to the base should be executed (or allowed).  \textit{trap accessGranted} means that the request to grant access is not authorized.  \textit{discard grantAccess} means that the command to grant access is not authenticated (i.e., the requestor's identity is not confirmed).
 
 \subsection{Commands}
-Commands in the \gls{ssm} are handled differently than in the state machine.  Principals issue commands (make requests).  The monitor inspects the command (request) for proper authentication and authorization and assigns a transition type to the command (request).  This combination of transition type and command (request) is then passed to the next-state and next-output functions.  These functions define how the \gls{ssm} responds to each transition type and command (request) pair.  
+Commands in the \gls{ssm} are handled differently than in the state machine.  Principals issue commands (make requests).  The monitor inspects the command (request) for proper authentication and authorization and assigns a transition type to the command (request).  This combination of transition type and command (request) is then passed to the next-state and next-output functions.  These functions define how the \gls{ssm} responds to each transition type and command (request).  
 
 \subsection{Principals And Requests}
-Principals are unique to the secure state machine.  The \gls{ssm} monitor checks authentication and authorization for each request.  This means the identify of "who" is making the request must be first verified and then authorized to control actions on the \gls{ssm}.  Therefore, a "who" must be defined.  The "who" in the access-control logic is the principal.  
+Principals are unique to the secure state machine.  The \gls{ssm} monitor checks authentication and authorization for each request.  This means the identity of "who" is making the request must be first verified and then authorized to control actions on the \gls{ssm}.  Therefore, a "who" must be defined.  The "who" in the access-control logic is the principal.  
 
 Transitions in the \gls{ssm} are requested by a principal as \textit{Principal says changeStates}.  The next example shows how requests are made in a \gls{ssm} for the top level patrol base operations.
 
@@ -117,10 +117,10 @@ Transitions in the \gls{ssm} are requested by a principal as \textit{Principal s
 \caption{\label{ssmPBDiagram2} Top level diagram.}
 \end{figure}
 
-Figure \ref{ssmPBDiagram2} shows the top level \gls{ssm}.  The transition from PLAN_PB to MOVE_TO_ORP in a state machine only requires the command \textit{crossLD}.  But, in the secure state machine, this transition looks like this:
+Figure \ref{ssmPBDiagram2} shows the top level \gls{ssm}.  The transition from PLAN_PB to MOVE_TO_ORP in a state machine only requires the command \textit{crossLD}.  But, in the secure state machine, this transition request looks like this:
  \[\textit{PlatoonLeader says crossLD}.\]
 
-The monitor then checks the authentication and authorization of the principal and returns the command with a transition type.  For example, if the Platoon Leader is both authenticated and authorized on the command \textit{crossLD}, then the monitor returns the transition type and command pair 
+The monitor then checks the authentication and authorization of the principal and returns the command with a transition type.  For example, if the Platoon Leader is both authenticated and authorized on the command \textit{crossLD}, then the monitor returns the transition type and command
 \[exec \hspace{0.2cm} crossLD\]
 
 This is passed to the next-state and next-output functions, which define the behavior for the command \textit{exec crossLD}.  Note that the next-state and next-output functions must also define the \gls{ssm} behavior for \textit{trap crossLD} and \textit{discard crossLD}.
@@ -219,7 +219,7 @@ ssm is implemented as a parametrizable secure state machine. Parametrization all
 %To use the ssm, the rule ISPECL \glsentryshort{hol} is used to specialize the parametrizable theorems for a specific secure state machine. 
 
 \subsection{Input Stream}
-The input to the secure state machines is in the form of a list of inputs (an input stream).  Elements in the list are of the form \textit{P says prop (SOME cmd)}\footnote{See next section.}.  It is necessary to extract particular components from the list and list elements.  Several functions are defined to do this.  These are essentially helper functions.
+The input to the secure state machines is in the form of a list of inputs (an input stream).  Elements in the list are of the form \textit{P says prop (SOME cmd)}.\footnote{See next section.}  It is necessary to extract particular components from the list and list elements.  Several functions are defined to do this.  These are essentially helper functions.
 
 \paragraph*{extractCommand}
  takes one input of the form \textit{P says prop (SOME cmd)} and extracts the \textit{cmd} part.
@@ -309,7 +309,7 @@ An example of a definition for 'slCommand can be found in the top level \gls{ssm
 
 This is defined similarly to \HOLFreeVar{command}.  There are two datatypes that make-up the datatype \HOLFreeVar{slCommand}.  None of these have tick marks, which means both of these are defined.  In particular, they are both defined in the same file as \HOLFreeVar{slCommand}.
 
-\HOLFreeVar{plCommand} refers to the Platoon Leader commands.  These are commands that the Platoon Leader is authorized to make.  These are not data type variables, they are data types, because they are not further defined.
+\HOLFreeVar{plCommand} refers to the Platoon Leader commands.  These are commands that the Platoon Leader is authorized to make.  These are not data type variables, they are datatypes, because they are not further defined.
 
 \begin{tabbing}
 \HOLFreeVar{plCommand} = \= \HOLConst{crossLD} \\
@@ -354,7 +354,7 @@ Transition datatypes indicate how a command is handled by the monitor.  The thre
 
 \HOLFreeVar{trType} = \HOLConst{discard} 'cmdlist \HOLTokenBar{} \HOLConst{trap} 'cmdlist \HOLTokenBar{} \HOLConst{exec} 'cmdlist
 
-The 'cmdlist refers to a list of commands of the form discussed in the section above.  For example, to execute the transition from the PLAN_PB state to the MOVE_TO_ORP state, the monitor must return the transition type and command pair with the later of the pair in the form of a list 
+The 'cmdlist refers to a list of commands of the form discussed in the section above.  For example, to execute the transition from the PLAN_PB state to the MOVE_TO_ORP state, the monitor must return the transition type and command with the later of the pair in the form of a list 
 \[\text{\textit{exec [SOME (SLc (PL crossLD))]}} \]
 
 where \textit{SOME (SLc (PL crossLD))} is the single item in the cmdlist.  The transition type with the command list is then passed to the next-state and next-output functions.  The transition from the WARNO to the REPORT1 state in ssmPlanPB requires four commands.

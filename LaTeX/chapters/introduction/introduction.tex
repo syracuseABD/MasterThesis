@@ -16,24 +16,20 @@ What went wrong?  How did these terrorists gain access to a secured compound?
 
 Movies like this and news stories reporting real terrorist attacks on civilians are bringing the reality of security to the forefront of everyone's mind.   Everyone is concerned with controlling access to their information, their property, and more importantly their lives.   
 
-To drive it home, consider the importance of security in computer driven cars, bank accounts, medical records, pace makers, etc.  Security can be as simple as providing your daughter with a secret password for who can pick her up from school or as complicated as managing access to national security secrets.  In any and every system that is vulnerable to compromise or attack, security is one of the foremost considerations. 
-
+To drive it home, consider the importance of security in computer driven cars, bank accounts, medical records, pace makers, etc.  Security can be as simple as providing your daughter with a secret password for who can pick her up from school or as complicated as managing access to national security secrets.  In any and every system that is vulnerable to compromise or attack, security is the foremost consideration. 
+ 
 
 This chapter introduces the reader to a methodology for designing secure systems.  It briefly touches upon how this methodology fits in with current standards in systems engineering and systems security engineering. 
 
-%  It then introduces an approach to verifying and documenting this property using the Certified Security by Design (\glsentryshort{csbd}) approach.  After introducing the \glsentryshort{csbd}, this chapter presents an application of \glsentryshort{csbd} that aims to close the gap in its field of applicability.  It discuss how \glsentryshort{csbd} is applied to a non-automated, human-centered military system (patrol base operations).  Finally, this chapter offers the reader a glimpse at what to expect in the subsequent chapters.
 
       %%%%%%%%%%%%%%%%%%%% Section csbd %%%%%%%%%%%%%%%%%%%%%%
 \section{In Context of Systems Security Engineering}\label{sec:intro:motivation}
-The authority on standards in systems engineering is the \glsentrylong{iso} (\glsentryshort{iso}).  In one of its published standards (ISO/IEC/IEEE\footnote{ISO = \gls{iso}; IEC = \gls{iec}; and IEEE = \gls{ieee}} 24748-5 \cite{iso247482017} 15288 \cite{iso15288}) it describes systems engineering guidelines for managing man-made systems.  These man-made systems span the range from human-centered systems to fully automated systems.  An example of a human-centered system is a partially- or non-automated system for controlling access to a base or compound.  An example of a fully automated system is the computer that controls a driverless car.  In all these systems, security is often a critical component of the systems engineering process.
+This master thesis discusses the \Gls{storm} methodology for designing secure systems.  \gls{storm} applies state-of-the-field practices to design systems that are consistent with \glsentryshort{iso}/ \glsentryshort{iec}/\glsentryshort{ieee} standards and the \glsentryshort{nist} Systems Security Engineering Framework.  These standards ensure that security is the forefront  consideration of all security-sensitive systems.  
+
+The published standards on \gls{se} are ISO/IEC/IEEE\footnote{ISO = \gls{iso}; IEC = \gls{iec}; and IEEE = \gls{ieee}} 24748-5  and \cite{iso247482017} 15288 \cite{iso15288}.  They describe systems engineering guidelines for managing man-made systems.  These man-made systems span the range from human-centered systems to fully automated systems.  An example of a human-centered system is a partially- or non-automated system for controlling access to a base or compound.  An example of a fully automated system is the computer that controls a driverless car.  In all these systems, security is a critical component of the systems engineering process.
 
 
-The recognized authority in systems security engineering, a subspecialty of systems engineering, is the \gls{nist} Special Publication 800-160 (vol 1 and vol 2) \cite{NIST800160}.  It describes a framework for designing trustworthy systems by engineering security into the system from the start.  
-
-
-This master thesis discusses the \Gls{storm} methodology for designing secure systems.  \gls{storm} applies state-of-the-field practices to design systems that are consistent with \gls{iso}/ \gls{iec}/\gls{ieee} standards and the \gls{nist} Systems Security Engineering Framework.  These standards ensure that security is the forefront  consideration of all security-sensitive systems.  
-%
-%A subspecialty of systems security engineering manages access to security-sensitive objects using the principle of complete mediation.  Complete mediation broadly refers to verifying and documenting authentication and authorization of access to security sensitive objects. 
+\Gls{sse} is a subspecialty of systems engineering.  The Systems Security Engineering Framework is published by the \gls{nist} (Special Publication 800-160 (vol 1 and vol 2) \cite{NIST800160}).  It provides guidelines for designing trustworthy systems that engineer security into the system from the start.  
 
 \section{System-Theoretic Operational Risk Management (STORM)}\label{sec:intro:storm}
 \Gls{storm} is comprised of two components that each focus on some aspect of the Systems Security Engineering Framework.  The first component defines the security problem and finding solutions. It derives from a new paradigm in accident analysis called \Gls{stamp}.  This paradigm forms the basis for a hazard analysis methodology called \Gls{stpa}.  On top of \gls{stpa} is \Gls{stpasec}, which adds a security perspective to the hazard analysis. 
@@ -41,18 +37,17 @@ This master thesis discusses the \Gls{storm} methodology for designing secure sy
 The second \gls{storm} component demonstrates trustworthiness.  \Gls{csbd} defines security as \gls{cia}.  It uses an access-control logic and computer-aided theorem proving to reason about, verify, and document security properties.
 
 \section{Extending The Range of Applicability}\label{sec:intro:motivation}
-
-Systems engineering spans the range of fully automated to non-automated, human-centered systems.  Until now, \gls{storm} has been applied to automated systems.  This master thesis extends the range of \gls{storm} applicability by demonstrating it on a non-automated, human-centered system.  As an example of such a system, patrol base operations are chosen.  These operations are described in the U.S. Army Ranger Handbook \cite{rangermanual}.   
+Until now, \gls{storm} has been applied to automated systems.  This master thesis extends the range of \gls{storm} applicability by demonstrating it on a non-automated, human-centered system.  As an example of such a system, \gls{storm} is applied to the patrol base operations.  These operations are described in the U.S. Army Ranger Handbook \cite{rangermanual}.   
 
 \section{This Master Thesis}\label{sec:thismasterthesis}
-The main body of this thesis is divided into three parts: \gls{stpa} and \gls{csbd}. The first part is comprised of chapters \ref{chp:storm} and (add later \ref{stpa}).  The second part is comprised of chapters \ref{chp:csbdacl} through \ref{chp:other}.
+The main body of this thesis is divided into two parts: \gls{stpa} and \gls{csbd}. The first part is comprised of chapters \ref{chp:storm} and (add later \ref{stpa}).  The second part is comprised of chapters \ref{chp:csbdacl} through \ref{chp:pbssm}.
 
 
 Chapter \ref{chp:storm} describes \gls{storm} and \gls{stpa}/\gls{stpasec}.  The next chapter applies the \gls{stpa}/\gls{stpasec} analysis to the patrol base operations.  
 
-Chapter \ref{chp:csbdacl} discusses \gls{csbd}, the \gls{acl} and its implementation in the \Gls{hol} Interactive Theorem Prover.  Chapter \ref{chp:pb} describes a modularized, hierarchical model of the patrol base operations as secure state machines. Chapter \ref{chp:ssmmodel} describes secure state machines and their \gls{hol} implementation.  Chapter \ref{chp:pbssm} describes the \gls{hol} implementation of several patrol base operations secure state machines (described in chapter \ref{chp:pb}).  Chapter \ref{chp:other} discusses additional ideas that are discussed throughout the project, but not implemented in  \gls{hol}.  Chapter \ref{chp:discussion} discusses observations and findings of the overall project.  Finally, Chapter \ref{chp:future} discusses future work and implications. 
+Chapter \ref{chp:csbdacl} discusses \gls{csbd}, the \gls{acl} and its implementation in the \Gls{hol} Interactive Theorem Prover.  Chapter \ref{chp:pb} describes a modularized, hierarchical model of the patrol base operations as secure state machines. Chapter \ref{chp:ssmmodel} describes secure state machines and their \gls{hol} implementation.  Chapter \ref{chp:pbssm} describes the \gls{hol} implementation of several patrol base operations secure state machines (described in chapter \ref{chp:pb}).  Chapter \ref{chp:discussion} discusses observations and findings of the overall project.  Chapter \ref{chp:future} discusses future work and implications. 
 
-Appendix \ref{chp:background} provides supplemental information on formal methods and functional programming.  Appendices \ref{ppacl} through \ref{aap:ssmScript} contain pretty-printed \gls{hol}-generated code and script code for all theories and modules discussed in this master thesis.  Appendix \ref{foldermap} provides a map of the folder structure for the files included with this master thesis as well as a description of how to compile them.
+Appendix \ref{chp:background} provides supplemental information on formal methods and functional programming.  Appendices \ref{ppacl} through \ref{aap:ssmScript} contain pretty-printed \gls{hol}-generated code and script code for all theories and modules used in this master thesis.  Appendix \ref{foldermap} provides a map of the folder structure for the files included with this master thesis as well as a description of how to compile them.
 
 The next chapter brings the reader into the realm of systems security engineering by \gls{storm}.
 

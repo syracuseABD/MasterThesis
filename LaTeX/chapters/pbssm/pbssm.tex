@@ -120,7 +120,7 @@ Each \glsentryshort{ssm} defines its own next-state function.
 
 \HOLThmTag{ssmPBIntegrated}{PBNS_def}\HOLssmPBIntegratedTheoremsPBNSXXdef
 
-\textit{PBNS} takes a state and a transition (\textit{exec}, \textit{trap}, or \textit{discard}) command list (\textit{x}) pair as parameters.
+\textit{PBNS} takes a state and a transition (\textit{exec}, \textit{trap}, or \textit{discard}) command list (\textit{x}) as parameters.
 
 The next-state function for ssmPB uses pattern matching and if-then-else statements.  The function first matches the state.  Then, it uses the \textit{getPlCom} function to extract the \HOLFreeVar{plCommand} from the command list \textit{x}. It compares this command to the command on the right.  If they are equal, then the transition occurs.  Otherwise, the state does not change.  
 
@@ -196,7 +196,7 @@ Define`
 
 
 \paragraph*{State-independent Authorization}
-The state-independent authorization function \textit{secAuthorization} takes an input list as a parameter.  It uses a helper function called \textit{secHelper}.  \textit{secHelper} calls \textit{getOmniCommand}.  It return a authorization statement of the form 
+The state-independent authorization function \textit{secAuthorization} takes an input list as a parameter.  It uses a helper function called \textit{secHelper}.  \textit{secHelper} calls \textit{getOmniCommand}.  It returns a authorization statement of the form 
 \[\text{\textit{Omni controls cmd.}}\]
 
 
@@ -308,7 +308,7 @@ REWRITE_RULE[inputList_def, extractInput_def, MAP, propCommandList_def,
   PlatoonLeader_PLAN_PB_exec_justified_lemma
 \end{lstlisting}
 
-The \gls{hol} generated output is shown below.
+The \gls{hol}-generated output is shown below.
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_exec_justified_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXjustifiedXXthm
 
 With few exceptions, all proofs justifying execution of a command in the \glspl{ssm} follow the same format.
@@ -359,7 +359,7 @@ The principals are defined in the datatype \textit{stateRole}.  There are three 
 \HOLFreeVar{stateRole} = \HOLConst{PlatoonLeader} \HOLTokenBar{} \HOLConst{PlatoonSergeant} \HOLTokenBar{} \HOLConst{Omni}
 
 \subsection{States}
-States are defined as \HOLFreeVar{slState}.  The names differ only slightly from the digram but are straight forward.  
+States are defined as \HOLFreeVar{slState}.  The names differ only slightly from the diagram but are straight forward.  
 \begin{tabbing}
 \HOLFreeVar{slState} = \=\HOLConst{CONDUCT_ORP} \\
 					\>\HOLTokenBar{} \HOLConst{SECURE} \\
@@ -440,6 +440,7 @@ Define`
 
 \subsection{Next-Output Function}
 The next-output function follows the same pattern as the next-state function.  It returns outputs instead of states.
+
 \HOLThmTag{ssmConductORP}{conductORPOut_def}\HOLssmConductORPTheoremsconductORPOutXXdef
 
 \subsection{Authentication}

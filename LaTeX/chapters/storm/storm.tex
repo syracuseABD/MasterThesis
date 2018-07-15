@@ -8,7 +8,7 @@
 
 %%%%%%%%%%%%%%%%%%%%% Chapter STORM %%%%%%%%%%%%%%%
 \chapter{Background And Introduction to STORM}\label{chp:storm}
-This chapter provides an introduction to \glsentrylong{storm} (\glsentryshort{storm}).  \gls{storm} falls within the field of \gls{se} and the sub-discipline of \gls{sse}. To familiarize (or refresh) the reader, this chapter begins with some background on \gls{se} and \gls{sse}.  The \gls{se} concept of system life-cycle phases and the \gls{sse} Framework are introduced.  Following this, \gls{storm} and it's components (\gls{stpasec} and \gls{csbd}) are introduced.  The chapter concludes with a discussion of the patrol base operations as a sample systems to which  \gls{storm} is applied.
+This chapter provides an introduction to \glsentrylong{storm} (\glsentryshort{storm}).  \gls{storm} falls within the field of \glsentrylong{se} (\gls{se}) and the sub-discipline of \glsentrylong{sse} (\gls{sse}). To familiarize (or refresh) the reader, this chapter begins with some background on \gls{se} and \gls{sse}.  The \gls{se} concept of system life-cycle phases and the \gls{sse} Framework are introduced.  Following this, \gls{storm} and it's components (\gls{stpasec} and \gls{csbd}) are introduced.  The chapter concludes with a discussion of the patrol base operations as a sample systems to which  \gls{storm} is applied.
 
 %%%%%%%%%%%%%%%%%%%%% Section SE %%%%%%%%%%%%%%%
 \section{Systems Engineering}\label{sec:stormse}
@@ -23,7 +23,7 @@ According to Holstein and Bode's, who summarized systems engineering for the Enc
 
 The emergence of systems engineering and its growing popularity is linked to the growing complexity of systems.  Systems are composed more and more of numerous interacting parts.  These interacting parts often exhibit emergent properties.  These are properties that arise from the interactions of many components.  These properties are not attributable to any one component and thus require a systems-thinking perspective. Holstein and Bode site the Nike Ajax U.S. Air Defense System as one of the earlier examples of these system-level emergent properties. Tactical range of the Ajax requires consideration of multiple factors including aerodynamic design, maneuverability provided by the control systems, warhead size and weight, etc.  Other factors include feedback from radar and the autopilot.  Achieving tactical range emerges from analysis of the many interacting components.  
 
-\Glsentrylong{se} is often employed in the communications and computing industries. But, it works in any field that works with large complex systems.  The applicability of systems engineering to other fields is promoted, in part, by the increased capacity to manage complex systems that arise from the increased computational power available.  Systems engineering is a growing field and demands for systems engineers will continue to grow as systems become more and more complex.
+\Glsentrylong{se} is often employed in the communications and computing industries. But, it works in any field that works with large complex systems.  The applicability of systems engineering to other fields is promoted, in part, by the increased capacity to manage complex systems that arise from the increased computational power available.  Computational power and thus complexity will only grow in the future, and consequently, so will the need for competent systems engineers.
 
 The relevant \glsentryshort{se} standards are defined in ISO/IEC/IEEE\footnote{ISO = \glsentrylong{iso}; IEC = \glsentrylong{iec}; and IEEE = \glsentrylong{ieee}} 24748-5 \cite{iso247482017} and ISO/IEC/IEEE 25288\footnote{These standards reference other relevant standards.} \cite{iso15288}.  These standards define the concept of system life-cycle phases: concept, development, production, utilization, support, and retirement.  The concept and development phases are the focus of \gls{storm} because safety and security should be considered during the design phase.  However, the support phase is also relevant for re-envisioning and updating the system.  
 
@@ -36,20 +36,18 @@ The relevant \glsentryshort{se} standards are defined in ISO/IEC/IEEE\footnote{I
 
 Systems Security Engineering (\gls{sse}) is a sub-discipline of Systems Engineering (SE).  It applies scientific, mathematical, and related technical concepts and procedures to engineer trustworthy systems that meet stakeholder needs. 
 
-Systems Security Engineering probably developed alongside systems engineering.  But, the need for security engineering is becoming more and more on the forefront of everyone's minds in today's technology-dependent society.  With recent high-profile security breaches such as the Target and intel...companies can no longer afford to take a relaxed posture on security.  This need for security is stated no better than by experts in the field
+Systems Security Engineering probably developed alongside systems engineering.  But, the need for security engineering is becoming more and more on the forefront of everyone's minds in today's technology-dependent society.  With recent high-profile security breaches such as the Target  security leak (\$18.5 million legal settlement \cite{target}) and the disastrous Snowden leaks (cost of leak unknown), companies can no longer afford to take a relaxed posture on security.  This need for security is stated no better than by experts in the field
 
 \begin{quote}
-\textit{"With the continuing frequency, intensity, and adverse consequences of cyber-attacks, disruptions, hazards, and other threats to federal, state, and local governments, the military, businesses, and the critical infrastructure, the need for trustworthy secure systems has never been more important to the long-term economic and national security interests of the United States. Engineering-based solutions are essential to managing the growing complexity, dynamically, and interconnectedness of today?s systems, as exemplified by cyber-physical systems and systems-of-systems, including the Internet of Things."}  \cite{NIST800160}
-\end{quote}
- This quote is from experts in the field of \gls{sse} who developed the authoritative guidelines in the \gls{nist} Special Publication 800-160 vol 1 \cite{NIST800160}.  
-
+\textit{"With the continuing frequency, intensity, and adverse consequences of cyber-attacks, disruptions, hazards, and other threats to federal, state, and local governments, the military, businesses, and the critical infrastructure, the need for trustworthy secure systems has never been more important to the long-term economic and national security interests of the United States. Engineering-based solutions are essential to managing the growing complexity, dynamically, and interconnectedness of today's systems, as exemplified by cyber-physical systems and systems-of-systems, including the Internet of Things."}  \cite{NIST800160}
+\end{quote} \begin{flushright}\gls{nist} Special Publication 800-160 vol 1 \cite{NIST800160}.\end{flushright}
 
 
 Systems Security Engineering is applied whenever security is a component of systems engineering.  As a multi-disciplinary, subspecialty of systems engineering, \gls{sse} focuses on stakeholder assets and loss avoidance or mitigation.  The Systems Security Engineering Framework defines the context in which \gls{storm} applies.
    
-
+%%%%%%%%%%%% Systems Security Engineering Framework %%%%%%%%%%%%%%
 \subsection{Systems Security Engineering Framework}
-The authoritative document on \gls{sse} is the \gls{nist} Special Publication 800-160 Volumes 1 and 2.  In particular, volume 1 defines the \gls{sse} Framework.  This framework defines \gls{sse} activities that ensure the stakeholder's definition of security and asset valuation is understood.  A diagram of the framework is shown in figure \ref{sseframework}.
+The authoritative document on \gls{sse} is the \gls{nist} Special Publication 800-160 Volumes 1 and 2.  In particular, volume 1 defines the \gls{sse} Framework.  This framework defines \gls{sse} activities that ensure the stakeholder's definition of security and asset valuation informs the system's security design.  A diagram of the framework is shown in figure \ref{sseframework}.
 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{../figures/sseframework}
@@ -58,13 +56,13 @@ The authoritative document on \gls{sse} is the \gls{nist} Special Publication 80
 
 The framework describes the problem, solution, and trustworthiness activity contexts.  These three contexts are further refined. 
 \paragraph*{Problem}
-The problem phase focuses on defining security from the stakeholder's needs, purpose, and mission.  It is divided into four sub-contexts (activities).  The first activity defines the security objective. What does it means to be "\textit{adequately secure}"?   What are the assets and asset losses?  Which losses are unacceptable?
+The problem phase focuses on defining security from the stakeholder's needs, purpose, and mission.  It is divided into four sub-contexts (activities).  The first activity defines the security objective. What does it mean to be "\textit{adequately secure}"?   What are the assets and asset losses?  Which losses are unacceptable?
  
 The second activity defines measures of success.  What level of asset protection is required?  What level of assurance or protection is required?  
 
 The third activity defines the system life-cycle security concepts.  What is the system security context throughout the life-cycle of the system?  What processes, methods, and procedures throughout the system's life cycle need security?  
 
-The fourth activity defines the security requirements.  The stakeholder security requirements are determined from the previous three subcategories.
+The fourth activity defines the security requirements.  The stakeholder security requirements are determined from the previous three activities.
 
 \paragraph*{Solution}
 With the problem defined, the solution activity transforms the problem into security design requirements.  This has three activities.  The first activity defines the security aspects of the solution. Six aspects are listed in \gls{nist} SP 800-160: protection strategy; security design requirements; security architecture view and viewpoints; security design; security procedural aspects, capabilities, and limitations in the system life-cycle; and how to verify and measure security performance. 
@@ -81,7 +79,7 @@ The second trustworthiness activity demonstrates that the assurance case is sati
 \subsubsection{Conforming to The SSE Framework}
 \gls{storm}is consistent with the \gls{sse} Framework.  It is up to the \gls{storm} user to verify in detail that \textit{all} nine sub-contexts of the \gls{sse} Framework are addressed.  
 
-\gls{storm}'s two components in combination satisfy all three \gls{sse} Framework contexts.  The problem and solution contexts are covered by gls{stpa}/\gls{stpasec}.  The trustworthy context is covered by \gls{csbd}.  Both \gls{stpa}/\gls{stpasec} and \gls{csbd} are described in the following sections.
+\gls{storm}'s two components in combination satisfy all three \gls{sse} Framework contexts.  The problem and solution contexts are covered by \gls{stpa}/\gls{stpasec}.  The trustworthy context is covered by \gls{csbd}.  Both \gls{stpa}/\gls{stpasec} and \gls{csbd} are described in the following sections.
 
 
 %%%%%%%%%%%%%%%%%%%%% Section STORM %%%%%%%%%%%%%%%
@@ -90,9 +88,11 @@ The second trustworthiness activity demonstrates that the assurance case is sati
 \glsentrylong{storm} (\gls{storm}) is an approach to managing risk and engineering trustworthy systems that satisfy stakeholder requirements and conform to industry standards.  It applies state-of-the-field analysis techniques to design products that are safe, secure, and integral.  It applies formal methods to produce reproducible and auditable verification demonstrating that stakeholder claims are satisfied.  
 
 
-\gls{storm} is a new approach to implementing the Systems Security Framework.  It can also be used in conformance to the \gls{iso}/\gls{iec}/\gls{ieee} 15288 and 24748 standards.  
+\gls{storm} is a new approach to implementing the Systems Security Engineering Framework.  It can also be used in conformance to the \gls{iso}/\gls{iec}/\gls{ieee} 15288 and 24748 standards.  
 
-\gls{storm} is the result of the collaborative effort of Professor Shiu-Kai Chin of the College of Engineering and Computer Science at Syracuse University, Erich Devendorf, PhD of the U.S. Air Force Research Laboratory, and William Young, PhD of the U.S. Air Force 53rd Electronic Warfare Group.  \gls{stpa} is the culmination of years of research in safety engineering by \Gls{mit} professor Nancy Leveson.  Whereas \gls{stpa} focuses on safety engineering, \gls{stpasec} focuses on security engineering.  \gls{stpasec} is the work of Dr. Young, who presented it as his PhD thesis in 2014 at \gls{mit}.  
+\gls{storm} is the result of the collaborative effort of Professor Shiu-Kai Chin of the College of Engineering and Computer Science at Syracuse University, Erich Devendorf, PhD of the U.S. Air Force Research Laboratory, and William Young, PhD of the U.S. Air Force 53rd Electronic Warfare Group.  
+
+\gls{stpa} is the culmination of years of research in safety engineering by \Gls{mit} professor Nancy Leveson.  Whereas \gls{stpa} focuses on safety engineering, \gls{stpasec} focuses on security engineering.  \gls{stpasec} is the work of Dr. Young, who presented it as his PhD thesis in 2014 at \gls{mit}.  
 
 \gls{csbd} is derived from the work of Professor Shiu-kai Chin and Professor Susan Older (also of the College of Engineering and Computer Science at Syracuse University).  They wrote the text on \textit{Access Control, Security, and Trust: A Logical Approach} \cite{ChinOlder} from which \gls{csbd} is derived.  Professor Shiu-Kai Chin teaches components of \gls{csbd} at Syracuse University in the College of Engineering and Computer Science.  
 
@@ -157,7 +157,7 @@ If the controller's process model is somehow flawed or not consistent with the s
 \subsection{STPA/STPA-Sec}\label{ssec:stpa}
 System-Theoretic Process Analysis (STPA) is a systems engineering methodology that helps the engineer identify and mitigate stakeholder losses. It does this using a four step process that is founded on the System-Theoretic Accident Model and Processes (STAMP).  Whereas STAMP is a way of thinking about the causes of accidents, \gls{stpa} is a method to analyze systems in order to prevent or mitigate losses caused by these accidents.  
 
-\gls{stpa} follows the guidelines described in \gls{iso}/\gls{iec}/\gls{ieee}15288 for System Life-Cycle Processes.  It's focus is on the Technical Processes (gls{iso}/\gls{iec}/\gls{ieee} 15288), the concept and development stage of the system life cycle (defined in ISO/IEC/IEEE 24748), and the problem and solution contexts of the Systems Security Engineering Framework (\gls{nist} SP 800-160).
+\gls{stpa} follows the guidelines described in \gls{iso}/\gls{iec}/\gls{ieee} 15288 for System Life-Cycle Processes.  It's focus is on the Technical Processes (gls{iso}/\gls{iec}/\gls{ieee} 15288), the concept and development stage of the system life cycle (defined in ISO/IEC/IEEE 24748), and the problem and solution contexts of the Systems Security Engineering Framework (\gls{nist} SP 800-160).
 
 \gls{stpa}, like \gls{stamp}, is the work of Professor Nancy Leveson from \gls{mit}.  \gls{stpasec} is William Young's (PhD and Col. in USAF) PhD thesis dissertation.  It is a modification of \gls{stpa} that adds on a security component.  
 
@@ -182,7 +182,7 @@ The primary difference between \gls{stpa} and \gls{stpasec} is that \gls{stpa} t
 The first step defines the purpose of the analysis and the system to be produced.  Unacceptable losses/accidents are defined by the stakeholders.  Then, system-level vulnerabilities/hazards are defined and linked to the losses/accidents they would cause in the worse-case scenario.  Next, system-level constraints are defined and linked to vulnerabilities/hazards. 
 
 \paragraph*{Step 2: Model The Control Structure}
-The second step models the system's functional control structure.  This describes the flow of control (or information) in the system.  Figure \ref{controlmodel} shows an example of a control model.  
+The second step models the system's functional control structure.  This describes the flow of control (or information) in the system.  Figure \ref{controlmodel} shows an a generalized control structure.  
 
 The control structure shines light on system-level hazards.  Figure \ref{stpasecControlStructure} shows a control structure with the potential vulnerabilities/hazards labeled.
 \begin{figure}[h]
@@ -190,7 +190,7 @@ The control structure shines light on system-level hazards.  Figure \ref{stpasec
 \caption{\label{stpasecControlStructure} Control structure with potential system-level vulnerabilities/hazards and security considerations. (Image captured from  \textit{Systems thinking for safety and security} \cite{sys4sec}.)}
 \end{figure}
 
-1 and 3 type vulnerabilities/hazards are caused by representation flaws.  These include missing or incorrect information or feedback and flaws involving the controller's model of the system.  2 type vulnerabilities/hazards are caused by algorithm flaws (algorithms implement the controller's process model).  4 type vulnerabilities/hazards are caused by component failures.
+(1) and (3) type vulnerabilities/hazards are caused by representation flaws.  These include missing or incorrect information or feedback and flaws involving the controller's model of the system.  (2) type vulnerabilities/hazards are caused by algorithm flaws (algorithms implement the controller's process model).  (4) type vulnerabilities/hazards are caused by component failures.
 
 The control structure consists of two controllers, one at the top and one near the bottom and to the left.  The lower control structure could represent an adversary sending conflicting instructions to the controlled process (bottom of diagram).  
 
@@ -208,7 +208,7 @@ In this step, each control action is analyzed for all four types of \gls{uca}s t
 
 
 \paragraph*{Step 4: Identify Loss Scenarios}
-The last step identifies scenarios that could cause the \gls{uca}s discovered in step 3.  Each scenario describes how a \gls{uca} could cause a system-level vulnerability/loss in the worst-case scenario.  In addition, associated causal factors are analyzed for each scenario.  This analysis guides system security engineering decisions.
+The last step identifies scenarios that could cause the \gls{uca}s discovered in step 3.  Each scenario describes how a \gls{uca} could cause a system-level vulnerability/loss in the worst-case scenario.  Then, associated causal factors are analyzed for each scenario.  This analysis guides system security engineering decisions.
 
 
 %%%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
@@ -224,9 +224,9 @@ The last step identifies scenarios that could cause the \gls{uca}s discovered in
 
 \gls{csbd} can be used to demonstrate trustworthiness of a system within the System Security Engineering Framework.  \gls{csbd} is the second major component of \gls{storm}.
 
-\gls{csbd} is a method for formally verifying and documenting the security properties of a systems.  It focuses on designing systems that satisfy the principle of complete mediation.  It uses an access-control logic (ACL) to reason about access to security sensitive objects.  It uses computer-aided reasoning such as the Higher Order Logic (HOL) Interactive theorem prover to formally verify and document these security properties.  .
+\gls{csbd} is a method for formally verifying and documenting the security properties of a system.  It focuses on designing systems that satisfy the principle of complete mediation.  It uses an access-control logic (ACL) to reason about access to security sensitive objects.  It uses computer-aided reasoning such as the Higher Order Logic (HOL) Interactive theorem prover to formally verify and document these security properties.  .
 
-\gls{csbd} has its own chapter (chapter \ref{chp:csbdacl}) and is noted here to show how it fits into STORM.
+\gls{csbd} has its own chapter (chapter \ref{chp:csbdacl}) and is briefly described above to explain how it fits into STORM.
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
 \subsubsection{Confidentiality, Integrity, and Availability (CIA) }\label{sssect:ssmts}
@@ -234,7 +234,7 @@ At the core of security are the concepts of confidentiality, integrity, and avai
 
 Integrity, on the other hand, refers to the whole of the object (or information, etc.). Integrity controls who or what can modify the object. This also describes an individual's authority over an object.
 
-Availability is as a measure of operability or degree to which the system is mission capable \cite {availability}. 
+Availability is a measure of operability or degree to which the system is mission capable \cite {availability}. 
 
 Confidentiality, integrity, and Availability are guarded by the principle of complete mediation.  
 
@@ -264,6 +264,6 @@ For the purpose of this master thesis, patrol base operations are an example of 
 
 The patrol base operations are described throughout this master thesis within the appropriate context.  They are first described in the next chapter in the context of the \gls{stpa}/\gls{stpasec} analysis.  They are described once again in chapter \ref{chp:pb} where they are modeled as secure state machines.  They are also described in chapter \ref{chp:pbssm} as \gls{hol}-implemented secure state machines.
 
-This chapter provides sufficient background for the reader to understand the systems engineering and systems security engineering bases of \gls{storm}.  It also describes \gls{storm} and its components.  The next chapter applies  \gls{stpa}/\gls{stpasec} on the patrol base operations.
+This chapter provides sufficient background for the reader to understand the systems engineering and systems security engineering basis of \gls{storm}.  It also describes \gls{storm} and its components.  The next chapter applies  \gls{stpa}/\gls{stpasec} on the patrol base operations.
 
 \end{document}
