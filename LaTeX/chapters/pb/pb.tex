@@ -123,20 +123,11 @@ The diagram is only a partial model of the patrol base operations.  The horizont
 
 \paragraph*{States and Transitions in The Hiearchy}
 The small, colored dots in figure \ref{overalldiagramsquashed} represent states (phases) of the patrol base operations.   The labels for these states are not readable in this diagram because of limited space, but each dot contains a description of the state.  The dots are color coded, with a different color for dots (states) at each level. 
-%
-%In figure \ref{overalldiagramsquashed}, the red dots at the top of the diagram represent the escape level \glsentryshort{ssm}.  But, they do not represent states in the \glsentryshort{ssm}.  This is because the escape level  \glsentryshort{ssm} is accessible by all phases of the patrol base operations.  This means that if can not be ascribed to any one level of the hierarchy. 
 
 The lines connecting one dot to another represent transition requests.  These lines are annotated, but are also unreadable in this diagram. 
 
 The following sections describe modules from this diagram.  The descriptions of the states and transitions are discussed and a readable diagram for each model is provided.  
 
-%The dots representing states are connected to each other by lines.  These lines represent allowable transitions from one state to another.  The escape level is again an exception.  If no line connects one state to another then no transition is allowed.  
-
-%The red dots representing the escape level \glsentryshort{ssm} are best thought of as multiple copies of a floating \glsentryshort{ssm}.  The escape level \glsentryshort{ssm} acts as a sub-\glsentryshort{ssm} for all \glsentryshortpl{ssm} in the hierarchy.  During patrol base operations, abortion of the patrol base operations can occur at any action from any state at any level.  This means that any state at any level can be terminated by the escape level \glsentryshort{ssm}.  Drawing lines from all states to the escape level \glsentryshort{ssm} and drawing really long lines clutters the diagram.  Therefore, only lines at the top level are drawn and the red dots are duplicated.
-%
-% The lines in the diagram are annotated by \glsentryshort{ssm} requests.  (Annotations are visible in the original Visio diagram, but not in this squashed version.)  For example, a line connecting the top level state PLAN_PB is annotated with the request \textit{PlatoonLeader says crossLD}.  crossLD is an abbreviation for "cross the line of discrimination" and it is the command to transition to the MOVE_TO_ORP state.    Lines are not annotated beyond the sub level.
-%
-%Details of each level follow in the next section.
 
 \subsection{Descriptions of Individual Modules}
 Each module is described diagrammatically in the following sections.  They all follow a similar pattern.  The general pattern is discussed in this section.  Exceptions are discussed along with the diagrammatic descriptions for each individual module. (Note also that "module" and "SSM" are used interchangeably in the following sections.)
@@ -153,22 +144,11 @@ The second approach requires confirmation of completion of the lower level modul
 
 For this second approach, an "all knowing" principal (essentially a signal relay) communicates when a lower level module is complete.  This principal is called OMNI. OMNI allows for encapsulation of each module by communicating information about one module to another and eliminating the need for principals in one module to "know" what is happening in another module.  This is necessary to reason with the \gls{acl} in \gls{hol}.  It is a feature of the model and not the operations.
 
-%
-%Transitions at one level require confirmation of completion of that state at the lower level.  For example, the PLAN_PB state at the top level is the basis for the less abstract ssmPlanPB secure state machine one level below it.  Before the top level can transition from the PLAN_PB state to the MOVE_TO_ORP state, ssmPlanPB must be in the COMPLETE state.  
-%
-% It is the policy that defines which transitions are allowed.  The policy should reflect the purpose\footnote{The purpose for this model is to demonstrate \gls{storm}.  Therefore, its objectives with regards to what needs access control and what does not is left to the discretion of the author.} of the model.  There are, in fact, a variety of practical ways to implement the policy.  A combination of the two policy types above are implemented in this master thesis.  However, it is also possible to allow for transitions from one state in one module to another state in another model.  For example, the patrol base operations could begin in the move to ORP phase at the top level.  Then, they could transition to the receive mission phase in the lower level planning module. 
-
-%But, encapsulation requires that each module be isolated from the other.  To accommodate this, an OMNI level principal communicates when a sub level is complete. Thus, transitions from one state to another require a statement from OMNI and a request from an authorized authority.  An example is \textit{OMNI says ssmPlanPBComplete} and \textit{PlatoonLeader says crossLD}.
-%
-%The security policy for each module has a policy for OMNI and a policy for all authorized principals.  For OMNI, the security policy contains the clause \textit{OMNI controls omniCommands}.  In the example above, the command ssmPlanPBComplete is defined as an omniCommand.  For everyone else, the security policy has clauses of the form \textit{ssmPlanPBComplete impf (PlatoonLeader controls crossLD)}.  This is sufficient to prove complete mediation for transitions.
-%
 
 \paragraph*{Diagrammatic Description}
 The colors of the states in the diagrams correspond to their colors in the overall squished diagram shown in figure \ref{overalldiagramsquashed}.  
 
 All lines represent allowable transitions with an arrow indicating the direction of the transition.  Each line is annotated with the appropriate \gls{acl} request (or command).  The last line in each module is an exception.  It connects the COMPLETE state to the initial state.  This line is not annotated. In \gls{ssm}s that integrate modules, this could be thought of as feedback from OMNI.
-
-% It is implemented in the \glsentryshort{ssm} above it as a signal from the OMNI level\footnote{OMNI is all knowing.} that the lower-level \glsentryshort{ssm} is complete\footnote{Note, it is possible that the output for the transition to the COMPLETE state is \textit{OMNI says ssmPlanPBComplete}.  This may or may not have been implemented in the \glsentryshort{hol} proofs at the time this master thesis was complete.}. 
 
 \paragraph*{Naming conventions}
 What follows are the naming conventions for the diagrams.  They also apply to the \gls{hol} implementation of the \gls{ssm}.
@@ -186,11 +166,6 @@ The OMNI level is not represented in the Visio diagram.  It is not really a leve
 In all \gls{ssm}, OMNI is a principal who has authority over OMNI level commands.  These commands communicate the completion of a lower-level \gls{ssm}.  For example, at the top level, before the Platoon Leader can transition from the PLAN_PB state to the MOVE_TO_ORP state, he must receive the command \textit{OMNI says ssmPlanPBComplete}.  The top level security policy contains the clause \textit{OMNI controls ssmPlanPBComplete}.  The \textit{Controls} rule discussed in section \ref{ssec:inferencerules} then allows the Platoon Leader to conclude that the lower-level \gls{ssm} is complete.  
 \clearpage
 
-
-%OMNI serves as an integrating principal.  OMNI was created to accommodate encapsulation of all the secure state machines.  OMNI "knows" when one secure state machine is complete and then conveys that information to other secure state machines as needed.  For example, In the top level \glsentryshort{ssm}, transition from the PLAN_PB state to the MOVE_TO_ORP state requires completion of the ssmPlanPB secure state machine.  OMNI knows when this happens and relays that information to the top level \glsentryshort{ssm}.  In this way, the top level knows what is happening at other levels only through OMNI and need not be concerned with the lower level \glsentryshortpl{ssm} otherwise.
-
-
-
           %%%%%%%%%%%%%%%% Subsection Escape %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Escape}\label{ssec:escape}
 A diagram of the escape level is shown in figure \ref{escapeDiagram}.  The purpose of the escape level is to model situations wherein the patrol base operations must be aborted.  
@@ -205,7 +180,6 @@ The square boxes in the diagram represent communication from outside the module.
 
 The abortable conditions are \textit{returnToBase}, \textit{changeMission}, \textit{resupply}, and \textit{reactToContact}\footnote{React to contact in this description refers to unwanted contact that requires the mission to be aborted.  It does not refer to planned contact in combat missions or contact that does not require mission abortion.}.  
 
-%OMNI receives information from somewhere else that one of these conditions is true, for example \textit{returnToBase}.  In response, OMNI submits a request to the escape level:  \textit{OMNI says returnToBase} (etc.).  
 
 The security policy for the escape level contains the clauses \textit{OMNI controls returnToBase}, \textit{OMNI controls changeMission}, etc.  Given a request \textit{OMNI says returnToBase} and the security policy, \textit{returnToBase} is believed.  
 
@@ -299,7 +273,6 @@ The top level CONDUCT_ORP state is expanded into the ssmConductORP \gls{ssm} and
 \caption{\label{ssmConductORPDiagram} Horizontal slice: ConductORP diagram.}
 \end{figure}
 
-%ssmConductORP is straight forward. But, there are two principals. The PlatoonLeader is authorized on all transitions except for the transition from SECURE to ACTIONS_IN.  The PlatoonSergeant is responsible for this transition.  Everything follows sequentially.  
 
 This \gls{ssm} has four states: SECURE, ACTIONS_IN, WITHDRAW, and COMPLETE.  
 
@@ -348,9 +321,6 @@ In contrast to ssmMoveToORP, this is not an integrating \gls{ssm}, therefore the
 The security policy allows for transitions if requested to do so from the Platoon Leader or the PlatoonSergeant.  
 
 
-%ssmConductPB is straight forward. But, there are two principals. The PlatoonLeader is authorized on all transitions except for the transition from SECURE to ACTIONS_IN.  The PlatoonSergeant is responsible for this transition.  Everything follows sequentially.  
-%\clearpage
-
           %%%%%%%%%%%%%%%% Subsection Vertical Slice %%%%%%%%%%%%%%%%%%%%
 \subsection{Vertical Slice}\label{ssec:verticalslice}
 The vertical slice is an expansion of one state at each level of the hierarchy.  It is the middle section in the overall, squished diagram in figure \ref{overalldiagramsquashed}.  This is the only section of the patrol base operations that are modeled through to the lowest level of abstraction.
@@ -376,7 +346,6 @@ This is not an integrating \gls{ssm}.  Therefore there is no OMNI principal.
 
 The security policy allows for transitions if requested to do so from the Platoon Leader.  
 
-%ssmSecureHalt is straight forward. There is only one principal authorized to make transitions.  This is the Platoon Leader.  Everything follows sequentially.  
 \clearpage
 
                   %%%%%%%%%%%%% Subsection ssmORPRecon %%%%%%%%%%%%%%%%%%%
