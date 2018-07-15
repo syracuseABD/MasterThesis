@@ -39,20 +39,20 @@
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Transition rules in HOL. Image taken from Certified Security by Design Using Higher Order Logic \cite {certmanual}}}{87}{figure.5.4}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Top level diagram.}}{94}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Horizontal slice: ConductORP diagram.}}{116}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Horizontal slice: PlanPB diagram.}}{134}{figure.6.3}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Horizontal slice: ConductORP diagram.}}{117}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Horizontal slice: PlanPB diagram.}}{135}{figure.6.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces An abbreviated concept for a soldier module.}}{167}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Horizontal slice: PlanPB diagram.}}{168}{figure.7.2}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Alternative path through the three non-sequential states.}}{168}{figure.7.3}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Permutation paths through the three non-sequential states..}}{169}{figure.7.4}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces An abbreviated concept for a soldier module.}}{161}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Horizontal slice: PlanPB diagram.}}{162}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Alternative path through the three non-sequential states.}}{162}{figure.7.3}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Permutation paths through the three non-sequential states..}}{163}{figure.7.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces An implementation of the boolean datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{180}{figure.a.A.1}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces An implementation of a tree datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{181}{figure.a.A.2}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces An implementation of the weekday datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{181}{figure.a.A.3}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces An implementation of the function \textit {is_weekend} in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{181}{figure.a.A.4}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces An implementation of a parametrized tree datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{182}{figure.a.A.5}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces An implementation of the boolean datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{174}{figure.a.A.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces An implementation of a tree datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{175}{figure.a.A.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces An implementation of the weekday datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{175}{figure.a.A.3}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces An implementation of the function \textit {is_weekend} in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{175}{figure.a.A.4}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces An implementation of a parametrized tree datatype in ML. Image from \textit {Introduction to Programming Languages/Algebraic Data Types} \cite {types} }}{176}{figure.a.A.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

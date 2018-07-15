@@ -118,8 +118,8 @@
 \BOOKMARK [1][-]{section.6.3}{ssmPlanPB: Non-sequential Transitions}{chapter.6}% 118
 \BOOKMARK [2][-]{subsection.6.3.1}{Principals}{section.6.3}% 119
 \BOOKMARK [2][-]{subsection.6.3.2}{States}{section.6.3}% 120
-\BOOKMARK [2][-]{subsection.6.3.3}{Commands}{section.6.3}% 121
-\BOOKMARK [2][-]{subsection.6.3.4}{Output}{section.6.3}% 122
+\BOOKMARK [2][-]{subsection.6.3.3}{Output}{section.6.3}% 121
+\BOOKMARK [2][-]{subsection.6.3.4}{Commands}{section.6.3}% 122
 \BOOKMARK [2][-]{subsection.6.3.5}{Next-State Function}{section.6.3}% 123
 \BOOKMARK [2][-]{subsection.6.3.6}{Next-Output Function}{section.6.3}% 124
 \BOOKMARK [2][-]{subsection.6.3.7}{Authentication}{section.6.3}% 125
@@ -137,7 +137,7 @@
 \BOOKMARK [1][-]{section.8.1}{Patrol Base Operations}{chapter.8}% 137
 \BOOKMARK [1][-]{section.8.2}{Automation}{chapter.8}% 138
 \BOOKMARK [2][-]{subsection.8.2.1}{STORM}{section.8.2}% 139
-\BOOKMARK [0][-]{section*.68}{Appendices}{}% 140
+\BOOKMARK [0][-]{section*.65}{Appendices}{}% 140
 \BOOKMARK [0][-]{Appendix.a.A}{Background}{}% 141
 \BOOKMARK [1][-]{section.a.A.1}{Formal Methods}{Appendix.a.A}% 142
 \BOOKMARK [1][-]{section.a.A.2}{Functional Programming}{Appendix.a.A}% 143
@@ -146,8 +146,8 @@
 \BOOKMARK [1][-]{section.a.A.5}{Other Interactive Theorem Provers}{Appendix.a.A}% 146
 \BOOKMARK [1][-]{section.a.A.6}{How to Compile The Included Files}{Appendix.a.A}% 147
 \BOOKMARK [0][-]{Appendix.a.B}{Access Control Logic Theories: Pretty-Printed Theories}{}% 148
-\BOOKMARK [0][-]{Appendix.a.C}{Secure State Machine \046 Patrol Base Operations: Pretty-Printed Theories }{}% 149
-\BOOKMARK [0][-]{Appendix.a.D}{Secure State Machine Theories: HOL Script Files}{}% 150
+\BOOKMARK [0][-]{Appendix.a.C}{Parametrizable Secure State Machine \046 Patrol Base Operations: Pretty-Printed Theories }{}% 149
+\BOOKMARK [0][-]{Appendix.a.D}{Parametrizable Secure State Machine Theories: HOL Script Files}{}% 150
 \BOOKMARK [1][-]{section.a.D.1}{ssm}{Appendix.a.D}% 151
 \BOOKMARK [1][-]{section.a.D.2}{satList}{Appendix.a.D}% 152
 \BOOKMARK [0][-]{Appendix.a.E}{Secure State Machine Theories Applied to Patrol Base Operations: HOL Script Files}{}% 153
@@ -196,4 +196,4 @@
 \BOOKMARK [3][-]{subsubsection.a.E.5.4.2}{FormRTDef Theory: Authentication \046 Authorization Definitions}{subsection.a.E.5.4}% 196
 \BOOKMARK [3][-]{subsubsection.a.E.5.4.3}{ssmFormRT Theory: Theorems}{subsection.a.E.5.4}% 197
 \BOOKMARK [0][-]{Appendix.a.F}{Map of The File Folder Structure}{}% 198
-\BOOKMARK [0][-]{chapter*.69}{References}{}% 199
+\BOOKMARK [0][-]{chapter*.66}{References}{}% 199

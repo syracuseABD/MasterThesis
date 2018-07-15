@@ -10,11 +10,13 @@
 
 %%%%%%%%%%%%%%%%%%%%% Chapter PB SSM %%%%%%%%%%%%%%%
 \chapter{Patrol Base Operations as Secure State Machines} \label{chp:pbssm}
-The hierarchy of secure state machines (\glsentryshortpl{ssm}) consists of many \glsentryshortpl{ssm}.  Ten of these \glsentryshort{ssm} are verified in \glsentryshort{hol}.  Many of these \glsentryshortpl{ssm} are similar.  Thus, a sampling of representative \glsentryshortpl{ssm} is described in this section.  All \glsentryshortpl{ssm} can be found in the appendices starting with appendix \ref{app:ssms}.  They are also contained in the MasterThesis/HOL/ folders.
+The modularized hierarchy of secure state machines (\glspl{ssm}) consists of many \glspl{ssm}.  The code for all of them can be found in the appendices.  Appendix \ref{app:ssms} contains the pretty-printed \gls{hol} output.  Appendix \ref{aap:ssmScript} contains the \gls{hol} script (raw) code.  These files can also be found in the accompanying files and folders in the folder MasterThesis/HOL/.
+
+Many of the \glspl{ssm} are similar and differ only in the names of the states, commands, and principals.  A representative sample of these is described in this chapter.  The first \gls{ssm}, ssmPB, is a typical example from the hierarchy that uses the OMNI principal and one other principal.  All transitions are sequential.  The next example, ssmConductORP, uses two principals and the OMNI principal.  The third example is ssmPlanPB, which contains the non-sequential conjunction of states.  It does not use the OMNI principal.  All other \glspl{ssm} fit into one of these three patterns.
 
       %%%%%%%%%%%%%%%%%%% Section ssmPB %%%%%%%%%%%%%
 \section{ssmPB: A Typical Example from the Hierarchy}\label{sec:ssmpb}
-ssmPB is the top level \glsentryshort{ssm}.  It is an example of a typical one-principal \glsentryshort{ssm}.  A diagram of ssmPB is shown in figure \ref{ssmPBDiagram2}.
+ssmPB is the top level \gls{ssm}.  It is an example of a typical one-principal\footnote{For the purposes of transitions, the Omni principal isn't thought of as a principal, but a relay.  However, for the purposes of defining principals in \gls{hol}, Omni is included as a principal.} \gls{ssm} that also uses the Omni principal.  A diagram of ssmPB is shown in figure \ref{ssmPBDiagram2}.
 
 
 \begin{figure}[h!]
@@ -23,24 +25,20 @@ ssmPB is the top level \glsentryshort{ssm}.  It is an example of a typical one-p
 \caption{\label{ssmPBDiagram2} Top level diagram.}
 \end{figure}
 
-ssmPB runs sequentially from the initial state PLAN_PB to the final state COMPLETE_PB.  State transitions require notification from the Omni principal that the state is complete and a request from the Platoon Leader to change states.  Thus, a transition request has the form 
+ssmPB runs sequentially from the initial state PLAN_PB to the final state COMPLETE_PB.  State transitions require notification from the Omni principal that the state is complete and a request from the Platoon Leader to change states.  Thus, a transition request is a list and has the form\footnote{\textit{stateComplete} and \textit{moveToNextState} are place holders for the actual commands which are defined later.} 
 \[\text{\textit{Omni says stateComplete}};\]
 \[\text{\textit{PlatoonLeader says moveToNextState}}\]  
 
-The security context reflects this two input requirement.  It authorizes the Platoon Leader on \textit{moveToTheNextState} if the current state is complete. A clause in the security context has the form
+The security context reflects this two input requirement.  It authorizes the Platoon Leader on \textit{moveToTheNextState} if the current state is complete. A clause in the security context has the form\footnote{\textit{impf} is the \gls{acl}-\gls{hol} equivalent of "implies"}
 \[\text{\textit{stateComplete impf}}\]
 \[\text{\textit{PlatoonLeader controls moveToNextState}}\]  
 
-This clause is state dependent because \textit{stateComplete} is specific for the current state.  Thus, there are five statements in the state-dependent security context.
+This clause is state dependent because \textit{stateComplete} is specific for the current state.  Thus, there are five statements in the state-dependent security context because there are six states.
 
 There is also a state-independent security context.  This has one clause authorizing the Omni principal on all omniCommands.   It has the form
 \[\text{\textit{Omni controls stateComplete}}\]
 
-Both the Omni and PlatoonLeader principals are authenticated on all slCommands.  This includes omniCommands and plCommands.  However, authorization does distinguish between omniCommand and plCommand.  The authentication function has two statements of the form
-\[\text{\textit{Omni says slCommand}}\]
-\[\text{\textit{PlatoonLeader says slCommand}}\]  
-
-The \glsentryshort{hol} implementation of the datatypes, functions, and theorems are included below.
+The \gls{hol} implementation of the datatypes, functions, and theorems are included below.
 
 
 \subsection{Principals}
@@ -48,7 +46,7 @@ The principal datatype is defined in OMNITypeScript.sml.  It has a constructor a
 
 \HOLFreeVar{principal} = \HOLConst{SR} 'stateRole
 
-SR is the type constructor and 'stateRole is the type variable.  Each \glsentryshort{ssm} defines its own principal as a stateRole. In ssmPB, the stateRole datatype has two principals.
+SR is the type constructor and 'stateRole is the type variable.  Each \gls{ssm} defines its own principal as a stateRole. In ssmPB, the stateRole datatype has two principals.
 
 \HOLFreeVar{stateRole} = \HOLConst{PlatoonLeader} \HOLTokenBar{} \HOLConst{Omni}
 
@@ -57,7 +55,7 @@ States are also defined in OMNITyrpeScript.sml.
 
 \HOLFreeVar{state} = \HOLConst{ESCs} \HOLTyOp{escState} \HOLTokenBar{} \HOLConst{SLs} 'slState
 
-'slState is a state-dependent state which is further defined in each \glsentryshort{ssm}.  ssmPB defines six states.
+'slState is a state-dependent state which is further defined in each \gls{ssm}.  ssmPB defines six states.
 
 \begin{tabbing}
 \HOLFreeVar{slState} = \=\HOLConst{PLAN_PB} \\
@@ -73,7 +71,7 @@ Outputs are defined in OMNITyrpeScript.sml.
 
 \HOLFreeVar{output} = \HOLConst{ESCo} \HOLTyOp{escOutput} \HOLTokenBar{} \HOLConst{SLo} 'slOutput
 
-\HOLConst{SLo} 'slOutput is the state-dependent output.  It is defined further in each \glsentryshort{ssm}.  ssmPB defines seven outputs.
+\HOLConst{SLo} 'slOutput is the state-dependent output.  It is defined further in each \gls{ssm}.  ssmPB defines seven outputs.
 
 \begin{tabbing}
 \HOLFreeVar{slOutput} = \=\HOLConst{PlanPB} \\
@@ -89,11 +87,11 @@ Outputs are defined in OMNITyrpeScript.sml.
 The unAuthorized and unAuthenticated pertain to \textit{trap} and \textit{discard} transition types, respectively.
 
 \subsection{Commands}
-OMNITyrpeScript.sml defines datatypes for all the \glsentryshortpl{ssm}.
+OMNITyrpeScript.sml defines datatypes for all the \glspl{ssm}.
 
 \HOLFreeVar{command} = \HOLConst{ESCc} \HOLTyOp{escCommand} \HOLTokenBar{} \HOLConst{SLc} 'slCommand
 
-\HOLConst{SLc} 'slCommand is further defined in each \glsentryshort{ssm}.  ssmPB defines two datatypes for the slCommand.
+\HOLConst{SLc} 'slCommand is further defined in each \gls{ssm}.  ssmPB defines two datatypes for the slCommand.
 
 \HOLFreeVar{slCommand} = \HOLConst{PL} \HOLTyOp{plCommand} \HOLTokenBar{} \HOLConst{OMNI} \HOLTyOp{omniCommand}
 
@@ -122,27 +120,29 @@ Each \glsentryshort{ssm} defines its own next-state function.
 
 \HOLThmTag{ssmPBIntegrated}{PBNS_def}\HOLssmPBIntegratedTheoremsPBNSXXdef
 
-The next-state function for ssmPB uses pattern matching and if-then-else statements.  The function \textit{getPlCom} extracts the plCommand from the command list. It compares the extracted command to the command to transition.  If they are equal, then the transition occurs.  Otherwise, no transition occurs. 
+PBNS takes a state and a transition (\textit{exec}, \textit{trap}, or \textit{discard}) command list (\textit{x}) pair as parameters.
 
-For the \textit{trap} and \textit{discard} transition types, no transition occurs regardless of the command.  Therefore, the command is not checked.
+The next-state function for ssmPB uses pattern matching and if-then-else statements.  The function first matches the state.  Then, it uses the \textit{getPlCom} function to extracts the \HOLFreeVar{plCommand} from the command list x. It compares this command to the command on the right.  If they are equal, then the transition occurs.  Otherwise, the state does not change.  
+
+For the \textit{trap} and \textit{discard} transition types (last two lines in the definition), no transition occurs regardless of the command.  Therefore, the command is not checked.  The original state \textit{s} is returned.
 
 
-PBNS takes a state and a transition (\textit{exec}, \textit{trap}, or \textit{discard}) and command list (\textit{x}) pair.
+
 \subsection{Next-Output Function}
 Each \glsentryshort{ssm} defines its own next-state function. 
 
 \HOLThmTag{ssmPBIntegrated}{PBOut_def}\HOLssmPBIntegratedTheoremsPBOutXXdef
 
-The next-output function behaves similarly to the next-state function.  But, instead of returning the next state, it returns the next function.  The \textit{trap} and \textit{discard} transition types return \textit{unAuthenticated} and \textit{unAuthorized}, respectively.
+The next-output function behaves similarly to the next-state function.  But, instead of returning the next state, it returns the next output.  The \textit{trap} and \textit{discard} transition types return \textit{unAuthorized} and \textit{unAuthenticated}, respectively, for any command list x.
 
 \subsection{Authentication}
-The \textit{authenticationTest} function is defined in the parametrizable ssm.  It takes a function as an input and that function takes an input list as an input.  The first function is named \textit{elementTest} in ssm.  It is named \textit{inputOK} in the \glsentryshortpl{ssm}.
+The \textit{authenticationTest} function is defined in the parametrizable ssm.  It takes a function as an input and that function takes an input list as an input.  The first function is named \textit{elementTest} in ssm.  It is named \textit{inputOK}\footnote{The function \textit{elementTest} should be thought of as a parameter where \textit{inputOK} specializes that parameter.} in the \glspl{ssm}.
 
-In \glsentryshort{hol}, \textit{inputOK} uses the wild card denoted by an underscore "_".  The underscore causes additional output from \glsentryshort{hol}.  For this reason, the \glsentryshort{hol} definition is shown first.  It is followed by the \glsentryshort{hol} code generated by the function.
+In \gls{hol}, \textit{inputOK} uses the wild card denoted by an underscore "_".  The underscore causes additional output from \gls{hol}.  When \gls{hol} executes the code, it generates a lot of additional code.  Both the \gls{hol} definition and the \gls{hol}-generated output for this function are shown below. 
 
 
 \paragraph*{HOL Definition for inputOK}
-The \glsentryshort{hol} definition for inputOK uses pattern matching.
+
 
 \begin{lstlisting}
 val inputOK_def =
@@ -155,30 +155,31 @@ Define`
 \end{lstlisting}
 
 
-The first call to \textit{inputOK} matches the input to \textit{(((Name PlatoonLeader) says prop (cmd:((slCommand command)option)))}.  If it matches, the function returns T for true.  The second call to inputOK matches the input to \textit{(((Name Omni)          says prop (cmd:((slCommand command)option)))}.  If it matches, it returns true.  The last call to \textit{inputOK}  uses the wild card.  This returns false for any other input.
+The \gls{hol} definition for \textit{inputOK} uses pattern matching.  The first call to \textit{inputOK} matches the input to\\ \centering \textit{(((Name PlatoonLeader) says prop (cmd:((slCommand command)option)))}.\\ \raggedright If it matches, the function returns T for true.  The second call to \textit{inputOK} matches the input to\\
+ \centering \textit{(((Name Omni) says prop (cmd:((slCommand command)option)))}.\\  \raggedright If it matches, it returns true.  The last call to \textit{inputOK}  uses the wild card.  This returns false for any other input.
 
-The first two calls to \textit{inputOK} authenticate the PlatoonLeader and Omni principals on any slCommand.
+The first two calls to \textit{inputOK} authenticate the PlatoonLeader and Omni principals on any \HOLFreeVar{slCommand}.
 
 \paragraph*{HOL Generated Output for inputOK}
 
 \HOLThmTag{ssmPBIntegrated}{inputOK_def}\HOLssmPBIntegratedTheoremsinputOKXXdef
 
-It is straight forward to prove that any command that is not issued by a principal is rejected.  This should follow directly from the definition of \textit{inputOK}.
+It is straight forward to prove that any command that is not issued by a principal is rejected.  This follows directly from the definition of \textit{inputOK}.
 
 \HOLThmTag{ssmPBIntegrated}{inputOK_cmd_reject_lemma}\HOLssmPBIntegratedTheoremsinputOKXXcmdXXrejectXXlemma
 
 \subsection{Authorization}
-There are two functions for authentication in the parametrizable ssm.  One is state-dependent, the other is not.  
+There are two functions for authorization in the parametrizable ssm.  One is state-dependent, the other is not.  
 
 \paragraph*{State-dependent Authorization}
-In ssmPB, the state-dependent authentication function is named \textit{secContext}.  \textit{secContext} uses both pattern matching and if-then-else statements. It takes a state and an input list as parameters.
+In ssmPB, the state-dependent authorization function is named \textit{secContext}.  \textit{secContext} uses both pattern matching and if-then-else statements. It takes a state and an input list as parameters.
 
 \HOLDfnTag{PBIntegratedDef}{secContext_def}\HOLPBIntegratedDefDefinitionssecContextXXdef
 
-\textit{secContext} uses a helper function named \textit{getOmniCommand} to extract the omniCommand from the input list.  It compares this command to the expected command.  If it matches, it returns an implication of the form described at the top of this section.
+\textit{secContext} uses a helper function named \textit{getOmniCommand} to extract the \HOLFreeVar{omniCommand} from the input list.  It compares this command to the expected command.  If it matches, it returns an implication (\textit{impf}) of the form described in section \ref{sec:ssmpb}.
 
 \paragraph*{HOL Definition for getOmniCommand}
-\textit{getOmniCommand} also uses an underscore.  For brevity, only the \glsentryshort{hol} definition is presented.
+\textit{getOmniCommand} also uses the wildcard "_".  For brevity, only the \gls{hol} definition is presented.
 
 \begin{lstlisting}
 val getOmniCommand_def =
@@ -191,11 +192,11 @@ Define`
   		      =  (getOmniCommand xs))`
 \end{lstlisting}
 
-\textit{getOmniCommand}  uses pattern matching and recursion.  The first pattern matches the input against the empty list.  It returns \textit{invalidOmniCommand}.  The second pattern matches against a statement of the form \textit{Omni says cmd}.  It returns \textit{cmd}.  The final pattern is a recursive call to \textit{getOmniCommand}.
+\textit{getOmniCommand}  uses pattern matching and recursion.  The first pattern matches the input against the empty list.  This returns \textit{invalidOmniCommand}.  The second pattern matches against a statement of the form \textit{Omni says cmd}.  It returns \textit{cmd}.  The final pattern is a recursive call to \textit{getOmniCommand}.  Thus, if no valid command is present then \textit{invalidOmniCommand} is returned, otherwise the valid \textit{cmd} is returned.
 
 
 \paragraph*{State-independent Authorization}
-The state-independent authorization function takes an input list as a parameter.  It is uses a helper function called \textit{secHelper}.  \textit{secHelper} calls \textit{getOmniCommand}.  It return a authorization statement of the form 
+The state-independent authorization function \textit{secAuthorization} takes an input list as a parameter.  It uses a helper function called \textit{secHelper}.  \textit{secHelper} calls \textit{getOmniCommand}.  It return a authorization statement of the form 
 \[\text{\textit{Omni controls cmd.}}\]
 
 
@@ -205,6 +206,7 @@ The state-independent authorization function takes an input list as a parameter.
 
 
 \subsection{Proved Theorems}\label{ssec:ssmpbproved}
+These theorems with their helper lemmas prove the property of complete mediation for each transition in the \gls{ssm}.
 
 \paragraph*{PlatoonLeader_PLAN_PB_exec_justified_thm}
 This threorem proves that transition from the PLAN_PB state to the MOVE_TO_ORP state is justified for the following assumptions:
@@ -214,7 +216,7 @@ This threorem proves that transition from the PLAN_PB state to the MOVE_TO_ORP s
 \item PlatoonLeader says crossLD
 \end{itemize}
 
-Most proofs are similar to this.  Therefore, this one will be discussed in detail and used as a reference.
+Most proofs are similar to this.  Therefore, this first example is described in detail and should be used as a reference for other proofs.
 
 \textit{PlatoonLeader_PLAN_PB_exec_justified_thm} begins by specializing \textit{TR_exec_cmd_rule} described in section \ref{ssec:trrules} of chapter \ref{chp:ssmmodel}.  That rule is repeated here for reference.
 
@@ -240,18 +242,18 @@ val thPlanPB =
   ``outs:slOutput output list trType list``] TR_exec_cmd_rule
 \end{lstlisting}
 
-TthPlanPB is a temporary function used to store an intermediate value. In it, the following values are substituted into the \textit{TR_exec_cmd_rule}.  
+\textit{thPlanPB} is a temporary function used to store an intermediate value. In it, the following values are substituted into the \textit{TR_exec_cmd_rule}.  
 
 \begin{itemize}
 \item \textit{inputOK}: substitutes for \textit{elementTest}
 \item \textit{secAuthorization}: substitutes for \textit{context}
 \item \textit{secContext}: substitutes for \textit{stateInterp}
 \item an input list: substitutes for \textit{s}
-\item the current state: substitutes for \textit{s}
-\item an output list: substitutes for \textit{out}
+\item the current state: substitutes for \textit{x}
+\item an output list: substitutes for \textit{outs}
 \end{itemize}
 
-The \textit{TR_exec_cmd_rule} is already proved in the parametrizable ssm. It is an implication with a hypothesis and a conclusion.  But, with the specialization, it is necessary to prove that the theorem is valid after the authentication and authorization are applied to the input list. To do this, the \textit{thPlanPB} is destructed into a hypothesis and conclusion.  Each of these form the basis for a lemma.  The lemmas are then used to prove the overall theorem.
+The \textit{TR_exec_cmd_rule} is already proved in the parametrizable ssm. It is an implication with a hypothesis and a conclusion.  But, with the specialization, it is necessary to prove that the theorem is valid after the authentication and authorization are applied to the input list. To do this, the \textit{thPlanPB} is deconstructed into a hypothesis and conclusion.  Each of these form the basis for a lemma.  The lemmas are then used to prove the overall theorem.
 
 The first lemma begins with the hypothesis of \textit{thPlanPB}. It extracts the hypothesis using the \textit{dest_imp} to destroy the implication and the \textit{fst} function to retain the first part of the result.  
 
@@ -271,9 +273,9 @@ REWRITE_TAC[CFGInterpret_def, secContext_def, secAuthorization_def, secHelper_de
 PROVE_TAC[Controls,Modus_Ponens])
 \end{lstlisting}
 
-The proof consists of a call to the \textit{REWRITE_TAC} with several definitions passed as parameters.  The reader should recognize most of these commands which are described elsewhere in this master thesis\footnote{Those that aren't can be found at \glsentryshortpl{hol} extensive documentation \url{https://hol-theorem-prover.org/kananaskis-11-helpdocs/help/HOLindex.html}}.  The last line of the proof uses \textit{PROVE_TAC}, an automatic prover, with the Controls and Modus_Ponens rules.  These rules are described in the \glsentryshort{hol} reprsentation of the \glsentryshort{acl}.
+The proof consists of a call to the \textit{REWRITE_TAC} with several definitions passed as parameters (in brackets).  \textit{REWRITE_TAC}\footnote{See \url{https://hol-theorem-prover.org/kananaskis-11-helpdocs/help/HOLindex.html} for details on \gls{hol} tactics and functions.} rewrites the lemma using the appropriate definition shown in brackets.  The definitions in brackets are defined earlier in this and other chapters. The last line of the proof uses \textit{PROVE_TAC}, an automatic prover, with the Controls and Modus_Ponens rules.  These rules are described in the \gls{hol} representation of \gls{acl} in chapter \ref{chp:csbdacl} section \ref{sec:aclinhol}.
 
-This lemma is saved as \textit{PlatoonLeader_PLAN_PB_exec_lemma}.  The \glsentryshort{hol} generated output is shown below.
+This lemma is saved as \textit{PlatoonLeader_PLAN_PB_exec_lemma}.  The \gls{hol} generated output is shown below.
 
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_exec_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXlemma
 
@@ -283,7 +285,7 @@ The next lemma works on the conclusion of \textit{thPlanPB}.  It extracts the co
 snd(dest_imp(concl thPlanPB)))
 \end{lstlisting}
 
- It is also a tactical proof that uses \textit{PROVE_TAC}.  \textit{PROVE_TAC} takes two parameters. The first is the previous lemma and the second is \textit{TR_exec_cmd_rule}.  It is named 
+ It is also a tactical proof that uses \textit{PROVE_TAC}.  \textit{PROVE_TAC} takes two parameters. The first is the previous lemma and the second is \textit{TR_exec_cmd_rule}.  
 
 \begin{lstlisting}
 val PlatoonLeader_PLAN_PB_exec_justified_lemma =
@@ -292,7 +294,7 @@ TAC_PROOF(
 PROVE_TAC[PlatoonLeader_PLAN_PB_exec_lemma, TR_exec_cmd_rule])
 \end{lstlisting}
 
-This lemma is saved as \textit{PlatoonLeader_PLAN_PB_exec_justified_lemma}.  The \glsentryshort{hol} generated output is shown below.
+This lemma is saved as \textit{PlatoonLeader_PLAN_PB_exec_justified_lemma}.  The \gls{hol} generated output is shown below.
 
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_exec_justified_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXjustifiedXXlemma
 
@@ -306,10 +308,10 @@ REWRITE_RULE[inputList_def, extractInput_def, MAP, propCommandList_def,
   PlatoonLeader_PLAN_PB_exec_justified_lemma
 \end{lstlisting}
 
-The \glsentryshort{hol} generated output is shown below.
+The \gls{hol} generated output is shown below.
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_exec_justified_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXexecXXjustifiedXXthm
 
-With few exceptions, the remaining proofs in all \glsentryshortpl{ssm} follow the same format.
+With few exceptions, all proofs justifying execution of a command in the \glspl{ssm} follow the same format.
 
 \paragraph*{PlatoonLeader_PLAN_PB_trap_justified_thm}
 \textit{PlatoonLeader_PLAN_PB_trap_justified_thm} proves the \textit{trap} transition is justified in the following case
@@ -323,23 +325,23 @@ This is a \textit{trap} because both Omni and PlatoonLeader are authenticated.  
 
 
 
-\textit{PlatoonLeader_PLAN_PB_trap_justified_thm} follows the same pattern of implications destruction and lemma proofs.  The difference is that the \textit{TR_trap_cmd_rule} is specialized instead of the \textit{TR_exec_cmd_rule}.  The two lemmas and theorem are shown below.  
+\textit{PlatoonLeader_PLAN_PB_trap_justified_thm} follows the same pattern of implications destruction and lemma proofs.  The difference is that the \textit{TR_trap_cmd_rule} is specialized instead of the \textit{TR_exec_cmd_rule}.  The two lemmas and theorem are shown below as pretty-printed \gls{hol}-generated output.  
 
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXlemma
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_justified_lemma}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXjustifiedXXlemma
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_PLAN_PB_trap_justified_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXPLANXXPBXXtrapXXjustifiedXXthm
 
 \paragraph*{PlatoonLeader_Omni_notDiscard_slCommand_thm}
-This theorem proves that if the PlatoonLeader issues an omniCommand and Omni issues a plCommand, the command is not discarded.  The reason for this is that plCommand and omniCommand are both slCommand and  inputOK authenticates both principals for slCommand.  
+This theorem proves that if the PlatoonLeader issues an \textit{omniCommand} and Omni issues a \textit{plCommand}, the command is not discarded.  The reason for this is that \textit{plCommand} and \textit{omniCommand} are both \textit{slCommand} and  \textit{inputOK} authenticates both principals for \textit{slCommand}.  What this means is that both the PlatoonLeader and Omni are authenticated on any state-level command.
 
-This proof specializes the \textit{TR_discard_cmd_rule}.  This follows a different pattern with no lemmas.  The \glsentryshort{hol} generated output is shown below.
+This proof specializes the \textit{TR_discard_cmd_rule}.  This follows a different pattern with no lemmas.  The \gls{hol} generated output is shown below.
 
 \HOLThmTag{ssmPBIntegrated}{PlatoonLeader_Omni_notDiscard_slCommand_thm}\HOLssmPBIntegratedTheoremsPlatoonLeaderXXOmniXXnotDiscardXXslCommandXXthm
 
-Theorems for each transition are possible. For the most part, they are a cut-n-paste of the theorems above with a few keywords changed.  But, they become repetitive and no new information is gained be generating them. 
-      %%%%%%%%%%%%%%%%%%% Multiple Principles %%%%%%%%%%%%%
+Theorems for each transition are possible. For the most part, they are a cut-n-paste of the theorems above with a few keywords changed.  But, they become repetitive and no new information is gained by showing them here. For completeness, however, they are included in the appendices and file folders as described in the introduction to this chapter.
+      %%%%%%%%%%%%%%%%%%% Multiple Principles %% %%%%%%%%%%%
 \section{ssmConductORP: Multiple Principals}
-ssmConductORP is an example of a \glsentryshort{ssm} with more than one principal authorized to execute transitions among states. The diagram is shown in figure \ref{ssmConductORPDiagram2}.
+ssmConductORP is an example of a \gls{ssm} with more than one principal authorized to execute transitions among states. The diagram is shown in figure \ref{ssmConductORPDiagram2}.
 
 
 \begin{figure}[h!]
@@ -352,12 +354,12 @@ ssmConductORP is an example of a \glsentryshort{ssm} with more than one principa
 Other than the number of principals, ssmConductToORP follows the same structure as ssmPB described in the previous section.  
 
 \subsection{Principals}
-The principals are defined in the datatype stateRole.  There are three principals including Omni.
+The principals are defined in the datatype \textit{stateRole}.  There are three principals including Omni.
 
 \HOLFreeVar{stateRole} = \HOLConst{PlatoonLeader} \HOLTokenBar{} \HOLConst{PlatoonSergeant} \HOLTokenBar{} \HOLConst{Omni}
 
 \subsection{States}
-States are defined as slState.  The names differ only slightly from the digram but are straight forward.  
+States are defined as \HOLFreeVar{slState}.  The names differ only slightly from the digram but are straight forward.  
 \begin{tabbing}
 \HOLFreeVar{slState} = \=\HOLConst{CONDUCT_ORP} \\
 					\>\HOLTokenBar{} \HOLConst{SECURE} \\
@@ -379,14 +381,14 @@ Outputs are named similarly to ssmPB outputs.
 					\>\HOLTokenBar{} \HOLConst{unAuthorized}\end{tabbing}
 
 \subsection{Commands}
-The slCommand datatype defines three datatype variables, one for each principal.  Each are further defined.
+The \textit{slCommand} datatype defines three datatype variables, one for each principal.  Each are further defined.
 \begin{tabbing}
 \HOLFreeVar{slCommand} =\=\HOLConst{PL} \HOLTyOp{plCommand}\\
   						\>\HOLTokenBar{} \HOLConst{PSG} \HOLTyOp{psgCommand}\\
   						\>\HOLTokenBar{} \HOLConst{OMNI} \HOLTyOp{omniCommand}
 \end{tabbing}
 
-plCommand defines the PlatoonLeader commands.
+\textit{plCommand} defines the PlatoonLeader commands.
 \begin{tabbing}
 \HOLFreeVar{plCommand} = \=\HOLConst{secure} \\
 						\>\HOLTokenBar{} \HOLConst{withdraw} \\
@@ -394,10 +396,12 @@ plCommand defines the PlatoonLeader commands.
 						\>\HOLTokenBar{} \HOLConst{plIncomplete}
 \end{tabbing}
 
-psgCommand defines the PlatoonSergeant commands.
+\textit{psgCommand} defines the PlatoonSergeant commands.
+\begin{tabbing}
 \HOLFreeVar{psgCommand} = \HOLConst{actionsIn} \HOLTokenBar{} \HOLConst{psgIncomplete}
+\end{tabbing}
 
-omniCommand defines the Omni commands.
+\textit{omniCommand} defines the Omni commands.
 \begin{tabbing}
 \HOLFreeVar{omniCommand} = \=\HOLConst{ssmSecureComplete} \\
 						\>\HOLTokenBar{} \HOLConst{ssmActionsInComplete}\\
@@ -408,11 +412,11 @@ omniCommand defines the Omni commands.
 
 
 \subsection{Next-State Function}
-The next-state function follows the same pattern as for ssmPB.  The only difference is that one of the transitions requires a psgCommand instead of a plCommand.
+The next-state function follows the same pattern as for ssmPB.  The only difference is that one of the transitions requires a \textit{psgCommand} instead of a \textit{plCommand}.  This is the transition from SECURE to ACTIONS_IN.
 
 \HOLThmTag{ssmConductORP}{conductORPNS_def}\HOLssmConductORPTheoremsconductORPNSXXdef
 
-The next-state function requires two helper functions just as the next-state function for ssmPB.  These are \textit{getPlCom} and \textit{getPsgCom}.  The former extracts PlatoonLeader commands and the later extracts PlatoonSergeant commands.  They both use the underscore as a wild card.  The \glsentryshort{hol} definition bot both functions is shown below.
+The next-state function requires two helper functions just as the next-state function for ssmPB.  These are \textit{getPlCom} and \textit{getPsgCom}.  The former extracts PlatoonLeader commands and the later extracts PlatoonSergeant commands.  They both use the "_" as a wild card.  The \gls{hol} definition for both functions is shown below.
 \begin{lstlisting}
 val getPlCom_def =
 Define`
@@ -439,7 +443,7 @@ The next-output function follows the same pattern as the next-state function.  I
 \HOLThmTag{ssmConductORP}{conductORPOut_def}\HOLssmConductORPTheoremsconductORPOutXXdef
 
 \subsection{Authentication}
-Authentication uses the \textit{inputOK} function.  It is the same function as the ssmPB \textit{inputOK} except that it adds and additional pattern matching to authenticate the PlatoonSergeant.
+Authentication uses the \textit{inputOK} function.  It is the same function as the ssmPB \textit{inputOK} except that it adds an additional pattern matching to authenticate the PlatoonSergeant.
 
 \begin{lstlisting}
 val inputOK_def =
@@ -456,13 +460,13 @@ Define
  (inputOK _= F)`
  \end{lstlisting}
 
-It is straight forward to prove that any command that is not issued by a principal is rejected.  This should follow directly from the definition of \textit{inputOK}.
+It is straight forward to prove that any command that is not issued by a principal is rejected.  This follows directly from the definition of \textit{inputOK}.
 
 \HOLThmTag{ssmConductORP}{inputOK_cmd_reject_lemma}\HOLssmConductORPTheoremsinputOKXXcmdXXrejectXXlemma
 
 
 \subsection{Authorization}
-As in ssmPB and all \glsentryshortpl{ssm}, there is a state-dependent and state-independent authorization function.
+As in ssmPB and all \glspl{ssm}, there is a state-dependent and state-independent authorization function.
 
 \paragraph*{State-dependent Authorization}
 Like ssmPB, the state-dependent authorization function is named \textit{secContext}.  It takes a state and an input list as parameters.  It returns an authorization statement.  It follows the same logic as \textit{secContext} in ssmPB.
@@ -485,7 +489,8 @@ Define`
 \end{lstlisting}
 
 \paragraph*{State-independent Authorization}
-Like ssmPB, the state-independent authorization function is named \textit{secAuthorization}.  It takes only an input list as a parameter.  This is the exact same \textit{secAuthorization} as in ssmPB. It also uses the exact same \textit{secHelper} function as ssmPB.  There are repeated here as a reference. 
+Like ssmPB, the state-independent authorization function is named \textit{secAuthorization}.  It takes only an input list as a parameter.  This is the exact same \textit{secAuthorization} as in ssmPB. It also uses the exact same \textit{secHelper} function as ssmPB.  It is repeated here as a reference.
+ 
 
 \HOLDfnTag{ConductORPDef}{secAuthorization_def}\HOLConductORPDefDefinitionssecAuthorizationXXdef
 
@@ -493,7 +498,7 @@ Like ssmPB, the state-independent authorization function is named \textit{secAut
 
 
 \subsection{Proved Theorems}
-These theorems follow those in section \ref{ssec:ssmpbproved} for ssmPB.  There are few changes and thus detailed explanation with provide no new or insightful information.  They are presented here for completeness of this section.
+These theorems follow those in section \ref{ssec:ssmpbproved} for ssmPB.  There are few changes and thus detailed explanation of the proof is omitted.  The pretty-printed \gls{hol}-generated output is included here.
 
 \paragraph*{PlatoonSergeant_SECURE_exec_justified_thm}
 This theorem justifies transition from the SECURE state to the ACTIONS_IN  state.  The authenticated principal is the PlatoonSergeant.  This theorem specializes the \textit{TR_exec_cmd_rule}.  The two lemmas and theorem are shown below.
@@ -510,37 +515,33 @@ This theorem justifies transition from the ACTIONS_IN state to the WITHDRAW stat
 \HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_exec_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXexecXXjustifiedXXthm
 
 \paragraph*{PlatoonLeader_ACTIONS_IN_trap_justified_thm}
-This theorem justifies trapping the transition from the ACTIONS_IN state to the WITHDRAW state.  The authenticated principal is the PlatoonLeader.  But, in this case, Omni does not issue the command \textit{ssmActionsInComplete}.  Therefore, the transition is not authorized.  This theorem specializes the \textit{TR_exec_cmd_rule}.  The two lemmas and theorem are shown below.
+This theorem justifies trapping the transition from the ACTIONS_IN state to the WITHDRAW state.  The authenticated principal is the PlatoonLeader.  But, in this case, Omni does not issue the command \textit{ssmActionsInComplete}.  Therefore, the transition is not authorized.  This theorem specializes the \textit{TR_trap_cmd_rule}.  The two lemmas and theorem are shown below.
 
 \HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXlemma
 \HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_justified_lemma}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXlemma
 \HOLThmTag{ssmConductORP}{PlatoonLeader_ACTIONS_IN_trap_justified_thm}\HOLssmConductORPTheoremsPlatoonLeaderXXACTIONSXXINXXtrapXXjustifiedXXthm
 
 
-\paragraph*{PlatoonSergeant_SECURE_exec_justified_thm}
-This theorem justifies transition from the SECURE state to the ACTIONS_IN  state.  The authenticated principal is the PlatoonSergeant.  This theorem specializes the \textit{TR_exec_cmd_rule}.  The two lemmas and theorem are shown below.
-
-As with ssmPlanPB, other theorems could be proved.  But, no new information would be gained.
-
+As with ssmPlanPB, the other theorems are included in the appendices and files.
       %%%%%%%%%%%%%%%%%%% ssmPlanPB %%%%%%%%%%%%%%%%
 \section{ssmPlanPB: Non-sequential Transitions}
-The ssmPlanPB \glsentryshort{ssm} is one of the first \glsentryshortpl{ssm}\footnote{This is only partially true.  The first \glsentryshort{ssm} was ssmPB.  But, upon working with the \glsentryshort{ssm} in this section, the parametrizable ssm needed to updated to accommodate multiple input statements.  ssmPlanPB was the first \glsentryshort{ssm} used with this new parametrizable ssm.  All other \glsentryshortpl{ssm} were redone with the updated parametrizable ssm.}. It is the only \glsentryshort{ssm} that is not integrated with the Omni principal.  But, it is also the only \glsentryshort{ssm} that uses a non-sequential progression through states.  Figure \ref{ssmPlanPBDiagram2} is a diagram of this \glsentryshort{ssm}.
+The ssmPlanPB \gls{ssm} does not use the Omni principal but does use a "sort-of" non-sequential progression through states.  To minimize the complexity of the model, the three states that are non-sequential are represented as "virtual states" whose completion is noted as input to the command to transition from the state before them to the state after them.  Figure \ref{ssmPlanPBDiagram2a} is a diagram of this \gls{ssm}.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{../figures/ssmPlanPBDiagram}
-\caption{\label{ssmPlanPBDiagram2} Horizontal slice: PlanPB diagram.}
+\caption{\label{ssmPlanPBDiagram2a} Horizontal slice: PlanPB diagram.}
 \end{figure}
 
 The three non-sequential states are hidden in the white circle in the diagram.  They are TENTATIVE_PLAN, INITIATE_MOVEMENT, and RECON. These three states may be completed in any order, but all three must be completed before progressing to the next state REPORT1.  
 
-To handle this, the three non-sequential states are combined into a "virtual state."  This state does not exist.  But, completion of these states must preceded transition from the WARNO state to the REPORT1 state.  Completion is indicated by the following three \glsentryshort{acl} statements
+To handle this, the three non-sequential states are combined into one "virtual state."  Completion of these states must preceded transition from the WARNO state to the REPORT1 state.  Completion is indicated by the following three \gls{acl} statements 
 \[\text{\textit{PlatoonLeader says tentativePlan}}\]
 \[\text{\textit{PlatoonSergeant says initiateMovement}}\]
 \[\text{\textit{PlatoonLeader says recon}}\]
 
 
-when combined with a request from the PlatoonLeader to transition to the REPORT1 state, the input for this transition is an input list with the four statements
+when combined with a request from the PlatoonLeader to transition to the REPORT1 state, the input (a list of inputs) for this transition is
 \[\text{\textit{PlatoonLeader says tentativePlan}  }\]
 \[\text{\textit{PlatoonSergeant says initiateMovement}  }\]
 \[\text{\textit{PlatoonLeader says recon}}\]
@@ -554,7 +555,7 @@ The security policy handles this with the following implication
 
 The remaining details of this implementation follow.
 \subsection{Principals}
-The planning phase \glsentryshort{ssm} has two principals: PlatoonLeader and PlatoonSergeant.  These are defined in the \HOLFreeVar{stateRole} datatype.
+The planning phase \gls{ssm} has two principals: PlatoonLeader and PlatoonSergeant.  These are defined in the \HOLFreeVar{stateRole} datatype.
 
 \HOLFreeVar{stateRole} = \HOLConst{PlatoonLeader} \HOLTokenBar{} \HOLConst{PlatoonSergeant}
 
@@ -578,12 +579,34 @@ There are 12 states.  But, TENTATIVE_PLAN, INITIATE_MOVEMENT, and RECON are virt
 \parskip=18pt
 \end{tabbing}
 
+\subsection{Output}
+There are 14 outputs.  But, PlanPB, TentativePlan, InitiateMovement, and Recon are not used in the next-output function.  The unAuthorized output is returned for trapped commands.  The unAuthenticated output is returned for discarded commands.
+
+\begin{tabbing}
+\parskip=8pt
+\HOLFreeVar{slOutput} =  \=\HOLConst{PlanPB} \\
+					\>\HOLTokenBar{} \HOLConst{ReceiveMission} \\
+					\>\HOLTokenBar{} \HOLConst{Warno} \\
+					\>\HOLTokenBar{} \HOLConst{TentativePlan}\\
+         				\>\HOLTokenBar{} \HOLConst{InitiateMovement} \\
+					\>\HOLTokenBar{} \HOLConst{Recon} \\
+					\>\HOLTokenBar{} \HOLConst{Report1} \\
+					\>\HOLTokenBar{} \HOLConst{CompletePlan}\\
+         				\>\HOLTokenBar{} \HOLConst{Opoid} \\
+					\>\HOLTokenBar{} \HOLConst{Supervise} \\
+					\>\HOLTokenBar{} \HOLConst{Report2} \\
+					\>\HOLTokenBar{} \HOLConst{Complete}\\
+         				\>\HOLTokenBar{} \HOLConst{unAuthenticated} \\
+					\>\HOLTokenBar{} \HOLConst{unAuthorized}
+\parskip=18pt
+\end{tabbing}
+
 \subsection{Commands}
-The slCommand datatype for this \glsentryshort{ssm} is defined below.
+The \textit{slCommand} datatype for this \gls{ssm} is defined below.
 
 \HOLFreeVar{slCommand} = \HOLConst{PL} \HOLTyOp{plCommand} \HOLTokenBar{} \HOLConst{PSG} \HOLTyOp{psgCommand}
 
-The two datatypes for plCommand and psgCommand represent the PlatoonLeader and PlatoonSergeant commands, respectively. These are defined below.
+The two datatypes for \textit{plCommand} and \textit{psgCommand} represent the PlatoonLeader and PlatoonSergeant commands, respectively. These are defined below.
 
 \begin{tabbing}
 \parskip=8pt
@@ -611,36 +634,14 @@ The two datatypes for plCommand and psgCommand represent the PlatoonLeader and P
 \end{tabbing}
 
 Providing each principal with her own set of commands simplifies the authentication and authorization functions.
-\subsection{Output}
-There are 14 outputs.  But, PlanPB, TentativePlan, InitiateMovement, and Recon are not used in the next-output function.  The unAuthorized output is returned for trapped commands.  The unAuthenticated output is returned for discarded commands.
 
-\begin{tabbing}
-\parskip=8pt
-\HOLFreeVar{slOutput} =  \=\HOLConst{PlanPB} \\
-					\>\HOLTokenBar{} \HOLConst{ReceiveMission} \\
-					\>\HOLTokenBar{} \HOLConst{Warno} \\
-					\>\HOLTokenBar{} \HOLConst{TentativePlan}\\
-         				\>\HOLTokenBar{} \HOLConst{InitiateMovement} \\
-					\>\HOLTokenBar{} \HOLConst{Recon} \\
-					\>\HOLTokenBar{} \HOLConst{Report1} \\
-					\>\HOLTokenBar{} \HOLConst{CompletePlan}\\
-         				\>\HOLTokenBar{} \HOLConst{Opoid} \\
-					\>\HOLTokenBar{} \HOLConst{Supervise} \\
-					\>\HOLTokenBar{} \HOLConst{Report2} \\
-					\>\HOLTokenBar{} \HOLConst{Complete}\\
-         				\>\HOLTokenBar{} \HOLConst{unAuthenticated} \\
-					\>\HOLTokenBar{} \HOLConst{unAuthorized}
-\parskip=18pt
-\end{tabbing}
 
 \subsection{Next-State Function}
-The next-state function takes the current state and a transition type and inputList pair.  It returns the next-state.  For the \textit{exec} transition type, an if-then-else decision statement checks the state and input.  If the input indicates a transition, then transition occurs, else no state change occurs.  The WARNO state is an exception.  It requires four inputs as described at the beginning of this section. To do this, four functions extract the appropriate command from the input list.  If all four commands are not present, then the else state returns WARNO (i.e., no state change occurs).
-
-For the \textit{trap} and \textit{discard} transition types (the last two statements on the last line), the current state is returned for any command. 
+The next-state function is defined similarly to those defined for previously described \glspl{ssm}.  
 
 \HOLThmTag{ssmPlanPB}{planPBNS_def}\HOLssmPlanPBTheoremsplanPBNSXXdef
 
-Five functions are defined (see below) to extract the command from the input list.  These are getRecon, getTentativePlan, getReport, getInitMove, and getPlCom.  Each of these functions takes an input list as a parameter and returns a command with its option type.  For the sake of brevity, only getRecon is shown below.  The other functions are similar.
+Five functions are defined (see below) to extract the command from the input list.  These are \textit{getRecon}, \textit{getTentativePlan}, \textit{getReport}, \textit{getInitMove}, and \textit{getPlCom}.  Each of these functions takes an input list as a parameter and returns a command with its option type.  For the sake of brevity, only \textit{getRecon} is shown below.  The other functions are similar.
 
 \paragraph*{HOL Definition for getRecon}...
 
@@ -654,24 +655,16 @@ val getRecon_def = Define `
     (getRecon (_::xs) = getRecon xs)`
 \end{lstlisting}
 
-getRecon is defined recursively and uses pattern matching.  The first line beginning with getRecon pattern matches against an empty list of type \textit{((slCommand command)option, stateRole, 'd,'e)Form list)} as input.  It returns the option type NONE.  The next getRecon pattern matches the head of the list with \textit{((Name PlatoonLeader) says (prop (SOME (SLc (PL recon))))} of type  \textit{((slCommand command)option, stateRole, 'd,'e)Form list)}.  This returns \textit{[SOME (SLc (PL recon)):(slCommand command)option]}.  The final getRecon pattern matches the wild card "_" to any other input.  It recursively calls getRecon on the remainder of the list, while throwing out the head.
-
-\paragraph*{HOL Generated Output for getRecon}...
-The \glsentryshort{hol} generated code converts the wild card into all allowable cases for head of the list.  It is shown below.
-
-\HOLThmTag{PlanPBDef}{getRecon_def}\HOLPlanPBDefTheoremsgetReconXXdef
-
 \subsection{Next-Output Function}
-The next-output differs from the next-state function in that it returns an output rather than a state.  It follows the same logic.  The \textit{trap} and \textit{discard} transition types return the outputs unAuthorized and unAuthenticated, respectively.
+The next-output function is defined similarly to those defined for previously described \glspl{ssm}.
+
 \HOLThmTag{ssmPlanPB}{planPBOut_def}\HOLssmPlanPBTheoremsplanPBOutXXdef
 
 
 \subsection{Authentication}
-The authenticationTest function takes an elementTest function and an input list as parameters.  authenticationTest is defined in the parametrizable ssm.  elementTest function is defined as a parameter in each \glsentryshort{ssm}.  In the \glsentryshortpl{ssm}, elementTest is named inputOK.  
+Authentication for this \gls{ssm} is the same as for the previously described \glspl{ssm}.
 
 \paragraph*{HOL Definition for inputOK}
-
-The \glsentryshort{hol} definition for inputOK uses the wild card "_".  Thus, the \glsentryshort{hol} definition differs from the \glsentryshort{hol} generated output.  The \glsentryshort{hol} definition is shown below. 
 
 \begin{lstlisting}
 val inputOK_def = Define
@@ -684,16 +677,7 @@ val inputOK_def = Define
 (inputOK _ = F)`
 \end{lstlisting}
 
-inputOK uses pattern matching, but not recursion.  The first inputOK pattern matches the input against \textit{(((Name PlatoonLeader) says (prop  (cmd:((slCommand command)option))))} which is of type \textit{((slCommand command)option, stateRole, 'd,'e)Form)}.  This is defined as T (True).  This authenticates the PlatoonLeader on any slCommand.  The next inputOK pattern matches the input against \textit{((Name PlatoonSergeant) says (prop  (cmd:((slCommand command)option))))} which is of the same type as the first pattern.  This is defined as T (True).  This authenticates the PlatoonSergeant on any slCommand.  The last inputOK pattern uses the wild card to match ANY OTHER input.  ANY OTHER input is defined as F (false).
-	 
-	 
-\paragraph*{HOL Generated Output for inputOK}
-
-The \glsentryshort{hol} generated output matches the wild card to all other possible values for the input.
-
-\HOLThmTag{ssmPlanPB}{inputOK_def}\HOLssmPlanPBTheoremsinputOKXXdef
-
-The theorem inputOK_cmd_reject_lemma proves that any command that is not requested by a principal is false.
+It is straight forward to prove that any command that is not requested by a principal is false.
 
 \begin{lstlisting}
 val inputOK_cmd_reject_lemma =
@@ -704,9 +688,8 @@ TAC_PROOF(
   PROVE_TAC[inputOK_def])
 \end{lstlisting}
 
-
 \subsection{Authorization}
-Authorization is defined in two ways.  Authorization is state-dependent because of the added requirement for the transition from the WARNO state to the REPORT1 state.  This is equivalent to the stateInterp function in ssm.  In ssmPlanPB, this function is called secContext.
+The two authorization functions are defined below.
 
 \begin{lstlisting}
 val secContext_def = Define `
@@ -732,7 +715,7 @@ secContext (s:slState) (x:((slCommand command)option, stateRole, 'd,'e)Form list
 	 else [PL_notWARNO_Auth (getPlCom x)]`
 \end{lstlisting}
 
-secContext uses pattern matching, but not recursion. It is similar to the definition for the next state function.  If the \textit{s = WARNO}, then secContext looks for all four statements using the get* functions.   If these are all present, then secContext returns \textit{PL_WARNO_Auth}. \textit{PL_WARNO_Auth} contains the implication that authorizes the Platoon Leader on the transition to REPORT1.  If all four statements are not present, then \textit{ [(prop NONE)]} is returned.
+secContext uses \textit{PL_WARNO_Auth} and \textit{PL_notWARNO_Auth}. These are defined below.
 
 
 \begin{lstlisting}
@@ -750,7 +733,6 @@ val PL_WARNO_Auth_def = Define `
      ``:((slCommand command)option, stateRole, 'd,'e)Form``)`
 \end{lstlisting}
 
-The remainder of secContext applies to all other states.  If the getPlCom function returns \textit{invalidPlComand}, then secContext returns  \textit{ [(prop NONE)]} is returned.  Otherwise, it returns \textit{PL_notWARNO_Auth}.  \textit{PL_notWARNO_Auth} authorizes the PlatoonLeader on any plCommand except \textit{report1}. If the command is \textit{report1} is found, then it returns \textit{ [(prop NONE)]}.
 
 \begin{lstlisting}
 val PL_notWARNO_Auth_def = Define `
@@ -766,10 +748,10 @@ val PL_notWARNO_Auth_def = Define `
 \end{lstlisting}
 
 \subsection{Proved Theorems}
-As with ssmConductORP, theorems for ssmPlanPB are similar.  Although, this \glsentryshort{ssm} contains no Omni principal, it contains conditional transitions. These theorems differ slightly in their set-up, but then follow the same proof process as \textit{PlatoonLeader_ACTIONS_IN_trap_lemma}.  
+Theorems proving complete mediation follow the same format as those for previously described \glspl{ssm}.
 
 \paragraph*{PlatoonLeader_notWARNO_notreport1_exec_plCommand_justified_thm}
-This theorem proves that if the state is not WARNO and the plCommand is not \textit{report1} then execution of any plCommand is justified.  It uses two theorems and follow the same pattern as the other three-part proofs.  The \glsentryshort{hol} generated output is shown below.
+This theorem proves that if the state is not WARNO and the \textit{plCommand} is not \textit{report1} then execution of any \textit{plCommand} is justified.  It uses two lemmas and a theorem and follows the same pattern as the the other three-part proofs.  The pretty-printed \gls{hol}-generated output is shown below.
 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_notWARNO_notreport1_exec_plCommand_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXnotWARNOXXnotreportOneXXexecXXplCommandXXlemma
 
@@ -778,13 +760,13 @@ This theorem proves that if the state is not WARNO and the plCommand is not \tex
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_notWARNO_notreport1_exec_plCommand_justified_thm}\HOLssmPlanPBTheoremsPlatoonLeaderXXnotWARNOXXnotreportOneXXexecXXplCommandXXjustifiedXXthm
 
 \paragraph*{PlatoonLeader_psgCommand_notDiscard_thm}
-This next theorem proves that if the PlatoonLeader issues a psgCommand then that command is not discarded.  The reason for this is that the psgCommand is an slCommand.  In inputOK, the PlatoonLeader is authenticated on all psgCommand.  Therefore, this command should be trapped an not discarded.  It follows the same proof as the ssmPlanPB theorem \textit{PlatoonLeader_Omni_notDiscard_slCommand_thm}.  There are no lemmas.
+This next theorem proves that if the PlatoonLeader issues a \textit{psgCommand} then that command is not discarded.  The reason for this is that the \textit{psgCommand} is an \textit{slCommand}.  In \textit{inputOK}, the PlatoonLeader is authenticated on all \textit{slCommand}s.  (Only unauthenticated requests are discarded.)  This theorem has no lemmas.
 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_psgCommand_notDiscard_thm}\HOLssmPlanPBTheoremsPlatoonLeaderXXpsgCommandXXnotDiscardXXthm
 
 
 \paragraph*{PlatoonSergeant_trap_plCommand_justified_thm}
-This next theorem proves that if the PlatoonLeader issues a psgCommand then that command is trapped.  It specializes the \textit{TR_trap_cmd_rule} with two lemmas to help out.
+This next theorem proves that if the PlatoonLeader issues a \textit{psgCommand} then that command is trapped.  It specializes the \textit{TR_trap_cmd_rule} with two lemmas and a theorem.
 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_trap_psgCommand_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXtrapXXpsgCommandXXlemma
 
@@ -802,7 +784,7 @@ This theorem proves that transition from the WARNO to the REPORT1 is justified i
 \item PlatoonLeader says report1
 \end{itemize}
 
-It specializes the \textit{TR_exex_cmd_rule} and requires the standard two lemmas. They are shown below.
+It specializes the \textit{TR_exex_cmd_rule} and requires the standard two lemmas and a theorem. 
 
 \HOLThmTag{ssmPlanPB}{PlatoonLeader_WARNO_exec_report1_lemma}\HOLssmPlanPBTheoremsPlatoonLeaderXXWARNOXXexecXXreportOneXXlemma
 
@@ -812,7 +794,7 @@ It specializes the \textit{TR_exex_cmd_rule} and requires the standard two lemma
 
 
 \paragraph*{PlatoonSergeant_trap_plCommand_justified_thm}
-This final theorem proves that the PlatoonSergeant is trapped on all plCommands.  The reason should be obvious.
+This final theorem proves that the PlatoonSergeant is trapped on all \textit{plCommands}.  This is for the same reason that the PlatoonLeader is trapped on all \textit{psgCommands}.
 
 \HOLThmTag{ssmPlanPB}{PlatoonSergeant_trap_plCommand_lemma}\HOLssmPlanPBTheoremsPlatoonSergeantXXtrapXXplCommandXXlemma
 
@@ -820,5 +802,6 @@ This final theorem proves that the PlatoonSergeant is trapped on all plCommands.
 
 \HOLThmTag{ssmPlanPB}{PlatoonSergeant_trap_plCommand_justified_thm}\HOLssmPlanPBTheoremsPlatoonSergeantXXtrapXXplCommandXXjustifiedXXthm
 
+In concluding this chapter, note that the model here is a first approximation to modeling the patrol base operations.  Some of the proofs may not accurately reflect real patrol base operations.  For example, the Platoon Leader should probably be authorized on ALL commands.  But, we applied the principal of least privilege and restricted transition requests to the responsible principal rather than all who should have been permitted.
 
 \end{document}
