@@ -1,80 +1,65 @@
 This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main4.aux
-The style file: unsrt.bst
-Database file #1: mtref.bib
-Warning--entry type for "safe" isn't style-file defined
---line 32 of file mtref.bib
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: IEEEabrv.bib
+Database file #2: mtref.bib
 Warning--entry type for "buoy" isn't style-file defined
 --line 44 of file mtref.bib
-Warning--entry type for "youngPorada" isn't style-file defined
---line 61 of file mtref.bib
-Warning--entry type for "constructor" isn't style-file defined
---line 100 of file mtref.bib
-Warning--entry type for "saulk" isn't style-file defined
---line 154 of file mtref.bib
-Warning--entry type for "HOLwiki" isn't style-file defined
---line 164 of file mtref.bib
-Warning--entry type for "BSDlicenses" isn't style-file defined
---line 174 of file mtref.bib
-Warning--entry type for "saltzer" isn't style-file defined
---line 184 of file mtref.bib
-Warning--entry type for "availability" isn't style-file defined
---line 195 of file mtref.bib
-Warning--entry type for "elasticsearch" isn't style-file defined
---line 229 of file mtref.bib
-Warning--entry type for "HOL" isn't style-file defined
---line 316 of file mtref.bib
-Warning--entry type for "functionalprogramming" isn't style-file defined
---line 324 of file mtref.bib
-Warning--entry type for "formalmethodslcarke" isn't style-file defined
---line 382 of file mtref.bib
-Warning--empty author in iso15288
-Warning--empty author in iso247482017
-Warning--empty year in Tantooine
-Warning--empty note in VARVEL
-Warning--there's a number but no series in stateexplosion
-Warning--empty author in wikiformalmethods
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty author and editor in types
-You've used 32 entries,
-            1791 wiz_defined-function locations,
-            601 strings with 8289 characters,
-and the built_in function-call counts, 4742 in all, are:
-= -- 375
-> -- 187
-< -- 7
-+ -- 79
-- -- 47
-* -- 238
-:= -- 689
-add.period$ -- 72
-call.type$ -- 32
-change.case$ -- 27
-chr.to.int$ -- 0
-cite$ -- 39
-duplicate$ -- 237
-empty$ -- 569
-format.name$ -- 47
-if$ -- 1107
+Warning--empty author in iso247482017
+Warning--empty author in iso15288
+Warning--empty note in VARVEL
+Warning--empty author in wikiformalmethods
+
+Done.
+You've used 30 entries,
+            4087 wiz_defined-function locations,
+            1518 strings with 23814 characters,
+and the built_in function-call counts, 12989 in all, are:
+= -- 1007
+> -- 229
+< -- 30
++ -- 120
+- -- 46
+* -- 560
+:= -- 2228
+add.period$ -- 57
+call.type$ -- 30
+change.case$ -- 22
+chr.to.int$ -- 63
+cite$ -- 35
+duplicate$ -- 1039
+empty$ -- 1223
+format.name$ -- 60
+if$ -- 2918
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 12
-newline$ -- 136
-num.names$ -- 21
-pop$ -- 161
+int.to.str$ -- 30
+missing$ -- 232
+newline$ -- 149
+num.names$ -- 20
+pop$ -- 615
 preamble$ -- 1
 purify$ -- 0
-quote$ -- 0
-skip$ -- 140
+quote$ -- 2
+skip$ -- 994
 stack$ -- 0
-substring$ -- 77
-swap$ -- 52
-text.length$ -- 7
+substring$ -- 159
+swap$ -- 707
+text.length$ -- 9
 text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
-warning$ -- 7
-while$ -- 26
-width$ -- 34
-write$ -- 284
-(There were 20 warnings)
+top$ -- 5
+type$ -- 30
+warning$ -- 5
+while$ -- 29
+width$ -- 32
+write$ -- 303
+(There were 6 warnings)

@@ -77,24 +77,75 @@ marginparwidth=0in
 \usepackage{array}
 \usepackage{mathtools}
 
+\usepackage{textcomp}
 
 %%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \lstset{language=ML, basicstyle=\scriptsize}
-\title{Systems-Theoretic Operational Risk Management (STORM) Applied to United States Army Ranger Patrol Base Operations: Applicability to A Non-automated, Human-Centered System}
+\title{Systems-Theoretic Operational Risk Management (STORM) \\Applied to United States Army Ranger Patrol Base Operations: \\Applicability to A Non-automated, Human-Centered System}
 \author{Lori Pickering}
 
+\begin{titlepage}
+\begin{center}
+        \vspace*{1cm}
+        
+        \textbf{Systems-Theoretic Operational Risk Management (STORM) \\
+                   Applied to United States Army Ranger Patrol Base Operations: \\
+                   }
+        
+        \vspace{0.5cm}
+        Applicability to A Non-automated, Human-Centered System
+        
+        \vspace{1.5cm}
+        
+        \textbf{Lori Pickering}
+ \begin{figure}[t]
+\includegraphics[width=\textwidth]{../figures/pbtoplevel2}
+\end{figure}
+       
+        \vfill
+        
+        A thesis presented for the degree of\\
+        Master of Science in Computer Science
+        
+        \vspace{0.8cm}
+        
+        
+        College of Engineering \& Computer Science\\
+        Syracuse University\\
+        U.S.A.\\
+        Fall 2018\\
+       \textcopyright  Copyright 2018 -- Lori D. Pickering
+    \end{center}
 
 
+
+\end{titlepage}
+\cleardoublepage
 %\frontmatter
-\maketitle
-\begin{figure}
-\includegraphics[width=\textwidth]{../figures/overalldiagramsquashed.png}
-\end{figure}
+%\maketitle
+%\begin{center}
+%{\huge Systems-Theoretic Operational Risk Management (STORM) 
+%
+%Applied to United States Army Ranger Patrol Base Operations: 
+%
+%Applicability to A Non-automated, Human-Centered System}
+%
+%By Lori Pickering
+%
+%Syracuse University College of Engineering \& Computer Science
+%
+%This master thesis is submitted in the Fall of 2018 as a requisite for completion of the Master of Science degree in Computer Science.
+%\end{center}
+%\cleardoublepage
 
-\begin{figure}[t]
-\includegraphics[width=\textwidth]{../figures/pbtoplevel}
-\end{figure}
+%\begin{figure}
+%\includegraphics[width=\textwidth]{../figures/overalldiagramsquashed.png}
+%\end{figure}
+%
+%\begin{figure}[t]
+%\includegraphics[width=\textwidth]{../figures/pbtoplevel}
+%\end{figure}
 
 \begin{doublespace}
 \cleardoublepage \phantomsection
@@ -282,7 +333,11 @@ A map of the folder structure for this project is shown below.
 \end{appendices}\cleardoublepage
 
 %%%%%%%%%% References %%%%%%%%%%%%%%%%%%%%%
-\bibliographystyle{unsrt}
-\bibliography{mtref}
+%\bibliographystyle{unsrt}
+%\bibliography{mtref}
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,mtref}
+
 \doublespacing
 \end{document}
