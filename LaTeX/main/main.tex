@@ -48,9 +48,12 @@
 %% Graphics
 \usepackage{graphicx}
 \graphicspath{{../figures/}}
-\usepackage{longtable}
-\usepackage[table]{xcolor}
 
+%%% Tables
+\usepackage{array}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{longtable}
 
 %%%%%%%% Style
 
@@ -74,7 +77,7 @@ marginparwidth=0in
 \usepackage{amsmath}
 \usepackage{amssymb}
 \DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
-\usepackage{array}
+
 \usepackage{mathtools}
 
 \usepackage{textcomp}
@@ -85,6 +88,7 @@ marginparwidth=0in
 \title{Systems-Theoretic Operational Risk Management (STORM) \\Applied to United States Army Ranger Patrol Base Operations: \\Applicability to A Non-automated, Human-Centered System}
 \author{Lori Pickering}
 
+%%%%%%%%%%%%%%%%%% Title %%%%%%%%%%%%%%%%%%
 \begin{titlepage}
 \begin{center}
         \vspace*{1cm}
@@ -122,30 +126,7 @@ marginparwidth=0in
 
 \end{titlepage}
 \cleardoublepage
-%\frontmatter
-%\maketitle
-%\begin{center}
-%{\huge Systems-Theoretic Operational Risk Management (STORM) 
-%
-%Applied to United States Army Ranger Patrol Base Operations: 
-%
-%Applicability to A Non-automated, Human-Centered System}
-%
-%By Lori Pickering
-%
-%Syracuse University College of Engineering \& Computer Science
-%
-%This master thesis is submitted in the Fall of 2018 as a requisite for completion of the Master of Science degree in Computer Science.
-%\end{center}
-%\cleardoublepage
-
-%\begin{figure}
-%\includegraphics[width=\textwidth]{../figures/overalldiagramsquashed.png}
-%\end{figure}
-%
-%\begin{figure}[t]
-%\includegraphics[width=\textwidth]{../figures/pbtoplevel}
-%\end{figure}
+%%%%%%%%%%%%%%%%%% Front Matter %%%%%%%%%%%%%%%%%%
 
 \begin{doublespace}
 \cleardoublepage \phantomsection
@@ -197,8 +178,8 @@ marginparwidth=0in
 %\subfile{../chapters/sse/sse}
 %\cleardoublepage
 %
-%\subfile{../chapters/stpa/stpa}
-%\cleardoublepage
+\subfile{../chapters/stpapb/stpapb}
+\cleardoublepage
 
 \subfile{../chapters/csbdacl/csbdacl}
 \cleardoublepage

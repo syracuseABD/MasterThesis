@@ -1,0 +1,162 @@
+%stpapb
+
+\documentclass[../../main/main.tex]{subfiles}
+
+
+\begin{document}
+\title{STPA on Patrol Base Operations}
+
+%%%%%%%%%%%%%%%% STPA on Patrol Base Operations %%%%%%%%%%%%%%%%
+\chapter{STPA on Patrol Base Operations}\label{chp:stpapb}
+
+
+%%%%%%%%%%%%%%%% Step 1 %%%%%%%%%%%%%%%%
+\section{Step 1: Define The Purpose of The Analysis}\label{chp:stpapb:purpose}
+\subsection{Organization FMA}
+
+   %%%%%% table: organization goals %%%%%%%%%%
+\begin{table}[h!]
+\parskip=8pt
+\begin{tabular}{||  m {7.5cm}  |  m {7.5cm}  ||}
+\hline
+\multicolumn{2} {|| c ||} {Organization Goals} \\
+ \hline
+U.S. Army Rangers	& U.S. Army\\
+\hline
+"The Rangers' primary mission is to engage the enemy in close combat and direct-fire battles. This mission includes direct action operations, raids, personnel and special equipment recovery, in addition to conventional or special light-infantry operations."
+&	
+The U.S. Army?s mission is to fight and win our Nation?s wars by providing prompt, sustained land dominance across the full range of military operations and spectrum of conflict in support of combatant commanders.\\
+\hline
+\end{tabular}
+\caption{Organization goals.}
+\label{orgo}
+\end{table}
+   %%%%%% table: organization goals %%%%%%%%%%
+
+
+\subsection{Patrol Base Operations FMA}
+   %%%%%% table: PB FMAs  %%%%%%%%%%
+\begin{table}[h!]
+\parskip=8pt
+\begin{tabular}{||  m {3cm}  |  m {12cm}  ||}
+\hline
+\multicolumn{2} {|| c ||} {Patrol Base Operations FMA} \\
+ \hline
+What &	establish a security perimeter when a squad or platoon halts for an extended period of time\\
+\hline
+How	&      planning, reconnaissance, security, control, and common sense\\
+\hline
+Why	&      avoid detection:
+\begin{itemize}
+\item hide a unit during a long, 
+\item detailed reconnaissance; 
+\item perform maintenance on weapons, 
+\item equipment, eat, and rest; 
+\item plan and issue orders; 
+\item reorganize after infiltrating an enemy area; 
+\item establish a common base from which to execute several consecutive or concurrent operations.
+\end{itemize}\\
+\hline
+\end{tabular}
+\caption{Patrol Base Operations Functional Mission Analysis.}
+\label{pbfma}
+\end{table}
+   %%%%%% table: PB FMAs  %%%%%%%%%%
+
+
+\subsection{Assumptions about The System}
+\begin{itemize}
+\item Mission is decided by higher-ups and is provided as an input to the patrol base operations.
+\item Mission is not changeable by the patrol base itself (exceptions are mission-specific).
+\item Soldiers are deemed fit for duty before the mission commences.   (There may be exceptions.)
+\item Soldiers are battle ready, but may not be fully mission capable (i.e., soldiers may require additional equipment and preparation that is mission-specific and determined after the mission is received).
+\item The patrol base operations begin when the platoon (or patrol) leader receives order that there will be a mission.
+\item The patrol base operations end when the patrol returns to the larger unit and has completed any debriefing required by the mission.
+\item Other inputs to the system are intelligence from the larger unit (higher-up HQ), intelligence from other units (if applicable), and intelligence gathered during the mission from the mission itself. 
+\item Feedback is received from the platoon regarding carrying out orders and from the operations themselves regarding completion of tasks, etc.  
+\item Adversary also may input information to the platoon leader (by interfering with communications from higher-up HQ), to the platoon soldiers (by interfering with intra-patrol communications), and to the operations themselves (by disrupting on the operations in various forms, including contact).
+\end{itemize}
+
+\subsection{System Entities}
+\begin{itemize}
+\item PL, PSG, 
+\item Medic, FO, RTO, HWSQL
+\item Squad Leaders
+\item Fire Team Leaders
+\item Buddy Team
+\item Soldiers
+\item Adversary (enemy)
+\end{itemize}
+
+\subsection{Accidents/Losses}
+   %%%%%% table: Accidents/Losses  %%%%%%%%%%
+\begin{table}[h!]
+\parskip=8pt
+\begin{tabular}{||  m {2cm}  |  m {13cm}  ||}
+\hline
+\multicolumn{2} {|| c ||} {Accidents/Losses} \\
+\hline
+	&Description\\
+\hline
+L1	&MIA, KIA, WIA, CIA\\
+\hline
+L2	&Wrong mission\\
+\hline
+L3	&Mission Failure\\
+\hline
+L4	&Negative publicity/exposure/unwanted attention\\
+\hline
+L5	&Equipment loss/damage/capture by enemy\\
+\hline
+L6	&Civilian casualties/disruption to local population\\
+\hline
+L7	&Insufficient communications with high-up HQ\\
+\hline
+\end{tabular}
+\caption{System accidents/losses.}
+\label{losses}
+\end{table}
+   %%%%%% table: Accidents/Losses  %%%%%%%%%%
+
+
+\subsection{System-level Hazards/Vulnerabilities And Constraints}
+
+%%%%%%%%%%%%%%%% Step 2 %%%%%%%%%%%%%%%%
+\section{Step 2: Model The Control Structure}\label{chp:stpapb:control}
+\subsection{Controllers And Process Models}
+\subsection{Control Actions}
+\subsection{Functional Control Structure}
+
+%%%%%%%%%%%%%%%% Step 3 %%%%%%%%%%%%%%%%
+\section{Step 3: Identify Unsafe Control Actions (UCAs)}\label{chp:stpapb:uca}
+\subsection{Unsafe Control Actions (UCAs): Thomas Model}
+\paragraph*{PL says planComplete}
+\paragraph*{exec(planComplete)}
+\paragraph*{discard(anyCommand)}
+
+%%%%%%%%%%%%%%%% Step 4 %%%%%%%%%%%%%%%%
+\section{Step 4: Identify Loss Scenarios}\label{chp:stpapb:scenarios}
+\subsection{Scenarios}
+\subsubsection*{Pl says planComplete}
+\paragraph*{P1B1/P1C1: state = PLAN_PB, Authorized = Yes, Authenticated = Yes}
+\paragraph*{P1A1: state  $\neq$ PLAN_PB, Authorized = Yes, Authenticated = Yes}
+\paragraph*{P1A2: state  = any state, Authorized = Yes, Authenticated = No}
+\paragraph*{P1A3: state  = any state, Authorized = No, Authenticated = Yes}
+\paragraph*{P1A4: state  = any state, Authorized = No, Authenticated = No}
+\subsubsection*{exec(planComplete)}
+\paragraph*{E1B1/E1C1: state = PLAN_PB, Authorized = Yes, Authenticated = Yes}
+\paragraph*{E1A1: state  $\neq$ PLAN_PB, Authorized = Yes, Authenticated = Yes}
+\paragraph*{E1A2: state  = any state, Authorized = Yes, Authenticated = No}
+\paragraph*{E1A3: state  = any state, Authorized = No, Authenticated = Yes}
+\paragraph*{E1A4: state  = any state, Authorized = No, Authenticated = No}
+\subsubsection*{discard(anyCommand)}
+\paragraph*{D1A1: state  = any state, Authorized = Yes, Authenticated = Yes}
+\paragraph*{D1A2: state  = any state, Authorized = Yes, Authenticated = No}
+\paragraph*{D1A3: state  = any state, Authorized = No, Authenticated = Yes}
+\paragraph*{D1A4: state  = any state, Authorized = No, Authenticated = No}
+
+%%%%%%%%%%%%%%%% Discussion %%%%%%%%%%%%%%%%
+\section{Discussion And Conclusions}\label{chp:stpapb:discuss}
+
+
+\end{document}
