@@ -120,10 +120,82 @@ L7	&Insufficient communications with high-up HQ\\
 
 
 \subsection{System-level Hazards/Vulnerabilities And Constraints}
+  %%%%%% table: System-level hazards  %%%%%%%%%%
+\begin{table}[h!]
+\parskip=8pt
+\begin{tabular}{|  m {0.7cm}  |  m {4.5cm} |  m{3.5cm}   |   m {0.7cm} |  m {4.5cm}   |}
+\hline
+\multicolumn{5}{| c |}{Hazards/Vulnerabilities and constraints}\\
+\hline
+\multicolumn{2}{| c |}{System-level Hazards/Vulnerabilities} & \multicolumn{1}{| c |}{Accidents/Losses} & \multicolumn{2}{| c |}{System-level Constraints}\\
+\hline
+H1    &Insufficient planning		&L1, L2, L3, L4, L5, L6, L7	&SC1	&Plan sufficiently\\
+\hline
+H2	&Insufficient reconnaissance/intelligence	&L1, L2, L3, L4, L5, L6, L7	&SC2	&Reconnoiter sufficiently\\
+\hline
+H3	&Insufficient security			&L1 ,L3, L4, L5, L6		&SC3	&Provide sufficient security\\
+\hline
+H4	&Insufficient control			&L1, L2, L3, L4, L5, L6 ,L7	&SC4	&Maintain adequate control\\
+\hline
+H5	&Insufficient common sense	&L1, L2, L3, L4, L5, L6, L7	&SC5	&Use common sense\\
+\hline
+H6	&Insufficient leadership		&L1, L2, L3, L4, L5, L6, L7	&SC6	&Establish sufficient leadership\\
+\hline
+H7	&Insufficient communication with higher-HQ	&L1, L2, L3, L4, L5, L6, L7	&SC7	&Maintain sufficient communications with higher-HQ\\
+\hline
+H8	&Insufficient haste			&L1, L3	&SC8	&Maintain appropriate pace\\
+\hline
+H9	&Disregard for Rules of Engagement  &L4, L6	&SC9	&Follow Rules of Engagement\\ 
+\hline
+\end{tabular}
+\caption{System-level hazards/vulnerabilities and constraints.}
+\label{hazards}
+\end{table}
+  %%%%%% table: System-level hazards  %%%%%%%%%%
 
 %%%%%%%%%%%%%%%% Step 2 %%%%%%%%%%%%%%%%
 \section{Step 2: Model The Control Structure}\label{chp:stpapb:control}
 \subsection{Controllers And Process Models}
+ %%%%%% table: Controllers Processes %%%%%%%%%%
+\begin{table}[h!]
+\parskip=8pt
+\begin{tabular}{|  m {3cm}  |  m {3cm}  |  m {3cm}     |  m {5cm}   |}
+\hline
+\multicolumn{4}{| c |}{Controllers And Process Model}\\
+\hline
+Controller & Model & Variables & Values\\
+\hline
+
+\multirow{2}{3cm}{Platoon Leader}	& Patrol Base \newline Status	& State	 &
+\begin{itemize}
+\item PLAN_PB
+\item MOVE_TO_ORP
+\item CONDUCT_ORP
+\item MOVE_TO_PB
+\item CONDUCT_PB
+\item COMPLETE_PB
+\item ABORT_PB
+\end{itemize}\\
+\cline{2-4}
+      & Policy  & Authenticated &
+ \begin{itemize}
+\item True
+\item False
+\end{itemize}\\
+\hline
+Platoon	& Authentication Model	& Authenticated	 &
+\begin{itemize}
+\item True
+\item False
+\end{itemize}\\
+\hline
+Adversary	& Threat Model	& To be \newline determined & to be determined\\
+\hline
+\end{tabular}
+\caption{Controllers and process model.}
+\label{controlprocess}
+\end{table}
+ %%%%%% table: Controllers Processes %%%%%%%%%%
 \subsection{Control Actions}
 \subsection{Functional Control Structure}
 
