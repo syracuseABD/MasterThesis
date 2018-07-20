@@ -6,6 +6,21 @@
 \contentsline {table}{\numberline {3.3}{\ignorespaces System accidents/losses.}}{25}{table.3.3}
 \contentsline {table}{\numberline {3.4}{\ignorespaces System-level hazards/vulnerabilities and constraints.}}{26}{table.3.4}
 \contentsline {table}{\numberline {3.5}{\ignorespaces Controllers and process model.}}{27}{table.3.5}
+\contentsline {table}{\numberline {3.6}{\ignorespaces Unsafe control actions \glspl {uca} for control action "PL says planComplete."}}{31}{table.3.6}
+\contentsline {table}{\numberline {3.7}{\ignorespaces Unsafe control actions \glspl {uca} for control action "exec(planComplete)."}}{32}{table.3.7}
+\contentsline {table}{\numberline {3.8}{\ignorespaces Unsafe control actions \glspl {uca} for control action "discard(anyCommand)."}}{33}{table.3.8}
+\contentsline {table}{\numberline {3.9}{\ignorespaces Scenarios for UCA P1B1.}}{35}{table.3.9}
+\contentsline {table}{\numberline {3.10}{\ignorespaces Scenarios for UCA P1B1/P1C1.}}{36}{table.3.10}
+\contentsline {table}{\numberline {3.11}{\ignorespaces Scenarios for UCA P1A1.}}{37}{table.3.11}
+\contentsline {table}{\numberline {3.12}{\ignorespaces Scenarios for UCA P1A2.}}{38}{table.3.12}
+\contentsline {table}{\numberline {3.13}{\ignorespaces Scenarios for UCA P1A3.}}{39}{table.3.13}
+\contentsline {table}{\numberline {3.14}{\ignorespaces Scenarios for UCA P1A4.}}{40}{table.3.14}
+\contentsline {table}{\numberline {3.15}{\ignorespaces Scenarios for UCAs E1B1 and E1C1.}}{41}{table.3.15}
+\contentsline {table}{\numberline {3.16}{\ignorespaces Scenarios for UCA E1A1.}}{42}{table.3.16}
+\contentsline {table}{\numberline {3.17}{\ignorespaces Scenarios for UCA E1A2.}}{43}{table.3.17}
+\contentsline {table}{\numberline {3.18}{\ignorespaces Scenarios for UCA E1A3.}}{44}{table.3.18}
+\contentsline {table}{\numberline {3.19}{\ignorespaces Scenarios for UCA E1A3.}}{45}{table.3.19}
+\contentsline {table}{\numberline {3.20}{\ignorespaces Scenarios for UCA for discard on all commands (D1A1 through D1A4).}}{46}{table.3.20}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {5.1}{\ignorespaces Mission Activity Specification for Patrol Base Operations. Adapted from the U.S. Army Ranger Handbook 2017 \cite {rangermanual}.}}{65}{table.5.1}

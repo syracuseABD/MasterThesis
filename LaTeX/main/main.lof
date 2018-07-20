@@ -8,21 +8,6 @@
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Control structure with potential system-level vulnerabilities/hazards and security considerations. (Image captured from \textit {Systems thinking for safety and security} \cite {sys4sec}.)}}{16}{figure.2.6}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Control structure for patrol base operations.}}{29}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Unsafe control actions \glspl {uca} for control action "PL says planComplete."}}{31}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Unsafe control actions \glspl {uca} for control action "exec(planComplete)."}}{32}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Unsafe control actions \glspl {uca} for control action "discard(anyCommand)."}}{33}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Scenarios for UCA P1B1.}}{35}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Scenarios for UCA P1B1/P1C1.}}{36}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Scenarios for UCA P1A1.}}{37}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Scenarios for UCA P1A2.}}{38}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Scenarios for UCA P1A3.}}{39}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Scenarios for UCA P1A4.}}{40}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Scenarios for UCAs E1B1 and E1C1.}}{41}{figure.3.11}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Scenarios for UCA E1A1.}}{42}{figure.3.12}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Scenarios for UCA E1A2.}}{43}{figure.3.13}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Scenarios for UCA E1A3.}}{44}{figure.3.14}
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Scenarios for UCA E1A3.}}{45}{figure.3.15}
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Scenarios for UCA for discard on all commands (D1A1 through D1A4).}}{46}{figure.3.16}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Kripke semantics. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{54}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces The \gls {acl} inference rules. Image taken from \textit {Access Control, Security, and Trust: A Logical Approach}\cite {ChinOlder}}}{55}{figure.4.2}
