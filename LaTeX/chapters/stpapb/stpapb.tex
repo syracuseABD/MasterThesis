@@ -32,7 +32,8 @@ The U.S. Army?s mission is to fight and win our Nation?s wars by providing promp
 \label{orgo}
 \end{table}
    %%%%%% table: organization goals %%%%%%%%%%
-
+%%
+\clearpage
 
 \subsection{Patrol Base Operations FMA}
    %%%%%% table: PB FMAs  %%%%%%%%%%
@@ -62,7 +63,8 @@ Why	&      avoid detection:
 \label{pbfma}
 \end{table}
    %%%%%% table: PB FMAs  %%%%%%%%%%
-
+%%
+\clearpage
 
 \subsection{Assumptions about The System}
 \begin{itemize}
@@ -77,6 +79,7 @@ Why	&      avoid detection:
 \item Adversary also may input information to the platoon leader (by interfering with communications from higher-up HQ), to the platoon soldiers (by interfering with intra-patrol communications), and to the operations themselves (by disrupting on the operations in various forms, including contact).
 \end{itemize}
 
+
 \subsection{System Entities}
 \begin{itemize}
 \item PL, PSG, 
@@ -88,6 +91,8 @@ Why	&      avoid detection:
 \item Adversary (enemy)
 \end{itemize}
 
+%%
+\clearpage
 \subsection{Accidents/Losses}
    %%%%%% table: Accidents/Losses  %%%%%%%%%%
 \begin{table}[h!]
@@ -118,7 +123,8 @@ L7	&Insufficient communications with high-up HQ\\
 \end{table}
    %%%%%% table: Accidents/Losses  %%%%%%%%%%
 
-
+%%
+\clearpage
 \subsection{System-level Hazards/Vulnerabilities And Constraints}
   %%%%%% table: System-level hazards  %%%%%%%%%%
 \begin{table}[h!]
@@ -152,7 +158,8 @@ H9	&Disregard for Rules of Engagement  &L4, L6	&SC9	&Follow Rules of Engagement\
 \label{hazards}
 \end{table}
   %%%%%% table: System-level hazards  %%%%%%%%%%
-
+%%
+\clearpage
 %%%%%%%%%%%%%%%% Step 2 %%%%%%%%%%%%%%%%
 \section{Step 2: Model The Control Structure}\label{chp:stpapb:control}
 \subsection{Controllers And Process Models}
@@ -165,7 +172,6 @@ H9	&Disregard for Rules of Engagement  &L4, L6	&SC9	&Follow Rules of Engagement\
 \hline
 Controller & Model & Variables & Values\\
 \hline
-
 \multirow{2}{3cm}{Platoon Leader}	& Patrol Base \newline Status	& State	 &
 \begin{itemize}
 \item PLAN_PB
@@ -196,36 +202,247 @@ Adversary	& Threat Model	& To be \newline determined & to be determined\\
 \label{controlprocess}
 \end{table}
  %%%%%% table: Controllers Processes %%%%%%%%%%
+ %%
+\clearpage
+
 \subsection{Control Actions}
+The control actions for each principal are listed below.
+\begin{itemize}
+\item Platoon Leader
+\begin{itemize}
+\item PL says crossLD (same as planComplete)
+\item PL says conductORP
+\item PL says moveToPB
+\item PL says completePB
+\item PL says reactToContact
+\item PL says returnToBase
+\item PL says changeMission
+\end{itemize}
+\item Platoon
+\begin{itemize}
+\item exec(crossLD) (same as planComplete)
+\item exec(conductORP)
+\item exec(moveToPB)
+\item exec(completePB)
+\item exec(reactToContact)
+\item exec(returnToBase)
+\item exec(changeMission)
+\end{itemize}
+
+\end{itemize}
+
 \subsection{Functional Control Structure}
+%%
+\clearpage
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=0.7\linewidth]{../figures/controlstr1}
+\caption{Control structure for patrol base operations.}
+\label{controlstr1}
+\end{center}
+\end{figure}
+
+%%
+\clearpage
 
 %%%%%%%%%%%%%%%% Step 3 %%%%%%%%%%%%%%%%
 \section{Step 3: Identify Unsafe Control Actions (UCAs)}\label{chp:stpapb:uca}
-\subsection{Unsafe Control Actions (UCAs): Thomas Model}
-\paragraph*{PL says planComplete}
-\paragraph*{exec(planComplete)}
-\paragraph*{discard(anyCommand)}
+The Thomas methods is used to identify \glspl{uca}.
 
+\subsection{Unsafe Control Actions (UCAs): Thomas Model}
+%%
+\clearpage
+\paragraph*{PL says planComplete}
+The Thomas method for delineating \glspl{uca} for \textit{PL says planComplete} are shown in figure \ref{UCAPLsays}.
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/UCAPLsays}
+\caption{Unsafe control actions \glspl{uca} for control action "PL says planComplete."}
+\label{UCAPLsays}
+\end{center}
+\end{figure}
+
+%%
+\clearpage
+\paragraph*{exec(planComplete)}
+The Thomas method for delineating \glspl{uca} for \textit{exec(planComplete)} are shown in figure \ref{UCAPLsays}.
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/UCAexecplan}
+\caption{Unsafe control actions \glspl{uca} for control action "exec(planComplete)."}
+\label{UCAexecplan}
+\end{center}
+\end{figure}
+
+%%
+\clearpage
+\paragraph*{discard(anyCommand)}
+The Thomas method for delineating \glspl{uca} for \textit{discard{anyCommand}} are shown in figure \ref{UCAPLsays}.
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/ucadiscards}
+\caption{Unsafe control actions \glspl{uca} for control action "discard(anyCommand)."}
+\label{UCAdiscard}
+\end{center}
+\end{figure}
+%%
+\clearpage
 %%%%%%%%%%%%%%%% Step 4 %%%%%%%%%%%%%%%%
 \section{Step 4: Identify Loss Scenarios}\label{chp:stpapb:scenarios}
 \subsection{Scenarios}
+
 \subsubsection*{Pl says planComplete}
+%%
+\clearpage
 \paragraph*{P1B1/P1C1: state = PLAN_PB, Authorized = Yes, Authenticated = Yes}
-\paragraph*{P1A1: state  $\neq$ PLAN_PB, Authorized = Yes, Authenticated = Yes}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/ucap1b1}
+\caption{Scenarios for UCA P1B1.}
+\label{ucap1b1}
+\end{center}
+\end{figure}
+%%
+\clearpage
+
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/ucap1b1p1c1}
+\caption{Scenarios for UCA P1B1/P1C1.}
+\label{ucap1b1p1c1}
+\end{center}
+\end{figure}
+%%
+\clearpage
+
+
+
+\paragraph*{P1A1: state  = PLAN_PB, Authorized = Yes, Authenticated = Yes}
+
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/ucap1a1}
+\caption{Scenarios for UCA P1A1.}
+\label{ucap1a1}
+\end{center}
+\end{figure}
+%%
+\clearpage
 \paragraph*{P1A2: state  = any state, Authorized = Yes, Authenticated = No}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/ucap1a2}
+\caption{Scenarios for UCA P1A2.}
+\label{ucap1a2}
+\end{center}
+\end{figure}
+
+%%
+\clearpage
 \paragraph*{P1A3: state  = any state, Authorized = No, Authenticated = Yes}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/ucap1a3}
+\caption{Scenarios for UCA P1A3.}
+\label{ucap1a3}
+\end{center}
+\end{figure}
+
+%%
+\clearpage
+
+
 \paragraph*{P1A4: state  = any state, Authorized = No, Authenticated = No}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/ucap1a4}
+\caption{Scenarios for UCA P1A4.}
+\label{ucap1a4}
+\end{center}
+\end{figure}
+%%
+\clearpage
+
+
 \subsubsection*{exec(planComplete)}
 \paragraph*{E1B1/E1C1: state = PLAN_PB, Authorized = Yes, Authenticated = Yes}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/ucae1b1e1c1}
+\caption{Scenarios for UCAs E1B1 and E1C1.}
+\label{ucae1b1e1c1}
+\end{center}
+\end{figure}
+%%
+\clearpage
+
 \paragraph*{E1A1: state  $\neq$ PLAN_PB, Authorized = Yes, Authenticated = Yes}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/ucaea1}
+\caption{Scenarios for UCA E1A1.}
+\label{ucaea1}
+\end{center}
+\end{figure}
+%%
+\clearpage
 \paragraph*{E1A2: state  = any state, Authorized = Yes, Authenticated = No}
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/ucae1a2}
+\caption{Scenarios for UCA E1A2.}
+\label{ucae1a2}
+\end{center}
+\end{figure}
+%%
+\clearpage
+
 \paragraph*{E1A3: state  = any state, Authorized = No, Authenticated = Yes}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/ucae1a3}
+\caption{Scenarios for UCA E1A3.}
+\label{ucae1a3}
+\end{center}
+\end{figure}
+%%
+\clearpage
+
+
 \paragraph*{E1A4: state  = any state, Authorized = No, Authenticated = No}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/ucae1a4}
+\caption{Scenarios for UCA E1A3.}
+\label{ucae1a4}
+\end{center}
+\end{figure}
+%%
+\clearpage
+
+
 \subsubsection*{discard(anyCommand)}
-\paragraph*{D1A1: state  = any state, Authorized = Yes, Authenticated = Yes}
-\paragraph*{D1A2: state  = any state, Authorized = Yes, Authenticated = No}
-\paragraph*{D1A3: state  = any state, Authorized = No, Authenticated = Yes}
-\paragraph*{D1A4: state  = any state, Authorized = No, Authenticated = No}
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/ucadiscard}
+\caption{Scenarios for UCA for discard on all commands (D1A1 through D1A4).}
+\label{ucadiscard}
+\end{center}
+\end{figure}
+%%
+\clearpage
 
 %%%%%%%%%%%%%%%% Discussion %%%%%%%%%%%%%%%%
 \section{Discussion And Conclusions}\label{chp:stpapb:discuss}

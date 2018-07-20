@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  19 JUL 2018 23:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  20 JUL 2018 14:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -994,22 +994,23 @@ al-y-sis for Se-cu-rity (STPA-
 
 
 
-])
+] [10])
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [10] (./main.lot)
+ [11] (./main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [11
+ [12
 
 
-] [12
+] [13
 
 
 
-] (../chapters/introduction/introduction.tex
+]
+(../chapters/introduction/introduction.tex
 Chapter 1.
 [1
 
@@ -1039,14 +1040,14 @@ l.17 }\end{quote}
                    \relax 
 l.25 
       [3] [4] [5]
-<../figures/sseframework.png, id=1522, 703.62875pt x 578.16pt>
+<../figures/sseframework.png, id=1563, 703.62875pt x 578.16pt>
 File: ../figures/sseframework.png Graphic file (type png)
 
 <use ../figures/sseframework.png>
 Package pdftex.def Info: ../figures/sseframework.png used on input line 53.
 (pdftex.def)             Requested size: 452.9679pt x 372.19135pt.
  [6 <../figures/sseframework.png>] [7]
-[8] [9] <../figures/stampstpa.png, id=1599, 255.95625pt x 404.51125pt>
+[8] [9] <../figures/stampstpa.png, id=1639, 255.95625pt x 404.51125pt>
 File: ../figures/stampstpa.png Graphic file (type png)
 
 <use ../figures/stampstpa.png>
@@ -1057,28 +1058,28 @@ LaTeX Font Info:    Try loading font information for T1+pcr on input line 117.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ) [10 <../figures/stampstpa.png>] [11]
-<../figures/controlmodel.png, id=1650, 198.7425pt x 201.75375pt>
+<../figures/controlmodel.png, id=1691, 198.7425pt x 201.75375pt>
 File: ../figures/controlmodel.png Graphic file (type png)
 
 <use ../figures/controlmodel.png>
 Package pdftex.def Info: ../figures/controlmodel.png used on input line 139.
 (pdftex.def)             Requested size: 226.48395pt x 229.92162pt.
  [12 <../figures/controlmodel.png>]
-<../figures/processmodel.png, id=1663, 285.065pt x 292.09125pt>
+<../figures/processmodel.png, id=1704, 285.065pt x 292.09125pt>
 File: ../figures/processmodel.png Graphic file (type png)
 
 <use ../figures/processmodel.png>
 Package pdftex.def Info: ../figures/processmodel.png used on input line 153.
 (pdftex.def)             Requested size: 226.48395pt x 232.06433pt.
  [13 <../figures/processmodel.png>]
-<../figures/4step.png, id=1694, 899.36pt x 417.56pt>
+<../figures/4step.png, id=1735, 899.36pt x 417.56pt>
 File: ../figures/4step.png Graphic file (type png)
 
 <use ../figures/4step.png>
 Package pdftex.def Info: ../figures/4step.png used on input line 177.
 (pdftex.def)             Requested size: 452.9679pt x 210.30862pt.
  [14]
-<../figures/stpasecControlStructure.png, id=1708, 838.13126pt x 667.49374pt>
+<../figures/stpasecControlStructure.png, id=1748, 838.13126pt x 667.49374pt>
 File: ../figures/stpasecControlStructure.png Graphic file (type png)
 
 <use ../figures/stpasecControlStructure.png>
@@ -1107,117 +1108,273 @@ Overfull \hbox (3.8234pt too wide) in paragraph at lines 20--31
 [][] 
  []
 
-
-Overfull \hbox (3.8234pt too wide) in paragraph at lines 41--61
-[][] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [21
 
 
-] [22]
-Overfull \hbox (3.8234pt too wide) in paragraph at lines 95--116
+]
+Overfull \hbox (3.8234pt too wide) in paragraph at lines 42--62
 [][] 
  []
 
+[22
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+] [23
 
+] [24]
+Overfull \hbox (3.8234pt too wide) in paragraph at lines 100--121
+[][] 
+ []
 
-Overfull \hbox (0.96695pt too wide) in paragraph at lines 132--132
+[25
+
+]
+Overfull \hbox (0.96695pt too wide) in paragraph at lines 138--138
 []|\T1/cmr/m/n/12 SC1| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--134
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
 []|\T1/cmr/m/n/12 Insufficient re-con-nais-
  []
 
 
-Overfull \hbox (0.96695pt too wide) in paragraph at lines 134--134
+Overfull \hbox (0.96695pt too wide) in paragraph at lines 140--140
 []|\T1/cmr/m/n/12 SC2| 
  []
 
 
-Overfull \hbox (0.96695pt too wide) in paragraph at lines 136--136
+Overfull \hbox (0.96695pt too wide) in paragraph at lines 142--142
 []|\T1/cmr/m/n/12 SC3| 
  []
 
 
-Underfull \hbox (badness 1635) in paragraph at lines 136--137
+Underfull \hbox (badness 1635) in paragraph at lines 142--143
 []|\T1/cmr/m/n/12 Provide suf-fi-cient se-cu-
  []
 
 
-Overfull \hbox (0.96695pt too wide) in paragraph at lines 138--138
+Overfull \hbox (0.96695pt too wide) in paragraph at lines 144--144
 []|\T1/cmr/m/n/12 SC4| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--140
+Underfull \hbox (badness 10000) in paragraph at lines 146--146
 []|\T1/cmr/m/n/12 Insufficient com-mon
  []
 
 
-Overfull \hbox (0.96695pt too wide) in paragraph at lines 140--140
+Overfull \hbox (0.96695pt too wide) in paragraph at lines 146--146
 []|\T1/cmr/m/n/12 SC5| 
  []
 
 
-Overfull \hbox (0.96695pt too wide) in paragraph at lines 142--142
+Overfull \hbox (0.96695pt too wide) in paragraph at lines 148--148
 []|\T1/cmr/m/n/12 SC6| 
  []
 
 
-Underfull \hbox (badness 3271) in paragraph at lines 144--144
+Underfull \hbox (badness 3271) in paragraph at lines 150--150
 []|\T1/cmr/m/n/12 Insufficient com-mu-ni-ca-
  []
 
 
-Overfull \hbox (0.96695pt too wide) in paragraph at lines 144--144
+Overfull \hbox (0.96695pt too wide) in paragraph at lines 150--150
 []|\T1/cmr/m/n/12 SC7| 
  []
 
 
-Overfull \hbox (0.96695pt too wide) in paragraph at lines 146--146
+Overfull \hbox (0.96695pt too wide) in paragraph at lines 152--152
 []|\T1/cmr/m/n/12 SC8| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 []|\T1/cmr/m/n/12 Maintain ap-pro-pri-ate
  []
 
 
-Underfull \hbox (badness 1661) in paragraph at lines 148--148
+Underfull \hbox (badness 1661) in paragraph at lines 154--154
 []|\T1/cmr/m/n/12 Disregard for Rules of
  []
 
 
-Overfull \hbox (0.96695pt too wide) in paragraph at lines 148--148
+Overfull \hbox (0.96695pt too wide) in paragraph at lines 154--154
 []|\T1/cmr/m/n/12 SC9| 
  []
 
 
-Overfull \hbox (33.365pt too wide) in paragraph at lines 126--151
+Overfull \hbox (33.365pt too wide) in paragraph at lines 132--157
 [][] 
  []
 
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 186--186
+[26
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 192--192
 []|\T1/cmr/m/n/12 Authentication
  []
 
-[24] [25] [26] [27]) [28] (../chapters/csbdacl/csbdacl.tex
+[27
+
+] [28
+
+] <../figures/controlstr1.png, id=1849, 537.00626pt x 599.23875pt>
+File: ../figures/controlstr1.png Graphic file (type png)
+
+<use ../figures/controlstr1.png>
+Package pdftex.def Info: ../figures/controlstr1.png used on input line 240.
+(pdftex.def)             Requested size: 317.07614pt x 353.82211pt.
+ [29
+
+ <../figures/controlstr1.png>] [30
+
+]
+<../figures/UCAPLsays.png, id=1862, 684.5575pt x 715.67375pt>
+File: ../figures/UCAPLsays.png Graphic file (type png)
+
+<use ../figures/UCAPLsays.png>
+Package pdftex.def Info: ../figures/UCAPLsays.png used on input line 260.
+(pdftex.def)             Requested size: 452.9679pt x 473.5692pt.
+ [31
+
+ <../figures/UCAPLsays.png>]
+<../figures/UCAexecplan.png, id=1873, 690.58pt x 720.6925pt>
+File: ../figures/UCAexecplan.png Graphic file (type png)
+
+<use ../figures/UCAexecplan.png>
+Package pdftex.def Info: ../figures/UCAexecplan.png used on input line 272.
+(pdftex.def)             Requested size: 452.9679pt x 472.72237pt.
+ [32
+
+ <../figures/UCAexecplan.png>]
+<../figures/ucadiscards.png, id=1883, 696.6025pt x 722.7pt>
+File: ../figures/ucadiscards.png Graphic file (type png)
+
+<use ../figures/ucadiscards.png>
+Package pdftex.def Info: ../figures/ucadiscards.png used on input line 284.
+(pdftex.def)             Requested size: 452.9679pt x 469.93689pt.
+ [33
+
+ <../figures/ucadiscards.png>] [34
+
+]
+<../figures/ucap1b1.png, id=1897, 709.65125pt x 753.81625pt>
+File: ../figures/ucap1b1.png Graphic file (type png)
+
+<use ../figures/ucap1b1.png>
+Package pdftex.def Info: ../figures/ucap1b1.png used on input line 302.
+(pdftex.def)             Requested size: 452.9679pt x 481.164pt.
+ [35
+
+ <../figures/ucap1b1.png>]
+<../figures/ucap1b1p1c1.png, id=1904, 703.62875pt x 541.02126pt>
+File: ../figures/ucap1b1p1c1.png Graphic file (type png)
+
+<use ../figures/ucap1b1p1c1.png>
+Package pdftex.def Info: ../figures/ucap1b1p1c1.png used on input line 313.
+(pdftex.def)             Requested size: 452.9679pt x 348.28322pt.
+ [36
+
+ <../figures/ucap1b1p1c1.png>]
+<../figures/ucap1a1.png, id=1910, 744.7825pt x 776.9025pt>
+File: ../figures/ucap1a1.png Graphic file (type png)
+
+<use ../figures/ucap1a1.png>
+Package pdftex.def Info: ../figures/ucap1a1.png used on input line 328.
+(pdftex.def)             Requested size: 452.9679pt x 472.51099pt.
+ [37
+
+ <../figures/ucap1a1.png>]
+<../figures/ucap1a2.png, id=1918, 736.7525pt x 723.70375pt>
+File: ../figures/ucap1a2.png Graphic file (type png)
+
+<use ../figures/ucap1a2.png>
+Package pdftex.def Info: ../figures/ucap1a2.png used on input line 339.
+(pdftex.def)             Requested size: 452.9679pt x 444.93713pt.
+ [38
+
+ <../figures/ucap1a2.png>]
+<../figures/ucap1a3.png, id=1925, 705.63625pt x 198.7425pt>
+File: ../figures/ucap1a3.png Graphic file (type png)
+
+<use ../figures/ucap1a3.png>
+Package pdftex.def Info: ../figures/ucap1a3.png used on input line 351.
+(pdftex.def)             Requested size: 452.9679pt x 127.5799pt.
+ [39
+
+ <../figures/ucap1a3.png>]
+<../figures/ucap1a4.png, id=1932, 705.63625pt x 198.7425pt>
+File: ../figures/ucap1a4.png Graphic file (type png)
+
+<use ../figures/ucap1a4.png>
+Package pdftex.def Info: ../figures/ucap1a4.png used on input line 365.
+(pdftex.def)             Requested size: 452.9679pt x 127.5799pt.
+ [40
+
+ <../figures/ucap1a4.png>]
+<../figures/ucae1b1e1c1.png, id=1939, 760.8425pt x 624.3325pt>
+File: ../figures/ucae1b1e1c1.png Graphic file (type png)
+
+<use ../figures/ucae1b1e1c1.png>
+Package pdftex.def Info: ../figures/ucae1b1e1c1.png used on input line 379.
+(pdftex.def)             Requested size: 452.9679pt x 371.70633pt.
+ [41
+
+ <../figures/ucae1b1e1c1.png>]
+<../figures/ucaea1.png, id=1947, 745.78625pt x 701.62125pt>
+File: ../figures/ucaea1.png Graphic file (type png)
+
+<use ../figures/ucaea1.png>
+Package pdftex.def Info: ../figures/ucaea1.png used on input line 391.
+(pdftex.def)             Requested size: 452.9679pt x 426.13622pt.
+ [42
+
+ <../figures/ucaea1.png>]
+<../figures/ucae1a2.png, id=1956, 747.79375pt x 701.62125pt>
+File: ../figures/ucae1a2.png Graphic file (type png)
+
+<use ../figures/ucae1a2.png>
+Package pdftex.def Info: ../figures/ucae1a2.png used on input line 401.
+(pdftex.def)             Requested size: 452.9679pt x 425.00139pt.
+ [43
+
+ <../figures/ucae1a2.png>]
+<../figures/ucae1a3.png, id=1964, 727.71875pt x 333.245pt>
+File: ../figures/ucae1a3.png Graphic file (type png)
+
+<use ../figures/ucae1a3.png>
+Package pdftex.def Info: ../figures/ucae1a3.png used on input line 413.
+(pdftex.def)             Requested size: 452.9679pt x 207.4335pt.
+ [44
+
+ <../figures/ucae1a3.png>]
+<../figures/ucae1a4.png, id=1971, 725.71124pt x 193.72375pt>
+File: ../figures/ucae1a4.png Graphic file (type png)
+
+<use ../figures/ucae1a4.png>
+Package pdftex.def Info: ../figures/ucae1a4.png used on input line 426.
+(pdftex.def)             Requested size: 452.9679pt x 120.92036pt.
+ [45
+
+ <../figures/ucae1a4.png>]
+<../figures/ucadiscard.png, id=1978, 730.73pt x 645.41125pt>
+File: ../figures/ucadiscard.png Graphic file (type png)
+
+<use ../figures/ucadiscard.png>
+Package pdftex.def Info: ../figures/ucadiscard.png used on input line 439.
+(pdftex.def)             Requested size: 452.9679pt x 400.08191pt.
+ [46
+
+ <../figures/ucadiscard.png>]) [47
+
+]
+(../chapters/csbdacl/csbdacl.tex
 Chapter 4.
-[29
+[48
 
 
-] [30] [31] [32] [33] [34]
-<../figures/kripkesemantics.png, id=1895, 388.45125pt x 252.945pt>
+] [49] [50] [51] [52] [53]
+<../figures/kripkesemantics.png, id=2053, 388.45125pt x 252.945pt>
 File: ../figures/kripkesemantics.png Graphic file (type png)
 
 <use ../figures/kripkesemantics.png>
@@ -1237,15 +1394,15 @@ LaTeX Warning: Command \textrbrackdbl invalid in math mode on input line 109.
 
 LaTeX Warning: Command \textrbrackdbl invalid in math mode on input line 109.
 
-[35 <../figures/kripkesemantics.png>]
-<../figures/inferencerules.png, id=1907, 637.38126pt x 297.11pt>
+[54 <../figures/kripkesemantics.png>]
+<../figures/inferencerules.png, id=2065, 637.38126pt x 297.11pt>
 File: ../figures/inferencerules.png Graphic file (type png)
 
 <use ../figures/inferencerules.png>
 Package pdftex.def Info: ../figures/inferencerules.png used on input line 130.
 (pdftex.def)             Requested size: 452.9679pt x 211.14452pt.
- [36 <../figures/inferencerules.png>]
-<../figures/ControlsInferenceRule.png, id=1922, 246.9225pt x 60.225pt>
+ [55 <../figures/inferencerules.png>]
+<../figures/ControlsInferenceRule.png, id=2081, 246.9225pt x 60.225pt>
 File: ../figures/ControlsInferenceRule.png Graphic file (type png)
 
 <use ../figures/ControlsInferenceRule.png>
@@ -1253,14 +1410,14 @@ Package pdftex.def Info: ../figures/ControlsInferenceRule.png used on input lin
 e 139.
 (pdftex.def)             Requested size: 246.92188pt x 60.22484pt.
 
-<../figures/repsrule.png, id=1927, 467.7475pt x 73.27374pt>
+<../figures/repsrule.png, id=2086, 467.7475pt x 73.27374pt>
 File: ../figures/repsrule.png Graphic file (type png)
 
 <use ../figures/repsrule.png>
 Package pdftex.def Info: ../figures/repsrule.png used on input line 149.
 (pdftex.def)             Requested size: 317.07614pt x 49.67342pt.
- [37 <../figures/ControlsInferenceRule.png> <../figures/repsrule.png>]
-<../figures/derivedspeaksfor.png, id=1941, 393.47pt x 81.30376pt>
+ [56 <../figures/ControlsInferenceRule.png> <../figures/repsrule.png>]
+<../figures/derivedspeaksfor.png, id=2100, 393.47pt x 81.30376pt>
 File: ../figures/derivedspeaksfor.png Graphic file (type png)
 
 <use ../figures/derivedspeaksfor.png>
@@ -1268,7 +1425,7 @@ Package pdftex.def Info: ../figures/derivedspeaksfor.png used on input line 159
 .
 (pdftex.def)             Requested size: 271.7835pt x 56.15918pt.
 
-<../figures/princHOL.png, id=1953, 385.44pt x 84.315pt>
+<../figures/princHOL.png, id=2112, 385.44pt x 84.315pt>
 File: ../figures/princHOL.png Graphic file (type png)
 
 <use ../figures/princHOL.png>
@@ -1278,7 +1435,7 @@ Package pdftex.def Info: ../figures/princHOL.png used on input line 182.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[38 <../figures/derivedspeaksfor.png>]
+[57 <../figures/derivedspeaksfor.png>]
 LaTeX Font Info:    Try loading font information for TS1+pcr on input line 192.
 
 
@@ -1290,7 +1447,7 @@ LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <12> not available
 LaTeX Font Info:    Font shape `TS1/pcr/m/it' in size <12> not available
 (Font)              Font shape `TS1/pcr/m/sl' tried instead on input line 197.
 
-<../figures/FormACL.png, id=1970, 590.205pt x 468.75125pt>
+<../figures/FormACL.png, id=2128, 590.205pt x 468.75125pt>
 File: ../figures/FormACL.png Graphic file (type png)
 
 <use ../figures/FormACL.png>
@@ -1300,26 +1457,26 @@ Package pdftex.def Info: ../figures/FormACL.png used on input line 205.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[39 <../figures/princHOL.png>] [40 <../figures/FormACL.png>]
-<../figures/kripkehol.png, id=1989, 567.11874pt x 87.32625pt>
+[58 <../figures/princHOL.png>] [59 <../figures/FormACL.png>]
+<../figures/kripkehol.png, id=2147, 567.11874pt x 87.32625pt>
 File: ../figures/kripkehol.png Graphic file (type png)
 
 <use ../figures/kripkehol.png>
 Package pdftex.def Info: ../figures/kripkehol.png used on input line 224.
 (pdftex.def)             Requested size: 452.9679pt x 69.75182pt.
- [41 <../figures/kripkehol.png>]
+ [60 <../figures/kripkehol.png>]
 Overfull \hbox (65.43188pt too wide) detected at line 234
 []
  []
 
-<../figures/aclformulasHOL.png, id=2004, 648.4225pt x 282.05376pt>
+<../figures/aclformulasHOL.png, id=2162, 648.4225pt x 282.05376pt>
 File: ../figures/aclformulasHOL.png Graphic file (type png)
 
 <use ../figures/aclformulasHOL.png>
 Package pdftex.def Info: ../figures/aclformulasHOL.png used on input line 243.
 (pdftex.def)             Requested size: 452.9679pt x 197.03601pt.
- [42 <../figures/aclformulasHOL.png>]
-<../figures/Efn.png, id=2024, 549.05125pt x 364.36125pt>
+ [61 <../figures/aclformulasHOL.png>]
+<../figures/Efn.png, id=2183, 549.05125pt x 364.36125pt>
 File: ../figures/Efn.png Graphic file (type png)
 
 <use ../figures/Efn.png>
@@ -1329,7 +1486,7 @@ Package pdftex.def Info: ../figures/Efn.png used on input line 266.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../figures/satdef.png, id=2030, 596.2275pt x 56.21pt>
+<../figures/satdef.png, id=2189, 596.2275pt x 56.21pt>
 File: ../figures/satdef.png Graphic file (type png)
 
 <use ../figures/satdef.png>
@@ -1339,9 +1496,9 @@ Package pdftex.def Info: ../figures/satdef.png used on input line 275.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[43]) [44 <../figures/Efn.png> <../figures/satdef.png>] (../chapters/pb/pb.tex
+[62]) [63 <../figures/Efn.png> <../figures/satdef.png>] (../chapters/pb/pb.tex
 Chapter 5.
-[45
+[64
 
 
 ]
@@ -1354,7 +1511,7 @@ Overfull \hbox (1.04pt too wide) in paragraph at lines 29--29
 []|\T1/cmr/m/n/12 Method| 
  []
 
-<../figures/pbtoplevel.png, id=2061, 1015.6344pt x 514.5624pt>
+<../figures/pbtoplevel.png, id=2219, 1015.6344pt x 514.5624pt>
 File: ../figures/pbtoplevel.png Graphic file (type png)
 
 <use ../figures/pbtoplevel.png>
@@ -1364,113 +1521,113 @@ Package pdftex.def Info: ../figures/pbtoplevel.png used on input line 60.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[46] [47 <../figures/pbtoplevel.png>]
-<../figures/overalldiagramsquashed.png, id=2083, 2393.5824pt x 983.3538pt>
+[65] [66 <../figures/pbtoplevel.png>]
+<../figures/overalldiagramsquashed.png, id=2241, 2393.5824pt x 983.3538pt>
 File: ../figures/overalldiagramsquashed.png Graphic file (type png)
 
 <use ../figures/overalldiagramsquashed.png>
 Package pdftex.def Info: ../figures/overalldiagramsquashed.png used on input li
 ne 81.
 (pdftex.def)             Requested size: 452.9679pt x 186.08893pt.
- [48 <../figures/overalldiagramsquashed.png>] [49] [50] [51] [52] [53]
-<../figures/escapeDiagram.png, id=2142, 425.59pt x 365.365pt>
+ [67 <../figures/overalldiagramsquashed.png>] [68] [69] [70] [71] [72]
+<../figures/escapeDiagram.png, id=2300, 425.59pt x 365.365pt>
 File: ../figures/escapeDiagram.png Graphic file (type png)
 
 <use ../figures/escapeDiagram.png>
 Package pdftex.def Info: ../figures/escapeDiagram.png used on input line 170.
 (pdftex.def)             Requested size: 203.83417pt x 174.9941pt.
- [54
+ [73
 
  <../figures/escapeDiagram.png>]
-<../figures/ssmPBDiagram.png, id=2152, 679.53876pt x 133.49875pt>
+<../figures/ssmPBDiagram.png, id=2311, 679.53876pt x 133.49875pt>
 File: ../figures/ssmPBDiagram.png Graphic file (type png)
 
 <use ../figures/ssmPBDiagram.png>
 Package pdftex.def Info: ../figures/ssmPBDiagram.png used on input line 192.
 (pdftex.def)             Requested size: 452.9679pt x 88.98738pt.
- [55
+ [74
 
- <../figures/ssmPBDiagram.png>] [56]
-<../figures/ssmPlanPBDiagram.png, id=2171, 944.52875pt x 372.39125pt>
+ <../figures/ssmPBDiagram.png>] [75]
+<../figures/ssmPlanPBDiagram.png, id=2329, 944.52875pt x 372.39125pt>
 File: ../figures/ssmPlanPBDiagram.png Graphic file (type png)
 
 <use ../figures/ssmPlanPBDiagram.png>
 Package pdftex.def Info: ../figures/ssmPlanPBDiagram.png used on input line 220
 .
 (pdftex.def)             Requested size: 452.9679pt x 178.59235pt.
- [57
+ [76
 
  <../figures/ssmPlanPBDiagram.png>]
-[58] <../figures/ssmMoveToORPDiagram.png, id=2186, 828.09375pt x 464.73625pt>
+[77] <../figures/ssmMoveToORPDiagram.png, id=2344, 828.09375pt x 464.73625pt>
 File: ../figures/ssmMoveToORPDiagram.png Graphic file (type png)
 
 <use ../figures/ssmMoveToORPDiagram.png>
 Package pdftex.def Info: ../figures/ssmMoveToORPDiagram.png used on input line 
 245.
 (pdftex.def)             Requested size: 362.37569pt x 203.37125pt.
- [59
+ [78
 
  <../figures/ssmMoveToORPDiagram.png>] <../figures/ssmConductORPDiagram.png, id
-=2197, 651.43375pt x 290.08376pt>
+=2355, 651.43375pt x 290.08376pt>
 File: ../figures/ssmConductORPDiagram.png Graphic file (type png)
 
 <use ../figures/ssmConductORPDiagram.png>
 Package pdftex.def Info: ../figures/ssmConductORPDiagram.png used on input line
  266.
 (pdftex.def)             Requested size: 452.9679pt x 201.71164pt.
- [60
+ [79
 
  <../figures/ssmConductORPDiagram.png>] <../figures/ssmMoveToPBDiagram.png, id=
-2207, 507.8975pt x 276.03125pt>
+2366, 507.8975pt x 276.03125pt>
 File: ../figures/ssmMoveToPBDiagram.png Graphic file (type png)
 
 <use ../figures/ssmMoveToPBDiagram.png>
 Package pdftex.def Info: ../figures/ssmMoveToPBDiagram.png used on input line 2
 87.
 (pdftex.def)             Requested size: 362.37569pt x 196.94807pt.
- [61
+ [80
 
  <../figures/ssmMoveToPBDiagram.png>] <../figures/ssmConductPBDiagram.png, id=2
-217, 872.25874pt x 370.38374pt>
+376, 872.25874pt x 370.38374pt>
 File: ../figures/ssmConductPBDiagram.png Graphic file (type png)
 
 <use ../figures/ssmConductPBDiagram.png>
 Package pdftex.def Info: ../figures/ssmConductPBDiagram.png used on input line 
 305.
 (pdftex.def)             Requested size: 452.9679pt x 192.34067pt.
- [62
+ [81
 
- <../figures/ssmConductPBDiagram.png>] [63]
-<../figures/ssmSecurtHaltDiagram.png, id=2242, 641.39626pt x 265.99374pt>
+ <../figures/ssmConductPBDiagram.png>] [82]
+<../figures/ssmSecurtHaltDiagram.png, id=2400, 641.39626pt x 265.99374pt>
 File: ../figures/ssmSecurtHaltDiagram.png Graphic file (type png)
 
 <use ../figures/ssmSecurtHaltDiagram.png>
 Package pdftex.def Info: ../figures/ssmSecurtHaltDiagram.png used on input line
  331.
 (pdftex.def)             Requested size: 385.02547pt x 159.67865pt.
- [64
+ [83
 
  <../figures/ssmSecurtHaltDiagram.png>] <../figures/ssmORPReconDiagram.png, id=
-2252, 817.0525pt x 294.09875pt>
+2410, 817.0525pt x 294.09875pt>
 File: ../figures/ssmORPReconDiagram.png Graphic file (type png)
 
 <use ../figures/ssmORPReconDiagram.png>
 Package pdftex.def Info: ../figures/ssmORPReconDiagram.png used on input line 3
 51.
 (pdftex.def)             Requested size: 452.9679pt x 163.04723pt.
- [65
+ [84
 
- <../figures/ssmORPReconDiagram.png>] <../figures/moveToORP4LDiagram.png, id=22
-62, 534.99875pt x 268.00125pt>
+ <../figures/ssmORPReconDiagram.png>] <../figures/moveToORP4LDiagram.png, id=24
+20, 534.99875pt x 268.00125pt>
 File: ../figures/moveToORP4LDiagram.png Graphic file (type png)
 
 <use ../figures/moveToORP4LDiagram.png>
 Package pdftex.def Info: ../figures/moveToORP4LDiagram.png used on input line 3
 70.
 (pdftex.def)             Requested size: 385.02547pt x 192.88304pt.
- [66
+ [85
 
- <../figures/moveToORP4LDiagram.png>] <../figures/ssmFormRTDiagram.png, id=2272
+ <../figures/moveToORP4LDiagram.png>] <../figures/ssmFormRTDiagram.png, id=2431
 , 554.07pt x 311.1625pt>
 File: ../figures/ssmFormRTDiagram.png Graphic file (type png)
 
@@ -1478,12 +1635,12 @@ File: ../figures/ssmFormRTDiagram.png Graphic file (type png)
 Package pdftex.def Info: ../figures/ssmFormRTDiagram.png used on input line 390
 .
 (pdftex.def)             Requested size: 385.02547pt x 216.22644pt.
-) [67
+) [86
 
  <../figures/ssmFormRTDiagram.png>]
 (../chapters/ssms/ssms.tex
 Chapter 6.
-[68
+[87
 
 
 ]
@@ -1491,65 +1648,65 @@ File: ../figures/pbtoplevel.png Graphic file (type png)
  <use ../figures/pbtoplevel.png>
 Package pdftex.def Info: ../figures/pbtoplevel.png used on input line 28.
 (pdftex.def)             Requested size: 452.9679pt x 229.49382pt.
- [69] [70] [71] [72] [73]
-<../figures/smVSssm.png, id=2340, 548.0475pt x 295.1025pt>
+ [88] [89] [90] [91] [92]
+<../figures/smVSssm.png, id=2499, 548.0475pt x 295.1025pt>
 File: ../figures/smVSssm.png Graphic file (type png)
 
 <use ../figures/smVSssm.png>
 Package pdftex.def Info: ../figures/smVSssm.png used on input line 92.
 (pdftex.def)             Requested size: 362.37569pt x 195.12846pt.
- [74 <../figures/smVSssm.png>] [75]
+ [93 <../figures/smVSssm.png>] [94]
 File: ../figures/ssmPBDiagram.png Graphic file (type png)
 
 <use ../figures/ssmPBDiagram.png>
 Package pdftex.def Info: ../figures/ssmPBDiagram.png used on input line 116.
 (pdftex.def)             Requested size: 452.9679pt x 88.98738pt.
- [76] [77] [78] [79] [80] [81]
+ [95] [96] [97] [98] [99] [100]
 
 Package xcolor Warning: Incompatible color definition on input line 227.
 
-[82]
+[101]
 
 Package xcolor Warning: Incompatible color definition on input line 242.
 
 
 Package xcolor Warning: Incompatible color definition on input line 258.
 
-[83] [84] [85] [86] [87] [88] [89] [90] [91]
-<../figures/trrules.png, id=2509, 627.34375pt x 448.67625pt>
+[102] [103] [104] [105] [106] [107] [108] [109] [110]
+<../figures/trrules.png, id=2668, 627.34375pt x 448.67625pt>
 File: ../figures/trrules.png Graphic file (type png)
 
 <use ../figures/trrules.png>
 Package pdftex.def Info: ../figures/trrules.png used on input line 481.
 (pdftex.def)             Requested size: 452.9679pt x 323.97774pt.
- [92 <../figures/trrules.png>]
+ [111 <../figures/trrules.png>]
 
 Package xcolor Warning: Incompatible color definition on input line 497.
 
 
 Package xcolor Warning: Incompatible color definition on input line 502.
 
-[93]
+[112]
 
 Package xcolor Warning: Incompatible color definition on input line 507.
 
 
 Package xcolor Warning: Incompatible color definition on input line 519.
 
-[94]
+[113]
 
 Package xcolor Warning: Incompatible color definition on input line 542.
 
-[95]) [96] (../chapters/pbssm/pbssm.tex
+[114]) [115] (../chapters/pbssm/pbssm.tex
 Chapter 7.
 File: ../figures/ssmPBDiagram.png Graphic file (type png)
 <use ../figures/ssmPBDiagram.png>
 Package pdftex.def Info: ../figures/ssmPBDiagram.png used on input line 24.
 (pdftex.def)             Requested size: 452.9679pt x 88.98738pt.
- [97
+ [116
 
 
-] [98] [99] [100] [101]
+] [117] [118] [119] [120]
 
 Package xcolor Warning: Incompatible color definition on input line 121.
 
@@ -1559,53 +1716,53 @@ LaTeX Font Info:    Try loading font information for T1+cmss on input line 121.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [102]
+) [121]
 
 Package xcolor Warning: Incompatible color definition on input line 134.
 
-[103]
+[122]
 
 Package xcolor Warning: Incompatible color definition on input line 165.
 
-[104] [105]
+[123] [124]
 
 Package xcolor Warning: Incompatible color definition on input line 169.
 
-[106] [107] [108]
+[125] [126] [127]
 
 Package xcolor Warning: Incompatible color definition on input line 223.
 
-[109] [110]
+[128] [129]
 Underfull \hbox (badness 8056) in paragraph at lines 276--276
 [][]\T1/cmr/m/n/10 See []$\T1/pcr/m/n/10 https : / / hol-[]theorem-[]prover . o
 rg / kananaskis-[]11-[]helpdocs / help / HOLindex .
  []
 
-[111]
+[130]
 
 Package xcolor Warning: Incompatible color definition on input line 280.
 
-[112]
+[131]
 
 Package xcolor Warning: Incompatible color definition on input line 299.
 
-[113]
+[132]
 
 Package xcolor Warning: Incompatible color definition on input line 312.
 
-[114] [115]
+[133] [134]
 
 Package xcolor Warning: Incompatible color definition on input line 330.
 
-[116]
+[135]
 
 Package xcolor Warning: Incompatible color definition on input line 331.
 
-[117]
+[136]
 
 Package xcolor Warning: Incompatible color definition on input line 332.
 
-[118] [119]
+[137] [138]
 
 Package xcolor Warning: Incompatible color definition on input line 339.
 
@@ -1614,122 +1771,122 @@ File: ../figures/ssmConductORPDiagram.png Graphic file (type png)
 Package pdftex.def Info: ../figures/ssmConductORPDiagram.png used on input line
  349.
 (pdftex.def)             Requested size: 452.9679pt x 201.71164pt.
- [120] [121] [122]
+ [139] [140] [141]
 
 Package xcolor Warning: Incompatible color definition on input line 417.
 
-[123] [124]
+[142] [143]
 
 Package xcolor Warning: Incompatible color definition on input line 444.
 
-[125]
+[144]
 
 Package xcolor Warning: Incompatible color definition on input line 466.
 
-[126] [127]
+[145] [146]
 
 Package xcolor Warning: Incompatible color definition on input line 507.
 
-[128]
+[147]
 
 Package xcolor Warning: Incompatible color definition on input line 508.
 
-[129]
+[148]
 
 Package xcolor Warning: Incompatible color definition on input line 509.
 
-[130] [131]
+[149] [150]
 
 Package xcolor Warning: Incompatible color definition on input line 514.
 
 
 Package xcolor Warning: Incompatible color definition on input line 515.
 
-[132] [133]
+[151] [152]
 
 Package xcolor Warning: Incompatible color definition on input line 516.
 
-[134]
+[153]
 
 Package xcolor Warning: Incompatible color definition on input line 521.
 
-[135]
+[154]
 
 Package xcolor Warning: Incompatible color definition on input line 522.
 
-[136]
+[155]
 
 Package xcolor Warning: Incompatible color definition on input line 523.
 
-[137] [138]
+[156] [157]
 File: ../figures/ssmPlanPBDiagram.png Graphic file (type png)
  <use ../figures/ssmPlanPBDiagram.png>
 Package pdftex.def Info: ../figures/ssmPlanPBDiagram.png used on input line 533
 .
 (pdftex.def)             Requested size: 452.9679pt x 178.59235pt.
- [139] [140] [141] [142]
+ [158] [159] [160] [161]
 
 Package xcolor Warning: Incompatible color definition on input line 643.
 
-[143] [144]
+[162] [163]
 
 Package xcolor Warning: Incompatible color definition on input line 662.
 
-[145] [146] [147]
+[164] [165] [166]
 
 Package xcolor Warning: Incompatible color definition on input line 757.
 
-[148]
+[167]
 
 Package xcolor Warning: Incompatible color definition on input line 759.
 
-[149]
+[168]
 
 Package xcolor Warning: Incompatible color definition on input line 761.
 
-[150]
+[169]
 
 Package xcolor Warning: Incompatible color definition on input line 766.
 
 
 Package xcolor Warning: Incompatible color definition on input line 772.
 
-[151]
+[170]
 
 Package xcolor Warning: Incompatible color definition on input line 774.
 
-[152]
+[171]
 
 Package xcolor Warning: Incompatible color definition on input line 776.
 
-[153]
+[172]
 
 Package xcolor Warning: Incompatible color definition on input line 790.
 
 
 Package xcolor Warning: Incompatible color definition on input line 792.
 
-[154] [155] [156]
+[173] [174] [175]
 
 Package xcolor Warning: Incompatible color definition on input line 794.
 
-[157] [158]
+[176] [177]
 
 Package xcolor Warning: Incompatible color definition on input line 800.
 
 
 Package xcolor Warning: Incompatible color definition on input line 802.
 
-[159]
+[178]
 
 Package xcolor Warning: Incompatible color definition on input line 804.
 
-[160]) [161] (../chapters/discussion/discussion.tex
+[179]) [180] (../chapters/discussion/discussion.tex
 Chapter 8.
-[162
+[181
 
 
-] <../figures/soldierMission.png, id=3093, 792.9625pt x 414.54875pt>
+] <../figures/soldierMission.png, id=3252, 792.9625pt x 414.54875pt>
 File: ../figures/soldierMission.png Graphic file (type png)
 
 <use ../figures/soldierMission.png>
@@ -1739,7 +1896,7 @@ Package pdftex.def Info: ../figures/soldierMission.png used on input line 32.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[163]
+[182]
 File: ../figures/ssmPlanPBDiagram.png Graphic file (type png)
  <use ../figures/ssmPlanPBDiagram.png>
 Package pdftex.def Info: ../figures/ssmPlanPBDiagram.png used on input line 47.
@@ -1749,43 +1906,43 @@ Package pdftex.def Info: ../figures/ssmPlanPBDiagram.png used on input line 47.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[164 <../figures/soldierMission.png>]
-<../figures/planAlt.png, id=3106, 554.07pt x 407.5225pt>
+[183 <../figures/soldierMission.png>]
+<../figures/planAlt.png, id=3264, 554.07pt x 407.5225pt>
 File: ../figures/planAlt.png Graphic file (type png)
 
 <use ../figures/planAlt.png>
 Package pdftex.def Info: ../figures/planAlt.png used on input line 56.
 (pdftex.def)             Requested size: 452.9679pt x 333.16324pt.
- [165 <../figures/planAlt.png>]
-<../figures/toplevelAlt.png, id=3115, 758.835pt x 220.825pt>
+ [184 <../figures/planAlt.png>]
+<../figures/toplevelAlt.png, id=3273, 758.835pt x 220.825pt>
 File: ../figures/toplevelAlt.png Graphic file (type png)
 
 <use ../figures/toplevelAlt.png>
 Package pdftex.def Info: ../figures/toplevelAlt.png used on input line 66.
 (pdftex.def)             Requested size: 452.9679pt x 131.81874pt.
- [166 <../figures/toplevelAlt.png>] [167])
-[168] (../chapters/future/future.tex
+ [185 <../figures/toplevelAlt.png>] [186])
+[187] (../chapters/future/future.tex
 Chapter 9.
-[169
+[188
 
 
-] [170]) [171] [172
+] [189]) [190] [191
 
 
 
 
 ] (../chapters/background/background.tex
 Appendix A.
-[173
+[192
 
-] [174] <../figures/booladt.png, id=3227, 233.87375pt x 55.20625pt>
+] [193] <../figures/booladt.png, id=3386, 233.87375pt x 55.20625pt>
 File: ../figures/booladt.png Graphic file (type png)
 
 <use ../figures/booladt.png>
 Package pdftex.def Info: ../figures/booladt.png used on input line 50.
 (pdftex.def)             Requested size: 181.18439pt x 42.7709pt.
 
-<../figures/tree.png, id=3230, 376.40625pt x 59.22125pt>
+<../figures/tree.png, id=3389, 376.40625pt x 59.22125pt>
 File: ../figures/tree.png Graphic file (type png)
 
 <use ../figures/tree.png>
@@ -1795,31 +1952,31 @@ Package pdftex.def Info: ../figures/tree.png used on input line 60.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[175 <../figures/booladt.png>]
-<../figures/weekday.png, id=3243, 255.95625pt x 141.52875pt>
+[194 <../figures/booladt.png>]
+<../figures/weekday.png, id=3402, 255.95625pt x 141.52875pt>
 File: ../figures/weekday.png Graphic file (type png)
 
 <use ../figures/weekday.png>
 Package pdftex.def Info: ../figures/weekday.png used on input line 73.
 (pdftex.def)             Requested size: 226.48395pt x 125.2324pt.
 
-<../figures/isweekend.png, id=3247, 294.09875pt x 72.27pt>
+<../figures/isweekend.png, id=3406, 294.09875pt x 72.27pt>
 File: ../figures/isweekend.png Graphic file (type png)
 
 <use ../figures/isweekend.png>
 Package pdftex.def Info: ../figures/isweekend.png used on input line 82.
 (pdftex.def)             Requested size: 226.48395pt x 55.65466pt.
- [176 <../figures/tree.png> <../figures/weekday.png> <../figures/isweekend.png>
+ [195 <../figures/tree.png> <../figures/weekday.png> <../figures/isweekend.png>
 ]
-<../figures/treeparam.png, id=3260, 437.635pt x 52.195pt>
+<../figures/treeparam.png, id=3418, 437.635pt x 52.195pt>
 File: ../figures/treeparam.png Graphic file (type png)
 
 <use ../figures/treeparam.png>
 Package pdftex.def Info: ../figures/treeparam.png used on input line 93.
 (pdftex.def)             Requested size: 271.7835pt x 32.41472pt.
- [177 <../figures/treeparam.png>]) [178]
+ [196 <../figures/treeparam.png>]) [197]
 Appendix B.
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3292, 597.50829pt x 845.0471pt>
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3450, 597.50829pt x 845.0471pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 
 <use ../../HOL/ACL/HOLReports/aclReport.pdf>
@@ -1833,7 +1990,7 @@ Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf used on input l
 ine 214.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3295, page=1, 597.50829pt x 845.047
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3453, page=1, 597.50829pt x 845.047
 1pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 1>
@@ -1846,7 +2003,7 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page1 used on 
 input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [179
+ [198
 
 
 ]
@@ -1868,8 +2025,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page1 used on 
 input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [180 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3320, page=2, 597.50829pt x 845.047
+ [199 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3479, page=2, 597.50829pt x 845.047
 1pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 2>
@@ -1888,8 +2045,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page2 used on 
 input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [181 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3325, page=3, 597.50829pt x 845.047
+ [200 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3484, page=3, 597.50829pt x 845.047
 1pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 3>
@@ -1908,8 +2065,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page3 used on 
 input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [182 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3346, page=4, 597.50829pt x 845.047
+ [201 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3504, page=4, 597.50829pt x 845.047
 1pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 4>
@@ -1928,8 +2085,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page4 used on 
 input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [183 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3366, page=5, 597.50829pt x 845.047
+ [202 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3524, page=5, 597.50829pt x 845.047
 1pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 5>
@@ -1948,8 +2105,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page5 used on 
 input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [184 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3371, page=6, 597.50829pt x 845.047
+ [203 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3529, page=6, 597.50829pt x 845.047
 1pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 6>
@@ -1968,8 +2125,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page6 used on 
 input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [185 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3376, page=7, 597.50829pt x 845.047
+ [204 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3534, page=7, 597.50829pt x 845.047
 1pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 7>
@@ -1988,8 +2145,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page7 used on 
 input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [186 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3392, page=8, 597.50829pt x 845.047
+ [205 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3551, page=8, 597.50829pt x 845.047
 1pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 8>
@@ -2008,8 +2165,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page8 used on 
 input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [187 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3397, page=9, 597.50829pt x 845.047
+ [206 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3556, page=9, 597.50829pt x 845.047
 1pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 9>
@@ -2028,8 +2185,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page9 used on 
 input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [188 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3403, page=10, 597.50829pt x 845.04
+ [207 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3561, page=10, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 10>
@@ -2048,8 +2205,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page10 used on
  input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [189 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3408, page=11, 597.50829pt x 845.04
+ [208 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3566, page=11, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 11>
@@ -2068,8 +2225,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page11 used on
  input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [190 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3413, page=12, 597.50829pt x 845.04
+ [209 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3571, page=12, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 12>
@@ -2088,8 +2245,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page12 used on
  input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [191 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3418, page=13, 597.50829pt x 845.04
+ [210 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3576, page=13, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 13>
@@ -2108,8 +2265,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page13 used on
  input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [192 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3423, page=14, 597.50829pt x 845.04
+ [211 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3582, page=14, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 14>
@@ -2128,8 +2285,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page14 used on
  input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [193 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3428, page=15, 597.50829pt x 845.04
+ [212 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3587, page=15, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 15>
@@ -2148,8 +2305,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page15 used on
  input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [194 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3434, page=16, 597.50829pt x 845.04
+ [213 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3592, page=16, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 16>
@@ -2168,8 +2325,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page16 used on
  input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [195 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3439, page=17, 597.50829pt x 845.04
+ [214 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3597, page=17, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 17>
@@ -2188,8 +2345,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page17 used on
  input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [196 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3444, page=18, 597.50829pt x 845.04
+ [215 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3602, page=18, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 18>
@@ -2208,8 +2365,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page18 used on
  input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [197 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3449, page=19, 597.50829pt x 845.04
+ [216 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3607, page=19, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 19>
@@ -2228,8 +2385,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page19 used on
  input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [198 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3454, page=20, 597.50829pt x 845.04
+ [217 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3613, page=20, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 20>
@@ -2248,8 +2405,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page20 used on
  input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [199 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3459, page=21, 597.50829pt x 845.04
+ [218 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3618, page=21, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 21>
@@ -2268,8 +2425,8 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page21 used on
  input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [200 <../../HOL/ACL/HOLReports/aclReport.pdf>]
-<../../HOL/ACL/HOLReports/aclReport.pdf, id=3465, page=22, 597.50829pt x 845.04
+ [219 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+<../../HOL/ACL/HOLReports/aclReport.pdf, id=3623, page=22, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
  <use ../../HOL/ACL/HOLReports/aclReport.pdf, page 22>
@@ -2288,9 +2445,9 @@ File: ../../HOL/ACL/HOLReports/aclReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/ACL/HOLReports/aclReport.pdf, page22 used on
  input line 214.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [201 <../../HOL/ACL/HOLReports/aclReport.pdf>]
+ [220 <../../HOL/ACL/HOLReports/aclReport.pdf>]
 Appendix C.
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3470, 597.50829pt x 845.0471pt>
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3628, 597.50829pt x 845.0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 
 <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf>
@@ -2304,7 +2461,7 @@ Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf used on input
 line 216.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3473, page=1, 597.50829pt x 845.04
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3631, page=1, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 1>
@@ -2317,7 +2474,7 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page1 used on
  input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [202
+ [221
 
 ]
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
@@ -2338,8 +2495,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page1 used on
  input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [203 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3492, page=2, 597.50829pt x 845.04
+ [222 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3650, page=2, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 2>
@@ -2358,8 +2515,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page2 used on
  input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [204 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3497, page=3, 597.50829pt x 845.04
+ [223 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3656, page=3, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 3>
@@ -2378,8 +2535,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page3 used on
  input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [205 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3517, page=4, 597.50829pt x 845.04
+ [224 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3676, page=4, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 4>
@@ -2398,8 +2555,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page4 used on
  input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [206 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3529, page=5, 597.50829pt x 845.04
+ [225 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3687, page=5, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 5>
@@ -2418,8 +2575,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page5 used on
  input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [207 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3534, page=6, 597.50829pt x 845.04
+ [226 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3693, page=6, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 6>
@@ -2438,8 +2595,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page6 used on
  input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [208 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3540, page=7, 597.50829pt x 845.04
+ [227 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3698, page=7, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 7>
@@ -2458,8 +2615,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page7 used on
  input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [209 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3545, page=8, 597.50829pt x 845.04
+ [228 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3703, page=8, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 8>
@@ -2478,8 +2635,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page8 used on
  input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [210 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3550, page=9, 597.50829pt x 845.04
+ [229 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3709, page=9, 597.50829pt x 845.04
 71pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 9>
@@ -2498,8 +2655,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page9 used on
  input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [211 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3555, page=10, 597.50829pt x 845.0
+ [230 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3714, page=10, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 10>
@@ -2518,8 +2675,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page10 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [212 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3561, page=11, 597.50829pt x 845.0
+ [231 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3719, page=11, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 11>
@@ -2538,8 +2695,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page11 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [213 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3566, page=12, 597.50829pt x 845.0
+ [232 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3724, page=12, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 12>
@@ -2558,8 +2715,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page12 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [214 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3571, page=13, 597.50829pt x 845.0
+ [233 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3729, page=13, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 13>
@@ -2578,8 +2735,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page13 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [215 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3576, page=14, 597.50829pt x 845.0
+ [234 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3734, page=14, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 14>
@@ -2598,8 +2755,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page14 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [216 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3581, page=15, 597.50829pt x 845.0
+ [235 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3740, page=15, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 15>
@@ -2618,8 +2775,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page15 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [217 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3586, page=16, 597.50829pt x 845.0
+ [236 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3745, page=16, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 16>
@@ -2638,8 +2795,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page16 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [218 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3592, page=17, 597.50829pt x 845.0
+ [237 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3750, page=17, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 17>
@@ -2658,8 +2815,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page17 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [219 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3597, page=18, 597.50829pt x 845.0
+ [238 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3755, page=18, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 18>
@@ -2678,8 +2835,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page18 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [220 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3602, page=19, 597.50829pt x 845.0
+ [239 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3760, page=19, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 19>
@@ -2698,8 +2855,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page19 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [221 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3607, page=20, 597.50829pt x 845.0
+ [240 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3765, page=20, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 20>
@@ -2718,8 +2875,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page20 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [222 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3612, page=21, 597.50829pt x 845.0
+ [241 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3771, page=21, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 21>
@@ -2738,8 +2895,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page21 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [223 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3617, page=22, 597.50829pt x 845.0
+ [242 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3776, page=22, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 22>
@@ -2758,8 +2915,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page22 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [224 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3623, page=23, 597.50829pt x 845.0
+ [243 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3781, page=23, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 23>
@@ -2778,8 +2935,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page23 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [225 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3631, page=24, 597.50829pt x 845.0
+ [244 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3789, page=24, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 24>
@@ -2798,8 +2955,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page24 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [226 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3636, page=25, 597.50829pt x 845.0
+ [245 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3794, page=25, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 25>
@@ -2818,8 +2975,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page25 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [227 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3641, page=26, 597.50829pt x 845.0
+ [246 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3799, page=26, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 26>
@@ -2838,8 +2995,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page26 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [228 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3646, page=27, 597.50829pt x 845.0
+ [247 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3805, page=27, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 27>
@@ -2858,8 +3015,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page27 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [229 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3651, page=28, 597.50829pt x 845.0
+ [248 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3810, page=28, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 28>
@@ -2878,8 +3035,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page28 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [230 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3657, page=29, 597.50829pt x 845.0
+ [249 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3815, page=29, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 29>
@@ -2898,8 +3055,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page29 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [231 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3662, page=30, 597.50829pt x 845.0
+ [250 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3820, page=30, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 30>
@@ -2918,8 +3075,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page30 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [232 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3667, page=31, 597.50829pt x 845.0
+ [251 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3825, page=31, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 31>
@@ -2938,8 +3095,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page31 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [233 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3672, page=32, 597.50829pt x 845.0
+ [252 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3830, page=32, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 32>
@@ -2958,8 +3115,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page32 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [234 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3677, page=33, 597.50829pt x 845.0
+ [253 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3836, page=33, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 33>
@@ -2978,8 +3135,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page33 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [235 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3682, page=34, 597.50829pt x 845.0
+ [254 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3841, page=34, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 34>
@@ -2998,8 +3155,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page34 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [236 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3688, page=35, 597.50829pt x 845.0
+ [255 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3846, page=35, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 35>
@@ -3018,8 +3175,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page35 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [237 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3693, page=36, 597.50829pt x 845.0
+ [256 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3851, page=36, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 36>
@@ -3038,8 +3195,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page36 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [238 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3698, page=37, 597.50829pt x 845.0
+ [257 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3856, page=37, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 37>
@@ -3058,8 +3215,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page37 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [239 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3703, page=38, 597.50829pt x 845.0
+ [258 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3862, page=38, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 38>
@@ -3078,8 +3235,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page38 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [240 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3709, page=39, 597.50829pt x 845.0
+ [259 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3868, page=39, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 39>
@@ -3098,8 +3255,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page39 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [241 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3714, page=40, 597.50829pt x 845.0
+ [260 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3873, page=40, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 40>
@@ -3118,8 +3275,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page40 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [242 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3720, page=41, 597.50829pt x 845.0
+ [261 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3878, page=41, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 41>
@@ -3138,8 +3295,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page41 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [243 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3725, page=42, 597.50829pt x 845.0
+ [262 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3883, page=42, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 42>
@@ -3158,8 +3315,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page42 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [244 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3730, page=43, 597.50829pt x 845.0
+ [263 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3888, page=43, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 43>
@@ -3178,8 +3335,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page43 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [245 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3735, page=44, 597.50829pt x 845.0
+ [264 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3893, page=44, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 44>
@@ -3198,8 +3355,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page44 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [246 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3740, page=45, 597.50829pt x 845.0
+ [265 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3899, page=45, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 45>
@@ -3218,8 +3375,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page45 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [247 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3745, page=46, 597.50829pt x 845.0
+ [266 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3904, page=46, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 46>
@@ -3238,8 +3395,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page46 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [248 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3751, page=47, 597.50829pt x 845.0
+ [267 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3909, page=47, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 47>
@@ -3258,8 +3415,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page47 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [249 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3756, page=48, 597.50829pt x 845.0
+ [268 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3914, page=48, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 48>
@@ -3278,8 +3435,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page48 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [250 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3761, page=49, 597.50829pt x 845.0
+ [269 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3919, page=49, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 49>
@@ -3298,8 +3455,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page49 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [251 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3766, page=50, 597.50829pt x 845.0
+ [270 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3924, page=50, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 50>
@@ -3318,8 +3475,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page50 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [252 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3771, page=51, 597.50829pt x 845.0
+ [271 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3930, page=51, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 51>
@@ -3338,8 +3495,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page51 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [253 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3776, page=52, 597.50829pt x 845.0
+ [272 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3935, page=52, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 52>
@@ -3358,8 +3515,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page52 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [254 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3782, page=53, 597.50829pt x 845.0
+ [273 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3940, page=53, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 53>
@@ -3378,8 +3535,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page53 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [255 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3787, page=54, 597.50829pt x 845.0
+ [274 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3945, page=54, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 54>
@@ -3398,8 +3555,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page54 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [256 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3792, page=55, 597.50829pt x 845.0
+ [275 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3950, page=55, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 55>
@@ -3418,8 +3575,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page55 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [257 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3797, page=56, 597.50829pt x 845.0
+ [276 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3955, page=56, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 56>
@@ -3438,8 +3595,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page56 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [258 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3802, page=57, 597.50829pt x 845.0
+ [277 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3961, page=57, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 57>
@@ -3458,8 +3615,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page57 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [259 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3807, page=58, 597.50829pt x 845.0
+ [278 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3966, page=58, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 58>
@@ -3478,8 +3635,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page58 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [260 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3813, page=59, 597.50829pt x 845.0
+ [279 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3971, page=59, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 59>
@@ -3498,8 +3655,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page59 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [261 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3818, page=60, 597.50829pt x 845.0
+ [280 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3976, page=60, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 60>
@@ -3518,8 +3675,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page60 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [262 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3823, page=61, 597.50829pt x 845.0
+ [281 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3981, page=61, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 61>
@@ -3538,8 +3695,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page61 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [263 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3828, page=62, 597.50829pt x 845.0
+ [282 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3986, page=62, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 62>
@@ -3558,8 +3715,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page62 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [264 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3833, page=63, 597.50829pt x 845.0
+ [283 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3992, page=63, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 63>
@@ -3578,8 +3735,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page63 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [265 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3838, page=64, 597.50829pt x 845.0
+ [284 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3997, page=64, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 64>
@@ -3598,8 +3755,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page64 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [266 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3844, page=65, 597.50829pt x 845.0
+ [285 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4002, page=65, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 65>
@@ -3618,8 +3775,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page65 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [267 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3849, page=66, 597.50829pt x 845.0
+ [286 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4007, page=66, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 66>
@@ -3638,8 +3795,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page66 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [268 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3854, page=67, 597.50829pt x 845.0
+ [287 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4012, page=67, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 67>
@@ -3658,8 +3815,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page67 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [269 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3859, page=68, 597.50829pt x 845.0
+ [288 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4017, page=68, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 68>
@@ -3678,8 +3835,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page68 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [270 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3864, page=69, 597.50829pt x 845.0
+ [289 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4023, page=69, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 69>
@@ -3698,8 +3855,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page69 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [271 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3869, page=70, 597.50829pt x 845.0
+ [290 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4028, page=70, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 70>
@@ -3718,8 +3875,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page70 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [272 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3875, page=71, 597.50829pt x 845.0
+ [291 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4033, page=71, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 71>
@@ -3738,8 +3895,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page71 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [273 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3881, page=72, 597.50829pt x 845.0
+ [292 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4039, page=72, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 72>
@@ -3758,8 +3915,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page72 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [274 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3886, page=73, 597.50829pt x 845.0
+ [293 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4044, page=73, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 73>
@@ -3778,8 +3935,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page73 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [275 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3891, page=74, 597.50829pt x 845.0
+ [294 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4049, page=74, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 74>
@@ -3798,8 +3955,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page74 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [276 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3896, page=75, 597.50829pt x 845.0
+ [295 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4055, page=75, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 75>
@@ -3818,8 +3975,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page75 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [277 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3901, page=76, 597.50829pt x 845.0
+ [296 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4060, page=76, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 76>
@@ -3838,8 +3995,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page76 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [278 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3907, page=77, 597.50829pt x 845.0
+ [297 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4065, page=77, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 77>
@@ -3858,8 +4015,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page77 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [279 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3912, page=78, 597.50829pt x 845.0
+ [298 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4070, page=78, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 78>
@@ -3878,8 +4035,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page78 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [280 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3917, page=79, 597.50829pt x 845.0
+ [299 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4075, page=79, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 79>
@@ -3898,8 +4055,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page79 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [281 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3922, page=80, 597.50829pt x 845.0
+ [300 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4080, page=80, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 80>
@@ -3918,8 +4075,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page80 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [282 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3927, page=81, 597.50829pt x 845.0
+ [301 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4086, page=81, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 81>
@@ -3938,8 +4095,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page81 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [283 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3932, page=82, 597.50829pt x 845.0
+ [302 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4091, page=82, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 82>
@@ -3958,8 +4115,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page82 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [284 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3938, page=83, 597.50829pt x 845.0
+ [303 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4096, page=83, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 83>
@@ -3978,8 +4135,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page83 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [285 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3943, page=84, 597.50829pt x 845.0
+ [304 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4101, page=84, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 84>
@@ -3998,8 +4155,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page84 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [286 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3948, page=85, 597.50829pt x 845.0
+ [305 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4106, page=85, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 85>
@@ -4018,8 +4175,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page85 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [287 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3953, page=86, 597.50829pt x 845.0
+ [306 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4111, page=86, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 86>
@@ -4038,8 +4195,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page86 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [288 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3958, page=87, 597.50829pt x 845.0
+ [307 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4117, page=87, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 87>
@@ -4058,8 +4215,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page87 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [289 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3963, page=88, 597.50829pt x 845.0
+ [308 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4122, page=88, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 88>
@@ -4078,8 +4235,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page88 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [290 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3969, page=89, 597.50829pt x 845.0
+ [309 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4127, page=89, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 89>
@@ -4098,8 +4255,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page89 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [291 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3974, page=90, 597.50829pt x 845.0
+ [310 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4132, page=90, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 90>
@@ -4118,8 +4275,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page90 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [292 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3979, page=91, 597.50829pt x 845.0
+ [311 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4137, page=91, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 91>
@@ -4138,8 +4295,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page91 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [293 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3984, page=92, 597.50829pt x 845.0
+ [312 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4142, page=92, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 92>
@@ -4158,8 +4315,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page92 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [294 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3989, page=93, 597.50829pt x 845.0
+ [313 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4148, page=93, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 93>
@@ -4178,8 +4335,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page93 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [295 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=3994, page=94, 597.50829pt x 845.0
+ [314 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4153, page=94, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 94>
@@ -4198,8 +4355,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page94 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [296 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4000, page=95, 597.50829pt x 845.0
+ [315 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4158, page=95, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 95>
@@ -4218,8 +4375,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page95 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [297 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4005, page=96, 597.50829pt x 845.0
+ [316 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4163, page=96, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 96>
@@ -4238,8 +4395,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page96 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [298 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4010, page=97, 597.50829pt x 845.0
+ [317 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4168, page=97, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 97>
@@ -4258,8 +4415,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page97 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [299 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4015, page=98, 597.50829pt x 845.0
+ [318 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4173, page=98, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 98>
@@ -4278,8 +4435,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page98 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [300 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4020, page=99, 597.50829pt x 845.0
+ [319 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4179, page=99, 597.50829pt x 845.0
 471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 99>
@@ -4298,8 +4455,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page99 used o
 n input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [301 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4025, page=100, 597.50829pt x 845.
+ [320 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4184, page=100, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 100>
@@ -4318,8 +4475,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page100 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [302 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4031, page=101, 597.50829pt x 845.
+ [321 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4189, page=101, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 101>
@@ -4338,8 +4495,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page101 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [303 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4036, page=102, 597.50829pt x 845.
+ [322 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4194, page=102, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 102>
@@ -4358,8 +4515,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page102 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [304 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4041, page=103, 597.50829pt x 845.
+ [323 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4199, page=103, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 103>
@@ -4378,8 +4535,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page103 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [305 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4046, page=104, 597.50829pt x 845.
+ [324 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4204, page=104, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 104>
@@ -4398,8 +4555,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page104 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [306 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4051, page=105, 597.50829pt x 845.
+ [325 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4211, page=105, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 105>
@@ -4418,8 +4575,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page105 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [307 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4057, page=106, 597.50829pt x 845.
+ [326 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4216, page=106, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 106>
@@ -4438,8 +4595,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page106 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [308 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4063, page=107, 597.50829pt x 845.
+ [327 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4221, page=107, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 107>
@@ -4458,8 +4615,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page107 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [309 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4068, page=108, 597.50829pt x 845.
+ [328 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4226, page=108, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 108>
@@ -4478,8 +4635,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page108 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [310 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4073, page=109, 597.50829pt x 845.
+ [329 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4231, page=109, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 109>
@@ -4498,8 +4655,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page109 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [311 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4078, page=110, 597.50829pt x 845.
+ [330 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4236, page=110, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 110>
@@ -4518,8 +4675,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page110 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [312 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4083, page=111, 597.50829pt x 845.
+ [331 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4242, page=111, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 111>
@@ -4538,8 +4695,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page111 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [313 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4088, page=112, 597.50829pt x 845.
+ [332 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4247, page=112, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 112>
@@ -4558,8 +4715,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page112 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [314 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4094, page=113, 597.50829pt x 845.
+ [333 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4252, page=113, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 113>
@@ -4578,8 +4735,8 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page113 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [315 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
-<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4099, page=114, 597.50829pt x 845.
+ [334 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+<../../HOL/HOLReportsOMNI/OMNIReport.pdf, id=4257, page=114, 597.50829pt x 845.
 0471pt>
 File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
  <use ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page 114>
@@ -4598,13 +4755,13 @@ File: ../../HOL/HOLReportsOMNI/OMNIReport.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../../HOL/HOLReportsOMNI/OMNIReport.pdf, page114 used 
 on input line 216.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [316 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
+ [335 <../../HOL/HOLReportsOMNI/OMNIReport.pdf>]
 Appendix D.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 220.
-(../../HOL/ssms/ssmScript.sml [317
+(../../HOL/ssms/ssmScript.sml [336
 
-] [318] [319] [320]
+] [337] [338] [339]
 Overfull \hbox (21.22057pt too wide) in paragraph at lines 283--284
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][] 
@@ -4615,82 +4772,82 @@ Overfull \hbox (0.82536pt too wide) in paragraph at lines 296--297
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[321]
+[340]
 Overfull \hbox (0.82536pt too wide) in paragraph at lines 347--348
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) (../../HOL/ssms/satListScript.sml [322]) [323]
+) (../../HOL/ssms/satListScript.sml [341]) [342]
 Appendix E.
-(../../HOL/OMNILevel/OMNIScript.sml [324
+(../../HOL/OMNILevel/OMNIScript.sml [343
 
 ])
-(../../HOL/topLevel/PBTypeIntegratedScript.sml [325] [326])
-(../../HOL/topLevel/PBIntegratedDefScript.sml [327]) [328]
-(../../HOL/topLevel/ssmPBIntegratedScript.sml [329] [330] [331]
+(../../HOL/topLevel/PBTypeIntegratedScript.sml [344] [345])
+(../../HOL/topLevel/PBIntegratedDefScript.sml [346]) [347]
+(../../HOL/topLevel/ssmPBIntegratedScript.sml [348] [349] [350]
 Overfull \hbox (0.82536pt too wide) in paragraph at lines 262--263
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][] 
  []
 
-) [332] (../../HOL/subLevel/PlanPB/PlanPBTypeScript.sml [333])
-(../../HOL/subLevel/PlanPB/PlanPBDefScript.sml [334]
+) [351] (../../HOL/subLevel/PlanPB/PlanPBTypeScript.sml [352])
+(../../HOL/subLevel/PlanPB/PlanPBDefScript.sml [353]
 Overfull \hbox (5.92416pt too wide) in paragraph at lines 90--91
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[335]) (../../HOL/subLevel/PlanPB/ssmPlanPBScript.sml [336] [337] [338]
-[339]
+[354]) (../../HOL/subLevel/PlanPB/ssmPlanPBScript.sml [355] [356] [357]
+[358]
 Overfull \hbox (0.82536pt too wide) in paragraph at lines 299--300
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][] 
  []
 
-[340] [341]) [342] (../../HOL/subLevel/ConductORP/ConductORPTypeScript.sml
-[343]) (../../HOL/subLevel/ConductORP/ConductORPDefScript.sml [344] [345])
-(../../HOL/subLevel/ConductORP/ssmConductORPScript.sml [346] [347] [348]
-[349]) [350] [351]
+[359] [360]) [361] (../../HOL/subLevel/ConductORP/ConductORPTypeScript.sml
+[362]) (../../HOL/subLevel/ConductORP/ConductORPDefScript.sml [363] [364])
+(../../HOL/subLevel/ConductORP/ssmConductORPScript.sml [365] [366] [367]
+[368]) [369] [370]
 Overfull \vbox (372.32817pt too high) has occurred while \output is active []
 
 
-[352]
+[371]
 Appendix F.
-<../figures/folders.png, id=6565, 354.32375pt x 225.84375pt>
+<../figures/folders.png, id=6723, 354.32375pt x 225.84375pt>
 File: ../figures/folders.png Graphic file (type png)
 
 <use ../figures/folders.png>
 Package pdftex.def Info: ../figures/folders.png used on input line 303.
 (pdftex.def)             Requested size: 452.9679pt x 288.72404pt.
 
-<../figures/holFolders.png, id=6566, 912.40875pt x 217.81375pt>
+<../figures/holFolders.png, id=6724, 912.40875pt x 217.81375pt>
 File: ../figures/holFolders.png Graphic file (type png)
 
 <use ../figures/holFolders.png>
 Package pdftex.def Info: ../figures/holFolders.png used on input line 307.
 (pdftex.def)             Requested size: 452.9679pt x 108.1322pt.
 
-<../figures/latexFolders.png, id=6567, 892.33376pt x 274.02374pt>
+<../figures/latexFolders.png, id=6725, 892.33376pt x 274.02374pt>
 File: ../figures/latexFolders.png Graphic file (type png)
 
 <use ../figures/latexFolders.png>
 Package pdftex.def Info: ../figures/latexFolders.png used on input line 311.
 (pdftex.def)             Requested size: 452.9679pt x 139.10216pt.
- [353
+ [372
 
-] [354 <../figures/folders.png> <../figures/holFolders.png> <../figures/latexFo
-lders.png>] (./main.bbl [355
+] [373 <../figures/folders.png> <../figures/holFolders.png> <../figures/latexFo
+lders.png>] (./main.bbl [374
 
 
-] [356])
+] [375])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 324.
 
-[357]
+[376]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 324.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 324.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 324.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: DDAD79741D084C14F7BDE53A70AB3D12;16972.
+(rerunfilecheck)             Checksum: 10D997EE9DDF1CB7592EA215E99ED672;16972.
 
 
 LaTeX Warning: There were undefined references.
@@ -4701,10 +4858,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 324.
  ) 
 Here is how much of TeX's memory you used:
- 22722 strings out of 492995
- 370614 string characters out of 6132704
- 897430 words of memory out of 5000000
- 22437 multiletter control sequences out of 15000+600000
+ 22866 strings out of 492995
+ 373240 string characters out of 6132704
+ 900296 words of memory out of 5000000
+ 22533 multiletter control sequences out of 15000+600000
  37725 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,18n,72p,1942b,1908s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -4872,10 +5029,10 @@ sfti0800.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sf
 ti1000.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti
 1200.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb>
-Output written on main.pdf (374 pages, 5791883 bytes).
+Output written on main.pdf (394 pages, 6992436 bytes).
 PDF statistics:
- 7394 PDF objects out of 7423 (max. 8388607)
- 6650 compressed objects within 67 object streams
- 3270 named destinations out of 3580 (max. 500000)
- 2659 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 7559 PDF objects out of 8907 (max. 8388607)
+ 6762 compressed objects within 68 object streams
+ 3302 named destinations out of 3580 (max. 500000)
+ 2739 words of extra memory for PDF output out of 10000 (max. 10000000)
 
