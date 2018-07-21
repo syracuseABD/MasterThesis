@@ -7,13 +7,20 @@
 \title{STPA on Patrol Base Operations}
 
 %%%%%%%%%%%%%%%% STPA on Patrol Base Operations %%%%%%%%%%%%%%%%
-\chapter{STPA on Patrol Base Operations}\label{chp:stpapb}
+\chapter{STPA/STPA-Sec on Patrol Base Operations}\label{chp:stpapb}
+This chapter applies the \gls{stpa}/\gls{stpasec} analysis to the patrol base operations.  The patrol base operations are analyzed at a high level of abstraction and only the actions of the Platoon Leader (PL) and the platoon as a whole are considered.  The limited scope of the analysis serves to demonstrate the \gls{stpa} component of \gls{storm} on the system of interest.  A complete analysis is beyond the scope of this master thesis. 
 
+This chapter describes each of the four steps of the \gls{stpa}/\gls{stpasec} analysis.  The results are discussed in the text and presented in tables.   For a review on the four steps read section \ref{ssec:stpa} of the previous chapter.
 
 %%%%%%%%%%%%%%%% Step 1 %%%%%%%%%%%%%%%%
 \section{Step 1: Define The Purpose of The Analysis}\label{chp:stpapb:purpose}
-\subsection{Organization FMA}
+This section describes the first step in the \gls{stpa}/\gls{stpasec} analysis.  It begins with a definition of the stakeholders.  It follows with a description of the goals of the most immediate organizations.  It describes the functional mission analysis for the patrol base operations.  It then describes assumptions about the system and relevant entities.  Next, it describes accidents/losses for the system.  Finally, it describes the system-level hazards/vulnerabilities and constraints.
 
+\paragraph*{Stakeholders}
+At the highest level, the stakeholders are the U.S. Government and the Citizens of the United States.  Below that is the U.S. Army and the U.S. Army Rangers.  Depending on the mission, other nations and their citizens may also hold a stake in the activities.  The enemy is also a stakeholder with an adversarial agenda. 
+
+\subsection{Organization FMA}
+The two most immediate organization for the parol bae operations are the U.S. Army Rangers and the U.S. Army.  Their goals are stated in table \ref{orgo}
    %%%%%% table: organization goals %%%%%%%%%%
 \begin{table}[h!]
 \parskip=8pt
@@ -23,9 +30,9 @@
  \hline
 U.S. Army Rangers	& U.S. Army\\
 \hline
-"The Rangers' primary mission is to engage the enemy in close combat and direct-fire battles. This mission includes direct action operations, raids, personnel and special equipment recovery, in addition to conventional or special light-infantry operations."
+"The U.S. Army's mission is to fight and win our Nation?s wars by providing prompt, sustained land dominance across the full range of military operations and spectrum of conflict in support of combatant commanders."
 &	
-The U.S. Army?s mission is to fight and win our Nation?s wars by providing prompt, sustained land dominance across the full range of military operations and spectrum of conflict in support of combatant commanders.\\
+"The Rangers' primary mission is to engage the enemy in close combat and direct-fire battles. This mission includes direct action operations, raids, personnel and special equipment recovery, in addition to conventional or special light-infantry operations."\\
 \hline
 \end{tabular}
 \caption{Organization goals.}
@@ -36,6 +43,8 @@ The U.S. Army?s mission is to fight and win our Nation?s wars by providing promp
 \clearpage
 
 \subsection{Patrol Base Operations FMA}
+The functional mission analysis for the patrol base operations is shown in table \ref{pbfma}.  This describes what the patrol base operations are, how they are conducted (broadly), and why they are conducted.
+
    %%%%%% table: PB FMAs  %%%%%%%%%%
 \begin{table}[h!]
 \parskip=8pt
@@ -65,8 +74,9 @@ Why	&      avoid detection:
    %%%%%% table: PB FMAs  %%%%%%%%%%
 %%
 \clearpage
-
 \subsection{Assumptions about The System}
+This analyzes relies on the following assumptions about the model of patrol base operations.
+
 \begin{itemize}
 \item Mission is decided by higher-ups and is provided as an input to the patrol base operations.
 \item Mission is not changeable by the patrol base itself (exceptions are mission-specific).
@@ -81,9 +91,9 @@ Why	&      avoid detection:
 
 
 \subsection{System Entities}
+The following entities are defined in the U.S. Ranger Handbook for the patrol base operations.  
 \begin{itemize}
-\item PL, PSG, 
-\item Medic, FO, RTO, HWSQL
+\item HQ: PL, PSG, Medic, FO, RTO, HWSQ
 \item Squad Leaders
 \item Fire Team Leaders
 \item Buddy Team
@@ -91,9 +101,12 @@ Why	&      avoid detection:
 \item Adversary (enemy)
 \end{itemize}
 
+The platoon leader (Platoon Leader --PL) is the only entity specifically referred to in this limited-scope analysis.  The platoon sergeant (PSG) is the assistant to the platoon leader.  The patrol base head quarters (HQ) consists of the PL, PSG, Medic, forward observer (FO), radio telephone operator (RTO), and the heavy weapons squad leader (HWSQL).  Below the HQ are four squad leaders.\footnote{This is only true for platoon sized patrol base operations.  Squad-sized patrol base operations consist of only one squad.}  Each squad is comprised of two fire teams.  Each fire time is compose of two or more buddy teams.  Each buddy team is composed of two soldiers (buddies).
+
 %%
 \clearpage
 \subsection{Accidents/Losses}
+Accidents/losses for the patrol base operations are shown in table \ref{losses}.
    %%%%%% table: Accidents/Losses  %%%%%%%%%%
 \begin{table}[h!]
 \parskip=8pt
@@ -103,7 +116,7 @@ Why	&      avoid detection:
 \hline
 	&Description\\
 \hline
-L1	&MIA, KIA, WIA, CIA\\
+L1	&MIA, KIA, WIA, CIA\footnote{MIA = missing in action; KIA = killed in action; WIA = wounded in action; CIA = captured in action.}\\
 \hline
 L2	&Wrong mission\\
 \hline
@@ -126,6 +139,8 @@ L7	&Insufficient communications with high-up HQ\\
 %%
 \clearpage
 \subsection{System-level Hazards/Vulnerabilities And Constraints}
+The system-level hazards/vulnerabilities are described in the second column in table \ref{hazards}.  The associated accidents/losses for each hazard are shown in the next column.  These are linked to system-level constraints in the last column.   
+
   %%%%%% table: System-level hazards  %%%%%%%%%%
 \begin{table}[h!]
 \parskip=8pt
@@ -158,11 +173,30 @@ H9	&Disregard for Rules of Engagement  &L4, L6	&SC9	&Follow Rules of Engagement\
 \label{hazards}
 \end{table}
   %%%%%% table: System-level hazards  %%%%%%%%%%
+  
+A more in-depth analysis would return to this table and generate refined hazards/vulnerabilities and constraints.  For example, H1 could be refined to H1.1 insufficient reconnaissance, H1.2 mission objectives not clear, H1.3 insufficient time for completing plan, etc..  For the constraints, SC1.1 reconnoiter efficiently, SC1.2 confirm mission objectives, SC1.3 use time efficiently, etc..
+  
 %%
 \clearpage
-%%%%%%%%%%%%%%%% Step 2 %%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%% Step 2 %%%%%%%%%%%%%%%
 \section{Step 2: Model The Control Structure}\label{chp:stpapb:control}
+This section first breaks the patrol base operations down into phases.  It hen describes the system controllers and their process models.  It then describes the control actions for each controller.  Finally, it presents a diagram of the functional control model.
+
+\subsection{Phases of The Patrol Base Operations}
+Figure \ref{pbtoplevel2stpa} shows the patrol base operations broken down into six phases.   This is a simplified first approximation of the patrol base operations and is very abstract.  For the purposes of this analysis, transitions among phases of the operations are indicated by the Platoon Leader who is responsible for the success of the mission as a whole.  
+
+\begin{table}[ht!]
+\begin{center}
+\includegraphics[width=\linewidth]{../figures/pbtoplevel}
+\caption{Scenarios for UCA E1A3.}
+\label{pbtoplevel2stpa}
+\end{center}
+\end{table}
+%%
+\clearpage
+
 \subsection{Controllers And Process Models}
+The controllers and their process models are shown in table \ref{controlprocess}.  
  %%%%%% table: Controllers Processes %%%%%%%%%%
 \begin{table}[h!]
 \parskip=8pt
@@ -183,7 +217,7 @@ Controller & Model & Variables & Values\\
 \item ABORT_PB
 \end{itemize}\\
 \cline{2-4}
-      & Policy  & Authenticated &
+      & Policy  & Authorized &
  \begin{itemize}
 \item True
 \item False
@@ -202,15 +236,19 @@ Adversary	& Threat Model	& To be \newline determined & to be determined\\
 \label{controlprocess}
 \end{table}
  %%%%%% table: Controllers Processes %%%%%%%%%%
+ 
+ Each controller has a one or more models of the patrol base operations that governs her decisions and actions.  Each model has a variable that can take on one of several values.  For example, the Platoon Leader has a model of the Patrol Base Status.  The status is the State of the system.  For example, the State could be PLAN_PB or MOVE_TO_ORP.   
+ 
+ There are three controllers: the Platoon Leader, the platoon, and the adversary (enemy).  The Platoon Leader is the top controller. She issues orders to the subordinates (the platoon) based on her knowledge of the status and policy of the operations.  The platoon authenticates the Platoon Leader and either executes the orders or discards the commands.
  %%
 \clearpage
 
 \subsection{Control Actions}
-The control actions for each principal are listed below.
+Each controller has its own set of actions (commands, etc.) that it can issues.  The control actions for each principal are listed below.  
 \begin{itemize}
 \item Platoon Leader
 \begin{itemize}
-\item PL says crossLD (same as planComplete)
+\item PL says planComplete (same as crossLD)
 \item PL says conductORP
 \item PL says moveToPB
 \item PL says completePB
@@ -230,6 +268,8 @@ The control actions for each principal are listed below.
 \end{itemize}
 
 \end{itemize}
+
+For example, the Platoon Leader may determine (based on policy, etcl), that the planning phase is complete.  She may then indicate this with the statement \textit{PL says planComplete}.\footnote{crossLD = cross line of discrimination.  Depending on the model, this would occur after planning.  It would transition the patrol into the MOVE_TO_ORP phase of the operations.  A description of this works is reserved for chapter \ref{}chp:pb.}
 
 \subsection{Functional Control Structure}
 %%

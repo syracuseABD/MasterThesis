@@ -220,7 +220,7 @@ The last step identifies scenarios that could cause the \gls{uca}s discovered in
 %
 %XSTAMPP is used for the STPA and STPA-Sec analysis.  However, at the time of this writing the program (and the data) are non-functional.
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
-\subsection{CSBD}\label{ssec:csbd}
+\section{CSBD}\label{ssec:csbd}
 
 \gls{csbd} can be used to demonstrate trustworthiness of a system within the System Security Engineering Framework.  \gls{csbd} is the second major component of \gls{storm}.
 
@@ -229,7 +229,7 @@ The last step identifies scenarios that could cause the \gls{uca}s discovered in
 \gls{csbd} has its own chapter (chapter \ref{chp:csbdacl}) and is briefly described above to explain how it fits into STORM.
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
-\subsubsection{Confidentiality, Integrity, and Availability (CIA) }\label{sssect:ssmts}
+\subsection{Confidentiality, Integrity, and Availability (CIA) }\label{sssect:ssmts}
 At the core of security are the concepts of confidentiality, integrity, and availability (CIA).  Confidentiality refers to limiting access to objects (including information) by ensuring that only the right individuals (etc.\footnote{or any other "entity" that can request access to an object.}) have access.  Confidentiality is the realm of authentication and authorization.  Authentication verifies an individual's identity.  Authorization describes a individual's access rights. 
 
 Integrity, on the other hand, refers to the whole of the object (or information, etc.). Integrity controls who or what can modify the object. This also describes an individual's authority over an object.
@@ -240,7 +240,7 @@ Confidentiality, integrity, and Availability are guarded by the principle of com
 
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
-\subsubsection{Complete Mediation}\label{sssec:strommediate}
+\subsection{Complete Mediation}\label{sssec:strommediate}
 The seminal paper on the principle of complete mediation is "The Protection of Information in Computer Systems" by Saltzer and Schroeder \cite{saltzer}.  Complete mediation means:
 \begin{quote}
 \textit{
@@ -252,7 +252,7 @@ In summary, this means that any accessor attempting to access or modify a protec
 \gls{csbd} uses an access-control logic and computer-aided reasoning to demonstrate that a system satisfies the principle of complete mediation.
 
 %%%%%%%%%%%%%%%%%%%%% Subsection STORM %%%%%%%%%%%%%%%
-\subsubsection{Secure State Machines as Transition Systems }\label{sssect:ssmts}
+\subsection{Secure State Machines as Transition Systems }\label{sssect:ssmts}
 Secure state machines are used by the \gls{csbd} method to enforce constraints on the system.  (However, \gls{csbd} can also verify complete mediation without secure state machines.)
 
 Secure state machines are transition systems that constrain system behavior and enforce complete mediation.  They define allowable system states and allowable transitions among states. Transitions are overseen by a monitor which enforces complete mediation by only allowing transitions if they are requested by an authenticated and authorized principal. 
