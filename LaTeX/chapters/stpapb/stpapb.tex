@@ -20,7 +20,8 @@ This section describes the first step in the \gls{stpa}/\gls{stpasec} analysis. 
 At the highest level, the stakeholders are the U.S. Government and the Citizens of the United States.  Below that is the U.S. Army and the U.S. Army Rangers.  Depending on the mission, other nations and their citizens may also hold a stake in the activities.  The enemy is also a stakeholder with an adversarial agenda. 
 
 \subsection{Organization FMA}
-The two most immediate organization for the parol bae operations are the U.S. Army Rangers and the U.S. Army.  Their goals are stated in table \ref{orgo}
+The two most immediate organization for the patrol bae operations are the U.S. Army Rangers and the U.S. Army.  Their goals are stated in table \ref{orgo}.
+
    %%%%%% table: organization goals %%%%%%%%%%
 \begin{table}[h!]
 \parskip=8pt
@@ -75,7 +76,7 @@ Why	&      avoid detection:
 %%
 \clearpage
 \subsection{Assumptions about The System}
-This analyzes relies on the following assumptions about the model of patrol base operations.
+This analyzis relies on the following assumptions about the model of patrol base operations.
 
 \begin{itemize}
 \item Mission is decided by higher-ups and is provided as an input to the patrol base operations.
@@ -86,7 +87,7 @@ This analyzes relies on the following assumptions about the model of patrol base
 \item The patrol base operations end when the patrol returns to the larger unit and has completed any debriefing required by the mission.
 \item Other inputs to the system are intelligence from the larger unit (higher-up HQ), intelligence from other units (if applicable), and intelligence gathered during the mission from the mission itself. 
 \item Feedback is received from the platoon regarding carrying out orders and from the operations themselves regarding completion of tasks, etc.  
-\item Adversary also may input information to the platoon leader (by interfering with communications from higher-up HQ), to the platoon soldiers (by interfering with intra-patrol communications), and to the operations themselves (by disrupting on the operations in various forms, including contact).
+\item Adversary also may input information to the platoon leader (by interfering with communications from higher-up HQ), to the platoon soldiers (by interfering with intra-patrol communications), and to the operations themselves (by disrupting the operations in various forms, including contact).
 \end{itemize}
 
 
@@ -101,7 +102,7 @@ The following entities are defined in the U.S. Ranger Handbook for the patrol ba
 \item Adversary (enemy)
 \end{itemize}
 
-The platoon leader (Platoon Leader --PL) is the only entity specifically referred to in this limited-scope analysis.  The platoon sergeant (PSG) is the assistant to the platoon leader.  The patrol base head quarters (HQ) consists of the PL, PSG, Medic, forward observer (FO), radio telephone operator (RTO), and the heavy weapons squad leader (HWSQL).  Below the HQ are four squad leaders.\footnote{This is only true for platoon sized patrol base operations.  Squad-sized patrol base operations consist of only one squad.}  Each squad is comprised of two fire teams.  Each fire time is compose of two or more buddy teams.  Each buddy team is composed of two soldiers (buddies).
+The platoon leader (Platoon Leader --PL) is the only entity specifically referred to in this limited-scope analysis.  The platoon sergeant (PSG) is the assistant to the platoon leader.  The patrol base head quarters (HQ) consists of the PL, PSG, Medic, forward observer (FO), radio telephone operator (RTO), and the heavy weapons squad leader (HWSQL).  Below the HQ are four squad leaders.\footnote{This is only true for platoon sized patrol base operations.  Squad-sized patrol base operations consist of only one squad.}  Each squad is comprised of two fire teams.  Each fire team is compose of two or more buddy teams.  Each buddy team is composed of two soldiers (buddies).
 
 %%
 \clearpage
@@ -116,7 +117,7 @@ Accidents/losses for the patrol base operations are shown in table \ref{losses}.
 \hline
 	&Description\\
 \hline
-L1	&MIA, KIA, WIA, CIA\footnote{MIA = missing in action; KIA = killed in action; WIA = wounded in action; CIA = captured in action.}\\
+L1	&MIA, KIA, WIA, CIA\\
 \hline
 L2	&Wrong mission\\
 \hline
@@ -136,6 +137,7 @@ L7	&Insufficient communications with high-up HQ\\
 \end{table}
    %%%%%% table: Accidents/Losses  %%%%%%%%%%
 
+Note the following definitions: MIA = missing in action; KIA = killed in action; WIA = wounded in action; CIA = captured in action.
 %%
 \clearpage
 \subsection{System-level Hazards/Vulnerabilities And Constraints}
@@ -180,10 +182,10 @@ A more in-depth analysis would return to this table and generate refined hazards
 \clearpage
 %%%%%%%%%%%%%%%% Step 2 %%%%%%%%%%%%%%%
 \section{Step 2: Model The Control Structure}\label{chp:stpapb:control}
-This section first breaks the patrol base operations down into phases.  It hen describes the system controllers and their process models.  It then describes the control actions for each controller.  Finally, it presents a diagram of the functional control model.
+This section first divides the patrol base operations into phases.  It then describes the system controllers and their process models.  It then describes the control actions for each controller.  Finally, it presents a diagram of the functional control model.
 
 \subsection{Phases of The Patrol Base Operations}
-Figure \ref{pbtoplevel2stpa} shows the patrol base operations broken down into six phases.   This is a simplified first approximation of the patrol base operations and is very abstract.  For the purposes of this analysis, transitions among phases of the operations are indicated by the Platoon Leader who is responsible for the success of the mission as a whole.  
+Figure \ref{pbtoplevel2stpa} shows the patrol base operations divided into six phases.   This is a simplified first approximation of the patrol base operations and is very abstract.  For the purposes of this analysis, transitions among phases of the operations are indicated by the Platoon Leader who is responsible for the success of the mission as a whole.  
 
 \begin{table}[ht!]
 \begin{center}
@@ -236,15 +238,20 @@ Adversary	& Threat Model	& To be \newline determined & to be determined\\
 \label{controlprocess}
 \end{table}
  %%%%%% table: Controllers Processes %%%%%%%%%%
+There are three controllers: the Platoon Leader, the platoon, and the adversary (enemy).  The Platoon Leader is the top controller. She issues orders to the subordinates (the platoon) based on her knowledge of the status and policy of the operations.  The platoon authenticates the Platoon Leader and either executes the orders or discards the commands.
  
- Each controller has a one or more models of the patrol base operations that governs her decisions and actions.  Each model has a variable that can take on one of several values.  For example, the Platoon Leader has a model of the Patrol Base Status.  The status is the State of the system.  For example, the State could be PLAN_PB or MOVE_TO_ORP.   
+ Each controller has one or more models of the patrol base operations that governs her decisions and actions.  Each model has a variable that can take on one of several values.  For example, the Platoon Leader has a model of the Patrol Base Status.  The status is the State of the system.  For example, the State could be PLAN_PB or MOVE_TO_ORP.   
  
- There are three controllers: the Platoon Leader, the platoon, and the adversary (enemy).  The Platoon Leader is the top controller. She issues orders to the subordinates (the platoon) based on her knowledge of the status and policy of the operations.  The platoon authenticates the Platoon Leader and either executes the orders or discards the commands.
+ The Platoon Leader's Policy model defines which conditions and which commands are authorized.  For example, for most instances of the patrol base operations, the planning phase should be completed before moving to the objective rally point (ORP).\footnote{The most likely variation is for the platoon to move to the ORP and then receive orders.   Regardless, it is unlikely that the platoon will move to the patrol base operations before completing planning.}  Therefore, the Platoon Leaders policy would include the condition that \textit{planning phase complete implies move to the ORP}.  The Authorization variable for the Policy model would be true if the phase is PLAN_PB and this phase is complete.  
+ 
+ The platoon's Authentication Model defines how the platoon authenticates commands.    For example, the platoon may authorizes commands by visual confirmation of the leader issuing the command.  Then, whenever the Platoon Leader issues the command in the line of sight of the platoon, the Authentication variable would take the value True.   
+ 
+ The adversary's process model is the threat model.  It is determined from METT-TC analysis.  It may or may not be known or complete.  The more known and complete the model, the more capable the platoon is at anticipating threats from the enemy.  But, knowledge of a specific enemy should not guide the system design.  The design should be defensible, minimizing risk from any enemy.
  %%
 \clearpage
 
 \subsection{Control Actions}
-Each controller has its own set of actions (commands, etc.) that it can issues.  The control actions for each principal are listed below.  
+Each controller has its own set of actions (commands, etc.) that it can issue.  The control actions for each principal are listed below.  
 \begin{itemize}
 \item Platoon Leader
 \begin{itemize}
@@ -265,16 +272,17 @@ Each controller has its own set of actions (commands, etc.) that it can issues. 
 \item exec(reactToContact)
 \item exec(returnToBase)
 \item exec(changeMission)
+\item discard(anyCommand)
 \end{itemize}
 
 \end{itemize}
 
-For example, the Platoon Leader may determine (based on policy, etcl), that the planning phase is complete.  She may then indicate this with the statement \textit{PL says planComplete}.\footnote{crossLD = cross line of discrimination.  Depending on the model, this would occur after planning.  It would transition the patrol into the MOVE_TO_ORP phase of the operations.  A description of this works is reserved for chapter \ref{}chp:pb.}
+For example, the Platoon Leader may determine (based on policy, etcl), that the planning phase is complete.  She may then indicate this with the statement \textit{PL says planComplete}.\footnote{crossLD = cross line of discrimination.  Depending on the model, this would occur after planning.  It would transition the patrol into the MOVE_TO_ORP phase of the operations.  A description of this works is reserved for chapter \ref{chp:pb}.} Similarly, the platoon may respond to this command with \textit{exec(planComplete)}.  If the platoon is in the PLAN_PB phase, it would then move to the next phase MOVE_TO_ORP.
+
+The \textit{discard(anyCommand)} indicates that the command, whatever it is, should be discarded. 
 
 \subsection{Functional Control Structure}
-%%
-\clearpage
-
+The functional control structure diagrams the command and control structure with feedback.  It is shown in figure \ref{controlstr1}.
 \begin{figure}[ht!]
 \begin{center}
 \includegraphics[width=0.7\linewidth]{../figures/controlstr1}
@@ -282,19 +290,48 @@ For example, the Platoon Leader may determine (based on policy, etcl), that the 
 \label{controlstr1}
 \end{center}
 \end{figure}
+ 
+The blue background encapsulates the command and control structure of the operations.  The yellow background encapsulates the access-control structures.  The green is the adversarial's realm with both command and control and access-control capabilities.  
+ 
+Downward pointing arrows indicate the direction of commands and upward pointing arrows indicate feedback.  The adversary is an exception. These arrows are directed out towards the controllers (PL and platoon) and the controlled actions (patrol base operations).  Feedback to the adversary are not modeled.  However, modeling feedback may shine light on avenues of attack or counter-attack on the adversary.
 
+The Platoon Leader is the legitimate controller in the command and control structure.  She sends commands to the platoon.  The commands are shown in the grey box.  The Platoon Leader receives feedback from the platoon (i.e, discard command, confirm orders, etc.).  The Platoon Leader also receives orders or intelligence from higher-up headquarters, the operations, and potentially from other sources. 
+
+The platoon receives orders from the Platoon Leader and either executes them or discards them.  Execution of an order implies that the Platoon Leader's command was authenticated.  Discarding means that the command was not authenticated.  The platoon also receives information from the operations as to what phase it is in, etc..
+
+The adversary can interfere with the operations in numerous ways.  It can attack the Platoon Leader or platoon.  It can send conflicting messages, such as send unauthenticated commands in the hope that the platoon or Platoon Leader will authenticate it.  The adversary can attack or sabotage the platoon.  The capabilities of the adversary to interrupt the operations should be analyzed as soon as possible to develop an accurate threat model.
 %%
 \clearpage
 
 %%%%%%%%%%%%%%%% Step 3 %%%%%%%%%%%%%%%%
 \section{Step 3: Identify Unsafe Control Actions (UCAs)}\label{chp:stpapb:uca}
-The Thomas methods is used to identify \glspl{uca}.
+This section determines unsafe control actions (\gls{uca}) for the patrol base operations.  It uses the Thomas Method to identify \glspl{uca}.  This method considers all possible combinations of values of the process model variables.  
 
-\subsection{Unsafe Control Actions (UCAs): Thomas Model}
+All possible process model values are analyzed for each control action. This means that for any control action the possible combinations of process model values is 7 (seven states) $\times$ 2 (Authorized: True or False) $\times$ 2 (Authenticated: True or False) = 28.  
+
+There are 7 possible control actions (commands) for the Platoon Leader and $2 \times 7$ possible control actions for the platoon.  In total, there are $7 + 2 \times 7 = 21$  possible control structures.  To analyze each control structure requires $21 \times 28 = 588$ possible \glspl{uca}. 
+
+Fortunately, many \glspl{uca} are similar or can be grouped.  Nevertheless, to limit this analysis for its demonstrative purposes only three control actions are analyzed: \textit{PL says planComplete}, \textit{exec(planComplete)}, and \textit{discard(anyCommand)}.  Notice that the last control action covers all 7 discard commands because discarding any command is the same for all commands.
+
+The \glspl{uca} are analyzed using the tables described next.  In each of these tables, each control action is analyzed for each combination of process model value and for each of the four types of \glspl{uca}.  The four \glspl{uca} described in section \ref{ssec:stpa} of the previous chapter are repeated in the list below.
+
+\begin{itemize}
+\item Not applying the control action
+\item Applying the wrong control action
+\item Applying the control action in the wrong order
+\item Applying the control action for two long or not long enough.
+\end{itemize}
+
+To make the tables more manageable, for each combination of control action and process model value the table indicates if there is an \gls{uca} by marking the appropriate box with a code.  The code will be used in step 4 to describe scenarios.  If the box is empty, then no \gls{uca} is determined for those set of values.
+
 %%
 \clearpage
+\subsection{Unsafe Control Actions (UCAs): Thomas Model}
+
+
 \paragraph*{PL says planComplete}
-The Thomas method for delineating \glspl{uca} for \textit{PL says planComplete} are shown in figure \ref{UCAPLsays}.
+Table \ref{UCAPLsays} analyzes the \glspl{uca} for the control action \textit{PL says planComplete}.
+
 \begin{table}[ht!]
 \begin{center}
 \includegraphics[width=\linewidth]{../figures/UCAPLsays}
@@ -306,7 +343,8 @@ The Thomas method for delineating \glspl{uca} for \textit{PL says planComplete} 
 %%
 \clearpage
 \paragraph*{exec(planComplete)}
-The Thomas method for delineating \glspl{uca} for \textit{exec(planComplete)} are shown in figure \ref{UCAPLsays}.
+Table \ref{UCAPLsays} analyzes the \glspl{uca} for the control action \textit{exec(planComplete)}.
+
 \begin{table}[ht!]
 \begin{center}
 \includegraphics[width=\linewidth]{../figures/UCAexecplan}
@@ -318,7 +356,7 @@ The Thomas method for delineating \glspl{uca} for \textit{exec(planComplete)} ar
 %%
 \clearpage
 \paragraph*{discard(anyCommand)}
-The Thomas method for delineating \glspl{uca} for \textit{discard{anyCommand}} are shown in figure \ref{UCAPLsays}.
+Table \ref{UCAPLsays} analyzes the \glspl{uca} for the control action \textit{discard(anyCommand)}.
 \begin{table}[ht!]
 \begin{center}
 \includegraphics[width=\linewidth]{../figures/ucadiscards}
@@ -330,12 +368,22 @@ The Thomas method for delineating \glspl{uca} for \textit{discard{anyCommand}} a
 \clearpage
 %%%%%%%%%%%%%%%% Step 4 %%%%%%%%%%%%%%%%
 \section{Step 4: Identify Loss Scenarios}\label{chp:stpapb:scenarios}
-\subsection{Scenarios}
+This section describes the scenarios associated with each \gls{uca} identified in the previous step. These are described in a series of tables.  
 
-\subsubsection*{Pl says planComplete}
+The top row of each table indicates which control action is analyzed.  The next row describes the process model variable values.  It may also contain other useful information.
+
+The first column, labeled "Scenarios", identifies the \gls{uca} by its code (from the tables in  the previous section.  It also describes the unsafe scenario.  The next column, labeled "Associated Causal Factors", describes factors that could cause the unsafe scenario.  The third column describes the rationale for mitigating or avoiding the causal factors.  
+
+The last two columns contain lists of alternating black and blue entries.  The alternating entries in the second column correspond to the alternating black and blue entries in the third column.  
+
+\subsection{Scenarios}
 %%
 \clearpage
+
+\subsubsection*{Pl says planComplete}
+The next set of tables describes scenarios for the \textit{PL says planComplete} control action.
 \paragraph*{P1B1/P1C1: state = PLAN_PB, Authorized = Yes, Authenticated = Yes}
+Tables \ref{ucap1b1} and \ref{ucap1b1p1c1} present the scenarios for the P1B1 and P1C1 \glspl{uca}.
 
 \begin{table}[ht!]
 \begin{center}
@@ -347,7 +395,6 @@ The Thomas method for delineating \glspl{uca} for \textit{discard{anyCommand}} a
 %%
 \clearpage
 
-
 \begin{table}[ht!]
 \begin{center}
 \includegraphics[width=\linewidth]{../figures/ucap1b1p1c1}
@@ -358,10 +405,8 @@ The Thomas method for delineating \glspl{uca} for \textit{discard{anyCommand}} a
 %%
 \clearpage
 
-
-
 \paragraph*{P1A1: state  = PLAN_PB, Authorized = Yes, Authenticated = Yes}
-
+Table \ref{ucap1a1} presents the scenarios for the P1A1 \gls{uca}.
 
 \begin{table}[ht!]
 \begin{center}
@@ -372,7 +417,9 @@ The Thomas method for delineating \glspl{uca} for \textit{discard{anyCommand}} a
 \end{table}
 %%
 \clearpage
+
 \paragraph*{P1A2: state  = any state, Authorized = Yes, Authenticated = No}
+Table \ref{ucap1a2} presents the scenarios for the P1A2 \gls{uca}.
 
 \begin{table}[ht!]
 \begin{center}
@@ -385,6 +432,7 @@ The Thomas method for delineating \glspl{uca} for \textit{discard{anyCommand}} a
 %%
 \clearpage
 \paragraph*{P1A3: state  = any state, Authorized = No, Authenticated = Yes}
+Table \ref{ucap1a3} presents the scenarios for the P1A3 \gls{uca}.
 
 \begin{table}[ht!]
 \begin{center}
@@ -394,11 +442,8 @@ The Thomas method for delineating \glspl{uca} for \textit{discard{anyCommand}} a
 \end{center}
 \end{table}
 
-%%
-\clearpage
-
-
 \paragraph*{P1A4: state  = any state, Authorized = No, Authenticated = No}
+Table \ref{ucap1a4} presents the scenarios for the P1A4 \gls{uca}.
 
 \begin{table}[ht!]
 \begin{center}
@@ -412,7 +457,10 @@ The Thomas method for delineating \glspl{uca} for \textit{discard{anyCommand}} a
 
 
 \subsubsection*{exec(planComplete)}
+The next set of tables describes scenarios for the \textit{exec(planComplete)} control action.
+
 \paragraph*{E1B1/E1C1: state = PLAN_PB, Authorized = Yes, Authenticated = Yes}
+Table \ref{ucae1b1e1c1}  present the scenarios for the E1B1 and E1C1 \glspl{uca}.
 
 \begin{table}[ht!]
 \begin{center}
@@ -425,6 +473,7 @@ The Thomas method for delineating \glspl{uca} for \textit{discard{anyCommand}} a
 \clearpage
 
 \paragraph*{E1A1: state  $\neq$ PLAN_PB, Authorized = Yes, Authenticated = Yes}
+Table \ref{ucaea1}  present the scenarios for the E1A1 \glspl{uca}.
 
 \begin{table}[ht!]
 \begin{center}
@@ -435,7 +484,10 @@ The Thomas method for delineating \glspl{uca} for \textit{discard{anyCommand}} a
 \end{table}
 %%
 \clearpage
+
 \paragraph*{E1A2: state  = any state, Authorized = Yes, Authenticated = No}
+Table \ref{ucae1a2}  present the scenarios for the E1A2 \glspl{uca}.
+
 \begin{table}[ht!]
 \begin{center}
 \includegraphics[width=\linewidth]{../figures/ucae1a2}
@@ -447,6 +499,7 @@ The Thomas method for delineating \glspl{uca} for \textit{discard{anyCommand}} a
 \clearpage
 
 \paragraph*{E1A3: state  = any state, Authorized = No, Authenticated = Yes}
+Table \ref{ucae1a3}  present the scenarios for the E1A3 \glspl{uca}.
 
 \begin{table}[ht!]
 \begin{center}
@@ -455,16 +508,14 @@ The Thomas method for delineating \glspl{uca} for \textit{discard{anyCommand}} a
 \label{ucae1a3}
 \end{center}
 \end{table}
-%%
-\clearpage
-
 
 \paragraph*{E1A4: state  = any state, Authorized = No, Authenticated = No}
+Table \ref{ucae1a4}  present the scenarios for the E1A4 \glspl{uca}.
 
 \begin{table}[ht!]
 \begin{center}
 \includegraphics[width=\linewidth]{../figures/ucae1a4}
-\caption{Scenarios for UCA E1A3.}
+\caption{Scenarios for UCA E1A4.}
 \label{ucae1a4}
 \end{center}
 \end{table}
@@ -473,6 +524,7 @@ The Thomas method for delineating \glspl{uca} for \textit{discard{anyCommand}} a
 
 
 \subsubsection*{discard(anyCommand)}
+Table \ref{ucadiscard} describes scenarios for the \textit{discard(planComplete)} control action.
 
 \begin{table}[ht!]
 \begin{center}
