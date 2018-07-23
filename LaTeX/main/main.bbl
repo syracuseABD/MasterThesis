@@ -21,6 +21,64 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{NIST800160}
+\BIBentryALTinterwordspacing
+R.~Ross, M.~McEvilley, and J.~C. Oren, ``Systems security engineering
+  considerations for a multidisciplinary approach in the engineering of
+  trustworthy secure systems,'' National Institute of Standards and Technology
+  (NIST), 100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD 20899-8930,
+  Special Publication 800-160, May 2016. [Online]. Available:
+  \url{https://csrc.nist.gov/csrc/media/publications/sp/800-160/archive/2016-05-04/documents/sp800_160_second-draft.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{youngPorada}
+\BIBentryALTinterwordspacing
+W.~Y. Jr and R.~Porada. (2017, March) System-theoretic process analysis for
+  security (stpa-sec): System-theoretic process analysis for security
+  (stpa-sec): Cyber security and stpa. 2017 STAMP Conference, Boston, MA, March
+  27, 2017. [Online]. Available:
+  \url{http://psas.scripts.mit.edu/home/wp-content/uploads/2017/04/STAMP_2017_STPA_SEC_TUTORIAL_as-presented.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{stpa}
+N.~G. Leveson and J.~P. Thomas, \emph{STPA Handbook}, March 2018.
+
+\bibitem{saferworld}
+N.~G. Leveson, \emph{Engineering a Safer World: Systems Thinking Applied to
+  Safety}.\hskip 1em plus 0.5em minus 0.4em\relax MIT Press, 2012.
+
+\bibitem{sys4sec}
+\emph{Systems thinking for safety and security}.\hskip 1em plus 0.5em minus
+  0.4em\relax New Orleans: Proceedings of the 2013 Annual Computer Security
+  Applications Conference (ACSAC 2013), December 2013.
+
+\bibitem{ChinOlder}
+\BIBentryALTinterwordspacing
+S.-K. Chin and S.~B. Older, \emph{Access Control, Security, and Trust: A
+  Logical Approach}, ser. Chapman {\&} Hall: CRC Cryptography and Network
+  Security Series.\hskip 1em plus 0.5em minus 0.4em\relax Chapman and Hall/CRC,
+  July 2010. [Online]. Available:
+  \url{https://www.crcpress.com/Access-Control-Security-and-Trust-A-Logical-Approach/Chin-Older/p/book/9781584888628}
+\BIBentrySTDinterwordspacing
+
+\bibitem{certmanual}
+S.-K. Chin and S.~Older, \emph{Certified Security by Design Using Higher Order
+  Logic}.\hskip 1em plus 0.5em minus 0.4em\relax Syracuse University, Syracuse,
+  New York 13244: Department of Electrical Engineering and Computer Science
+  Syracuse University, November 2017, vol. Version 1.5.
+
+\bibitem{types}
+\BIBentryALTinterwordspacing
+\emph{Introduction to Programming Languages/Algebraic Data Types}.\hskip 1em
+  plus 0.5em minus 0.4em\relax used under the Creative Commons
+  Attribution-ShareAlike 3.0 License, August 2017. [Online]. Available:
+  \url{https://en.wikibooks.org/wiki/Introduction_to_Programming_Languages/Algebraic_Data_Types}
+\BIBentrySTDinterwordspacing
+
+\bibitem{rangermanual}
+\emph{Ranger handbook}, United States Army Ranger School, ATTN: ATSH-RB, 10850
+  Schneider Rd, Bldg 5024, Ft Benning, GA 31905, April 2017.
+
 \bibitem{kingdom}
 D.~P. Berg and W.~M.~M. Carnahan, ``The kingdom,'' Motion Picture Movie,
   September 2007.
@@ -43,20 +101,6 @@ D.~P. Berg and W.~M.~M. Carnahan, ``The kingdom,'' Motion Picture Movie,
   2015. [Online]. Available: \url{https://www.ieee.org}
 \BIBentrySTDinterwordspacing
 
-\bibitem{NIST800160}
-\BIBentryALTinterwordspacing
-R.~Ross, M.~McEvilley, and J.~C. Oren, ``Systems security engineering
-  considerations for a multidisciplinary approach in the engineering of
-  trustworthy secure systems,'' National Institute of Standards and Technology
-  (NIST), 100 Bureau Drive (Mail Stop 8930) Gaithersburg, MD 20899-8930,
-  Special Publication 800-160, May 2016. [Online]. Available:
-  \url{https://csrc.nist.gov/csrc/media/publications/sp/800-160/archive/2016-05-04/documents/sp800_160_second-draft.pdf}
-\BIBentrySTDinterwordspacing
-
-\bibitem{rangermanual}
-\emph{Ranger handbook}, United States Army Ranger School, ATTN: ATSH-RB, 10850
-  Schneider Rd, Bldg 5024, Ft Benning, GA 31905, April 2017.
-
 \bibitem{target}
 \BIBentryALTinterwordspacing
 R.~Abrams. (2017, May) Target to pay {\$}18.5 million to 47 states in security
@@ -64,35 +108,14 @@ R.~Abrams. (2017, May) Target to pay {\$}18.5 million to 47 states in security
   \url{https://www.nytimes.com/2017/05/23/business/target-security-breach-settlement.html}
 \BIBentrySTDinterwordspacing
 
-\bibitem{ChinOlder}
-\BIBentryALTinterwordspacing
-S.-K. Chin and S.~B. Older, \emph{Access Control, Security, and Trust: A
-  Logical Approach}, ser. Chapman {\&} Hall: CRC Cryptography and Network
-  Security Series.\hskip 1em plus 0.5em minus 0.4em\relax Chapman and Hall/CRC,
-  July 2010. [Online]. Available:
-  \url{https://www.crcpress.com/Access-Control-Security-and-Trust-A-Logical-Approach/Chin-Older/p/book/9781584888628}
-\BIBentrySTDinterwordspacing
-
 \bibitem{pkm}
 J.~S. protocols Glenn~Benson, S.-K. Chin, S.~Croston, K.~Jayaraman, and
   S.~Older, ``Banking on interoperability: Secure, interoperable credential
   management,'' \emph{Computer Networks}, vol.~67, pp. 235--251, 2014.
 
-\bibitem{youngPorada}
-\BIBentryALTinterwordspacing
-W.~Y. Jr and R.~Porada. (2017, March) System-theoretic process analysis for
-  security (stpa-sec): System-theoretic process analysis for security
-  (stpa-sec): Cyber security and stpa. 2017 STAMP Conference, Boston, MA, March
-  27, 2017. [Online]. Available:
-  \url{http://psas.scripts.mit.edu/home/wp-content/uploads/2017/04/STAMP_2017_STPA_SEC_TUTORIAL_as-presented.pdf}
-\BIBentrySTDinterwordspacing
-
 \bibitem{buoy}
 P.~Stukus, ``Systems-theoretic accident model and processes (stamp) applied to
   a u.s. coast guard buoy tender integrated control system,'' 2017.
-
-\bibitem{stpa}
-N.~G. Leveson and J.~P. Thomas, \emph{STPA Handbook}, March 2018.
 
 \bibitem{safe}
 \BIBentryALTinterwordspacing
@@ -100,15 +123,6 @@ N.~G. Leveson and J.~P. Thomas, \emph{STPA Handbook}, March 2018.
   September 2017. [Online]. Available:
   \url{https://insights.sei.cmu.edu/sei_blog/2017/09/simultaneous-analysis-of-safety-and-security-of-a-critical-system.html}
 \BIBentrySTDinterwordspacing
-
-\bibitem{saferworld}
-N.~G. Leveson, \emph{Engineering a Safer World: Systems Thinking Applied to
-  Safety}.\hskip 1em plus 0.5em minus 0.4em\relax MIT Press, 2012.
-
-\bibitem{sys4sec}
-\emph{Systems thinking for safety and security}.\hskip 1em plus 0.5em minus
-  0.4em\relax New Orleans: Proceedings of the 2013 Annual Computer Security
-  Applications Conference (ACSAC 2013), December 2013.
 
 \bibitem{availability}
 \BIBentryALTinterwordspacing
@@ -123,17 +137,17 @@ J.~H. Saltzer and M.~D. Schroeder. (1975, April) The protection of information
   \url{http://www.cs.virginia.edu/~evans/cs551/saltzer/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{usarmy}
+\BIBentryALTinterwordspacing
+U.~Army. U.s. army organization: Mission. [Online]. Available:
+  \url{https://www.army.mil/info/organization/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{defensescienceboard}
 T.~R. Corporation, ``Security controls for computer systems: Report of defence
   science board task force on computer security,'' Office of the Director of
   Defence Research And Engineering, Washington D.C. 20301, Tech. Rep., February
   1970.
-
-\bibitem{certmanual}
-S.-K. Chin and S.~Older, \emph{Certified Security by Design Using Higher Order
-  Logic}.\hskip 1em plus 0.5em minus 0.4em\relax Syracuse University, Syracuse,
-  New York 13244: Department of Electrical Engineering and Computer Science
-  Syracuse University, November 2017, vol. Version 1.5.
 
 \bibitem{saulk}
 \BIBentryALTinterwordspacing
@@ -193,14 +207,6 @@ D.~Turner and Y.~Welsch. Reliable by design: Applying formal methods to
 J.~Kunasaikaran, A.~Iqbal, J.~Dua, and C.~S. Lin. (2016) A brief overview of
   functional programming languages. [Online]. Available:
   \url{https://www.researchgate.net/publication/311493362_A_Brief_Overview_of_Functional_Programming_Languages}
-\BIBentrySTDinterwordspacing
-
-\bibitem{types}
-\BIBentryALTinterwordspacing
-\emph{Introduction to Programming Languages/Algebraic Data Types}.\hskip 1em
-  plus 0.5em minus 0.4em\relax used under the Creative Commons
-  Attribution-ShareAlike 3.0 License, August 2017. [Online]. Available:
-  \url{https://en.wikibooks.org/wiki/Introduction_to_Programming_Languages/Algebraic_Data_Types}
 \BIBentrySTDinterwordspacing
 
 \bibitem{constructor}

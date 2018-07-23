@@ -20,7 +20,7 @@ This section describes the first step in the \gls{stpa}/\gls{stpasec} analysis. 
 At the highest level, the stakeholders are the U.S. Government and the Citizens of the United States.  Below that is the U.S. Army and the U.S. Army Rangers.  Depending on the mission, other nations and their citizens may also hold a stake in the activities.  The enemy is also a stakeholder with an adversarial agenda. 
 
 \subsection{Organization FMA}
-The two most immediate organization for the patrol bae operations are the U.S. Army Rangers and the U.S. Army.  Their goals are stated in table \ref{orgo}.
+The two most immediate organization for the patrol base operations are the U.S. Army Rangers and the U.S. Army.  Their goals are stated in table \ref{orgo}.
 
    %%%%%% table: organization goals %%%%%%%%%%
 \begin{table}[h!]
@@ -31,9 +31,9 @@ The two most immediate organization for the patrol bae operations are the U.S. A
  \hline
 U.S. Army Rangers	& U.S. Army\\
 \hline
-"The U.S. Army's mission is to fight and win our Nation?s wars by providing prompt, sustained land dominance across the full range of military operations and spectrum of conflict in support of combatant commanders."
+"The U.S. Army's mission is to fight and win our Nation?s wars by providing prompt, sustained land dominance across the full range of military operations and spectrum of conflict in support of combatant commanders." \cite{usarmy}
 &	
-"The Rangers' primary mission is to engage the enemy in close combat and direct-fire battles. This mission includes direct action operations, raids, personnel and special equipment recovery, in addition to conventional or special light-infantry operations."\\
+"The Rangers' primary mission is to engage the enemy in close combat and direct-fire battles. This mission includes direct action operations, raids, personnel and special equipment recovery, in addition to conventional or special light-infantry operations." \cite{rangermanual}\\
 \hline
 \end{tabular}
 \caption{Organization goals.}
@@ -69,14 +69,14 @@ Why	&      avoid detection:
 \end{itemize}\\
 \hline
 \end{tabular}
-\caption{Patrol Base Operations Functional Mission Analysis.}
+\caption{Patrol Base Operations Functional Mission Analysis from the U.S. Ranger Handbook \cite{rangermanual}.}
 \label{pbfma}
 \end{table}
    %%%%%% table: PB FMAs  %%%%%%%%%%
 %%
 \clearpage
 \subsection{Assumptions about The System}
-This analyzis relies on the following assumptions about the model of patrol base operations.
+This analysis relies on the following assumptions about the model of patrol base operations.
 
 \begin{itemize}
 \item Mission is decided by higher-ups and is provided as an input to the patrol base operations.
@@ -141,7 +141,7 @@ Note the following definitions: MIA = missing in action; KIA = killed in action;
 %%
 \clearpage
 \subsection{System-level Hazards/Vulnerabilities And Constraints}
-The system-level hazards/vulnerabilities are described in the second column in table \ref{hazards}.  The associated accidents/losses for each hazard are shown in the next column.  These are linked to system-level constraints in the last column.   
+Table \ref{hazards} describes the system-level hazards/vulnerabilities and associated system-level constraints.  The system-level hazards/vulnerabilities are described in the second column.  The associated accidents/losses for each hazard are shown in the next column.  These are linked to system-level constraints in the last column.   
 
   %%%%%% table: System-level hazards  %%%%%%%%%%
 \begin{table}[h!]
@@ -246,7 +246,7 @@ There are three controllers: the Platoon Leader, the platoon, and the adversary 
  
  The platoon's Authentication Model defines how the platoon authenticates commands.    For example, the platoon may authorizes commands by visual confirmation of the leader issuing the command.  Then, whenever the Platoon Leader issues the command in the line of sight of the platoon, the Authentication variable would take the value True.   
  
- The adversary's process model is the threat model.  It is determined from METT-TC analysis.  It may or may not be known or complete.  The more known and complete the model, the more capable the platoon is at anticipating threats from the enemy.  But, knowledge of a specific enemy should not guide the system design.  The design should be defensible, minimizing risk from any enemy.
+ The adversary's process model is the threat model.  It is determined from METT-TC\footnote{mission, enemy, terrain and weather, troops and support available-time available, and civil considerations factors.} analysis.  It may or may not be known or complete.  The more known and complete the model, the more capable the platoon is at anticipating threats from the enemy.  But, knowledge of a specific enemy should not guide the system design.  The design should be defensible, minimizing risk from any enemy.
  %%
 \clearpage
 
@@ -277,7 +277,7 @@ Each controller has its own set of actions (commands, etc.) that it can issue.  
 
 \end{itemize}
 
-For example, the Platoon Leader may determine (based on policy, etcl), that the planning phase is complete.  She may then indicate this with the statement \textit{PL says planComplete}.\footnote{crossLD = cross line of discrimination.  Depending on the model, this would occur after planning.  It would transition the patrol into the MOVE_TO_ORP phase of the operations.  A description of this works is reserved for chapter \ref{chp:pb}.} Similarly, the platoon may respond to this command with \textit{exec(planComplete)}.  If the platoon is in the PLAN_PB phase, it would then move to the next phase MOVE_TO_ORP.
+For example, the Platoon Leader may determine (based on policy, etc.), that the planning phase is complete.  She may then indicate this with the statement \textit{PL says planComplete}.\footnote{crossLD = cross line of discrimination.  Depending on the model, this would occur after planning.  It would transition the patrol into the MOVE_TO_ORP phase of the operations.  A description of this works is reserved for chapter \ref{chp:pb}.} Similarly, the platoon may respond to this command with \textit{exec(planComplete)}.  If the platoon is in the PLAN_PB phase, it would then move to the next phase MOVE_TO_ORP.
 
 The \textit{discard(anyCommand)} indicates that the command, whatever it is, should be discarded. 
 
@@ -293,7 +293,7 @@ The functional control structure diagrams the command and control structure with
  
 The blue background encapsulates the command and control structure of the operations.  The yellow background encapsulates the access-control structures.  The green is the adversarial's realm with both command and control and access-control capabilities.  
  
-Downward pointing arrows indicate the direction of commands and upward pointing arrows indicate feedback.  The adversary is an exception. These arrows are directed out towards the controllers (PL and platoon) and the controlled actions (patrol base operations).  Feedback to the adversary are not modeled.  However, modeling feedback may shine light on avenues of attack or counter-attack on the adversary.
+Downward pointing arrows indicate the direction of commands and upward pointing arrows indicate feedback.  The adversary is an exception. These arrows are directed out towards the controllers (PL and platoon) and the controlled actions (patrol base operations).  Feedback to the adversary is not modeled.  However, modeling feedback may shine light on avenues of attack or counter-attack on the adversary.
 
 The Platoon Leader is the legitimate controller in the command and control structure.  She sends commands to the platoon.  The commands are shown in the grey box.  The Platoon Leader receives feedback from the platoon (i.e, discard command, confirm orders, etc.).  The Platoon Leader also receives orders or intelligence from higher-up headquarters, the operations, and potentially from other sources. 
 
@@ -343,7 +343,7 @@ Table \ref{UCAPLsays} analyzes the \glspl{uca} for the control action \textit{PL
 %%
 \clearpage
 \paragraph*{exec(planComplete)}
-Table \ref{UCAPLsays} analyzes the \glspl{uca} for the control action \textit{exec(planComplete)}.
+Table \ref{UCAexecplan} analyzes the \glspl{uca} for the control action \textit{exec(planComplete)}.
 
 \begin{table}[ht!]
 \begin{center}
@@ -356,7 +356,7 @@ Table \ref{UCAPLsays} analyzes the \glspl{uca} for the control action \textit{ex
 %%
 \clearpage
 \paragraph*{discard(anyCommand)}
-Table \ref{UCAPLsays} analyzes the \glspl{uca} for the control action \textit{discard(anyCommand)}.
+Table \ref{UCAdiscard} analyzes the \glspl{uca} for the control action \textit{discard(anyCommand)}.
 \begin{table}[ht!]
 \begin{center}
 \includegraphics[width=\linewidth]{../figures/ucadiscards}
@@ -542,7 +542,7 @@ The reader who is familiar with the patrol base operations and military procedur
 
 A more thorough analysis should find more recommendations that are specific to particular actions.  For example, the troop leading procedures comprise an eight step planning phase.  Each step should be analyzed using \gls{stpa}/\gls{stpasec} to identify unsafe control actions that arise from system-level interactions.  
 
-In a thorough analysis of the patrol base operations, the system-level hazards/vulnerabilities would be furthered refined.  The system-level constraints would also be further refined.  The degree of refinement depends on the purpose of the analysis and the safety and security needs of the system.  The process can be lengthy.  But, it is manageable with tables and the repetitive nature of many of the unsafe conditions.  There is also software available that automates some of the analysis.  This software is new continues to be refined and improved.  
+In a thorough analysis of the patrol base operations, the system-level hazards/vulnerabilities would be furthered refined.  The system-level constraints would also be further refined.  The degree of refinement depends on the purpose of the analysis and the safety and security needs of the system.  The process can be lengthy.  But, it is manageable with tables and the repetitive nature of many of the unsafe conditions.  There is also software available that automates some of the analysis.  This software is new and continues to be refined and improved.  
 
 
 The next chapters explain the second component of \gls{storm} and its application to the patrol base operations
